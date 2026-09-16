@@ -68,28 +68,28 @@ Content-Signal — diese Themen gehören auf Französisch ergänzt.
 
 ---
 
-## Support-Korrekturen — deployt am 16.09.2026, wartet auf das GitHub-Token
+## Support-Korrekturen — seit 16.09.2026 in Produktion
 
 Mitarbeiter können falsche Antworten korrigieren; die Korrektur wird als
 eigener Eintrag per Commit ins Repository geschrieben und wirkt nach dem
 Deploy (Entwurf A in `../docs/07_KORREKTUREN_ENTWUERFE.md`; README-Abschnitt
-„Support-Korrekturen"). Der Code ist live; `/api/health` meldet
-`korrekturen.speicherKonfiguriert: false`, solange das Token fehlt — Speichern
-antwortet bis dahin mit HTTP 503 im Klartext.
+„Support-Korrekturen"). Token liegt in Netlify, das Zugangswort gilt auch für
+Freigaben, Vier-Augen-Regel (Freigeber ≠ Autor) ist die Sicherung.
 
-**Gemessen: Deploy-Dauer 37 Sekunden** vom Push bis zur Wirkung (kein
-Build-Schritt). Das ist die Latenz einer Korrektur.
+**In Produktion gemessen:** Einreichen → Commit 1 s → Function trägt die
+Korrektur nach ~70 s. Zurückziehen → Commit → Function nach ~35 s. Die
+Testkorrektur `2026-09-16-testkorrektur-75b2` bleibt als „zurückgezogen" im
+Bestand — sie ist die erste Zeile der Historie.
 
-Was noch zu tun ist:
-1. In Netlify `THI_GITHUB_TOKEN` setzen (feingranulares Token, nur dieses
-   Repo, Contents: Read and write). Ein eigenes Freigabewort ist nicht nötig —
-   das Zugangswort gilt, die Vier-Augen-Regel (Freigeber ≠ Autor) ist die
-   Sicherung.
-2. `/api/health` zeigt danach `speicherKonfiguriert: true`. Dann eine
-   Testkorrektur einreichen — das ist der erste echte Commit aus der Function.
-3. Sperrliste im Alltag beobachten: `node netlify/functions/lib/tests.mjs`
+Was jetzt zählt:
+1. **Sperrliste im Alltag beobachten**: `node netlify/functions/lib/tests.mjs`
    druckt die 20 gesperrten DE-Artikel im Abschnitt 9. Blockt sie zu oft,
    ist die Lockerung eine Zeile in `lib/korrekturen.mjs`.
+2. **Token-Ablauf 16.09.2027** im Kalender. Danach antwortet Speichern mit
+   502 — der Health-Check sieht das nicht, weil er das Token nicht benutzt.
+3. Nach ein paar Wochen `node werkzeuge/korrekturen-pruefen.mjs`: zeigt, ob
+   Korrekturen verwaisen, fluten oder überfällig sind — und welche ins Wiki
+   gehören.
 
 Offen geblieben, bewusst: Der Name ist selbst erklärt (kein Login). Wer
 Nachweis braucht, kann Netlify Identity nachrüsten (verfügbar, nicht

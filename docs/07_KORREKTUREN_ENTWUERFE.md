@@ -244,8 +244,21 @@ Function live um 13:12:24 UTC — **37 Sekunden** vom Push bis zur Wirkung
 Latenz einer Korrektur. Damit ist die Sorge aus Entwurf A („Minuten") kleiner
 als angenommen; Entwurf B (Blobs) bringt gegenüber 37 s keinen Gewinn mehr.
 
-**Noch nicht gemessen:** ein echter Commit per GitHub-API aus der Function —
-braucht `THI_GITHUB_TOKEN` in Netlify.
+**Erster echter Durchlauf in Produktion, 16.09.2026 (Max, aus der
+Oberfläche):**
+
+| Schritt | Zeit |
+|---|---|
+| Korrektur eingereicht | 14:11:48 UTC |
+| Commit `222b900` aus der Function (beide Dateien, Autor „Max") | 14:11:49 UTC |
+| Function trägt die Korrektur (`gesamt: 1, ungeprueft: 1`) | ~70 s nach dem Klick |
+| „Zurückziehen" in der Liste → Commit `76763e5` | 14:19:03 UTC |
+| Function meldet `zurueckgezogen: 1` | ~35 s nach dem Klick |
+
+Ein Stolperstein dabei: Ein **leerer Commit löst keinen Deploy aus**. Netlify
+bricht ab, wenn sich unter dem Base-Verzeichnis nichts geändert hat — eine
+neue Umgebungsvariable zählt nicht. Nach dem Eintragen des Tokens muss
+deshalb einmal manuell **Trigger deploy → Deploy project** geklickt werden.
 
 **Entscheidungen vom 16.09.2026 (Max):** Commit und Push freigegeben. Kein
 eigenes Freigabewort — das Zugangswort gilt auch für Freigaben, dafür
