@@ -109,5 +109,35 @@ export default [
         "begruendung": "Sunrise hat sein 2g Netz abgeschaltet und kann keine Verbindung zum Pro-finder herstellen."
       }
     ]
+  },
+  {
+    "id": "2026-09-16-einbauort-des-g-a-s-plug-5cc5",
+    "status": "wartet-freigabe",
+    "sicherheitsrelevant": true,
+    "sicherheitsgrund": "Korrekturtext nennt „GAS\".",
+    "lang": "de",
+    "bezug": {
+      "route": "/de/pro-finder",
+      "anchor": "montageort"
+    },
+    "titel": "Einbauort des G.A.S.-plug",
+    "text": "Einbauort des G.A.S.-plug ist der Zigarettenanzünder am Armaturenbrett.",
+    "widerspricht": "keine Angaben zum Einbauort des G.A.S.-plug",
+    "autor": "Max",
+    "erstellt": "2026-09-16T18:42:25.664Z",
+    "freigegebenVon": null,
+    "freigegebenAm": null,
+    "ausloeser": {
+      "frage": "den genauen Einbau ort",
+      "antwortAuszug": "Im bereitgestellten Kontext finden sich leider **keine Angaben zum Einbauort des G.A.S.-plug**.\n\nDie Kontexteinträge betreffen andere Produkte (Pro-Finder, WiPro III, BT-connect etc.) – eine belegte Aussage zur Montagehöhe oder Position des G.A.S.-plug ist darin nicht enthalten.\n\nBitte wende dich direkt an den THITRONIK-Support – die können dir die passende Einbauanleitung nennen oderzusenden:\n\n📞 **+49 (0)4351 76744-112**"
+    },
+    "historie": [
+      {
+        "status": "wartet-freigabe",
+        "von": "Max",
+        "am": "2026-09-16T18:42:25.664Z",
+        "begruendung": ""
+      }
+    ]
   }
 ];
