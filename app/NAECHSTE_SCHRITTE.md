@@ -68,24 +68,28 @@ Content-Signal — diese Themen gehören auf Französisch ergänzt.
 
 ---
 
-## Support-Korrekturen — gebaut am 16.09.2026, noch nicht deployt
+## Support-Korrekturen — deployt am 16.09.2026, wartet auf das GitHub-Token
 
 Mitarbeiter können falsche Antworten korrigieren; die Korrektur wird als
 eigener Eintrag per Commit ins Repository geschrieben und wirkt nach dem
 Deploy (Entwurf A in `../docs/07_KORREKTUREN_ENTWUERFE.md`; README-Abschnitt
-„Support-Korrekturen"). Alles ist lokal gebaut und gemessen, aber **nicht
-committet, nicht gepusht**.
+„Support-Korrekturen"). Der Code ist live; `/api/health` meldet
+`korrekturen.speicherKonfiguriert: false`, solange das Token fehlt — Speichern
+antwortet bis dahin mit HTTP 503 im Klartext.
 
-Was noch zu tun ist, bevor es wirkt:
-1. Änderungen sichten, committen, pushen (ein Deploy).
-2. In Netlify `THI_GITHUB_TOKEN` (feingranular, nur dieses Repo, Contents:
-   write) setzen. Ein eigenes Freigabewort ist nicht nötig — das Zugangswort
-   gilt, die Vier-Augen-Regel (Freigeber ≠ Autor) ist die Sicherung.
-3. `/api/health` zeigt danach `korrekturen.speicherKonfiguriert: true`.
-4. Eine Testkorrektur einreichen und die **Deploy-Dauer messen** — sie ist die
-   Latenz bis zur Wirkung und wurde noch nie gemessen.
-5. Sperrliste fachlich gegenlesen: `node netlify/functions/lib/tests.mjs`
-   druckt die 20 gesperrten DE-Artikel im Abschnitt 9.
+**Gemessen: Deploy-Dauer 37 Sekunden** vom Push bis zur Wirkung (kein
+Build-Schritt). Das ist die Latenz einer Korrektur.
+
+Was noch zu tun ist:
+1. In Netlify `THI_GITHUB_TOKEN` setzen (feingranulares Token, nur dieses
+   Repo, Contents: Read and write). Ein eigenes Freigabewort ist nicht nötig —
+   das Zugangswort gilt, die Vier-Augen-Regel (Freigeber ≠ Autor) ist die
+   Sicherung.
+2. `/api/health` zeigt danach `speicherKonfiguriert: true`. Dann eine
+   Testkorrektur einreichen — das ist der erste echte Commit aus der Function.
+3. Sperrliste im Alltag beobachten: `node netlify/functions/lib/tests.mjs`
+   druckt die 20 gesperrten DE-Artikel im Abschnitt 9. Blockt sie zu oft,
+   ist die Lockerung eine Zeile in `lib/korrekturen.mjs`.
 
 Offen geblieben, bewusst: Der Name ist selbst erklärt (kein Login). Wer
 Nachweis braucht, kann Netlify Identity nachrüsten (verfügbar, nicht

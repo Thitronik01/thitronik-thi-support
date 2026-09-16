@@ -238,5 +238,16 @@ trotzdem.
 - `wartet-freigabe` erreicht das Retrieval nicht (Gas-Frage: keine Korrektur im Kontext); nach Freigabe mit Begründung wird sie gefunden.
 - Falsches Freigabewort: 403. Freigabe einer Gas-Korrektur ohne Begründung: 400.
 
-**Nicht gemessen:** Deploy-Dauer (Latenz bis Wirkung) und ein echter Commit
-per GitHub-API — beides braucht das Token in Netlify und einen Push.
+**Deploy-Dauer, gemessen am 16.09.2026:** Push beendet 13:11:47 UTC, neue
+Function live um 13:12:24 UTC — **37 Sekunden** vom Push bis zur Wirkung
+(Polling des Health-Endpunkts alle 10 s, kein Build-Schritt). Das ist die
+Latenz einer Korrektur. Damit ist die Sorge aus Entwurf A („Minuten") kleiner
+als angenommen; Entwurf B (Blobs) bringt gegenüber 37 s keinen Gewinn mehr.
+
+**Noch nicht gemessen:** ein echter Commit per GitHub-API aus der Function —
+braucht `THI_GITHUB_TOKEN` in Netlify.
+
+**Entscheidungen vom 16.09.2026 (Max):** Commit und Push freigegeben. Kein
+eigenes Freigabewort — das Zugangswort gilt auch für Freigaben, dafür
+Vier-Augen-Regel (Freigeber ≠ Autor). Sperrliste bleibt auf dem gemessenen
+Stand (20 DE-Artikel), Lockerung bei Bedarf.
