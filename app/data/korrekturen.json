@@ -70,5 +70,35 @@
         "begruendung": "das 2g netz wurde von diesem Provider abgeschaltet"
       }
     ]
+  },
+  {
+    "id": "2026-09-16-sunrise-2g-abschaltung-61d6",
+    "status": "ungeprueft",
+    "sicherheitsrelevant": false,
+    "sicherheitsgrund": null,
+    "lang": "de",
+    "bezug": {
+      "route": "/de/mobilfunk-sim",
+      "anchor": "schnellcheck"
+    },
+    "titel": "Sunrise 2g abschaltung",
+    "text": "Sunrise können wir nicht mehr empfehlen als funktionierenden Provider für den Pro-Finder. Darunter fallen Sunrise Prepaid Airbag, Sunrise Prepaid Unlimited. Beide haben aufgrund der Abschaltung des 2-G-Netzes keine Verbindung mehr.",
+    "widerspricht": "Sunrise Prepaid-Airbag können wir empfehlen. \nSunrise Prepaid Unlimited können wir empfehlen.",
+    "autor": "Max",
+    "erstellt": "2026-09-16T16:51:44.955Z",
+    "freigegebenVon": null,
+    "freigegebenAm": null,
+    "ausloeser": {
+      "frage": "Kann ich einem Kunden den Provider Sunrise empfelen?",
+      "antwortAuszug": "## Empfehlung zu Sunrise für den Pro-Finder\n\nJa, Sunrise kann für den Einsatz in der **Schweiz** empfohlen werden. Die Dokumentation nennt konkret zwei geeignete Tarife:\n\n- **Sunrise Prepaid airbag**\n- **Sunrise Prepaid Unlimited**\n\nBeide sind laut FAQ als funktionierend dokumentiert.\n\n---\n\n### Wichtige Hinweise für die Einrichtung\n\n1. **Guthaben-Abfragecode** für Sunrise (CH): `*121#` – dieser muss in der Programmier-SMS korrekt eingetragen werden (nur bei Prepaid).\n2. **Automatische Guthabenabfrage** funktioniert bei Sunrise möglicherweise **nicht** vollständig – das FAQ weist darauf hin, dass die automatisierte Abfrage des Restguthabens bei manchen Anbietern (wie A1 Prepaid) nicht klappt; für Sunrise ist das nicht explizit ausgeschlossen, aber im Zweifel prüfen.\n3. **5G-SIM-Karten** müs"
+    },
+    "historie": [
+      {
+        "status": "ungeprueft",
+        "von": "Max",
+        "am": "2026-09-16T16:51:44.955Z",
+        "begruendung": ""
+      }
+    ]
   }
 ]
