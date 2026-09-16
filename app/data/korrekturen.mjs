@@ -112,7 +112,7 @@ export default [
   },
   {
     "id": "2026-09-16-einbauort-des-g-a-s-plug-5cc5",
-    "status": "wartet-freigabe",
+    "status": "freigegeben",
     "sicherheitsrelevant": true,
     "sicherheitsgrund": "Korrekturtext nennt „GAS\".",
     "lang": "de",
@@ -125,8 +125,8 @@ export default [
     "widerspricht": "keine Angaben zum Einbauort des G.A.S.-plug",
     "autor": "Max",
     "erstellt": "2026-09-16T18:42:25.664Z",
-    "freigegebenVon": null,
-    "freigegebenAm": null,
+    "freigegebenVon": "dennis",
+    "freigegebenAm": "2026-09-16T18:47:18.546Z",
     "ausloeser": {
       "frage": "den genauen Einbau ort",
       "antwortAuszug": "Im bereitgestellten Kontext finden sich leider **keine Angaben zum Einbauort des G.A.S.-plug**.\n\nDie Kontexteinträge betreffen andere Produkte (Pro-Finder, WiPro III, BT-connect etc.) – eine belegte Aussage zur Montagehöhe oder Position des G.A.S.-plug ist darin nicht enthalten.\n\nBitte wende dich direkt an den THITRONIK-Support – die können dir die passende Einbauanleitung nennen oderzusenden:\n\n📞 **+49 (0)4351 76744-112**"
@@ -137,6 +137,12 @@ export default [
         "von": "Max",
         "am": "2026-09-16T18:42:25.664Z",
         "begruendung": ""
+      },
+      {
+        "status": "freigegeben",
+        "von": "dennis",
+        "am": "2026-09-16T18:47:18.546Z",
+        "begruendung": "Einbauort des G.A.S.-plug ist der Zigarettenanzünder am Armaturenbrett"
       }
     ]
   }
