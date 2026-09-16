@@ -1,0 +1,6188 @@
+{
+  "generiert": "2026-09-15",
+  "quelle": "project-data/runtime/wiki/glossary.json (auf DE→FR reduziert)",
+  "hinweis": "protected:true = Schreibweise NIE uebersetzen/normalisieren (Produktnamen). Fuer cross-linguales Retrieval: FR-Query-Begriffe ueber dieses Mapping auf den DE-Kanon heben.",
+  "anzahl_gesamt": 668,
+  "anzahl_echte_fachbegriffe": 200,
+  "begriffe": [
+    {
+      "de": "0001-xxx / Alt-Schema SN40/SN50 — G.A.S.-pro",
+      "fr": "0001-xxx / ancien schéma SN40/SN50 — G.A.S.-pro",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "2. Original-Fahrzeugschlüssel",
+      "fr": "2. Clé du véhicule d'origine",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "2G / 3G / 4G LTE",
+      "fr": "2G/3G/4G LTE",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "3. Funk-Handsender 868",
+      "fr": "3. Télécommande sans fil 868",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "5. BT-connect und App",
+      "fr": "5. BT-connect et poste",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "6. Pro-Finder als Fernsteuerung",
+      "fr": "6. Pro-Finder comme télécommande",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "7. safe.lock, Campingmodus und Originalschlüssel",
+      "fr": "7. safe.lock, mode camping et clé d'origine",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "13,56 MHz",
+      "fr": "13,56 MHz",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "20-poliger Anschlussstecker — Steckerbelegung",
+      "fr": "Connecteur à 20 broches — affectation des broches",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "433 MHz (veraltet)",
+      "fr": "433 MHz (obsolète)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "0823-xxx — WiPro III",
+      "fr": "0823-xxx — WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "868 MHz",
+      "fr": "868 MHz",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "868,35 MHz",
+      "fr": "868,35 MHz",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "1011-xxx — C.A.S. III",
+      "fr": "1011-xxx — CAS III",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "1050-xxx — WiPro III safe.lock",
+      "fr": "1050-xxx — WiPro III safe.lock",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "1290-xxx — Bluetooth-Vernetzungsmodul",
+      "fr": "1290-xxx — module Bluetooth de mise en réseau",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "5298-xxx — Ford safe.lock Set",
+      "fr": "5298-xxx — Ford safe.lock Ensemble",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "5299-xxx — NFC Modul",
+      "fr": "5299-xxx — NFC Modul",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "5458-xxx — Sprinter / Crafter / TGE Set",
+      "fr": "5458-xxx — Ensemble Sprinter / Crafter / TGE",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "5832-xxx — Renault Master safe.lock Set",
+      "fr": "5832-xxx — Renault Master safe.lock Ensemble",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "6000-xxx — BT-connect",
+      "fr": "6000-xxx — BT-connect",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Abfragen",
+      "fr": "Requêtes",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Abschalteinrichtung",
+      "fr": "dispositif de désactivation",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Abschalteinrichtung — Motorstop via Pro-Finder „Kill",
+      "fr": "Dispositif d'arrêt - arrêt du moteur via Pro-Finder « Kill »",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Adria Coral / Matrix (ab Modelljahr 2021) — Wohnmobil-Aufbauhinweis",
+      "fr": "Adria Coral / Matrix (à partir de l'année modèle 2021) — informations sur le montage du camping-car",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarm",
+      "fr": "alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarm abschalten",
+      "fr": "Éteindre l'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarm beenden",
+      "fr": "Fin de l'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarm OUT",
+      "fr": "Alarm OUT",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "glossary_entry",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Alarm stoppen / entschärfen",
+      "fr": "Arrêter/désarmer l'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarm unterbrechen",
+      "fr": "Alarme d'interruption",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmablauf",
+      "fr": "Séquence d'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmanlage",
+      "fr": "système d’alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmausgang (Alarm OUT)",
+      "fr": "Sortie d'alarme (Alarme OUT)",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmdauer (alle Fahrzeuge)",
+      "fr": "Durée de l'alarme (tous les véhicules)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmende (automatisch)",
+      "fr": "Fin d'alarme (automatique)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmlautstärke",
+      "fr": "volume de l’alarme",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmmeldung",
+      "fr": "alerte par notification SMS",
+      "aliasse": [
+        "Alarm-SMS"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmsequenz",
+      "fr": "Séquence d'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmsequenzen",
+      "fr": "Séquences d'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmspeicher",
+      "fr": "Mémoire d'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Alarmsysteme",
+      "fr": "Systèmes d'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alarmzentrale",
+      "fr": "centrale d’alarme",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Alkaline LR03 (AAA)",
+      "fr": "Alcaline LR03 (AAA)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Älteres Modul",
+      "fr": "Module plus ancien",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Android: WLAN-Problem bei Kopplung",
+      "fr": "Android : problème de WiFi lors de l'appairage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernbare Sender",
+      "fr": "émetteurs appairables",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "anlernen",
+      "fr": "appairer",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Anlernen & Funk-System",
+      "fr": "Appairage et système sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernen an WiPro III",
+      "fr": "Appairage avec WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Anlernen in der THITRONIK® App",
+      "fr": "Appairage dans l’application THITRONIK®",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Anlernen, Störungen, Kompatibilität",
+      "fr": "Appairage, perturbations, compatibilité",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernmodus",
+      "fr": "mode d’appairage",
+      "aliasse": [
+        "Lernmodus",
+        "Kopplungsmodus"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Anlernmodus beenden",
+      "fr": "quitter le mode d’appairage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernmodus für Funk-Zubehör",
+      "fr": "mode d’appairage pour accessoires sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernmodus starten",
+      "fr": "démarrer le mode d’appairage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernvorgang",
+      "fr": "processus d’appairage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anlernvorgang — Funk-Zubehör an WiPro III anlernen",
+      "fr": "Processus d’appairage — appairer les accessoires sans fil avec WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Anschluss",
+      "fr": "connexion, raccord, raccordement",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anschluss — Einpolige Abschalteinrichtung",
+      "fr": "Connexion — Dispositif de sectionnement unipolaire",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anschluss — Mehrpolige Abschalteinrichtung (105821)",
+      "fr": "Connexion — Dispositif de déconnexion multipolaire (105821)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anschluss an Alarmanlage",
+      "fr": "Connexion au système d'alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anschluss und Montage",
+      "fr": "Connexion et assemblage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anschlusskabel GBA-I (Zigarettenanzünder)",
+      "fr": "câble de raccordement GBA-I (allume-cigares)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anschlussklemmen bedienen",
+      "fr": "Utiliser les bornes de connexion",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anti-Jamming",
+      "fr": "Anti-Jamming",
+      "aliasse": [
+        "Anti Jamming",
+        "Jamming-Schutz",
+        "Störsenderalarm"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Anti-Jamming-Funktion",
+      "fr": "fonction anti-brouillage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anzahl Codes",
+      "fr": "nombre de codes tournants",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anzahl koppelbarer Geräte",
+      "fr": "nombre d'appareils pouvant être associés",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Anzahl Zielrufnummern",
+      "fr": "nombre de numéros d'appel",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "APP",
+      "fr": "APP",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "App Logo",
+      "fr": "App Logo",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "App-Steuerung",
+      "fr": "pilotage via l’application",
+      "aliasse": [
+        "App Control"
+      ],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Apple Watch / Neue Watch koppeln",
+      "fr": "Associer une Apple Watch / une nouvelle montre",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Artikelnummern-Register",
+      "fr": "Registre des numéros d'article",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Artikelnummern-Register — Komplettverzeichnis aller Thitronik-Produkte",
+      "fr": "Registre des numéros d’article — répertoire complet de tous les produits THITRONIK®",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "attraktives Sicherheitsplus",
+      "fr": "sécurité renforcée",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ausgang",
+      "fr": "sortie",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ausgänge A und B (Pro-Finder)",
+      "fr": "Sorties A et B (Pro-Finder)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Ausrichtung und Montageradius — KRITISCH",
+      "fr": "Alignement et rayon de montage — CRITIQUE",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Aussperrungs-Problematik („Sleep Mode\")",
+      "fr": "Problème de verrouillage (« Sleep Mode »)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Autark-Batterie",
+      "fr": "pile autonome",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Automatisches Wiedereinschalten (ab SN 1286-010 / 1287-010)",
+      "fr": "Redémarrage automatique (à partir du SN 1286-010 / 1287-010)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Back-up Sirene",
+      "fr": "sirène de secours",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Back-up Sirene (Art. 100089)",
+      "fr": "sirène de secours (Art. 100089)",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Back-up Sirene 24 V (Art. 105267)",
+      "fr": "sirène de secours 24 V (Art. 105267)",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Back-up-Sirene mit eingebautem Puffer-Akku",
+      "fr": "sirène de secours avec batterie tampon intégrée",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Backup-Szenarien",
+      "fr": "Scénarios de sauvegarde",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Basisfahrzeug",
+      "fr": "Véhicule de base",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie",
+      "fr": "batterie",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie / CR2032-Pflege",
+      "fr": "Entretien de la batterie / CR2032",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie / Wartung",
+      "fr": "Batterie / Entretien",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie und Wartung",
+      "fr": "Batterie et entretien",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie-Diagnose (LED-Signale beim Auslösen)",
+      "fr": "Diagnostic de la batterie (la LED signale le déclenchement)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie-Themen (Funk-Zubehör)",
+      "fr": "Batteries (accessoires sans fil)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie-Themen (querschnittlich)",
+      "fr": "Thèmes relatifs aux batteries (transversaux)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie-Warnsignal (Zubehör)",
+      "fr": "Signal d'avertissement de batterie (accessoire)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterie-Wechsel",
+      "fr": "Remplacement de la batterie",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batterien & Bauteile",
+      "fr": "Piles et composants",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Batteriestandsanzeige",
+      "fr": "contrôle de l'état des piles",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bedienung via THITRONIK® App (Kill auslösen)",
+      "fr": "Fonctionnement via THITRONIK® App (trigger kill)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Belüftungsfunktion (Vent-check)",
+      "fr": "fonction d’aération (Vent-check)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Besonderheit bei WiPro III safe.lock",
+      "fr": "Particularité de WiPro III safe.lock",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Betriebsarten (Schalterstellungen 0–F)",
+      "fr": "Modes de fonctionnement (positions du commutateur 0 à F)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Betriebsspannung",
+      "fr": "alimentation en tension",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Betriebszustände",
+      "fr": "États de fonctionnement",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Betriebszustände (LED)",
+      "fr": "États de fonctionnement (LED)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Betriebszustände / LED-Anzeigen",
+      "fr": "États de fonctionnement / affichages LED",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Betroffene Fahrzeuge",
+      "fr": "véhicules concernés",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bewegungsmelder",
+      "fr": "détecteur de mouvement",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth",
+      "fr": "Bluetooth",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth / App-Zubehör",
+      "fr": "Accessoires Bluetooth/applications",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth / NFC",
+      "fr": "Bluetooth/NFC",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth / NFC / App",
+      "fr": "Bluetooth/NFC/Application",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth 5.0 Low Energy",
+      "fr": "Bluetooth 5.0 basse consommation",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth-Modul",
+      "fr": "module Bluetooth",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bluetooth-Vernetzungsmodul",
+      "fr": "module de mise en réseau Bluetooth",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "technical",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Bluetooth-Vernetzungsmodul — Smartphone-Steuerung via Bluetooth",
+      "fr": "Module Bluetooth de mise en réseau — commande par smartphone via Bluetooth",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bordcomputer",
+      "fr": "ordinateur de bord",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bordcomputer ausklappen",
+      "fr": "basculer l'ordinateur de bord",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Bordcomputer P201",
+      "fr": "Ordinateur de bord P201",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Brauner Stecker",
+      "fr": "Bouchon marron",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "BT-connect",
+      "fr": "BT-connect",
+      "aliasse": [
+        "Bluetooth-Steuerung",
+        "BT-connect",
+        "BT-connect"
+      ],
+      "domain": "App/Zugang",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "BT-connect — Bluetooth-Modul für WiPro III",
+      "fr": "BT-connect — Module Bluetooth pour WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "BT-connect & Vernetzungsmodul",
+      "fr": "BT-connect et module réseau",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "BT-connect in Kopplungsmodus versetzen",
+      "fr": "Mettez BT-connect en mode appairage",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Butangas",
+      "fr": "butane",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Campingmodus",
+      "fr": "mode camping",
+      "aliasse": [
+        "Camper Mode",
+        "Camping Mode"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CampLock Fingerprint",
+      "fr": "CampLock Fingerprint",
+      "aliasse": [
+        "Finger Print",
+        "Fingerprint"
+      ],
+      "domain": "App/Zugang",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "CAN-Bus",
+      "fr": "bus CAN",
+      "aliasse": [
+        "Can Bus",
+        "CAN Bus",
+        "Canbus"
+      ],
+      "domain": "Fahrzeugelektrik",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CAN-Bus (A-Säule, Beifahrer-Fußraum)",
+      "fr": "CAN-Bus (Montant A, espace pieds passager)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CAN-Bus (Controller Area Network)",
+      "fr": "CAN-Bus (réseau de zone de contrôleur)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CAN-Bus Kabelfarben (WiPro III Seite)",
+      "fr": "CAN-Bus Couleurs des câbles (WiPro III page)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "CAN-Bus Nutzung (allgemein)",
+      "fr": "CAN-Bus Utilisation (générale)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CAN-Bus Sleep Mode — Kompatibilitätstest (zwingend vor safe.lock-Einbau!)",
+      "fr": "CAN-Bus Sleep Mode — Test de compatibilité (obligatoire avant l'installation de safe.lock !)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CAN-Diagnose",
+      "fr": "Diagnostic CAN",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CAN-H",
+      "fr": "CAN-H",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CAN-H / CAN-L",
+      "fr": "CAN-H / CAN-L",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CAN-High",
+      "fr": "CAN-High",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CAN-Low",
+      "fr": "CAN-Low",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CI-Bus",
+      "fr": "bus CI",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CO (Kohlenmonoxid)",
+      "fr": "CO (monoxyde de carbone)",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CO-Sensor",
+      "fr": "capteur CO",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CO-Sensor — Kohlenmonoxid-Zusatzsensor",
+      "fr": "capteur CO — Capteur de monoxyde de carbone auxiliaire",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CO-Sensor (Art. 100433)",
+      "fr": "capteur CO (Art. 100433)",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CO-Sensor für G.A.S.-pro und G.A.S.-pro III",
+      "fr": "CO-Sensor für G.A.S.-pro und G.A.S.-pro III",
+      "aliasse": [
+        "CO Sensor für G.A.S.-pro und G.A.S.-pro III"
+      ],
+      "domain": "Gas/Sensorik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "CO-Sensor G.A.S.-pro",
+      "fr": "capteur CO G.A.S.-pro",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "CR123A",
+      "fr": "CR123A",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "CR2032",
+      "fr": "CR2032",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Dachluke",
+      "fr": "lanterneau",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Dachluken",
+      "fr": "lanterneaux",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Deadlock vorausgesetzt",
+      "fr": "fonction Deadlock requise",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Deadlock-Hinweis",
+      "fr": "Avis de blocage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Detektierte Gase",
+      "fr": "Gaz détectés",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "DIN EN 50194-1 / DIN EN 50194-2",
+      "fr": "DIN EN 50194-1 / DIN EN 50194-2",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "DIP-Ermittlung (6 Kombinationen)",
+      "fr": "Détermination DIP (6 combinaisons)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "DIP-Schalter",
+      "fr": "interrupteur DIP",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "DIP-Schalter — Grundlagen",
+      "fr": "Commutateurs DIP – Bases",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "DIP-Schalter (SW1–SW8)",
+      "fr": "Commutateur DIP (SW1–SW8)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "DIP-Schalter Einstellungen (Rückseite des Gehäuses)",
+      "fr": "Paramètres des commutateurs DIP (arrière du boîtier)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Easy-Add",
+      "fr": "Easy-Add",
+      "aliasse": [
+        "Easy-Add"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "context_glossary",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Easy-Add (1.0 / 2.0 / 3.0)",
+      "fr": "Easy-Add (1.0 / 2.0 / 3.0)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Easy-Add 1.0",
+      "fr": "Easy-Add 1.0",
+      "aliasse": [
+        "Easy-Add 1.0",
+        "Easy-Add per Handsender"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Easy-Add 2.0",
+      "fr": "Easy-Add 2.0",
+      "aliasse": [
+        "Easy-Add 2.0",
+        "Easy-Add per CAN"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Easy-Add 3.0",
+      "fr": "Easy-Add 3.0",
+      "aliasse": [
+        "App-Anlernen",
+        "Easy-Add 3.0"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Easy-Add-Funktion",
+      "fr": "fonction Easy-Add",
+      "aliasse": [
+        "Easy-Add Funktion",
+        "Easy-Add Funktion"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ECE-Regelung R10",
+      "fr": "Règlement ECE R10",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Eckernförde Wallpaper",
+      "fr": "Eckernförde Wallpaper",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Einbaurichtzeiten",
+      "fr": "temps de montage estimés",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Eingang",
+      "fr": "entrée",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Eingangsspannung",
+      "fr": "tension d'entrée",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Einordnung zum älteren Vernetzungsmodul",
+      "fr": "Classement vers l'ancien module réseau",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Einschaltsequenz (G.A.S.-pro III CO)",
+      "fr": "Séquence de mise en marche (G.A.S.-pro III CO)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Elektrischer Anschluss",
+      "fr": "Connexion électrique",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Elektrosmog",
+      "fr": "champs électromagnétiques",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Empfangene SMS-Nachrichtentypen",
+      "fr": "Types de SMS reçus",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Empfehlung: Anlernen vor der Montage",
+      "fr": "Recommandation : appairer avant l’installation",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Empfindlichkeit",
+      "fr": "sensibilité",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "EMV-geprüft",
+      "fr": "Testé CEM",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "entriegeln",
+      "fr": "déverrouiller",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "entschärfen",
+      "fr": "désarmer le système d’alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Erkennbare Gase",
+      "fr": "Gaz détectables",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ersteinrichtung über THITRONIK® App",
+      "fr": "Configuration initiale via THITRONIK® App",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Erweiterte App-Funktionen",
+      "fr": "Fonctionnalités avancées de l'application",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Erweiterte Pro-Finder-Befehle (interne Matrix SW 9.1 bis 10.0.0)",
+      "fr": "Commandes Pro-Finder étendues (logiciel matriciel interne 9.1 à 10.0.0)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Eura-Mobil (Teilintegriert)",
+      "fr": "Eura-Mobil (partiellement intégré)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Externe GSM-Antenne",
+      "fr": "antenne GSM externe",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Externe GSM-Antenne 2G,3G,4G",
+      "fr": "Externe GSM-Antenne 2G,3G,4G",
+      "aliasse": [
+        "Externe GSM Antenne 2G",
+        "3G",
+        "4G"
+      ],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Externe LED G.A.S.-pro",
+      "fr": "LED externe G.A.S.-pro",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Externer Zusatzsensor",
+      "fr": "Capteur supplémentaire externe",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug",
+      "fr": "véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug stilllegen",
+      "fr": "immobiliser le véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug wiederfinden",
+      "fr": "Localiser le véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug-Blinker",
+      "fr": "clignotants du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug-Elektrik & Anschlüsse",
+      "fr": "Électricité et connexions du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug-Kabel",
+      "fr": "câble véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeug-Übersicht nach Hersteller",
+      "fr": "Aperçu des véhicules par constructeur",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugeinstellungen aktivieren",
+      "fr": "Activer les paramètres du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugfunkschlüssel",
+      "fr": "clé radio du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeuggrößen-Empfehlung (G.A.S.-pro III CO)",
+      "fr": "Recommandation de taille de véhicule (G.A.S.-pro III CO)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeughülle",
+      "fr": "carrosserie du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugkompatibilität — Übersichtsmatrix & DIP-Grundlagen",
+      "fr": "Compatibilité des véhicules — Matrice de présentation et principes de base du DIP",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugortung",
+      "fr": "localisation du véhicule",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugprofil CAN",
+      "fr": "profil CAN du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugseiten",
+      "fr": "côtés du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "fahrzeugseitige",
+      "fr": "à bord du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugseitige Einstellung",
+      "fr": "Réglage côté véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "fahrzeugseitige Sicherheitslücke",
+      "fr": "faille de sécurité à bord du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugspezifika",
+      "fr": "Caractéristiques du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugspezifische Kabelfarben (zu trennende Zündleitung)",
+      "fr": "Couleurs de câbles spécifiques au véhicule (câble d'allumage à séparer)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fahrzeugtypen ohne nutzbare Hupe",
+      "fr": "Types de véhicules sans klaxon utilisable",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "FAQ Master — Alle häufigen Fragen auf einen Blick",
+      "fr": "FAQ Master — Aperçu de toutes les questions fréquemment posées",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fehlalarm-Behebung: Sensor freibrennen",
+      "fr": "Correction de fausse alarme : capteur grillé",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fehlalarmsicher",
+      "fr": "protection fausses alertes",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fehlerbehebung nach „Kill\" (Reset-Prozedur)",
+      "fr": "Dépannage après \"Kill\" (procédure de réinitialisation)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fehlerbild",
+      "fr": "symptôme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fehlermodus",
+      "fr": "Mode de défaillance",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fensterrahmen-Modell",
+      "fr": "modèle d'encadrement de baie",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fernbedienung",
+      "fr": "télécommande radio",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "fernsteuerbar",
+      "fr": "pilotage à distance",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fernstilllegung",
+      "fr": "immobilisation du véhicule à distance",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Festeinbau",
+      "fr": "montage fixe",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fiat Ducato",
+      "fr": "Fiat Ducato",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Fiat Talento (2014–2021)",
+      "fr": "Fiat Talento (2014-2021)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Firmen Gelände Thitronik",
+      "fr": "site de l’entreprise THITRONIK®",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Ford transit",
+      "fr": "Ford transit",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Ford Transit / Tourneo Custom / Transit Custom (2024+)",
+      "fr": "Ford Transit / Tourneo personnalisé / Transit personnalisé (2024+)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ford Transit 6. Generation (2006–2013)",
+      "fr": "Ford Transit 6e génération (2006-2013)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ford Transit 7. Generation (2016–2019)",
+      "fr": "Ford Transit 7e génération (2016-2019)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ford Transit 7. Generation Facelift (2019–07/2024)",
+      "fr": "Ford Transit 7e génération Facelift (2019-07/2024)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ford Transit 7. Generation früh (2014–2015)",
+      "fr": "Ford Transit 7e génération précoce (2014-2015)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Freizeitfahrzeuge",
+      "fr": "véhicules de loisirs",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Fremdmagnetfeld-Schutz",
+      "fr": "protection contre les champs magnétiques étrangers",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Frequenzband",
+      "fr": "bande de fréquences",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk",
+      "fr": "émission radio",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Alarmsystem",
+      "fr": "système d’alarme sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Fernbedienungen",
+      "fr": "télécommandes sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Gaswarner",
+      "fr": "détecteur de gaz sans fil",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Handsender",
+      "fr": "télécommande sans fil",
+      "aliasse": [
+        "Handsender"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "autolink_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Funk-Handsender 868",
+      "fr": "télécommande sans fil 868",
+      "aliasse": [
+        "Funk Handsender 868"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Handsender 868 — Fernbedienung für WiPro III",
+      "fr": "Télécommande sans fil 868 — télécommande pour WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Funk-Integration mit WiPro III",
+      "fr": "Intégration sans fil avec WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife",
+      "fr": "boucle de câble sans fil",
+      "aliasse": [
+        "Kabelschleife"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Funk-Kabelschleife 868",
+      "fr": "boucle de câble sans fil 868",
+      "aliasse": [
+        "Funk Kabelschleife 868"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 — Außensicherung für mobile Güter",
+      "fr": "Boucle de câble sans fil 868 — protection extérieure des objets mobiles",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 (schwarz)",
+      "fr": "boucle de câble sans fil 868 (noire)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 (schwarz) 2,5 m Kabellänge",
+      "fr": "boucle de câble sans fil 868 (noire) longueur de câble 2,5 m longueur de câble 5 m",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 (schwarz) XL 5 m Kabellänge",
+      "fr": "boucle de câble sans fil 868 XL (noire) longueur de câble 5 m",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 (weiß)",
+      "fr": "boucle de câble sans fil 868 (blanche)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 (weiß) 2,5 m Kabellänge",
+      "fr": "boucle de câble sans fil 868 (blanche) longueur de câble 2,5 m longueur de câble 5 m",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Kabelschleife 868 (weiß) XL 5 m Kabellänge",
+      "fr": "boucle de câble sans fil 868 XL (blanche) longueur de câble 5 m",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Komponenten",
+      "fr": "composants sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt",
+      "fr": "contact magnétique sans fil",
+      "aliasse": [
+        "Magnetkontakt"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Funk-Magnetkontakt 868",
+      "fr": "contact magnétique sans fil 868",
+      "aliasse": [
+        "Funk Magnetkontakt 868"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 — Montage und Betrieb",
+      "fr": "Contact magnétique sans fil 868 — installation et fonctionnement",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 (schwarz)",
+      "fr": "contact magnétique sans fil 868 (noir)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 (schwarz) für Garagenklappen",
+      "fr": "contact magnétique sans fil 868 (noir) pour trappes de garage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 (schwarz) für Öffnungen außer Garagenklappen",
+      "fr": "contact magnétique sans fil 868 (noir) pour ouvertures hors trappes de garage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 (weiß)",
+      "fr": "contact magnétique sans fil 868 (blanc)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 (weiß) für Garagenklappen",
+      "fr": "contact magnétique sans fil 868 (blanc) pour trappes de garage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakt 868 wasserdicht",
+      "fr": "contact magnétique sans fil 868 étanche",
+      "aliasse": [
+        "Funk Magnetkontakt 868 wasserdicht"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Magnetkontakte",
+      "fr": "contact magnétique sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Rauchmelder",
+      "fr": "détecteur de fumée sans fil",
+      "aliasse": [
+        "T.S.A.",
+        "TSA"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "autolink_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Funk-Reichweite (Freifeld)",
+      "fr": "autonomie radio (champ libre)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Verbindung",
+      "fr": "connexion sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Wassermelder",
+      "fr": "détecteur d’eau sans fil",
+      "aliasse": [
+        "Wassermelder"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "autolink_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Funk-Wassermelder 868",
+      "fr": "détecteur d’eau sans fil 868",
+      "aliasse": [
+        "Funk Wassermelder 868"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Wassermelder 868 — Kabelloser Wassermelder",
+      "fr": "détecteur d’eau sans fil 868",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Zubehör (868 MHz)",
+      "fr": "accessoires sans fil (868 MHz)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Zubehör (alle 868 MHz, CR2032, max. 75 m)",
+      "fr": "accessoires sans fil (868 MHz)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funk-Zubehör (Magnetkontakte, Handsender)",
+      "fr": "Accessoires sans fil (contacts magnétiques, télécommandes)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funkmodule",
+      "fr": "modules radio",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funksignale",
+      "fr": "signaux radio",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funkstandards & Schnittstellen",
+      "fr": "Normes et interfaces radio",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funktion „Türentriegelung beim Aussteigen\" muss aktiviert sein",
+      "fr": "la fonction « déverrouillage des portes à la sortie » doit être activée",
+      "aliasse": [
+        "Frequenz"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funktionstest",
+      "fr": "Test fonctionnel",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Funktionsweise",
+      "fr": "Comment ça marche",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.",
+      "fr": "G.A.S.",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "G.A.S. — Standalone-Gaswarner mit interner Sirene",
+      "fr": "G.A.S. — Détecteur de gaz autonome avec sirène interne",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-connect",
+      "fr": "G.A.S.-connect",
+      "aliasse": [
+        "G.A.S.-connect",
+        "G.A.S.-connect"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "G.A.S.-connect — Funk-Gaswarner für WiPro III",
+      "fr": "G.A.S.-connect — alarme de gaz sans fil pour WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-plug",
+      "fr": "G.A.S.-plug",
+      "aliasse": [
+        "G.A.S.-plug"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "G.A.S.-plug „all in one“",
+      "fr": "G.A.S.-plug „all in one“",
+      "aliasse": [
+        "G.A.S.-plug „all in one“"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-plug „all in one\" — Mobiler Gaswarner",
+      "fr": "G.A.S.-plug « tout en un » — détecteur de gaz mobile",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-pro",
+      "fr": "G.A.S.-pro",
+      "aliasse": [
+        "G.A.S.-pro",
+        "G.A.S.-pro",
+        "G.A.S.-pro"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "G.A.S.-pro (ältere Serie) — Gas- und CO-Alarm",
+      "fr": "G.A.S.-pro (anciennes séries) — Alarme gaz et CO",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-pro III",
+      "fr": "G.A.S.-pro III",
+      "aliasse": [
+        "G.A.S.-pro III",
+        "G.A.S.-pro III"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "G.A.S.-pro III — Gaswarner für Freizeitfahrzeuge",
+      "fr": "G.A.S.-pro III — Avertisseur de gaz pour véhicules récréatifs",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-pro III (Propan, Butan, Narkosegase)",
+      "fr": "G.A.S.-pro III (propane, butane, gaz anesthésiques)",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-pro III CO",
+      "fr": "G.A.S.-pro III CO",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "G.A.S.-pro III Gaswarner",
+      "fr": "alarme gaz G.A.S.-pro III",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Garmin Smartwatches",
+      "fr": "Montres intelligentes Garmin",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gas-Zusatzsensoren",
+      "fr": "Capteurs de gaz supplémentaires",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gassensor",
+      "fr": "détecteur de gaz",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gastro- und Ortsbeispiele aus den Unterlagen",
+      "fr": "Exemples gastronomiques et locaux tirés des documents",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gaswarner",
+      "fr": "détecteur de gaz",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gaswarner & Sensoren",
+      "fr": "alarmes gaz et capteurs",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gaswarner-Familie",
+      "fr": "famille d’alarmes gaz",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gaswarnsystem",
+      "fr": "système de détection de gaz",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gaswarnung & Rauchmelder",
+      "fr": "Avertisseur de gaz et détecteur de fumée",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Gehäuse Schutzklasse",
+      "fr": "Classe de protection du boîtier",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Geofencing",
+      "fr": "Geofencing",
+      "aliasse": [
+        "Geo-Fencing",
+        "Geofancing",
+        "virtueller Zaun"
+      ],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Glossar — Fachbegriffe im Thitronik-System",
+      "fr": "Glossaire — termes techniques du système THITRONIK®",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "GNSS (Global Navigation Satellite System)",
+      "fr": "GNSS (Système mondial de navigation par satellite)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "GPS (optional)",
+      "fr": "GPS (en option)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "GPS-Antenne (optional)",
+      "fr": "Antenne GPS (en option)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "GPS-pro",
+      "fr": "GPS-Pro",
+      "aliasse": [
+        "GPS pro"
+      ],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Grauer Stecker",
+      "fr": "Prise grise",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Großer Stecker (Bordcomputer-Rückseite) — CAN + Blinker",
+      "fr": "Gros connecteur (arrière de l'ordinateur de bord) — Voyants CAN +",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Grundanforderungen an die SIM",
+      "fr": "Exigences de base pour la carte SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Grüner Stecker",
+      "fr": "Prise verte",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Grüner Stecker — ZV",
+      "fr": "Connecteur vert — ZV",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "GSM",
+      "fr": "GSM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "GSM (optional)",
+      "fr": "GSM (en option)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "GSM/GPS-Kombimodul",
+      "fr": "Module mixte GSM/GPS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Haltbarkeit CO-Sensoren",
+      "fr": "Durée de vie des capteurs CO",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Hardware-Versionen im Vergleich",
+      "fr": "Comparaison des versions matérielles",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Heckgarage",
+      "fr": "garages arrière",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Hinweis zur Funktionsweise",
+      "fr": "Remarque sur son fonctionnement",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Hinweis: CAN-Bus Türen",
+      "fr": "Remarque : CAN-Bus portes",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Historischer Kontext (C.A.S. III)",
+      "fr": "Contexte historique (C.A.S. III)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Hupe",
+      "fr": "Avertisseur sonore",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Hupe (Lenksäule)",
+      "fr": "Klaxon (colonne de direction)",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Hymer (ML-T, Grand Canyon etc.)",
+      "fr": "Hymer (ML-T, Grand Canyon, etc.)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Icon App Control",
+      "fr": "icône App Control",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Batterie",
+      "fr": "icône batterie",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Butangas",
+      "fr": "icône butane",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Can-Bus",
+      "fr": "icône bus CAN",
+      "aliasse": [
+        "icon Can Bus"
+      ],
+      "domain": "Fahrzeugelektrik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Icon ECE R10",
+      "fr": "icône ECE R10",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Fahrzeugortung",
+      "fr": "icône localisation du véhicule",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Icon Fahrzeugstilllegen",
+      "fr": "icône immobilisation du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Funk",
+      "fr": "icône sans fil",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Icon Geofencing",
+      "fr": "icône Geofencing",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Icon GPS",
+      "fr": "icône GPS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon KO-Gas",
+      "fr": "icône gaz KO",
+      "aliasse": [
+        "icon KO Gas"
+      ],
+      "domain": "Gas/Sensorik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Kohlenmonoxid",
+      "fr": "icône monoxyde de carbone",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon Propangas",
+      "fr": "icône propane",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "icon.safe.lock",
+      "fr": "icon.safe.lock",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "IGN-Eingang (Ignition)",
+      "fr": "Entrée IGN (Allumage)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "ILS-LED-Scheinwerfer",
+      "fr": "Phares ILS LED",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Im Anlernmodus",
+      "fr": "En mode d’appairage",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Im Normalbetrieb",
+      "fr": "En fonctionnement normal",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Inhalt des Statusberichts",
+      "fr": "contenu du rapport d’état",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "integrierter Sirene",
+      "fr": "sirène intégrée",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ISO 14443-A",
+      "fr": "OIN 14443-A",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Iveco",
+      "fr": "Ivéco",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "iveco daily",
+      "fr": "iveco daily",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Iveco Daily 4×4 (MJ 2021) — ZV-Entriegelung blockiert",
+      "fr": "Iveco Daily 4×4 (MY 2021) — Déverrouillage ZV bloqué",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Iveco Daily Euro 4 (2006–2011)",
+      "fr": "Iveco Daily Euro 4 (2006-2011)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Iveco Daily Euro 5 und neuer (2011–2024)",
+      "fr": "Iveco Daily Euro 5 et plus récent (2011-2024)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Jamming",
+      "fr": "Jamming",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "K.O.- / Narkosegas",
+      "fr": "Gaz KO / anesthésiants",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss",
+      "fr": "Connexion par câble",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (Ford Transit 2019+)",
+      "fr": "Connexion par câble (Ford Transit 2019+)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (safe.lock, Art. 105832)",
+      "fr": "Connexion par câble (safe.lock, Art. 105832)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (safe.lock, Set 105458 ab SN 5458-001)",
+      "fr": "Connexion par câble (safe.lock, set 105458 à partir de SN 5458-001)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (Set 105458)",
+      "fr": "Connexion par câble (jeu 105458)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (WiPro III safe.lock, ab SN 1050-046)",
+      "fr": "Connexion par câble (WiPro III safe.lock, à partir du SN 1050-046)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (WiPro III safe.lock, Art. 101050)",
+      "fr": "Connexion par câble (WiPro III safe.lock, Art. 101050)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss (WiPro III safe.lock)",
+      "fr": "Connexion par câble (WiPro III safe.lock)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Kabelanschluss Bordcomputer (Stand 01/2026)",
+      "fr": "Connexion par câble ordinateur de bord (à partir de 01/2026)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kabelbaum",
+      "fr": "Faisceau de câbles",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Keine Auswertung orig. Funk-Fernbedienung",
+      "fr": "Pas d'évaluation Télécommande radio orig.",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "KeyCard",
+      "fr": "KeyCard",
+      "aliasse": [
+        "NFC-Karte"
+      ],
+      "domain": "App/Zugang",
+      "typ": "accessory",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "KeyStrap",
+      "fr": "KeyStrap",
+      "aliasse": [
+        "NFC-Armband"
+      ],
+      "domain": "App/Zugang",
+      "typ": "accessory",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "KeyStrap-Varianten",
+      "fr": "KeyStrap variantes",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "KeyTag",
+      "fr": "KeyTag",
+      "aliasse": [
+        "NFC-Anhänger"
+      ],
+      "domain": "App/Zugang",
+      "typ": "accessory",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Kill-Befehl in der THITRONIK® App einrichten",
+      "fr": "Configurez la commande kill dans le THITRONIK® App",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Kill-Funktion",
+      "fr": "fonction Kill",
+      "aliasse": [
+        "Fahrzeugstilllegung",
+        "Kill Funktion",
+        "Motorstop"
+      ],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Kill-Funktion (Motorabschaltung)",
+      "fr": "fonction Kill (arrêt moteur)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Klappschlüssel",
+      "fr": "clé pliante",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Klemme 15",
+      "fr": "borne 15",
+      "aliasse": [
+        "Zuendungsplus",
+        "Zündungsplus"
+      ],
+      "domain": "Fahrzeugelektrik",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Klemme 15 (Kl. 15, „Zündungsplus\")",
+      "fr": "borne 15 (Kl. 15, « Allumage plus »)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Klemme 30",
+      "fr": "borne 30",
+      "aliasse": [
+        "Dauerplus"
+      ],
+      "domain": "Fahrzeugelektrik",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Klemme 30 (Kl. 30, „Dauerplus\")",
+      "fr": "borne 30 (Kl. 30, « plus permanent »)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Klemme 31",
+      "fr": "borne 31",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "context_glossary",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Klemme 31 (Kl. 31, „Masse\" / GND)",
+      "fr": "borne 31 (Kl. 31, \"Masse\" / GND)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Knaus-Aufbauten (MAN/Crafter-Basis)",
+      "fr": "Carrosseries Knaus (base MAN/Crafter)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "KO-Gase",
+      "fr": "gaz narcotiques",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "KO-Gase / Narkosegase",
+      "fr": "Gaz KO / gaz anesthésiques",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Kohlenmonoxid",
+      "fr": "monoxyde de carbone",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kombi-Instrument-Fehlerbild nach Einbau",
+      "fr": "Modèle d'erreur du groupe d'instruments après l'installation",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Komfortsteuerung / Memory-Sitze",
+      "fr": "Contrôle confort / sièges à mémoire",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kompatibilität — Mindest-Softwareversion",
+      "fr": "Compatibilité — Version minimale du logiciel",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kompatible Fahrzeuge",
+      "fr": "Véhicules compatibles",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Konformitätserklärung",
+      "fr": "Déclaration de conformité",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Konnektivität",
+      "fr": "Connectivité",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "kopiersichere",
+      "fr": "impossible à copier",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Koppelbares Funk-Zubehör",
+      "fr": "accessoires sans fil appairables",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Koppelmodus",
+      "fr": "mode d’appairage",
+      "aliasse": [
+        "Bluetooth-Koppeln",
+        "Pairing-Modus"
+      ],
+      "domain": "App/Zugang",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "koppeln",
+      "fr": "appairer",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kopplung — Troubleshooting",
+      "fr": "Couplage — Dépannage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kopplung (Pairing) mit Smartphone/Smartwatch",
+      "fr": "Appairage avec un smartphone/smartwatch",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kritische Besonderheit",
+      "fr": "Particularité critique",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kritische Einschränkung",
+      "fr": "Limitation critique",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Kritischer Einbauhinweis",
+      "fr": "Conseils d'installation critiques",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Landstrom",
+      "fr": "Électricité de quai",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Lautstärke",
+      "fr": "volume sonore",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "LED-Zustände",
+      "fr": "États des voyants",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Logo Classic",
+      "fr": "Logo Classic",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Logo White",
+      "fr": "Logo White",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Lüftungsfunktion",
+      "fr": "fonction d’aération",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "MAN TGE",
+      "fr": "MAN TGE",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Masternummer",
+      "fr": "numéro maître",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Masternummer (Vertragskarte):",
+      "fr": "numéro maître (carte contractuelle) :",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Masternummer + autorisierte Nummer (Vertragskarte):",
+      "fr": "numéro maître + numéro autorisé (carte contractuelle) :",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Masternummer als Smartphone + nicht autorisierte Nummer (Vertragskarte):",
+      "fr": "numéro maître comme smartphone + numéro non autorisé (carte contractuelle) :",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Max. 100 Sender",
+      "fr": "100 émetteurs max.",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Mercedes Benz",
+      "fr": "Mercedes Benz",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "mercedes Benz Vito",
+      "fr": "mercedes Benz Vito",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Mercedes Benz Vito W447 (2014–06/2023)",
+      "fr": "Mercedes Benz Vito W447 (2014-06/2023)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Mercedes Sprinter",
+      "fr": "Mercedes Sprinter",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "candidate",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006–2018)",
+      "fr": "Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006-2018)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Mercedes Sprinter T1N (bis 2006)",
+      "fr": "Mercedes Sprinter T1N (jusqu'en 2006)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Mercedes Sprinter VS30 (BR907/910, ab 2018)",
+      "fr": "Mercedes Sprinter VS30 (BR907/910, à partir de 2018)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Micro-SIM / Nano-SIM",
+      "fr": "Micro-SIM/Nano-SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Mifare DESFire EV2",
+      "fr": "Mifare DESFire EV2",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Mindest-Seriennummer / Software",
+      "fr": "Numéro de série/logiciel minimum",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Mindest-Seriennummern für App-Basisfunktionen",
+      "fr": "Numéros de série minimum pour les fonctions de base de l’application",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Mobilfunk & SIM-Karten — Pro-Finder, App und Smartphone-Einstellungen",
+      "fr": "Communications mobiles et cartes SIM — Pro-Finder, paramètres de l'application et du smartphone",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Modularstecker",
+      "fr": "Connecteur modulaire",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Montage und Anschluss",
+      "fr": "Assemblage et connexion",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Montageadapter",
+      "fr": "adaptateur de montage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Montageadapter (schwarz)",
+      "fr": "Adaptateur de montage (noir)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Montageadapter (weiß)",
+      "fr": "Adaptateur de montage lot de 2 (blanc)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Montageadapter für T.S.A.",
+      "fr": "adaptateur de montage pour T.S.A.",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Montageort",
+      "fr": "Lieu d'installation",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Montageort Zentrale",
+      "fr": "Emplacement d'installation central",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Netzteil GBA-I",
+      "fr": "Bloc d’alimentation GBA-I",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Neue Kabelfarben ab MJ 2025",
+      "fr": "Nouvelles couleurs de câbles à partir de MY 2025",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "NFC Modul",
+      "fr": "NFC Modul",
+      "aliasse": [
+        "KeyCard",
+        "KeyStrap",
+        "KeyTag",
+        "NFC-Lesemodul",
+        "NFC-Modul"
+      ],
+      "domain": "App/Zugang",
+      "typ": "canonical_term",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "NFC Modul — Steuerung der WiPro via NFC",
+      "fr": "NFC Modul — piloter WiPro via NFC",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "NFC Modul & App",
+      "fr": "NFC Modul et application",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "NFC-Tag",
+      "fr": "NFC-Tag",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "NFC-Zubehör (separat erhältlich)",
+      "fr": "Accessoire NFC (vendu séparément)",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "NFC-Zugangsmedium",
+      "fr": "support d’accès NFC",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Niederbatterie-Anzeige",
+      "fr": "Indicateur de batterie faible",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Niederbatterie-Signal der Zentrale",
+      "fr": "Signal de batterie faible du panneau de commande",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "OBD-Stecker",
+      "fr": "Connecteur OBD",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "ohne Keyless-entry",
+      "fr": "sans entrée de clé",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ortung mit GPS",
+      "fr": "Localisation par GPS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Panikalarm",
+      "fr": "alarme panique",
+      "aliasse": [
+        "manueller Alarm",
+        "Panickalarm",
+        "Panikfunktion"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Panikalarmfunktion",
+      "fr": "Fonction d'alarme de panique",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Panikfunktion (Manueller Alarm)",
+      "fr": "Fonction panique (alarme manuelle)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Peugeot Boxer",
+      "fr": "Peugeot Boxer",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "candidate",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "philospohie-heimatverbunden",
+      "fr": "philospohie-heimatverbunden",
+      "aliasse": [
+        "philospohie heimatverbunden"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Piezo-Sirene",
+      "fr": "Sirène piézoélectrique",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Pre-paid / Vertragskarte",
+      "fr": "Carte prépayée/contrat",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Pre-paid mit Guthaben-Abfrage:",
+      "fr": "Prépayé avec consultation du solde :",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder",
+      "fr": "Pro-Finder",
+      "aliasse": [
+        "Pro-Finder"
+      ],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Pro-Finder — GSM/GPS & Telemetrie",
+      "fr": "Pro-Finder — GSM/GPS et télémétrie",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder — GSM/GPS Telemetriemodul",
+      "fr": "Pro-Finder — Module de télémétrie GSM/GPS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder — LED-Zustände",
+      "fr": "Pro-Finder — états de la LED",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder — wichtige Hardware-/Software-Schwellen",
+      "fr": "Pro-Finder — seuils matériels/logiciels importants",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder Einbauort",
+      "fr": "Pro-Finder Emplacement d'installation",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder Erstkonfiguration per SMS",
+      "fr": "Pro-Finder Configuration initiale par SMS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Pro-Finder-Familie",
+      "fr": "Pro-Finder famille",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Programmier-SMS",
+      "fr": "SMS de programmation",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Programmier-SMS Format",
+      "fr": "Programmation du format SMS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Propan / Butan",
+      "fr": "Propane/butane",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Propangas",
+      "fr": "Propane",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Provider-Codes und Pflicht-Einstellungen",
+      "fr": "Codes du fournisseur et paramètres obligatoires",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Provider-Matrix nach Land",
+      "fr": "Matrice des fournisseurs par pays",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "PSM (Parametrierbares Sondermodul)",
+      "fr": "PSM (Module Spécial Paramétrable)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "QZSS",
+      "fr": "QZSS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "RCS / Chat-Funktionen",
+      "fr": "Fonctions RCS/Chat",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Redaktionshinweis",
+      "fr": "Note éditoriale",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Redaktionshinweise für große Wiki-Ausbaustufen",
+      "fr": "Notes éditoriales pour les principales étapes d'expansion du wiki",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Redaktionsregel",
+      "fr": "Règle éditoriale",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Reed-Kontakt-Technologie",
+      "fr": "FMK",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "renault master",
+      "fr": "renault master",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Renault Master (2019–2024) — safe.lock",
+      "fr": "Renault Master (2019-2024) — safe.lock",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Renault Trafic III / Nissan Primastar (ab 2022)",
+      "fr": "Renault Trafic III / Nissan Primastar (à partir de 2022)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Replay-Attacke",
+      "fr": "attaque par rejeu",
+      "aliasse": [
+        "Replay Attacke",
+        "Signalwiederholung"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Replay-Attacken",
+      "fr": "attaques par rejeu",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Replay-Schutz",
+      "fr": "protection anti-rejeu",
+      "aliasse": [
+        "Replayschutz"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Richtlinie 2014/53/EU",
+      "fr": "Directive 2014/53/UE",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Richtwerte für THITRONIK-Komponenten im Standby",
+      "fr": "Valeurs indicatives pour les composants THITRONIK en veille",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "RJ-Kabel",
+      "fr": "Câble RJ",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "RJ10 und RJ11",
+      "fr": "RJ10 et RJ11",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Roaming",
+      "fr": "Itinérance",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Rollcode",
+      "fr": "code tournant",
+      "aliasse": [
+        "Rolling Code"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Rufnummern-Programmierung",
+      "fr": "Programmation du numéro de téléphone",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Rufnummerntypen",
+      "fr": "Types de numéros de téléphone",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sabotage",
+      "fr": "Sabordage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sabotageschutz",
+      "fr": "FMK",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "safe.lock",
+      "fr": "safe.lock",
+      "aliasse": [
+        "safe.lock",
+        "safe.lock"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "safe.lock — DIP-Konfiguration und Upgrade",
+      "fr": "safe.lock — Configuration et mise à niveau DIP",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "safe.lock — Häufige Fragen",
+      "fr": "safe.lock — Questions fréquemment posées",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "safe.lock DIP-Einstellung (klassisch mit Umrüstplatine 101052)",
+      "fr": "safe.lock Réglage DIP (classique avec carte de conversion 101052)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "safe.lock Umrüstplatine",
+      "fr": "safe.lock platine de transformation",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "safe.lock Umrüstplatine — Schlüsselsicherheit für Ducato/Boxer/Jumper",
+      "fr": "Platine de conversion safe.lock — sécurité de clé pour Ducato/Boxer/Jumper",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "safe.lock Upgrade (Nachrüstung bestehender WiPro III)",
+      "fr": "safe.lock Mise à niveau (rénovation d'un WiPro III existant)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "safe.lock-Kompatibilitätstest (ab MJ 2021)",
+      "fr": "safe.lock test de compatibilité (à partir de MY 2021)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schaltersperre",
+      "fr": "verrouillage de l’interrupteur",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schaltstrom",
+      "fr": "Courant de commutation",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Scharf-/Unscharfschalten — Signale",
+      "fr": "Signaux d’armement/de désarmement",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "schärfen",
+      "fr": "armer le système d’alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schärfen/Entschärfen",
+      "fr": "armement/désarmement",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "scharfschalten",
+      "fr": "armer le système d’alarme",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "manual_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Schleifring",
+      "fr": "Bague collectrice",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Schlüsselstellung — Alarm vs. Aufladen",
+      "fr": "Position clé – Alarme ou charge",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schritt 1: Fahrzeugtyp einstellen",
+      "fr": "Étape 1 : Définir le type de véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schritt 2: Umrüstplatine in den Fahrzeugschlüssel einsetzen",
+      "fr": "Étape 2 : insérer la platine de conversion dans la clé du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schritt 2: Zubehör anlernen",
+      "fr": "Étape 2 : appairer les accessoires",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schritt 3: Anschluss an Fahrzeugsysteme",
+      "fr": "Étape 3 : Connexion aux systèmes du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schritt 3: Umrüstplatinen anlernen und löschen",
+      "fr": "Étape 3 : appairer et supprimer les platines de conversion",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schritt 4: CAN-Bus Diagnose",
+      "fr": "Étape 4 : CAN-Bus Diagnostic",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Schwerpunkt-Luecken aus dem aktuellen Ausbau",
+      "fr": "lacunes prioritaires de l’extension actuelle",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sendeeinheit",
+      "fr": "FMK",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sendefrequenz",
+      "fr": "Fréquence d’émission",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sendeimpuls",
+      "fr": "FMK",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sendeleistung",
+      "fr": "puissance d´émission",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Senderbatterie",
+      "fr": "Batterie de l'émetteur",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sensor-Lebensdauer",
+      "fr": "Durée de vie du capteur",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sensor-Platzierung",
+      "fr": "Emplacement du capteur",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sensoreingänge",
+      "fr": "Entrées pour capteur",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sensoren",
+      "fr": "Capteurs",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sensorfehler",
+      "fr": "Erreur de capteur",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Serviceklappe",
+      "fr": "Trappe de service",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sicherheit durch Wechselcode",
+      "fr": "sécurité grâce à des codes tournants",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sicherheit im Reisemobil",
+      "fr": "Sécurité dans les camping-cars",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sicherheitslücke",
+      "fr": "Faille de sécurité",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sicherheitstechnik für Freizeitfahrzeuge",
+      "fr": "technique de sécurité pour véhicules de loisirs",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SIM-Anforderungen nach Pro-Finder-Generation",
+      "fr": "Exigences SIM selon la génération Pro-Finder",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "SIM-Format",
+      "fr": "Format SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SIM-Karte",
+      "fr": "carte SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SIM-Karte — Anforderungen",
+      "fr": "Exigences de la carte SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SIM-Karten",
+      "fr": "cartes SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SIM-PIN",
+      "fr": "Code PIN de la carte SIM",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Sirenen / Hupen / Verteiler",
+      "fr": "Sirènes / klaxons / distributeurs",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sirenen & Hupen",
+      "fr": "Sirènes et klaxons",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sirenen und Hupen — Akustische Alarmmittel",
+      "fr": "Sirènes et klaxons — moyens d'alarme acoustiques",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sirenen, Hupen, Ausgabe",
+      "fr": "Sirènes, klaxons, sortie",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sleep Mode",
+      "fr": "Sleep Mode",
+      "aliasse": [
+        "Ruhemodus",
+        "Ruhezustand"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "canonical_term",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Smarte Steuerung per THITRONIK® App",
+      "fr": "Commande intelligente via l’application THITRONIK®",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "uploaded_reference",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Smartphone-Einstellungen für die Erstkonfiguration",
+      "fr": "Paramètres du smartphone pour la configuration initiale",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Smartphone-Nummer",
+      "fr": "Numéro de smartphone",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "SMS-Befehl",
+      "fr": "commande SMS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SN045",
+      "fr": "SN045",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Software-Anforderung (G.A.S.-pro)",
+      "fr": "Exigence logicielle (G.A.S.-pro)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Software-Versionen (Seriennummern-Übersicht)",
+      "fr": "Versions du logiciel (aperçu des numéros de série)",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sonderfälle",
+      "fr": "Cas particuliers",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Sonderfunktionen",
+      "fr": "Fonctions spéciales",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Spannungsspitzenkiller",
+      "fr": "suppresseur de surtensions transitoires",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Spannungsversorgung",
+      "fr": "Alimentation électrique",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Spannungsversorgung und Hinweise",
+      "fr": "Alimentation et instructions",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Standalone",
+      "fr": "mode autonome",
+      "aliasse": [
+        "autark",
+        "Stand Alone"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Standard-Seriennummern (falls SNr unbekannt)",
+      "fr": "Numéros de série standard (si le SNo est inconnu)",
+      "aliasse": [],
+      "domain": "Referenz/Normen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Stärken",
+      "fr": "Points forts",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Status-LED",
+      "fr": "LED d’état",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Status-LED und Sirene",
+      "fr": "LED d'état et sirène",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Status-LED Zustände",
+      "fr": "États des voyants d'état",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Statusbericht",
+      "fr": "Rapport de situation",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Statusbericht / Position anfordern",
+      "fr": "Demander le rapport d’état / la position",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Statuslogik",
+      "fr": "Logique d'état",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Statusmeldung",
+      "fr": "messages d’état",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Steuerbare Funktionen",
+      "fr": "Fonctions contrôlables",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Steuerung per SMS",
+      "fr": "Commande par SMS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Stiller Alarm (Diebstahlmeldung)",
+      "fr": "Alarme silencieuse (constat de vol)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Störfall",
+      "fr": "Incident",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Störsender",
+      "fr": "brouilleur radio",
+      "aliasse": [
+        "Jamming-Sender",
+        "Stoersender"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Streulichtprinzip (photoelektrisch)",
+      "fr": "Principe de la lumière diffusée (photoélectrique)",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Stromaufnahme",
+      "fr": "Consommation de courant",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Stromversorgung",
+      "fr": "Alimentation",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Stromversorgung & Standzeiten — Ruhestrom, Unterspannung und Ladepraxis",
+      "fr": "Alimentation électrique & autonomie — courant de repos, sous-tension et pratique de recharge",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Stummschaltung (Pause-Modus)",
+      "fr": "Muet (mode pause)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Support-Fallaufnahme - Pflichtdaten und Eskalationscheck",
+      "fr": "Saisie des cas de support - données obligatoires et contrôle d'escalade",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "SW 1.2.0sx (SN 5458-006) — Logikfehler-Fix",
+      "fr": "SW 1.2.0sx (SN 5458-006) — Correction d'une erreur logique",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Systemüberblick",
+      "fr": "Présentation du système",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "T.S.A. — Funk-Rauchmelder für WiPro III",
+      "fr": "T.S.A. — détecteur de fumée sans fil pour WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "T.S.A. Funk-Rauchmelder",
+      "fr": "T.S.A. détecteur de fumée sans fil",
+      "aliasse": [
+        "T.S.A. Funk Rauchmelder"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Tasten-Funktionen",
+      "fr": "Fonctions des boutons",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Technische Daten (G.A.S.-pro III CO)",
+      "fr": "Données techniques (G.A.S.-pro III CO)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Technischer Support",
+      "fr": "Assistance technique",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Teilweises Löschen (alles außer Handsender)",
+      "fr": "Suppression partielle (tout sauf les télécommandes)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Telemetrie — Pro-Finder",
+      "fr": "Télémétrie — Pro-Finder",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "THITRONIK®",
+      "fr": "THITRONIK®",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "brand",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "THITRONIK® App",
+      "fr": "THITRONIK® App",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "THITRONIK® App — Befehle, Einrichtung und FAQ",
+      "fr": "THITRONIK® App — Commandes, configuration et FAQ",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "THITRONIK® App (ab SN045 primär)",
+      "fr": "THITRONIK® App (à partir du primaire SN045)",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "THITRONIK® App / Programmier-SMS",
+      "fr": "THITRONIK® App / Programmation SMS",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Türkontakt-Funktion",
+      "fr": "fonction contact de porte",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "manual_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Typische Fehlerbilder",
+      "fr": "Modèles d'erreur typiques",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Typische Produktgruppen",
+      "fr": "Groupes de produits typiques",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Typische Rolle",
+      "fr": "Rôle typique",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Über Fahrzeugfunkschlüssel",
+      "fr": "Via la clé radio du véhicule",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Über Funk-Handsender",
+      "fr": "Via la télécommande sans fil",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "UEG (Untere Explosionsgrenze)",
+      "fr": "LIE (Limite inférieure d'explosivité)",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Ungeeignete Montageorte",
+      "fr": "Emplacements de montage inappropriés",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Ungeeignete Montageorte (für alle Varianten)",
+      "fr": "Emplacements de montage inappropriés (pour toutes les variantes)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Universalanschluss (ältere / nicht gelistete Fahrzeuge)",
+      "fr": "Connexion universelle (véhicules anciens / non répertoriés)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "unscharfschalten",
+      "fr": "désarmer le système d’alarme",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "manual_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Unterschied Standard / XL",
+      "fr": "Différence standard/XL",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Unterschied zu G.A.S.-pro III",
+      "fr": "Différence avec G.A.S.-pro III",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Unterschiede der Easy-Add-Varianten",
+      "fr": "Différences entre les variantes Easy-Add",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Unterschiede der Gaswarner-Modelle",
+      "fr": "Différences entre les modèles de détecteurs de gaz",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Unterschiede zur G.A.S.-pro III",
+      "fr": "Différences avec G.A.S.-pro III",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Unterspannung",
+      "fr": "sous-tension",
+      "aliasse": [
+        "Batterie leer",
+        "Ruhestrom",
+        "Standzeit"
+      ],
+      "domain": "Fahrzeugelektrik",
+      "typ": "autolink_term",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Unterspannung beim Pro-Finder",
+      "fr": "Sous-tension à Pro-Finder",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Unterspannungswarnung",
+      "fr": "Avertissement de basse tension",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Vent-check",
+      "fr": "Vent-check",
+      "aliasse": [
+        "Belueftungsfunktion",
+        "Belüftungsfunktion",
+        "Kontakt offen",
+        "Vent-check",
+        "Vent-check"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "canonical_term",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "Vent-check („Kontakt offen\" / Belüftungsfunktion)",
+      "fr": "Vent-check (« Contact ouvert » / fonction ventilation)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "Vent-check-Funktion",
+      "fr": "fonction Vent-check",
+      "aliasse": [
+        "Vent-check Funktion",
+        "Vent-check Funktion"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ver- und entriegeln",
+      "fr": "verrouiller et déverrouiller",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Vergleich mit Nachfolger BT-connect",
+      "fr": "Comparaison avec le successeur BT-connect",
+      "aliasse": [],
+      "domain": "App/Zugang",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Vernetzungsmodul",
+      "fr": "Module réseau",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "glossary_entry",
+      "geschuetzt": false,
+      "echt": true
+    },
+    {
+      "de": "verriegeln",
+      "fr": "verrouiller",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Verriegeln/Entriegeln",
+      "fr": "Verrouiller/déverrouiller",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Vollintegrierte Fahrzeuge",
+      "fr": "Véhicules entièrement intégrés",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Vollintegrierte Fahrzeuge auf Iveco-Basis (z. B. Carthago 2022)",
+      "fr": "Véhicules entièrement intégrés basés sur Iveco (par exemple Carthago 2022)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Vor der Montage: Anlernen und Reichweitentest",
+      "fr": "Avant l’installation : appairage et test de portée",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW / MAN",
+      "fr": "VW/HOMME",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "vw crafter",
+      "fr": "vw crafter",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "VW Crafter / MAN TGE (2017–2024, ohne Startknopf)",
+      "fr": "VW Crafter / MAN TGE (2017-2024, sans bouton de démarrage)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW Crafter / MAN TGE (2025+, mit Startknopf)",
+      "fr": "VW Crafter / MAN TGE (2025+, avec bouton de démarrage)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW T5 (2006–2009)",
+      "fr": "VW T5 (2006-2009)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW T5 Facelift (ab MJ 2010)",
+      "fr": "VW T5 facelift (à partir de MY 2010)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW T6",
+      "fr": "VW T6",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW T6 (2015–2019)",
+      "fr": "VW T6 (2015-2019)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "VW T6.1 (ab 2019)",
+      "fr": "VW T6.1 (à partir de 2019)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "article_title",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Wallpaper",
+      "fr": "Wallpaper",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Warnaufkleber",
+      "fr": "autocollant alarme dissuasif",
+      "aliasse": [
+        "Alarmaufkleber"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Warum die Starterbatterie trotzdem leer werden kann",
+      "fr": "Pourquoi la batterie de démarrage peut encore se vider",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Wegfahrsperren-Transponder",
+      "fr": "Transpondeur antidémarrage",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Weitere SMS-Befehle (interne Matrix ab SW 9.1)",
+      "fr": "Commandes SMS supplémentaires (matrice interne à partir du SW 9.1)",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Weitere Tags anlernen",
+      "fr": "Appairer des tags supplémentaires",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Wichtige Anschlusshinweise",
+      "fr": "Informations de connexion importantes",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Wichtige Software-Meilensteine",
+      "fr": "Jalons logiciels importants",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "WiPro III",
+      "fr": "WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "WiPro III — Alarmzentrale & Funktionen",
+      "fr": "WiPro III — Centrale d'alarme et fonctions",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge",
+      "fr": "WiPro III — système d'alarme radio pour véhicules de loisirs",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "WiPro III / safe.lock — zentrale Schwellen",
+      "fr": "WiPro III / safe.lock — seuils centraux",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "WiPro III safe.lock",
+      "fr": "WiPro III safe.lock",
+      "aliasse": [
+        "safe.lock",
+        "safe.lock"
+      ],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "product",
+      "geschuetzt": true,
+      "echt": true
+    },
+    {
+      "de": "WiPro III Zentrale",
+      "fr": "Centrale WiPro III",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "WiPro III-Familie",
+      "fr": "WiPro III famille",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "WiPro scharf/unscharf",
+      "fr": "WiPro armée/désarmée",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Wirkprinzip",
+      "fr": "Principe de fonctionnement",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zentrale",
+      "fr": "unité centrale",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zentrale — WiPro III / WiPro III safe.lock",
+      "fr": "Unité centrale — WiPro III / WiPro III safe.lock",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Zentralen & Alarmsysteme",
+      "fr": "Unités centrales et systèmes d’alarme",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zentralverriegelung",
+      "fr": "verrouillage centralisé",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zentralverriegelung (nur WiPro III safe.lock)",
+      "fr": "Verrouillage centralisé (WiPro III safe.lock uniquement)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Zentralverriegelung / Türkontakt / Zündung / Blinker",
+      "fr": "Verrouillage centralisé / contact de porte / allumage / clignotants",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zielrufnummer",
+      "fr": "numéro d’appel cible",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zubehör / Sensorik – weitere Präfixe",
+      "fr": "Accessoires / Capteurs – autres préfixes",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zubehör anlernen — je nach Typ",
+      "fr": "Appairer les accessoires selon le type",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System",
+      "fr": "Supports d'accès & utilisation — modes d'accès dans le système THITRONIK",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Zugangsmedien & Zutritt",
+      "fr": "Accéder aux médias et accéder",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zugangsmedien für das NFC Modul",
+      "fr": "supports d’accès pour le NFC Modul",
+      "aliasse": [],
+      "domain": "Ortung/Mobilfunk",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zugentlastung",
+      "fr": "Décharge de traction",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zündungsanschluss (Automatische Stummschaltung)",
+      "fr": "Connecteur d'allumage (sourdine automatique)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zündungsanschluss (IGN / Kl. 15)",
+      "fr": "Connexion d'allumage (IGN / Kl. 15)",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzhupe",
+      "fr": "avertisseur sonore auxiliaire",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzhupe (Art. 105339)",
+      "fr": "Klaxon supplémentaire (Art. 105339)",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsensor",
+      "fr": "Détecteur supplémentaire",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsensor für G.A.S.-pro",
+      "fr": "capteur additionnel pour G.A.S.-pro",
+      "aliasse": [
+        "Zusatzsensor für G.A.S.-pro"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsensor für G.A.S.-pro III",
+      "fr": "capteur additionnel pour G.A.S.-pro III",
+      "aliasse": [
+        "Zusatzsensor für G.A.S.-pro III"
+      ],
+      "domain": "Allgemein/Support",
+      "typ": "asset_name",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsensor G.A.S.-pro",
+      "fr": "Capteur supplémentaire G.A.S.-pro",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsensor G.A.S.-pro III",
+      "fr": "Détecteur G.A.S.-pro III supplémentaire",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "uploaded_reference",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsensor G.A.S.-pro III — Externer Gassensor",
+      "fr": "Capteur additionnel G.A.S.-pro III — capteur de gaz externe",
+      "aliasse": [],
+      "domain": "Gas/Sensorik",
+      "typ": "article_title",
+      "geschuetzt": true,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsirene",
+      "fr": "sirène auxiliaire",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "asset_name",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "Zusatzsirene (Art. 100190)",
+      "fr": "Sirène supplémentaire (Art. 100190)",
+      "aliasse": [],
+      "domain": "Alarmgeber/Schnittstellen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ZV-Ansteuerung",
+      "fr": "commande du verrouillage centralisé",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ZV-Ansteuerung (Originaltüren)",
+      "fr": "Commande ZV (portes d'origine)",
+      "aliasse": [],
+      "domain": "Allgemein/Support",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ZV-Ansteuerung (vollintegrierte Fahrzeuge ohne Originaltüren)",
+      "fr": "Commande ZV (véhicules entièrement intégrés sans portes d'origine)",
+      "aliasse": [],
+      "domain": "Fahrzeugwissen",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ZV-Code-Anlernvorgang (safe.lock, 12 Kombinationen)",
+      "fr": "Processus d’appairage du code de verrouillage centralisé (safe.lock, 12 combinaisons)",
+      "aliasse": [],
+      "domain": "Alarmanlage/WiPro",
+      "typ": "heading",
+      "geschuetzt": false,
+      "echt": false
+    },
+    {
+      "de": "ZV-Leitungen",
+      "fr": "câbles du verrouillage centralisé",
+      "aliasse": [],
+      "domain": "Fahrzeugelektrik",
+      "typ": "candidate",
+      "geschuetzt": false,
+      "echt": false
+    }
+  ]
+}

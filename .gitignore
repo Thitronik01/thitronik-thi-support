@@ -1,0 +1,31 @@
+# ============================================================================
+# Was NICHT ins Repository gehört.
+# ----------------------------------------------------------------------------
+# Wichtigster Eintrag ist der erste: Die .env trägt den Anymize-Schlüssel im
+# Klartext. Sie liegt normalerweise unter app/.env, wird hier aber für jede
+# Ebene ausgeschlossen — ein Schlüssel, der einmal in der Historie steht,
+# lässt sich nicht mehr sauber entfernen.
+# ============================================================================
+
+# ─── Zugangsdaten — NIEMALS committen ───────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Entwicklungswerkzeuge, gehören nicht ins Deployment ────────────────────
+.agents/
+.claude/
+
+# ─── Netlify ────────────────────────────────────────────────────────────────
+.netlify/
+
+# ─── Node ───────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# ─── Editor / System ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp

@@ -1,0 +1,611 @@
+{
+  "generiert": "2026-09-15",
+  "quelle": "project-data/runtime/wiki/search-index.json (articleType=vehicle)",
+  "hinweise": [
+    "Basisfahrzeuge/Chassis. Aufbauhersteller sind NUR mit adria-coral-matrix vertreten — siehe docs/03_FALLAUFNAHME_SCHEMA.md §A2.",
+    "baujahr_von/bis aus dem DE-Titel abgeleitet; baujahr_offenes_ende=true bedeutet \"ab JAHR\" ohne Enddatum.",
+    "universalanschluss ist der Fallback fuer nicht gelistete Fahrzeuge (ist_fallback=true), ohne Baujahrsgrenzen.",
+    "badge_varianten: ein Artikel deckt mehrere Marken ab — die Auswahl muss ueber ALLE Varianten suchbar sein."
+  ],
+  "anzahl": 30,
+  "fahrzeuge": [
+    {
+      "slug": "adria-coral-matrix",
+      "titel_de": "Adria Coral / Matrix (ab Modelljahr 2021) — Wohnmobil-Aufbauhinweis",
+      "titel_fr": "Adria Coral / Matrix (à partir de l'année modèle 2021) — informations sur le montage du camping-car",
+      "route_de": "/de/fahrzeuge/adria-coral-matrix",
+      "route_fr": "/fr/fahrzeuge/adria-coral-matrix",
+      "hersteller": [
+        "Adria"
+      ],
+      "badge_varianten": [
+        "Adria Coral",
+        "Matrix"
+      ],
+      "baujahr_von": 2021,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": true,
+      "ist_fallback": false
+    },
+    {
+      "slug": "fiat-ducato-2012-2021",
+      "titel_de": "Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012–2021)",
+      "titel_fr": "Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012-2021)",
+      "route_de": "/de/fahrzeuge/fiat-ducato-2012-2021",
+      "route_fr": "/fr/fahrzeuge/fiat-ducato-2012-2021",
+      "hersteller": [
+        "Fiat",
+        "Opel",
+        "Citroën",
+        "Peugeot",
+        "Toyota"
+      ],
+      "badge_varianten": [
+        "Fiat Ducato",
+        "Citroën Jumper",
+        "Peugeot Boxer",
+        "Toyota Proace Max",
+        "Opel Movano"
+      ],
+      "baujahr_von": 2012,
+      "baujahr_bis": 2021,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "fiat-ducato-244",
+      "titel_de": "Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (bis 2006)",
+      "titel_fr": "Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (jusqu'en 2006)",
+      "route_de": "/de/fahrzeuge/fiat-ducato-244",
+      "route_fr": "/fr/fahrzeuge/fiat-ducato-244",
+      "hersteller": [
+        "Fiat",
+        "Citroën",
+        "Peugeot"
+      ],
+      "badge_varianten": [
+        "Fiat Ducato 244",
+        "Peugeot Boxer",
+        "Citroën Jumper"
+      ],
+      "baujahr_von": null,
+      "baujahr_bis": 2006,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "fiat-ducato-2022-2024",
+      "titel_de": "Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022–2024)",
+      "titel_fr": "Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022-2024)",
+      "route_de": "/de/fahrzeuge/fiat-ducato-2022-2024",
+      "route_fr": "/fr/fahrzeuge/fiat-ducato-2022-2024",
+      "hersteller": [
+        "Fiat",
+        "Opel",
+        "Citroën",
+        "Peugeot"
+      ],
+      "badge_varianten": [
+        "Fiat Ducato 8",
+        "9",
+        "Citroën Jumper",
+        "Peugeot Boxer",
+        "Opel Movano"
+      ],
+      "baujahr_von": 2022,
+      "baujahr_bis": 2024,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "fiat-ducato-2024plus",
+      "titel_de": "Fiat Ducato Facelift / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)",
+      "titel_fr": "Fiat Ducato restylé / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)",
+      "route_de": "/de/fahrzeuge/fiat-ducato-2024plus",
+      "route_fr": "/fr/fahrzeuge/fiat-ducato-2024plus",
+      "hersteller": [
+        "Fiat",
+        "Opel",
+        "Citroën",
+        "Peugeot"
+      ],
+      "badge_varianten": [
+        "Fiat Ducato Facelift",
+        "Citroën Jumper",
+        "Peugeot Boxer",
+        "Opel Movano"
+      ],
+      "baujahr_von": 2024,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "fiat-ducato-x250",
+      "titel_de": "Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006–2011)",
+      "titel_fr": "Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006-2011)",
+      "route_de": "/de/fahrzeuge/fiat-ducato-x250",
+      "route_fr": "/fr/fahrzeuge/fiat-ducato-x250",
+      "hersteller": [
+        "Fiat",
+        "Citroën",
+        "Peugeot"
+      ],
+      "badge_varianten": [
+        "Fiat Ducato X250",
+        "Peugeot Boxer",
+        "Citroën Jumper"
+      ],
+      "baujahr_von": 2006,
+      "baujahr_bis": 2011,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "fiat-talento",
+      "titel_de": "Fiat Talento / Renault Trafic III / Opel Vivaro B / Nissan NV300 (2014–2021)",
+      "titel_fr": "Fiat Talento / Renault Trafic III / Opel Vivaro B / Nissan NV300 (2014–2021)",
+      "route_de": "/de/fahrzeuge/fiat-talento",
+      "route_fr": "/fr/fahrzeuge/fiat-talento",
+      "hersteller": [
+        "Fiat",
+        "Renault",
+        "Opel",
+        "Nissan"
+      ],
+      "badge_varianten": [
+        "Fiat Talento",
+        "Renault Trafic III",
+        "Opel Vivaro B",
+        "Nissan NV300"
+      ],
+      "baujahr_von": 2014,
+      "baujahr_bis": 2021,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "ford-transit-2024plus",
+      "titel_de": "Ford Transit / Tourneo Custom / Transit Custom (2024+)",
+      "titel_fr": "Ford Transit / Tourneo Custom / Transit Custom (2024+)",
+      "route_de": "/de/fahrzeuge/ford-transit-2024plus",
+      "route_fr": "/fr/fahrzeuge/ford-transit-2024plus",
+      "hersteller": [
+        "Ford"
+      ],
+      "badge_varianten": [
+        "Ford Transit",
+        "Tourneo Custom",
+        "Transit Custom"
+      ],
+      "baujahr_von": 2024,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "ford-transit-6g",
+      "titel_de": "Ford Transit 6. Generation (2006–2013)",
+      "titel_fr": "Ford Transit 6e génération (2006–2013)",
+      "route_de": "/de/fahrzeuge/ford-transit-6g",
+      "route_fr": "/fr/fahrzeuge/ford-transit-6g",
+      "hersteller": [
+        "Ford"
+      ],
+      "badge_varianten": [
+        "Ford Transit 6. Generation"
+      ],
+      "baujahr_von": 2006,
+      "baujahr_bis": 2013,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "ford-transit-7g-2016",
+      "titel_de": "Ford Transit 7. Generation (2016–2019)",
+      "titel_fr": "Ford Transit 7e génération (2016-2019)",
+      "route_de": "/de/fahrzeuge/ford-transit-7g-2016",
+      "route_fr": "/fr/fahrzeuge/ford-transit-7g-2016",
+      "hersteller": [
+        "Ford"
+      ],
+      "badge_varianten": [
+        "Ford Transit 7. Generation"
+      ],
+      "baujahr_von": 2016,
+      "baujahr_bis": 2019,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "ford-transit-7g-facelift",
+      "titel_de": "Ford Transit 7. Generation Facelift (2019–07/2024)",
+      "titel_fr": "Ford Transit 7e génération Facelift (2019-07/2024)",
+      "route_de": "/de/fahrzeuge/ford-transit-7g-facelift",
+      "route_fr": "/fr/fahrzeuge/ford-transit-7g-facelift",
+      "hersteller": [
+        "Ford"
+      ],
+      "badge_varianten": [
+        "Ford Transit 7. Generation Facelift"
+      ],
+      "baujahr_von": 2019,
+      "baujahr_bis": 2024,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "ford-transit-7g-2014",
+      "titel_de": "Ford Transit 7. Generation früh (2014–2015)",
+      "titel_fr": "Ford Transit 7e génération précoce (2014–2015)",
+      "route_de": "/de/fahrzeuge/ford-transit-7g-2014",
+      "route_fr": "/fr/fahrzeuge/ford-transit-7g-2014",
+      "hersteller": [
+        "Ford"
+      ],
+      "badge_varianten": [
+        "Ford Transit 7. Generation früh"
+      ],
+      "baujahr_von": 2014,
+      "baujahr_bis": 2015,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "iveco-daily-euro4",
+      "titel_de": "Iveco Daily Euro 4 (2006–2011)",
+      "titel_fr": "Iveco Daily Euro 4 (2006–2011)",
+      "route_de": "/de/fahrzeuge/iveco-daily-euro4",
+      "route_fr": "/fr/fahrzeuge/iveco-daily-euro4",
+      "hersteller": [
+        "Iveco"
+      ],
+      "badge_varianten": [
+        "Iveco Daily Euro 4"
+      ],
+      "baujahr_von": 2006,
+      "baujahr_bis": 2011,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "iveco-daily-euro5",
+      "titel_de": "Iveco Daily Euro 5 und neuer (2011–2024)",
+      "titel_fr": "Iveco Daily Euro 5 et plus récent (2011-2024)",
+      "route_de": "/de/fahrzeuge/iveco-daily-euro5",
+      "route_fr": "/fr/fahrzeuge/iveco-daily-euro5",
+      "hersteller": [
+        "Iveco"
+      ],
+      "badge_varianten": [
+        "Iveco Daily Euro 5 und neuer"
+      ],
+      "baujahr_von": 2011,
+      "baujahr_bis": 2024,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "mercedes-vito-w447",
+      "titel_de": "Mercedes Benz Vito W447 (2014–06/2023)",
+      "titel_fr": "Mercedes Benz Vito W447 (2014-06/2023)",
+      "route_de": "/de/fahrzeuge/mercedes-vito-w447",
+      "route_fr": "/fr/fahrzeuge/mercedes-vito-w447",
+      "hersteller": [
+        "Mercedes"
+      ],
+      "badge_varianten": [
+        "Mercedes Benz Vito W447"
+      ],
+      "baujahr_von": 2014,
+      "baujahr_bis": 2023,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "mercedes-sprinter-ncv3",
+      "titel_de": "Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006–2018)",
+      "titel_fr": "Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006-2018)",
+      "route_de": "/de/fahrzeuge/mercedes-sprinter-ncv3",
+      "route_fr": "/fr/fahrzeuge/mercedes-sprinter-ncv3",
+      "hersteller": [
+        "VW",
+        "Mercedes"
+      ],
+      "badge_varianten": [
+        "Mercedes Sprinter NCV3",
+        "VW Crafter"
+      ],
+      "baujahr_von": 2006,
+      "baujahr_bis": 2018,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "mercedes-sprinter-t1n",
+      "titel_de": "Mercedes Sprinter T1N (2000–2006)",
+      "titel_fr": "Mercedes Sprinter T1N (2000–2006)",
+      "route_de": "/de/fahrzeuge/mercedes-sprinter-t1n",
+      "route_fr": "/fr/fahrzeuge/mercedes-sprinter-t1n",
+      "hersteller": [
+        "Mercedes"
+      ],
+      "badge_varianten": [
+        "Mercedes Sprinter T1N"
+      ],
+      "baujahr_von": 2000,
+      "baujahr_bis": 2006,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "mercedes-sprinter-vs30",
+      "titel_de": "Mercedes Sprinter VS30 (BR907/910, ab 2018)",
+      "titel_fr": "Mercedes Sprinter VS30 (BR907/910, depuis 2018)",
+      "route_de": "/de/fahrzeuge/mercedes-sprinter-vs30",
+      "route_fr": "/fr/fahrzeuge/mercedes-sprinter-vs30",
+      "hersteller": [
+        "Mercedes"
+      ],
+      "badge_varianten": [
+        "Mercedes Sprinter VS30"
+      ],
+      "baujahr_von": 2018,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "renault-master-2019",
+      "titel_de": "Renault Master (2019–2024) — safe.lock",
+      "titel_fr": "Renault Master (2019–2024) — safe.lock",
+      "route_de": "/de/fahrzeuge/renault-master-2019",
+      "route_fr": "/fr/fahrzeuge/renault-master-2019",
+      "hersteller": [
+        "Renault"
+      ],
+      "badge_varianten": [
+        "Renault Master"
+      ],
+      "baujahr_von": 2019,
+      "baujahr_bis": 2024,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "renault-master-ii",
+      "titel_de": "Renault Master II / Opel Movano A / Nissan Interstar (1998–2010)",
+      "titel_fr": "Renault Master II / Opel Movano A / Nissan Interstar (1998–2010)",
+      "route_de": "/de/fahrzeuge/renault-master-ii",
+      "route_fr": "/fr/fahrzeuge/renault-master-ii",
+      "hersteller": [
+        "Renault",
+        "Opel",
+        "Nissan"
+      ],
+      "badge_varianten": [
+        "Renault Master II",
+        "Opel Movano A",
+        "Nissan Interstar"
+      ],
+      "baujahr_von": 1998,
+      "baujahr_bis": 2010,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "renault-master-iii",
+      "titel_de": "Renault Master III / Opel Movano B / Nissan NV400 (ab 2011)",
+      "titel_fr": "Renault Master III / Opel Movano B / Nissan NV400 (à partir de 2011)",
+      "route_de": "/de/fahrzeuge/renault-master-iii",
+      "route_fr": "/fr/fahrzeuge/renault-master-iii",
+      "hersteller": [
+        "Renault",
+        "Opel",
+        "Nissan"
+      ],
+      "badge_varianten": [
+        "Renault Master III",
+        "Opel Movano B",
+        "Nissan NV400"
+      ],
+      "baujahr_von": 2011,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "renault-trafic-iii-2022",
+      "titel_de": "Renault Trafic III / Nissan Primastar (ab 2022)",
+      "titel_fr": "Renault Trafic III / Nissan Primastar (à partir de 2022)",
+      "route_de": "/de/fahrzeuge/renault-trafic-iii-2022",
+      "route_fr": "/fr/fahrzeuge/renault-trafic-iii-2022",
+      "hersteller": [
+        "Renault",
+        "Nissan"
+      ],
+      "badge_varianten": [
+        "Renault Trafic III",
+        "Nissan Primastar"
+      ],
+      "baujahr_von": 2022,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "renault-trafic-iii-2014",
+      "titel_de": "Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento (2014–2021)",
+      "titel_fr": "Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento (2014–2021)",
+      "route_de": "/de/fahrzeuge/renault-trafic-iii-2014",
+      "route_fr": "/fr/fahrzeuge/renault-trafic-iii-2014",
+      "hersteller": [
+        "Fiat",
+        "Renault",
+        "Opel",
+        "Nissan"
+      ],
+      "badge_varianten": [
+        "Renault Trafic III",
+        "Opel Vivaro B",
+        "Nissan NV300",
+        "Fiat Talento"
+      ],
+      "baujahr_von": 2014,
+      "baujahr_bis": 2021,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "universalanschluss",
+      "titel_de": "Universalanschluss (ältere / nicht gelistete Fahrzeuge)",
+      "titel_fr": "Connexion universelle (véhicules anciens / non répertoriés)",
+      "route_de": "/de/fahrzeuge/universalanschluss",
+      "route_fr": "/fr/fahrzeuge/universalanschluss",
+      "hersteller": [],
+      "badge_varianten": [
+        "Universalanschluss"
+      ],
+      "baujahr_von": null,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": true
+    },
+    {
+      "slug": "vw-crafter-man-tge-2017",
+      "titel_de": "VW Crafter / MAN TGE (2017–2024, ohne Startknopf)",
+      "titel_fr": "VW Crafter / MAN TGE (2017-2024, sans bouton de démarrage)",
+      "route_de": "/de/fahrzeuge/vw-crafter-man-tge-2017",
+      "route_fr": "/fr/fahrzeuge/vw-crafter-man-tge-2017",
+      "hersteller": [
+        "VW",
+        "MAN"
+      ],
+      "badge_varianten": [
+        "VW Crafter",
+        "MAN TGE"
+      ],
+      "baujahr_von": 2017,
+      "baujahr_bis": 2024,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "vw-crafter-man-tge-2025",
+      "titel_de": "VW Crafter / MAN TGE (2025+, mit Startknopf)",
+      "titel_fr": "VW Crafter / MAN TGE (2025+, avec bouton de démarrage)",
+      "route_de": "/de/fahrzeuge/vw-crafter-man-tge-2025",
+      "route_fr": "/fr/fahrzeuge/vw-crafter-man-tge-2025",
+      "hersteller": [
+        "VW",
+        "MAN"
+      ],
+      "badge_varianten": [
+        "VW Crafter",
+        "MAN TGE"
+      ],
+      "baujahr_von": 2025,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "vw-t5",
+      "titel_de": "VW T5 (2006–2009)",
+      "titel_fr": "VW T5 (2006-2009)",
+      "route_de": "/de/fahrzeuge/vw-t5",
+      "route_fr": "/fr/fahrzeuge/vw-t5",
+      "hersteller": [
+        "VW"
+      ],
+      "badge_varianten": [
+        "VW T5"
+      ],
+      "baujahr_von": 2006,
+      "baujahr_bis": 2009,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "vw-t5-facelift",
+      "titel_de": "VW T5 Facelift (ab MJ 2010)",
+      "titel_fr": "VW T5 facelift (à partir de MY 2010)",
+      "route_de": "/de/fahrzeuge/vw-t5-facelift",
+      "route_fr": "/fr/fahrzeuge/vw-t5-facelift",
+      "hersteller": [
+        "VW"
+      ],
+      "badge_varianten": [
+        "VW T5 Facelift"
+      ],
+      "baujahr_von": 2010,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "vw-t6",
+      "titel_de": "VW T6 (2015–2019)",
+      "titel_fr": "VW T6 (2015-2019)",
+      "route_de": "/de/fahrzeuge/vw-t6",
+      "route_fr": "/fr/fahrzeuge/vw-t6",
+      "hersteller": [
+        "VW"
+      ],
+      "badge_varianten": [
+        "VW T6"
+      ],
+      "baujahr_von": 2015,
+      "baujahr_bis": 2019,
+      "baujahr_offenes_ende": false,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    },
+    {
+      "slug": "vw-t6-1",
+      "titel_de": "VW T6.1 (ab 2019)",
+      "titel_fr": "VW T6.1 (à partir de 2019)",
+      "route_de": "/de/fahrzeuge/vw-t6-1",
+      "route_fr": "/fr/fahrzeuge/vw-t6-1",
+      "hersteller": [
+        "VW"
+      ],
+      "badge_varianten": [
+        "VW T6.1"
+      ],
+      "baujahr_von": 2019,
+      "baujahr_bis": null,
+      "baujahr_offenes_ende": true,
+      "ist_aufbauhersteller": false,
+      "ist_fallback": false
+    }
+  ]
+}

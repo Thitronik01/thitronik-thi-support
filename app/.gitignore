@@ -1,0 +1,19 @@
+# Zugangsdaten — NIEMALS committen
+.env
+.env.local
+.env.*.local
+
+# Design-Skills (Entwicklungswerkzeug, gehoert nicht ins Deployment)
+.agents/
+.claude/
+
+# Netlify
+.netlify/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Editor / System
+.DS_Store
+Thumbs.db

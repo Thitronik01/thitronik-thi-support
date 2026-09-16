@@ -1,0 +1,1126 @@
+/* ==========================================================================
+   THITRONIK Thi Support — Stylesheet
+   --------------------------------------------------------------------------
+   HELL als Standard, Dunkel per Schalter (data-theme="dark" am <html>).
+   Die THITRONIK-Palette (Navy, Cyan, Lime, Rot) bleibt in beiden Modi
+   verbindlich — mit einem wichtigen Unterschied:
+
+     Im DUNKELmodus trägt Lime die Überschriften.
+     Im HELLmodus nicht — Lime auf Weiß hat zu wenig Kontrast.
+     Dort übernimmt Navy die Schriftrolle, und Lime bleibt Flächen-Akzent
+     (Buttons mit dunklem Text, Rahmen, Marker).
+
+   Layout: Die Fallaufnahme nutzt die VOLLE Breite (Raster aus drei Karten),
+   die Antwortansicht eine lesefreundliche Spalte.
+   ========================================================================== */
+
+:root {
+  /* Marke — in beiden Modi identisch */
+  --navy: #1D3661;
+  --cyan: #3BA9D3;
+  --rot: #CE132D;
+  --lime: #AFCA05;
+  --lime-dunkel: #8BA304;
+
+  /* ── HELL (Standard) ── */
+  --bg: #EEF1F7;
+  --bg-erhoben: #FFFFFF;
+  --bg-karte: #FFFFFF;
+  --bg-karte-hover: #F7F9FC;
+  --bg-feld: #F7F9FC;
+  --bg-glas: rgba(255, 255, 255, .86);
+  --bg-kopf: #FFFFFF;
+
+  --text: #16203A;
+  --text-sek: #5B6781;
+  --text-schwach: #8590A6;
+  --text-ueber: var(--navy);       /* Überschriften */
+
+  --linie: rgba(29, 54, 97, .10);
+  --linie-stark: rgba(29, 54, 97, .22);
+  --linie-akzent: rgba(175, 202, 5, .55);
+
+  --lime-flaeche: rgba(175, 202, 5, .16);
+  --lime-rand: rgba(175, 202, 5, .45);
+  --cyan-flaeche: rgba(59, 169, 211, .12);
+  --rot-flaeche: rgba(206, 19, 45, .08);
+  --rot-rand: rgba(206, 19, 45, .3);
+  --rot-text: #A50F24;
+
+  --schatten: 0 1px 2px rgba(22, 32, 58, .06), 0 4px 14px rgba(22, 32, 58, .05);
+  --schatten-hoch: 0 8px 28px rgba(22, 32, 58, .12);
+
+  /* Maße */
+  --r-gross: 16px;
+  --r-klein: 9px;
+  --r-voll: 9999px;
+  --kopf-h: 68px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --t: 220ms var(--ease);
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0A0F1C;
+  --bg-erhoben: #111B32;
+  --bg-karte: #111B32;
+  --bg-karte-hover: #16233F;
+  --bg-feld: #0D1526;
+  --bg-glas: rgba(14, 21, 41, .82);
+  --bg-kopf: rgba(12, 18, 34, .9);
+
+  --text: #E8EBF2;
+  --text-sek: #99A3B8;
+  --text-schwach: #6E7893;
+  --text-ueber: var(--lime);
+
+  --linie: rgba(175, 202, 5, .1);
+  --linie-stark: rgba(175, 202, 5, .26);
+  --linie-akzent: rgba(175, 202, 5, .4);
+
+  --lime-flaeche: rgba(175, 202, 5, .1);
+  --lime-rand: rgba(175, 202, 5, .3);
+  --cyan-flaeche: rgba(59, 169, 211, .12);
+  --rot-flaeche: rgba(206, 19, 45, .12);
+  --rot-rand: rgba(206, 19, 45, .34);
+  --rot-text: #FFA9B6;
+
+  --schatten: 0 2px 10px rgba(0, 0, 0, .3);
+  --schatten-hoch: 0 12px 34px rgba(0, 0, 0, .5);
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+/* Muss VOR allen display-Regeln stehen: Elemente mit display:grid/flex
+   ignorieren sonst das hidden-Attribut. */
+[hidden] { display: none !important; }
+
+html { margin: 0; padding: 0; }
+
+body {
+  margin: 0; padding: 0;
+  /* 100dvh statt 100vh: Auf Mobilgeräten schrumpft der sichtbare Bereich beim
+     Einblenden der Adressleiste — mit vh entstünde dort ein Sprung. */
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: .9375rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--t), color var(--t);
+}
+
+h1, h2, h3 { line-height: 1.28; margin: 0; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--lime); color: #16203A; padding: 10px 18px;
+  border-radius: 0 0 var(--r-klein) 0; font-weight: 700;
+}
+.skip-link:focus { left: 0; }
+
+/* Für Screenreader da, für das Auge nicht. Nicht `display: none` — das würde
+   die Vorlesesoftware ebenfalls ausschließen. */
+.nur-vorlesen {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap; border: 0;
+}
+
+/* ─── Kopfzeile ─────────────────────────────────────────────────────────── */
+.kopf {
+  position: sticky; top: 0; z-index: 40;
+  min-height: var(--kopf-h);
+  background: var(--bg-kopf);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--linie);
+}
+
+.kopf-inner {
+  min-height: var(--kopf-h);
+  max-width: 1560px; margin: 0 auto; padding: 10px 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  flex-wrap: wrap;
+}
+
+.marke { display: flex; align-items: center; gap: 16px; min-width: 0; }
+
+/* Das Logo ist der Vertrauensanker — es darf Raum beanspruchen.
+   KEINE farbige Platte darunter: Stattdessen liegt die Marke in zwei Fassungen
+   vor, und je Modus wird die passende eingeblendet. Ein weißes Logo auf einer
+   eigens gelegten Navy-Fläche sieht nach Notlösung aus, weil es eine ist. */
+.marke-logo { height: 56px; width: auto; flex: 0 0 auto; }
+
+.logo-dunkel { display: none; }
+:root[data-theme="dark"] .logo-hell { display: none; }
+:root[data-theme="dark"] .logo-dunkel { display: block; }
+
+.marke-trenner {
+  width: 1px; height: 38px; flex: 0 0 auto;
+  background: var(--linie-stark);
+}
+
+.marke-text { display: flex; align-items: baseline; gap: 12px; min-width: 0; flex-wrap: wrap; }
+.marke-name {
+  font-size: 1.75rem; font-weight: 800; letter-spacing: -.025em;
+  color: var(--text-ueber);
+}
+:root[data-theme="dark"] .marke-name {
+  background: linear-gradient(135deg, var(--lime), #D4E157);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.marke-rolle { font-size: .8125rem; color: var(--text-sek); white-space: nowrap; }
+
+.kopf-aktionen { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+
+.btn-symbol {
+  width: 40px; height: 40px; padding: 0;
+  display: grid; place-items: center;
+  background: transparent; color: var(--text-sek);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  cursor: pointer; transition: all var(--t);
+}
+.btn-symbol:hover { color: var(--text); border-color: var(--linie-akzent); background: var(--lime-flaeche); }
+.btn-symbol svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; }
+.glyph-mond { display: none; }
+:root[data-theme="dark"] .glyph-sonne { display: none; }
+:root[data-theme="dark"] .glyph-mond { display: block; }
+
+.sprachwahl {
+  display: flex; gap: 2px; padding: 3px;
+  background: var(--bg-feld);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--r-voll);
+}
+.sprach-btn {
+  min-width: 46px; height: 32px; padding: 0 13px;
+  background: none; border: 0; border-radius: var(--r-voll);
+  color: var(--text-sek); font: inherit; font-size: .75rem; font-weight: 700;
+  letter-spacing: .05em; cursor: pointer; transition: all var(--t);
+}
+.sprach-btn:hover { color: var(--text); }
+.sprach-btn.ist-aktiv {
+  background: var(--navy); color: #FFFFFF;
+}
+:root[data-theme="dark"] .sprach-btn.ist-aktiv { background: var(--lime); color: #0A0F1C; }
+
+/* ─── Buttons ───────────────────────────────────────────────────────────── */
+.btn-primaer {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 46px; padding: 0 24px;
+  background: linear-gradient(135deg, var(--lime), var(--lime-dunkel));
+  color: #16203A; border: 0; border-radius: var(--r-klein);
+  font: inherit; font-size: .9375rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 2px 10px rgba(175, 202, 5, .3);
+  transition: all var(--t);
+}
+.btn-primaer:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(175, 202, 5, .42);
+}
+/* Haptische Rückmeldung beim Drücken — ohne sie fühlt sich ein Klick tot an. */
+.btn-primaer:active:not(:disabled) { transform: translateY(1px) scale(.99); box-shadow: 0 1px 4px rgba(175, 202, 5, .3); }
+.btn-primaer:disabled { opacity: .5; cursor: not-allowed; box-shadow: none; }
+.btn-voll { width: 100%; }
+.btn-gross { min-height: 54px; padding: 0 40px; font-size: 1rem; }
+.btn-pfeil { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2.3; }
+
+.btn-geist {
+  min-height: 40px; padding: 0 17px;
+  background: transparent; color: var(--text-sek);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  font: inherit; font-size: .8125rem; font-weight: 600;
+  cursor: pointer; transition: all var(--t);
+}
+.btn-geist:hover { color: var(--navy); border-color: var(--linie-akzent); background: var(--lime-flaeche); }
+:root[data-theme="dark"] .btn-geist:hover { color: var(--lime); }
+
+.btn-rund {
+  width: 46px; min-width: 46px; height: 46px; padding: 0;
+  border-radius: var(--r-voll);
+}
+.btn-rund svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.3; }
+
+.btn-zurueck {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 38px; margin-bottom: 20px; padding: 0 15px 0 11px;
+  background: var(--bg-karte); color: var(--text-sek);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-voll);
+  font: inherit; font-size: .8125rem; font-weight: 600; cursor: pointer;
+  transition: all var(--t);
+}
+.btn-zurueck:hover { color: var(--text); border-color: var(--linie-akzent); }
+.btn-zurueck svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; }
+
+/* ─── Layout ────────────────────────────────────────────────────────────── */
+main { flex: 1 1 auto; }
+
+.breite { max-width: 1560px; margin: 0 auto; padding: 18px 28px 14px; }
+.schmal { max-width: 980px; margin: 0 auto; padding: 26px 28px 40px; }
+
+.seiten-kopf {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.seiten-kopf h1 {
+  font-size: 1.375rem; font-weight: 800; letter-spacing: -.02em;
+  color: var(--text-ueber);
+}
+.seiten-unter { margin: 3px 0 0; font-size: .8125rem; color: var(--text-sek); max-width: 60ch; }
+
+/* Fortschrittsanzeige: drei Segmente, füllen sich mit den Ampeln */
+.fortschritt { display: flex; gap: 6px; padding-bottom: 6px; }
+.fortschritt span {
+  width: 42px; height: 5px; border-radius: var(--r-voll);
+  background: var(--linie-stark); transition: background var(--t);
+}
+.fortschritt span[data-stand="teil"] { background: var(--cyan); }
+.fortschritt span[data-stand="voll"] { background: var(--lime); }
+
+/* ─── Aufnahme-Raster ───────────────────────────────────────────────────── */
+/* BEWUSST ASYMMETRISCH, nicht drei gleiche Spalten: Das Layout bildet den
+   Telefonablauf ab. Links wird mitgeschrieben, was der Kunde erzählt (viel
+   Fließtext, braucht Breite), rechts werden die harten Fakten erfasst
+   (Auswahl, Nummern). Drei gleich breite Karten würden diesen Unterschied
+   einebnen und den Blick zwischen ihnen hin- und herspringen lassen. */
+.aufnahme {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.spur-gespraech { display: grid; gap: 14px; min-width: 0; }
+.spur-fakten { display: grid; gap: 12px; min-width: 0; position: sticky; top: calc(var(--kopf-h) + 18px); }
+
+/* ─── Sicherheits-Vorschau ──────────────────────────────────────────────── */
+/* Steht bewusst GANZ OBEN in der Faktenspalte: Sie beantwortet die Frage,
+   die sich beim Aufnehmen stellt — „reicht das schon?". */
+.sicherheit-vorschau {
+  padding: 10px 14px;
+  background: var(--bg-karte);
+  border: 1px solid var(--linie);
+  border-left: 3px solid var(--linie-stark);
+  border-radius: var(--r-gross);
+  box-shadow: var(--schatten);
+  transition: border-color var(--t);
+}
+.sicherheit-vorschau[data-stufe="mittel"] { border-left-color: var(--cyan); }
+.sicherheit-vorschau[data-stufe="hoch"] { border-left-color: var(--lime-dunkel); }
+
+.sv-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.sv-titel { font-size: .8125rem; font-weight: 600; color: var(--text-sek); }
+.sv-wert {
+  font-size: 1.75rem; font-weight: 800; letter-spacing: -.03em;
+  color: var(--text-ueber);
+  font-variant-numeric: tabular-nums;
+}
+.sv-prozent { font-size: .875rem; font-weight: 600; color: var(--text-schwach); margin-left: 2px; }
+
+.sv-balken {
+  height: 6px; margin: 12px 0 14px;
+  background: var(--bg-feld);
+  border-radius: var(--r-voll);
+  overflow: hidden;
+}
+.sv-fuellung {
+  height: 100%; width: 0;
+  background: var(--text-schwach);
+  border-radius: var(--r-voll);
+  transition: width 400ms var(--ease), background 400ms var(--ease);
+}
+.sicherheit-vorschau[data-stufe="mittel"] .sv-fuellung { background: var(--cyan); }
+.sicherheit-vorschau[data-stufe="hoch"] .sv-fuellung { background: var(--lime-dunkel); }
+
+/* Nebeneinander statt untereinander: Es sind kurze Stichworte („Seriennummer",
+   „Basisfahrzeug"), keine Sätze. Als Liste brauchten sie 90 px, als
+   umbrechende Reihe rund die Hälfte. */
+.sv-liste {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 5px 6px;
+}
+.sv-liste > li {
+  padding: 2px 9px;
+  background: var(--bg-feld);
+  border: 1px solid var(--linie);
+  border-radius: var(--r-voll);
+  font-size: .75rem; line-height: 1.5; white-space: nowrap;
+}
+.sv-liste:empty { display: none; }
+.sv-liste li {
+  position: relative; padding-left: 18px;
+  font-size: .75rem; color: var(--text-sek); line-height: 1.5;
+}
+.sv-liste li::before {
+  content: ''; position: absolute; left: 3px; top: 8px;
+  width: 5px; height: 5px; border-radius: var(--r-voll);
+  background: var(--text-schwach);
+}
+.sv-liste li.ist-erfuellt { color: var(--text-schwach); text-decoration: line-through; opacity: .6; }
+.sv-liste li.ist-erfuellt::before { background: var(--lime-dunkel); }
+
+/* ─── Block-Kopf ohne Klappfunktion ─────────────────────────────────────── */
+.block-kopf-statisch {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--linie);
+}
+.schritt {
+  flex: 0 0 auto;
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  background: var(--navy); color: #FFFFFF;
+  border-radius: 10px;
+  font-size: .875rem; font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+:root[data-theme="dark"] .schritt { background: var(--lime); color: #0A0F1C; }
+
+.block-titelgruppe { flex: 1 1 auto; min-width: 0; }
+.block-titelgruppe .block-titel {
+  font-size: 1.0625rem; font-weight: 700; letter-spacing: -.01em; color: var(--text);
+}
+.block-unter { margin: 2px 0 0; font-size: .8125rem; color: var(--text-sek); }
+.block-kopf-statisch .block-ampel { margin-top: 11px; }
+
+.block-haupt .block-inhalt { padding: 12px 16px; }
+.feld-gross { min-height: 82px; font-size: .9375rem; }
+
+.block {
+  background: var(--bg-karte);
+  border: 1px solid var(--linie);
+  border-radius: var(--r-gross);
+  box-shadow: var(--schatten);
+  overflow: hidden;
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.block:focus-within { border-color: var(--linie-akzent); box-shadow: var(--schatten-hoch); }
+
+.block-kopf {
+  width: 100%; min-height: 58px; padding: 0 18px;
+  display: flex; align-items: center; gap: 13px;
+  background: none; border: 0; border-bottom: 1px solid var(--linie);
+  color: var(--text);
+  font: inherit; font-weight: 700; text-align: left; cursor: pointer;
+  transition: background var(--t);
+}
+.block-kopf:hover { background: var(--bg-karte-hover); }
+.block-kopf[aria-expanded="false"] { border-bottom-color: transparent; }
+
+.block-nr {
+  flex: 0 0 auto;
+  width: 27px; height: 27px;
+  display: grid; place-items: center;
+  background: var(--navy); color: #FFFFFF;
+  border-radius: var(--r-voll);
+  font-size: .8125rem; font-weight: 800;
+}
+:root[data-theme="dark"] .block-nr { background: var(--lime); color: #0A0F1C; }
+
+.block-titel { flex: 1 1 auto; font-size: 1rem; }
+
+.block-ampel {
+  flex: 0 0 auto; width: 9px; height: 9px; border-radius: var(--r-voll);
+  background: var(--text-schwach); opacity: .5; transition: all var(--t);
+}
+.block-ampel[data-ampel="teil"] { background: var(--cyan); opacity: 1; }
+.block-ampel[data-ampel="voll"] { background: var(--lime); opacity: 1; box-shadow: 0 0 0 3px var(--lime-flaeche); }
+
+.chevron {
+  flex: 0 0 auto; width: 18px; height: 18px;
+  fill: none; stroke: var(--text-schwach); stroke-width: 2.2;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: transform var(--t);
+}
+.block-kopf[aria-expanded="false"] .chevron { transform: rotate(-90deg); }
+
+.block-inhalt { padding: 12px 16px; }
+.block-kopf[aria-expanded="false"] + .block-inhalt { display: none; }
+
+/* ─── Felder ────────────────────────────────────────────────────────────── */
+.feld-gruppe { display: block; margin-bottom: 9px; }
+.feld-gruppe:last-child { margin-bottom: 0; }
+
+.feld-label {
+  display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+  margin-bottom: 7px;
+  font-size: .8125rem; font-weight: 600; color: var(--text);
+}
+.feld-label em { color: var(--rot); font-style: normal; font-weight: 700; }
+
+.marke-hebel {
+  padding: 2px 9px;
+  background: var(--cyan-flaeche); color: #1B6C8C;
+  border-radius: var(--r-voll);
+  font-size: .6875rem; font-weight: 700;
+}
+:root[data-theme="dark"] .marke-hebel { color: var(--cyan); }
+
+.feld {
+  width: 100%; min-height: 44px; padding: 11px 13px;
+  background: var(--bg-feld); color: var(--text);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  font: inherit; font-size: .875rem;
+  transition: all var(--t);
+}
+textarea.feld { min-height: 74px; resize: vertical; line-height: 1.6; }
+.feld::placeholder { color: var(--text-schwach); }
+.feld:hover { border-color: var(--text-schwach); }
+.feld:focus {
+  outline: none;
+  background: var(--bg-erhoben);
+  border-color: var(--lime-dunkel);
+  box-shadow: 0 0 0 3px var(--lime-flaeche);
+}
+/* Seriennummern, Baujahre und Softwarestände sind Daten, keine Prosa:
+   Monospace mit tabellarischen Ziffern macht Stellen vergleichbar und
+   Tippfehler sichtbar (0699-045 vs. 0699-O45). */
+.feld-mono {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  letter-spacing: .03em;
+  font-variant-numeric: tabular-nums;
+}
+.produkt-nr, .fall-wert, .quelle { font-variant-numeric: tabular-nums; }
+
+select.feld {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238590A6' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;
+  padding-right: 38px;
+}
+
+.feld-hilfe { margin: 4px 0 0; font-size: .75rem; color: var(--text-schwach); line-height: 1.5; }
+
+.feld-reihe { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+
+/* ─── Autocomplete ──────────────────────────────────────────────────────── */
+.autocomplete { position: relative; }
+.ac-liste {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 30;
+  max-height: 300px; overflow-y: auto;
+  margin: 0; padding: 6px; list-style: none;
+  background: var(--bg-erhoben);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-gross);
+  box-shadow: var(--schatten-hoch);
+}
+.ac-liste li {
+  padding: 10px 12px; border-radius: var(--r-klein);
+  font-size: .8125rem; cursor: pointer; transition: background 120ms var(--ease);
+}
+.ac-liste li:hover, .ac-liste li.ist-aktiv { background: var(--lime-flaeche); }
+.ac-titel { display: block; color: var(--text); font-weight: 600; }
+.ac-meta { display: block; margin-top: 2px; font-size: .6875rem; color: var(--text-schwach); }
+.ac-leer { padding: 14px 12px; font-size: .8125rem; color: var(--text-schwach); text-align: center; }
+
+.gewaehlt {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin-top: 9px; padding: 11px 13px;
+  background: var(--lime-flaeche);
+  border: 1px solid var(--lime-rand); border-radius: var(--r-klein);
+  font-size: .8125rem;
+}
+.gewaehlt-text { flex: 1 1 auto; min-width: 0; }
+.gewaehlt-titel { display: block; font-weight: 700; color: var(--text); }
+.gewaehlt-meta { display: block; margin-top: 2px; font-size: .6875rem; color: var(--text-sek); }
+.gewaehlt-weg {
+  flex: 0 0 auto; width: 28px; height: 28px; padding: 0;
+  background: none; border: 0; border-radius: var(--r-klein);
+  color: var(--text-sek); font-size: 1.25rem; line-height: 1; cursor: pointer;
+  transition: all var(--t);
+}
+.gewaehlt-weg:hover { color: var(--rot); background: var(--rot-flaeche); }
+
+/* ─── Produktauswahl ────────────────────────────────────────────────────── */
+/* Überlagernd statt raumgreifend — dieselbe Mechanik wie .ac-liste beim
+   Fahrzeugfeld. Vorher stand hier ein dauerhaft aufgeklappter Kasten von
+   232 px, gefüllt mit allen 48 Produkten, auch wenn niemand suchte. Das war
+   zugleich ein Rollbereich IM Rollbereich der Seite. */
+.produkt-auswahl {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 30;
+  max-height: 300px; overflow-y: auto;
+  padding: 6px;
+  background: var(--bg-erhoben);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-gross);
+  box-shadow: var(--schatten-hoch, var(--schatten));
+}
+.produkt-gruppe {
+  padding: 9px 9px 4px;
+  font-size: .6875rem; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--text-schwach);
+}
+.produkt-zeile {
+  display: flex; align-items: center; gap: 10px;
+  min-height: 36px; padding: 6px 9px;
+  border-radius: var(--r-klein); cursor: pointer;
+  transition: background 120ms var(--ease);
+}
+.produkt-zeile:hover { background: var(--lime-flaeche); }
+.produkt-zeile input { accent-color: var(--lime-dunkel); width: 16px; height: 16px; flex: 0 0 auto; cursor: pointer; }
+.produkt-name { flex: 1 1 auto; font-size: .8125rem; }
+.produkt-nr {
+  flex: 0 0 auto;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: .6875rem; color: var(--text-schwach);
+}
+
+/* ─── Nebenfelder ────────────────────────────────────────────────────────
+   Angaben, die weder die Suche speisen noch den Sicherheitswert heben
+   (lib/sicherheit.mjs). Sie bleiben vollständig erreichbar, kosten
+   zugeklappt aber nur noch eine Zeile statt gut 260 px. */
+.nebenfelder { margin-top: 4px; }
+.nebenfelder > summary {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 2px; cursor: pointer; list-style: none;
+  font-size: .8125rem; font-weight: 600; color: var(--text-leise);
+  border-radius: var(--r-klein);
+  transition: color 120ms var(--ease);
+}
+.nebenfelder > summary::-webkit-details-marker { display: none; }
+.nebenfelder > summary::before {
+  content: ''; width: 0; height: 0; flex: none;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+  transition: transform 140ms var(--ease);
+}
+.nebenfelder[open] > summary::before { transform: rotate(90deg); }
+.nebenfelder > summary:hover { color: var(--text); }
+.nebenfelder > summary:focus-visible { outline: 2px solid var(--fokus, currentColor); outline-offset: 2px; }
+.nebenfelder[open] > summary { margin-bottom: 10px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 7px 5px 13px;
+  background: var(--lime-flaeche); color: #5C6B03;
+  border: 1px solid var(--lime-rand); border-radius: var(--r-voll);
+  font-size: .75rem; font-weight: 700;
+}
+:root[data-theme="dark"] .chip { color: var(--lime); }
+.chip button {
+  width: 19px; height: 19px; padding: 0;
+  background: none; border: 0; border-radius: var(--r-voll);
+  color: inherit; font-size: 1rem; line-height: 1; cursor: pointer; opacity: .6;
+  transition: opacity var(--t);
+}
+.chip button:hover { opacity: 1; }
+
+/* ─── Seriennummer-Erkennung ────────────────────────────────────────────── */
+.sn-erkennung {
+  margin-top: 8px; padding: 10px 13px;
+  border-radius: var(--r-klein);
+  font-size: .75rem; line-height: 1.55;
+}
+.sn-erkennung[data-status="ok"] {
+  background: var(--lime-flaeche); border: 1px solid var(--lime-rand); color: var(--text);
+}
+.sn-erkennung[data-status="unbekannt"] {
+  background: var(--cyan-flaeche); border: 1px solid rgba(59, 169, 211, .3); color: var(--text-sek);
+}
+.sn-marke { font-weight: 800; color: #5C6B03; }
+:root[data-theme="dark"] .sn-marke { color: var(--lime); }
+
+/* ─── Warnungen ─────────────────────────────────────────────────────────── */
+.warnungen { margin-top: 22px; display: grid; gap: 10px; }
+.warnungen:empty { display: none; }
+.warnung {
+  display: flex; gap: 12px;
+  padding: 13px 16px;
+  border-radius: var(--r-klein);
+  font-size: .875rem; line-height: 1.55;
+}
+.warnung[data-schwere="warnung"] {
+  background: var(--rot-flaeche); border: 1px solid var(--rot-rand); color: var(--rot-text);
+}
+.warnung[data-schwere="hinweis"] {
+  background: var(--cyan-flaeche); border: 1px solid rgba(59, 169, 211, .3); color: var(--text-sek);
+}
+.warnung[data-schwere="kritisch"] {
+  background: var(--rot-flaeche); border: 2px solid var(--rot); color: var(--rot-text); font-weight: 600;
+}
+.warnung-glyph { flex: 0 0 auto; font-size: 1rem; line-height: 1.4; }
+
+/* ─── Absende-Leiste ────────────────────────────────────────────────────── */
+.absende-leiste {
+  /* Steht jetzt in der rechten Spalte statt unter der ganzen Seite: kein
+     Trennstrich mehr nötig, dafür volle Spaltenbreite für den Knopf. */
+  margin-top: 0; padding-top: 0; border-top: 0;
+  display: grid; gap: 5px; justify-items: stretch;
+}
+.absende-leiste .btn-primaer { width: 100%; }
+.datenschutz-hinweis {
+  margin: 0; max-width: 62ch;
+  font-size: .6875rem; color: var(--text-schwach); line-height: 1.45; text-align: left;
+}
+
+/* ─── Antwortansicht ────────────────────────────────────────────────────── */
+.chat-verlauf { display: grid; gap: 22px; }
+
+.nachricht { }
+.nachricht-kopf {
+  display: flex; align-items: center; gap: 9px;
+  margin-bottom: 10px;
+  font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+}
+.nachricht[data-von="nutzer"] .nachricht-kopf { color: #1B6C8C; }
+:root[data-theme="dark"] .nachricht[data-von="nutzer"] .nachricht-kopf { color: var(--cyan); }
+.nachricht[data-von="thi"] .nachricht-kopf { color: var(--navy); }
+:root[data-theme="dark"] .nachricht[data-von="thi"] .nachricht-kopf { color: var(--lime); }
+
+.nachricht-punkt { width: 7px; height: 7px; border-radius: var(--r-voll); background: currentColor; }
+
+.nachricht-körper {
+  padding: 20px 24px;
+  background: var(--bg-karte);
+  border: 1px solid var(--linie);
+  border-radius: var(--r-gross);
+  box-shadow: var(--schatten);
+}
+.nachricht[data-von="nutzer"] .nachricht-körper {
+  background: var(--cyan-flaeche);
+  border-color: rgba(59, 169, 211, .24);
+  box-shadow: none;
+}
+.nachricht[data-von="thi"][data-kritisch="1"] .nachricht-körper {
+  background: var(--rot-flaeche); border: 2px solid var(--rot);
+}
+
+/* Fallzusammenfassung */
+.fall-liste { display: grid; gap: 7px; margin: 0; }
+.fall-zeile { display: flex; gap: 14px; font-size: .875rem; }
+.fall-schluessel { flex: 0 0 140px; color: var(--text-sek); }
+.fall-wert { flex: 1 1 auto; min-width: 0; color: var(--text); font-weight: 500; }
+
+/* Antworttext */
+.antwort { font-size: 1rem; line-height: 1.72; }
+.antwort > *:first-child { margin-top: 0; }
+.antwort > *:last-child { margin-bottom: 0; }
+.antwort h2 { font-size: 1.25rem; font-weight: 800; color: var(--text-ueber); margin: 24px 0 11px; }
+.antwort h3 { font-size: 1.0625rem; font-weight: 700; color: var(--text-ueber); margin: 19px 0 8px; }
+.antwort p { margin: 0 0 13px; }
+.antwort ul, .antwort ol { margin: 0 0 13px; padding-left: 23px; }
+.antwort li { margin-bottom: 7px; }
+.antwort strong { font-weight: 700; }
+.antwort code {
+  padding: 2px 7px;
+  background: var(--lime-flaeche); color: #5C6B03;
+  border-radius: 5px;
+  font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .8125em;
+}
+:root[data-theme="dark"] .antwort code { color: var(--lime); }
+.antwort hr { margin: 20px 0; border: 0; border-top: 1px solid var(--linie); }
+.antwort em { color: var(--text-sek); }
+
+/* Pin-Belegungen, DIP-Stellungen, Blinkcodes — genau hier zählt Genauigkeit,
+   deshalb tabellarische Ziffern und klare Spaltentrennung. */
+.antwort-tabelle {
+  width: 100%; margin: 0 0 14px;
+  border-collapse: collapse;
+  font-size: .875rem;
+  font-variant-numeric: tabular-nums;
+  display: block; overflow-x: auto;   /* schmale Schirme: seitlich scrollbar */
+}
+.antwort-tabelle th, .antwort-tabelle td {
+  padding: 9px 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--linie);
+  white-space: nowrap;
+}
+.antwort-tabelle th {
+  background: var(--bg-feld);
+  font-weight: 700; font-size: .75rem;
+  letter-spacing: .03em; text-transform: uppercase; color: var(--text-sek);
+  border-bottom: 1px solid var(--linie-stark);
+}
+.antwort-tabelle tr:last-child td { border-bottom: 0; }
+.antwort-tabelle tr:hover td { background: var(--bg-feld); }
+
+/* ─── Sicherheitsangabe an der Antwort ──────────────────────────────────── */
+.sicherheit {
+  margin-top: 20px; padding: 16px 18px;
+  background: var(--bg-feld);
+  border: 1px solid var(--linie);
+  border-left: 3px solid var(--text-schwach);
+  border-radius: var(--r-klein);
+}
+.sicherheit[data-stufe="mittel"] { border-left-color: var(--cyan); }
+.sicherheit[data-stufe="hoch"] { border-left-color: var(--lime-dunkel); }
+.sicherheit[data-stufe="gering"] { border-left-color: var(--rot); }
+
+.si-kopf { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.si-wert {
+  font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em;
+  font-variant-numeric: tabular-nums; color: var(--text-ueber);
+}
+.si-label { font-size: .8125rem; font-weight: 600; color: var(--text-sek); }
+.si-balken {
+  height: 5px; margin: 10px 0;
+  background: var(--bg-erhoben); border-radius: var(--r-voll); overflow: hidden;
+}
+.si-fuellung { height: 100%; border-radius: var(--r-voll); background: var(--text-schwach); }
+.sicherheit[data-stufe="mittel"] .si-fuellung { background: var(--cyan); }
+.sicherheit[data-stufe="hoch"] .si-fuellung { background: var(--lime-dunkel); }
+.sicherheit[data-stufe="gering"] .si-fuellung { background: var(--rot); }
+
+.si-text { margin: 8px 0 0; font-size: .8125rem; color: var(--text-sek); line-height: 1.55; }
+.si-fehlt { margin: 8px 0 0; padding-left: 18px; font-size: .8125rem; color: var(--text-sek); }
+.si-fehlt li { margin-bottom: 3px; }
+
+/* ─── Belegstellen: standardmäßig zugeklappt ───────────────────────────── */
+/* Die Antwort soll die Aufmerksamkeit haben, nicht die Quellenliste. Wer
+   nachprüfen will, klappt auf — und sieht den Originaltext, nicht nur einen
+   Titel ohne Ziel. */
+.quellen { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--linie); }
+
+.quellen-kopf {
+  display: inline-flex; align-items: center; gap: 9px;
+  cursor: pointer; list-style: none;
+  font-size: .6875rem; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--text-schwach);
+  transition: color var(--t);
+}
+.quellen-kopf::-webkit-details-marker { display: none; }
+.quellen-kopf::before {
+  content: '▸'; font-size: .875rem; line-height: 1;
+  transition: transform var(--t);
+}
+.quellen[open] > .quellen-kopf::before { transform: rotate(90deg); }
+.quellen-kopf:hover { color: var(--text-sek); }
+.quellen-zahl {
+  padding: 1px 8px;
+  background: var(--bg-feld); border: 1px solid var(--linie-stark);
+  border-radius: var(--r-voll);
+  font-size: .6875rem; font-variant-numeric: tabular-nums;
+}
+
+.quelle-eintrag { margin-top: 9px; }
+.quelle {
+  display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
+  padding: 9px 13px;
+  background: var(--bg-feld);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  font-size: .8125rem; color: var(--text-sek);
+  cursor: pointer; list-style: none;
+  transition: all var(--t);
+}
+.quelle::-webkit-details-marker { display: none; }
+.quelle:hover { border-color: var(--linie-akzent); background: var(--lime-flaeche); }
+.quelle-eintrag[open] > .quelle {
+  border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+  border-color: var(--linie-akzent);
+}
+.quelle-titel { font-weight: 700; color: var(--text); }
+.quelle-abschnitt { color: var(--text-schwach); }
+
+.quelle-auszug {
+  margin: 0; padding: 14px 16px;
+  background: var(--bg-erhoben);
+  border: 1px solid var(--linie-akzent); border-top: 0;
+  border-radius: 0 0 var(--r-klein) var(--r-klein);
+  font-size: .8125rem; line-height: 1.65; color: var(--text-sek);
+  white-space: pre-wrap;
+}
+
+/* ─── Aus der Mitschrift erkannt ────────────────────────────────────────── */
+/* Vorschläge, keine Automatik: Jeder Treffer ist ein Knopf, den man drückt
+   oder ignoriert. Still gesetzte Werte würde niemand gegenlesen. */
+.erkannt {
+  margin-top: 11px; padding: 12px 14px;
+  background: var(--cyan-flaeche);
+  border: 1px solid rgba(59, 169, 211, .3);
+  border-radius: var(--r-klein);
+}
+.erkannt-kopf {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 10px;
+  font-size: .6875rem; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase; color: #1B6C8C;
+}
+:root[data-theme="dark"] .erkannt-kopf { color: var(--cyan); }
+.erkannt-alle {
+  padding: 3px 11px;
+  background: transparent; color: inherit;
+  border: 1px solid currentColor; border-radius: var(--r-voll);
+  font: inherit; font-size: .6875rem; font-weight: 700;
+  text-transform: none; letter-spacing: 0; cursor: pointer;
+  transition: all var(--t);
+}
+.erkannt-alle:hover { background: var(--cyan); color: #FFFFFF; border-color: var(--cyan); }
+
+.erkannt-liste { display: flex; flex-wrap: wrap; gap: 7px; }
+.erkannt-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px;
+  background: var(--bg-erhoben); color: var(--text);
+  border: 1px solid rgba(59, 169, 211, .35); border-radius: var(--r-voll);
+  font: inherit; font-size: .75rem; font-weight: 600; cursor: pointer;
+  transition: all var(--t);
+}
+.erkannt-chip::before { content: '+'; font-weight: 800; color: var(--cyan); }
+.erkannt-chip:hover { border-color: var(--cyan); background: var(--cyan-flaeche); }
+.erkannt-chip:active { transform: translateY(1px); }
+.erkannt-zusatz {
+  padding: 1px 7px;
+  background: var(--rot-flaeche); color: var(--rot-text);
+  border-radius: var(--r-voll);
+  font-size: .625rem; font-weight: 700;
+}
+
+/* ─── Diktat ────────────────────────────────────────────────────────────── */
+.btn-diktat {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-left: auto; padding: 4px 11px;
+  background: transparent; color: var(--text-sek);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-voll);
+  font: inherit; font-size: .6875rem; font-weight: 700; cursor: pointer;
+  transition: all var(--t);
+}
+.btn-diktat:hover { color: var(--text); border-color: var(--linie-akzent); }
+.diktat-punkt {
+  width: 7px; height: 7px; border-radius: var(--r-voll);
+  background: var(--text-schwach); transition: background var(--t);
+}
+.btn-diktat.ist-aktiv { color: var(--rot-text); border-color: var(--rot-rand); background: var(--rot-flaeche); }
+.btn-diktat.ist-aktiv .diktat-punkt { background: var(--rot); animation: pochen 1.2s ease-in-out infinite; }
+@keyframes pochen { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+
+/* ─── Fallverlauf ───────────────────────────────────────────────────────── */
+.verlauf-overlay {
+  position: fixed; inset: 0; z-index: 90;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 80px 20px 20px;
+  background: rgba(10, 15, 28, .45);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.verlauf-box {
+  width: 100%; max-width: 620px; max-height: 80vh;
+  display: flex; flex-direction: column;
+  background: var(--bg-karte);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-gross);
+  box-shadow: var(--schatten-hoch);
+  overflow: hidden;
+}
+.verlauf-kopf {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  padding: 20px 22px 14px;
+  border-bottom: 1px solid var(--linie);
+}
+.verlauf-kopf h2 { font-size: 1.125rem; font-weight: 800; color: var(--text-ueber); }
+.verlauf-unter { margin: 4px 0 0; font-size: .75rem; color: var(--text-schwach); }
+.btn-schliessen {
+  width: 34px; height: 34px; flex: 0 0 auto; padding: 0;
+  background: transparent; color: var(--text-sek);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  font-size: 1.25rem; line-height: 1; cursor: pointer;
+  transition: all var(--t);
+}
+.btn-schliessen:hover { color: var(--rot); border-color: var(--rot-rand); background: var(--rot-flaeche); }
+
+.verlauf-liste { padding: 14px 16px 18px; overflow-y: auto; display: grid; gap: 9px; }
+.verlauf-eintrag {
+  display: grid; gap: 4px; padding: 13px 15px;
+  background: var(--bg-feld); color: var(--text);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  font: inherit; text-align: left; cursor: pointer;
+  transition: all var(--t);
+}
+.verlauf-eintrag:hover { border-color: var(--linie-akzent); background: var(--lime-flaeche); }
+.verlauf-eintrag:active { transform: translateY(1px); }
+.verlauf-zeile { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.verlauf-titel { font-size: .875rem; font-weight: 700; }
+.verlauf-wert {
+  flex: 0 0 auto;
+  font-size: .75rem; font-weight: 800; color: var(--text-sek);
+  font-variant-numeric: tabular-nums;
+}
+.verlauf-meta { font-size: .75rem; color: var(--text-sek); font-variant-numeric: tabular-nums; }
+.verlauf-text { font-size: .8125rem; color: var(--text-schwach); line-height: 1.5; }
+.verlauf-zeit { font-size: .6875rem; color: var(--text-schwach); font-variant-numeric: tabular-nums; }
+.verlauf-leer { margin: 20px 0; text-align: center; color: var(--text-schwach); font-size: .875rem; }
+.verlauf-leeren {
+  margin-top: 6px; padding: 9px;
+  background: transparent; color: var(--text-schwach);
+  border: 1px dashed var(--linie-stark); border-radius: var(--r-klein);
+  font: inherit; font-size: .75rem; cursor: pointer;
+  transition: all var(--t);
+}
+.verlauf-leeren:hover { color: var(--rot); border-color: var(--rot-rand); }
+
+/* ─── Kopieren ──────────────────────────────────────────────────────────── */
+.btn-kopieren {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 38px; margin-top: 16px; padding: 0 16px;
+  background: transparent; color: var(--text-sek);
+  border: 1px solid var(--linie-stark); border-radius: var(--r-klein);
+  font: inherit; font-size: .8125rem; font-weight: 600; cursor: pointer;
+  transition: all var(--t);
+}
+.btn-kopieren::before { content: '⧉'; font-size: 1rem; line-height: 1; }
+.btn-kopieren:hover { color: var(--text); border-color: var(--linie-akzent); background: var(--lime-flaeche); }
+.btn-kopieren:active { transform: translateY(1px); }
+.btn-kopieren.ist-kopiert {
+  color: #5C6B03; border-color: var(--lime-rand); background: var(--lime-flaeche);
+}
+:root[data-theme="dark"] .btn-kopieren.ist-kopiert { color: var(--lime); }
+.btn-kopieren.ist-kopiert::before { content: '✓'; }
+.quelle-flagge {
+  padding: 1px 7px;
+  background: var(--cyan-flaeche); color: #1B6C8C;
+  border-radius: var(--r-voll);
+  font-size: .625rem; font-weight: 800; letter-spacing: .05em;
+}
+:root[data-theme="dark"] .quelle-flagge { color: var(--cyan); }
+
+/* Tippindikator */
+/* ─── Ladeanzeige ────────────────────────────────────────────────────────
+   Die Punkte allein sagen nur „es tut sich was". Daneben steht deshalb,
+   WAS gerade läuft — und sobald die Quellen feststehen, wie viele es sind.
+   Das ist die Information, die beim Warten am Telefon wirklich hilft. */
+.lade-status {
+  display: flex; align-items: center; gap: 11px;
+  padding: 9px 13px; margin-top: 2px;
+  background: var(--bg-feld);
+  border: 1px solid var(--linie);
+  border-radius: var(--r-klein);
+}
+.lade-text {
+  font-size: .8125rem; color: var(--text-sek);
+  font-variant-numeric: tabular-nums;
+}
+
+.tippt { display: inline-flex; gap: 6px; padding: 5px 0; flex: none; }
+.tippt span {
+  width: 8px; height: 8px; border-radius: var(--r-voll);
+  background: var(--lime-dunkel); opacity: .3;
+  animation: pulsieren 1.3s var(--ease) infinite;
+}
+.tippt span:nth-child(2) { animation-delay: .18s; }
+.tippt span:nth-child(3) { animation-delay: .36s; }
+@keyframes pulsieren {
+  0%, 60%, 100% { opacity: .25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}
+
+/* Nachfrage */
+.nachfrage {
+  position: sticky; bottom: 0;
+  display: flex; gap: 12px;
+  margin-top: 26px; padding: 16px 0;
+  background: linear-gradient(to top, var(--bg) 72%, transparent);
+}
+.nachfrage .feld { flex: 1 1 auto; min-height: 46px; }
+
+/* ─── Zugangsdialog ─────────────────────────────────────────────────────── */
+.zugang-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  padding: 24px;
+  background: var(--bg);
+}
+.zugang-box {
+  width: 100%; max-width: 400px;
+  padding: 34px;
+  background: var(--bg-karte);
+  border: 1px solid var(--linie); border-radius: 22px;
+  box-shadow: var(--schatten-hoch);
+  text-align: center;
+}
+.zugang-logo { height: 52px; width: auto; margin: 0 auto 22px; }
+.zugang-box h2 { font-size: 1.375rem; font-weight: 800; color: var(--text-ueber); margin-bottom: 10px; }
+.zugang-text { margin: 0 0 22px; font-size: .875rem; color: var(--text-sek); }
+.zugang-box .feld { margin-bottom: 14px; text-align: center; }
+.zugang-fehler { margin: -7px 0 14px; font-size: .8125rem; color: var(--rot-text); font-weight: 600; }
+
+/* ─── Fußzeile ──────────────────────────────────────────────────────────── */
+.fuss {
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--linie);
+  background: var(--bg-erhoben);
+  font-size: .8125rem; color: var(--text-sek);
+}
+.fuss-tel { color: var(--navy); text-decoration: none; font-weight: 700; }
+:root[data-theme="dark"] .fuss-tel { color: var(--lime); }
+.fuss-tel:hover { text-decoration: underline; }
+
+/* ─── Scrollbars ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--linie-stark); border-radius: var(--r-voll); border: 3px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-schwach); background-clip: content-box; }
+
+/* ─── Responsiv ─────────────────────────────────────────────────────────── */
+@media (max-width: 1120px) {
+  /* Unter dieser Breite wird die Seitenspalte zu schmal für die
+     Produktauswahl — dann stehen die Blöcke untereinander.
+     WICHTIG: Dann muss die Reihenfolge der NUMMERIERUNG folgen (1→2→3→4).
+     In der Zweispalten-Ansicht ergibt 1/4 links und 2/3 rechts Sinn, beim
+     Scrollen wäre 1→4→2→3 dagegen schlicht verwirrend.
+     `display: contents` hebt die beiden Spuren auf, sodass die Blöcke direkte
+     Flex-Kinder werden und sich per `order` sortieren lassen. */
+  .aufnahme { display: flex; flex-direction: column; gap: 18px; }
+  .spur-gespraech, .spur-fakten { display: contents; }
+  .spur-fakten { position: static; }
+
+  .sicherheit-vorschau { order: 0; }
+  .block[data-block="anliegen"] { order: 1; }
+  .block[data-block="produkt"] { order: 2; }
+  .block[data-block="fahrzeug"] { order: 3; }
+  .block[data-block="beobachtung"] { order: 4; }
+
+  /* Warnungen und Absendeknopf gehören hier ans ENDE. In der
+     Zweispalten-Ansicht stehen sie oben rechts neben der Belastbarkeit;
+     untereinander gelesen käme der Absendeknopf sonst mitten im Formular. */
+  .warnungen { order: 5; }
+  .absende-leiste {
+    order: 6;
+    margin-top: 6px; padding-top: 16px;
+    border-top: 1px solid var(--linie);
+    justify-items: center;
+  }
+  .absende-leiste .btn-primaer { width: auto; min-width: 260px; }
+  .datenschutz-hinweis { text-align: center; }
+}
+
+@media (max-width: 860px) {
+  .breite, .schmal { padding: 24px 18px 40px; }
+  .kopf-inner { padding: 10px 18px; }
+  .seiten-kopf h1 { font-size: 1.625rem; }
+  .marke-logo { height: 46px; }
+}
+
+@media (max-width: 560px) {
+  .breite, .schmal { padding: 18px 14px 32px; }
+  .kopf-inner { padding: 10px 14px; gap: 10px; }
+  .marke-logo { height: 40px; }
+  .marke-name { font-size: 1.375rem; }
+  .marke-rolle { display: none; }
+  .marke-trenner { display: none; }
+  .feld-reihe { grid-template-columns: 1fr; gap: 0; }
+  .fall-zeile { flex-direction: column; gap: 1px; }
+  .fall-schluessel { flex: none; font-size: .6875rem; }
+  .nachricht-körper { padding: 16px 17px; }
+  .btn-gross { width: 100%; }
+  .block-kopf-statisch, .block-haupt .block-inhalt, .block-inhalt { padding: 15px 16px; }
+}
+
+/* ─── Bewegungsreduktion & Fokus ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+:focus-visible { outline: 2px solid var(--lime-dunkel); outline-offset: 2px; }

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thi — THITRONIK Support</title>
+<meta name="description" content="Fallaufnahme und technischer Support für THITRONIK-Produkte.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#EEF1F7">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#hauptbereich" data-i18n="skipLink">Zum Inhalt springen</a>
+
+<!-- ─── Kopfzeile ─────────────────────────────────────────────────────── -->
+<header class="kopf">
+  <div class="kopf-inner">
+    <div class="marke">
+      <!-- Zwei Fassungen derselben Marke, beide auf transparentem Grund und
+           formatgleich (3,86:1), damit beim Moduswechsel nichts springt:
+           hell = Original (Navy-Schrift, rotes Segel), dunkel = Negativfassung
+           (Schrift weiß, Segel unverändert rot). Erzeugt mit
+           werkzeuge/logo-bauen.mjs aus CI/Logo White.png. -->
+      <img src="/assets/img/logo-hell.webp" alt="THITRONIK" class="marke-logo logo-hell">
+      <img src="/assets/img/logo-dunkel.webp" alt="THITRONIK" class="marke-logo logo-dunkel">
+      <span class="marke-trenner" aria-hidden="true"></span>
+      <div class="marke-text">
+        <span class="marke-name">Thi</span>
+        <span class="marke-rolle" data-i18n="rolle">Technischer Support</span>
+      </div>
+    </div>
+
+    <div class="kopf-aktionen">
+      <div class="sprachwahl" role="group" aria-label="Sprache / Langue">
+        <button type="button" class="sprach-btn ist-aktiv" data-sprache="de" aria-pressed="true">DE</button>
+        <button type="button" class="sprach-btn" data-sprache="fr" aria-pressed="false">FR</button>
+      </div>
+      <div class="sprachwahl" role="group" aria-label="Darstellung">
+        <button type="button" class="sprach-btn ist-aktiv" data-thema="light" aria-pressed="true" data-i18n="themaHell">Hell</button>
+        <button type="button" class="sprach-btn" data-thema="dark" aria-pressed="false" data-i18n="themaDunkel">Dunkel</button>
+      </div>
+      <button type="button" class="btn-geist" id="verlaufOeffnen" data-i18n="verlauf">Verlauf</button>
+      <button type="button" class="btn-geist" id="neuerFall" data-i18n="neuerFall">Neuer Fall</button>
+    </div>
+  </div>
+</header>
+
+<!-- ─── Fallverlauf ───────────────────────────────────────────────────── -->
+<div class="verlauf-overlay" id="verlaufOverlay" hidden>
+  <div class="verlauf-box">
+    <div class="verlauf-kopf">
+      <div>
+        <h2 data-i18n="verlaufTitel">Zuletzt aufgenommen</h2>
+        <p class="verlauf-unter" data-i18n="verlaufUnter">Nur auf diesem Gerät gespeichert, ohne Kontaktdaten.</p>
+      </div>
+      <button type="button" class="btn-schliessen" id="verlaufSchliessen" aria-label="Schließen">×</button>
+    </div>
+    <div class="verlauf-liste" id="verlaufListe"></div>
+  </div>
+</div>
+
+<!-- ─── Zugangsdialog ─────────────────────────────────────────────────── -->
+<div class="zugang-overlay" id="zugangOverlay" hidden>
+  <div class="zugang-box">
+    <img src="/assets/img/logo-hell.webp" alt="THITRONIK" class="zugang-logo logo-hell">
+    <img src="/assets/img/logo-dunkel.webp" alt="THITRONIK" class="zugang-logo logo-dunkel">
+    <h2 data-i18n="zugangTitel">Zugang</h2>
+    <p class="zugang-text" data-i18n="zugangText">Bitte gib das Zugangswort ein, das du von THITRONIK erhalten hast.</p>
+    <form id="zugangForm" autocomplete="off">
+      <input type="password" id="zugangWort" class="feld" data-i18n-ph="zugangPlatzhalter" placeholder="Zugangswort" required>
+      <p class="zugang-fehler" id="zugangFehler" hidden></p>
+      <button type="submit" class="btn-primaer btn-voll" data-i18n="zugangAbsenden">Weiter</button>
+    </form>
+  </div>
+</div>
+
+<main id="hauptbereich">
+
+  <!-- ══ Ansicht 1: Fallaufnahme ═══════════════════════════════════════ -->
+  <section class="ansicht ansicht-fall" id="ansichtFall">
+    <div class="breite">
+
+      <!-- Sichtbar entfernt, um Höhe zu sparen: Die Kopfzeile darüber sagt
+           bereits, wo man ist, und der Hinweis „fehlende Angaben blockieren
+           nicht" steht als Stichwortliste in der Belastbarkeits-Anzeige.
+           Die Überschrift BLEIBT für Screenreader — ohne sie hätte die Seite
+           keine h1, und `T.fallTitel` wird außerdem beim Kopieren des Falls
+           gebraucht (app.js). -->
+      <h1 class="nur-vorlesen" data-i18n="fallTitel">Fallaufnahme</h1>
+
+      <form id="fallFormular" autocomplete="off">
+        <div class="aufnahme">
+
+          <!-- ── Hauptspalte: das Gespräch ─────────────────────────── -->
+          <div class="spur-gespraech">
+
+            <section class="block block-haupt" data-block="anliegen">
+              <div class="block-kopf-statisch">
+                <span class="schritt">1</span>
+                <div class="block-titelgruppe">
+                  <h2 class="block-titel" data-i18n="blockAnliegen">Anliegen</h2>
+                  <p class="block-unter" data-i18n="unterAnliegen">Was schildert der Kunde?</p>
+                </div>
+                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
+              </div>
+              <div class="block-inhalt">
+
+                <div class="feld-gruppe">
+                  <span class="feld-label">
+                    <span data-i18n="labelBeobachtet">Mitschrift — in eigenen Worten <em>*</em></span>
+                    <button type="button" class="btn-diktat" id="diktat" hidden>
+                      <span class="diktat-punkt" aria-hidden="true"></span>
+                      <span data-i18n="diktatStart">Diktieren</span>
+                    </button>
+                  </span>
+                  <textarea id="beobachtet" class="feld feld-gross" rows="5" data-i18n-ph="phBeobachtet"
+                    placeholder="Einfach mitschreiben, während der Kunde erzählt — Fahrzeug, Produkt und Seriennummer erkennt Thi selbst."></textarea>
+                  <div class="erkannt" id="erkannt" hidden></div>
+                </div>
+
+                <div class="feld-reihe">
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelErwartet">Erwartetes Verhalten</span>
+                    <input type="text" id="erwartet" class="feld" data-i18n-ph="phErwartet" placeholder="Was sollte stattdessen passieren?">
+                  </label>
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelRepro">Tritt auf</span>
+                    <select id="reproduzierbar" class="feld">
+                      <option value="" data-i18n="optBitteWaehlen">Bitte wählen</option>
+                      <option value="dauerhaft" data-i18n="optDauerhaft">Dauerhaft</option>
+                      <option value="sporadisch" data-i18n="optSporadisch">Sporadisch</option>
+                      <option value="reproduzierbar" data-i18n="optRepro">Zuverlässig reproduzierbar</option>
+                      <option value="einmalig" data-i18n="optEinmalig">Bisher einmalig</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="block block-haupt" data-block="beobachtung">
+              <div class="block-kopf-statisch">
+                <span class="schritt">4</span>
+                <div class="block-titelgruppe">
+                  <h2 class="block-titel" data-i18n="blockBeobachtung">Was zeigt das Gerät?</h2>
+                  <p class="block-unter" data-i18n="unterBeobachtung">Am Telefon erfragen — je wörtlicher, desto besser.</p>
+                </div>
+                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
+              </div>
+              <div class="block-inhalt">
+
+                <label class="feld-gruppe">
+                  <span class="feld-label">
+                    <span data-i18n="labelLed">Status-LED / Blinkcode / Signalton</span>
+                    <span class="marke-hebel" data-i18n="hebel">stärkster Suchbegriff</span>
+                  </span>
+                  <input type="text" id="led" class="feld" data-i18n-ph="phLed" placeholder="z. B. 2× rot blinkend, dann Pause">
+                </label>
+
+                <div class="feld-reihe">
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelMeldung">App-Meldung / SMS-Wortlaut</span>
+                    <input type="text" id="meldung" class="feld" data-i18n-ph="phMeldung" placeholder="möglichst wörtlich">
+                  </label>
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelAusloeser">Auslöser</span>
+                    <input type="text" id="ausloeser" class="feld" data-i18n-ph="phAusloeser" placeholder="Was war unmittelbar davor?">
+                  </label>
+                </div>
+
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelBisher">Bereits geprüft — mit Ergebnis</span>
+                  <textarea id="bisher" class="feld" rows="2" data-i18n-ph="phBisher"
+                    placeholder="z. B. Handsender-Batterie getauscht — keine Änderung"></textarea>
+                </label>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- ── Seitenspalte: die harten Fakten ───────────────────── -->
+          <aside class="spur-fakten">
+
+            <div class="sicherheit-vorschau" id="sicherheitVorschau">
+              <div class="sv-kopf">
+                <span class="sv-titel" data-i18n="svTitel">Belastbarkeit der Aufnahme</span>
+                <span class="sv-wert" id="svWert">0<span class="sv-prozent">%</span></span>
+              </div>
+              <div class="sv-balken"><div class="sv-fuellung" id="svFuellung"></div></div>
+              <ul class="sv-liste" id="svListe"></ul>
+            </div>
+
+            <!-- Warnungen und Absendeknopf stehen bewusst HIER, direkt unter
+                 der Belastbarkeit: Wie vollständig der Fall ist und der Schritt,
+                 ihn abzuschicken, gehören zusammen. Außerdem hält es den Knopf
+                 oben im Bild — am Seitenende musste man dafür scrollen.
+                 Auf schmalen Schirmen rutscht der Block per `order` wieder ans
+                 Ende, weil die Spalten dort untereinander stehen. -->
+            <div class="warnungen" id="warnungen"></div>
+
+            <div class="absende-leiste">
+              <button type="submit" class="btn-primaer btn-gross" id="absenden">
+                <span data-i18n="absenden">Fall analysieren</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="btn-pfeil"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <p class="datenschutz-hinweis" data-i18n="datenschutz">
+                Keine Passwörter, SIM-PINs oder Zugangsdaten eingeben. Es werden keine Kontaktdaten erfasst.
+              </p>
+            </div>
+
+            <section class="block" data-block="produkt">
+              <div class="block-kopf-statisch">
+                <span class="schritt">2</span>
+                <div class="block-titelgruppe">
+                  <h2 class="block-titel" data-i18n="blockProdukt">Welches Produkt?</h2>
+                </div>
+                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
+              </div>
+              <div class="block-inhalt">
+
+                <div class="feld-gruppe">
+                  <!-- Überlagernde Liste wie beim Fahrzeugfeld: Sie belegte als
+                       aufgeklappter Kasten 232 px Höhe, auch ohne Eingabe —
+                       der größte Einzelposten auf dem Weg zu „alles auf einem
+                       Bildschirm". Jetzt öffnet sie beim Tippen oder Anklicken
+                       und legt sich über den Inhalt, statt ihn wegzuschieben. -->
+                  <div class="autocomplete">
+                    <input type="text" id="produktSuche" class="feld" data-i18n-ph="phProdukt"
+                           placeholder="Produkt suchen …" role="combobox"
+                           aria-expanded="false" aria-autocomplete="list" aria-controls="produktAuswahl">
+                    <div class="produkt-auswahl" id="produktAuswahl" role="listbox" hidden></div>
+                  </div>
+                  <div class="chips" id="produktChips"></div>
+                </div>
+
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelSeriennummer">Seriennummer</span>
+                  <input type="text" id="seriennummer" class="feld feld-mono" placeholder="0699-045" inputmode="numeric">
+                  <p class="feld-hilfe" data-i18n="hilfeSeriennummer">Steht auf dem Typenschild — Kunde muss ggf. nachsehen. Nicht die Artikelnummer (100699).</p>
+                  <div class="sn-erkennung" id="snErkennung" hidden></div>
+                </label>
+
+                <!-- Zweitrangig: trägt nichts zur Sicherheitsbewertung bei
+                     (siehe lib/sicherheit.mjs, „Datenlage"). Deshalb
+                     eingeklappt — erreichbar, aber nicht im Weg. -->
+                <details class="nebenfelder">
+                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelSoftware">Softwarestand</span>
+                    <input type="text" id="softwarestand" class="feld feld-mono" placeholder="11.0.4">
+                    <p class="feld-hilfe" data-i18n="hilfeSoftware">Falls ablesbar — sonst leer lassen, nicht raten.</p>
+                  </label>
+                </details>
+              </div>
+            </section>
+
+            <section class="block" data-block="fahrzeug">
+              <div class="block-kopf-statisch">
+                <span class="schritt">3</span>
+                <div class="block-titelgruppe">
+                  <h2 class="block-titel" data-i18n="blockFahrzeug">Auf welchem Fahrzeug?</h2>
+                </div>
+                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
+              </div>
+              <div class="block-inhalt">
+
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelFahrzeug">Basisfahrzeug / Chassis</span>
+                  <div class="autocomplete">
+                    <input type="text" id="fahrzeugSuche" class="feld" data-i18n-ph="phFahrzeug"
+                           placeholder="z. B. Ducato, Sprinter, Transit …" role="combobox"
+                           aria-expanded="false" aria-autocomplete="list" aria-controls="fahrzeugListe">
+                    <ul class="ac-liste" id="fahrzeugListe" role="listbox" hidden></ul>
+                  </div>
+                  <p class="feld-hilfe" data-i18n="hilfeFahrzeug">Auch Schwestermodelle suchbar (Vivaro, Jumper, NV300 …).</p>
+                  <div class="gewaehlt" id="fahrzeugGewaehlt" hidden></div>
+                </label>
+
+                <!-- Baujahr bleibt sichtbar: Es trägt zwar keine Punkte, geht
+                     aber in die Widerspruchsprüfung (Baujahr ↔ Generation). -->
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelBaujahr">Baujahr</span>
+                  <input type="number" id="baujahr" class="feld feld-mono" min="1990" max="2030" placeholder="2023">
+                </label>
+
+                <!-- Der Rest ist Zusatzkontext ohne Wirkung auf Suche oder
+                     Sicherheitswert — eingeklappt statt gestrichen. -->
+                <details class="nebenfelder">
+                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
+
+                  <div class="feld-reihe">
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelStartknopf">Startknopf</span>
+                      <select id="startknopf" class="feld">
+                        <option value="" data-i18n="optUnbekannt">Unbekannt</option>
+                        <option value="ja" data-i18n="optJa">Ja</option>
+                        <option value="nein" data-i18n="optNein">Nein</option>
+                      </select>
+                    </label>
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelAufbauart">Aufbauart</span>
+                      <select id="aufbauart" class="feld">
+                        <option value="" data-i18n="optBitteWaehlen">Bitte wählen</option>
+                        <option value="Kastenwagen" data-i18n="optKasten">Kastenwagen</option>
+                        <option value="teilintegriert" data-i18n="optTeil">Teilintegriert</option>
+                        <option value="vollintegriert" data-i18n="optVoll">Vollintegriert</option>
+                        <option value="Alkoven" data-i18n="optAlkoven">Alkoven</option>
+                        <option value="Liner" data-i18n="optLiner">Liner</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div class="feld-reihe">
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelAufbauhersteller">Aufbauhersteller</span>
+                      <input type="text" id="aufbauhersteller" class="feld" data-i18n-ph="phAufbauhersteller" placeholder="z. B. Knaus">
+                    </label>
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelEinbau">Einbau</span>
+                      <input type="text" id="einbau" class="feld" data-i18n-ph="phEinbau" placeholder="z. B. 03/2023, Fachbetrieb">
+                    </label>
+                  </div>
+                </details>
+              </div>
+            </section>
+
+          </aside>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ══ Ansicht 2: Antwort ════════════════════════════════════════════ -->
+  <section class="ansicht ansicht-antwort" id="ansichtAntwort" hidden>
+    <div class="schmal">
+
+      <button type="button" class="btn-zurueck" id="zurueckZumFall">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="zurueck">Fall bearbeiten</span>
+      </button>
+
+      <div class="chat-verlauf" id="chatVerlauf" aria-live="polite" aria-atomic="false"></div>
+
+      <form class="nachfrage" id="nachfrageFormular" hidden>
+        <input type="text" id="nachfrage" class="feld" data-i18n-ph="phNachfrage" placeholder="Nachfrage stellen …">
+        <button type="submit" class="btn-primaer btn-rund" aria-label="Senden">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <span data-i18n="fussSupport">THITRONIK Support</span>
+  <a href="tel:+494351767440112" class="fuss-tel">+49 (0)4351 76744-112</a>
+</footer>
+
+<script src="/assets/js/kataloge.js"></script>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/erkennung.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

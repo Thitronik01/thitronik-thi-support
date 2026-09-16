@@ -1,0 +1,803 @@
+{
+  "_hinweis": "THI-Grounding-Gold v1 (2026-06-18). Aus Wiki-Artikeln geschürft + adversarial geprüft (wörtliche Belege). Lauf: npm run thi:answer-eval (Dev-Server 3011 nötig).",
+  "cases": [
+    {
+      "id": "wipro-iii-keine-bewegungsmelder-01",
+      "question": "Hat die WiPro III eingebaute Bewegungsmelder zur Innenraumüberwachung?",
+      "expected": [
+        "/de/wipro-iii"
+      ],
+      "antwort_muss": [
+        "keine bewegungsmelder",
+        "magnetkontakt",
+        "can-bus"
+      ],
+      "antwort_darf_nicht": [
+        "ja, bewegungsmelder",
+        "infrarot-bewegungsmelder eingebaut",
+        "radar-sensor verbaut"
+      ],
+      "beleg": "Es verwendet keine Bewegungsmelder — die Absicherung erfolgt ausschließlich über Funk-Magnetkontakte an Türen, Fenstern und Klappen sowie den CAN-Bus.",
+      "source": "wipro-iii.md:32",
+      "kategorie": "negation"
+    },
+    {
+      "id": "safe-lock-platine-braucht-safelock-02",
+      "question": "Reicht für die safe.lock Umrüstplatine eine Standard-WiPro III, oder muss es die safe.lock-Version sein?",
+      "expected": [
+        "/de/safe-lock-umruestplatine"
+      ],
+      "antwort_muss": [
+        "wipro iii safe.lock",
+        "nicht ausreichend"
+      ],
+      "antwort_darf_nicht": [
+        "standard-wipro iii reicht",
+        "auch mit der standardversion",
+        "keine safe.lock nötig"
+      ],
+      "beleg": "**WiPro III safe.lock** (Standardversion WiPro III ist nicht ausreichend)",
+      "source": "safe-lock-umruestplatine.md:41",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "safe-lock-platine-kein-standalone-03",
+      "question": "Kann ich die safe.lock Umrüstplatine als eigenständige Alarmanlage ohne WiPro verkaufen?",
+      "expected": [
+        "/de/safe-lock-umruestplatine"
+      ],
+      "antwort_muss": [
+        "kein eigenständiges alarmprodukt",
+        "ergänzt"
+      ],
+      "antwort_darf_nicht": [
+        "eigenständige alarmanlage",
+        "funktioniert ohne wipro",
+        "standalone-alarm"
+      ],
+      "beleg": "Die Umrüstplatine ist **kein eigenständiges Alarmprodukt**. Sie ergänzt ausschließlich eine vorhandene bzw. gleichzeitig installierte **WiPro III safe.lock**.",
+      "source": "safe-lock-umruestplatine.md:20",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "wipro-iii-scharf-fahrzeugschluessel-tueren-zu-04",
+      "question": "Kann man die WiPro III per Fahrzeugfunkschlüssel auch bei offener Fahrerhaustür scharfschalten?",
+      "expected": [
+        "/de/wipro-iii"
+      ],
+      "antwort_muss": [
+        "nur bei geschlossenen",
+        "fahrerhaustüren"
+      ],
+      "antwort_darf_nicht": [
+        "auch bei offener tür",
+        "unabhängig vom türzustand",
+        "bei geöffneten fahrerhaustüren möglich"
+      ],
+      "beleg": "Scharfschalten über den Fahrzeugfunkschlüssel ist **nur bei geschlossenen Fahrerhaustüren** möglich!",
+      "source": "wipro-iii.md:239",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "wipro-iii-ventcheck-vor-scharf-05",
+      "question": "Wie funktioniert die Belüftungsfunktion (Vent check) — kann ich das Fenster auch nach dem Scharfschalten öffnen?",
+      "expected": [
+        "/de/wipro-iii"
+      ],
+      "antwort_muss": [
+        "vor dem scharfschalten",
+        "öffnen"
+      ],
+      "antwort_darf_nicht": [
+        "nach dem scharfschalten öffnen",
+        "jederzeit das fenster öffnen",
+        "auch im scharfen zustand öffnen"
+      ],
+      "beleg": "Gewünschtes Fenster **vor dem Scharfschalten** öffnen",
+      "source": "wipro-iii.md:221",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "wipro-iii-panik-beide-tasten-06",
+      "question": "Wie löst man die Panikfunktion am Funk-Handsender 868 aus?",
+      "expected": [
+        "/de/funk-handsender",
+        "/de/wipro-iii"
+      ],
+      "antwort_muss": [
+        "beide tasten"
+      ],
+      "antwort_darf_nicht": [
+        "eigene paniktaste",
+        "separate panik-taste"
+      ],
+      "beleg": "Panikalarm-Aktivierung (SN-abhängig): Ab SN 0756-063: Beide Tasten gleichzeitig drücken. Vor SN 0756-063 (ältere Handsender): Eine Taste gedrückt halten, dann zweite Taste drücken.",
+      "source": "funk-handsender.md:74",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "wipro-iii-zubehoer-batterie-cr2032-07",
+      "question": "Welchen Batterietyp brauchen die Funk-Magnetkontakte und Handsender der WiPro III?",
+      "expected": [
+        "/de/wipro-iii"
+      ],
+      "antwort_muss": [
+        "cr2032",
+        "3 v"
+      ],
+      "antwort_darf_nicht": [
+        "aaa",
+        "aa-batterie",
+        "9-volt-block"
+      ],
+      "beleg": "| Batterie | CR2032 (Knopfzelle, 3 V) |",
+      "source": "wipro-iii.md:89",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "wipro-iii-ventcheck-wiederueberwachung-5s-08",
+      "question": "Wird ein im Vent-check offen gelassener Magnetkontakt nach dem Schließen sofort wieder überwacht?",
+      "expected": [
+        "/de/wipro-iii"
+      ],
+      "antwort_muss": [
+        "5 sekunden",
+        "erneut"
+      ],
+      "antwort_darf_nicht": [
+        "sofort wieder überwacht",
+        "ohne verzögerung",
+        "augenblicklich scharf"
+      ],
+      "beleg": "Wird ein offen gelassener Kontakt wieder geschlossen, überwacht die WiPro ihn nach **≥ 5 Sekunden** erneut — ein erneutes Öffnen löst dann wieder Alarm aus.",
+      "source": "wipro-iii.md:226",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "gas-connect-voraussetzung-wipro-09",
+      "question": "Kann ich den G.A.S.-connect einem Kunden ohne WiPro verkaufen, der ihn einfach standalone betreiben will?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "benötigt",
+        "wipro iii",
+        "kein eigenständiges"
+      ],
+      "antwort_darf_nicht": [
+        "eigenständig nutzbar",
+        "ohne wipro",
+        "standalone möglich"
+      ],
+      "beleg": "G.A.S.-connect ist kein eigenständiges Gerät — er benötigt eine WiPro III oder WiPro III safe.lock als Zentrale.",
+      "source": "gas-connect.md:19",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "gas-connect-negation-co-10",
+      "question": "Warnt der G.A.S.-connect auch vor Kohlenmonoxid?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "nicht erkennbar",
+        "co",
+        "propan"
+      ],
+      "antwort_darf_nicht": [
+        "erkennt co",
+        "warnt vor kohlenmonoxid",
+        "auch co"
+      ],
+      "beleg": "**Nicht erkennbar:** CO (Kohlenmonoxid), weitere Gase.",
+      "source": "gas-connect.md:41",
+      "kategorie": "negation"
+    },
+    {
+      "id": "gas-plug-standalone-11",
+      "question": "Braucht der Kunde für den G.A.S.-plug eine WiPro oder eine Funkverbindung?",
+      "expected": [
+        "/de/gas-plug"
+      ],
+      "antwort_muss": [
+        "vollständig eigenständig",
+        "keine wipro",
+        "zigarettenanzünder"
+      ],
+      "antwort_darf_nicht": [
+        "benötigt eine wipro",
+        "funkverbindung nötig",
+        "muss angelernt"
+      ],
+      "beleg": "Er wird in einen **Zigarettenanzünder-Ausgang** (mit Dauerstrom) gesteckt und arbeitet **vollständig eigenständig** — keine WiPro, keine Funk-Verbindung nötig.",
+      "source": "gas-plug.md:17",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "gas-plug-negation-externer-sensor-12",
+      "question": "Kann man an den G.A.S.-plug einen externen Zusatzsensor anschließen?",
+      "expected": [
+        "/de/gas-plug"
+      ],
+      "antwort_muss": [
+        "kein",
+        "externer sensoranschluss"
+      ],
+      "antwort_darf_nicht": [
+        "zusatzsensor anschließbar",
+        "externer sensor möglich",
+        "ja, ein externer"
+      ],
+      "beleg": "**Kein** externer Sensoranschluss möglich",
+      "source": "gas-plug.md:35",
+      "kategorie": "negation"
+    },
+    {
+      "id": "co-sensor-voraussetzung-software-104i-13",
+      "question": "Ein Kunde will den neuen CO-Sensor SNO433-003 an einer älteren G.A.S.-pro nachrüsten — geht das ohne Weiteres?",
+      "expected": [
+        "/de/co-sensor",
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "1.04i",
+        "software"
+      ],
+      "antwort_darf_nicht": [
+        "funktioniert sofort",
+        "kein update nötig",
+        "ohne weiteres kompatibel"
+      ],
+      "beleg": "Der neuere CO-Sensor (SNO433-003) erfordert mindestens **Software-Version 1.04i** der G.A.S.-pro.",
+      "source": "co-sensor.md:34",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "co-sensor-kompatibilitaet-aderendhuelsen-14",
+      "question": "Muss ich beim Anschluss des CO-Sensors an die G.A.S.-pro III Aderendhülsen verwenden?",
+      "expected": [
+        "/de/co-sensor",
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "keine aderendhülsen",
+        "g.a.s.-pro iii",
+        "verboten"
+      ],
+      "antwort_darf_nicht": [
+        "aderendhülsen verwenden",
+        "mit aderendhülsen",
+        "ja, aderendhülsen"
+      ],
+      "beleg": "**Nein**, bei der G.A.S.-pro III sind Aderendhülsen ausdrücklich **verboten**.",
+      "source": "co-sensor.md:75",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "gas-pro-iii-negation-feuerzeugtest-15",
+      "question": "Kann ich die G.A.S.-pro III zum Test einfach mit Feuerzeuggas anströmen?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "nicht möglich",
+        "feuerzeuggas",
+        "auswertungsalgorithmus"
+      ],
+      "antwort_darf_nicht": [
+        "mit feuerzeuggas testen",
+        "feuerzeuggas anströmen",
+        "test ist möglich"
+      ],
+      "beleg": "Ein Funktionstest durch Beströmen mit Feuerzeuggas ist aufgrund des komplexen Auswertungsalgorithmus **nicht möglich**.",
+      "source": "gas-pro-iii.md:39",
+      "kategorie": "negation"
+    },
+    {
+      "id": "gas-pro-iii-co-montage-deckennah-16",
+      "question": "Wird die G.A.S.-pro III CO genauso bodennah montiert wie die normale G.A.S.-pro III?",
+      "expected": [
+        "/de/gas-pro-iii",
+        "/de/co-sensor"
+      ],
+      "antwort_muss": [
+        "deckennah",
+        "leichter als luft"
+      ],
+      "antwort_darf_nicht": [
+        "bodennah",
+        "über dem fußboden",
+        "10–20 cm über dem boden"
+      ],
+      "beleg": "CO ist minimal **leichter als Luft**:\n\n- Montage möglichst **deckennah**",
+      "source": "gas-pro-iii.md:55",
+      "kategorie": "negation"
+    },
+    {
+      "id": "tsa-standalone-17",
+      "question": "Braucht der T.S.A. Funk-Rauchmelder zwingend eine WiPro, oder funktioniert er auch allein?",
+      "expected": [
+        "/de/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "standalone",
+        "ohne wipro",
+        "nutzbar"
+      ],
+      "antwort_darf_nicht": [
+        "nur mit wipro",
+        "zwingend wipro",
+        "nicht ohne"
+      ],
+      "beleg": "Als Standalone-Gerät (ohne WiPro-Integration) ist der T.S.A. immer nutzbar.",
+      "source": "funk-rauchmelder.md:150",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "tsa-keine-gaswarnung-18",
+      "question": "Warnt der T.S.A. Funk-Rauchmelder auch vor Gas oder Kohlenmonoxid?",
+      "expected": [
+        "/de/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "nicht",
+        "kohlenmonoxid",
+        "rauch"
+      ],
+      "antwort_darf_nicht": [
+        "warnt vor gas",
+        "auch vor kohlenmonoxid",
+        "co-warnung"
+      ],
+      "beleg": "Der Rauchmelder warnt **nicht** vor Gasen wie Butan, Propan, Narkosegasen oder Kohlenmonoxid.",
+      "source": "funk-rauchmelder.md:23",
+      "kategorie": "negation"
+    },
+    {
+      "id": "tsa-batterie-nicht-wechselbar-19",
+      "question": "Kann ich beim T.S.A. Funk-Rauchmelder die Batterie wechseln, wenn sie leer ist?",
+      "expected": [
+        "/de/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "nicht gewechselt"
+      ],
+      "antwort_darf_nicht": [
+        "batterie wechseln",
+        "austauschbare batterie",
+        "neue batterie einsetzen"
+      ],
+      "beleg": "Batterie kann **nicht gewechselt** werden",
+      "source": "funk-rauchmelder.md:118",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "magnetkontakt-led-ausrichtung-20",
+      "question": "Mein Funk-Magnetkontakt lässt sich anlernen, löst aber keinen Alarm aus - woran liegt das?",
+      "expected": [
+        "/de/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "led",
+        "magneten",
+        "keine alarmierung"
+      ],
+      "antwort_darf_nicht": [
+        "defekte zentrale",
+        "reichweite zu gering",
+        "batterie leer"
+      ],
+      "beleg": "Die Platine **darf nicht** mit der Sende-LED zum Magneten ausgerichtet sein!\n> In diesem Fall ist der Anlernvorgang möglich, **aber es erfolgt keine Alarmierung**.",
+      "source": "funk-magnetkontakt.md:43",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "magnetkontakt-canbus-tueren-21",
+      "question": "Brauche ich für jede Tür am Wohnmobil einen Funk-Magnetkontakt?",
+      "expected": [
+        "/de/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "can-bus",
+        "kein funk-magnetkontakt nötig"
+      ],
+      "antwort_darf_nicht": [
+        "jede tür benötigt einen magnetkontakt",
+        "immer ein magnetkontakt",
+        "für alle türen nötig"
+      ],
+      "beleg": "Türen, die im Kombi-Instrument / auf der Multifunktionsanzeige angezeigt werden, werden über **CAN-Bus** überwacht → **kein Funk-Magnetkontakt nötig** für diese Türen.",
+      "source": "funk-magnetkontakt.md:119",
+      "kategorie": "negation"
+    },
+    {
+      "id": "handsender-nur-wipro-22",
+      "question": "Kann ich den Funk-Handsender 868 auch mit anderen Funk-Alarmsystemen verwenden?",
+      "expected": [
+        "/de/funk-handsender"
+      ],
+      "antwort_muss": [
+        "ausschließlich",
+        "wipro iii",
+        "nicht mit anderen"
+      ],
+      "antwort_darf_nicht": [
+        "mit anderen funksystemen kompatibel",
+        "universell einsetzbar",
+        "auch für andere systeme"
+      ],
+      "beleg": "Er ist ausschließlich für den Einsatz mit WiPro III vorgesehen — nicht mit anderen Funksystemen kompatibel.",
+      "source": "funk-handsender.md:19",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "nfc-modul-nicht-erstes-zubehoer-23",
+      "question": "Kann ich das NFC Modul als allererstes Zubehör an die WiPro anlernen?",
+      "expected": [
+        "/de/nfc-modul"
+      ],
+      "antwort_muss": [
+        "nein",
+        "master-funk-handsender",
+        "funk-handsender zuerst"
+      ],
+      "antwort_darf_nicht": [
+        "als erstes anlernen",
+        "reihenfolge egal",
+        "kann zuerst angelernt"
+      ],
+      "beleg": "**Nein.** Es wird sonst als **Master-Funk-Handsender** erkannt. Mindestens einen Funk-Handsender zuerst anlernen.",
+      "source": "nfc-modul.md:169",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "sirenen-hupe-pin9-24",
+      "question": "An welchen Pin der WiPro III schließe ich eine Zusatzhupe an?",
+      "expected": [
+        "/de/sirenen-hupen"
+      ],
+      "antwort_muss": [
+        "pin 9",
+        "rosa",
+        "nicht",
+        "pin 15"
+      ],
+      "antwort_darf_nicht": [
+        "pin 15 anschließen",
+        "weißes kabel für hupe",
+        "hupe an pin 15"
+      ],
+      "beleg": "Zusätzliche Hupen (Fahrzeughupen oder Zusatzhupen) müssen an **Pin 9 (rosa Kabel)** der WiPro III angeschlossen werden — **nicht** an Pin 15 (weißes Kabel).",
+      "source": "sirenen-hupen.md:36",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "pro-finder-standalone-25",
+      "question": "Brauche ich für den Pro-Finder zwingend eine WiPro III, oder läuft er auch alleine?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "standalone",
+        "ortung"
+      ],
+      "antwort_darf_nicht": [
+        "nur mit wipro",
+        "zwingend eine wipro",
+        "benötigt wipro"
+      ],
+      "beleg": "Er dient zur Alarmweiterleitung per SMS, Fahrzeugortung und Fernsteuerung — sowohl in Verbindung mit der WiPro III als auch standalone.",
+      "source": "pro-finder.md:25",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "pro-finder-sim-format-26",
+      "question": "Welches SIM-Karten-Format braucht ein Pro-Finder ab Seriennummer 045?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/mobilfunk-sim"
+      ],
+      "antwort_muss": [
+        "nano-sim"
+      ],
+      "antwort_darf_nicht": [
+        "micro-sim",
+        "mini-sim"
+      ],
+      "beleg": "| SIM-Karte | **Micro-SIM** | **Nano-SIM** ⚠️ |",
+      "source": "pro-finder.md:45",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "mobilfunk-5g-only-27",
+      "question": "Funktioniert eine reine 5G-only-SIM-Karte im Pro-Finder?",
+      "expected": [
+        "/de/mobilfunk-sim",
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "ungeeignet",
+        "5g-only"
+      ],
+      "antwort_darf_nicht": [
+        "funktioniert problemlos",
+        "ist geeignet",
+        "5g wird unterstützt"
+      ],
+      "beleg": "**5G ist mit dem Pro-Finder nicht möglich.** Reine **5G-only-Tarife/Karten** sind ungeeignet.",
+      "source": "mobilfunk-sim.md:22",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "bt-connect-leere-batterie-28",
+      "question": "Kann ich das Fahrzeug über BT-connect entriegeln, wenn mein Smartphone-Akku leer ist?",
+      "expected": [
+        "/de/bt-connect"
+      ],
+      "antwort_muss": [
+        "nein",
+        "handsender",
+        "backup"
+      ],
+      "antwort_darf_nicht": [
+        "kann entriegelt werden",
+        "trotzdem öffnen",
+        "auch ohne smartphone"
+      ],
+      "beleg": "Nein. Ohne aktive Bluetooth-Verbindung ist keine Steuerung über BT-connect möglich — immer einen Funk-Handsender 868 als Backup mitführen.",
+      "source": "bt-connect.md:163",
+      "kategorie": "negation"
+    },
+    {
+      "id": "pro-finder-kill-voraussetzung-29",
+      "question": "Reicht der Befehl kill aus, damit der Pro-Finder den Motor abschaltet, oder brauche ich noch Hardware?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/abschalteinrichtung"
+      ],
+      "antwort_muss": [
+        "abschalteinrichtung",
+        "ausgang a"
+      ],
+      "antwort_darf_nicht": [
+        "nur der befehl reicht",
+        "keine zusätzliche hardware",
+        "ohne abschalteinrichtung"
+      ],
+      "beleg": "Erfordert [[Abschalteinrichtung]] (Art. 101283 einpolig oder 105821 mehrpolig) an Ausgang A.",
+      "source": "pro-finder.md:399",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "pro-finder-positionen-tracking-30",
+      "question": "Kann ich mit dem Pro-Finder eine ganze Reiseroute aufzeichnen oder Live-Tracking machen?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "nicht",
+        "aufzeichnen",
+        "live-tracking"
+      ],
+      "antwort_darf_nicht": [
+        "kann routen aufzeichnen",
+        "live-tracking möglich",
+        "reiseroute aufzeichnen"
+      ],
+      "beleg": "Das Gerät ist **nicht** zum Aufzeichnen von **(Reise-)Routen** oder für **Live-Tracking** gedacht.",
+      "source": "pro-finder.md:35",
+      "kategorie": "negation"
+    },
+    {
+      "id": "bt-connect-koppelbare-geraete-31",
+      "question": "Wie viele Geräte lassen sich mit dem BT-connect koppeln?",
+      "expected": [
+        "/de/bt-connect"
+      ],
+      "antwort_muss": [
+        "9",
+        "koppelbare"
+      ],
+      "antwort_darf_nicht": [
+        "8 geräte",
+        "maximal 8"
+      ],
+      "beleg": "| Koppelbare Geräte | max. 9 |",
+      "source": "bt-connect.md:110",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "abschalteinrichtung-kill-vs-a-an-negation-32",
+      "question": "Kann ich die Abschalteinrichtung einfach per Befehl 'a an' auslösen, um den Motor abzuschalten?",
+      "expected": [
+        "/de/abschalteinrichtung"
+      ],
+      "antwort_muss": [
+        "kill",
+        "niemals",
+        "geschwindigkeit"
+      ],
+      "antwort_darf_nicht": [
+        "a an verwenden",
+        "mit a an",
+        "a an ist der richtige"
+      ],
+      "beleg": "Niemals `a an` (Ausgang A direkt einschalten) für die Abschalteinrichtung verwenden! Dieser Befehl würde die Zündung **sofort** und **ohne Geschwindigkeitsprüfung** unterbrechen — bei fahrendem Fahrzeug lebensgefährlich. Immer nur `kill` verwenden (prüft vorher 5 Sek. lang 0 km/h).",
+      "source": "abschalteinrichtung.md:100",
+      "kategorie": "negation"
+    },
+    {
+      "id": "abschalteinrichtung-schaltstrom-mehrpolig-33",
+      "question": "Wie hoch ist der maximale Schaltstrom der mehrpoligen Abschalteinrichtung (105821)?",
+      "expected": [
+        "/de/abschalteinrichtung"
+      ],
+      "antwort_muss": [
+        "1 a",
+        "mehrpolig"
+      ],
+      "antwort_darf_nicht": [
+        "40 a",
+        "max. 40"
+      ],
+      "beleg": "| Schaltstrom | max. **1 A** |",
+      "source": "abschalteinrichtung.md:50",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anlernvorgang-werkseitig-kein-zubehoer-34",
+      "question": "Ist bei der WiPro III ab Werk schon Funk-Zubehör angelernt, oder muss ich das selbst machen?",
+      "expected": [
+        "/de/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "kein",
+        "ab werk",
+        "angelernt"
+      ],
+      "antwort_darf_nicht": [
+        "ab werk angelernt",
+        "bereits angelernt",
+        "vorkonfiguriert"
+      ],
+      "beleg": "Ab Werk ist **kein** Funk-Zubehör angelernt. Ohne angelernte Sender kann die WiPro III **nicht** ausgelöst werden.",
+      "source": "anlernvorgang.md:23",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "anlernvorgang-easyadd2-can-kein-loeschen-35",
+      "question": "Kann ich mit der easy-add 2.0 Methode über die Fahrertür (CAN) auch angelerntes Zubehör löschen?",
+      "expected": [
+        "/de/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "nicht möglich",
+        "nur anlernen"
+      ],
+      "antwort_darf_nicht": [
+        "auch löschen",
+        "löschen möglich",
+        "ja, löschen über can"
+      ],
+      "beleg": "Das **Löschen** von angelerntem Zubehör ist über die CAN-Bus-Methode **nicht möglich** — nur Anlernen.",
+      "source": "anlernvorgang.md:50",
+      "kategorie": "negation"
+    },
+    {
+      "id": "anlernvorgang-batterie-cr2032-duracell-36",
+      "question": "Welche Knopfzelle nehme ich fürs Funk-Zubehör und welche Marke ist nicht empfohlen?",
+      "expected": [
+        "/de/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "cr2032",
+        "duracell"
+      ],
+      "antwort_darf_nicht": [
+        "duracell empfohlen",
+        "cr2025",
+        "aa-batterie"
+      ],
+      "beleg": "Alle 868-MHz-Funk-Komponenten verwenden eine **CR2032 Knopfzelle**.\n\n- **Empfohlene Marken:** Panasonic oder Varta\n- **Nicht empfohlen:** Duracell (Nennspannung 3 V wird häufig nicht dauerhaft erreicht)",
+      "source": "anlernvorgang.md:134",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anlernvorgang-batteriewechsel-kein-neuanlernen-37",
+      "question": "Muss ich das Funk-Zubehör nach einem Batteriewechsel neu anlernen?",
+      "expected": [
+        "/de/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "kein",
+        "neuanlernen",
+        "batteriewechsel"
+      ],
+      "antwort_darf_nicht": [
+        "neu anlernen nötig",
+        "muss neu angelernt",
+        "erneut anlernen"
+      ],
+      "beleg": "**Kein Neuanlernen** nach Batteriewechsel nötig",
+      "source": "anlernvorgang.md:138",
+      "kategorie": "negation"
+    },
+    {
+      "id": "seriennummern-profinder-nano-sim-ab-0699-045-38",
+      "question": "Ab welchem Pro-Finder Serienstand brauche ich eine Nano-SIM statt Micro-SIM?",
+      "expected": [
+        "/de/seriennummern-softwarestaende",
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "0699-045",
+        "nano-sim"
+      ],
+      "antwort_darf_nicht": [
+        "nano-sim ab werk immer",
+        "micro-sim ab 045",
+        "nano ab 0699-013"
+      ],
+      "beleg": "| `0699-045` | `11.0.4` | **Hardware-Break:** 4G LTE, Nano-SIM, SIM-PIN deaktivieren, keine Prepaid-Abfrage mehr |",
+      "source": "seriennummern-softwarestaende.md:156",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "seriennummern-wassermelder-mindeststand-0823-021-39",
+      "question": "Welchen WiPro III Mindeststand braucht der Funk-Wassermelder?",
+      "expected": [
+        "/de/seriennummern-softwarestaende"
+      ],
+      "antwort_muss": [
+        "0823-021",
+        "v6.8"
+      ],
+      "antwort_darf_nicht": [
+        "0823-018",
+        "0823-012",
+        "kein mindeststand"
+      ],
+      "beleg": "| `0823-021` / `v6.8` | Mindeststand für den [[Funk-Wassermelder]] |",
+      "source": "seriennummern-softwarestaende.md:107",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "tech-doku-funkfrequenz-868-vs-nfc-40",
+      "question": "Auf welcher Funkfrequenz kommuniziert das WiPro-Funkzubehör mit der Zentrale?",
+      "expected": [
+        "/de/funkstandards-und-schnittstellen"
+      ],
+      "antwort_muss": [
+        "868,35 mhz"
+      ],
+      "antwort_darf_nicht": [
+        "13,56 mhz",
+        "433 mhz",
+        "2,4 ghz"
+      ],
+      "beleg": "`868,35 MHz` ist die zentrale Funkfrequenz für WiPro-Zubehör und mehrere sicherheitsrelevante THITRONIK-Komponenten.",
+      "source": "funkstandards-und-schnittstellen.md:84",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "tech-doku-ece-r10-nicht-vermischen-41",
+      "question": "Ist ECE R10 dasselbe wie die Funkrichtlinie 2014/53/EU für die WiPro III?",
+      "expected": [
+        "/de/normen-und-richtlinien"
+      ],
+      "antwort_muss": [
+        "ece r10",
+        "nicht",
+        "2014/53/eu"
+      ],
+      "antwort_darf_nicht": [
+        "dasselbe wie",
+        "identisch mit",
+        "ece r10 ist die funkrichtlinie"
+      ],
+      "beleg": "`ECE R10` ist eine **Zulassungs- und EMV-Aussage**, nicht mit der Funkrichtlinie `2014/53/EU` vermischen",
+      "source": "normen-und-richtlinien.md:68",
+      "kategorie": "negation"
+    }
+  ]
+}

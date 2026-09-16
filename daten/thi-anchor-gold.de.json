@@ -1,0 +1,381 @@
+{
+  "_hinweis": "THI-Anker-Gold v2 (2026-07-23). Ursprünglich adversarial verifiziert; nach dem redaktionellen Vollimport auf direkte Produkt-/Fahrzeugartikel und konservative aktuelle Quellenentscheidungen aktualisiert. Misst Anker-Hit via npm run thi:eval.",
+  "cases": [
+    {
+      "id": "anchor-001",
+      "question": "Welche Knopfzelle brauchen die Funk-Magnetkontakte und wie lange hält die ungefähr?",
+      "route": "/de/funk-magnetkontakt",
+      "anchor": "batterie-prüfen-und-wechseln",
+      "beleg": "Batterie CR2032 (Knopfzelle, 3 V) Batterielebensdauer ca. 2 Jahre",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-002",
+      "question": "Wie viele Sender kann ich an einer WiPro III maximal anlernen und welche Empfangsfrequenz hat die Zentrale?",
+      "route": "/de/wipro-iii",
+      "anchor": "zentrale",
+      "beleg": "Max. anlernbare Sender 100 Empfangsfrequenz 868,35 MHz",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-003",
+      "question": "Ab Werk sind doch keine Sender drin, oder? Wie komme ich in den Anlernmodus an der Zentrale?",
+      "route": "/de/anlernvorgang",
+      "anchor": "methode-1--taster-an-der-wipro-iii-zentrale",
+      "beleg": "Im Auslieferungszustand sind keine Funk-Komponenten gespeichert; bei zugänglicher Zentrale ist Taster B der Standardweg.",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-004",
+      "question": "Bei der Belüftungsfunktion: wenn ich ein offen gelassenes Fenster wieder zumache, wann überwacht die Anlage das wieder?",
+      "route": "/de/wipro-iii",
+      "anchor": "belüftungsfunktion-vent-check",
+      "beleg": "überwacht die WiPro ihn nach ≥ 5 Sekunden erneut",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-005",
+      "question": "Welche DIP-Einstellung brauche ich, um die Sirene leiser zu schalten?",
+      "route": "/de/wipro-iii",
+      "anchor": "sonderfunktionen",
+      "beleg": "Sirene leiser schalten DIP 8 → ON",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-006",
+      "question": "Kunde fragt nach der Zulassung der WiPro III, nach welcher Regelung ist die zugelassen?",
+      "route": "/de/wipro-iii",
+      "anchor": "häufige-fragen-faq",
+      "beleg": "ist nach ECE-Regelung R10 zugelassen",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-007",
+      "question": "Die Zentrale ist fest verbaut und ich komme nicht ran, kann ich trotzdem noch einen Kontakt nachträglich anlernen?",
+      "route": "/de/anlernvorgang",
+      "anchor": "methode-2--easy-add-10-mit-funk-handsender",
+      "beleg": "Ermöglicht das nachträgliche Anlernen weiterer Komponenten, wenn die Zentrale fest verbaut und schwer zugänglich ist",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-008",
+      "question": "Warum darf ich beim Motorstop nur kill schicken und nicht direkt a an?",
+      "route": "/de/abschalteinrichtung",
+      "anchor": "funktionsweise-der-kill-funktion",
+      "beleg": "Der Pro-Finder schaltet erst nach mindestens fünf Sekunden Stillstand; eine Stilllegung während der Fahrt wäre lebensgefährlich.",
+      "kategorie": "sicherheit"
+    },
+    {
+      "id": "anchor-009",
+      "question": "Wie lange hält die Batterie im Funk-Rauchmelder und kann ich die selbst wechseln?",
+      "route": "/de/funk-rauchmelder",
+      "anchor": "batterie-gerätelebensdauer-und-fehlermodus",
+      "beleg": "Fest verbaute 3-V-Lithium-Batterie (CR123A), Lebensdauer ca. 10 Jahre",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-010",
+      "question": "Wo soll ich den Funk-Rauchmelder im Wohnmobil am besten anbringen?",
+      "route": "/de/funk-rauchmelder",
+      "anchor": "montageort-auswählen",
+      "beleg": "Position Möglichst mittig an der Fahrzeugdecke",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-011",
+      "question": "Wie lerne ich den T.S.A. Rauchmelder an die WiPro III an?",
+      "route": "/de/funk-rauchmelder",
+      "anchor": "an-die-wipro-iii-anlernen",
+      "beleg": "Taste im Inneren des Rauchmelders drücken",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-012",
+      "question": "Der Kunde hat eine Stoffdecke im Camper, wie befestige ich den Rauchmelder da?",
+      "route": "/de/funk-rauchmelder",
+      "anchor": "vorbereitung",
+      "beleg": "Stattdessen: Montageadapter (Art.Nr. 105755 weiß / 105756 grau) verwenden und an ein seitliches Kunststoffelement kleben",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "anchor-013",
+      "question": "Auf welcher Frequenz sendet der Funk-Magnetkontakt und welche Reichweite hat er im Freifeld?",
+      "route": "/de/funk-magnetkontakt",
+      "anchor": "technische-daten",
+      "beleg": "Sendefrequenz 868,35 MHz Sendeleistung < 10 mW Reichweite (Freifeld) max. 75 m",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-014",
+      "question": "Welchen maximalen Abstand darf ich zwischen Magnet und Sender beim Magnetkontakt einhalten?",
+      "route": "/de/funk-magnetkontakt",
+      "anchor": "ausrichtung-und-abstand",
+      "beleg": "Maximaler Abstand zwischen Sender und Magnet: 25 mm",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-015",
+      "question": "Welche Batterie steckt im Funk-Handsender und welche Marken empfiehlt ihr?",
+      "route": "/de/funk-handsender",
+      "anchor": "häufige-fragen-faq",
+      "beleg": "Empfohlen: Panasonic oder Varta (nicht Duracell",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "anchor-016",
+      "question": "Ab welcher WiPro-III-Seriennummer und Software-Version läuft der Funk-Wassermelder?",
+      "route": "/de/funk-wassermelder",
+      "anchor": "kompatibilität-und-mindeststände",
+      "beleg": "WiPro III 0823-021 v6.8",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "anchor-017",
+      "question": "Muss ich bei der Kabelschleife die beiliegenden Schrauben nehmen oder gehen auch andere?",
+      "route": "/de/funk-kabelschleife",
+      "anchor": "montage-der-halterung",
+      "beleg": "Unbedingt die beiliegenden Edelstahlschrauben verwenden — Schrauben aus anderen Materialien können die Funktion beeinträchtigen",
+      "kategorie": "sicherheit"
+    },
+    {
+      "id": "anchor-018",
+      "question": "Wie hoch über dem Boden muss ich den Propan-Sensor der G.A.S.-pro III montieren?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "montageplanung",
+      "beleg": "Montagehöhe: 10–20 cm über dem Fußboden",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-019",
+      "question": "Welchen Mindestabstand muss die G.A.S.-pro III zu Blei-Säure-Batterien haben?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "montageplanung",
+      "beleg": "Batterien und Nasszelle: mindestens 1 m Sicherheitsabstand",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-020",
+      "question": "Welcher Kabelquerschnitt und welche Abisolierlänge sind beim elektrischen Anschluss der G.A.S.-pro III gefordert?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "elektrischer-anschluss",
+      "beleg": "Kabelquerschnitt: 0,2–0,75 mm², Abisolierlänge 7–9 mm",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-021",
+      "question": "Wofür ist DIP-Schalter 4 bei der G.A.S.-pro III da?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "dip-schalter",
+      "beleg": "Invertierter Ausgang: 12/24V im Ruhezustand, 0V im Alarm (für Ventilsteuerung)",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-022",
+      "question": "Ab welcher Spannung schaltet sich die G.A.S.-pro III wegen Unterspannung selbst ab?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "unterspannung-übertemperatur-und-sensorfehler",
+      "beleg": "Bei Betriebsspannung < 11,1 V",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-023",
+      "question": "Wie lange ist die G.A.S.-pro III nach kurzem Tasterdruck stummgeschaltet?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "pause-und-stummschaltung",
+      "beleg": "G.A.S.-pro III ist 60 Minuten stummgeschaltet",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-024",
+      "question": "Der Kunde hat ständig Fehlalarm nachts während der Fahrt – wie bekomme ich den Sensor wieder sauber?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "sichere-störungsbeseitigung",
+      "beleg": "Kein unbelegtes Freibrennen und keine interne Sensorreinigung; Umgebung, Heizluft, Aerosole, Versorgung und Sensorfehler dokumentieren.",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-025",
+      "question": "Auf wie viele Meter darf ich das Sensorkabel beim Zusatzsensor der G.A.S.-pro III maximal verlängern?",
+      "route": "/de/zusatzsensor-gas-pro-iii",
+      "anchor": "kabelverlängerung",
+      "beleg": "Konservative, produktspezifische Freigabe: höchstens 7 m Gesamtlänge einschließlich Originalleitung.",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-026",
+      "question": "Welche Software-Version braucht die alte G.A.S.-pro für den neueren CO-Sensor SNO433-003?",
+      "route": "/de/co-sensor",
+      "anchor": "sensortyp-und-softwarestand-der-gas-pro",
+      "beleg": "erfordert mindestens Software-Version 1.04i der G.A.S.-pro",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "anchor-027",
+      "question": "Muss ich bei der G.A.S.-pro III Aderendhülsen an die Klemmen machen oder nicht?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "elektrischer-anschluss",
+      "beleg": "Leitungsenden nicht verzinnen und an den Anschlussklemmen keine Aderendhülsen verwenden.",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "anchor-028",
+      "question": "Auf welcher Frequenz und mit welcher Reichweite funkt die G.A.S.-connect?",
+      "route": "/de/gas-connect",
+      "anchor": "technische-daten-und-quellenabgrenzung",
+      "beleg": "Funkreichweite (Freifeld) ca. 75 m",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-029",
+      "question": "Wie lerne ich die G.A.S.-connect an die WiPro III an?",
+      "route": "/de/gas-connect",
+      "anchor": "anlernen-an-wipro-iii",
+      "beleg": "Vorgehen wie im WiPro III Installationshandbuch beschrieben (Gerät einschalten = Anlernvorgang)",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-030",
+      "question": "Wie groß muss ich das Loch für den CO-Sensor bei der alten G.A.S.-pro bohren?",
+      "route": "/de/gas-pro",
+      "anchor": "montage-der-sensoren",
+      "beleg": "12 mm (für CO-Sensor)",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-031",
+      "question": "Welche Batterie braucht der Funk-Handsender und muss ich ihn nach dem Batteriewechsel neu anlernen?",
+      "route": "/de/funk-handsender",
+      "anchor": "batteriewechsel",
+      "beleg": "CR2032, 3 V; nach dem Batteriewechsel ist kein erneutes Anlernen erforderlich.",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-032",
+      "question": "Ab welcher Seriennummer ist der Pro-Finder für die App-Basisfunktionen geeignet?",
+      "route": "/de/app-befehle",
+      "anchor": "dokumentierte-mindeststände",
+      "beleg": "Pro-Finder 0699-013",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "anchor-033",
+      "question": "Auf welchen DIP-Schalter muss ich beim Fiat Ducato X250 von 2008 stellen?",
+      "route": "/de/fahrzeuge/fiat-ducato-x250",
+      "anchor": "funk-zubehör-anlernen-und-dip-einstellen",
+      "beleg": "Fiat Ducato X250 / Boxer X250 / Jumper X250 2006–2011 (Euro 4) SW2 + SW6",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "anchor-034",
+      "question": "Welche DIP-Schalter brauche ich für einen Mercedes Sprinter NCV3 Baujahr 2014?",
+      "route": "/de/fahrzeuge/mercedes-sprinter-ncv3",
+      "anchor": "dip-profil-einstellen",
+      "beleg": "Mercedes Sprinter NCV3 (BR906) 2006–2018 SW1 + SW6",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "anchor-035",
+      "question": "Darf ich die DIP-Schalter unter Spannung verstellen?",
+      "route": "/de/fahrzeugkompatibilitaet",
+      "anchor": "dip-schalter--grundlagen",
+      "beleg": "DIP-Einstellungen nur im spannungsfreien Zustand vornehmen",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-036",
+      "question": "Wie lange heult der akustische Alarm bei einem Einbruch eigentlich?",
+      "route": "/de/wipro-iii",
+      "anchor": "alarmsequenzen",
+      "beleg": "Akustischer Alarm (Hupe / Sirene) ca. 30 Sekunden",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-037",
+      "question": "Der Funk-Magnetkontakt ist angelernt, aber löst keinen Alarm aus – woran liegt das?",
+      "route": "/de/stoerungsbeseitigung",
+      "anchor": "funk-magnetkontakt",
+      "beleg": "Falsche Ausrichtung: Sende-LED zeigt zum Magneten",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-038",
+      "question": "Muss ich nach einem Batteriewechsel am Handsender den Sender neu anlernen?",
+      "route": "/de/funk-handsender",
+      "anchor": "batteriewechsel",
+      "beleg": "Kein Neuanlernen nötig — Sender ist weiterhin bekannt",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-039",
+      "question": "Welche Batterie sitzt in der safe.lock Umrüstplatine und wie lange hält die ungefähr?",
+      "route": "/de/safe-lock-umruestplatine",
+      "anchor": "technische-daten",
+      "beleg": "Batterielebensdauer ca. 2 Jahre (nutzungsabhängig)",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-040",
+      "question": "Brauche ich für die Umrüstplatine eine normale WiPro III oder zwingend die safe.lock-Version?",
+      "route": "/de/safe-lock-umruestplatine",
+      "anchor": "voraussetzungen",
+      "beleg": "WiPro III safe.lock (Standardversion WiPro III ist nicht ausreichend)",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "anchor-041",
+      "question": "Muss der Wegfahrsperren-Transponder vor oder nach dem Einbau der Platine kopiert werden?",
+      "route": "/de/safe-lock-umruestplatine",
+      "anchor": "schritt-1-wegfahrsperren-transponder-kopieren-lassen",
+      "beleg": "Dieser Schritt muss vor dem Einbau erfolgen.",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-042",
+      "question": "Was muss ich bei einem Ducato mit 3-Tasten-Schlüssel nach dem Umbau beachten, lässt sich der Laderaum noch separat aufschließen?",
+      "route": "/de/safe-lock-umruestplatine",
+      "anchor": "handhabung-nach-dem-umbau",
+      "beleg": "Getrenntes Entriegeln des Laderaums ist technisch nicht mehr möglich",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anchor-043",
+      "question": "Wie hoch über dem Boden muss ich den Gassensor montieren und welchen Abstand zur Heizung einhalten?",
+      "route": "/de/gas-pro-iii",
+      "anchor": "montageplanung",
+      "beleg": "Gassensor senkrecht etwa 10–20 cm über dem Boden; nicht direkt gegenüber einem Heizungsausströmer montieren.",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-044",
+      "question": "Welche SIM-Karte brauche ich für einen Pro-Finder ab SN-045?",
+      "route": "/de/mobilfunk-sim",
+      "anchor": "sim-format-und-pin-nach-seriennummer",
+      "beleg": "Ab 0699-045: Nano-SIM, LTE-fähige Generation, PIN-Abfrage vollständig deaktivieren.",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "anchor-045",
+      "question": "Welche CR2032-Marke empfiehlt ihr fürs Funk-Zubehör, geht Duracell?",
+      "route": "/de/anlernvorgang",
+      "anchor": "austauschbare-cr2032-knopfzellen",
+      "beleg": "Panasonic oder Varta. Duracell nicht empfohlen",
+      "kategorie": "wert"
+    },
+    {
+      "id": "anchor-046",
+      "question": "Darf ich das NFC Modul als allererstes Zubehör anlernen?",
+      "route": "/de/nfc-modul",
+      "anchor": "schnellcheck",
+      "beleg": "Nein — sonst wird es als Master-Funk-Handsender erkannt.",
+      "kategorie": "vorgehen"
+    },
+    {
+      "id": "anchor-047",
+      "question": "Welche Funkfrequenz nutzt die WiPro III Zentrale und wie viele Sender kann ich maximal anlernen?",
+      "route": "/de/wipro-iii",
+      "anchor": "zentrale",
+      "beleg": "Max. anlernbare Sender: 100",
+      "kategorie": "wert"
+    }
+  ]
+}

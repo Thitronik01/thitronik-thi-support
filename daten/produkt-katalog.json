@@ -1,0 +1,438 @@
+{
+  "generiert": "2026-09-15",
+  "quelle": "lib/arbeitskarte-data.js (initialMaterials) + search-index.json",
+  "hinweis": "Kontrolliertes Vokabular fuer das Feld \"verbaute Produkte\". Artikelnummern sind produktiv und verifiziert. NICHT als Freitext erfassen.",
+  "anzahl_produkte": 48,
+  "gruppen": [
+    "Alarmsystem",
+    "Zubehör",
+    "Gaswarnsystem",
+    "Rauchmelder",
+    "Fahrzeugortung",
+    "Fahrzeugortung Zubehör"
+  ],
+  "produkte": [
+    {
+      "gruppe": "Alarmsystem",
+      "artikel": "WiPro III",
+      "artikelnummer": null
+    },
+    {
+      "gruppe": "Alarmsystem",
+      "artikel": "WiPro III safe.lock",
+      "artikelnummer": null
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Handsender 868",
+      "artikelnummer": "101064"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Umrüstplatine",
+      "artikelnummer": "101052"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Transponder",
+      "artikelnummer": "105355"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Zweitschlüssel",
+      "artikelnummer": "101205"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Magnetkontakt 868, weiß",
+      "artikelnummer": "100758"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Magnetkontakt 868, schwarz",
+      "artikelnummer": "100757"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Montageadapter, weiß",
+      "artikelnummer": "100729"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Montageadapter, schwarz",
+      "artikelnummer": "100428"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Kabelschleife 868, weiß",
+      "artikelnummer": "100761"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Kabelschleife 868, schwarz",
+      "artikelnummer": "101068"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Kabelschleife XL, weiß",
+      "artikelnummer": "100944"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Funk-Kabelschleife XL, schwarz",
+      "artikelnummer": "101074"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Zusatzsirene",
+      "artikelnummer": "100190"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Back-up Sirene",
+      "artikelnummer": "100089"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Netzteil GBA-I 230 V",
+      "artikelnummer": "100083"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "Universalanschlusskabel 12/24 V",
+      "artikelnummer": "100097"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "BT-connect / Vernetzungsmodul",
+      "artikelnummer": "101290"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "NFC-Modul",
+      "artikelnummer": "105299"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyCard",
+      "artikelnummer": "105300"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyTag",
+      "artikelnummer": "105301"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap M schwarz",
+      "artikelnummer": "105302"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap M weiß",
+      "artikelnummer": "105464"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap M blau",
+      "artikelnummer": "105466"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap M rot",
+      "artikelnummer": "105465"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap L schwarz",
+      "artikelnummer": "105467"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap L weiß",
+      "artikelnummer": "105468"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap L blau",
+      "artikelnummer": "105470"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "THITRONIK KeyStrap L rot",
+      "artikelnummer": "105469"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "G.A.S.-pro III",
+      "artikelnummer": "101286"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "G.A.S.-pro III CO",
+      "artikelnummer": "101287"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "G.A.S.-pro",
+      "artikelnummer": "100001"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "GBA-I",
+      "artikelnummer": "100061"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "G.A.S.",
+      "artikelnummer": "105700"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "G.A.S.-plug 'all-in-one'",
+      "artikelnummer": "100042"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "G.A.S.-connect",
+      "artikelnummer": "105750"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "CO-Sensor (G.A.S.-pro & G.A.S.-pro III)",
+      "artikelnummer": "100433"
+    },
+    {
+      "gruppe": "Gaswarnsystem",
+      "artikel": "Zusatzsensor (G.A.S.-pro & G.A.S.-pro III)",
+      "artikelnummer": "101289"
+    },
+    {
+      "gruppe": "Rauchmelder",
+      "artikel": "T.S.A. Funk-Rauchmelder, weiß",
+      "artikelnummer": "105753"
+    },
+    {
+      "gruppe": "Rauchmelder",
+      "artikel": "T.S.A. Funk-Rauchmelder, grau",
+      "artikelnummer": "105754"
+    },
+    {
+      "gruppe": "Rauchmelder",
+      "artikel": "Montagewinkel T.S.A., weiß",
+      "artikelnummer": "105755"
+    },
+    {
+      "gruppe": "Rauchmelder",
+      "artikel": "Montagewinkel T.S.A., grau",
+      "artikelnummer": "105756"
+    },
+    {
+      "gruppe": "Fahrzeugortung",
+      "artikel": "Pro-finder",
+      "artikelnummer": "100699"
+    },
+    {
+      "gruppe": "Fahrzeugortung Zubehör",
+      "artikel": "Abschalteinrichtung einpolig",
+      "artikelnummer": "101283"
+    },
+    {
+      "gruppe": "Fahrzeugortung Zubehör",
+      "artikel": "Abschalteinrichtung mehrpolig",
+      "artikelnummer": "105821"
+    },
+    {
+      "gruppe": "Fahrzeugortung Zubehör",
+      "artikel": "Externe GSM-Antenne",
+      "artikelnummer": "100700"
+    },
+    {
+      "gruppe": "Fahrzeugortung Zubehör",
+      "artikel": "GPS-pro",
+      "artikelnummer": "100686"
+    }
+  ],
+  "wiki_produktartikel": {
+    "wipro-iii": {
+      "fr": {
+        "route": "/fr/wipro-iii",
+        "titel": "WiPro III — système d'alarme radio pour véhicules de loisirs"
+      },
+      "de": {
+        "route": "/de/wipro-iii",
+        "titel": "WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge"
+      }
+    },
+    "vanlock-fingerprint": {
+      "fr": {
+        "route": "/fr/vanlock-fingerprint",
+        "titel": "VanLock Fingerprint - acces biometrique"
+      },
+      "de": {
+        "route": "/de/vanlock-fingerprint",
+        "titel": "VanLock Fingerprint - biometrischer Zugang"
+      }
+    },
+    "pro-finder": {
+      "fr": {
+        "route": "/fr/pro-finder",
+        "titel": "Pro-Finder — Module de télémétrie GSM/GPS"
+      },
+      "de": {
+        "route": "/de/pro-finder",
+        "titel": "Pro-Finder — GSM/GPS Telemetriemodul"
+      }
+    },
+    "nfc-modul": {
+      "fr": {
+        "route": "/fr/nfc-modul",
+        "titel": "Module NFC — commande de la WiPro via NFC"
+      },
+      "de": {
+        "route": "/de/nfc-modul",
+        "titel": "NFC Modul — Steuerung der WiPro via NFC"
+      }
+    },
+    "keytag": {
+      "fr": {
+        "route": "/fr/keytag",
+        "titel": "KeyTag - support d acces NFC"
+      },
+      "de": {
+        "route": "/de/keytag",
+        "titel": "KeyTag - NFC-Zugangsmedium"
+      }
+    },
+    "keystrap": {
+      "fr": {
+        "route": "/fr/keystrap",
+        "titel": "KeyStrap - support d acces NFC"
+      },
+      "de": {
+        "route": "/de/keystrap",
+        "titel": "KeyStrap - NFC-Zugangsmedium"
+      }
+    },
+    "keycard": {
+      "fr": {
+        "route": "/fr/keycard",
+        "titel": "KeyCard - support d acces NFC"
+      },
+      "de": {
+        "route": "/de/keycard",
+        "titel": "KeyCard - NFC-Zugangsmedium"
+      }
+    },
+    "gas-pro": {
+      "fr": {
+        "route": "/fr/gas-pro",
+        "titel": "G.A.S.-pro (anciennes séries) — Alarme gaz et CO"
+      },
+      "de": {
+        "route": "/de/gas-pro",
+        "titel": "G.A.S.-pro (ältere Serie) — Gas- und CO-Alarm"
+      }
+    },
+    "gas-pro-iii": {
+      "fr": {
+        "route": "/fr/gas-pro-iii",
+        "titel": "G.A.S.-pro III — Avertisseur de gaz pour véhicules de loisirs"
+      },
+      "de": {
+        "route": "/de/gas-pro-iii",
+        "titel": "G.A.S.-pro III — Gaswarner für Freizeitfahrzeuge"
+      }
+    },
+    "gas-plug": {
+      "fr": {
+        "route": "/fr/gas-plug",
+        "titel": "G.A.S.-plug « tout en un » — détecteur de gaz mobile"
+      },
+      "de": {
+        "route": "/de/gas-plug",
+        "titel": "G.A.S.-plug „all in one\" — Mobiler Gaswarner"
+      }
+    },
+    "gas-connect": {
+      "fr": {
+        "route": "/fr/gas-connect",
+        "titel": "G.A.S.-connect — alarme de gaz sans fil pour WiPro III"
+      },
+      "de": {
+        "route": "/de/gas-connect",
+        "titel": "G.A.S.-connect — Funk-Gaswarner für WiPro III"
+      }
+    },
+    "funk-wassermelder": {
+      "fr": {
+        "route": "/fr/funk-wassermelder",
+        "titel": "Détecteur d'eau sans fil 868 — détecteur d'eau sans fil"
+      },
+      "de": {
+        "route": "/de/funk-wassermelder",
+        "titel": "Funk-Wassermelder 868 — Kabelloser Wassermelder"
+      }
+    },
+    "funk-rauchmelder": {
+      "fr": {
+        "route": "/fr/funk-rauchmelder",
+        "titel": "T.S.A. — Détecteur de fumée sans fil pour WiPro III"
+      },
+      "de": {
+        "route": "/de/funk-rauchmelder",
+        "titel": "T.S.A. — Funk-Rauchmelder für WiPro III"
+      }
+    },
+    "funk-magnetkontakt": {
+      "fr": {
+        "route": "/fr/funk-magnetkontakt",
+        "titel": "Contact radiomagnétique 868 — montage et fonctionnement"
+      },
+      "de": {
+        "route": "/de/funk-magnetkontakt",
+        "titel": "Funk-Magnetkontakt 868 — Montage und Betrieb"
+      }
+    },
+    "funk-kabelschleife": {
+      "fr": {
+        "route": "/fr/funk-kabelschleife",
+        "titel": "Boucle de câble radio 868 — sécurité externe pour marchandises mobiles"
+      },
+      "de": {
+        "route": "/de/funk-kabelschleife",
+        "titel": "Funk-Kabelschleife 868 — Außensicherung für mobile Güter"
+      }
+    },
+    "funk-handsender": {
+      "fr": {
+        "route": "/fr/funk-handsender",
+        "titel": "Émetteur radio 868 — télécommande pour WiPro III"
+      },
+      "de": {
+        "route": "/de/funk-handsender",
+        "titel": "Funk-Handsender 868 — Fernbedienung für WiPro III"
+      }
+    },
+    "camplock-fingerprint": {
+      "fr": {
+        "route": "/fr/camplock-fingerprint",
+        "titel": "CampLock Fingerprint - acces biometrique"
+      },
+      "de": {
+        "route": "/de/camplock-fingerprint",
+        "titel": "CampLock Fingerprint - biometrischer Zugang"
+      }
+    },
+    "bt-connect": {
+      "fr": {
+        "route": "/fr/bt-connect",
+        "titel": "BT-connect — Module Bluetooth pour WiPro III"
+      },
+      "de": {
+        "route": "/de/bt-connect",
+        "titel": "BT-connect — Bluetooth-Modul für WiPro III"
+      }
+    }
+  }
+}

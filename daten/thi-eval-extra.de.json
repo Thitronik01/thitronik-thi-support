@@ -1,0 +1,110 @@
+{
+  "comment": "Handkuratierte Eval-Fragen für scripts/thi-rag-eval.mjs. expected = exakte Route ODER Substring der decodierten Route (für /anleitungen?open=…-Einträge). Sobald content_luecken echte Händler-Fehlfragen liefert, hier einpflegen.",
+  "cases": [
+    {
+      "id": "extra-handsender-batterie",
+      "question": "Welche Batterie gehört in den Funk-Handsender 868?",
+      "expected": ["/de/funk-handsender"],
+      "anchor": "batteriewechsel",
+      "note": "Anker-Eval: Deep-Link auf den Batterie-Abschnitt"
+    },
+    {
+      "id": "extra-fehlalarm-nachts",
+      "question": "Die Anlage löst nachts grundlos Alarm aus, was kann ich tun?",
+      "expected": ["/de/stoerungsbeseitigung"],
+      "note": "Semantik-Test: 'grundlos' statt 'Fehlalarm'"
+    },
+    {
+      "id": "extra-folgefrage-loeschen",
+      "question": "und wie lösche ich ihn wieder?",
+      "history": ["Wie lerne ich einen Funk-Handsender an der WiPro III an?"],
+      "expected": ["/de/wipro-iii", "/de/funk-handsender"]
+    },
+    {
+      "id": "extra-kill-einrichten",
+      "question": "Wie richte ich den Kill-Befehl für die Abschalteinrichtung in der App ein?",
+      "expected": ["/de/abschalteinrichtung", "Abschalteinrichtung"]
+    },
+    {
+      "id": "extra-sim-profinder",
+      "question": "Welche SIM-Karte brauche ich für den Pro-Finder?",
+      "expected": ["/de/mobilfunk-sim", "/de/pro-finder"]
+    },
+    {
+      "id": "extra-fahrzeug-kompatibel",
+      "question": "Passt die WiPro III in jedes Fahrzeug?",
+      "expected": ["/de/fahrzeugkompatibilitaet"]
+    },
+    {
+      "id": "extra-faq-wipro",
+      "question": "Häufige Fragen zur WiPro III",
+      "expected": ["faq-fragen-zu-wipro-iii"],
+      "note": "Zielt auf FAQ-PDF — vor dem FAQ-Ingest erwarteter Miss"
+    },
+    {
+      "id": "extra-faq-smartwatch",
+      "question": "Welche Smartwatch ist mit dem Vernetzungsmodul kompatibel?",
+      "expected": ["/de/vernetzungsmodul", "faq-kompatibilitaet-smartphone-smartwatch"],
+      "note": "Kompatibilitätsliste existiert nur als PDF in wiki/de"
+    },
+    {
+      "id": "extra-faq-app-befehle",
+      "question": "Welche App-Befehle gibt es für den Pro-Finder?",
+      "expected": ["/de/app-befehle", "faq-app-befehle"]
+    },
+    {
+      "id": "extra-einbau-ducato",
+      "question": "Einbauanleitung WiPro III für den Fiat Ducato X250",
+      "expected": ["faq-wipro-iii-fiat-ducato-x250", "/de/fahrzeuge"],
+      "note": "Fahrzeug-Einbau-PDF in wiki/de — ohne Extrakt nur Titel-Match möglich"
+    },
+    {
+      "id": "extra-gas-pro-alarm",
+      "question": "Was bedeutet ein Daueralarm beim G.A.S.-pro III?",
+      "expected": ["/de/gas-pro-iii", "faq-fragen-zu-g-a-s-pro-iii"]
+    },
+    {
+      "id": "extra-safelock-upgrade",
+      "question": "Wie rüste ich ein Fahrzeug auf safe.lock um?",
+      "expected": ["/de/safe-lock-umruestplatine", "safe-lock"]
+    },
+    {
+      "id": "extra-dip-master-2011",
+      "question": "Wie müssen die DIP-Schalter beim Renault Master ab 2011 stehen?",
+      "expected": ["renault-master-ab-2011", "/de/fahrzeugkompatibilitaet"],
+      "note": "Fahrzeug-Einbau-Extrakt (Stufe 2)"
+    },
+    {
+      "id": "extra-kabel-ducato-x250",
+      "question": "Kabelbelegung WiPro III safe.lock im Fiat Ducato X250",
+      "expected": ["fiat-ducato-x250", "/de/fahrzeuge"],
+      "note": "Fahrzeug-Einbau-Extrakt (Stufe 2)"
+    },
+    {
+      "id": "extra-dip-crafter-tge",
+      "question": "DIP-Schalter Einstellung VW Crafter und MAN TGE ab 2017",
+      "expected": ["crafter-man-tge", "/de/fahrzeugkompatibilitaet"],
+      "note": "Fahrzeug-Einbau-Extrakt (Stufe 2)"
+    },
+    {
+      "id": "extra-einbau-sprinter-vs30",
+      "question": "Einbauort der Zentrale beim Mercedes Sprinter VS30",
+      "expected": ["sprinter-vs30", "/de/fahrzeuge"],
+      "note": "Fahrzeug-Einbau-Extrakt (Stufe 2)"
+    },
+    {
+      "id": "extra-anker-rauchmelder-alarm-aus",
+      "question": "Wie schalte ich den Alarm am Funk-Rauchmelder ab?",
+      "expected": ["/de/funk-rauchmelder"],
+      "anchor": "verhalten-bei-rauchalarm",
+      "note": "Anker-Eval: Deep-Link auf den Abschnitt 'Alarm abschalten'"
+    },
+    {
+      "id": "extra-anker-rauchmelder-anlernen",
+      "question": "Wie lerne ich den Funk-Rauchmelder an der WiPro III an?",
+      "expected": ["/de/funk-rauchmelder"],
+      "anchor": "an-die-wipro-iii-anlernen",
+      "note": "Anker-Eval: Deep-Link auf den Anlern-Abschnitt"
+    }
+  ]
+}

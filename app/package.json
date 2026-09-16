@@ -1,0 +1,17 @@
+{
+  "name": "thitronik-thi-support",
+  "version": "1.0.0",
+  "private": true,
+  "description": "THITRONIK Thi — technischer Support-Assistent mit strukturierter Fallaufnahme (DE/FR)",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "test": "node netlify/functions/lib/tests.mjs",
+    "eval": "node werkzeuge/antwort-eval.mjs",
+    "deploy-pruefen": "node werkzeuge/deploy-pruefen.mjs",
+    "daten": "node werkzeuge/daten-bauen.mjs"
+  }
+}

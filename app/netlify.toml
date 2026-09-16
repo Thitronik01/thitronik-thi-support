@@ -1,0 +1,75 @@
+# ============================================================================
+# Netlify-Konfiguration — THITRONIK Thi Support
+# ----------------------------------------------------------------------------
+# Statisches Frontend (public/) + Serverless Functions (netlify/functions/).
+# Bewusst KEIN Framework: kein Build-Schritt, keine Framework-Version, die
+# brechen kann. „Ordner hochladen, fertig."
+# ============================================================================
+
+[build]
+  publish = "public"
+  # Kein Build nötig — das Frontend ist fertiges HTML/CSS/JS.
+  command = "echo 'Kein Build-Schritt erforderlich.'"
+
+[build.environment]
+  # Node-Version festnageln. Ohne diese Angabe entscheidet Netlify anhand von
+  # `engines.node` in package.json oder der Plattform-Voreinstellung — und eine
+  # zu alte Laufzeit lässt Functions mit modernen Sprachmitteln scheitern.
+  # Lieber explizit als überrascht.
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  # Kein `included_files` nötig: Die Wissensbasis wird per `import` aus
+  # data/*.mjs geladen. Der Bundler behandelt sie damit als harte Abhängigkeit
+  # und nimmt sie IMMER mit — unabhängig davon, ob per Git-Build oder per
+  # Drag & Drop deployt wird.
+  #
+  # Ebenfalls bewusst NICHT hier: ein `timeout`-Schlüssel. Den gibt es in
+  # netlify.toml nicht; die Function-Laufzeit wird im Netlify-Dashboard
+  # eingestellt. Mit Vorab-Retrieval und Streaming reicht die Voreinstellung.
+
+# ─── Sicherheits-Header ────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+
+# Kataloge und Indexdaten dürfen aggressiv gecacht werden (ändern sich nur
+# beim Deploy), das HTML nicht.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ─── Routen ────────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/health"
+  status = 200
+
+# SPA-Fallback — alles andere auf die Startseite.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
