@@ -4,7 +4,7 @@
 export default [
   {
     "id": "2026-09-16-testkorrektur-75b2",
-    "status": "ungeprueft",
+    "status": "zurueckgezogen",
     "sicherheitsrelevant": false,
     "sicherheitsgrund": null,
     "lang": "de",
@@ -28,6 +28,12 @@ export default [
         "status": "ungeprueft",
         "von": "Max",
         "am": "2026-09-16T14:11:48.239Z",
+        "begruendung": ""
+      },
+      {
+        "status": "zurueckgezogen",
+        "von": "Max",
+        "am": "2026-09-16T14:19:02.033Z",
         "begruendung": ""
       }
     ]
