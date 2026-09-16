@@ -321,6 +321,16 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !$('verlaufOverlay').hidden) $('verlaufOverlay').hidden = true;
+    if (e.key === 'Escape' && !$('korrekturenOverlay').hidden) $('korrekturenOverlay').hidden = true;
+  });
+  $('korrekturenOeffnen').addEventListener('click', function () {
+    $('korrekturenOverlay').hidden = false;
+    $('koName').value = nameLesen();
+    korrekturenLaden();
+  });
+  $('korrekturenSchliessen').addEventListener('click', function () { $('korrekturenOverlay').hidden = true; });
+  $('korrekturenOverlay').addEventListener('click', function (e) {
+    if (e.target === $('korrekturenOverlay')) $('korrekturenOverlay').hidden = true;
   });
   diktatEinrichten();
 
@@ -1093,6 +1103,13 @@
       titel.appendChild(el('span', 'quelle-titel', q.title));
       if (q.headingPath) titel.appendChild(el('span', 'quelle-abschnitt', '— ' + q.headingPath));
       if (q.fremdsprachig) titel.appendChild(el('span', 'quelle-flagge', String(q.lang).toUpperCase()));
+      // Korrekturen tragen ihren Status sichtbar — „ungeprüft" muss man sehen,
+      // bevor man die Antwort weitergibt.
+      if (q.korrektur) {
+        var flagge = el('span', 'quelle-flagge quelle-korrektur', T.koQuelleFlagge + ' · ' + (T.koStatus[q.korrektur.status] || q.korrektur.status));
+        flagge.setAttribute('data-status', q.korrektur.status);
+        titel.appendChild(flagge);
+      }
       eintrag.appendChild(titel);
       eintrag.appendChild(el('p', 'quelle-auszug', q.auszug));
       box.appendChild(eintrag);
@@ -1110,6 +1127,212 @@
       n.appendChild(el('span', null, h.text));
       körper.appendChild(n);
     });
+  }
+
+  /* ─── Support-Korrekturen ───────────────────────────────────────────── */
+  // Ein Mitarbeiter korrigiert eine falsche Antwort. Die Korrektur wird als
+  // eigener Eintrag versioniert gespeichert (Git), NICHT in den Wiki-Text
+  // geschrieben — Entwurf A in ../docs/07_KORREKTUREN_ENTWUERFE.md. Sie wirkt
+  // nach dem nächsten Deploy, gekennzeichnet als „ungeprüft"; Sicherheits-
+  // themen erst nach Freigabe. Der Name ist ein Formularfeld, kein Nachweis.
+  function nameLesen() { try { return localStorage.getItem('thi_name') || ''; } catch (e) { return ''; } }
+  function nameMerken(n) { try { localStorage.setItem('thi_name', n); } catch (e) { /* egal */ } }
+
+  function korrekturApi(methode, daten) {
+    var kopf = { 'content-type': 'application/json' };
+    if (zustand.zugangswort) kopf['x-zugangswort'] = zustand.zugangswort;
+    return fetch('/api/korrektur', { method: methode, headers: kopf, body: daten ? JSON.stringify(daten) : undefined })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (d) { return { status: r.status, daten: d }; });
+      });
+  }
+
+  function meldungSetzen(ziel, text, art) {
+    ziel.textContent = text;
+    ziel.hidden = !text;
+    if (art) ziel.setAttribute('data-art', art); else ziel.removeAttribute('data-art');
+  }
+
+  function korrekturFehlertext(antwort) {
+    var d = antwort.daten || {};
+    if (antwort.status === 503 && d.fehler === 'nicht_konfiguriert') return T.koNichtKonfiguriert;
+    if (antwort.status === 401) return T.zugangFalsch;
+    if (d.fehlerliste && d.fehlerliste.length) return d.fehlerliste.join(' ');
+    return (d.meldung || T.koFehler) + (d.detail ? ' (' + d.detail + ')' : '');
+  }
+
+  function korrekturKnopf(körper, frage, antwortText, quellen) {
+    var btn = el('button', 'btn-kopieren btn-korrektur');
+    btn.type = 'button';
+    btn.appendChild(el('span', null, T.koKnopf));
+    var form = null;
+    btn.addEventListener('click', function () {
+      if (form) { form.hidden = !form.hidden; return; }
+      form = korrekturFormular(frage, antwortText, quellen);
+      körper.appendChild(form);
+      form.querySelector('textarea').focus();
+    });
+    körper.appendChild(btn);
+  }
+
+  function feldMit(label, eingabe) {
+    var g = el('label', 'feld-gruppe');
+    g.appendChild(el('span', 'feld-label', label));
+    g.appendChild(eingabe);
+    return g;
+  }
+
+  function korrekturFormular(frage, antwortText, quellen) {
+    var form = el('form', 'ko-form');
+    form.appendChild(el('h4', null, T.koTitel));
+    form.appendChild(el('p', 'ko-hinweis', T.koHinweis));
+
+    var titel = el('input', 'feld'); titel.type = 'text'; titel.maxLength = 120; titel.required = true;
+    form.appendChild(feldMit(T.koFeldTitel, titel));
+
+    // Bezug: eine der Belegstellen dieser Antwort. Korrekturen selbst sind
+    // kein gültiger Bezug — eine Korrektur der Korrektur wäre eine neue zum
+    // selben Artikel.
+    var bezug = el('select', 'feld');
+    quellen.filter(function (q) { return !q.korrektur; }).forEach(function (q) {
+      var o = document.createElement('option');
+      o.value = JSON.stringify({ route: q.route, anchor: q.anchor || '' });
+      o.textContent = q.title + (q.headingPath ? ' — ' + q.headingPath : '');
+      bezug.appendChild(o);
+    });
+    form.appendChild(feldMit(T.koFeldBezug, bezug));
+
+    var text = el('textarea', 'feld feld-gross'); text.maxLength = 2000; text.required = true; text.rows = 4;
+    form.appendChild(feldMit(T.koFeldText, text));
+
+    var widerspricht = el('textarea', 'feld'); widerspricht.maxLength = 600; widerspricht.rows = 2;
+    form.appendChild(feldMit(T.koFeldWiderspricht, widerspricht));
+
+    var name = el('input', 'feld'); name.type = 'text'; name.maxLength = 60; name.required = true;
+    name.value = nameLesen(); name.autocomplete = 'name';
+    form.appendChild(feldMit(T.koFeldName, name));
+
+    var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
+    form.appendChild(meldung);
+
+    var aktionen = el('div', 'ko-aktionen');
+    var absenden = el('button', 'btn-primaer'); absenden.type = 'submit'; absenden.appendChild(el('span', null, T.koAbsenden));
+    var abbrechen = el('button', 'btn-klein', T.koAbbrechen); abbrechen.type = 'button';
+    abbrechen.addEventListener('click', function () { form.hidden = true; });
+    aktionen.appendChild(absenden); aktionen.appendChild(abbrechen);
+    form.appendChild(aktionen);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!bezug.value) return;
+      nameMerken(name.value.trim());
+      absenden.disabled = true;
+      meldungSetzen(meldung, T.koLaeuft, null);
+      korrekturApi('POST', {
+        aktion: 'anlegen',
+        notiz: {
+          lang: sprache,
+          titel: titel.value.trim(),
+          text: text.value.trim(),
+          widerspricht: widerspricht.value.trim(),
+          autor: name.value.trim(),
+          bezug: JSON.parse(bezug.value),
+          ausloeser: { frage: String(frage || '').slice(0, 600), antwortAuszug: String(antwortText || '').slice(0, 800) },
+        },
+      }).then(function (antwort) {
+        if (antwort.status === 201) {
+          var w = antwort.daten.wirkt;
+          meldungSetzen(meldung,
+            w === 'nach-freigabe' ? T.koErfolgFreigabe : (w === 'sofort-lokal' ? T.koErfolgLokal : T.koErfolgDeploy),
+            w === 'nach-freigabe' ? 'warten' : null);
+          form.querySelectorAll('input, textarea, select, button').forEach(function (n) { n.disabled = true; });
+        } else {
+          meldungSetzen(meldung, korrekturFehlertext(antwort), 'fehler');
+          absenden.disabled = false;
+        }
+      }).catch(function () {
+        meldungSetzen(meldung, T.fehlerNetz, 'fehler');
+        absenden.disabled = false;
+      });
+    });
+    return form;
+  }
+
+  // ── Liste mit Statuswechsel ──
+  function korrekturenLaden() {
+    var liste = $('korrekturenListe');
+    var meldung = $('koListeMeldung');
+    liste.innerHTML = '';
+    meldungSetzen(meldung, '', null);
+    liste.appendChild(el('p', 'verlauf-leer', T.koLaden));
+    korrekturApi('GET').then(function (antwort) {
+      liste.innerHTML = '';
+      if (antwort.status !== 200) { meldungSetzen(meldung, korrekturFehlertext(antwort), 'fehler'); return; }
+      var d = antwort.daten;
+      if (!d.schreibenMoeglich) meldungSetzen(meldung, T.koNichtKonfiguriert, 'warten');
+      else if (d.warnung) meldungSetzen(meldung, d.warnung, 'warten');
+      var eintraege = (d.korrekturen || []).slice().reverse();
+      if (!eintraege.length) { liste.appendChild(el('p', 'verlauf-leer', T.koLeer)); return; }
+      eintraege.forEach(function (k) { liste.appendChild(korrekturEintrag(k, d)); });
+    }).catch(function () {
+      liste.innerHTML = '';
+      meldungSetzen(meldung, T.fehlerNetz, 'fehler');
+    });
+  }
+
+  function korrekturEintrag(k, konfig) {
+    var karte = el('div', 'verlauf-eintrag ko-eintrag');
+    var zeile = el('div', 'verlauf-zeile');
+    zeile.appendChild(el('span', 'verlauf-titel', k.titel));
+    var status = el('span', 'ko-status', T.koStatus[k.status] || k.status);
+    status.setAttribute('data-status', k.status);
+    zeile.appendChild(status);
+    karte.appendChild(zeile);
+
+    var meta = T.koVon + ' ' + k.autor + ' · ' + String(k.erstellt || '').slice(0, 10)
+      + (k.freigegebenVon ? ' · ' + T.koStatus.freigegeben + ' ' + T.koVon + ' ' + k.freigegebenVon : '');
+    karte.appendChild(el('div', 'verlauf-meta', meta));
+    if (k.sicherheitsrelevant) karte.appendChild(el('div', 'ko-sicher', '⚠ ' + T.koSicher + (k.sicherheitsgrund ? ' — ' + k.sicherheitsgrund : '')));
+    karte.appendChild(el('div', 'verlauf-meta', T.koBezug + ': ' + (k.bezug ? k.bezug.route + (k.bezug.anchor ? '#' + k.bezug.anchor : '') : '')));
+    karte.appendChild(el('div', 'verlauf-text', k.text));
+    if (k.widerspricht) karte.appendChild(el('div', 'verlauf-text', '≠ ' + k.widerspricht));
+
+    var offen = k.status === 'ungeprueft' || k.status === 'wartet-freigabe' || k.status === 'freigegeben';
+    if (!offen) return karte;
+
+    var begruendung = el('input', 'feld'); begruendung.type = 'text'; begruendung.maxLength = 400;
+    begruendung.placeholder = T.koBegruendung;
+    karte.appendChild(begruendung);
+
+    var aktionen = el('div', 'ko-aktionen');
+    var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
+
+    function aktion(name, beschriftung, brauchtFreigabe) {
+      var b = el('button', 'btn-klein', beschriftung); b.type = 'button';
+      if (brauchtFreigabe && !konfig.freigabeMoeglich) { b.disabled = true; b.title = 'THI_FREIGABEWORT'; }
+      b.addEventListener('click', function () {
+        var von = $('koName').value.trim();
+        if (!von) { $('koName').focus(); return; }
+        nameMerken(von);
+        aktionen.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+        korrekturApi('POST', {
+          aktion: name, id: k.id, von: von,
+          begruendung: begruendung.value.trim(),
+          freigabewort: $('koFreigabewort').value,
+        }).then(function (antwort) {
+          if (antwort.status === 200) { korrekturenLaden(); return; }
+          meldungSetzen(meldung, korrekturFehlertext(antwort), 'fehler');
+          aktionen.querySelectorAll('button').forEach(function (x) { x.disabled = false; });
+        }).catch(function () { meldungSetzen(meldung, T.fehlerNetz, 'fehler'); });
+      });
+      aktionen.appendChild(b);
+    }
+    if (k.status !== 'freigegeben') aktion('freigeben', T.koFreigeben, true);
+    if (k.status !== 'wartet-freigabe') aktion('im-wiki', T.koImWiki, true);
+    aktion('zurueckziehen', T.koZurueck, false);
+    karte.appendChild(aktionen);
+    karte.appendChild(meldung);
+    return karte;
   }
 
   /* ─── Anfrage senden ────────────────────────────────────────────────── */
@@ -1268,6 +1491,7 @@
       sicherheitZeigen(m.körper, sicherheit);
       quellenZeigen(m.körper, quellen);
       kopierKnopf(m.körper, antwortText, sicherheit);
+      if (antwortText && quellen.length) korrekturKnopf(m.körper, frage || fallAlsText(), antwortText, quellen);
       if (!frage) verlaufSpeichern(antwortText, sicherheit);
       $('nachfrageFormular').hidden = false;
       scrollen();

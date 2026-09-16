@@ -13,7 +13,12 @@
 
 import { pruefeGefahr, leseSeriennummer, pruefeWidersprueche, baueSuchanfrage, fahrzeugGewichten } from './fall.mjs';
 import { bewerteSicherheit, leseModellStufe } from './sicherheit.mjs';
-import { extractSnippet } from './search-core.js';
+import { extractSnippet, searchWiki, buildRetrievalQuery } from './search-core.js';
+import {
+  STATUS, validiereNotiz, erzeugeNotiz, wechsleStatus, istSicherheitsrelevant,
+  wirksameKorrekturen, korrekturAlsArtikel, kontextText, baueModulText, ueberfaellige,
+} from './korrekturen.mjs';
+import ARTIKEL from '../../../data/artikel.mjs';
 
 let ok = 0;
 let fehlgeschlagen = 0;
@@ -341,6 +346,141 @@ pruefe('ohne Begriffstreffer Rückfall auf den Anfang', ohneTreffer.startsWith('
 pruefe('leerer Text wirft nicht', extractSnippet('', 'irgendwas', 500) === '');
 pruefe('null-Text wirft nicht', extractSnippet(null, 'irgendwas', 500) === '');
 pruefe('leere Suchanfrage wirft nicht', typeof extractSnippet(langerArtikel, '', 500) === 'string');
+
+// ─── Support-Korrekturen ────────────────────────────────────────────────────
+// docs/07_KORREKTUREN_ENTWUERFE.md — die Regeln, die eine eingepflegte
+// Falschaussage davon abhalten, wie eine geprüfte Wiki-Aussage zu wirken.
+console.log('\n9) Support-Korrekturen');
+{ // eigener Block — die Namen unten kollidieren sonst mit früheren Abschnitten
+const DE_ARTIKEL = ARTIKEL.filter((a) => a.lang === 'de');
+const handsender = DE_ARTIKEL.find((a) => a.slug === 'funk-handsender');
+pruefe('Testartikel funk-handsender vorhanden', !!handsender);
+
+const rohNotiz = {
+  lang: 'de',
+  titel: 'Funk-Handsender: Batterielaufzeit',
+  text: 'Die Laufzeit der CR2032-Knopfzelle beträgt bei normaler Nutzung etwa zwei Jahre, nicht ein Jahr.',
+  widerspricht: 'Im Wiki steht „etwa ein Jahr".',
+  autor: 'M. Behrens',
+  bezug: { route: handsender?.route, anchor: 'batterie' },
+  ausloeser: { frage: 'Wie lange hält die Batterie im Handsender?', antwortAuszug: 'Laut Wiki etwa ein Jahr.' },
+};
+
+// Validierung
+const v1 = validiereNotiz(rohNotiz, ARTIKEL);
+pruefe('gültige Notiz wird angenommen', v1.ok, JSON.stringify(v1.fehler));
+pruefe('Notiz ohne Text wird abgelehnt', !validiereNotiz({ ...rohNotiz, text: '' }, ARTIKEL).ok);
+pruefe('Notiz ohne Namen wird abgelehnt', !validiereNotiz({ ...rohNotiz, autor: '' }, ARTIKEL).ok);
+pruefe('Notiz mit unbekanntem Bezug wird abgelehnt', !validiereNotiz({ ...rohNotiz, bezug: { route: '/de/gibt-es-nicht' } }, ARTIKEL).ok);
+pruefe('zu langer Text wird abgelehnt', !validiereNotiz({ ...rohNotiz, text: 'x'.repeat(2001) }, ARTIKEL).ok);
+pruefe('fremde Felder werden verworfen', !('boese' in validiereNotiz({ ...rohNotiz, boese: 1 }, ARTIKEL).notiz));
+
+// Sicherheitsrelevanz — Sperrliste über den Bezugsartikel
+const gesperrt = DE_ARTIKEL.filter((a) => istSicherheitsrelevant({ bezug: { route: a.route }, titel: '', text: '' }).relevant).map((a) => a.slug);
+const erwartetGesperrt = ['gas', 'gas-pro', 'gas-pro-iii', 'gas-plug', 'gas-connect', 'co-sensor', 'zusatzsensor-gas-pro-iii', 'funk-rauchmelder', 'abschalteinrichtung'];
+pruefe('Sperrliste erfasst alle Gas-/CO-/Rauch-/Abschalt-Artikel',
+  erwartetGesperrt.every((s) => gesperrt.includes(s)), `fehlt: ${erwartetGesperrt.filter((s) => !gesperrt.includes(s)).join(', ')}`);
+pruefe('Sperrliste erfasst die Gas-/CO-Anleitungen und das CO-FAQ',
+  gesperrt.filter((s) => s.startsWith('anleitung-')).length >= 6 && gesperrt.some((s) => s.startsWith('faq-') && s.includes('co-sensor')),
+  gesperrt.join(', '));
+pruefe('Sperrliste lässt WiPro, Handsender, BT-connect, Pro-Finder durch',
+  ['wipro-iii', 'funk-handsender', 'bt-connect', 'pro-finder'].every((s) => !gesperrt.includes(s)));
+// Gemessen am 16.09.2026: genau 20 (9 Artikel, 9 Anleitungen, 2 FAQ). Wächst
+// die Zahl deutlich, ist die Sperrliste zu weit gefasst — dann blockiert sie
+// harmlose Korrekturen und wird umgangen.
+pruefe('Sperrliste ist eng (höchstens 24 DE-Artikel)', gesperrt.length <= 24, `${gesperrt.length}: ${gesperrt.join(', ')}`);
+pruefe('Sperrliste erfasst beide Abschalteinrichtungs-Anleitungen', gesperrt.filter((s) => s.includes('abschalteinrichtung')).length === 3);
+
+// Sicherheitsrelevanz — über den Text, auch bei harmlosem Bezug
+pruefe('Text über CO macht die Notiz sicherheitsrelevant',
+  istSicherheitsrelevant({ bezug: { route: handsender?.route }, titel: 'Handsender', text: 'Der CO-Sensor wird über den Handsender stumm geschaltet.' }).relevant);
+pruefe('Text über G.A.S.-pro macht die Notiz sicherheitsrelevant',
+  istSicherheitsrelevant({ bezug: { route: handsender?.route }, titel: 'Handsender', text: 'Gilt auch für den G.A.S.-pro III am selben Bus.' }).relevant);
+pruefe('Text über Gasgeruch (Gate) macht die Notiz sicherheitsrelevant',
+  istSicherheitsrelevant({ bezug: { route: handsender?.route }, titel: 'Handsender', text: 'Wenn es nach Gas riecht, zuerst lüften.' }).relevant);
+pruefe('Batterie-Notiz ist NICHT sicherheitsrelevant', !istSicherheitsrelevant(v1.notiz).relevant);
+pruefe('„BT-connect" wird nicht als CO gelesen',
+  !istSicherheitsrelevant({ bezug: { route: '/de/bt-connect' }, titel: 'BT-connect Kopplung', text: 'Die Kopplung gelingt erst nach dem Neustart der App.' }).relevant);
+
+// Anlegen: Status folgt aus der Relevanz, nicht aus der Eingabe
+const fest = { jetzt: new Date('2026-09-16T10:00:00Z'), zufall: () => 0.5 };
+const n1 = erzeugeNotiz(v1.notiz, fest);
+pruefe('harmlose Notiz startet als „ungeprueft"', n1.status === STATUS.UNGEPRUEFT);
+pruefe('ID trägt Datum und Titel', /^2026-09-16-funk-handsender-batterielaufzeit-[0-9a-f]{4}$/.test(n1.id), n1.id);
+pruefe('Historie beginnt mit dem Autor', n1.historie.length === 1 && n1.historie[0].von === 'M. Behrens');
+const nGas = erzeugeNotiz({ ...v1.notiz, bezug: { route: '/de/gas-pro-iii', anchor: '' } }, fest);
+pruefe('Notiz zu gas-pro-iii startet als „wartet-freigabe"', nGas.status === STATUS.WARTET && nGas.sicherheitsrelevant);
+
+// Statuswechsel
+pruefe('freigeben ohne Namen wird abgelehnt', !wechsleStatus(n1, 'freigeben', { von: '' }).ok);
+const f1 = wechsleStatus(n1, 'freigeben', { von: 'A. Prüfer', jetzt: fest.jetzt });
+pruefe('freigeben setzt Status, Freigeber und Historie',
+  f1.ok && f1.notiz.status === STATUS.FREIGEGEBEN && f1.notiz.freigegebenVon === 'A. Prüfer' && f1.notiz.historie.length === 2);
+pruefe('freigegeben → freigeben ist nicht möglich', !wechsleStatus(f1.notiz, 'freigeben', { von: 'X Y' }).ok);
+pruefe('Vier-Augen: Autor kann nicht selbst freigeben', !wechsleStatus(n1, 'freigeben', { von: 'm. behrens' }).ok);
+pruefe('Vier-Augen: Autor darf zurückziehen', wechsleStatus(n1, 'zurueckziehen', { von: 'M. Behrens' }).ok);
+pruefe('sicherheitsrelevant ohne Begründung wird nicht freigegeben', !wechsleStatus(nGas, 'freigeben', { von: 'A. Prüfer', begruendung: 'ok' }).ok);
+pruefe('sicherheitsrelevant mit Begründung wird freigegeben',
+  wechsleStatus(nGas, 'freigeben', { von: 'A. Prüfer', begruendung: 'Mit Entwicklung abgestimmt am 16.09.' }).ok);
+pruefe('zurückziehen geht aus jedem wirksamen Status', wechsleStatus(f1.notiz, 'zurueckziehen', { von: 'M. B.' }).ok);
+pruefe('im-wiki aus zurückgezogen ist nicht möglich',
+  !wechsleStatus(wechsleStatus(f1.notiz, 'zurueckziehen', { von: 'M. B.' }).notiz, 'im-wiki', { von: 'M. B.' }).ok);
+pruefe('unbekannte Aktion wird abgelehnt', !wechsleStatus(n1, 'loeschen', { von: 'M. B.' }).ok);
+
+// Wirksamkeit
+const alle = [n1, nGas, f1.notiz, wechsleStatus(n1, 'zurueckziehen', { von: 'M. B.' }).notiz];
+pruefe('nur ungeprüft und freigegeben wirken', wirksameKorrekturen(alle).length === 2);
+
+// Fürs Retrieval: gefunden, aber nicht flutend
+const kArtikel = korrekturAlsArtikel(n1, ARTIKEL);
+pruefe('Korrektur-Artikel trägt Typ und Herkunft', kArtikel.articleType === 'korrektur' && kArtikel.korrektur.id === n1.id);
+pruefe('Kontexttext beginnt mit SUPPORT-KORREKTUR und Status', /^SUPPORT-KORREKTUR \(Status: UNGEPRÜFT/.test(kArtikel.body));
+pruefe('Kontexttext nennt Bezugsartikel', kArtikel.body.includes(handsender?.title || '§'));
+pruefe('freigegebene Notiz nennt Freigeber im Kontext', kontextText(f1.notiz, handsender).includes('freigegeben am') && kontextText(f1.notiz, handsender).includes('A. Prüfer'));
+pruefe('FR-Kontexttext nutzt französische Kopfzeile', /^CORRECTION DU SUPPORT/.test(kontextText({ ...n1, lang: 'fr' }, handsender, 'fr')));
+
+const zugang = { canViewInternal: false };
+const index = [...ARTIKEL, kArtikel];
+const trefferPassend = searchWiki(index, buildRetrievalQuery('Welche Batterie kommt in den Funk-Handsender und wie lange hält sie?'), zugang, 'de', 8);
+const rangPassend = trefferPassend.findIndex((t) => t.articleType === 'korrektur');
+pruefe('passende Frage findet die Korrektur in den Top-3', rangPassend >= 0 && rangPassend < 3, `Rang ${rangPassend + 1}`);
+pruefe('Korrektur verdrängt den Wiki-Artikel nicht von Platz 1', trefferPassend[0]?.slug === 'funk-handsender', trefferPassend[0]?.slug);
+const unpassend = [
+  'Welche DIP-Stellung braucht der Fiat Ducato 2023?',
+  'Wie lösche ich den Alarmspeicher der WiPro III?',
+  'Pro-Finder sendet keine SMS mehr, SIM-PIN?',
+  'G.A.S.-pro III Montagehöhe im Kastenwagen',
+  'NFC Modul KeyCard anlernen Reihenfolge',
+  'Zusatzhupe an welchen Pin bei der WiPro III?',
+];
+const flut = unpassend.filter((f) => searchWiki(index, buildRetrievalQuery(f), zugang, 'de', 8).some((t) => t.articleType === 'korrektur')).length;
+pruefe('unpassende Fragen holen die Korrektur nicht in die Top-8', flut === 0, `${flut} von ${unpassend.length}`);
+
+// Prozentwert: ungeprüft deckelt, freigegeben nicht
+const starkerFall = {
+  fall: { fehlerbild: { beobachtet: 'Handsender reagiert nur noch sporadisch, LED bleibt dunkel', led: 'aus' }, produkte: ['Funk-Handsender'], fahrzeug: { slug: 'fiat-ducato-2022-2024' } },
+  sn: { bekannt: true, praefix: '0823' },
+  hinweise: [], rueckfallDe: false, modellStufe: 'hoch', sprache: 'de',
+};
+const starkeQuellen = [{ route: '/de/funk-handsender', score: 200 }, { route: '/de/wipro-iii', score: 120 }, { route: '/de/anlernvorgang', score: 90 }];
+const ohne = bewerteSicherheit({ ...starkerFall, quellen: starkeQuellen });
+pruefe('Referenzfall ohne Korrektur liegt über 60 %', ohne.wert > 60, `${ohne.wert} %`);
+const mitUngeprueft = bewerteSicherheit({ ...starkerFall, quellen: [...starkeQuellen, { route: kArtikel.route, score: 76, korrektur: kArtikel.korrektur }] });
+pruefe('ungeprüfte Korrektur deckelt auf 60 %', mitUngeprueft.wert <= 60, `${mitUngeprueft.wert} %`);
+pruefe('Deckel wird begründet', mitUngeprueft.gruende.some((g) => g.includes('ungeprüfte Support-Korrektur')));
+const fArtikel = korrekturAlsArtikel(f1.notiz, ARTIKEL);
+const mitFreigabe = bewerteSicherheit({ ...starkerFall, quellen: [...starkeQuellen, { route: fArtikel.route, score: 76, korrektur: fArtikel.korrektur }] });
+pruefe('freigegebene Korrektur deckelt nicht', mitFreigabe.wert === ohne.wert, `${mitFreigabe.wert} % vs ${ohne.wert} %`);
+pruefe('freigegebene Korrektur wird in den Gründen genannt', mitFreigabe.gruende.some((g) => g.includes('freigegebene Support-Korrektur')));
+pruefe('FR-Begründung für ungeprüfte Korrektur', bewerteSicherheit({ ...starkerFall, sprache: 'fr', quellen: [{ route: kArtikel.route, score: 76, korrektur: kArtikel.korrektur }] }).gruende.some((g) => g.includes('non encore validée')));
+
+// Modul-Text und Wiedervorlage
+const modul = baueModulText([n1]);
+pruefe('Modultext ist auswertbares JS mit Default-Export', modul.startsWith('// AUTOMATISCH') && modul.includes('export default [') && JSON.parse(modul.slice(modul.indexOf('export default ') + 15, -2)).length === 1);
+pruefe('Modultext maskiert U+2028', baueModulText([{ ...n1, text: `a${String.fromCharCode(0x2028)}b` }]).includes('\\u2028'));
+pruefe('Wiedervorlage findet alte ungeprüfte Notizen', ueberfaellige([n1], new Date('2026-12-01').getTime()).length === 1);
+pruefe('Wiedervorlage ignoriert frische und freigegebene', ueberfaellige([n1, f1.notiz], new Date('2026-09-20').getTime()).length === 0);
+}
 
 // ─── Ergebnis ───────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(64)}`);

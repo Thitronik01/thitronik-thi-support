@@ -16,6 +16,8 @@
 
 import ARTIKEL from '../../data/artikel.mjs';
 import SEKTIONEN from '../../data/sektionen.mjs';
+import KORREKTUREN from '../../data/korrekturen.mjs';
+import { ueberfaellige, WIEDERVORLAGE_TAGE } from './lib/korrekturen.mjs';
 
 const API_URL = process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
 const API_KEY = process.env.ANYMIZE_API_KEY || process.env.Anymize_API_KEY || '';
@@ -62,6 +64,18 @@ function findeBasis() {
   }
 }
 
+function korrekturenStand() {
+  const proStatus = {};
+  for (const k of KORREKTUREN) proStatus[k.status] = (proStatus[k.status] || 0) + 1;
+  return {
+    gesamt: KORREKTUREN.length,
+    proStatus,
+    ueberfaellig: ueberfaellige(KORREKTUREN).length,
+    speicherKonfiguriert: !!process.env.THI_GITHUB_TOKEN || process.env.THI_KORREKTUREN_LOKAL === '1',
+    freigabeKonfiguriert: !!(process.env.THI_FREIGABEWORT || process.env.THI_ZUGANGSWORT),
+  };
+}
+
 export default async function handler(anfrage) {
   const url = new URL(anfrage.url);
   const live = url.searchParams.get('live') === '1';
@@ -77,10 +91,17 @@ export default async function handler(anfrage) {
       zugangswortAktiv: !!process.env.THI_ZUGANGSWORT,
     },
     wissensbasis: basis,
+    korrekturen: korrekturenStand(),
     modellPruefung: live ? null : 'übersprungen (mit ?live=1 erzwingen)',
   };
 
   const probleme = [];
+  // Wiedervorlage: Eine Korrektur, die wochenlang „ungeprüft" bleibt, wirkt
+  // die ganze Zeit mit Deckel — und niemand hat je entschieden, ob sie
+  // stimmt. Das soll auffallen, nicht versanden.
+  if (bericht.korrekturen.ueberfaellig) {
+    probleme.push(`${bericht.korrekturen.ueberfaellig} Support-Korrektur(en) warten seit über ${WIEDERVORLAGE_TAGE} Tagen auf Freigabe.`);
+  }
   if (!basis.gefunden) probleme.push('Wissensbasis nicht ladbar (data/artikel.mjs).');
   if (!API_URL) probleme.push('ANYMIZE_API_URL ist nicht gesetzt.');
   if (!API_KEY) probleme.push('ANYMIZE_API_KEY ist nicht gesetzt.');

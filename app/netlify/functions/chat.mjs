@@ -18,6 +18,7 @@
 
 import ARTIKEL from '../../data/artikel.mjs';
 import SEKTIONEN from '../../data/sektionen.mjs';
+import KORREKTUREN from '../../data/korrekturen.mjs';
 import {
   searchWiki, searchSections, bestSectionForRoute,
   buildRetrievalQuery, extractSnippet,
@@ -25,6 +26,7 @@ import {
 import { pruefeGefahr, pruefeWidersprueche, baueSuchanfrage, fahrzeugGewichten } from './lib/fall.mjs';
 import { bewerteSicherheit, leseModellStufe } from './lib/sicherheit.mjs';
 import { SYSTEM, GEFAHR_ANTWORT, KEIN_TREFFER, SUPPORT_TELEFON } from './lib/prompts.mjs';
+import { wirksameKorrekturen, korrekturAlsArtikel, KORREKTUR_BEILAGE_MAX } from './lib/korrekturen.mjs';
 
 // ─── Konfiguration ──────────────────────────────────────────────────────────
 const API_URL = process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
@@ -47,7 +49,13 @@ const MAX_VERLAUF = 12;     // Nachrichten im Verlauf
 // je nach Deploy-Methode (Git-Build vs. Drag & Drop) unterschiedlich ausfallen.
 // Ein Import ist für den Bundler dagegen eine harte Abhängigkeit: Er nimmt die
 // Daten IMMER mit. Damit läuft die Function unabhängig davon, wie deployt wurde.
-const BASIS = { artikel: ARTIKEL, sektionen: SEKTIONEN };
+// Support-Korrekturen (docs/07_KORREKTUREN_ENTWUERFE.md): eigene kleine
+// Einträge, die wie Artikel durchsucht werden. EINMAL beim Laden umgewandelt,
+// damit search-core seine normalisierten Felder je Objekt zwischenspeichern
+// kann (WeakMap) — pro Anfrage neu erzeugte Objekte würden das aushebeln.
+// Nur wirksame Status (ungeprüft, freigegeben) kommen überhaupt hierher.
+const KORREKTUR_ARTIKEL = wirksameKorrekturen(KORREKTUREN).map((k) => korrekturAlsArtikel(k, ARTIKEL));
+const BASIS = { artikel: ARTIKEL, sektionen: SEKTIONEN, korrekturen: KORREKTUR_ARTIKEL };
 
 // ─── Rate-Limit ─────────────────────────────────────────────────────────────
 // ⚠️ In-Memory: lebt PRO Function-Instanz. Auf Netlify skalieren Instanzen,
@@ -346,8 +354,12 @@ export default async function handler(anfrage) {
   const suche = buildRetrievalQuery(anfrageText, vorherige);
 
   const fahrzeugSlug = (fall.fahrzeug && !fall.fahrzeug.fallback) ? fall.fahrzeug.slug : null;
+  // Korrekturen laufen im selben Index mit — ohne Boost. Gemessen: Ein
+  // passender Korrektur-Eintrag landet auf Platz 2 hinter dem Wiki-Artikel,
+  // ein unpassender taucht bei 1 von 41 Gold-Fragen in den Top-8 auf.
+  const suchIndex = basis.korrekturen.length ? [...basis.artikel, ...basis.korrekturen] : basis.artikel;
   let artikelTreffer = fahrzeugGewichten(
-    searchWiki(basis.artikel, suche, zugang, sprache, 14),
+    searchWiki(suchIndex, suche, zugang, sprache, 14),
     fahrzeugSlug,
   ).slice(0, 10);
 
@@ -372,7 +384,7 @@ export default async function handler(anfrage) {
   // Die FR-Fachartikel sind vollwertig, aber Anleitungen/FAQ liegen nur auf DE.
   let rueckfallDe = false;
   if (sprache === 'fr' && (artikelTreffer.length < 3 || (artikelTreffer[0]?.score ?? 0) < 25)) {
-    const deTreffer = searchWiki(basis.artikel, suche, zugang, 'de', 6);
+    const deTreffer = searchWiki(suchIndex, suche, zugang, 'de', 6);
     if (deTreffer.length && (deTreffer[0]?.score ?? 0) > (artikelTreffer[0]?.score ?? 0) * 1.4) {
       artikelTreffer = [...artikelTreffer, ...deTreffer].slice(0, 10);
       rueckfallDe = true;
@@ -393,7 +405,16 @@ export default async function handler(anfrage) {
 
   // Jedem Artikeltreffer den passenden Abschnitt zuordnen (Deep-Link + Zitat).
   const quellen = [];
+  const quelleAusKorrektur = (t, extra = {}) => ({
+    route: t.route, title: t.title, lang: t.lang, articleType: 'korrektur',
+    anchor: '', headingPath: t.korrektur.bezugTitel || '',
+    score: Math.round(t.score || 0),
+    fremdsprachig: t.lang !== sprache,
+    korrektur: t.korrektur,
+    ...extra,
+  });
   for (const t of artikelTreffer.slice(0, MAX_KONTEXT)) {
+    if (t.articleType === 'korrektur') { quellen.push(quelleAusKorrektur(t)); continue; }
     const abschnitt = bestSectionForRoute(basis.sektionen, t.route, suche, t.lang);
     quellen.push({
       route: t.route, title: t.title, lang: t.lang, articleType: t.articleType,
@@ -417,6 +438,24 @@ export default async function handler(anfrage) {
     });
   }
 
+  // Korrekturen GARANTIERT beilegen, deren Bezugsartikel im Kontext liegt —
+  // wie beim Fahrzeugartikel. Eine Korrektur zur Batterielaufzeit des
+  // Handsenders muss mitreisen, sobald der Handsender-Artikel mitreist, auch
+  // wenn die Frage lexikalisch nicht auf die Korrektur zeigt. Sonst würde das
+  // Modell den (falschen) Wiki-Text sehen und die Korrektur nicht.
+  if (basis.korrekturen.length) {
+    const kontextRouten = new Set(quellen.filter((q) => !q.korrektur).map((q) => q.route));
+    const schonDrin = new Set(quellen.filter((q) => q.korrektur).map((q) => q.korrektur.id));
+    let beigelegt = 0;
+    for (const k of basis.korrekturen) {
+      if (beigelegt >= KORREKTUR_BEILAGE_MAX) break;
+      if (schonDrin.has(k.korrektur.id) || !kontextRouten.has(k.korrektur.bezug?.route)) continue;
+      if (k.lang !== sprache && !rueckfallDe) continue;
+      quellen.push(quelleAusKorrektur(k, { ausBezug: true }));
+      beigelegt += 1;
+    }
+  }
+
   // 6) Kontext bauen: Top-2 mit großem Fenster, Rest als Passagen-Fenster.
   //
   // Beide Fenster werden AN DER FRAGE ausgerichtet, nicht am Textanfang. Das
@@ -436,9 +475,12 @@ export default async function handler(anfrage) {
   // trotzdem drin. Die Artikel-Identität geht nicht verloren: Titel und
   // Abschnittspfad stehen ohnehin in der Kopfzeile jedes Kontexteintrags.
   const kontext = quellen.map((q, i) => {
-    const artikel = basis.artikel.find((a) => a.route === q.route && a.lang === q.lang);
+    // Korrekturen sind kurz (max. 2000 Zeichen Text) und tragen ihre Herkunft
+    // in der Kopfzeile — sie gehen vollständig mit, kein Fenster nötig.
+    const bestand = q.korrektur ? basis.korrekturen : basis.artikel;
+    const artikel = bestand.find((a) => a.route === q.route && a.lang === q.lang);
     const voll = String(artikel?.body || '');
-    const text = extractSnippet(voll, suche, i < 2 ? 6000 : 1400);
+    const text = q.korrektur ? voll : extractSnippet(voll, suche, i < 2 ? 6000 : 1400);
     return { ...q, text: text || artikel?.excerpt || '' };
   }).filter((k) => k.text);
 

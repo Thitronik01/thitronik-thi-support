@@ -99,6 +99,28 @@ export function bewerteSicherheit({ fall, sn, quellen = [], hinweise = [], rueck
     gruende.push('Une partie des sources n\'existe qu\'en allemand.');
   }
 
+  // ── Support-Korrekturen im Kontext ────────────────────────────────────────
+  // Eine eingepflegte Falschaussage bekäme sonst denselben Wert wie eine
+  // geprüfte Wiki-Aussage (docs/07_KORREKTUREN_ENTWUERFE.md, Frage 5).
+  // UNGEPRÜFT → derselbe Deckel wie bei einem Widerspruch: Die Antwort mag
+  // stimmen, aber niemand hat es bestätigt — „hoch" darf sie nicht heißen.
+  // FREIGEGEBEN → kein Deckel, aber die Herkunft bleibt in den Gründen sichtbar.
+  const korrekturen = quellen.filter((q) => q.korrektur);
+  const ungeprueft = korrekturen.filter((q) => q.korrektur.status === 'ungeprueft');
+  const freigegeben = korrekturen.filter((q) => q.korrektur.status === 'freigegeben');
+  if (ungeprueft.length) {
+    if (wert > 60) wert = 60;
+    gruende.push(sprache === 'fr'
+      ? `S'appuie sur ${ungeprueft.length} correction(s) du support non encore validée(s).`
+      : `Stützt sich auf ${ungeprueft.length} ungeprüfte Support-Korrektur${ungeprueft.length > 1 ? 'en' : ''}.`);
+  }
+  if (freigegeben.length) {
+    const k = freigegeben[0].korrektur;
+    gruende.push(sprache === 'fr'
+      ? `Inclut une correction du support validée (${k.autor}, ${String(k.freigegebenAm || '').slice(0, 10)}).`
+      : `Enthält eine freigegebene Support-Korrektur (${k.autor}, ${String(k.freigegebenAm || '').slice(0, 10)}).`);
+  }
+
   wert = Math.max(3, Math.min(97, Math.round(wert)));
 
   // ── 5) Einordnung ─────────────────────────────────────────────────────────
@@ -112,6 +134,7 @@ export function bewerteSicherheit({ fall, sn, quellen = [], hinweise = [], rueck
     fehlt: fehlt.slice(0, 4),
     gruende,
     teile: { datenlage: daten, quellenlage: quellenPunkte, modell },
+    korrekturen: korrekturen.length ? { ungeprueft: ungeprueft.length, freigegeben: freigegeben.length } : undefined,
   };
 }
 

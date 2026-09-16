@@ -12,6 +12,7 @@
     "test": "node netlify/functions/lib/tests.mjs",
     "eval": "node werkzeuge/antwort-eval.mjs",
     "deploy-pruefen": "node werkzeuge/deploy-pruefen.mjs",
-    "daten": "node werkzeuge/daten-bauen.mjs"
+    "daten": "node werkzeuge/daten-bauen.mjs",
+    "korrekturen-pruefen": "node werkzeuge/korrekturen-pruefen.mjs"
   }
 }

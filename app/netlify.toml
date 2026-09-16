@@ -68,6 +68,11 @@
   to = "/.netlify/functions/health"
   status = 200
 
+[[redirects]]
+  from = "/api/korrektur"
+  to = "/.netlify/functions/korrektur"
+  status = 200
+
 # SPA-Fallback — alles andere auf die Startseite.
 [[redirects]]
   from = "/*"

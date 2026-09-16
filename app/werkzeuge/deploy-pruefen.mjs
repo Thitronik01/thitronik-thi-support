@@ -171,11 +171,35 @@ if (Array.isArray(ARTIKEL) && Array.isArray(SEKTIONEN)) {
         'Ausgeliefert wird die .mjs — `node werkzeuge/daten-bauen.mjs` erneut laufen lassen.');
     }
   }
+
+  // Support-Korrekturen: Beide Dateien werden von der Function in EINEM Commit
+  // geschrieben, müssen also inhaltsgleich sein — mtime reicht hier nicht,
+  // weil ein Git-Checkout beide Dateien zur selben Sekunde anlegt.
+  try {
+    const j = path.join(WURZEL, 'data/korrekturen.json');
+    const m = path.join(WURZEL, 'data/korrekturen.mjs');
+    if (!existsSync(j) || !existsSync(m)) {
+      melde.fehler('data/korrekturen.json oder data/korrekturen.mjs fehlt.', 'chat.mjs importiert die .mjs — `node werkzeuge/daten-bauen.mjs` legt beide an.');
+    } else {
+      const ausJson = JSON.parse(lies('data/korrekturen.json') || '[]');
+      const ausMjs = (await import(pathToFileURL(m).href)).default;
+      if (JSON.stringify(ausJson) !== JSON.stringify(ausMjs)) {
+        melde.fehler('data/korrekturen.mjs weicht von data/korrekturen.json ab.', '`node werkzeuge/daten-bauen.mjs` erneut laufen lassen.');
+      } else {
+        const proStatus = {};
+        for (const k of ausJson) proStatus[k.status] = (proStatus[k.status] || 0) + 1;
+        melde.ok(`${ausJson.length} Support-Korrektur(en).`,
+          ausJson.length ? Object.entries(proStatus).map(([k, v]) => `${k} ${v}`).join(', ') : '');
+      }
+    }
+  } catch (e) {
+    melde.fehler('data/korrekturen.* lässt sich nicht lesen.', e.message);
+  }
 }
 
 // ─── 3) Functions ───────────────────────────────────────────────────────────
 console.log('\n3) Functions');
-for (const name of ['chat', 'health']) {
+for (const name of ['chat', 'health', 'korrektur']) {
   const rel = `netlify/functions/${name}.mjs`;
   if (!da(rel)) { melde.fehler(`${rel} fehlt.`); continue; }
   try {

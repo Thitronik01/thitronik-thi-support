@@ -58,12 +58,40 @@ Content-Signal — diese Themen gehören auf Französisch ergänzt.
 | Sicherheitsangabe in Prozent, mit Begründung und Deckel bei Widersprüchen | ✅ |
 | Belegstellen aufklappbar mit Originaltext | ✅ |
 | Fall + Antwort als Klartext kopieren | ✅ |
+| Support-Korrekturen: anlegen, Sperrliste, Freigabe, Deckel im Prozentwert, Prüfwerkzeug (`../docs/07_…`) | ✅ gebaut — **wartet auf GitHub-Token in Netlify** |
 | Fallverlauf (12 Fälle, lokal, wiederherstellbar) | ✅ |
 | Hell/Dunkel, Logo in beiden Fassungen, Favicons, Web-Manifest | ✅ |
 | Zweisprachig DE/FR, vollständig | ✅ |
 | 115 Selbsttests (inkl. Textfensterwahl) | ✅ |
 | Antwort-Eval gegen 41 Gold-Fälle, mit LLM-Judge (`npm run eval -- --judge`) | ✅ |
 | Deploy-Prüfung vor dem Upload (`npm run deploy-pruefen`) | ✅ |
+
+---
+
+## Support-Korrekturen — gebaut am 16.09.2026, noch nicht deployt
+
+Mitarbeiter können falsche Antworten korrigieren; die Korrektur wird als
+eigener Eintrag per Commit ins Repository geschrieben und wirkt nach dem
+Deploy (Entwurf A in `../docs/07_KORREKTUREN_ENTWUERFE.md`; README-Abschnitt
+„Support-Korrekturen"). Alles ist lokal gebaut und gemessen, aber **nicht
+committet, nicht gepusht**.
+
+Was noch zu tun ist, bevor es wirkt:
+1. Änderungen sichten, committen, pushen (ein Deploy).
+2. In Netlify `THI_GITHUB_TOKEN` (feingranular, nur dieses Repo, Contents:
+   write) setzen. Ein eigenes Freigabewort ist nicht nötig — das Zugangswort
+   gilt, die Vier-Augen-Regel (Freigeber ≠ Autor) ist die Sicherung.
+3. `/api/health` zeigt danach `korrekturen.speicherKonfiguriert: true`.
+4. Eine Testkorrektur einreichen und die **Deploy-Dauer messen** — sie ist die
+   Latenz bis zur Wirkung und wurde noch nie gemessen.
+5. Sperrliste fachlich gegenlesen: `node netlify/functions/lib/tests.mjs`
+   druckt die 20 gesperrten DE-Artikel im Abschnitt 9.
+
+Offen geblieben, bewusst: Der Name ist selbst erklärt (kein Login). Wer
+Nachweis braucht, kann Netlify Identity nachrüsten (verfügbar, nicht
+abgekündigt). Und: Es gibt im Repo keinen Ingest `content/wiki` →
+`artikel.json` — bevor „Wiki neu einlesen" ein Vorgang ist, muss der Weg
+gebaut werden. Die Korrekturen selbst überleben ihn, weil sie außerhalb liegen.
 
 ---
 

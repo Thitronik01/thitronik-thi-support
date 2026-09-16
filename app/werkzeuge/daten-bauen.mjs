@@ -70,6 +70,27 @@ console.log('\nWissensbasis bauen …\n');
 const artikel = bauen('artikel.json', 'artikel.mjs');
 const sektionen = bauen('sektionen.json', 'sektionen.mjs');
 
+// Support-Korrekturen: eigener Bestand, eigenes Modulformat (mit Kopfzeile,
+// die auf die schreibende Function verweist). Fehlt die Datei, wird sie leer
+// angelegt — ein fehlendes Modul ließe chat.mjs beim Import scheitern.
+{
+  const { baueModulText, baueJsonText } = await import('../netlify/functions/lib/korrekturen.mjs');
+  const quelle = path.join(DATEN, 'korrekturen.json');
+  let liste = [];
+  if (fs.existsSync(quelle)) {
+    try { liste = JSON.parse(fs.readFileSync(quelle, 'utf8') || '[]'); } catch (e) {
+      console.error(`  FEHLER korrekturen.json ist kein gültiges JSON: ${e.message}`);
+      process.exitCode = 1;
+    }
+  } else {
+    fs.writeFileSync(quelle, baueJsonText([]), 'utf8');
+    console.log('  NEU    korrekturen.json (leer angelegt)');
+  }
+  if (!Array.isArray(liste)) { console.error('  FEHLER korrekturen.json muss ein Array sein.'); process.exitCode = 1; liste = []; }
+  fs.writeFileSync(path.join(DATEN, 'korrekturen.mjs'), baueModulText(liste), 'utf8');
+  console.log(`  OK     korrekturen.mjs  ${String(liste.length).padStart(5)} Einträge`);
+}
+
 if (artikel && sektionen) {
   const proSprache = {};
   for (const a of artikel) proSprache[a.lang] = (proSprache[a.lang] || 0) + 1;

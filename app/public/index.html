@@ -49,6 +49,7 @@
         <button type="button" class="sprach-btn" data-thema="dark" aria-pressed="false" data-i18n="themaDunkel">Dunkel</button>
       </div>
       <button type="button" class="btn-geist" id="verlaufOeffnen" data-i18n="verlauf">Verlauf</button>
+      <button type="button" class="btn-geist" id="korrekturenOeffnen" data-i18n="korrekturen">Korrekturen</button>
       <button type="button" class="btn-geist" id="neuerFall" data-i18n="neuerFall">Neuer Fall</button>
     </div>
   </div>
@@ -65,6 +66,30 @@
       <button type="button" class="btn-schliessen" id="verlaufSchliessen" aria-label="Schließen">×</button>
     </div>
     <div class="verlauf-liste" id="verlaufListe"></div>
+  </div>
+</div>
+
+<!-- ─── Support-Korrekturen ───────────────────────────────────────────── -->
+<!-- Liste aller Korrekturen mit Status. Freigeben und „Im Wiki" brauchen das
+     Freigabewort (zweite Rolle); Zurückziehen nur das Zugangswort.
+     Warum eine Liste und nicht nur der Knopf unter der Antwort: Eine
+     Korrektur, die niemand je wieder ansieht, bleibt ewig „ungeprüft" —
+     und damit ewig gedeckelt. Hier sieht man, was auf Entscheidung wartet. -->
+<div class="verlauf-overlay" id="korrekturenOverlay" hidden>
+  <div class="verlauf-box">
+    <div class="verlauf-kopf">
+      <div>
+        <h2 data-i18n="koListeTitel">Support-Korrekturen</h2>
+        <p class="verlauf-unter" data-i18n="koListeUnter">Versioniert im Repository. Freigeben und Archivieren braucht das Freigabewort.</p>
+      </div>
+      <button type="button" class="btn-schliessen" id="korrekturenSchliessen" aria-label="Schließen">×</button>
+    </div>
+    <div class="ko-leiste">
+      <input type="text" id="koName" class="feld" data-i18n-ph="koFeldName" placeholder="Dein Name" autocomplete="name">
+      <input type="password" id="koFreigabewort" class="feld" data-i18n-ph="koFreigabewort" placeholder="Freigabewort" autocomplete="off">
+    </div>
+    <p class="ko-meldung" id="koListeMeldung" hidden></p>
+    <div class="verlauf-liste" id="korrekturenListe"></div>
   </div>
 </div>
 
