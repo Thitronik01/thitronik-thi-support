@@ -40,7 +40,7 @@ export default [
   },
   {
     "id": "2026-09-16-sunrise-ist-kein-funktionierender-provider-mehr-517e",
-    "status": "ungeprueft",
+    "status": "im-wiki",
     "sicherheitsrelevant": false,
     "sicherheitsgrund": null,
     "lang": "de",
@@ -65,6 +65,12 @@ export default [
         "von": "Max",
         "am": "2026-09-16T16:23:35.763Z",
         "begruendung": ""
+      },
+      {
+        "status": "im-wiki",
+        "von": "Max",
+        "am": "2026-09-16T16:44:06.849Z",
+        "begruendung": "das 2g netz wurde von diesem Provider abgeschaltet"
       }
     ]
   }
