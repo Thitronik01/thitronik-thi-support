@@ -181,7 +181,7 @@
   },
   {
     "id": "2026-09-17-provider-swisscom-ist-nicht-mehr-gut-6f7c",
-    "status": "ungeprueft",
+    "status": "zurueckgezogen",
     "sicherheitsrelevant": false,
     "sicherheitsgrund": null,
     "lang": "de",
@@ -205,6 +205,12 @@
         "status": "ungeprueft",
         "von": "Admin",
         "am": "2026-09-17T11:42:14.498Z",
+        "begruendung": ""
+      },
+      {
+        "status": "zurueckgezogen",
+        "von": "Admin",
+        "am": "2026-09-17T11:46:57.965Z",
         "begruendung": ""
       }
     ],
