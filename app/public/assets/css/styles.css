@@ -845,6 +845,37 @@ select.feld {
 }
 .menue-punkt:hover { background: var(--flaeche-3); color: var(--navy); }
 
+/* Wissenspflege */
+.verlauf-box-breit { max-width: 820px; }
+.reiter { display: flex; gap: 2px; padding: 12px 20px 0; border-bottom: 1px solid var(--linie); }
+.reiter-knopf {
+  padding: 8px 14px; margin-bottom: -1px;
+  background: transparent; border: 0; border-bottom: 2px solid transparent;
+  color: var(--text-2); font-size: .8125rem; font-weight: 600; cursor: pointer;
+}
+.reiter-knopf:hover { color: var(--text); }
+.reiter-knopf.ist-aktiv { color: var(--navy); border-bottom-color: var(--navy); }
+.reiter-inhalt { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+.reiter-inhalt .verlauf-liste { flex: 1 1 auto; }
+.wi-form { display: grid; grid-template-columns: 2fr 1fr auto 1.4fr auto; gap: 8px; align-items: end; padding: 14px 20px 0; }
+.wi-form .feld { min-height: 36px; }
+.wi-artikel { min-width: 0; }
+.wi-faktor { display: grid; gap: 4px; font-size: .75rem; color: var(--text-2); }
+.wi-faktor .feld { width: 80px; }
+.wi-hilfe { padding: 8px 20px 0; font-size: .75rem; color: var(--text-3); line-height: 1.5; }
+.wi-leiste { display: flex; align-items: center; gap: 8px; padding: 14px 20px 0; font-size: .8125rem; color: var(--text-2); }
+.wi-leiste .feld { width: auto; min-height: 32px; }
+.wi-haeufig { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 20px 0; }
+.wi-haeufig:empty { display: none; }
+.wi-haeufig span { padding: 2px 9px; background: var(--warn-bg); color: var(--warn-text); border-radius: var(--r-voll); font-size: .75rem; font-weight: 600; }
+.wi-status { padding: 1px 8px; border-radius: var(--r-voll); font-size: .6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; background: var(--flaeche-3); color: var(--text-2); }
+.wi-status[data-status="bevorzugt"] { background: var(--ok-bg); color: var(--ok-text); }
+.wi-status[data-status="veraltet"] { background: var(--gefahr-bg); color: var(--gefahr-text); }
+.quelle-flagge.quelle-gewichtung[data-status="bevorzugt"] { background: var(--ok-bg); color: var(--ok-text); }
+.quelle-flagge.quelle-gewichtung[data-status="veraltet"] { background: var(--gefahr-bg); color: var(--gefahr-text); }
+.btn-gewichten { margin-left: auto; padding: 0 8px; min-height: 24px; font-size: .6875rem; }
+@media (max-width: 760px) { .wi-form { grid-template-columns: 1fr 1fr; } }
+
 /* Nutzerverwaltung */
 .nv-form { display: grid; grid-template-columns: 1.4fr 1fr auto auto auto; gap: 8px; padding: 14px 20px 0; }
 .nv-form .feld { min-height: 36px; }

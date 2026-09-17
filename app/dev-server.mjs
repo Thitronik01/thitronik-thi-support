@@ -70,7 +70,7 @@ const server = http.createServer(async (anfrage, antwort) => {
   // ─── API ───
   if (pfad.startsWith('/api/')) {
     const name = pfad.slice(5).split('/')[0];
-    if (!['chat', 'health', 'korrektur', 'auth'].includes(name)) {
+    if (!['chat', 'health', 'korrektur', 'auth', 'wissen'].includes(name)) {
       antwort.writeHead(404).end('Unbekannte Function');
       return;
     }

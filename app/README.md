@@ -436,13 +436,21 @@ sie garantiert bei, sobald ihr Bezugsartikel im Kontext liegt. Im Kontextblock
 steht sie als „SUPPORT-KORREKTUR (Status: …), erfasst von …" — das Modell
 nennt sie deshalb als das, was sie ist, nicht als „laut Wiki".
 
-**Wo sie gespeichert wird.** In `data/korrekturen.json`, per Commit ins
-Repository — Git ist die Datenbank. Die Function schreibt JSON und das daraus
-gebaute `korrekturen.mjs` atomar in einen Commit auf `main`; Netlify deployt.
-Damit gibt es Historie (`git log -- app/data/korrekturen.json`), Diff, `git
-revert` und Netlify-Rollback, ohne Datenbank und ohne npm-Paket.
-**Konsequenz: Eine Korrektur wirkt erst nach dem Deploy**, nicht sofort. Die
-Oberfläche sagt das.
+**Wo sie gespeichert wird.** Seit 17.09.2026 in der Tabelle `thi.korrektur`
+(Supabase). Eine Korrektur **wirkt sofort**, die Function hält den Bestand
+60 Sekunden je Instanz im Cache. Jeder Statuswechsel steht in `thi.audit`.
+Beim ersten Lesen einer leeren Tabelle übernimmt die Function den bisherigen
+Bestand aus `data/korrekturen.json` automatisch. Ohne Datenbank gilt weiter
+der Git-Speicher: JSON und `korrekturen.mjs` in einem Commit auf `main`,
+wirksam nach dem Deploy. Das GitHub-Token wird dann nicht mehr gebraucht.
+
+**Gewichtung und Lücken.** Wissensmanager und Admins finden im Nutzermenü
+die **Wissenspflege**: Artikel hochstufen, abstufen oder als veraltet
+markieren (Faktor 0,1 bis 3, `thi.gewichtung`), und die Liste der Fälle
+mit unter 50 % Sicherheit (`thi.luecke`), verdichtet nach Produkt. Eine
+als veraltet markierte Quelle rutscht ans Ende und deckelt den Prozentwert
+auf 60, wenn sich die Antwort trotzdem auf sie stützt. Gestrichen wird nie.
+Unter jeder Belegstelle gibt es für diese Rollen den Knopf „Gewichten“.
 
 **Lebenszyklus.**
 

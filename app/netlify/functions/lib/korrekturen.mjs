@@ -294,6 +294,60 @@ export function baueJsonText(liste) {
   return `${JSON.stringify(Array.isArray(liste) ? liste : [], null, 2)}\n`;
 }
 
+// ─── Datenbank-Abbildung (thi.korrektur) ────────────────────────────────────
+// Die Notiz bleibt im Code das führende Objekt (wie im Git-Speicher); die
+// Tabelle ist nur eine andere Ablage. Beide Richtungen sind reine Funktionen,
+// damit sie sich ohne Datenbank testen lassen.
+export function notizZuZeile(n) {
+  return {
+    id: n.id,
+    lang: n.lang,
+    titel: n.titel,
+    text: n.text,
+    widerspricht: n.widerspricht || '',
+    bezug_route: n.bezug?.route || '',
+    bezug_anchor: n.bezug?.anchor || '',
+    bezug_titel: n.bezugTitel || '',
+    autor_id: n.autorId || null,
+    autor: n.autor,
+    status: n.status,
+    sicherheitsrelevant: Boolean(n.sicherheitsrelevant),
+    sicherheitsgrund: n.sicherheitsgrund || null,
+    freigegeben_von: n.freigegebenVon || null,
+    freigegeben_von_id: n.freigegebenVonId || null,
+    freigegeben_am: n.freigegebenAm || null,
+    begruendung: n.begruendung || null,
+    ausloeser: n.ausloeser || null,
+    historie: Array.isArray(n.historie) ? n.historie : [],
+    erstellt: n.erstellt,
+    geaendert: new Date().toISOString(),
+  };
+}
+
+export function zeileZuNotiz(z) {
+  return {
+    id: z.id,
+    status: z.status,
+    sicherheitsrelevant: Boolean(z.sicherheitsrelevant),
+    sicherheitsgrund: z.sicherheitsgrund || null,
+    lang: z.lang,
+    bezug: { route: z.bezug_route, anchor: z.bezug_anchor || '' },
+    bezugTitel: z.bezug_titel || '',
+    titel: z.titel,
+    text: z.text,
+    widerspricht: z.widerspricht || '',
+    autor: z.autor,
+    autorId: z.autor_id || null,
+    erstellt: z.erstellt,
+    freigegebenVon: z.freigegeben_von || null,
+    freigegebenVonId: z.freigegeben_von_id || null,
+    freigegebenAm: z.freigegeben_am || null,
+    begruendung: z.begruendung || null,
+    ausloeser: z.ausloeser || null,
+    historie: Array.isArray(z.historie) ? z.historie : [],
+  };
+}
+
 // ─── Wiedervorlage ──────────────────────────────────────────────────────────
 export function ueberfaellige(liste, jetzt = Date.now(), tage = WIEDERVORLAGE_TAGE) {
   const grenze = jetzt - tage * 86400000;

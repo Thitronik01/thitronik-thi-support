@@ -199,7 +199,7 @@ if (Array.isArray(ARTIKEL) && Array.isArray(SEKTIONEN)) {
 
 // ─── 3) Functions ───────────────────────────────────────────────────────────
 console.log('\n3) Functions');
-for (const name of ['chat', 'health', 'korrektur', 'auth']) {
+for (const name of ['chat', 'health', 'korrektur', 'auth', 'wissen']) {
   const rel = `netlify/functions/${name}.mjs`;
   if (!da(rel)) { melde.fehler(`${rel} fehlt.`); continue; }
   try {

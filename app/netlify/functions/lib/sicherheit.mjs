@@ -121,6 +121,19 @@ export function bewerteSicherheit({ fall, sn, quellen = [], hinweise = [], rueck
       : `Enthält eine freigegebene Support-Korrektur (${k.autor}, ${String(k.freigegebenAm || '').slice(0, 10)}).`);
   }
 
+  // ── Gewichtung der Wissensmanager ─────────────────────────────────────────
+  // Eine als VERALTET markierte Quelle unter den tragenden Treffern: derselbe
+  // Deckel wie bei einer ungeprüften Korrektur. Sie wurde bewusst abgewertet,
+  // aber nicht gestrichen — wenn sie trotzdem vorn liegt, gab es nichts
+  // Besseres, und das soll der Prozentwert sagen.
+  const veraltet = quellen.filter((q) => q.gewichtung?.status === 'veraltet' && (q.score || 0) >= SCORE_SCHWACH);
+  if (veraltet.length) {
+    if (wert > 60) wert = 60;
+    gruende.push(sprache === 'fr'
+      ? `S'appuie sur ${veraltet.length} source(s) marquée(s) comme obsolète(s).`
+      : `Stützt sich auf ${veraltet.length} als veraltet markierte Quelle${veraltet.length > 1 ? 'n' : ''}.`);
+  }
+
   wert = Math.max(3, Math.min(97, Math.round(wert)));
 
   // ── 5) Einordnung ─────────────────────────────────────────────────────────

@@ -66,15 +66,20 @@ function findeBasis() {
   }
 }
 
-function korrekturenStand() {
+async function korrekturenStand() {
+  let liste = KORREKTUREN;
+  let speicher = process.env.THI_GITHUB_TOKEN ? 'github' : process.env.THI_KORREKTUREN_LOKAL === '1' ? 'lokal' : 'nur-lesen';
+  if (supabaseAktiv()) {
+    try { liste = await rest('/korrektur?select=status,erstellt'); speicher = 'datenbank'; } catch { speicher = 'datenbank-nicht-erreichbar'; }
+  }
   const proStatus = {};
-  for (const k of KORREKTUREN) proStatus[k.status] = (proStatus[k.status] || 0) + 1;
+  for (const k of liste) proStatus[k.status] = (proStatus[k.status] || 0) + 1;
   return {
-    gesamt: KORREKTUREN.length,
+    gesamt: liste.length,
     proStatus,
-    ueberfaellig: ueberfaellige(KORREKTUREN).length,
-    speicherKonfiguriert: !!process.env.THI_GITHUB_TOKEN || process.env.THI_KORREKTUREN_LOKAL === '1',
-    freigabeKonfiguriert: !!(process.env.THI_FREIGABEWORT || process.env.THI_ZUGANGSWORT),
+    ueberfaellig: ueberfaellige(liste).length,
+    speicher,
+    freigabeKonfiguriert: supabaseAktiv() || !!(process.env.THI_FREIGABEWORT || process.env.THI_ZUGANGSWORT),
   };
 }
 
@@ -134,7 +139,7 @@ export default async function handler(anfrage) {
     },
     datenbank,
     wissensbasis: basis,
-    korrekturen: korrekturenStand(),
+    korrekturen: await korrekturenStand(),
     modellPruefung: live ? null : 'übersprungen (mit ?live=1 erzwingen)',
   };
 

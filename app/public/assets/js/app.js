@@ -470,6 +470,7 @@
     $('menueName').textContent = nutzer.name || '';
     $('menueMeta').textContent = nutzer.email + ' · ' + ROLLE_TEXT(nutzer.rolle);
     $('nutzerVerwalten').hidden = nutzer.rolle !== 'admin';
+    $('wissenOeffnen').hidden = !darfGewichten();
     $('nutzerMenue').hidden = false;
     // Sprache der Person als Vorgabe, solange sie nicht selbst umgeschaltet hat.
     var gewaehlt = null;
@@ -659,6 +660,172 @@
     karte.appendChild(aktionen);
     karte.appendChild(meldung);
     return karte;
+  }
+
+  /* ─── Wissenspflege (Wissensmanager, Admin) ─────────────────────────── */
+  // Gewichtung je Artikel und Lücken-Protokoll. Beides sind Signale in
+  // Richtung Wiki — Thi ist nicht das Wiki.
+  function darfGewichten() {
+    return auth.modus === 'login' && !!auth.nutzer && (auth.nutzer.rolle === 'wissensmanager' || auth.nutzer.rolle === 'admin');
+  }
+
+  function wissenApi(daten) {
+    return sitzungFrisch().then(function () {
+      return fetch('/api/wissen', { method: 'POST', headers: apiKopf(), body: JSON.stringify(daten) });
+    }).then(function (r) {
+      if (r.status === 401 && auth.modus === 'login') abgemeldet(T.loginAbgelaufen);
+      return r.json().catch(function () { return {}; }).then(function (d) { return { status: r.status, daten: d }; });
+    });
+  }
+
+  var wiArtikel = null; // [{route,title,lang,articleType}] — einmal geladen
+
+  function reiterZeigen(name) {
+    document.querySelectorAll('.reiter-knopf').forEach(function (b) { b.classList.toggle('ist-aktiv', b.getAttribute('data-reiter') === name); });
+    $('reiterGewichtung').hidden = name !== 'gewichtung';
+    $('reiterLuecken').hidden = name !== 'luecken';
+    if (name === 'gewichtung') gewichtungLaden();
+    if (name === 'luecken') lueckenLaden();
+  }
+
+  function wissenOeffnen(reiter, vorbelegung) {
+    $('nutzerMenueListe').hidden = true;
+    $('wissenOverlay').hidden = false;
+    if (!wiArtikel) wissenApi({ aktion: 'artikel' }).then(function (a) { if (a.status === 200) wiArtikel = a.daten.artikel || []; });
+    reiterZeigen(reiter || 'gewichtung');
+    if (vorbelegung) {
+      $('wiRoute').value = vorbelegung.route;
+      $('wiArtikelSuche').value = vorbelegung.title;
+      $('wiStatus').value = (vorbelegung.gewichtung && vorbelegung.gewichtung.status) || 'normal';
+      $('wiFaktor').value = (vorbelegung.gewichtung && vorbelegung.gewichtung.faktor) || 1;
+      $('wiNotiz').value = (vorbelegung.gewichtung && vorbelegung.gewichtung.notiz) || '';
+      $('wiNotiz').focus();
+    }
+  }
+
+  $('wissenOeffnen').addEventListener('click', function () { wissenOeffnen('gewichtung'); });
+  $('wissenSchliessen').addEventListener('click', function () { $('wissenOverlay').hidden = true; });
+  $('wissenOverlay').addEventListener('click', function (e) { if (e.target === $('wissenOverlay')) $('wissenOverlay').hidden = true; });
+  document.querySelectorAll('.reiter-knopf').forEach(function (b) {
+    b.addEventListener('click', function () { reiterZeigen(b.getAttribute('data-reiter')); });
+  });
+  $('wiTage').addEventListener('change', lueckenLaden);
+
+  // Artikel-Autovervollständigung — dieselbe Mechanik wie beim Fahrzeug.
+  var wiListe = $('wiArtikelListe');
+  function wiArtikelFiltern(text) {
+    var q = text.trim().toLowerCase();
+    if (!wiArtikel) return [];
+    var teile = q.split(/\s+/).filter(Boolean);
+    return wiArtikel.filter(function (a) {
+      var heu = (a.title + ' ' + a.route).toLowerCase();
+      return teile.every(function (t) { return heu.indexOf(t) >= 0; });
+    }).slice(0, 12);
+  }
+  function wiListeZeigen() {
+    var treffer = wiArtikelFiltern($('wiArtikelSuche').value);
+    wiListe.innerHTML = '';
+    if (!treffer.length) { wiListe.hidden = true; return; }
+    treffer.forEach(function (a) {
+      var li = el('li'); li.setAttribute('role', 'option');
+      li.appendChild(el('span', 'ac-titel', a.title));
+      li.appendChild(el('span', 'ac-meta', a.lang.toUpperCase() + ' · ' + a.articleType + ' · ' + a.route));
+      li.addEventListener('mousedown', function (ev) {
+        ev.preventDefault();
+        $('wiRoute').value = a.route;
+        $('wiArtikelSuche').value = a.title;
+        wiListe.hidden = true;
+      });
+      wiListe.appendChild(li);
+    });
+    wiListe.hidden = false;
+  }
+  $('wiArtikelSuche').addEventListener('input', function () { $('wiRoute').value = ''; wiListeZeigen(); });
+  $('wiArtikelSuche').addEventListener('focus', wiListeZeigen);
+  $('wiArtikelSuche').addEventListener('blur', function () { setTimeout(function () { wiListe.hidden = true; }, 120); });
+
+  $('gewichtenForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var meldung = $('wiMeldung');
+    if (!$('wiRoute').value) { meldungSetzen(meldung, T.wiKeinArtikel, 'fehler'); return; }
+    var knopf = e.target.querySelector('button[type="submit"]');
+    knopf.disabled = true;
+    wissenApi({
+      aktion: 'gewichten', route: $('wiRoute').value,
+      status: $('wiStatus').value, faktor: Number($('wiFaktor').value) || 1, notiz: $('wiNotiz').value.trim(),
+    }).then(function (a) {
+      knopf.disabled = false;
+      if (a.status === 200) {
+        meldungSetzen(meldung, T.wiGesetzt, null);
+        $('wiRoute').value = ''; $('wiArtikelSuche').value = ''; $('wiNotiz').value = ''; $('wiFaktor').value = 1; $('wiStatus').value = 'normal';
+        gewichtungLaden();
+      } else {
+        meldungSetzen(meldung, a.daten.meldung || T.fehlerAllgemein, 'fehler');
+      }
+    }).catch(function () { knopf.disabled = false; meldungSetzen(meldung, T.fehlerNetz, 'fehler'); });
+  });
+
+  function gewichtungLaden() {
+    var liste = $('gewichtungListe');
+    liste.innerHTML = '';
+    liste.appendChild(el('p', 'verlauf-leer', T.koLaden));
+    wissenApi({ aktion: 'gewichtung' }).then(function (a) {
+      liste.innerHTML = '';
+      if (a.status !== 200) { meldungSetzen($('wiMeldung'), a.daten.meldung || T.fehlerAllgemein, 'fehler'); return; }
+      var alle = a.daten.gewichtung || [];
+      if (!alle.length) { liste.appendChild(el('p', 'verlauf-leer', T.wiLeer)); return; }
+      alle.forEach(function (g) {
+        var karte = el('div', 'verlauf-eintrag ko-eintrag');
+        var zeile = el('div', 'verlauf-zeile');
+        zeile.appendChild(el('span', 'verlauf-titel', g.title));
+        var st = el('span', 'wi-status', (g.status === 'veraltet' ? T.wiStatusVeraltet : g.status === 'bevorzugt' ? T.wiStatusBevorzugt : T.wiStatusNormal) + ' · ×' + Number(g.faktor));
+        st.setAttribute('data-status', g.status);
+        zeile.appendChild(st);
+        karte.appendChild(zeile);
+        karte.appendChild(el('div', 'verlauf-meta', g.route + (g.gesetzt_von ? ' · ' + T.wiVon + ' ' + g.gesetzt_von : '') + ' · ' + String(g.geaendert || '').slice(0, 10)));
+        if (g.notiz) karte.appendChild(el('div', 'verlauf-text', g.notiz));
+        var aktionen = el('div', 'ko-aktionen');
+        var bearbeiten = el('button', 'btn-klein', T.quelleGewichten); bearbeiten.type = 'button';
+        bearbeiten.addEventListener('click', function () { wissenOeffnen('gewichtung', { route: g.route, title: g.title, gewichtung: g }); });
+        var weg = el('button', 'btn-klein', T.wiZuruecksetzen); weg.type = 'button';
+        weg.addEventListener('click', function () {
+          wissenApi({ aktion: 'gewichtung-loeschen', route: g.route }).then(function () { gewichtungLaden(); });
+        });
+        aktionen.appendChild(bearbeiten); aktionen.appendChild(weg);
+        karte.appendChild(aktionen);
+        liste.appendChild(karte);
+      });
+    }).catch(function () { liste.innerHTML = ''; meldungSetzen($('wiMeldung'), T.fehlerNetz, 'fehler'); });
+  }
+
+  function lueckenLaden() {
+    var liste = $('lueckenListe');
+    var haeufig = $('wiHaeufig');
+    liste.innerHTML = ''; haeufig.innerHTML = '';
+    liste.appendChild(el('p', 'verlauf-leer', T.koLaden));
+    wissenApi({ aktion: 'luecken', tage: Number($('wiTage').value) || 30 }).then(function (a) {
+      liste.innerHTML = '';
+      if (a.status !== 200) { liste.appendChild(el('p', 'verlauf-leer', a.daten.meldung || T.fehlerAllgemein)); return; }
+      var alle = a.daten.luecken || [];
+      if (!alle.length) { liste.appendChild(el('p', 'verlauf-leer', T.wiLueckenLeer)); return; }
+      liste.appendChild(el('p', 'verlauf-meta', T.wiLueckenZahl.replace('{n}', String(alle.length))));
+      if ((a.daten.haeufig || []).length) {
+        haeufig.appendChild(el('span', 'verlauf-meta', T.wiHaeufig));
+        a.daten.haeufig.forEach(function (h) { haeufig.appendChild(el('span', null, h.produkt + ' (' + h.anzahl + ')')); });
+      }
+      alle.forEach(function (l) {
+        var karte = el('div', 'verlauf-eintrag ko-eintrag');
+        var zeile = el('div', 'verlauf-zeile');
+        zeile.appendChild(el('span', 'verlauf-titel', String(l.frage || '').slice(0, 140)));
+        zeile.appendChild(el('span', 'verlauf-wert', (l.sicherheit != null ? l.sicherheit + ' %' : '–')));
+        karte.appendChild(zeile);
+        var meta = [new Date(l.zeit).toLocaleString(sprache === 'fr' ? 'fr-FR' : 'de-DE'), String(l.sprache || '').toUpperCase()];
+        if ((l.produkte || []).length) meta.push(l.produkte.join(', '));
+        if (l.fahrzeug) meta.push(l.fahrzeug);
+        karte.appendChild(el('div', 'verlauf-meta', meta.join(' · ')));
+        liste.appendChild(karte);
+      });
+    }).catch(function () { liste.innerHTML = ''; liste.appendChild(el('p', 'verlauf-leer', T.fehlerNetz)); });
   }
 
   $('einladenForm').addEventListener('submit', function (e) {
@@ -1373,6 +1540,22 @@
         flagge.setAttribute('data-status', q.korrektur.status);
         titel.appendChild(flagge);
       }
+      // Gewichtung der Wissensmanager sichtbar machen — „veraltet" muss man
+      // sehen, bevor man die Antwort weitergibt.
+      if (q.gewichtung && q.gewichtung.status !== 'normal') {
+        var gf = el('span', 'quelle-flagge quelle-gewichtung', q.gewichtung.status === 'veraltet' ? T.wiStatusVeraltet : T.wiStatusBevorzugt);
+        gf.setAttribute('data-status', q.gewichtung.status);
+        if (q.gewichtung.notiz) gf.title = q.gewichtung.notiz;
+        titel.appendChild(gf);
+      }
+      if (darfGewichten() && !q.korrektur) {
+        var gw = el('button', 'btn-klein btn-gewichten', T.quelleGewichten); gw.type = 'button';
+        gw.addEventListener('click', function (ev) {
+          ev.preventDefault(); ev.stopPropagation();
+          wissenOeffnen('gewichtung', { route: q.route, title: q.title, gewichtung: q.gewichtung });
+        });
+        titel.appendChild(gw);
+      }
       eintrag.appendChild(titel);
       eintrag.appendChild(el('p', 'quelle-auszug', q.auszug));
       box.appendChild(eintrag);
@@ -1512,7 +1695,9 @@
         if (antwort.status === 201) {
           var w = antwort.daten.wirkt;
           meldungSetzen(meldung,
-            w === 'nach-freigabe' ? T.koErfolgFreigabe : (w === 'sofort-lokal' ? T.koErfolgLokal : T.koErfolgDeploy),
+            w === 'nach-freigabe' ? T.koErfolgFreigabe
+              : w === 'sofort' ? T.koErfolgSofort
+                : w === 'sofort-lokal' ? T.koErfolgLokal : T.koErfolgDeploy,
             w === 'nach-freigabe' ? 'warten' : null);
           form.querySelectorAll('input, textarea, select, button').forEach(function (n) { n.disabled = true; });
         } else {

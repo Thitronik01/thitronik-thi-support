@@ -30,6 +30,7 @@ import { wirksameKorrekturen, korrekturAlsArtikel, KORREKTUR_BEILAGE_MAX } from 
 import { ZUGANGSWORT, zugangPruefen, clientIp } from './lib/zugang.mjs';
 import { darf } from './lib/auth.mjs';
 import { supabaseAktiv, rpc } from './lib/supabase.mjs';
+import { korrekturArtikelLaden, gewichtungLaden, gewichtungAnwenden, lueckeMelden, LUECKE_SCHWELLE } from './lib/wissen.mjs';
 
 // ─── Konfiguration ──────────────────────────────────────────────────────────
 const API_URL = process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
@@ -52,12 +53,14 @@ const MAX_VERLAUF = 12;     // Nachrichten im Verlauf
 // Ein Import ist für den Bundler dagegen eine harte Abhängigkeit: Er nimmt die
 // Daten IMMER mit. Damit läuft die Function unabhängig davon, wie deployt wurde.
 // Support-Korrekturen (docs/07_KORREKTUREN_ENTWUERFE.md): eigene kleine
-// Einträge, die wie Artikel durchsucht werden. EINMAL beim Laden umgewandelt,
-// damit search-core seine normalisierten Felder je Objekt zwischenspeichern
-// kann (WeakMap) — pro Anfrage neu erzeugte Objekte würden das aushebeln.
-// Nur wirksame Status (ungeprüft, freigegeben) kommen überhaupt hierher.
-const KORREKTUR_ARTIKEL = wirksameKorrekturen(KORREKTUREN).map((k) => korrekturAlsArtikel(k, ARTIKEL));
-const BASIS = { artikel: ARTIKEL, sektionen: SEKTIONEN, korrekturen: KORREKTUR_ARTIKEL };
+// Einträge, die wie Artikel durchsucht werden. Mit Datenbank kommen sie aus
+// thi.korrektur und wirken SOFORT nach der Freigabe; ohne Datenbank aus dem
+// Bündel. lib/wissen.mjs hält sie 60 s je Instanz, damit search-core seine
+// normalisierten Felder je Objekt zwischenspeichern kann (WeakMap).
+async function basisLaden() {
+  const korrekturen = await korrekturArtikelLaden(ARTIKEL, KORREKTUREN);
+  return { artikel: ARTIKEL, sektionen: SEKTIONEN, korrekturen };
+}
 
 // ─── Rate-Limit ─────────────────────────────────────────────────────────────
 // ⚠️ In-Memory: lebt PRO Function-Instanz. Auf Netlify skalieren Instanzen,
@@ -368,7 +371,8 @@ export default async function handler(anfrage) {
   });
 
   // 5) Retrieval.
-  const basis = BASIS;
+  const basis = await basisLaden();
+  const gewichtung = await gewichtungLaden();
 
   // Rollen-Projektion VOR dem Retrieval (docs/01 §6): Interne Artikel sieht
   // nur, wer eingeloggt ist. Im Zugangswort-Modus bleibt es beim Standard-
@@ -383,8 +387,11 @@ export default async function handler(anfrage) {
   // passender Korrektur-Eintrag landet auf Platz 2 hinter dem Wiki-Artikel,
   // ein unpassender taucht bei 1 von 41 Gold-Fragen in den Top-8 auf.
   const suchIndex = basis.korrekturen.length ? [...basis.artikel, ...basis.korrekturen] : basis.artikel;
+  // Gewichtung der Wissensmanager (Faktor, bevorzugt/veraltet) greift NACH
+  // dem lexikalischen Score und VOR dem Fahrzeug-Boost — sie verschiebt die
+  // Reihenfolge, streicht aber nichts.
   let artikelTreffer = fahrzeugGewichten(
-    searchWiki(suchIndex, suche, zugang, sprache, 14),
+    gewichtungAnwenden(searchWiki(suchIndex, suche, zugang, sprache, 14), gewichtung),
     fahrzeugSlug,
   ).slice(0, 10);
 
@@ -420,12 +427,21 @@ export default async function handler(anfrage) {
     }
   }
 
+  // Lücke protokollieren — ein Signal fürs Wiki, nie blockierend.
+  const lueckeFalls = (sicherheit, besterScore) => {
+    if (!sicherheit || sicherheit.wert >= LUECKE_SCHWELLE) return;
+    lueckeMelden({
+      sprache, frage: frage || fall.fehlerbild.beobachtet, produkte: fall.produkte,
+      fahrzeug: fall.fahrzeug?.titel || null, sicherheit: sicherheit.wert, besterScore, nutzerId: nutzer.id,
+    });
+  };
+
   if (!artikelTreffer.length) {
     // Auch hier eine Bewertung mitgeben — „nichts gefunden" IST eine Aussage
     // über die Sicherheit, und der Nutzer soll sehen, woran es lag.
-    return textStream(KEIN_TREFFER[sprache], [], hinweise, bewerteSicherheit({
-      fall, sn, quellen: [], hinweise, rueckfallDe: false, modellStufe: 'gering', sprache,
-    }));
+    const s = bewerteSicherheit({ fall, sn, quellen: [], hinweise, rueckfallDe: false, modellStufe: 'gering', sprache });
+    lueckeFalls(s, 0);
+    return textStream(KEIN_TREFFER[sprache], [], hinweise, s);
   }
 
   // Jedem Artikeltreffer den passenden Abschnitt zuordnen (Deep-Link + Zitat).
@@ -446,13 +462,14 @@ export default async function handler(anfrage) {
       anchor: abschnitt?.anchor || '', headingPath: abschnitt?.headingPath || '',
       score: Math.round(t.score),
       fremdsprachig: t.lang !== sprache,
+      ...(t.gewichtung ? { gewichtung: t.gewichtung } : {}),
     });
   }
 
   // Eigenständige Abschnitte aus ANDEREN Artikeln ergänzen — fängt Sub-Themen,
   // die das artikelweise Scoring verdrängt (der „Zusatzhupe an Pin"-Fall).
   const bekannteRouten = new Set(quellen.map((q) => q.route));
-  for (const s of searchSections(basis.sektionen, suche, zugang, sprache, 4)) {
+  for (const s of gewichtungAnwenden(searchSections(basis.sektionen, suche, zugang, sprache, 4), gewichtung)) {
     if (quellen.length >= MAX_KONTEXT) break;
     if (bekannteRouten.has(s.route) || !s.anchor) continue;
     bekannteRouten.add(s.route);
@@ -460,6 +477,7 @@ export default async function handler(anfrage) {
       route: s.route, title: s.title, lang: s.lang, articleType: s.articleType,
       anchor: s.anchor, headingPath: s.headingPath, score: Math.round(s.score),
       fremdsprachig: s.lang !== sprache, ausAbschnittssuche: true,
+      ...(s.gewichtung ? { gewichtung: s.gewichtung } : {}),
     });
   }
 
@@ -540,9 +558,11 @@ export default async function handler(anfrage) {
 
   // Die Bewertung wird erst am Ende des Streams gesendet — sie braucht die
   // Selbsteinschätzung des Modells, die am Antwortende steht.
-  const bewerten = (modellStufe) => bewerteSicherheit({
-    fall, sn, quellen, hinweise, rueckfallDe, modellStufe, sprache,
-  });
+  const bewerten = (modellStufe) => {
+    const s = bewerteSicherheit({ fall, sn, quellen, hinweise, rueckfallDe, modellStufe, sprache });
+    lueckeFalls(s, Math.max(0, ...quellen.map((q) => q.score || 0)));
+    return s;
+  };
 
   try {
     return await frageModell(nachrichten, quellen, hinweise, bewerten);

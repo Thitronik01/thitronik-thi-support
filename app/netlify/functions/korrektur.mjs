@@ -31,10 +31,12 @@ import ARTIKEL from '../../data/artikel.mjs';
 import KORREKTUREN from '../../data/korrekturen.mjs';
 import {
   STATUS, UEBERGAENGE, validiereNotiz, erzeugeNotiz, wechsleStatus,
-  baueJsonText, baueModulText,
+  baueJsonText, baueModulText, notizZuZeile, zeileZuNotiz,
 } from './lib/korrekturen.mjs';
 import { ZUGANGSWORT, zugangPruefen, wortPruefen, clientIp } from './lib/zugang.mjs';
 import { darf, audit } from './lib/auth.mjs';
+import { supabaseAktiv, rest } from './lib/supabase.mjs';
+import { korrekturCacheLeeren } from './lib/wissen.mjs';
 
 // ─── Konfiguration ──────────────────────────────────────────────────────────
 // Freigabewort: eigenes Wort, sonst das Zugangswort. Bei einem kleinen Team
@@ -97,10 +99,41 @@ async function gh(pfad, init = {}) {
   return daten;
 }
 
+// ─── Datenbank (thi.korrektur) ──────────────────────────────────────────────
+// Zielzustand seit 17.09.2026: Korrekturen liegen in der Tabelle und wirken
+// sofort. Beim ERSTEN Lesen einer leeren Tabelle wird der Bestand aus dem
+// Bündel (data/korrekturen.json, der bisherige Git-Speicher) übernommen —
+// idempotent je id, also auch bei parallelen Instanzen ungefährlich.
+async function dbLesen() {
+  let zeilen = await rest('/korrektur?select=*&order=erstellt.asc');
+  if (!zeilen.length && KORREKTUREN.length) {
+    await rest('/korrektur', {
+      method: 'POST',
+      body: KORREKTUREN.map(notizZuZeile),
+      prefer: 'resolution=merge-duplicates,return=minimal',
+    });
+    console.log(`[thi/korrektur] ${KORREKTUREN.length} Korrektur(en) aus dem Bündel in die Datenbank übernommen.`);
+    zeilen = await rest('/korrektur?select=*&order=erstellt.asc');
+  }
+  return { liste: zeilen.map(zeileZuNotiz), quelle: 'datenbank' };
+}
+
+async function dbSchreiben(notizen) {
+  if (!notizen.length) return { commit: null, quelle: 'datenbank' };
+  await rest('/korrektur', {
+    method: 'POST',
+    body: notizen.map(notizZuZeile),
+    prefer: 'resolution=merge-duplicates,return=minimal',
+  });
+  korrekturCacheLeeren();
+  return { commit: null, quelle: 'datenbank' };
+}
+
 // Liest den AKTUELLEN Bestand aus dem Repository — nicht aus dem Bündel.
 // Zwischen Commit und Deploy wäre das Bündel veraltet, und zwei Korrekturen
 // kurz nacheinander würden sich sonst gegenseitig überschreiben.
 async function listeLesen() {
+  if (supabaseAktiv()) return dbLesen();
   if (LOKAL) return lokalLesen();
   if (!GITHUB_TOKEN) return { liste: KORREKTUREN, quelle: 'bundle' };
   const datei = await gh(`/repos/${GITHUB_REPO}/contents/${GITHUB_PFAD}/korrekturen.json?ref=${encodeURIComponent(GITHUB_BRANCH)}`);
@@ -144,12 +177,19 @@ async function listeSchreiben(liste, nachricht, autor) {
 }
 
 // Lesen → ändern → schreiben, mit EINEM Wiederholungsversuch bei Konflikt.
+// In der Datenbank werden nur die tatsächlich geänderten Notizen geschrieben.
 async function aendern(veraendere, nachricht, autor) {
   let letzter = null;
   for (let versuch = 0; versuch < 2; versuch += 1) {
     const { liste } = await listeLesen();
     const ergebnis = veraendere(liste);
     if (!ergebnis.ok) return ergebnis;
+    if (supabaseAktiv()) {
+      const vorher = new Map(liste.map((k) => [k.id, JSON.stringify(k)]));
+      const geaendert = ergebnis.liste.filter((k) => vorher.get(k.id) !== JSON.stringify(k));
+      const geschrieben = await dbSchreiben(geaendert);
+      return { ...ergebnis, ...geschrieben };
+    }
     try {
       const geschrieben = await listeSchreiben(ergebnis.liste, nachricht, autor);
       return { ...ergebnis, ...geschrieben };
@@ -202,10 +242,10 @@ function oeffentlich(k) {
 function konfiguration(zugang) {
   const login = zugang.modus === 'login';
   return {
-    schreibenMoeglich: LOKAL || !!GITHUB_TOKEN,
+    schreibenMoeglich: supabaseAktiv() || LOKAL || !!GITHUB_TOKEN,
     freigabeMoeglich: login ? darf(zugang.nutzer, 'korrektur.freigeben') : !!FREIGABEWORT,
     zugangsModus: zugang.modus,
-    modus: LOKAL ? 'lokal' : (GITHUB_TOKEN ? 'github' : 'nur-lesen'),
+    modus: supabaseAktiv() ? 'datenbank' : LOKAL ? 'lokal' : (GITHUB_TOKEN ? 'github' : 'nur-lesen'),
     repo: GITHUB_TOKEN ? GITHUB_REPO : null,
     branch: GITHUB_TOKEN ? GITHUB_BRANCH : null,
   };
@@ -239,7 +279,7 @@ export default async function handler(anfrage) {
   if (anfrage.method !== 'POST') return json({ fehler: 'method_not_allowed' }, 405);
   if (limitPruefen(ip)) return json({ fehler: 'rate_limit', meldung: 'Zu viele Änderungen in kurzer Zeit. Bitte kurz warten.' }, 429);
 
-  if (!LOKAL && !GITHUB_TOKEN) {
+  if (!supabaseAktiv() && !LOKAL && !GITHUB_TOKEN) {
     return json({
       fehler: 'nicht_konfiguriert',
       meldung: 'Korrekturen können nicht gespeichert werden: THI_GITHUB_TOKEN ist serverseitig nicht hinterlegt.',
@@ -275,7 +315,9 @@ export default async function handler(anfrage) {
       return json({
         ok: true,
         notiz: oeffentlich(notiz),
-        wirkt: notiz.status === STATUS.WARTET ? 'nach-freigabe' : (ergebnis.quelle === 'lokal' ? 'sofort-lokal' : 'nach-deploy'),
+        wirkt: notiz.status === STATUS.WARTET ? 'nach-freigabe'
+          : ergebnis.quelle === 'datenbank' ? 'sofort'
+            : ergebnis.quelle === 'lokal' ? 'sofort-lokal' : 'nach-deploy',
         commit: ergebnis.commit || null,
         ...konfiguration(zugang),
       }, 201);
