@@ -148,7 +148,7 @@ export default [
   },
   {
     "id": "2026-09-17-provider-korrektur-schweiz-0f84",
-    "status": "ungeprueft",
+    "status": "freigegeben",
     "sicherheitsrelevant": false,
     "sicherheitsgrund": null,
     "lang": "de",
@@ -161,8 +161,8 @@ export default [
     "widerspricht": "es stand dort, dass die Anbieter nicht funktionieren",
     "autor": "Sascha",
     "erstellt": "2026-09-17T06:25:11.696Z",
-    "freigegebenVon": null,
-    "freigegebenAm": null,
+    "freigegebenVon": "Max",
+    "freigegebenAm": "2026-09-17T06:26:23.181Z",
     "ausloeser": {
       "frage": "Welcher Provider wird in der Schweiz empfohlen?",
       "antwortAuszug": "# SIM-Karten-Empfehlung für die Schweiz — Pro-Finder\n\nLaut FAQ-Dokumentation gilt für die Schweiz:\n\n## ❌ Nicht geeignet\n- Normale Swisscom\n- Swisscom-Prepaid\n- M-Budget\n- Orange\n\n## ✅ Sicher geeignet\n- Salt PrePay\n- Sunrise Prepaid airbag\n- Sunrise Prepaid Unlimited\n\n## Wichtiger Hinweis zum Pro-Finder-Modell\n\nDie passende SIM-Karte hängt auch vom **Serienstand des Pro-Finders** ab:\n\n- **Bis Seriennummer -044** → SIM muss 2G/3G (GSM/UMTS) unterstützen, mit SMS und Telefonie\n- **Ab Seriennummer -045** → SIM muss **4G (LTE)** unterstützen, mit SMS, Telefonie und Daten\n\nDa der Softwarestand unbekannt ist: Bitte die **vollständige Seriennummer des Pro-Finders** prüfen, um sicherzustellen, dass die gewählte SIM-Karte das richtige Netzformat (2G/3G oder 4G) unterstützt.\n\n**Zusätzlich:** 5G-SIM-K"
@@ -173,6 +173,12 @@ export default [
         "von": "Sascha",
         "am": "2026-09-17T06:25:11.696Z",
         "begruendung": ""
+      },
+      {
+        "status": "freigegeben",
+        "von": "Max",
+        "am": "2026-09-17T06:26:23.181Z",
+        "begruendung": "Normale Swisscom Swisscom-Prepaid Orange funktionieren wieder"
       }
     ]
   }
