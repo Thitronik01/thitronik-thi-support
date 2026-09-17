@@ -142,6 +142,19 @@
   var erkenner = null;
   var diktatLaeuft = false;
 
+  function diktatHinweis(text) {
+    var box = $('erkannt');
+    var alt = box.querySelector('.diktat-fehler');
+    if (alt) alt.remove();
+    var n = el('div', 'warnung diktat-fehler');
+    n.setAttribute('data-schwere', 'warnung');
+    n.appendChild(el('span', 'warnung-glyph', '⚠'));
+    n.appendChild(el('span', null, text));
+    box.insertBefore(n, box.firstChild);
+    box.hidden = false;
+    setTimeout(function () { n.remove(); if (!box.children.length) box.hidden = true; }, 8000);
+  }
+
   function diktatEinrichten() {
     var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) return; // Knopf bleibt versteckt
@@ -171,7 +184,16 @@
         btn.classList.remove('ist-aktiv');
         btn.querySelector('span:last-child').textContent = T.diktatStart;
       };
-      erkenner.onerror = erkenner.onend;
+      // Fehler SICHTBAR machen. Vorher endete ein Fehler still wie ein
+      // normales Aufnahmeende — „nicht erlaubt" (Mikrofon blockiert), „kein
+      // Mikrofon", „Netz" (der Browser schickt die Sprache an seinen
+      // Erkennungsdienst) sahen alle gleich aus: Knopf springt zurück, nichts
+      // passiert, niemand weiß warum.
+      erkenner.onerror = function (ereignis) {
+        erkenner.onend();
+        var grund = T.diktatFehler[ereignis && ereignis.error] || T.diktatFehler.sonst;
+        diktatHinweis(grund);
+      };
 
       try {
         erkenner.start();
@@ -307,43 +329,32 @@
     box.appendChild(leeren);
   }
 
-  /* ─── Hell / Dunkel ─────────────────────────────────────────────────── */
-  function themaSetzen(thema) {
-    if (thema === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-    else document.documentElement.removeAttribute('data-theme');
+  /* ─── Überlagerungen (Verlauf, Korrekturen) ─────────────────────────── */
+  // Einmal registriert, beim Start. (Vorher standen diese Handler versehentlich
+  // in der Funktion für den Dunkelmodus und wurden bei jedem Umschalten erneut
+  // angehängt — der Dunkelmodus ist inzwischen entfallen.)
+  function ueberlagerungenEinrichten() {
     $('verlaufOeffnen').addEventListener('click', function () {
-    verlaufRendern();
-    $('verlaufOverlay').hidden = false;
-  });
-  $('verlaufSchliessen').addEventListener('click', function () { $('verlaufOverlay').hidden = true; });
-  $('verlaufOverlay').addEventListener('click', function (e) {
-    if (e.target === $('verlaufOverlay')) $('verlaufOverlay').hidden = true;
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !$('verlaufOverlay').hidden) $('verlaufOverlay').hidden = true;
-    if (e.key === 'Escape' && !$('korrekturenOverlay').hidden) $('korrekturenOverlay').hidden = true;
-  });
-  $('korrekturenOeffnen').addEventListener('click', function () {
-    $('korrekturenOverlay').hidden = false;
-    $('koName').value = nameLesen();
-    korrekturenLaden();
-  });
-  $('korrekturenSchliessen').addEventListener('click', function () { $('korrekturenOverlay').hidden = true; });
-  $('korrekturenOverlay').addEventListener('click', function (e) {
-    if (e.target === $('korrekturenOverlay')) $('korrekturenOverlay').hidden = true;
-  });
-  diktatEinrichten();
-
-  document.querySelectorAll('[data-thema]').forEach(function (b) {
-      var aktiv = b.getAttribute('data-thema') === thema;
-      b.classList.toggle('ist-aktiv', aktiv);
-      b.setAttribute('aria-pressed', aktiv ? 'true' : 'false');
+      verlaufRendern();
+      $('verlaufOverlay').hidden = false;
     });
-    try { localStorage.setItem('thi_thema', thema); } catch (e) { /* egal */ }
-  }
-
-  function themaLesen() {
-    try { return localStorage.getItem('thi_thema') || 'light'; } catch (e) { return 'light'; }
+    $('verlaufSchliessen').addEventListener('click', function () { $('verlaufOverlay').hidden = true; });
+    $('verlaufOverlay').addEventListener('click', function (e) {
+      if (e.target === $('verlaufOverlay')) $('verlaufOverlay').hidden = true;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !$('verlaufOverlay').hidden) $('verlaufOverlay').hidden = true;
+      if (e.key === 'Escape' && !$('korrekturenOverlay').hidden) $('korrekturenOverlay').hidden = true;
+    });
+    $('korrekturenOeffnen').addEventListener('click', function () {
+      $('korrekturenOverlay').hidden = false;
+      $('koName').value = nameLesen();
+      korrekturenLaden();
+    });
+    $('korrekturenSchliessen').addEventListener('click', function () { $('korrekturenOverlay').hidden = true; });
+    $('korrekturenOverlay').addEventListener('click', function (e) {
+      if (e.target === $('korrekturenOverlay')) $('korrekturenOverlay').hidden = true;
+    });
   }
 
   /* ─── Ansichtswechsel ───────────────────────────────────────────────── */
@@ -392,18 +403,170 @@
   }
 
   /* ─── Zugang ────────────────────────────────────────────────────────── */
-  function zugangPruefen() {
-    var gespeichert = '';
-    try { gespeichert = localStorage.getItem('thi_zugang') || ''; } catch (e) { /* egal */ }
-    zustand.zugangswort = gespeichert;
+  // Drei Betriebsarten, entschieden vom Server (/api/auth config):
+  //   login        Anmeldung mit E-Mail + Passwort, Sitzung im localStorage,
+  //                Token im Authorization-Header, Person + Rolle in der Kopfzeile
+  //   zugangswort  Übergangsbetrieb: gemeinsames Wort im Header x-zugangswort
+  //   offen        kein Schutz (Health-Check meldet das)
+  // Der Browser spricht nie direkt mit Supabase — alles läuft über /api/auth.
+  var SITZUNG_KEY = 'thi_sitzung';
+  var auth = { modus: 'offen', sitzung: null, nutzer: null };
 
-    fetch('/api/health').then(function (r) { return r.json(); }).then(function (d) {
-      if (d && d.konfiguration && d.konfiguration.zugangswortAktiv && !gespeichert) {
-        $('zugangOverlay').hidden = false;
-        $('zugangWort').focus();
-      }
-    }).catch(function () { /* Health optional */ });
+  function sitzungLesen() {
+    try { return JSON.parse(localStorage.getItem(SITZUNG_KEY) || 'null'); } catch (e) { return null; }
   }
+  function sitzungMerken(s) {
+    auth.sitzung = s;
+    try { if (s) localStorage.setItem(SITZUNG_KEY, JSON.stringify(s)); else localStorage.removeItem(SITZUNG_KEY); } catch (e) { /* egal */ }
+  }
+
+  function authApi(daten, token) {
+    var kopf = { 'content-type': 'application/json' };
+    var t = token || (auth.sitzung && auth.sitzung.access_token);
+    if (t) kopf.Authorization = 'Bearer ' + t;
+    return fetch('/api/auth', { method: 'POST', headers: kopf, body: JSON.stringify(daten) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { status: r.status, daten: d }; }); });
+  }
+
+  // Kopfzeilen für Chat und Korrekturen — EINE Stelle für beide Betriebsarten.
+  function apiKopf() {
+    var kopf = { 'content-type': 'application/json' };
+    if (auth.modus === 'login' && auth.sitzung) kopf.Authorization = 'Bearer ' + auth.sitzung.access_token;
+    else if (zustand.zugangswort) kopf['x-zugangswort'] = zustand.zugangswort;
+    return kopf;
+  }
+
+  // Läuft das Token in unter zwei Minuten ab, vorher erneuern — sonst bricht
+  // eine Anfrage mitten im Telefonat mit 401 ab.
+  function sitzungFrisch() {
+    if (auth.modus !== 'login' || !auth.sitzung) return Promise.resolve();
+    var rest = (auth.sitzung.expires_at || 0) - Math.floor(Date.now() / 1000);
+    if (rest > 120) return Promise.resolve();
+    return authApi({ aktion: 'erneuern', refresh_token: auth.sitzung.refresh_token }).then(function (a) {
+      if (a.status === 200 && a.daten.sitzung) { sitzungMerken(a.daten.sitzung); auth.nutzer = a.daten.nutzer; }
+      else abgemeldet(T.loginAbgelaufen);
+    }).catch(function () { /* nächste Anfrage zeigt es */ });
+  }
+
+  function zugangAnsicht(welche) {
+    ['loginForm', 'passwortForm', 'resetForm', 'zugangForm'].forEach(function (id) { $(id).hidden = id !== welche; });
+    $('zugangOverlay').hidden = !welche;
+    if (welche === 'loginForm') $('loginEmail').focus();
+    if (welche === 'passwortForm') $('pwNeu').focus();
+    if (welche === 'resetForm') $('resetEmail').focus();
+    if (welche === 'zugangForm') $('zugangWort').focus();
+  }
+
+  function fehlerZeigen(id, text) { var n = $(id); n.textContent = text || ''; n.hidden = !text; }
+
+  var ROLLE_TEXT = function (r) { return T['rolle' + r.charAt(0).toUpperCase() + r.slice(1)] || r; };
+
+  function angemeldet(nutzer) {
+    auth.nutzer = nutzer;
+    zugangAnsicht(null);
+    var initialen = String(nutzer.name || nutzer.email || '?').split(/[\s.@]+/).filter(Boolean).slice(0, 2).map(function (t) { return t.charAt(0).toUpperCase(); }).join('');
+    $('nutzerAvatar').textContent = initialen || '?';
+    $('nutzerName').textContent = nutzer.name || nutzer.email;
+    $('menueName').textContent = nutzer.name || '';
+    $('menueMeta').textContent = nutzer.email + ' · ' + ROLLE_TEXT(nutzer.rolle);
+    $('nutzerVerwalten').hidden = nutzer.rolle !== 'admin';
+    $('nutzerMenue').hidden = false;
+    // Sprache der Person als Vorgabe, solange sie nicht selbst umgeschaltet hat.
+    var gewaehlt = null;
+    try { gewaehlt = localStorage.getItem('thi_sprache'); } catch (e) { /* egal */ }
+    if (!gewaehlt && nutzer.sprache && nutzer.sprache !== sprache) spracheSetzen(nutzer.sprache);
+  }
+
+  function abgemeldet(meldung) {
+    sitzungMerken(null);
+    auth.nutzer = null;
+    $('nutzerMenue').hidden = true;
+    $('nutzerMenueListe').hidden = true;
+    zugangAnsicht('loginForm');
+    fehlerZeigen('loginFehler', meldung || '');
+  }
+
+  // Einladungs- oder Zurücksetzen-Link: Supabase hängt das Token als
+  // URL-Fragment an (#access_token=…&type=recovery). Es wird gelesen, aus der
+  // Adresszeile entfernt und nur für „Passwort setzen" benutzt.
+  function linkTokenLesen() {
+    var h = window.location.hash || '';
+    if (h.indexOf('access_token=') < 0) return null;
+    var p = new URLSearchParams(h.replace(/^#/, ''));
+    var token = p.get('access_token');
+    var typ = p.get('type') || '';
+    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) { /* egal */ }
+    return token ? { token: token, typ: typ } : null;
+  }
+
+  function zugangPruefen() {
+    try { zustand.zugangswort = localStorage.getItem('thi_zugang') || ''; } catch (e) { /* egal */ }
+    var link = linkTokenLesen();
+
+    authApi({ aktion: 'config' }).then(function (a) {
+      auth.modus = (a.daten && a.daten.modus) || 'offen';
+
+      if (auth.modus === 'login') {
+        if (link && link.token) { auth.linkToken = link.token; zugangAnsicht('passwortForm'); return; }
+        auth.sitzung = sitzungLesen();
+        if (!auth.sitzung) { zugangAnsicht('loginForm'); return; }
+        sitzungFrisch().then(function () {
+          if (!auth.sitzung) return;
+          return authApi({ aktion: 'ich' }).then(function (b) {
+            if (b.status === 200 && b.daten.nutzer) angemeldet(b.daten.nutzer);
+            else abgemeldet(b.status === 403 ? T.loginKeinZugang : '');
+          });
+        });
+        return;
+      }
+      if (auth.modus === 'zugangswort' && !zustand.zugangswort) zugangAnsicht('zugangForm');
+    }).catch(function () { /* Server nicht erreichbar — Formular bleibt nutzbar, Fehler kommt beim Senden */ });
+  }
+
+  $('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    fehlerZeigen('loginFehler', '');
+    var knopf = e.target.querySelector('button[type="submit"]');
+    knopf.disabled = true;
+    authApi({ aktion: 'login', email: $('loginEmail').value.trim(), passwort: $('loginPasswort').value }).then(function (a) {
+      knopf.disabled = false;
+      if (a.status === 200 && a.daten.sitzung) {
+        sitzungMerken(a.daten.sitzung);
+        $('loginPasswort').value = '';
+        angemeldet(a.daten.nutzer);
+        return;
+      }
+      fehlerZeigen('loginFehler', a.status === 403 ? T.loginKeinZugang : (a.daten.meldung || T.loginFalsch));
+    }).catch(function () { knopf.disabled = false; fehlerZeigen('loginFehler', T.fehlerNetz); });
+  });
+
+  $('passwortForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    fehlerZeigen('pwFehler', '');
+    if ($('pwNeu').value !== $('pwWieder').value) { fehlerZeigen('pwFehler', T.pwUngleich); return; }
+    var knopf = e.target.querySelector('button[type="submit"]');
+    knopf.disabled = true;
+    authApi({ aktion: 'passwort', passwort: $('pwNeu').value, token: auth.linkToken }).then(function (a) {
+      knopf.disabled = false;
+      if (a.status === 200 && a.daten.sitzung) {
+        auth.linkToken = null;
+        $('pwNeu').value = ''; $('pwWieder').value = '';
+        sitzungMerken(a.daten.sitzung);
+        angemeldet(a.daten.nutzer);
+        return;
+      }
+      fehlerZeigen('pwFehler', a.daten.meldung || T.fehlerAllgemein);
+    }).catch(function () { knopf.disabled = false; fehlerZeigen('pwFehler', T.fehlerNetz); });
+  });
+
+  $('passwortVergessen').addEventListener('click', function () { zugangAnsicht('resetForm'); });
+  $('zurueckZumLogin').addEventListener('click', function () { zugangAnsicht('loginForm'); });
+  $('resetForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    authApi({ aktion: 'zuruecksetzen', email: $('resetEmail').value.trim() }).then(function () {
+      fehlerZeigen('resetMeldung', T.resetGesendet);
+    }).catch(function () { fehlerZeigen('resetMeldung', T.fehlerNetz); });
+  });
 
   $('zugangForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -411,7 +574,107 @@
     if (!wort) return;
     zustand.zugangswort = wort;
     try { localStorage.setItem('thi_zugang', wort); } catch (e2) { /* egal */ }
-    $('zugangOverlay').hidden = true;
+    zugangAnsicht(null);
+  });
+
+  // Nutzermenü
+  $('nutzerKnopf').addEventListener('click', function () {
+    var offen = $('nutzerMenueListe').hidden;
+    $('nutzerMenueListe').hidden = !offen;
+    $('nutzerKnopf').setAttribute('aria-expanded', offen ? 'true' : 'false');
+  });
+  document.addEventListener('click', function (e) {
+    if (!$('nutzerMenue').contains(e.target)) { $('nutzerMenueListe').hidden = true; $('nutzerKnopf').setAttribute('aria-expanded', 'false'); }
+  });
+  $('abmelden').addEventListener('click', function () {
+    authApi({ aktion: 'abmelden' }).catch(function () { /* egal */ }).then(function () { abgemeldet(''); });
+  });
+
+  /* ─── Nutzerverwaltung (Admin) ──────────────────────────────────────── */
+  $('nutzerVerwalten').addEventListener('click', function () {
+    $('nutzerMenueListe').hidden = true;
+    $('nutzerOverlay').hidden = false;
+    nutzerLaden();
+  });
+  $('nutzerSchliessen').addEventListener('click', function () { $('nutzerOverlay').hidden = true; });
+  $('nutzerOverlay').addEventListener('click', function (e) { if (e.target === $('nutzerOverlay')) $('nutzerOverlay').hidden = true; });
+
+  function nutzerLaden() {
+    var liste = $('nutzerListe');
+    liste.innerHTML = '';
+    liste.appendChild(el('p', 'verlauf-leer', T.koLaden));
+    authApi({ aktion: 'nutzer' }).then(function (a) {
+      liste.innerHTML = '';
+      if (a.status !== 200) { meldungSetzen($('nvMeldung'), a.daten.meldung || T.fehlerAllgemein, 'fehler'); return; }
+      var alle = a.daten.nutzer || [];
+      if (!alle.length) { liste.appendChild(el('p', 'verlauf-leer', T.nvLeer)); return; }
+      alle.forEach(function (n) { liste.appendChild(nutzerEintrag(n)); });
+    }).catch(function () { liste.innerHTML = ''; meldungSetzen($('nvMeldung'), T.fehlerNetz, 'fehler'); });
+  }
+
+  function nutzerEintrag(n) {
+    var karte = el('div', 'verlauf-eintrag ko-eintrag' + (n.aktiv ? '' : ' nv-gesperrt'));
+    var zeile = el('div', 'verlauf-zeile');
+    zeile.appendChild(el('span', 'verlauf-titel', n.name || n.email));
+    var rolle = el('span', 'nv-rolle', ROLLE_TEXT(n.rolle) + (n.aktiv ? '' : ' · ' + T.nvGesperrt));
+    rolle.setAttribute('data-rolle', n.rolle);
+    zeile.appendChild(rolle);
+    karte.appendChild(zeile);
+    karte.appendChild(el('div', 'verlauf-meta', n.email + ' · ' + String(n.sprache || 'de').toUpperCase()));
+
+    var istIch = auth.nutzer && auth.nutzer.id === n.id;
+    var aktionen = el('div', 'nv-zeile');
+    var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
+
+    var rolleWahl = el('select', 'feld');
+    ['mitarbeiter', 'wissensmanager', 'admin'].forEach(function (r) {
+      var o = document.createElement('option'); o.value = r; o.textContent = ROLLE_TEXT(r); o.selected = r === n.rolle; rolleWahl.appendChild(o);
+    });
+    rolleWahl.disabled = istIch;
+    rolleWahl.addEventListener('change', function () {
+      authApi({ aktion: 'rolle', id: n.id, rolle: rolleWahl.value }).then(function (a) {
+        if (a.status === 200) nutzerLaden(); else meldungSetzen(meldung, a.daten.meldung || T.fehlerAllgemein, 'fehler');
+      });
+    });
+    aktionen.appendChild(rolleWahl);
+
+    var sperren = el('button', 'btn-klein', n.aktiv ? T.nvSperren : T.nvEntsperren); sperren.type = 'button'; sperren.disabled = istIch;
+    sperren.addEventListener('click', function () {
+      authApi({ aktion: 'aktiv', id: n.id, aktiv: !n.aktiv }).then(function (a) {
+        if (a.status === 200) nutzerLaden(); else meldungSetzen(meldung, a.daten.meldung || T.fehlerAllgemein, 'fehler');
+      });
+    });
+    aktionen.appendChild(sperren);
+
+    var erneut = el('button', 'btn-klein', T.nvErneut); erneut.type = 'button';
+    erneut.addEventListener('click', function () {
+      erneut.disabled = true;
+      authApi({ aktion: 'einladung-erneut', email: n.email }).then(function (a) {
+        erneut.disabled = false;
+        meldungSetzen(meldung, a.daten.meldung || T.fehlerAllgemein, a.status === 200 ? null : 'fehler');
+      });
+    });
+    aktionen.appendChild(erneut);
+
+    karte.appendChild(aktionen);
+    karte.appendChild(meldung);
+    return karte;
+  }
+
+  $('einladenForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var knopf = e.target.querySelector('button[type="submit"]');
+    knopf.disabled = true;
+    meldungSetzen($('nvMeldung'), T.nvLaeuft, null);
+    authApi({
+      aktion: 'einladen',
+      email: $('nvEmail').value.trim(), name: $('nvName').value.trim(),
+      rolle: $('nvRolle').value, sprache: $('nvSprache').value,
+    }).then(function (a) {
+      knopf.disabled = false;
+      meldungSetzen($('nvMeldung'), a.daten.meldung || T.fehlerAllgemein, a.status < 300 ? null : 'fehler');
+      if (a.status < 300) { $('nvEmail').value = ''; $('nvName').value = ''; nutzerLaden(); }
+    }).catch(function () { knopf.disabled = false; meldungSetzen($('nvMeldung'), T.fehlerNetz, 'fehler'); });
   });
 
   /* ─── Fahrzeug-Autocomplete ─────────────────────────────────────────── */
@@ -1139,12 +1402,12 @@
   function nameMerken(n) { try { localStorage.setItem('thi_name', n); } catch (e) { /* egal */ } }
 
   function korrekturApi(methode, daten) {
-    var kopf = { 'content-type': 'application/json' };
-    if (zustand.zugangswort) kopf['x-zugangswort'] = zustand.zugangswort;
-    return fetch('/api/korrektur', { method: methode, headers: kopf, body: daten ? JSON.stringify(daten) : undefined })
-      .then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (d) { return { status: r.status, daten: d }; });
-      });
+    return sitzungFrisch().then(function () {
+      return fetch('/api/korrektur', { method: methode, headers: apiKopf(), body: daten ? JSON.stringify(daten) : undefined });
+    }).then(function (r) {
+      if (r.status === 401 && auth.modus === 'login') abgemeldet(T.loginAbgelaufen);
+      return r.json().catch(function () { return {}; }).then(function (d) { return { status: r.status, daten: d }; });
+    });
   }
 
   function meldungSetzen(ziel, text, art) {
@@ -1158,7 +1421,8 @@
     if (antwort.status === 503 && d.fehler === 'nicht_konfiguriert') return T.koNichtKonfiguriert;
     if (antwort.status === 401) return T.zugangFalsch;
     if (d.fehlerliste && d.fehlerliste.length) return d.fehlerliste.join(' ');
-    return (d.meldung || T.koFehler) + (d.detail ? ' (' + d.detail + ')' : '');
+    // Technische Details bleiben im Server-Log; der Nutzer sieht die Meldung.
+    return d.meldung || T.koFehler;
   }
 
   function korrekturKnopf(körper, frage, antwortText, quellen) {
@@ -1208,9 +1472,14 @@
     var widerspricht = el('textarea', 'feld'); widerspricht.maxLength = 600; widerspricht.rows = 2;
     form.appendChild(feldMit(T.koFeldWiderspricht, widerspricht));
 
-    var name = el('input', 'feld'); name.type = 'text'; name.maxLength = 60; name.required = true;
-    name.value = nameLesen(); name.autocomplete = 'name';
-    form.appendChild(feldMit(T.koFeldName, name));
+    // Im Login-Modus ist der Autor die eingeloggte Person — kein Namensfeld.
+    var name = el('input', 'feld'); name.type = 'text'; name.maxLength = 60;
+    if (auth.modus === 'login' && auth.nutzer) {
+      name.value = auth.nutzer.name;
+    } else {
+      name.required = true; name.value = nameLesen(); name.autocomplete = 'name';
+      form.appendChild(feldMit(T.koFeldName, name));
+    }
 
     var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
     form.appendChild(meldung);
@@ -1269,6 +1538,8 @@
       liste.innerHTML = '';
       if (antwort.status !== 200) { meldungSetzen(meldung, korrekturFehlertext(antwort), 'fehler'); return; }
       var d = antwort.daten;
+      // Name und Freigabewort braucht nur der Übergangsbetrieb ohne Login.
+      $('koName').parentNode.hidden = d.zugangsModus === 'login';
       if (!d.schreibenMoeglich) meldungSetzen(meldung, T.koNichtKonfiguriert, 'warten');
       else if (d.warnung) meldungSetzen(meldung, d.warnung, 'warten');
       var eintraege = (d.korrekturen || []).slice().reverse();
@@ -1307,13 +1578,20 @@
     var aktionen = el('div', 'ko-aktionen');
     var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
 
+    var login = konfig.zugangsModus === 'login';
+    var darfFreigeben = !!konfig.freigabeMoeglich;
+    var meine = login && auth.nutzer && (k.autorId ? k.autorId === auth.nutzer.id : String(k.autor || '').toLowerCase() === auth.nutzer.name.toLowerCase());
+
     function aktion(name, beschriftung, brauchtFreigabe) {
+      // Login-Modus: Was die Rolle nicht erlaubt, wird gar nicht angeboten.
+      if (login && brauchtFreigabe && !darfFreigeben) return;
+      if (login && name === 'zurueckziehen' && !darfFreigeben && !meine) return;
       var b = el('button', 'btn-klein', beschriftung); b.type = 'button';
-      if (brauchtFreigabe && !konfig.freigabeMoeglich) { b.disabled = true; b.title = 'THI_FREIGABEWORT'; }
+      if (!login && brauchtFreigabe && !konfig.freigabeMoeglich) { b.disabled = true; b.title = 'THI_FREIGABEWORT'; }
       b.addEventListener('click', function () {
-        var von = $('koName').value.trim();
+        var von = login ? auth.nutzer.name : $('koName').value.trim();
         if (!von) { $('koName').focus(); return; }
-        nameMerken(von);
+        if (!login) nameMerken(von);
         aktionen.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
         korrekturApi('POST', {
           aktion: name, id: k.id, von: von,
@@ -1406,23 +1684,21 @@
     var antwortBox = null;
 
     try {
-      var kopfzeilen = { 'content-type': 'application/json' };
-      if (zustand.zugangswort) kopfzeilen['x-zugangswort'] = zustand.zugangswort;
-
+      await sitzungFrisch();
       var res = await fetch('/api/chat', {
         method: 'POST',
-        headers: kopfzeilen,
+        headers: apiKopf(),
         body: JSON.stringify(nutzdaten(frage)),
       });
 
       if (res.status === 401) {
+        tippt.remove();
+        m.wurzel.remove();
+        if (auth.modus === 'login') { abgemeldet(T.loginAbgelaufen); return; }
         try { localStorage.removeItem('thi_zugang'); } catch (e) { /* egal */ }
         zustand.zugangswort = '';
-        tippt.remove();
-        $('zugangFehler').textContent = T.zugangFalsch;
-        $('zugangFehler').hidden = false;
-        $('zugangOverlay').hidden = false;
-        m.wurzel.remove();
+        zugangAnsicht('zugangForm');
+        fehlerZeigen('zugangFehler', T.zugangFalsch);
         return;
       }
 
@@ -1579,18 +1855,23 @@
     b.addEventListener('click', function () { spracheSetzen(b.getAttribute('data-sprache')); });
   });
 
-  document.querySelectorAll('[data-thema]').forEach(function (b) {
-    b.addEventListener('click', function () { themaSetzen(b.getAttribute('data-thema')); });
-  });
-
   var gespeicherteSprache = 'de';
   try { gespeicherteSprache = localStorage.getItem('thi_sprache') || 'de'; } catch (e) { /* egal */ }
 
-  // Enter absenden — für Zugangswort und Nachfrage.
+  // Enter absenden — für Zugang, Login, Passwort und Nachfrage.
   enterSendetAb($('zugangWort'), $('zugangForm'));
+  enterSendetAb($('loginPasswort'), $('loginForm'));
+  enterSendetAb($('pwWieder'), $('passwortForm'));
+  enterSendetAb($('resetEmail'), $('resetForm'));
   enterSendetAb($('nachfrage'), $('nachfrageFormular'));
 
-  themaSetzen(themaLesen());
+  ueberlagerungenEinrichten();
+  diktatEinrichten();
+  // Einladungs-Link in einer bereits offenen Seite (z. B. Mailprogramm öffnet
+  // denselben Tab): auch dann das Passwort-Formular zeigen.
+  window.addEventListener('hashchange', function () {
+    if ((window.location.hash || '').indexOf('access_token=') >= 0) zugangPruefen();
+  });
   produkteRendern('');
   spracheSetzen(gespeicherteSprache);
   ampelnAktualisieren();

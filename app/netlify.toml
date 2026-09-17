@@ -36,9 +36,17 @@
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
+    # Browser merkt sich ein Jahr lang: diese Seite nur über HTTPS. Netlify
+    # liefert ohnehin nur HTTPS aus; der Header schließt den ersten
+    # unverschlüsselten Aufruf nach dem Eintippen der Adresse.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    # microphone=(self): Die Diktierfunktion (Web Speech API) braucht das
+    # Mikrofon auf der eigenen Origin. `microphone=()` hatte es für die ganze
+    # Seite abgeschaltet — der Knopf war da, die Aufnahme brach still ab.
+    Permissions-Policy = "geolocation=(), microphone=(self), camera=()"
+    # Keine externen Hosts mehr: Schrift liegt lokal.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 
 # Kataloge und Indexdaten dürfen aggressiv gecacht werden (ändern sich nur
 # beim Deploy), das HTML nicht.
@@ -71,6 +79,11 @@
 [[redirects]]
   from = "/api/korrektur"
   to = "/.netlify/functions/korrektur"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth"
+  to = "/.netlify/functions/auth"
   status = 200
 
 # SPA-Fallback — alles andere auf die Startseite.

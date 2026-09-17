@@ -128,7 +128,14 @@ if (JUDGE && (!JUDGE_URL || !JUDGE_KEY)) {
   process.exit(1);
 }
 
-const JUDGE_SYSTEM = 'Du bist ein strenger, fairer Prüfer für die FAKTISCHE Korrektheit der Antwort eines technischen Support-Assistenten. Dir liegt der maßgebliche WIKI-BELEG vor (= Grundwahrheit). Bewerte AUSSCHLIESSLICH, ob die ANTWORT die in der Frage adressierte Tatsache korrekt und ohne Widerspruch zum Beleg wiedergibt. Formulierung, Synonyme, zusätzliche korrekte Details, Rückfragen, Quellenangaben und Sicherheitshinweise sind IRRELEVANT. Urteile "falsch" nur, wenn die Antwort der Tatsache widerspricht, sie klar verfehlt oder fälschlich behauptet, die Wissensbasis sage dazu nichts. Antworte als striktes JSON, NUR das Objekt: {"urteil":"korrekt"|"falsch"|"unklar","grund":"<max 15 Woerter>"}';
+const JUDGE_SYSTEM = 'Du bist ein strenger, fairer Prüfer für die FAKTISCHE Korrektheit der Antwort eines technischen Support-Assistenten. Dir liegt der maßgebliche WIKI-BELEG vor (= Grundwahrheit). Bewerte AUSSCHLIESSLICH, ob die ANTWORT die in der Frage adressierte Tatsache korrekt und ohne Widerspruch zum Beleg wiedergibt. Formulierung, Synonyme, zusätzliche korrekte Details, Rückfragen, Quellenangaben und Sicherheitshinweise sind IRRELEVANT. Urteile "falsch" nur, wenn die Antwort der Tatsache widerspricht, sie klar verfehlt oder fälschlich behauptet, die Wissensbasis sage dazu nichts. Antworte als striktes JSON, NUR das Objekt: {"urteil":"korrekt"|"falsch"|"unklar","grund":"<max 15 Woerter>"}'
+  // Beim FR-Lauf sind Frage, Beleg und Antwort französisch. Der Judge urteilt
+  // weiter auf Deutsch (gleiches Ausgabeformat), soll aber wissen, dass die
+  // Sprache kein Fehler ist — und deutsche Antworten auf französische Fragen
+  // als Fehlschlag werten: Für den FR-Support ist eine deutsche Antwort keine.
+  + (SPRACHE === 'fr'
+    ? ' HINWEIS: Frage, Beleg und Antwort sind FRANZÖSISCH. Das ist erwartet. Ist die Antwort dagegen überwiegend DEUTSCH, urteile "falsch" mit Grund "Antwort nicht auf Französisch".'
+    : '');
 
 async function judgeEinmal(c, antwort) {
   const nutzer =

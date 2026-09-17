@@ -1,0 +1,415 @@
+{
+  "_hinweis": "THI-Grounding-Gold FR v1 (2026-09-17). Spiegel der 41 deutschen Fälle (thi-eval-gold.de.json): Fragen idiomatisch übersetzt, Routen auf /fr/ umgestellt, Belege aus den französischen Wiki-Artikeln (data/artikel.mjs, lang=fr) entnommen — nicht übersetzt; Fließtext wörtlich, Tabellenzeilen mit ':' und '—' zu einem Satz zusammengezogen (26 wörtlich, 15 aus Tabellen, alle 41 Routen geprüft). Lauf: node werkzeuge/antwort-eval.mjs --sprache fr --judge. Offen: echte Fragen französischer Monteure (Delphine Passaret, Julie Marier) als zweite Stufe, siehe NAECHSTE_SCHRITTE.md.",
+  "cases": [
+    {
+      "id": "wipro-iii-keine-bewegungsmelder-01",
+      "question": "La WiPro III a-t-elle des détecteurs de mouvement intégrés pour surveiller l'intérieur ?",
+      "expected": ["/fr/wipro-iii"],
+      "antwort_muss": ["pas de détecteur", "contacts magnétiques", "can-bus"],
+      "antwort_darf_nicht": ["oui, des détecteurs de mouvement", "détecteur infrarouge intégré", "capteur radar"],
+      "beleg": "Il n'utilise pas de détecteurs de mouvement. Les ouvertures supplémentaires sont surveillées par des contacts magnétiques radio ; selon le véhicule, les portes d'origine peuvent être intégrées via le CAN-Bus ou l'entrée de l'éclairage intérieur.",
+      "source": "fr/wipro-iii",
+      "kategorie": "negation"
+    },
+    {
+      "id": "safe-lock-platine-braucht-safelock-02",
+      "question": "Pour la carte de conversion safe.lock, une WiPro III standard suffit-elle, ou faut-il la version safe.lock ?",
+      "expected": ["/fr/safe-lock-umruestplatine"],
+      "antwort_muss": ["wipro iii safe.lock"],
+      "antwort_darf_nicht": ["la wipro iii standard suffit", "avec la version standard", "pas besoin de safe.lock"],
+      "beleg": "En combinaison avec la WiPro III safe.lock, la carte de conversion safe.lock comble une faille de sécurité côté véhicule […] Nécessite toujours une WiPro III safe.lock comme centrale",
+      "source": "fr/safe-lock-umruestplatine",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "safe-lock-platine-kein-standalone-03",
+      "question": "Puis-je vendre la carte de conversion safe.lock comme alarme autonome, sans WiPro ?",
+      "expected": ["/fr/safe-lock-umruestplatine"],
+      "antwort_muss": ["pas un produit d'alarme", "complète"],
+      "antwort_darf_nicht": ["alarme autonome", "fonctionne sans wipro", "alarme indépendante"],
+      "beleg": "Délimitation : la carte de conversion n'est pas un produit d'alarme autonome. Elle complète uniquement une WiPro III safe.lock déjà présente ou installée en même temps.",
+      "source": "fr/safe-lock-umruestplatine",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "wipro-iii-scharf-fahrzeugschluessel-tueren-zu-04",
+      "question": "Peut-on armer la WiPro III avec la clé-télécommande du véhicule même si une porte de cabine est ouverte ?",
+      "expected": ["/fr/wipro-iii"],
+      "antwort_muss": ["portes de la cabine", "fermées"],
+      "antwort_darf_nicht": ["même porte ouverte", "indépendamment de l'état des portes", "possible portes ouvertes"],
+      "beleg": "IMPORTANT : L'armement avec la clé-télécommande du véhicule n'est possible que lorsque les portes de la cabine sont fermées !",
+      "source": "fr/wipro-iii",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "wipro-iii-ventcheck-vor-scharf-05",
+      "question": "Comment fonctionne la fonction de ventilation (Vent check) — puis-je aussi ouvrir la fenêtre après avoir armé le système ?",
+      "expected": ["/fr/wipro-iii"],
+      "antwort_muss": ["avant d'armer", "ouvrir"],
+      "antwort_darf_nicht": ["ouvrir après l'armement", "ouvrir la fenêtre à tout moment", "ouvrir même armé"],
+      "beleg": "Fonction de ventilation (Vent check) Cette fonction permet de laisser une fenêtre ouverte dans le véhicule armé sans déclencher d'alarme : 1. Ouvrir la fenêtre souhaitée avant d'armer le système. 2. Armer le système → le contact ouvert est toléré et ne déclenche pas d'alarme.",
+      "source": "fr/wipro-iii",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "wipro-iii-panik-beide-tasten-06",
+      "question": "Comment déclencher l'alarme panique sur la télécommande radio 868 ?",
+      "expected": ["/fr/funk-handsender", "/fr/wipro-iii"],
+      "antwort_muss": ["deux touches"],
+      "antwort_darf_nicht": ["touche panique dédiée", "bouton panique séparé"],
+      "beleg": "Déclenchement de l'alarme panique : à partir de 0756-063 appuyer simultanément sur les deux touches ; avant 0756-063 maintenir une touche enfoncée, puis appuyer sur la seconde.",
+      "source": "fr/funk-handsender",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "wipro-iii-zubehoer-batterie-cr2032-07",
+      "question": "Quel type de pile utilisent les contacts magnétiques radio et les télécommandes de la WiPro III ?",
+      "expected": ["/fr/wipro-iii"],
+      "antwort_muss": ["cr2032", "3 v"],
+      "antwort_darf_nicht": ["aaa", "pile aa", "bloc 9 v"],
+      "beleg": "Pile CR2032 (pile bouton, 3 V)",
+      "source": "fr/wipro-iii",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "wipro-iii-ventcheck-wiederueberwachung-5s-08",
+      "question": "Un contact magnétique laissé ouvert en Vent check est-il de nouveau surveillé immédiatement après sa fermeture ?",
+      "expected": ["/fr/wipro-iii"],
+      "antwort_muss": ["5 secondes"],
+      "antwort_darf_nicht": ["surveillé immédiatement", "sans délai", "instantanément"],
+      "beleg": "Reprise de la surveillance : Lorsqu'un contact laissé ouvert est refermé, WiPro le surveille de nouveau après au moins 5 secondes. Une nouvelle ouverture déclenche alors une alarme.",
+      "source": "fr/wipro-iii",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "gas-connect-voraussetzung-wipro-09",
+      "question": "Puis-je vendre le G.A.S.-connect à un client sans WiPro qui veut simplement l'utiliser seul ?",
+      "expected": ["/fr/gas-connect"],
+      "antwort_muss": ["wipro iii", "centrale"],
+      "antwort_darf_nicht": ["utilisable seul", "sans wipro", "fonctionnement autonome possible"],
+      "beleg": "G.A.S.-connect n'est pas un détecteur de gaz autonome. Sans une WiPro III compatible et opérationnelle, la voie d'alarme principale prévue est absente. […] Fonctionnement autonome prévu ? Non — Centrale requise : WiPro III ou WiPro III safe.lock compatible",
+      "source": "fr/gas-connect",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "gas-connect-negation-co-10",
+      "question": "Le G.A.S.-connect avertit-il aussi en cas de monoxyde de carbone ?",
+      "expected": ["/fr/gas-connect"],
+      "antwort_muss": ["ne détecte", "monoxyde", "propane"],
+      "antwort_darf_nicht": ["détecte le co", "avertit du monoxyde", "aussi le co"],
+      "beleg": "L'appareil ne détecte ni le monoxyde de carbone (CO), ni la fumée, ni la chaleur et ne remplace pas un détecteur de CO ou de fumée. […] Substances détectées : Propane, butane et gaz narcotiques/anesthésiants — Monoxyde de carbone détecté ? Non",
+      "source": "fr/gas-connect",
+      "kategorie": "negation"
+    },
+    {
+      "id": "gas-plug-standalone-11",
+      "question": "Le client a-t-il besoin d'une WiPro ou d'une liaison radio pour le G.A.S.-plug ?",
+      "expected": ["/fr/gas-plug"],
+      "antwort_muss": ["autonome", "prise"],
+      "antwort_darf_nicht": ["nécessite une wipro", "liaison radio nécessaire", "doit être mémorisé"],
+      "beleg": "G.A.S.-plug « tout en un » est un détecteur de gaz mobile et autonome pour le propane, le butane et les gaz narcotiques/anesthésiants. Il se branche directement sur une prise 12/24 V appropriée du véhicule, alimentée en permanence […] Fonctionnement autonome ? Oui — Connexion WiPro ou radio ? Non",
+      "source": "fr/gas-plug",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "gas-plug-negation-externer-sensor-12",
+      "question": "Peut-on raccorder un capteur supplémentaire externe au G.A.S.-plug ?",
+      "expected": ["/fr/gas-plug"],
+      "antwort_muss": ["non", "externe"],
+      "antwort_darf_nicht": ["capteur supplémentaire raccordable", "capteur externe possible", "oui, un capteur externe"],
+      "beleg": "Capteurs externes raccordables ? Non",
+      "source": "fr/gas-plug",
+      "kategorie": "negation"
+    },
+    {
+      "id": "co-sensor-voraussetzung-software-104i-13",
+      "question": "Un client veut monter le nouveau capteur CO SNO433-003 sur un G.A.S.-pro plus ancien — est-ce possible sans autre précaution ?",
+      "expected": ["/fr/co-sensor", "/fr/gas-pro"],
+      "antwort_muss": ["1.04i", "logiciel"],
+      "antwort_darf_nicht": ["fonctionne immédiatement", "aucune mise à jour nécessaire", "compatible sans condition"],
+      "beleg": "Le type de capteur le plus récent SNO433-003 nécessite au moins le logiciel 1.04i sur le G.A.S.-pro",
+      "source": "fr/co-sensor",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "co-sensor-kompatibilitaet-aderendhuelsen-14",
+      "question": "Dois-je utiliser des embouts de fil pour raccorder le capteur CO au G.A.S.-pro III ?",
+      "expected": ["/fr/co-sensor", "/fr/gas-pro-iii"],
+      "antwort_muss": ["pas d'embouts", "g.a.s.-pro iii"],
+      "antwort_darf_nicht": ["utiliser des embouts", "avec embouts", "oui, des embouts"],
+      "beleg": "Avec G.A.S.-pro utiliser des embouts de fil. Avec G.A.S.-pro III n'utilisez pas d'embouts de fil et n'étamez pas les extrémités du câble.",
+      "source": "fr/co-sensor",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "gas-pro-iii-negation-feuerzeugtest-15",
+      "question": "Puis-je tester le G.A.S.-pro III simplement avec du gaz de briquet ?",
+      "expected": ["/fr/gas-pro-iii"],
+      "antwort_muss": ["briquet", "ne pas"],
+      "antwort_darf_nicht": ["tester avec du gaz de briquet", "le gaz de briquet convient", "test possible au briquet"],
+      "beleg": "Test utilisateur avec un gaz d'essai non prévu ; ne pas utiliser de gaz de briquet",
+      "source": "fr/gas-pro-iii",
+      "kategorie": "negation"
+    },
+    {
+      "id": "gas-pro-iii-co-montage-deckennah-16",
+      "question": "Le G.A.S.-pro III CO se monte-t-il près du plancher comme le G.A.S.-pro III normal ?",
+      "expected": ["/fr/gas-pro-iii", "/fr/co-sensor"],
+      "antwort_muss": ["plafond"],
+      "antwort_darf_nicht": ["près du plancher", "au-dessus du plancher", "10–20 cm au-dessus du sol"],
+      "beleg": "Montage du G.A.S.-pro III : verticalement, à environ 10–20 cm au-dessus du plancher. Montage du G.A.S.-pro III CO : verticalement, à environ 10–20 cm sous le plafond",
+      "source": "fr/gas-pro-iii",
+      "kategorie": "negation"
+    },
+    {
+      "id": "tsa-standalone-17",
+      "question": "Le détecteur de fumée sans fil T.S.A. a-t-il absolument besoin d'une WiPro, ou fonctionne-t-il aussi seul ?",
+      "expected": ["/fr/funk-rauchmelder"],
+      "antwort_muss": ["autonome"],
+      "antwort_darf_nicht": ["uniquement avec wipro", "wipro obligatoire", "pas sans wipro"],
+      "beleg": "Puis-je utiliser le T.S.A. sans WiPro III ? Oui. En fonctionnement autonome, le T.S.A. émet une alerte locale. […] Le T.S.A. peut être utilisé comme détecteur de fumée autonome, indépendamment des limites de version ci-dessous.",
+      "source": "fr/funk-rauchmelder",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "tsa-keine-gaswarnung-18",
+      "question": "Le détecteur de fumée sans fil T.S.A. avertit-il aussi en cas de gaz ou de monoxyde de carbone ?",
+      "expected": ["/fr/funk-rauchmelder"],
+      "antwort_muss": ["non", "monoxyde", "fumée"],
+      "antwort_darf_nicht": ["avertit du gaz", "aussi du monoxyde", "détecte le co"],
+      "beleg": "Le T.S.A. avertit-il de la présence de butane, de propane, de gaz narcotiques ou de monoxyde de carbone ? Non. Ces dangers nécessitent un avertisseur de gaz adapté.",
+      "source": "fr/funk-rauchmelder",
+      "kategorie": "negation"
+    },
+    {
+      "id": "tsa-batterie-nicht-wechselbar-19",
+      "question": "Puis-je remplacer la pile du détecteur de fumée sans fil T.S.A. quand elle est vide ?",
+      "expected": ["/fr/funk-rauchmelder"],
+      "antwort_muss": ["intégrée à demeure"],
+      "antwort_darf_nicht": ["remplacer la pile", "pile remplaçable", "insérer une pile neuve"],
+      "beleg": "Alimentation : pile au lithium intégrée à demeure, 3 V (1,6 Ah), type CR123A […] Échéance de remplacement : au plus tard après 10 ans",
+      "source": "fr/funk-rauchmelder",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "magnetkontakt-led-ausrichtung-20",
+      "question": "Mon contact magnétique radio se mémorise bien, mais ne déclenche aucune alarme — d'où cela vient-il ?",
+      "expected": ["/fr/funk-magnetkontakt"],
+      "antwort_muss": ["led", "aimant", "orient"],
+      "antwort_darf_nicht": ["centrale défectueuse", "portée insuffisante", "pile vide"],
+      "beleg": "ATTENTION : La platine ne doit pas être orientée avec la LED d'émission vers l'aimant. La mémorisation reste possible dans cette mauvaise orientation, mais aucune alarme ne se déclenche. La LED d'émission doit être dirigée à l'opposé de l'aimant.",
+      "source": "fr/funk-magnetkontakt",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "magnetkontakt-canbus-tueren-21",
+      "question": "Faut-il un contact magnétique radio pour chaque porte du camping-car ?",
+      "expected": ["/fr/funk-magnetkontakt"],
+      "antwort_muss": ["can-bus", "pas nécessaire"],
+      "antwort_darf_nicht": ["chaque porte nécessite un contact", "toujours un contact magnétique", "nécessaire pour toutes les portes"],
+      "beleg": "Les portes du véhicule dont l'état ouvert apparaît sur le combiné d'instruments ou l'écran multifonction sont généralement déjà surveillées par le CAN-Bus lorsque la WiPro III est correctement raccordée. Un contact magnétique radio supplémentaire n'est normalement pas nécessaire pour ces portes.",
+      "source": "fr/funk-magnetkontakt",
+      "kategorie": "negation"
+    },
+    {
+      "id": "handsender-nur-wipro-22",
+      "question": "Puis-je utiliser la télécommande radio 868 avec d'autres systèmes d'alarme radio ?",
+      "expected": ["/fr/funk-handsender"],
+      "antwort_muss": ["wipro iii", "pas compatible"],
+      "antwort_darf_nicht": ["compatible avec d'autres systèmes", "universelle", "aussi pour d'autres systèmes"],
+      "beleg": "Elle n'est pas compatible avec d'autres systèmes radio. […] Avec quels systèmes la télécommande radio 868 est-elle compatible ? Avec la gamme WiPro III. Son utilisation avec d'autres systèmes radio n'est pas prévue.",
+      "source": "fr/funk-handsender",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "nfc-modul-nicht-erstes-zubehoer-23",
+      "question": "Puis-je mémoriser le module NFC comme tout premier accessoire sur la WiPro ?",
+      "expected": ["/fr/nfc-modul"],
+      "antwort_muss": ["non", "télécommande principale", "d'abord"],
+      "antwort_darf_nicht": ["en premier", "l'ordre n'a pas d'importance", "peut être mémorisé d'abord"],
+      "beleg": "Ne pas enregistrer le module NFC comme premier composant radio sur la WiPro ; enregistrer d'abord un émetteur radio 868 comme télécommande principale. […] Celui-ci devient la nouvelle télécommande principale. Le module NFC ne doit pas être le premier composant radio nouvellement enregistré",
+      "source": "fr/nfc-modul",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "sirenen-hupe-pin9-24",
+      "question": "Sur quelle broche de la WiPro III dois-je raccorder un klaxon supplémentaire ?",
+      "expected": ["/fr/sirenen-hupen"],
+      "antwort_muss": ["broche 9", "rose", "broche 15"],
+      "antwort_darf_nicht": ["raccorder à la broche 15", "câble blanc pour le klaxon", "klaxon sur la broche 15"],
+      "beleg": "Les klaxons supplémentaires (klaxon du véhicule ou klaxon supplémentaire) doivent être raccordés à la broche 9 (câble rose) de la WiPro III — et non à la broche 15 (câble blanc). En cas de raccordement à la broche 15, le klaxon retentit en son continu lors d'une alarme au lieu de l'intervalle souhaité.",
+      "source": "fr/sirenen-hupen",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "pro-finder-standalone-25",
+      "question": "Le Pro-Finder nécessite-t-il obligatoirement une WiPro III, ou fonctionne-t-il aussi seul ?",
+      "expected": ["/fr/pro-finder"],
+      "antwort_muss": ["localisation"],
+      "antwort_darf_nicht": ["uniquement avec wipro", "wipro obligatoire", "nécessite une wipro"],
+      "beleg": "Le Pro-Finder est un module de communication mobile et de localisation destiné aux véhicules de loisirs. Il transmet des messages d'alarme et d'état par SMS, fournit des positions GPS et permet certaines commandes à distance selon la génération de l'appareil […] Il peut signaler un vol et faciliter la localisation du véhicule",
+      "source": "fr/pro-finder",
+      "kategorie": "standalone"
+    },
+    {
+      "id": "pro-finder-sim-format-26",
+      "question": "Quel format de carte SIM faut-il pour un Pro-Finder à partir du numéro de série 045 ?",
+      "expected": ["/fr/pro-finder", "/fr/mobilfunk-sim"],
+      "antwort_muss": ["nano-sim"],
+      "antwort_darf_nicht": ["micro-sim", "mini-sim"],
+      "beleg": "à partir de 0699-045 : génération matérielle compatible LTE, Nano-SIM, désactiver complètement la demande de PIN […] 0699-045 logiciel 11.0.4 passage matériel à la 4G LTE, à la Nano-SIM et à la demande de PIN désactivée",
+      "source": "fr/pro-finder",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "mobilfunk-5g-only-27",
+      "question": "Une carte SIM 5G uniquement fonctionne-t-elle dans le Pro-Finder ?",
+      "expected": ["/fr/mobilfunk-sim", "/fr/pro-finder"],
+      "antwort_muss": ["ne convient pas", "5g"],
+      "antwort_darf_nicht": ["fonctionne sans problème", "convient", "la 5g est prise en charge"],
+      "beleg": "Un forfait 5G uniquement, données uniquement ou IoT sans SMS ne convient pas.",
+      "source": "fr/mobilfunk-sim",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "bt-connect-leere-batterie-28",
+      "question": "Puis-je déverrouiller le véhicule via BT-connect si la batterie de mon smartphone est vide ?",
+      "expected": ["/fr/bt-connect"],
+      "antwort_muss": ["télécommande", "bluetooth"],
+      "antwort_darf_nicht": ["peut être déverrouillé", "ouvrir quand même", "même sans smartphone"],
+      "beleg": "BT-connect est un moyen de commande Bluetooth local. […] Toujours prévoir un moyen d'accès indépendant, par exemple la télécommande radio 868.",
+      "source": "fr/bt-connect",
+      "kategorie": "negation"
+    },
+    {
+      "id": "pro-finder-kill-voraussetzung-29",
+      "question": "La commande kill suffit-elle pour que le Pro-Finder coupe le moteur, ou faut-il encore du matériel ?",
+      "expected": ["/fr/pro-finder", "/fr/abschalteinrichtung"],
+      "antwort_muss": ["dispositif d'arrêt", "sortie a"],
+      "antwort_darf_nicht": ["la commande suffit", "aucun matériel supplémentaire", "sans dispositif d'arrêt"],
+      "beleg": "L'immobilisation du véhicule nécessite un Dispositif d'arrêt - arrêt du moteur via Pro-Finder « Kill » installé par un professionnel sur la sortie A.",
+      "source": "fr/pro-finder",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "pro-finder-positionen-tracking-30",
+      "question": "Puis-je enregistrer tout un itinéraire ou faire du suivi en direct avec le Pro-Finder ?",
+      "expected": ["/fr/pro-finder"],
+      "antwort_muss": ["n'est pas", "suivi en direct", "itinéraires"],
+      "antwort_darf_nicht": ["peut enregistrer les itinéraires", "suivi en direct possible", "enregistrer le trajet"],
+      "beleg": "Le Pro-Finder n'est pas un système de suivi en direct et n'enregistre pas les itinéraires.",
+      "source": "fr/pro-finder",
+      "kategorie": "negation"
+    },
+    {
+      "id": "bt-connect-koppelbare-geraete-31",
+      "question": "Combien d'appareils peut-on appairer avec le BT-connect ?",
+      "expected": ["/fr/bt-connect"],
+      "antwort_muss": ["9"],
+      "antwort_darf_nicht": ["8 appareils", "maximum 8"],
+      "beleg": "Appareils mémorisables : 9 au maximum",
+      "source": "fr/bt-connect",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "abschalteinrichtung-kill-vs-a-an-negation-32",
+      "question": "Puis-je simplement déclencher le dispositif d'arrêt avec la commande « a an » pour couper le moteur ?",
+      "expected": ["/fr/abschalteinrichtung"],
+      "antwort_muss": ["kill", "jamais", "vitesse"],
+      "antwort_darf_nicht": ["utiliser a an", "avec a an", "a an est la bonne commande"],
+      "beleg": "AVERTISSEMENT — utiliser exclusivement kill : Ne jamais utiliser la commande a an. Elle active immédiatement la sortie A sans contrôler la vitesse du véhicule. Le circuit d'allumage pourrait ainsi être interrompu pendant la conduite […] Le Pro-Finder attend que la vitesse déterminée par GPS reste égale à 0 km/h sans interruption pendant au moins 5 secondes.",
+      "source": "fr/abschalteinrichtung",
+      "kategorie": "negation"
+    },
+    {
+      "id": "abschalteinrichtung-schaltstrom-mehrpolig-33",
+      "question": "Quel est le courant de commutation maximal du dispositif d'arrêt multipolaire (105821) ?",
+      "expected": ["/fr/abschalteinrichtung"],
+      "antwort_muss": ["1 a", "multipolaire"],
+      "antwort_darf_nicht": ["40 a", "max. 40"],
+      "beleg": "Unipolaire 101283 12 V CC 40 A — Multipolaire 105821 12 V CC 1 A",
+      "source": "fr/abschalteinrichtung",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anlernvorgang-werkseitig-kein-zubehoer-34",
+      "question": "Sur la WiPro III, des accessoires radio sont-ils déjà mémorisés en usine, ou dois-je le faire moi-même ?",
+      "expected": ["/fr/anlernvorgang"],
+      "antwort_muss": ["aucun", "livraison"],
+      "antwort_darf_nicht": ["mémorisés en usine", "déjà mémorisés", "préconfigurée"],
+      "beleg": "IMPORTANT : À la livraison, aucun composant radio n'est mémorisé. WiPro III ne peut pas interpréter les signaux des composants radio non mémorisés",
+      "source": "fr/anlernvorgang",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "anlernvorgang-easyadd2-can-kein-loeschen-35",
+      "question": "Avec la méthode Easy-Add 2.0 par la porte conducteur (CAN), puis-je aussi effacer des accessoires mémorisés ?",
+      "expected": ["/fr/anlernvorgang"],
+      "antwort_muss": ["ne permet pas", "effacer"],
+      "antwort_darf_nicht": ["aussi effacer", "effacement possible", "oui, effacer via can"],
+      "beleg": "IMPORTANT : Easy-Add 2.0, c'est-à-dire la méthode via CAN-Bus, permet uniquement de mémoriser des composants. Elle ne permet pas de les effacer.",
+      "source": "fr/anlernvorgang",
+      "kategorie": "negation"
+    },
+    {
+      "id": "anlernvorgang-batterie-cr2032-duracell-36",
+      "question": "Quelle pile bouton dois-je prendre pour les accessoires radio, et quelle marque n'est pas recommandée ?",
+      "expected": ["/fr/anlernvorgang"],
+      "antwort_muss": ["cr2032", "duracell"],
+      "antwort_darf_nicht": ["duracell recommandée", "cr2025", "pile aa"],
+      "beleg": "La télécommande radio 868, le contact magnétique radio 868 et la boucle de câble radio 868 utilisent une pile bouton CR2032 de 3 V. […] Les marques Panasonic ou Varta sont recommandées. Les piles Duracell, sans marque ou premier prix ne sont pas recommandées en raison de possibles problèmes de tension ou de durée de vie.",
+      "source": "fr/anlernvorgang",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "anlernvorgang-batteriewechsel-kein-neuanlernen-37",
+      "question": "Dois-je mémoriser de nouveau l'accessoire radio après un changement de pile ?",
+      "expected": ["/fr/anlernvorgang"],
+      "antwort_muss": ["pas nécessaire"],
+      "antwort_darf_nicht": ["nouvelle mémorisation nécessaire", "doit être mémorisé de nouveau", "mémoriser à nouveau"],
+      "beleg": "Il n'est pas nécessaire de mémoriser de nouveau l'accessoire après le remplacement de la pile.",
+      "source": "fr/anlernvorgang",
+      "kategorie": "negation"
+    },
+    {
+      "id": "seriennummern-profinder-nano-sim-ab-0699-045-38",
+      "question": "À partir de quel numéro de série du Pro-Finder faut-il une Nano-SIM au lieu d'une Micro-SIM ?",
+      "expected": ["/fr/seriennummern-softwarestaende", "/fr/pro-finder"],
+      "antwort_muss": ["0699-045", "nano-sim"],
+      "antwort_darf_nicht": ["nano-sim toujours d'usine", "micro-sim à partir de 045", "nano à partir de 0699-013"],
+      "beleg": "4G LTE et Nano-SIM : Pro-Finder 0699-045",
+      "source": "fr/seriennummern-softwarestaende",
+      "kategorie": "kompatibilitaet"
+    },
+    {
+      "id": "seriennummern-wassermelder-mindeststand-0823-021-39",
+      "question": "Quelle version minimale de WiPro III faut-il pour le détecteur d'eau sans fil ?",
+      "expected": ["/fr/seriennummern-softwarestaende"],
+      "antwort_muss": ["0823-021", "6.8"],
+      "antwort_darf_nicht": ["0823-018", "0823-012", "aucune version minimale"],
+      "beleg": "0823-021 / 6.8 : Prise en charge du Détecteur d'eau sans fil 868",
+      "source": "fr/seriennummern-softwarestaende",
+      "kategorie": "voraussetzung"
+    },
+    {
+      "id": "tech-doku-funkfrequenz-868-vs-nfc-40",
+      "question": "Sur quelle fréquence radio les accessoires WiPro communiquent-ils avec la centrale ?",
+      "expected": ["/fr/tech-doku/funkstandards-und-schnittstellen"],
+      "antwort_muss": ["868,35 mhz"],
+      "antwort_darf_nicht": ["13,56 mhz", "433 mhz", "2,4 ghz"],
+      "beleg": "868,35 MHz est une fréquence, pas un numéro de norme ni une promesse de compatibilité. Les systèmes 868,35 MHz et anciens 433 MHz ne sont pas interchangeables.",
+      "source": "fr/tech-doku/funkstandards-und-schnittstellen",
+      "kategorie": "fakt"
+    },
+    {
+      "id": "tech-doku-ece-r10-nicht-vermischen-41",
+      "question": "ECE R10, est-ce la même chose que la directive radio 2014/53/UE pour la WiPro III ?",
+      "expected": ["/fr/tech-doku/normen-und-richtlinien"],
+      "antwort_muss": ["ece r10", "2014/53"],
+      "antwort_darf_nicht": ["la même chose que", "identique à", "ece r10 est la directive radio"],
+      "beleg": "ECE R10 : Homologation véhicule/CEM — Référence à l'utilisation du véhicule ou à la compatibilité électromagnétique. 2014/53/EU : Directive européenne (RED) — Base des déclarations radio/conformité et des références DoC",
+      "source": "fr/tech-doku/normen-und-richtlinien",
+      "kategorie": "negation"
+    }
+  ]
+}

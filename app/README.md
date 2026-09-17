@@ -92,12 +92,18 @@ eines einzelnen Wörterbuchworts erhöht den Aufwand nochmals deutlich.
 
 ### 3. Prüfen
 
-```
-https://DEINE-SITE.netlify.app/api/health?live=1
+```bash
+curl -H "x-zugangswort: DEIN-ZUGANGSWORT" "https://DEINE-SITE.netlify.app/api/health?live=1"
 ```
 
 Das macht einen **echten** Mini-Modellaufruf und meldet jedes Problem im Klartext.
 `"status": "ok"` heißt: Wissensbasis geladen, Schlüssel gültig, Modell erreichbar.
+
+> **Ohne Zugangswort** antwortet `/api/health` nur mit `status` und der
+> Angabe, ob ein Zugangswort verlangt wird. Modellname, Umfang der
+> Wissensbasis, Korrekturstand und Problemliste sind Betriebsinterna und
+> kommen nur mit dem Header. Der Live-Test ebenso — sonst könnte jeder, der
+> die Adresse kennt, auf eure Rechnung Modellaufrufe auslösen.
 
 > **Nach jedem Deploy einmal aufrufen.** Der Vorgänger-Bot war wochenlang tot,
 > weil das Modell beim Anbieter abgekündigt wurde und niemand es merkte.
@@ -239,10 +245,15 @@ Kontaktdaten). Ruft derselbe Kunde zurück, lädt ein Klick den kompletten Fall
 zurück ins Formular — Fahrzeug, Produkt, Seriennummer, Mitschrift. Jeder Eintrag
 zeigt den erreichten Sicherheitswert, sodass man sieht, welcher Fall noch offen war.
 
-**Hell als Standard, dunkel per Schalter.** Die THITRONIK-Palette gilt in beiden
-Modi — mit einem Unterschied: Im Dunkelmodus trägt Lime die Überschriften, im
-Hellmodus nicht (zu wenig Kontrast auf Weiß). Dort übernimmt Navy die
-Schriftrolle, Lime bleibt Flächen-Akzent.
+**Nur hell, bewusst leise.** Die App ist ein Arbeitswerkzeug am Telefon, kein
+Schaufenster. Die THITRONIK-Palette wird deshalb sparsam eingesetzt: Navy
+trägt Handlung und Struktur (Primärknopf, Schrittnummern, Überschriften),
+Lime steht ausschließlich für „gut" (Belastbarkeit hoch, kopiert,
+freigegeben), Cyan für Information, Rot für Gefahr und Widerspruch. Eine
+Flächenebene, Hairline-Rahmen statt Schatten, Schatten nur auf Überlagerungen.
+Alle Werte stehen als Token am Anfang von `styles.css`; ein Farb- oder
+Abstandswechsel ist eine Zeile, kein Umbau. Ein Dunkelmodus wurde bewusst
+gestrichen: zweiter Pflegeaufwand bei jedem Umbau, ohne Nutzen am Arbeitsplatz.
 
 **Zahlen sind Daten, keine Prosa.** Seriennummern, Baujahre und Softwarestände
 laufen in Monospace mit tabellarischen Ziffern — das macht Stellen vergleichbar
@@ -254,20 +265,14 @@ und Tippfehler sichtbar (`0699-045` vs. `0699-O45`).
 node werkzeuge/logo-bauen.mjs pfad/zum/original.png
 ```
 
-Erwartet das Original mit **transparentem** Hintergrund und erzeugt beide
-Fassungen: `logo-hell.webp` unverändert, `logo-dunkel.webp` als Negativ — Schrift
-weiß, **rotes Segel unangetastet**.
+Erwartet das Original mit **transparentem** Hintergrund. Verwendet wird
+`logo-hell.webp`; die ebenfalls erzeugte Negativfassung `logo-dunkel.webp`
+bleibt als Reserve liegen, seit der Dunkelmodus entfallen ist.
 
-Drei Dinge, die dabei absichtlich so gelöst sind:
-
-- **Keine farbige Platte** unter das Logo. Ein weißes Logo auf einer eigens
-  gelegten Navy-Fläche sieht nach Notlösung aus, weil es eine ist.
-- **Kein CSS-Filter** für die Dunkelfassung. `invert()` würde auch das rote Segel
-  ausbleichen und die Marke verfälschen — deshalb wird pixelweise umgefärbt.
+- **Keine farbige Platte** unter das Logo. Ein Logo auf einer eigens gelegten
+  Fläche sieht nach Notlösung aus, weil es eine ist.
 - **Leerrand wird entfernt.** Die Originaldatei hatte 46 % Rand; bei fester
   CSS-Höhe wirkt das Logo dadurch klein, ohne dass man den Grund sieht.
-  Beide Fassungen kommen formatgleich heraus, sodass beim Moduswechsel nichts
-  springt.
 
 ---
 
@@ -383,6 +388,38 @@ still Text verloren — der teuerste Fehler des Vorgängersystems
 `/api/health` dieselben Zahlen aus der laufenden Function.
 
 ---
+
+## Login und Rollen
+
+Seit 17.09.2026 meldet sich jede Person mit E-Mail und Passwort an. Zugang
+gibt es nur per Einladung durch einen Admin; das Passwort setzt jede Person
+selbst über den Link in der Mail. Nutzer, Rollen und Audit-Log liegen in
+Supabase (Projekt `thitronik-thi`, Frankfurt, Schema `thi`,
+`supabase/migrations/0001_grundgeruest.sql`).
+
+| Rolle | darf |
+|---|---|
+| Mitarbeiter | Fälle aufnehmen, interne Artikel lesen, Korrekturen einreichen, eigene zurückziehen |
+| Wissensmanager | zusätzlich freigeben, fremde zurückziehen, „im Wiki“ setzen |
+| Admin | zusätzlich Nutzer einladen, sperren, Rollen setzen |
+
+**Einrichten.** `THI_SUPABASE_URL`, `THI_SUPABASE_SECRET_KEY` und
+`THI_ERSTADMIN` in Netlify setzen. Beim ersten Aufruf der Seite wird die
+Erstadmin-Adresse angelegt und bekommt die Mail zum Passwort-Setzen. In
+Supabase muss das Schema `thi` unter Data API als „Exposed schema“ stehen,
+die Site URL auf die App zeigen und die Selbstregistrierung aus sein.
+
+**Was sich geändert hat.** Der Browser spricht nie mit Supabase, nur mit
+`/api/auth`; der Secret Key bleibt in der Function. Die Vier-Augen-Regel bei
+Korrekturen prüft die Nutzer-ID, nicht mehr ein Namensfeld. Rate-Limit und
+Tageslimit zählen in der Datenbank über alle Instanzen, je Person statt je
+IP. Jede Freigabe, Sperre und Rollenänderung steht in `thi.audit`.
+
+**Übergang.** Ohne die Supabase-Variablen läuft das alte gemeinsame
+Zugangswort weiter, und der Health-Check meldet das als Übergangsbetrieb.
+
+**Rechte prüfen:** `lib/auth.mjs` hat die Rechte-Matrix an einer Stelle.
+Ein neues Recht ist eine Zeile dort, kein verstreutes `if`.
 
 ## Support-Korrekturen
 
@@ -576,12 +613,14 @@ So wurde die Fensterwahl geprüft (siehe „Bekannte Grenzen").
   nachzusehen unter Cloud compute → Functions → `chat` → Function log.
 
 - **Rate-Limit zählt pro Function-Instanz**, ist also nur eine grobe Bremse.
-  Der eigentliche Schutz ist das Zugangswort. Gleiches gilt für den Ergebnis-
-  Cache des Live-Health-Checks: `/api/health?live=1` ist bewusst ohne
-  Zugangswort erreichbar (es soll auch dann antworten, wenn die Konfiguration
-  kaputt ist), löst aber einen echten Modellaufruf aus. Das Ergebnis wird
-  deshalb 60 Sekunden zwischengespeichert — Dauerfeuer auf die Adresse kostet
-  damit einen Aufruf je Minute und Instanz statt beliebig viele.
+  Der eigentliche Schutz ist das Zugangswort. Der Live-Health-Check verlangt
+  es seit 17.09.2026 ebenfalls; sein Ergebnis wird zusätzlich 60 Sekunden je
+  Instanz zwischengespeichert.
+- **Ein gemeinsames Zugangswort ist keine Identität.** Es lässt sich nicht pro
+  Person entziehen, und der Name bei Korrekturen ist ein Formularfeld. Die
+  Zugangsprüfung ist deshalb in `lib/zugang.mjs` gebündelt — der Wechsel auf
+  ein Login mit Rollen (Mitarbeiter, Wissensmanager, Admin) ist an genau einer
+  Stelle vorgesehen und in Planung.
 - **Anleitungen und FAQ liegen nur auf Deutsch** im Index. Der französische Text
   existiert in den Quell-PDFs, ist aber noch nicht sprachgetrennt indexiert —
   siehe `../docs/04_MEHRSPRACHIGKEIT_DE_FR.md` §1.2.

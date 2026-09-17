@@ -27,12 +27,14 @@ import { pruefeGefahr, pruefeWidersprueche, baueSuchanfrage, fahrzeugGewichten }
 import { bewerteSicherheit, leseModellStufe } from './lib/sicherheit.mjs';
 import { SYSTEM, GEFAHR_ANTWORT, KEIN_TREFFER, SUPPORT_TELEFON } from './lib/prompts.mjs';
 import { wirksameKorrekturen, korrekturAlsArtikel, KORREKTUR_BEILAGE_MAX } from './lib/korrekturen.mjs';
+import { ZUGANGSWORT, zugangPruefen, clientIp } from './lib/zugang.mjs';
+import { darf } from './lib/auth.mjs';
+import { supabaseAktiv, rpc } from './lib/supabase.mjs';
 
 // ─── Konfiguration ──────────────────────────────────────────────────────────
 const API_URL = process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
 const API_KEY = process.env.ANYMIZE_API_KEY || process.env.Anymize_API_KEY || '';
 const MODELL = process.env.THI_MODEL || 'anthropic/claude-sonnet-4.6';
-const ZUGANGSWORT = process.env.THI_ZUGANGSWORT || '';
 
 const RL_FENSTER_MS = 5 * 60 * 1000;
 const RL_MAX = Number(process.env.THI_RATE_LIMIT || 20);
@@ -92,7 +94,7 @@ function fehlversuchZaehlen(ip) {
   }
 }
 
-function limitPruefen(ip) {
+function limitPruefenLokal(ip) {
   const heute = new Date().toDateString();
   if (tag.datum !== heute) tag = { anzahl: 0, datum: heute };
   if (tag.anzahl >= TAGESLIMIT) return 'tag';
@@ -105,6 +107,26 @@ function limitPruefen(ip) {
   tag.anzahl += 1;
   if (treffer.size > 3000) for (const [k, v] of treffer) if (jetzt > v.bis) treffer.delete(k);
   return null;
+}
+
+// Mit Supabase: GETEILTER Zähler über alle Function-Instanzen (thi.zaehlen,
+// atomar in Postgres). Gezählt wird je Person, nicht je IP — im Büro teilen
+// sich alle eine IP. Fällt die Datenbank aus, greift der lokale Zähler, damit
+// ein DB-Problem den Support nicht lahmlegt.
+async function limitPruefen(ip, nutzer) {
+  if (!supabaseAktiv()) return limitPruefenLokal(ip);
+  try {
+    const wer = nutzer?.id ? `nutzer:${nutzer.id}` : `ip:${ip}`;
+    const heute = new Date().toISOString().slice(0, 10);
+    const proTag = await rpc('zaehlen', { p_schluessel: `tag:${heute}`, p_fenster_sekunden: 86400 });
+    if (Number(proTag) > TAGESLIMIT) return 'tag';
+    const proPerson = await rpc('zaehlen', { p_schluessel: wer, p_fenster_sekunden: RL_FENSTER_MS / 1000 });
+    if (Number(proPerson) > RL_MAX) return 'ip';
+    return null;
+  } catch (fehler) {
+    console.error('[thi] Zähler in der Datenbank nicht erreichbar, lokaler Zähler greift:', fehler.message);
+    return limitPruefenLokal(ip);
+  }
 }
 
 // ─── Hilfsfunktionen ────────────────────────────────────────────────────────
@@ -260,27 +282,27 @@ async function frageModell(nachrichten, quellen, hinweise, bewerten) {
 export default async function handler(anfrage) {
   if (anfrage.method !== 'POST') return json({ fehler: 'method_not_allowed' }, 405);
 
-  const ip = (anfrage.headers.get('x-nf-client-connection-ip')
-    || anfrage.headers.get('x-forwarded-for') || 'unbekannt').split(',')[0].trim();
+  const ip = clientIp(anfrage);
 
   // 1) Zugangsschutz — der eigentliche Kostenschutz bei öffentlichem Deployment.
-  // Fehlversuche werden gezählt und führen zur Sperre, sonst ließe sich ein
-  // merkbares Zugangswort in Minuten durchprobieren.
-  if (ZUGANGSWORT) {
-    if (istGesperrt(ip)) {
-      return json({
-        fehler: 'gesperrt',
-        meldung: 'Zu viele Fehlversuche. Bitte in 15 Minuten erneut versuchen.',
-      }, 429);
-    }
-    const gesendet = anfrage.headers.get('x-zugangswort') || '';
-    if (gesendet !== ZUGANGSWORT) {
-      fehlversuchZaehlen(ip);
-      return json({ fehler: 'zugang', meldung: 'Zugangswort fehlt oder ist falsch.' }, 401);
-    }
+  // Im Login-Modus prüft lib/zugang das Token und liefert Person + Rolle.
+  // Im Zugangswort-Modus werden Fehlversuche gezählt und führen zur Sperre,
+  // sonst ließe sich ein merkbares Wort in Minuten durchprobieren.
+  if (ZUGANGSWORT && istGesperrt(ip)) {
+    return json({ fehler: 'gesperrt', meldung: 'Zu viele Fehlversuche. Bitte in 15 Minuten erneut versuchen.' }, 429);
   }
+  const zugangErgebnis = await zugangPruefen(anfrage);
+  if (!zugangErgebnis.ok) {
+    if (zugangErgebnis.modus === 'zugangswort') fehlversuchZaehlen(ip);
+    return json({
+      fehler: zugangErgebnis.grund,
+      meldung: zugangErgebnis.modus === 'login' ? 'Bitte anmelden.' : 'Zugangswort fehlt oder ist falsch.',
+    }, 401);
+  }
+  const nutzer = zugangErgebnis.nutzer;
+  if (!darf(nutzer, 'fall.stellen')) return json({ fehler: 'verboten' }, 403);
 
-  const limit = limitPruefen(ip);
+  const limit = await limitPruefen(ip, nutzer);
   if (limit) {
     return json({
       fehler: 'rate_limit',
@@ -348,7 +370,10 @@ export default async function handler(anfrage) {
   // 5) Retrieval.
   const basis = BASIS;
 
-  const zugang = { canViewInternal: false };
+  // Rollen-Projektion VOR dem Retrieval (docs/01 §6): Interne Artikel sieht
+  // nur, wer eingeloggt ist. Im Zugangswort-Modus bleibt es beim Standard-
+  // bestand, weil dort niemand identifiziert ist.
+  const zugang = { canViewInternal: !nutzer.platzhalter && darf(nutzer, 'intern.lesen') };
   const vorherige = verlauf.filter((n) => n.rolle === 'nutzer').map((n) => n.text);
   const anfrageText = frage || baueSuchanfrage(fall);
   const suche = buildRetrievalQuery(anfrageText, vorherige);
@@ -522,13 +547,15 @@ export default async function handler(anfrage) {
   try {
     return await frageModell(nachrichten, quellen, hinweise, bewerten);
   } catch (fehler) {
+    // Die technische Ursache (Anbieter-Antwort, URL-Fragmente) bleibt im
+    // Function-Log. An den Browser geht nur die Meldung — was dort ankommt,
+    // liegt öffentlich in der Entwicklerkonsole.
     console.error('[thi] Modellaufruf fehlgeschlagen:', fehler);
     return json({
       fehler: 'modell',
       meldung: sprache === 'fr'
         ? `Erreur lors de la consultation du modèle. Contacte le support THITRONIK : ${SUPPORT_TELEFON}`
         : `Beim Nachschlagen ist ein Fehler aufgetreten. Bitte wende dich an den THITRONIK-Support: ${SUPPORT_TELEFON}`,
-      detail: String(fehler.message || fehler).slice(0, 300),
       quellen, hinweise,
     }, 502);
   }

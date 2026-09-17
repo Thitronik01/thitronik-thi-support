@@ -23,23 +23,25 @@ auch C angefasst wird.
 
 ## Das Wichtigste zuerst: die eine echte Lücke
 
-### Es gibt keinen einzigen französischen Testfall
+### Französisch ist noch nicht gemessen
 
-Die deutschen Antworten sind gegen 106 Gold-Fälle abgesichert. Für Französisch
-existiert **nichts**. Die FR-Antworten *sehen* im Test gut aus — aber „sieht gut
-aus" ist exakt das, was dieses Projekt an anderer Stelle als unzureichend
-beschreibt (`../docs/05_EVAL_UND_QUALITAET.md`).
+Die deutschen Antworten sind gegen 106 Gold-Fälle abgesichert und gemessen.
+Für Französisch gibt es seit 17.09.2026 den **Spiegel**:
+`../daten/thi-eval-gold.fr.json`, 41 Fälle, Fragen idiomatisch übersetzt,
+Belege aus den französischen Artikeln entnommen, alle Routen geprüft. Der
+Judge wertet beim FR-Lauf eine deutsche Antwort als Fehlschlag.
 
-**Vor einem Einsatz in Frankreich ist das der wichtigste Punkt — wichtiger als
-jede weitere Funktion.**
+**Noch nicht gelaufen** — kostet echte Modellaufrufe:
 
-Weg dorthin, zweistufig:
-1. **Spiegel** — die deutschen Gold-Fälle übersetzen, `expected`-Routen von
-   `/de/…` auf `/fr/…` umschreiben (maschinell ableitbar, weil die Artikel
-   strukturgleich sind), Anker aus dem FR-Abschnittsindex neu holen.
-2. **Echte Fälle** — Fragen so, wie ein französischer Monteur sie stellt.
-   Idiomatisch, nicht übersetztes Deutsch. Falls vorhanden: echte französische
-   Supportanfragen als Quelle.
+```bash
+THI_RATE_LIMIT=999 THI_DAILY_LIMIT=9999 node dev-server.mjs
+node werkzeuge/antwort-eval.mjs --sprache fr --judge
+```
+
+Zweite Stufe danach: **echte Fälle** — Fragen so, wie ein französischer
+Monteur sie stellt (Delphine Passaret, Julie Marier). Idiomatisch, nicht
+übersetztes Deutsch. Und der Ingest der 23 Anleitungen mit französischem
+Textanteil (`../docs/04_MEHRSPRACHIGKEIT_DE_FR.md` §1.2).
 
 Zweite Messgröße: die **Fallback-Rate** FR→DE. Steigt sie, ist das ein
 Content-Signal — diese Themen gehören auf Französisch ergänzt.

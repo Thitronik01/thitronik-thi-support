@@ -6,15 +6,14 @@
 <title>Thi — THITRONIK Support</title>
 <meta name="description" content="Fallaufnahme und technischer Support für THITRONIK-Produkte.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#EEF1F7">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<!-- Schrift liegt lokal, keine Verbindung zu Google (siehe styles.css). -->
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -25,13 +24,9 @@
 <header class="kopf">
   <div class="kopf-inner">
     <div class="marke">
-      <!-- Zwei Fassungen derselben Marke, beide auf transparentem Grund und
-           formatgleich (3,86:1), damit beim Moduswechsel nichts springt:
-           hell = Original (Navy-Schrift, rotes Segel), dunkel = Negativfassung
-           (Schrift weiß, Segel unverändert rot). Erzeugt mit
-           werkzeuge/logo-bauen.mjs aus CI/Logo White.png. -->
-      <img src="/assets/img/logo-hell.webp" alt="THITRONIK" class="marke-logo logo-hell">
-      <img src="/assets/img/logo-dunkel.webp" alt="THITRONIK" class="marke-logo logo-dunkel">
+      <!-- Original-Logo (Navy-Schrift, rotes Segel) auf transparentem Grund,
+           Leerrand entfernt — erzeugt mit werkzeuge/logo-bauen.mjs. -->
+      <img src="/assets/img/logo-hell.webp" alt="THITRONIK" class="marke-logo">
       <span class="marke-trenner" aria-hidden="true"></span>
       <div class="marke-text">
         <span class="marke-name">Thi</span>
@@ -39,18 +34,43 @@
       </div>
     </div>
 
+    <!-- Kopfzeile bewusst leise: Sprache als kleines Segment, die drei
+         Aktionen als Text mit Symbol. Mit dem Login kommt hier rechts das
+         Nutzermenü (Name, Rolle, Abmelden) hin. -->
     <div class="kopf-aktionen">
       <div class="sprachwahl" role="group" aria-label="Sprache / Langue">
         <button type="button" class="sprach-btn ist-aktiv" data-sprache="de" aria-pressed="true">DE</button>
         <button type="button" class="sprach-btn" data-sprache="fr" aria-pressed="false">FR</button>
       </div>
-      <div class="sprachwahl" role="group" aria-label="Darstellung">
-        <button type="button" class="sprach-btn ist-aktiv" data-thema="light" aria-pressed="true" data-i18n="themaHell">Hell</button>
-        <button type="button" class="sprach-btn" data-thema="dark" aria-pressed="false" data-i18n="themaDunkel">Dunkel</button>
+      <span class="kopf-trenner" aria-hidden="true"></span>
+      <button type="button" class="btn-geist" id="verlaufOeffnen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5M12 7v5l3 2"/></svg>
+        <span data-i18n="verlauf">Verlauf</span>
+      </button>
+      <button type="button" class="btn-geist" id="korrekturenOeffnen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        <span data-i18n="korrekturen">Korrekturen</span>
+      </button>
+      <button type="button" class="btn-sekundaer" id="neuerFall">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span data-i18n="neuerFall">Neuer Fall</span>
+      </button>
+
+      <!-- Nutzermenü — nur im Login-Modus sichtbar. -->
+      <div class="nutzer" id="nutzerMenue" hidden>
+        <button type="button" class="nutzer-knopf" id="nutzerKnopf" aria-haspopup="true" aria-expanded="false">
+          <span class="nutzer-avatar" id="nutzerAvatar">?</span>
+          <span class="nutzer-name" id="nutzerName"></span>
+        </button>
+        <div class="menue" id="nutzerMenueListe" hidden>
+          <div class="menue-kopf">
+            <span class="menue-name" id="menueName"></span>
+            <span class="menue-meta" id="menueMeta"></span>
+          </div>
+          <button type="button" class="menue-punkt" id="nutzerVerwalten" hidden data-i18n="nutzerVerwalten">Nutzer verwalten</button>
+          <button type="button" class="menue-punkt" id="abmelden" data-i18n="abmelden">Abmelden</button>
+        </div>
       </div>
-      <button type="button" class="btn-geist" id="verlaufOeffnen" data-i18n="verlauf">Verlauf</button>
-      <button type="button" class="btn-geist" id="korrekturenOeffnen" data-i18n="korrekturen">Korrekturen</button>
-      <button type="button" class="btn-geist" id="neuerFall" data-i18n="neuerFall">Neuer Fall</button>
     </div>
   </div>
 </header>
@@ -93,14 +113,75 @@
   </div>
 </div>
 
-<!-- ─── Zugangsdialog ─────────────────────────────────────────────────── -->
+<!-- ─── Nutzerverwaltung (Admin) ──────────────────────────────────────── -->
+<div class="verlauf-overlay" id="nutzerOverlay" hidden>
+  <div class="verlauf-box">
+    <div class="verlauf-kopf">
+      <div>
+        <h2 data-i18n="nvTitel">Nutzer</h2>
+        <p class="verlauf-unter" data-i18n="nvUnter">Zugang nur per Einladung. Jede Person setzt ihr Passwort selbst über den Link in der Mail.</p>
+      </div>
+      <button type="button" class="btn-schliessen" id="nutzerSchliessen" aria-label="Schließen">×</button>
+    </div>
+    <form class="nv-form" id="einladenForm" autocomplete="off">
+      <input type="email" id="nvEmail" class="feld" placeholder="vorname.n@thitronik.de" required>
+      <input type="text" id="nvName" class="feld" data-i18n-ph="nvName" placeholder="Name" required maxlength="60">
+      <select id="nvRolle" class="feld">
+        <option value="mitarbeiter" data-i18n="rolleMitarbeiter">Mitarbeiter</option>
+        <option value="wissensmanager" data-i18n="rolleWissensmanager">Wissensmanager</option>
+        <option value="admin" data-i18n="rolleAdmin">Admin</option>
+      </select>
+      <select id="nvSprache" class="feld">
+        <option value="de">DE</option>
+        <option value="fr">FR</option>
+      </select>
+      <button type="submit" class="btn-primaer" data-i18n="nvEinladen">Einladen</button>
+    </form>
+    <p class="ko-meldung" id="nvMeldung" hidden></p>
+    <div class="verlauf-liste" id="nutzerListe"></div>
+  </div>
+</div>
+
+<!-- ─── Zugang: Login, Passwort setzen, Zugangswort (Übergang) ────────── -->
 <div class="zugang-overlay" id="zugangOverlay" hidden>
   <div class="zugang-box">
-    <img src="/assets/img/logo-hell.webp" alt="THITRONIK" class="zugang-logo logo-hell">
-    <img src="/assets/img/logo-dunkel.webp" alt="THITRONIK" class="zugang-logo logo-dunkel">
-    <h2 data-i18n="zugangTitel">Zugang</h2>
-    <p class="zugang-text" data-i18n="zugangText">Bitte gib das Zugangswort ein, das du von THITRONIK erhalten hast.</p>
-    <form id="zugangForm" autocomplete="off">
+    <img src="/assets/img/logo-hell.webp" alt="THITRONIK" class="zugang-logo">
+
+    <!-- Login -->
+    <form id="loginForm" autocomplete="on" hidden>
+      <h2 data-i18n="loginTitel">Anmelden</h2>
+      <p class="zugang-text" data-i18n="loginText">Mit deiner THITRONIK-Adresse und deinem Passwort.</p>
+      <input type="email" id="loginEmail" class="feld" placeholder="vorname.n@thitronik.de" autocomplete="username" required>
+      <input type="password" id="loginPasswort" class="feld" data-i18n-ph="loginPasswort" placeholder="Passwort" autocomplete="current-password" required>
+      <p class="zugang-fehler" id="loginFehler" hidden></p>
+      <button type="submit" class="btn-primaer btn-voll" data-i18n="loginAbsenden">Anmelden</button>
+      <button type="button" class="btn-link" id="passwortVergessen" data-i18n="loginVergessen">Passwort vergessen?</button>
+    </form>
+
+    <!-- Passwort setzen (Einladung / Zurücksetzen) -->
+    <form id="passwortForm" autocomplete="on" hidden>
+      <h2 data-i18n="pwTitel">Passwort setzen</h2>
+      <p class="zugang-text" data-i18n="pwText">Mindestens 12 Zeichen. Ein Satz, den nur du kennst, ist besser als ein Wort mit Zahlen.</p>
+      <input type="password" id="pwNeu" class="feld" data-i18n-ph="pwNeu" placeholder="Neues Passwort" autocomplete="new-password" required minlength="12">
+      <input type="password" id="pwWieder" class="feld" data-i18n-ph="pwWieder" placeholder="Noch einmal" autocomplete="new-password" required minlength="12">
+      <p class="zugang-fehler" id="pwFehler" hidden></p>
+      <button type="submit" class="btn-primaer btn-voll" data-i18n="pwAbsenden">Speichern und anmelden</button>
+    </form>
+
+    <!-- Passwort zurücksetzen -->
+    <form id="resetForm" autocomplete="on" hidden>
+      <h2 data-i18n="resetTitel">Passwort zurücksetzen</h2>
+      <p class="zugang-text" data-i18n="resetText">Du bekommst eine Mail mit einem Link. Der Link gilt eine Stunde.</p>
+      <input type="email" id="resetEmail" class="feld" placeholder="vorname.n@thitronik.de" autocomplete="username" required>
+      <p class="zugang-fehler" id="resetMeldung" hidden></p>
+      <button type="submit" class="btn-primaer btn-voll" data-i18n="resetAbsenden">Mail schicken</button>
+      <button type="button" class="btn-link" id="zurueckZumLogin" data-i18n="resetZurueck">Zurück zur Anmeldung</button>
+    </form>
+
+    <!-- Übergangsbetrieb: gemeinsames Zugangswort -->
+    <form id="zugangForm" autocomplete="off" hidden>
+      <h2 data-i18n="zugangTitel">Zugang</h2>
+      <p class="zugang-text" data-i18n="zugangText">Bitte gib das Zugangswort ein, das du von THITRONIK erhalten hast.</p>
       <input type="password" id="zugangWort" class="feld" data-i18n-ph="zugangPlatzhalter" placeholder="Zugangswort" required>
       <p class="zugang-fehler" id="zugangFehler" hidden></p>
       <button type="submit" class="btn-primaer btn-voll" data-i18n="zugangAbsenden">Weiter</button>
@@ -214,6 +295,11 @@
           <!-- ── Seitenspalte: die harten Fakten ───────────────────── -->
           <aside class="spur-fakten">
 
+            <!-- Belastbarkeit, Warnungen und Absendeknopf stehen zusammen
+                 oben in der Faktenspalte: „Reicht das schon?" und
+                 „Abschicken" gehören zusammen und bleiben so im Bild. Auf
+                 schmalen Schirmen rutschen Warnungen und Knopf per `order`
+                 ans Ende, weil die Spalten dort untereinander stehen. -->
             <div class="sicherheit-vorschau" id="sicherheitVorschau">
               <div class="sv-kopf">
                 <span class="sv-titel" data-i18n="svTitel">Belastbarkeit der Aufnahme</span>
@@ -223,12 +309,6 @@
               <ul class="sv-liste" id="svListe"></ul>
             </div>
 
-            <!-- Warnungen und Absendeknopf stehen bewusst HIER, direkt unter
-                 der Belastbarkeit: Wie vollständig der Fall ist und der Schritt,
-                 ihn abzuschicken, gehören zusammen. Außerdem hält es den Knopf
-                 oben im Bild — am Seitenende musste man dafür scrollen.
-                 Auf schmalen Schirmen rutscht der Block per `order` wieder ans
-                 Ende, weil die Spalten dort untereinander stehen. -->
             <div class="warnungen" id="warnungen"></div>
 
             <div class="absende-leiste">

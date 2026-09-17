@@ -33,9 +33,10 @@ import {
   STATUS, UEBERGAENGE, validiereNotiz, erzeugeNotiz, wechsleStatus,
   baueJsonText, baueModulText,
 } from './lib/korrekturen.mjs';
+import { ZUGANGSWORT, zugangPruefen, wortPruefen, clientIp } from './lib/zugang.mjs';
+import { darf, audit } from './lib/auth.mjs';
 
 // ─── Konfiguration ──────────────────────────────────────────────────────────
-const ZUGANGSWORT = process.env.THI_ZUGANGSWORT || '';
 // Freigabewort: eigenes Wort, sonst das Zugangswort. Bei einem kleinen Team
 // ist ein drittes Geheimnis nur Bürokratie — die eigentliche Sicherung ist die
 // Vier-Augen-Regel in wechsleStatus (Freigeber ≠ Autor). Fehlen beide Wörter,
@@ -195,10 +196,15 @@ function oeffentlich(k) {
   return rest;
 }
 
-function konfiguration() {
+// Was die Oberfläche wissen muss. Im Login-Modus folgt „darf freigeben" aus
+// der Rolle der Person; im Zugangswort-Modus aus dem Vorhandensein eines
+// Freigabeworts (das dann im Formular abgefragt wird).
+function konfiguration(zugang) {
+  const login = zugang.modus === 'login';
   return {
     schreibenMoeglich: LOKAL || !!GITHUB_TOKEN,
-    freigabeMoeglich: !!FREIGABEWORT,
+    freigabeMoeglich: login ? darf(zugang.nutzer, 'korrektur.freigeben') : !!FREIGABEWORT,
+    zugangsModus: zugang.modus,
     modus: LOKAL ? 'lokal' : (GITHUB_TOKEN ? 'github' : 'nur-lesen'),
     repo: GITHUB_TOKEN ? GITHUB_REPO : null,
     branch: GITHUB_TOKEN ? GITHUB_BRANCH : null,
@@ -207,23 +213,26 @@ function konfiguration() {
 
 // ════════════════════════════════════════════════════════════════════════════
 export default async function handler(anfrage) {
-  const ip = (anfrage.headers.get('x-nf-client-connection-ip')
-    || anfrage.headers.get('x-forwarded-for') || 'unbekannt').split(',')[0].trim();
+  const ip = clientIp(anfrage);
 
-  // Zugangswort wie bei /api/chat — ohne Fehlversuchs-Sperre, weil hier kein
+  // Zugang wie bei /api/chat — ohne Fehlversuchs-Sperre, weil hier kein
   // Modell dranhängt und das Zugangswort ohnehin dort geprüft wird.
-  if (ZUGANGSWORT && (anfrage.headers.get('x-zugangswort') || '') !== ZUGANGSWORT) {
-    return json({ fehler: 'zugang', meldung: 'Zugangswort fehlt oder ist falsch.' }, 401);
+  const zugang = await zugangPruefen(anfrage);
+  if (!zugang.ok) {
+    return json({ fehler: zugang.grund, meldung: zugang.modus === 'login' ? 'Bitte anmelden.' : 'Zugangswort fehlt oder ist falsch.' }, 401);
   }
+  const nutzer = zugang.nutzer;
+  const login = zugang.modus === 'login';
 
   if (anfrage.method === 'GET') {
     try {
       const { liste, quelle } = await listeLesen();
-      return json({ korrekturen: liste.map(oeffentlich), quelle, ...konfiguration() });
+      return json({ korrekturen: liste.map(oeffentlich), quelle, ...konfiguration(zugang) });
     } catch (fehler) {
       console.error('[thi/korrektur] Lesen fehlgeschlagen:', fehler);
       // Rückfall auf das Bündel — die Liste ist dann höchstens einen Deploy alt.
-      return json({ korrekturen: KORREKTUREN.map(oeffentlich), quelle: 'bundle', ...konfiguration(), warnung: String(fehler.message || fehler).slice(0, 200) });
+      // Die Ursache steht im Log, nicht in der Antwort.
+      return json({ korrekturen: KORREKTUREN.map(oeffentlich), quelle: 'bundle', ...konfiguration(zugang), warnung: 'Der aktuelle Bestand konnte nicht gelesen werden — angezeigt wird der Stand des letzten Deploys.' });
     }
   }
 
@@ -234,7 +243,7 @@ export default async function handler(anfrage) {
     return json({
       fehler: 'nicht_konfiguriert',
       meldung: 'Korrekturen können nicht gespeichert werden: THI_GITHUB_TOKEN ist serverseitig nicht hinterlegt.',
-      ...konfiguration(),
+      ...konfiguration(zugang),
     }, 503);
   }
 
@@ -250,20 +259,25 @@ export default async function handler(anfrage) {
   try {
     // ── Anlegen ─────────────────────────────────────────────────────────────
     if (aktion === 'anlegen') {
-      const pruefung = validiereNotiz(körper.notiz, ARTIKEL);
+      if (!darf(nutzer, 'korrektur.einreichen')) return json({ fehler: 'verboten' }, 403);
+      // Im Login-Modus ist der Autor die eingeloggte Person — kein Formularfeld.
+      const roh = login ? { ...(körper.notiz || {}), autor: nutzer.name } : körper.notiz;
+      const pruefung = validiereNotiz(roh, ARTIKEL);
       if (!pruefung.ok) return json({ fehler: 'ungueltig', fehlerliste: pruefung.fehler }, 400);
       const notiz = erzeugeNotiz(pruefung.notiz);
+      if (login) { notiz.autorId = nutzer.id; notiz.autorEmail = nutzer.email; }
       const ergebnis = await aendern(
         (liste) => ({ ok: true, liste: [...liste, notiz] }),
         `Korrektur angelegt: ${notiz.titel} [${notiz.status}] — ${notiz.autor}`,
         notiz.autor,
       );
+      await audit(nutzer, 'korrektur.anlegen', notiz.id, { status: notiz.status, titel: notiz.titel });
       return json({
         ok: true,
         notiz: oeffentlich(notiz),
         wirkt: notiz.status === STATUS.WARTET ? 'nach-freigabe' : (ergebnis.quelle === 'lokal' ? 'sofort-lokal' : 'nach-deploy'),
         commit: ergebnis.commit || null,
-        ...konfiguration(),
+        ...konfiguration(zugang),
       }, 201);
     }
 
@@ -272,27 +286,48 @@ export default async function handler(anfrage) {
       const id = String(körper.id || '').trim();
       if (!id) return json({ fehler: 'ungueltig', fehlerliste: ['id fehlt.'] }, 400);
 
-      if (UEBERGAENGE[aktion].freigabewort) {
-        // Fail-closed: Ohne konfiguriertes Freigabewort gibt es keine Freigabe —
-        // nicht „dann darf jeder", sondern „dann darf niemand".
+      if (login) {
+        // Rechte aus der Rolle. Zurückziehen der EIGENEN Korrektur darf jeder;
+        // fremde nur Wissensmanager und Admin. Freigeben und Im-Wiki: nur die.
+        const recht = aktion === 'freigeben' ? 'korrektur.freigeben'
+          : aktion === 'im-wiki' ? 'korrektur.im-wiki' : 'korrektur.zurueckziehen';
+        if (!darf(nutzer, recht)) {
+          if (aktion !== 'zurueckziehen') return json({ fehler: 'verboten', meldung: 'Freigeben dürfen Wissensmanager und Admins.' }, 403);
+          const { liste } = await listeLesen();
+          const eigene = liste.find((k) => k.id === id);
+          const meine = eigene && (eigene.autorId ? eigene.autorId === nutzer.id : String(eigene.autor || '').toLowerCase() === nutzer.name.toLowerCase());
+          if (!meine) return json({ fehler: 'verboten', meldung: 'Fremde Korrekturen ziehen Wissensmanager und Admins zurück.' }, 403);
+        }
+      } else if (UEBERGAENGE[aktion].freigabewort) {
+        // Übergangsbetrieb: Fail-closed. Ohne konfiguriertes Freigabewort gibt
+        // es keine Freigabe — nicht „dann darf jeder", sondern „dann darf niemand".
         if (!FREIGABEWORT) return json({ fehler: 'freigabe_nicht_konfiguriert', meldung: 'Weder THI_FREIGABEWORT noch THI_ZUGANGSWORT ist serverseitig gesetzt — Freigaben sind deaktiviert.' }, 403);
-        if (String(körper.freigabewort || '') !== FREIGABEWORT) return json({ fehler: 'freigabe', meldung: 'Freigabewort fehlt oder ist falsch.' }, 403);
+        if (!wortPruefen(körper.freigabewort, FREIGABEWORT)) return json({ fehler: 'freigabe', meldung: 'Freigabewort fehlt oder ist falsch.' }, 403);
       }
 
+      const von = login ? nutzer.name : String(körper.von || '').trim();
       let gewechselt = null;
       const ergebnis = await aendern((liste) => {
         const i = liste.findIndex((k) => k.id === id);
         if (i < 0) return { ok: false, fehler: 'unbekannt', meldung: `Korrektur „${id}" nicht gefunden.` };
-        const w = wechsleStatus(liste[i], aktion, { von: körper.von, begruendung: körper.begruendung });
+        // VIER-AUGEN-REGEL, im Login-Modus hart über die Nutzer-ID: Wer die
+        // Korrektur eingereicht hat, gibt sie nicht selbst frei — auch nicht
+        // mit einem anderen Anzeigenamen.
+        if (login && aktion === 'freigeben' && liste[i].autorId && liste[i].autorId === nutzer.id) {
+          return { ok: false, fehler: 'ungueltig', fehlerliste: ['Vier-Augen-Regel: Eine Korrektur gibt nicht frei, wer sie eingereicht hat.'] };
+        }
+        const w = wechsleStatus(liste[i], aktion, { von, begruendung: körper.begruendung });
         if (!w.ok) return { ok: false, fehler: 'ungueltig', fehlerliste: [w.fehler] };
         gewechselt = w.notiz;
+        if (login && aktion === 'freigeben') gewechselt.freigegebenVonId = nutzer.id;
         const neu = liste.slice();
         neu[i] = w.notiz;
         return { ok: true, liste: neu };
-      }, `Korrektur ${aktion}: ${id} — ${String(körper.von || '').trim()}`, String(körper.von || 'Thi').trim());
+      }, `Korrektur ${aktion}: ${id} — ${von}`, von || 'Thi');
 
       if (!ergebnis.ok) return json(ergebnis, ergebnis.fehler === 'unbekannt' ? 404 : 400);
-      return json({ ok: true, notiz: oeffentlich(gewechselt), commit: ergebnis.commit || null, ...konfiguration() });
+      await audit(nutzer, `korrektur.${aktion}`, id, { begruendung: String(körper.begruendung || '').slice(0, 400) });
+      return json({ ok: true, notiz: oeffentlich(gewechselt), commit: ergebnis.commit || null, ...konfiguration(zugang) });
     }
 
     return json({ fehler: 'ungueltig', fehlerliste: [`Unbekannte Aktion „${aktion}".`] }, 400);
@@ -300,8 +335,7 @@ export default async function handler(anfrage) {
     console.error('[thi/korrektur] Schreiben fehlgeschlagen:', fehler);
     return json({
       fehler: 'speichern',
-      meldung: 'Die Korrektur konnte nicht gespeichert werden.',
-      detail: String(fehler.message || fehler).slice(0, 300),
+      meldung: 'Die Korrektur konnte nicht gespeichert werden. Details stehen im Function-Log.',
     }, 502);
   }
 }

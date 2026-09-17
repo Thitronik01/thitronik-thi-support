@@ -199,7 +199,7 @@ if (Array.isArray(ARTIKEL) && Array.isArray(SEKTIONEN)) {
 
 // ─── 3) Functions ───────────────────────────────────────────────────────────
 console.log('\n3) Functions');
-for (const name of ['chat', 'health', 'korrektur']) {
+for (const name of ['chat', 'health', 'korrektur', 'auth']) {
   const rel = `netlify/functions/${name}.mjs`;
   if (!da(rel)) { melde.fehler(`${rel} fehlt.`); continue; }
   try {
@@ -317,6 +317,18 @@ if (verweise.length) {
   melde.ok('Keine Symlinks oder Junctions im Ordner.');
 }
 
+// Entwicklungs-Beiwerk, das beim Drag & Drop mit hochginge: Agenten-Skills,
+// Editor-Konfiguration, Sperrdateien. Ausgeliefert wird davon nichts (nur
+// public/ geht online), aber im Deploy-Paket hat es nichts verloren.
+const BEIWERK = ['.agents', '.claude', 'skills-lock.json', '.vscode', '.idea'];
+const gefundenesBeiwerk = BEIWERK.filter((b) => da(b));
+if (gefundenesBeiwerk.length) {
+  melde.warn(`Entwicklungs-Beiwerk im Ordner: ${gefundenesBeiwerk.join(', ')}`,
+    'Vor einem Drag-&-Drop-Upload entfernen oder verschieben. Bei Git-Deploy greift .gitignore.');
+} else {
+  melde.ok('Kein Entwicklungs-Beiwerk im Ordner.');
+}
+
 const gesamtMB = alleDateien.reduce((s, d) => s + (d.groesse || 0), 0) / 1024 / 1024;
 const jsonMB = alleDateien.filter((d) => /^data\/.*\.json$/.test(d.pfad))
   .reduce((s, d) => s + (d.groesse || 0), 0) / 1024 / 1024;
@@ -338,5 +350,6 @@ console.log(warnungen
 console.log('\nDanach nicht vergessen:');
 console.log('  1. Umgebungsvariablen in Netlify setzen (ANYMIZE_API_URL, ANYMIZE_API_KEY,');
 console.log('     THI_MODEL, THI_ZUGANGSWORT) — sie stehen NICHT im Paket.');
-console.log('  2. /api/health?live=1 aufrufen. Das prüft in einem Schritt, ob die');
-console.log('     Wissensbasis in der Function angekommen ist und das Modell antwortet.\n');
+console.log('  2. /api/health?live=1 mit dem Header x-zugangswort aufrufen (curl, siehe');
+console.log('     README). Das prüft in einem Schritt, ob die Wissensbasis in der');
+console.log('     Function angekommen ist und das Modell antwortet.\n');

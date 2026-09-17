@@ -7,37 +7,39 @@
 // in einer nicht versionierten Umgebungsvariable stand
 // (docs/01_RAG_WISSENSTRANSFER.md §7).
 //
-//   GET /api/health          → Konfiguration + Wissensbasis prüfen
-//   GET /api/health?live=1   → zusätzlich ein ECHTER Mini-Modellaufruf
+//   GET /api/health          → Status; mit Zugangswort: Konfiguration + Wissensbasis
+//   GET /api/health?live=1   → zusätzlich ein ECHTER Mini-Modellaufruf (nur mit Zugangswort)
 //
-// Der Live-Test kostet ein paar Token und ist deshalb nicht der Standard —
-// aber er ist der einzige Check, der ein totes Modell zuverlässig findet.
+// ZWEI SICHTEN. Ohne Zugangswort antwortet der Endpunkt nur mit dem Nötigsten:
+// ob die Seite ein Zugangswort verlangt (das braucht das Frontend beim Start)
+// und ob der Dienst grundsätzlich läuft. Modellname, Umfang der Wissensbasis,
+// Korrekturstand und die Problemliste sind Betriebsinterna — die gehören nicht
+// an jeden, der die Adresse kennt. Mit gültigem Zugangswort (Header
+// `x-zugangswort`) kommt der vollständige Bericht.
+//
+// Ist KEIN Zugangswort konfiguriert, ist die Seite ohnehin offen; dann ist
+// auch der Bericht offen und meldet genau das als Problem.
+//
+// Der Live-Test kostet Token und ist deshalb doppelt gebremst: nur mit
+// Zugangswort, und das Ergebnis wird 60 Sekunden zwischengespeichert.
 // ============================================================================
 
 import ARTIKEL from '../../data/artikel.mjs';
 import SEKTIONEN from '../../data/sektionen.mjs';
 import KORREKTUREN from '../../data/korrekturen.mjs';
 import { ueberfaellige, WIEDERVORLAGE_TAGE } from './lib/korrekturen.mjs';
+import { ZUGANGSWORT, zugangPruefen, zugangsModus } from './lib/zugang.mjs';
+import { supabaseAktiv, rest } from './lib/supabase.mjs';
 
 const API_URL = process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
 const API_KEY = process.env.ANYMIZE_API_KEY || process.env.Anymize_API_KEY || '';
 const MODELL = process.env.THI_MODEL || 'anthropic/claude-sonnet-4.6';
 
 // ─── Kostenbremse für den Live-Test ─────────────────────────────────────────
-// Dieser Endpunkt ist bewusst OHNE Zugangswort erreichbar — er soll auch dann
-// antworten, wenn die Konfiguration kaputt ist, und er wird per URL im Browser
-// aufgerufen, wo sich kein Header setzen lässt. `?live=1` löst aber einen
-// echten Modellaufruf aus: ungebremst könnte jeder, der die Adresse kennt,
-// beliebig oft auf fremde Rechnung Token verbrauchen.
-//
-// Statt den Zugriff zu sperren (und damit den dokumentierten Browser-Aufruf
-// unbrauchbar zu machen), wird das ERGEBNIS zwischengespeichert: Ob das Modell
-// erreichbar ist, ändert sich nicht im Sekundentakt. Tausend Abrufe je Minute
-// kosten damit genau einen Modellaufruf.
-//
-// Wie das Rate-Limit in chat.mjs gilt der Cache PRO Function-Instanz. Das
-// genügt hier: Er soll Dauerfeuer bremsen, nicht exakt zählen. Im dev-server
-// greift er nicht, weil der die Module bei jeder Anfrage neu lädt.
+// Ob das Modell erreichbar ist, ändert sich nicht im Sekundentakt. Das
+// Ergebnis wird deshalb zwischengespeichert — pro Function-Instanz, wie das
+// Rate-Limit in chat.mjs. Im dev-server greift der Cache nicht, weil der die
+// Module bei jeder Anfrage neu lädt.
 const LIVE_CACHE_MS = 60 * 1000;
 let letzterLiveTest = null; // { zeit, ergebnis, probleme }
 
@@ -76,11 +78,50 @@ function korrekturenStand() {
   };
 }
 
+function antwort(bericht) {
+  return new Response(JSON.stringify(bericht, null, 2), {
+    status: bericht.status === 'fehler' ? 503 : 200,
+    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
+  });
+}
+
 export default async function handler(anfrage) {
   const url = new URL(anfrage.url);
-  const live = url.searchParams.get('live') === '1';
+  const modus = zugangsModus();
+  const zugang = await zugangPruefen(anfrage);
+  const berechtigt = zugang.ok;
+  const live = url.searchParams.get('live') === '1' && berechtigt;
 
   const basis = findeBasis();
+
+  // ── Öffentliche Sicht ────────────────────────────────────────────────────
+  // Nur, was das Frontend zum Start braucht und was ein Monitoring-Ping
+  // wissen darf: läuft es, und welcher Zugangsmodus gilt.
+  if (!berechtigt) {
+    const grundsaetzlichOk = basis.gefunden && !!API_URL && !!API_KEY;
+    return antwort({
+      status: grundsaetzlichOk ? 'ok' : 'fehler',
+      zeit: new Date().toISOString(),
+      konfiguration: { zugangsModus: modus, zugangswortAktiv: modus === 'zugangswort' },
+      hinweis: modus === 'login'
+        ? 'Vollständiger Bericht und Live-Test nur eingeloggt (Header Authorization: Bearer …).'
+        : 'Vollständiger Bericht und Live-Test nur mit Zugangswort (Header x-zugangswort).',
+    });
+  }
+
+  // ── Vollständiger Bericht ────────────────────────────────────────────────
+  let datenbank = null;
+  if (supabaseAktiv()) {
+    try {
+      const profile = await rest('/profile?select=rolle,aktiv');
+      const proRolle = {};
+      for (const p of profile) proRolle[p.rolle] = (proRolle[p.rolle] || 0) + 1;
+      datenbank = { erreichbar: true, nutzer: profile.length, aktiv: profile.filter((p) => p.aktiv).length, proRolle };
+    } catch (fehler) {
+      datenbank = { erreichbar: false, fehler: String(fehler.message || fehler).slice(0, 160) };
+    }
+  }
+
   const bericht = {
     status: 'ok',
     zeit: new Date().toISOString(),
@@ -88,8 +129,10 @@ export default async function handler(anfrage) {
       apiUrlGesetzt: !!API_URL,
       apiKeyGesetzt: !!API_KEY,
       modell: MODELL,
-      zugangswortAktiv: !!process.env.THI_ZUGANGSWORT,
+      zugangsModus: modus,
+      zugangswortAktiv: modus === 'zugangswort',
     },
+    datenbank,
     wissensbasis: basis,
     korrekturen: korrekturenStand(),
     modellPruefung: live ? null : 'übersprungen (mit ?live=1 erzwingen)',
@@ -105,10 +148,15 @@ export default async function handler(anfrage) {
   if (!basis.gefunden) probleme.push('Wissensbasis nicht ladbar (data/artikel.mjs).');
   if (!API_URL) probleme.push('ANYMIZE_API_URL ist nicht gesetzt.');
   if (!API_KEY) probleme.push('ANYMIZE_API_KEY ist nicht gesetzt.');
-  if (!process.env.THI_ZUGANGSWORT) {
-    probleme.push('THI_ZUGANGSWORT ist NICHT gesetzt — die Seite ist öffentlich nutzbar '
-      + 'und der API-Schlüssel damit auf fremde Kosten verwendbar.');
+  if (modus === 'offen') {
+    probleme.push('Weder Login (THI_SUPABASE_URL) noch THI_ZUGANGSWORT ist gesetzt — die Seite ist '
+      + 'öffentlich nutzbar und der API-Schlüssel damit auf fremde Kosten verwendbar.');
   }
+  if (modus === 'zugangswort') {
+    probleme.push('Übergangsbetrieb mit gemeinsamem Zugangswort — Login mit Rollen ist nicht aktiv.');
+  }
+  if (datenbank && !datenbank.erreichbar) probleme.push(`Datenbank nicht erreichbar: ${datenbank.fehler}`);
+  if (datenbank && datenbank.erreichbar && !datenbank.proRolle.admin) probleme.push('Kein Admin-Profil vorhanden — THI_ERSTADMIN einladen.');
 
   if (live && API_URL && API_KEY && letzterLiveTest && Date.now() - letzterLiveTest.zeit < LIVE_CACHE_MS) {
     // Frisches Ergebnis vorhanden — wiederverwenden statt erneut zu bezahlen.
@@ -171,8 +219,5 @@ export default async function handler(anfrage) {
     bericht.probleme = probleme;
   }
 
-  return new Response(JSON.stringify(bericht, null, 2), {
-    status: bericht.status === 'fehler' ? 503 : 200,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
-  });
+  return antwort(bericht);
 }
