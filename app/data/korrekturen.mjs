@@ -181,5 +181,37 @@ export default [
         "begruendung": "Normale Swisscom Swisscom-Prepaid Orange funktionieren wieder"
       }
     ]
+  },
+  {
+    "id": "2026-09-17-provider-swisscom-ist-nicht-mehr-gut-6f7c",
+    "status": "ungeprueft",
+    "sicherheitsrelevant": false,
+    "sicherheitsgrund": null,
+    "lang": "de",
+    "bezug": {
+      "route": "/anleitungen?open=faq-fragen-zu-pro-finder",
+      "anchor": ""
+    },
+    "titel": "Provider Swisscom ist nicht mehr gut",
+    "text": "Der Provider Swisscom hat sein 2G-Netz abgeschaltet.",
+    "widerspricht": "Provider Swisscom funktioniert und hat ein 2g netz",
+    "autor": "Admin",
+    "erstellt": "2026-09-17T11:42:14.498Z",
+    "freigegebenVon": null,
+    "freigegebenAm": null,
+    "ausloeser": {
+      "frage": "Welche Provider empfelen wir für die schweiz?",
+      "antwortAuszug": "## Empfohlene Provider für Schweiz\n\nHier gibt es zwei sich widersprechende Quellen, die ich dir beide transparent nennen muss:\n\n---\n\n### ⚠️ Widerspruch zwischen Wiki und zwei Support-Korrekturen\n\n**Wiki-Stand (Kontext [2]):**\nFür Schweiz gilt:\n- ❌ **Nicht funktionieren:** normale Swisscom, Swisscom-Prepaid, M-Budget, Orange\n- ✅ **Sicher funktionieren:** Salt PrePay, Sunrise Prepaid Airbag, Sunrise Prepaid Unlimited\n\n---\n\n**Support-Korrektur vom 17.09.2026 (Kontext [1], freigegeben von Max):**\nNormale Swisscom, Swisscom-Prepaid und Orange **funktionieren wieder**.\n\n**Support-Korrektur vom 16.09.2026 (Kontext [9], freigegeben von Dennis):**\nSunrise Prepaid Airbag und Sunrise Prepaid Unlimited **können nicht mehr empfohlen werden** — beide haben aufgrund der Abschaltung des 2G-Netzes keine Ve"
+    },
+    "historie": [
+      {
+        "status": "ungeprueft",
+        "von": "Admin",
+        "am": "2026-09-17T11:42:14.498Z",
+        "begruendung": ""
+      }
+    ],
+    "autorId": "4b5bb427-5de5-4b6f-a95b-f6018d0ac88a",
+    "autorEmail": "m.behrens@thitronik.de"
   }
 ];
