@@ -48,10 +48,20 @@
     # Keine externen Hosts mehr: Schrift liegt lokal.
     Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 
-# Kataloge und Indexdaten dürfen aggressiv gecacht werden (ändern sich nur
-# beim Deploy), das HTML nicht.
+# ─── Caching ───────────────────────────────────────────────────────────────
+# Skripte und Stile heißen immer gleich (app.js, styles.css) — ein
+# „immutable"-Cache hielt sie deshalb ein Jahr lang fest, und nach jedem
+# Deploy sahen die Mitarbeiter die alte Fassung, bis sie den Cache leerten.
+# Jetzt fragt der Browser bei jedem Laden kurz nach (ETag); Netlify antwortet
+# mit 304 in Millisekunden, wenn nichts neu ist. Nur die Schriftdateien
+# bleiben dauerhaft gecacht, die ändern sich nie.
 [[headers]]
-  for = "/assets/*"
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -59,11 +69,6 @@
   for = "/manifest.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json; charset=utf-8"
-
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
 
 # ─── Routen ────────────────────────────────────────────────────────────────
 [[redirects]]
