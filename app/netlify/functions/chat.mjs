@@ -206,29 +206,46 @@ function baueFallblock(fall, sn, sprache) {
 // ─── Modellaufruf (gestreamt) ───────────────────────────────────────────────
 // `bewerten` erhält die Selbsteinschätzung des Modells und liefert das fertige
 // Sicherheitsobjekt — es kann erst am Ende des Streams gesendet werden.
-async function frageModell(nachrichten, quellen, hinweise, bewerten) {
-  const antwort = await fetch(API_URL, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({ model: MODELL, max_tokens: 4096, stream: true, messages: nachrichten }),
-  });
+//
+// Leere und abgeschnittene Antworten (FR-Eval 22.09.2026): Bei 7 von 41
+// Gold-Fragen kam vom Anbieter ein Strom OHNE Text an — einmal nach 32 Zeichen
+// abgebrochen, sonst gar nichts. Die frühere Fassung las nur `delta.content`,
+// übersah Fehlerobjekte im Strom und schickte am Ende trotzdem „Sicherheit
+// 53 %" plus „Ende" — eine leere Antwort mit Prozentwert. Deshalb jetzt:
+//   1. Alles, was kein Textstück ist, wird gemerkt und landet im Function-Log.
+//   2. Kam kein Text (oder brach der Strom ab, bevor etwas gesendet wurde),
+//      folgt EIN zweiter Versuch ohne Streaming.
+//   3. Bleibt es leer, geht ein `fehler`-Ereignis raus statt einer leeren
+//      Antwort — der Nutzer sieht den Fehler, der Eval zählt ihn als solchen.
+function inhaltAus(objekt) {
+  const wahl = objekt?.choices?.[0];
+  const inhalt = wahl?.delta?.content ?? wahl?.delta?.text ?? wahl?.message?.content ?? wahl?.text;
+  return typeof inhalt === 'string' ? inhalt : '';
+}
 
-  if (!antwort.ok) {
-    const detail = await antwort.text().catch(() => '');
-    // Die häufigste Betriebsstörung des Vorgängers: abgekündigtes Modell → 404.
-    const tipp = antwort.status === 404
-      ? ` Das konfigurierte Modell „${MODELL}" ist beim Anbieter nicht (mehr) verfügbar — THI_MODEL prüfen.`
-      : '';
-    throw new Error(`Anymize ${antwort.status}:${tipp} ${detail.slice(0, 200)}`);
-  }
+async function frageModell(nachrichten, quellen, hinweise, bewerten, sprache = 'de') {
+  const rufe = async (stream) => {
+    const antwort = await fetch(API_URL, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${API_KEY}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ model: MODELL, max_tokens: 4096, stream, messages: nachrichten }),
+    });
+    if (!antwort.ok) {
+      const detail = await antwort.text().catch(() => '');
+      // Die häufigste Betriebsstörung des Vorgängers: abgekündigtes Modell → 404.
+      const tipp = antwort.status === 404
+        ? ` Das konfigurierte Modell „${MODELL}" ist beim Anbieter nicht (mehr) verfügbar — THI_MODEL prüfen.`
+        : '';
+      throw new Error(`Anymize ${antwort.status}:${tipp} ${detail.slice(0, 200)}`);
+    }
+    return antwort;
+  };
+  const antwort = await rufe(true);
 
   const kodierer = new TextEncoder();
   return new Response(new ReadableStream({
     async start(steuerung) {
       steuerung.enqueue(kodierer.encode(JSON.stringify({ typ: 'meta', quellen, hinweise }) + '\n'));
-      const leser = antwort.body.getReader();
-      const dekodierer = new TextDecoder();
-      let puffer = '';
       // Das Antwortende trägt den Marker [[SICHERHEIT: …]]. Damit er nie im
       // sichtbaren Text aufblitzt, wird ein Stück Text zurückgehalten, das
       // groß genug für einen vollständigen Marker ist, und erst am Schluss
@@ -236,34 +253,83 @@ async function frageModell(nachrichten, quellen, hinweise, bewerten) {
       const RUECKHALT = 64;
       let schwanz = '';
       let gesamt = '';
+      let gesendet = false;
+      const diagnose = { stuecke: 0, abschluss: false, auffaellig: [] };
 
-      const sende = (t) => steuerung.enqueue(kodierer.encode(JSON.stringify({ typ: 'text', text: t }) + '\n'));
+      const sende = (t) => {
+        gesendet = true;
+        steuerung.enqueue(kodierer.encode(JSON.stringify({ typ: 'text', text: t }) + '\n'));
+      };
+      const merke = (was) => { if (diagnose.auffaellig.length < 5) diagnose.auffaellig.push(String(was).slice(0, 300)); };
+      const uebernimm = (stueck) => {
+        diagnose.stuecke += 1;
+        gesamt += stueck;
+        schwanz += stueck;
+        if (schwanz.length > RUECKHALT) {
+          const raus = schwanz.slice(0, schwanz.length - RUECKHALT);
+          schwanz = schwanz.slice(schwanz.length - RUECKHALT);
+          if (raus) sende(raus);
+        }
+      };
+      const zeileVerarbeiten = (zeile) => {
+        const z = zeile.trim();
+        if (!z || z.startsWith(':')) return;                       // leer / SSE-Keep-alive
+        if (z.startsWith('event:')) { if (!/^event:\s*(message)?$/i.test(z)) merke(z); return; }
+        if (!z.startsWith('data:')) { merke(z); return; }
+        const nutzlast = z.slice(5).trim();
+        if (!nutzlast) return;
+        if (nutzlast === '[DONE]') { diagnose.abschluss = true; return; }
+        let objekt;
+        try { objekt = JSON.parse(nutzlast); } catch { merke(nutzlast); return; }
+        if (objekt?.error) { merke(nutzlast); return; }
+        if (objekt?.choices?.[0]?.finish_reason) diagnose.abschluss = true;
+        const stueck = inhaltAus(objekt);
+        if (stueck) uebernimm(stueck);
+        else if (!Array.isArray(objekt?.choices)) merke(nutzlast);
+      };
 
       try {
+        const leser = antwort.body.getReader();
+        const dekodierer = new TextDecoder();
+        let puffer = '';
         for (;;) {
           const { done, value } = await leser.read();
           if (done) break;
           puffer += dekodierer.decode(value, { stream: true });
           const zeilen = puffer.split('\n');
           puffer = zeilen.pop() || '';
-          for (const zeile of zeilen) {
-            const z = zeile.trim();
-            if (!z.startsWith('data:')) continue;
-            const nutzlast = z.slice(5).trim();
-            if (!nutzlast || nutzlast === '[DONE]') continue;
-            try {
-              const stueck = JSON.parse(nutzlast)?.choices?.[0]?.delta?.content;
-              if (!stueck) continue;
-              gesamt += stueck;
-              schwanz += stueck;
-              if (schwanz.length > RUECKHALT) {
-                const raus = schwanz.slice(0, schwanz.length - RUECKHALT);
-                schwanz = schwanz.slice(schwanz.length - RUECKHALT);
-                if (raus) sende(raus);
-              }
-            } catch { /* unvollständiges JSON — ignorieren */ }
-          }
+          for (const zeile of zeilen) zeileVerarbeiten(zeile);
         }
+        zeileVerarbeiten(puffer);
+
+        // Nichts Brauchbares — oder Abbruch, bevor der erste Text raus war:
+        // einmal ohne Streaming nachfragen. Nach dem ersten gesendeten Stück
+        // ist das nicht mehr möglich, sonst käme die Antwort doppelt an.
+        const leer = !gesamt.trim();
+        if (!gesendet && (leer || !diagnose.abschluss)) {
+          console.error(`[thi] Modellstrom ${leer ? 'ohne Inhalt' : 'ohne Abschluss'}`
+            + ` (${diagnose.stuecke} Stücke, ${gesamt.length} Zeichen, Modell ${MODELL})`
+            + (diagnose.auffaellig.length ? ` — auffällige Zeilen: ${JSON.stringify(diagnose.auffaellig)}` : '')
+            + ' → zweiter Versuch ohne Streaming.');
+          const zweite = await rufe(false);
+          const daten = await zweite.json().catch(() => null);
+          const text = inhaltAus(daten);
+          if (text) { gesamt = text; schwanz = text; diagnose.abschluss = true; }
+          else merke(JSON.stringify(daten));
+        }
+        if (!gesamt.trim()) {
+          console.error('[thi] Auch der zweite Versuch lieferte keinen Text:', JSON.stringify(diagnose));
+          throw new Error(sprache === 'fr'
+            ? `Le modèle n'a pas fourni de réponse. Réessaie ; si le problème persiste, contacte le support THITRONIK : ${SUPPORT_TELEFON}`
+            : `Das Modell hat keine Antwort geliefert. Bitte erneut versuchen; bleibt es dabei, an den THITRONIK-Support wenden: ${SUPPORT_TELEFON}`);
+        }
+        if (!diagnose.abschluss) {
+          // Ein Strom ohne [DONE]/finish_reason ist verdächtig — möglicherweise
+          // abgeschnitten. Nur loggen: Was schon gesendet ist, bleibt.
+          console.warn(`[thi] Modellstrom endete ohne Abschlusssignal nach ${gesamt.length} Zeichen`
+            + (diagnose.auffaellig.length ? ` — auffällige Zeilen: ${JSON.stringify(diagnose.auffaellig)}` : ''));
+        }
+
         // Rest ausgeben, Marker entfernen.
         const { stufe, text } = leseModellStufe(schwanz);
         if (text) sende(text);
@@ -565,7 +631,7 @@ export default async function handler(anfrage) {
   };
 
   try {
-    return await frageModell(nachrichten, quellen, hinweise, bewerten);
+    return await frageModell(nachrichten, quellen, hinweise, bewerten, sprache);
   } catch (fehler) {
     // Die technische Ursache (Anbieter-Antwort, URL-Fragmente) bleibt im
     // Function-Log. An den Browser geht nur die Meldung — was dort ankommt,

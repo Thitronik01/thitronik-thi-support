@@ -17,3 +17,6 @@ npm-debug.log*
 # Editor / System
 .DS_Store
 Thumbs.db
+
+# Eval-Laeufe (Ergebnisdateien mit Antworten, lokal)
+werkzeuge/laeufe/

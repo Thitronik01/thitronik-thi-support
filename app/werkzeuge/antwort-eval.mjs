@@ -16,6 +16,23 @@
 //   node werkzeuge/antwort-eval.mjs                    # Substring-Modus
 //   node werkzeuge/antwort-eval.mjs --judge            # empfohlen: LLM-Judge
 //   node werkzeuge/antwort-eval.mjs --judge --min 90   # als Gate (Exit 1)
+//   node werkzeuge/antwort-eval.mjs --sprache fr --judge
+//
+// Weitere Schalter:
+//   --ids a,b,c             nur diese Gold-IDs (Nachlauf einzelner Fälle)
+//   --limit n               nur die ersten n Fälle
+//   --ergebnis <datei>      jeden Fall sofort in diese JSON-Datei schreiben
+//   --fortsetzen            mit --ergebnis: gespeicherte Fälle überspringen
+//   --nur-judge             mit --ergebnis --judge: gespeicherte Antworten neu
+//                           bewerten, ohne den Server zu fragen (billig —
+//                           nach einer Änderung am Judge-Prompt)
+//   --gold <datei>          anderes Gold-Set
+//   --verbose               alle Fehlschläge im Detail (statt der ersten 20)
+//
+// Ein Lauf mit 41 Fällen dauert 20 Minuten und kostet echte Modellaufrufe.
+// Bricht er ab (Sitzung geschlossen, Server weg), war bisher alles verloren.
+// Mit --ergebnis liegt jeder fertige Fall sofort auf der Platte, und
+// --fortsetzen macht dort weiter, wo es aufhörte — Bericht über alles.
 //
 // ⚠️ ZUR AUSSAGEKRAFT: Zwei Läufe über dasselbe Gold-Set liefern NICHT dieselbe
 // Quote. Der Chat-Endpunkt legt keine feste Temperatur fest — die App
@@ -35,7 +52,7 @@
 // Ohne --min ist es ein Bericht (Exit 0); mit Schwelle ein Gate (Exit 1).
 // ============================================================================
 
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import ARTIKEL from '../data/artikel.mjs';
@@ -53,13 +70,20 @@ const JUDGE = hat('--judge');
 const MIN = zahl('--min');
 const LIMIT = zahl('--limit');
 const SPRACHE = wert('--sprache', 'de') === 'fr' ? 'fr' : 'de';
+const IDS = wert('--ids') ? new Set(String(wert('--ids')).split(',').map((s) => s.trim()).filter(Boolean)) : null;
+const ERGEBNIS = wert('--ergebnis') ? path.resolve(process.cwd(), wert('--ergebnis')) : null;
+const NUR_JUDGE = hat('--nur-judge');
+const FORTSETZEN = hat('--fortsetzen') || NUR_JUDGE;
 
 // ─── Umgebung ───────────────────────────────────────────────────────────────
 // Dieselbe schlichte .env-Lesung wie im dev-server: kein `npm install` nötig,
-// damit der Eval auch in einer frischen Arbeitskopie sofort läuft.
+// damit der Eval auch in einer frischen Arbeitskopie sofort läuft. Liegt in
+// app/ keine .env, gilt die des Projektordners (THI/.env) — dort liegt sie
+// auf dem Entwicklungsrechner.
 function envLaden() {
-  const datei = path.join(WURZEL, '.env');
-  if (!existsSync(datei)) return;
+  const kandidaten = [path.join(WURZEL, '.env'), path.join(WURZEL, '..', '..', '.env')];
+  const datei = kandidaten.find((k) => existsSync(k));
+  if (!datei) return;
   for (const zeile of readFileSync(datei, 'utf8').split('\n')) {
     const t = zeile.trim();
     if (!t || t.startsWith('#')) continue;
@@ -90,7 +114,59 @@ if (!existsSync(goldDatei)) {
   process.exit(1);
 }
 let faelle = JSON.parse(readFileSync(goldDatei, 'utf8')).cases || [];
+if (IDS) {
+  const vorhanden = new Set(faelle.map((c) => c.id));
+  const fremd = [...IDS].filter((id) => !vorhanden.has(id));
+  if (fremd.length) console.error(`⚠  ${fremd.length} ID(s) nicht im Gold-Set: ${fremd.join(', ')}`);
+  faelle = faelle.filter((c) => IDS.has(c.id));
+}
 if (LIMIT) faelle = faelle.slice(0, LIMIT);
+if (!faelle.length) { console.error('Keine Fälle ausgewählt.'); process.exit(1); }
+
+// ─── Ergebnisdatei: Fortsetzen nach Abbruch ─────────────────────────────────
+// Jeder fertig gemessene Fall wird SOFORT geschrieben. Ein Abbruch kostet damit
+// höchstens den laufenden Fall, nicht den ganzen Lauf. Die Datei trägt Sprache
+// und Modus, damit kein Substring-Lauf still in einen Judge-Lauf hineinläuft.
+const MODUS = JUDGE ? 'judge' : 'substring';
+let gespeichert = { faelle: {} };
+if (FORTSETZEN && !ERGEBNIS) {
+  console.error(`${NUR_JUDGE ? '--nur-judge' : '--fortsetzen'} braucht --ergebnis <datei>.`);
+  process.exit(1);
+}
+if (NUR_JUDGE && (!JUDGE || !existsSync(ERGEBNIS))) {
+  console.error('--nur-judge braucht --judge und eine vorhandene Ergebnisdatei.');
+  process.exit(1);
+}
+if (ERGEBNIS && existsSync(ERGEBNIS)) {
+  if (!FORTSETZEN) {
+    console.error(`Ergebnisdatei existiert schon: ${ERGEBNIS}`);
+    console.error('Mit --fortsetzen weitermachen oder eine andere Datei angeben.');
+    process.exit(1);
+  }
+  try { gespeichert = JSON.parse(readFileSync(ERGEBNIS, 'utf8')); } catch { gespeichert = { faelle: {} }; }
+  gespeichert.faelle = gespeichert.faelle || {};
+  if (gespeichert.sprache && gespeichert.sprache !== SPRACHE) {
+    console.error(`Ergebnisdatei ist ${gespeichert.sprache.toUpperCase()}, dieser Lauf ${SPRACHE.toUpperCase()} — passt nicht.`);
+    process.exit(1);
+  }
+  if (gespeichert.modus && gespeichert.modus !== MODUS) {
+    console.error(`Ergebnisdatei ist im Modus „${gespeichert.modus}", dieser Lauf „${MODUS}" — passt nicht.`);
+    process.exit(1);
+  }
+}
+// Nachbewertung: nur Fälle, deren Antwort schon vorliegt.
+if (NUR_JUDGE) faelle = faelle.filter((c) => gespeichert.faelle[c.id]);
+if (!faelle.length) { console.error('Keine Fälle ausgewählt.'); process.exit(1); }
+function ergebnisSchreiben() {
+  if (!ERGEBNIS) return;
+  mkdirSync(path.dirname(ERGEBNIS), { recursive: true });
+  writeFileSync(ERGEBNIS, JSON.stringify({
+    sprache: SPRACHE, modus: MODUS, endpunkt: ENDPUNKT, gold: goldDatei,
+    begonnen: gespeichert.begonnen || new Date().toISOString(),
+    aktualisiert: new Date().toISOString(),
+    faelle: gespeichert.faelle,
+  }, null, 2));
+}
 
 // ─── Gold-Pflege: Routen-Drift melden ───────────────────────────────────────
 // Ein Gold-Set veraltet leiser als Code: Die Routen der Wissensbasis ändern
@@ -120,8 +196,15 @@ for (const c of faelle) {
 // Bewegungsmelder" sind dieselbe Aussage, eine davon fällt durch. Der Judge
 // bewertet die Tatsache, nicht die Formulierung. Er nutzt dasselbe Backend wie
 // Thi — bewusst, damit kein zweiter Anbieter konfiguriert werden muss.
-const JUDGE_URL = process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
-const JUDGE_KEY = process.env.ANYMIZE_API_KEY || process.env.Anymize_API_KEY || '';
+// THI_JUDGE_URL: eigener Endpunkt für den Judge. Grund (22.09.2026): Der
+// Standard-Endpunkt `…/llm-anonymous/…` ersetzt Seriennummern wie 0699-045
+// durch Platzhalter, BEVOR das Modell sie sieht — Frage, Beleg und Antwort
+// bekommen dabei verschiedene Platzhalter, und der Judge urteilte „Nano-SIM ab
+// internal_id-PVPMJN, nicht ab internal_id-6Y0WVU" über eine richtige Antwort.
+// Gibt es einen Endpunkt ohne Anonymisierung, gehört er hierhin; die
+// Gold-Belege enthalten keine Personendaten.
+const JUDGE_URL = process.env.THI_JUDGE_URL || process.env.ANYMIZE_API_URL || process.env.Anymize_API_URL || '';
+const JUDGE_KEY = process.env.THI_JUDGE_KEY || process.env.ANYMIZE_API_KEY || process.env.Anymize_API_KEY || '';
 const JUDGE_MODELL = process.env.THI_JUDGE_MODEL || 'anthropic/claude-sonnet-4.6';
 if (JUDGE && (!JUDGE_URL || !JUDGE_KEY)) {
   console.error('--judge benötigt ANYMIZE_API_URL und ANYMIZE_API_KEY (.env).');
@@ -133,6 +216,11 @@ const JUDGE_SYSTEM = 'Du bist ein strenger, fairer Prüfer für die FAKTISCHE Ko
   // weiter auf Deutsch (gleiches Ausgabeformat), soll aber wissen, dass die
   // Sprache kein Fehler ist — und deutsche Antworten auf französische Fragen
   // als Fehlschlag werten: Für den FR-Support ist eine deutsche Antwort keine.
+  // Die „DARF NICHT"-Liste nennt falsche AUSSAGEN, keine verbotenen Wörter.
+  // Ohne diesen Satz las der Judge sie wörtlich: „aucun accessoire n'est
+  // mémorisé en usine" wurde als „behauptet 'mémorisés en usine'" verworfen —
+  // drei korrekte FR-Antworten fielen so durch (Nachlauf 22.09.2026).
+  + ' Die Liste "DARF NICHT behaupten" nennt FALSCHE Aussagen. Sie ist nur verletzt, wenn die Antwort eine davon BEJAHT. Verneint oder widerlegt die Antwort eine dieser Aussagen, ist das korrekt — das bloße Vorkommen der Wörter zählt nicht.'
   + (SPRACHE === 'fr'
     ? ' HINWEIS: Frage, Beleg und Antwort sind FRANZÖSISCH. Das ist erwartet. Ist die Antwort dagegen überwiegend DEUTSCH, urteile "falsch" mit Grund "Antwort nicht auf Französisch".'
     : '');
@@ -142,7 +230,7 @@ async function judgeEinmal(c, antwort) {
     `FRAGE:\n${c.question}\n\n`
     + `WIKI-BELEG (Grundwahrheit):\n${c.beleg}\n\n`
     + `KERNAUSSAGE, die stimmen muss: ${(c.antwort_muss || []).join('; ')}\n`
-    + `DARF NICHT behaupten: ${(c.antwort_darf_nicht || []).join('; ')}\n\n`
+    + `DARF NICHT behaupten (falsche Aussagen — ihre Verneinung ist richtig): ${(c.antwort_darf_nicht || []).join('; ')}\n\n`
     + `ANTWORT DES ASSISTENTEN:\n${antwort}`;
   const res = await fetch(JUDGE_URL, {
     method: 'POST',
@@ -246,52 +334,38 @@ async function frageThi(frage) {
   return ergebnis;
 }
 
-// ─── Lauf ───────────────────────────────────────────────────────────────────
-console.log(`\nAntwort-Eval — ${faelle.length} Fälle (${SPRACHE.toUpperCase()}) gegen ${ENDPUNKT}`);
-console.log(`Modus: ${JUDGE ? `LLM-Judge (${JUDGE_MODELL})` : 'Substring'}`);
-if (drift.length) {
-  console.log(`\n⚠  ${drift.length} Gold-Route(n) veraltet — Slug existiert, Pfad nicht mehr:`);
-  for (const d of drift) console.log(`   ${d}`);
-  console.log('   Gewertet wird über den Slug; die Gold-Datei sollte nachgezogen werden.');
-}
-if (unbekannt.length) {
-  console.log(`\n⚠  ${unbekannt.length} Gold-Route(n) ohne Entsprechung in der Wissensbasis:`);
-  for (const u of unbekannt) console.log(`   ${u}`);
-}
-console.log('');
-
-let bestanden = 0;
-const fehlschlaege = [];
-const nachKategorie = new Map();
-const kalibrierung = { korrekt: [], falsch: [], hochUndFalsch: [], geringUndKorrekt: 0 };
-let quellenTreffer = 0;
-let quellenGeprueft = 0;
-const gateFehlalarm = [];
-const unbewertet = [];
-let rueckfallDe = 0;
-const begonnen = Date.now();
-
-for (const [i, c] of faelle.entries()) {
+// ─── Einen Fall messen ──────────────────────────────────────────────────────
+// Liefert einen abgeschlossenen Datensatz je Fall — derselbe, der in die
+// Ergebnisdatei geht. Die Verbuchung (Zähler, Bericht) passiert getrennt, damit
+// gespeicherte Fälle beim Fortsetzen genauso verbucht werden wie frische.
+async function fallMessen(c) {
+  const start = Date.now();
   let antwort = null;
   let anfrageFehler = null;
   try {
     antwort = await frageThi(c.question);
   } catch (e) {
-    if (e instanceof ZugangFehlt) {
-      console.error(`\nAbbruch: ${e.message}`);
-      console.error('THI_ZUGANGSWORT in .env muss zu dem passen, mit dem der Server läuft.');
-      process.exit(1);
-    }
-    if (e instanceof LimitErreicht) {
-      console.error(`\nAbbruch nach ${i} Fällen: ${e.message}`);
-      console.error('Der Eval stellt mehr Anfragen, als das Rate-Limit erlaubt. Server neu starten mit:');
-      console.error('  THI_RATE_LIMIT=999 THI_DAILY_LIMIT=9999 node dev-server.mjs');
-      process.exit(1);
-    }
+    if (e instanceof ZugangFehlt || e instanceof LimitErreicht) throw e;
     anfrageFehler = e.message;
   }
 
+  // Das Sicherheits-Gate bricht VOR dem Retrieval ab — es gibt dann keine
+  // Quellen, und die Frage nach dem Quellenbeleg ist sinnlos. Solche Fälle
+  // dürfen die Retrieval-Quote nicht verwässern; sie sind ein eigener Befund.
+  // Bei einer Gold-Frage darf das Gate gar nicht greifen: Gold-Fragen sind
+  // Sachfragen. Löst es hier aus, ist das ein Fehlalarm — und der ist keine
+  // Kleinigkeit, sondern die dokumentierte Ausfallart des Gates: Ein Gate, das
+  // bei normalen Gaswarner-Fragen eskaliert, wird umgangen und schützt dann
+  // niemanden mehr (../../docs/05_EVAL_UND_QUALITAET.md §8).
+  const gate = Boolean(antwort?.hinweise?.some((h) => h.art === 'gefahr'));
+
+  // Eine LEERE Antwort ist kein Grounding-Befund, sondern ein technischer:
+  // Der Server hat keinen Text geliefert (FR-Lauf 22.09.2026: 7 von 41). Sie
+  // wird als Fehler gezählt, nicht dem Judge vorgelegt — der urteilt über
+  // Leere mal „falsch", mal „unklar" und verbrennt dabei einen Aufruf.
   const text = antwort?.text || '';
+  if (antwort && !gate && !text) anfrageFehler = 'Leere Antwort — der Server lieferte keinen Text';
+
   const klein = text.toLowerCase();
   const fehlt = anfrageFehler ? [] : (c.antwort_muss || []).filter((s) => !klein.includes(String(s).toLowerCase()));
   const verboten = anfrageFehler ? [] : (c.antwort_darf_nicht || []).filter((s) => klein.includes(String(s).toLowerCase()));
@@ -307,39 +381,81 @@ for (const [i, c] of faelle.entries()) {
     ok = fehlt.length === 0 && verboten.length === 0;
   }
 
-  // Ein Fall ohne Urteil sagt nichts über die ANTWORTQUALITÄT aus und wird aus
-  // dieser Wertung genommen, statt die Quote nach unten zu ziehen. Gate und
-  // Quellenbeleg werden trotzdem gezählt: Die stehen fest, ganz gleich, ob der
-  // Judge ein Urteil zustande gebracht hat.
-  const ohneUrteil = urteil?.urteil === 'unbewertet';
-  if (ohneUrteil) unbewertet.push({ id: c.id, grund: urteil.grund });
-
-  // Das Sicherheits-Gate bricht VOR dem Retrieval ab — es gibt dann keine
-  // Quellen, und die Frage nach dem Quellenbeleg ist sinnlos. Solche Fälle
-  // dürfen die Retrieval-Quote nicht verwässern; sie sind ein eigener Befund.
-  // Bei einer Gold-Frage darf das Gate gar nicht greifen: Gold-Fragen sind
-  // Sachfragen. Löst es hier aus, ist das ein Fehlalarm — und der ist keine
-  // Kleinigkeit, sondern die dokumentierte Ausfallart des Gates: Ein Gate, das
-  // bei normalen Gaswarner-Fragen eskaliert, wird umgangen und schützt dann
-  // niemanden mehr (../../docs/05_EVAL_UND_QUALITAET.md §8).
-  const gate = Boolean(antwort?.hinweise?.some((h) => h.art === 'gefahr'));
-  if (gate) gateFehlalarm.push({ id: c.id, frage: c.question });
-
   // Lag die erwartete Quelle überhaupt im Kontext? Das trennt „Retrieval hat
   // sie nicht gefunden" von „Retrieval hatte sie, das Modell hat sie
   // ignoriert" — zwei Fehler mit völlig verschiedenen Gegenmitteln.
   let quelleDabei = null;
   if (antwort && !gate && (c.expected || []).length) {
-    quellenGeprueft += 1;
     const erwartet = new Set((c.expected || []).map(zuSlug));
     quelleDabei = antwort.quellen.some((q) => erwartet.has(zuSlug(q.route)));
-    if (quelleDabei) quellenTreffer += 1;
   }
-  if (antwort?.hinweise?.some((h) => h.art === 'sprache')) rueckfallDe += 1;
 
-  const s = antwort?.sicherheit;
-  if (s && typeof s.wert === 'number' && !ohneUrteil) {
-    if (ok) {
+  return {
+    id: c.id,
+    zeit: new Date().toISOString(),
+    dauerMs: Date.now() - start,
+    ok,
+    anfrageFehler,
+    ohneUrteil: urteil?.urteil === 'unbewertet',
+    urteil,
+    fehlt,
+    verboten,
+    gate,
+    quelleDabei,
+    rueckfallDe: Boolean(antwort?.hinweise?.some((h) => h.art === 'sprache')),
+    sicherheit: antwort?.sicherheit || null,
+    quellen: (antwort?.quellen || []).map((q) => q.route),
+    antwort: text,
+  };
+}
+
+// ─── Lauf ───────────────────────────────────────────────────────────────────
+console.log(`\nAntwort-Eval — ${faelle.length} Fälle (${SPRACHE.toUpperCase()}) gegen ${ENDPUNKT}`);
+console.log(`Modus: ${JUDGE ? `LLM-Judge (${JUDGE_MODELL})` : 'Substring'}${NUR_JUDGE ? ' — Nachbewertung gespeicherter Antworten, kein Server-Aufruf' : ''}`);
+if (ERGEBNIS) {
+  const schon = faelle.filter((c) => gespeichert.faelle[c.id]).length;
+  console.log(`Ergebnisdatei: ${ERGEBNIS}${FORTSETZEN ? ` — ${schon} von ${faelle.length} Fällen liegen schon vor` : ''}`);
+}
+if (drift.length) {
+  console.log(`\n⚠  ${drift.length} Gold-Route(n) veraltet — Slug existiert, Pfad nicht mehr:`);
+  for (const d of drift) console.log(`   ${d}`);
+  console.log('   Gewertet wird über den Slug; die Gold-Datei sollte nachgezogen werden.');
+}
+if (unbekannt.length) {
+  console.log(`\n⚠  ${unbekannt.length} Gold-Route(n) ohne Entsprechung in der Wissensbasis:`);
+  for (const u of unbekannt) console.log(`   ${u}`);
+}
+console.log('');
+
+let bestanden = 0;
+let technisch = 0;
+const fehlschlaege = [];
+const nachKategorie = new Map();
+const kalibrierung = { korrekt: [], falsch: [], hochUndFalsch: [], geringUndKorrekt: 0 };
+let quellenTreffer = 0;
+let quellenGeprueft = 0;
+const gateFehlalarm = [];
+const unbewertet = [];
+let rueckfallDe = 0;
+const begonnen = Date.now();
+
+function verbuchen(c, r) {
+  // Ein Fall ohne Urteil sagt nichts über die ANTWORTQUALITÄT aus und wird aus
+  // dieser Wertung genommen, statt die Quote nach unten zu ziehen. Gate und
+  // Quellenbeleg werden trotzdem gezählt: Die stehen fest, ganz gleich, ob der
+  // Judge ein Urteil zustande gebracht hat.
+  if (r.ohneUrteil) unbewertet.push({ id: c.id, grund: r.urteil?.grund || '' });
+  if (r.gate) gateFehlalarm.push({ id: c.id, frage: c.question });
+  if (r.quelleDabei !== null) {
+    quellenGeprueft += 1;
+    if (r.quelleDabei) quellenTreffer += 1;
+  }
+  if (r.rueckfallDe) rueckfallDe += 1;
+  if (r.anfrageFehler) technisch += 1;
+
+  const s = r.sicherheit;
+  if (s && typeof s.wert === 'number' && !r.ohneUrteil) {
+    if (r.ok) {
       kalibrierung.korrekt.push(s.wert);
       if (s.wert < 50) kalibrierung.geringUndKorrekt += 1;
     } else {
@@ -348,26 +464,67 @@ for (const [i, c] of faelle.entries()) {
     }
   }
 
-  if (!ohneUrteil) {
+  if (!r.ohneUrteil) {
     const kat = c.kategorie || 'fakt';
     const ks = nachKategorie.get(kat) || { n: 0, ok: 0 };
     ks.n += 1;
-    if (ok) ks.ok += 1;
+    if (r.ok) ks.ok += 1;
     nachKategorie.set(kat, ks);
 
-    if (ok) bestanden += 1;
-    else fehlschlaege.push({ ...c, anfrageFehler, fehlt, verboten, urteil, quelleDabei, gate, sicherheit: s, antwort: text.slice(0, 280) });
+    if (r.ok) bestanden += 1;
+    else fehlschlaege.push({ ...c, ...r, antwort: String(r.antwort || '').slice(0, 280) });
   }
+}
 
-  const marke = anfrageFehler ? 'FEHL' : ohneUrteil ? '?   ' : ok ? 'OK  ' : 'NEIN';
+function zeileDrucken(i, c, r, ausDatei) {
+  const marke = r.anfrageFehler ? 'FEHL' : r.ohneUrteil ? '?   ' : r.ok ? 'OK  ' : 'NEIN';
+  const s = r.sicherheit;
   const sTxt = s ? ` ${String(s.wert).padStart(2)} %` : '     ';
-  const qTxt = gate ? ' [GATE]' : quelleDabei === false ? ' [Quelle fehlte]' : '';
-  const grund = anfrageFehler ? ` — ${anfrageFehler}`
-    : ohneUrteil ? ` — nicht bewertbar: ${urteil.grund}`
-      : ok ? ''
-        : JUDGE ? ` — ${urteil?.urteil}: ${urteil?.grund}`
-          : ` — fehlt:[${fehlt.join(', ')}]${verboten.length ? ` verboten:[${verboten.join(', ')}]` : ''}`;
-  console.log(`  ${String(i + 1).padStart(2)}/${faelle.length} ${marke}${sTxt}${qTxt} ${c.question.slice(0, 52)}${grund}`);
+  const qTxt = r.gate ? ' [GATE]' : r.quelleDabei === false ? ' [Quelle fehlte]' : '';
+  const grund = r.anfrageFehler ? ` — ${r.anfrageFehler}`
+    : r.ohneUrteil ? ` — nicht bewertbar: ${r.urteil?.grund}`
+      : r.ok ? ''
+        : JUDGE ? ` — ${r.urteil?.urteil}: ${r.urteil?.grund}`
+          : ` — fehlt:[${r.fehlt.join(', ')}]${r.verboten.length ? ` verboten:[${r.verboten.join(', ')}]` : ''}`;
+  console.log(`  ${String(i + 1).padStart(2)}/${faelle.length} ${marke}${sTxt}${qTxt} ${c.question.slice(0, 52)}${grund}${ausDatei ? '  (aus Datei)' : ''}`);
+}
+
+for (const [i, c] of faelle.entries()) {
+  let r = FORTSETZEN ? gespeichert.faelle[c.id] : null;
+  const ausDatei = Boolean(r) && !NUR_JUDGE;
+  if (NUR_JUDGE && r && !r.anfrageFehler && r.antwort) {
+    r.urteil = await bewerteDurchJudge(c, r.antwort);
+    r.ok = r.urteil.urteil === 'korrekt';
+    r.ohneUrteil = r.urteil.urteil === 'unbewertet';
+    r.nachbewertet = new Date().toISOString();
+    gespeichert.faelle[c.id] = r;
+    ergebnisSchreiben();
+  }
+  if (!r) {
+    try {
+      r = await fallMessen(c);
+    } catch (e) {
+      if (e instanceof ZugangFehlt) {
+        console.error(`\nAbbruch: ${e.message}`);
+        console.error('THI_ZUGANGSWORT in .env muss zu dem passen, mit dem der Server läuft.');
+        process.exit(1);
+      }
+      if (e instanceof LimitErreicht) {
+        console.error(`\nAbbruch nach ${i} Fällen: ${e.message}`);
+        console.error('Der Eval stellt mehr Anfragen, als das Rate-Limit erlaubt. Server neu starten mit:');
+        console.error('  THI_RATE_LIMIT=999 THI_DAILY_LIMIT=9999 node dev-server.mjs');
+        if (ERGEBNIS) console.error(`Bisherige Fälle liegen in ${ERGEBNIS} — weiter mit --fortsetzen.`);
+        process.exit(1);
+      }
+      throw e;
+    }
+    if (ERGEBNIS) {
+      gespeichert.faelle[c.id] = r;
+      ergebnisSchreiben();
+    }
+  }
+  verbuchen(c, r);
+  zeileDrucken(i, c, r, ausDatei);
 }
 
 // ─── Bericht ────────────────────────────────────────────────────────────────
@@ -378,6 +535,10 @@ const dauer = Math.round((Date.now() - begonnen) / 1000);
 
 console.log(`\n${'─'.repeat(70)}`);
 console.log(`Grounding — ${bestanden}/${gesamt} korrekt (${prozent} %)   ·   ${dauer} s`);
+if (technisch) {
+  console.log(`  ⚠  ${technisch} Fall/Fälle ohne Antwort (technischer Fehler, als Fehlschlag gezählt) —`);
+  console.log('     kein Grounding-Befund, sondern Server/Modell. Function-Log des Servers ansehen.');
+}
 if (unbewertet.length) {
   console.log(`  ${unbewertet.length} Fall/Fälle nicht bewertbar und aus der Wertung genommen:`);
   for (const u of unbewertet) console.log(`     ${u.id} — ${u.grund}`);

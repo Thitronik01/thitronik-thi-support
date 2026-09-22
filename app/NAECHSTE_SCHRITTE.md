@@ -2,7 +2,7 @@
 
 > **Für den Einstieg in eine neue Arbeitssitzung.** Beschreibt, was fertig ist,
 > was bewusst offen blieb und was als Nächstes den größten Unterschied macht.
-> Stand: 15.09.2026
+> Stand: 22.09.2026
 
 ---
 
@@ -21,21 +21,88 @@ auch C angefasst wird.
 
 ---
 
-## Das Wichtigste zuerst: die eine echte Lücke
+## Das Wichtigste zuerst: Französisch ist gemessen
 
-### Französisch ist noch nicht gemessen
+### Erster FR-Lauf, 22.09.2026
 
-Die deutschen Antworten sind gegen 106 Gold-Fälle abgesichert und gemessen.
-Für Französisch gibt es seit 17.09.2026 den **Spiegel**:
-`../daten/thi-eval-gold.fr.json`, 41 Fälle, Fragen idiomatisch übersetzt,
-Belege aus den französischen Artikeln entnommen, alle Routen geprüft. Der
-Judge wertet beim FR-Lauf eine deutsche Antwort als Fehlschlag.
+Gold-Set: `../daten/thi-eval-gold.fr.json`, 41 Fälle, Spiegel des deutschen
+Sets (seit 17.09.2026). Erster Lauf mit Judge:
 
-**Noch nicht gelaufen** — kostet echte Modellaufrufe:
+| Messgröße | Wert |
+|---|---|
+| Grounding | **30/40 korrekt (75 %)**, 1 Fall nicht bewertbar |
+| Quellenbeleg im Kontext | 40/41 (97,6 %) |
+| Rückfall FR→DE | 0/40 |
+| Gate-Fehlalarm | 0 |
+
+**Von den 10 Fehlschlägen waren 7 keine Grounding-Fehler**, sondern leere oder
+abgeschnittene Antworten. Ursache laut Function-Log: Anymize `waterfall-2.0`
+schickt im 200er-Strom ein Fehlerobjekt
+`{"error":{"message":"The model is temporarily unavailable.","code":"upstream_error"}}`
+und beendet den Strom. Der Server las nur `delta.content`, übersah das und
+schickte zu einer leeren Antwort noch „Sicherheit 53 %" — im Eval urteilte der
+Judge darüber mal „falsch", mal „unklar".
+
+**Behoben** in `netlify/functions/chat.mjs` (`frageModell`): Fehlerobjekte und
+Ströme ohne Abschluss werden erkannt und geloggt (`[thi] Modellstrom …`). Kam
+noch kein Text raus, folgt **ein zweiter Versuch ohne Streaming**; bleibt es
+leer, geht ein `fehler`-Ereignis raus statt einer leeren Antwort. Mit einem
+Anymize-Mock in fünf Szenarien geprüft. Im Nachlauf der 11 auffälligen Fälle
+hat die Nachfrage 5 von 6 Störungen gerettet; einmal antwortete der Anbieter
+auch auf die Nachfrage mit 504 → als technischer Fehler ausgewiesen.
+
+**Was nach dem Nachlauf bleibt** (11 Fälle: 4 OK · 5 NEIN · 1 ? · 1 FEHL):
+
+- **Drei der fünf NEIN sind Judge-Fehlurteile** (Fälle 26, 34, 38): Die
+  Antworten sind korrekt (nachgelesen). Judge-Prompt geschärft (Verneinung
+  einer verbotenen Aussage ist korrekt) und die gespeicherten Antworten mit
+  `--nur-judge` neu bewertet: Fall 25 kippte auf korrekt, **26, 34 und 38
+  blieben „falsch"** — und der Grund verrät warum, siehe nächster Punkt.
+- **Der Judge sieht Platzhalter statt Seriennummern.** Sein Urteil zu Fall 38
+  lautete wörtlich „Nano-SIM ab internal_id-PVPMJN, nicht ab
+  internal_id-6Y0WVU", zu Fall 26 „erfundene Platzhalter SN 045". Der
+  Endpunkt `…/llm-anonymous/…` ersetzt Seriennummern und Typkürzel durch
+  Platzhalter, bevor das Modell sie sieht; „0699-045", „SN 045" und „045"
+  werden dabei zu **verschiedenen** Platzhaltern. Ein Judge kann so keine
+  Zahl mit dem Beleg vergleichen. Schon am 16.09. war aufgefallen, dass
+  „CR2032" als Platzhalter ankam. **Folgen:** (1) Der Judge braucht einen
+  Endpunkt ohne Anonymisierung — dafür gibt es jetzt `THI_JUDGE_URL` /
+  `THI_JUDGE_KEY`; die Gold-Belege enthalten keine Personendaten. Ob Anymize
+  einen solchen Endpunkt anbietet, ist zu klären. (2) Dasselbe trifft die
+  **App**: Bei Schwellenfragen („ab welcher Seriennummer …") sieht das Modell
+  Platzhalter und kann Schwellen nur noch über die Textnachbarschaft
+  zuordnen. Das ist eine plausible Ursache für Fall 39 und für die
+  `voraussetzung`-Schwäche im DE-Lauf — eine Architekturfrage
+  (Datenschutz gegen Genauigkeit), keine Prompt-Frage.
+- **Fall 39, echt:** Bot nennt 0823-018 (Schwelle für App-Befehle) statt
+  0823-021 / 6.8 (Wassermelder). Beide Schwellen stehen im selben FR-Artikel
+  `seriennummern-softwarestaende`, dessen Tabellen im Ingest zu einer Zeile
+  verflacht sind — und beide kommen als Platzhalter beim Modell an.
+- **Fall 25:** Im ersten Nachlauf „unklar" (Bot weicht aus), in der
+  Nachbewertung korrekt. Grenzfall; der FR-Artikel sagt „funktioniert auch
+  ohne WiPro" nicht ausdrücklich — Gold-Beleg prüfen.
+- **Fall 12:** Antwort mit 15.500 Zeichen (max_tokens 4096 ausgeschöpft), der
+  Judge kam zu keinem Urteil. Einzelner Ausreißer; wiederholt er sich, die
+  Antwortlänge im Prompt begrenzen.
+- **Fall 40:** im ersten Lauf Retrieval-Miss (Quelle fehlte), im Nachlauf 504.
+
+**Eval-Werkzeug erweitert** (`werkzeuge/antwort-eval.mjs`): `--ids a,b,c`,
+`--ergebnis <datei>` (jeder Fall sofort gespeichert — ein Abbruch kostet nur den
+laufenden Fall), `--fortsetzen`, `--nur-judge`. Leere Antworten zählen als
+technischer Fehler und gehen nicht an den Judge. Die `.env` wird auch aus dem
+Projektordner (`THI/.env`) gelesen. Ergebnisdateien liegen in
+`werkzeuge/laeufe/` (gitignored); der Nachlauf vom 22.09. ist
+`antwort-eval.fr.2026-09-22.nachlauf.json`.
 
 ```bash
-THI_RATE_LIMIT=999 THI_DAILY_LIMIT=9999 node dev-server.mjs
-node werkzeuge/antwort-eval.mjs --sprache fr --judge
+# Server für Läufe (Port 8889, Limits angehoben; auch als launch.json „thi-eval")
+THI_RATE_LIMIT=999 THI_DAILY_LIMIT=9999 PORT=8889 node dev-server.mjs
+# voller Lauf mit Ergebnisdatei
+THI_EVAL_URL=http://localhost:8889/api/chat node werkzeuge/antwort-eval.mjs --sprache fr --judge --ergebnis werkzeuge/laeufe/fr-$(date +%F).json
+# nach Abbruch weiter
+… --fortsetzen
+# nur Judge neu über gespeicherte Antworten (kein Server nötig)
+node werkzeuge/antwort-eval.mjs --sprache fr --judge --nur-judge --ergebnis werkzeuge/laeufe/antwort-eval.fr.2026-09-22.nachlauf.json
 ```
 
 Zweite Stufe danach: **echte Fälle** — Fragen so, wie ein französischer
@@ -43,8 +110,9 @@ Monteur sie stellt (Delphine Passaret, Julie Marier). Idiomatisch, nicht
 übersetztes Deutsch. Und der Ingest der 23 Anleitungen mit französischem
 Textanteil (`../docs/04_MEHRSPRACHIGKEIT_DE_FR.md` §1.2).
 
-Zweite Messgröße: die **Fallback-Rate** FR→DE. Steigt sie, ist das ein
-Content-Signal — diese Themen gehören auf Französisch ergänzt.
+Zweite Messgröße: die **Fallback-Rate** FR→DE. Sie lag im ersten Lauf bei 0 —
+die 41 Gold-Fragen zielen auf Artikel, die auf Französisch vorliegen. Steigt
+sie bei echten Fragen, ist das ein Content-Signal.
 
 ---
 
