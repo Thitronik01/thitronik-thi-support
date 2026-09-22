@@ -84,6 +84,7 @@ window.THI_TEXTE = {
     blockBeobachtung: 'Was zeigt das Gerät?',
     unterBeobachtung: 'Am Telefon erfragen — je wörtlicher, desto besser.',
     blockProdukt: 'Welches Produkt?',
+    labelProduktSuche: 'Produkt suchen',
     blockFahrzeug: 'Auf welchem Fahrzeug?',
 
     svTitel: 'Belastbarkeit der Aufnahme',
@@ -338,6 +339,7 @@ window.THI_TEXTE = {
     blockBeobachtung: "Qu'affiche l'appareil ?",
     unterBeobachtung: 'À demander au téléphone — le plus littéralement possible.',
     blockProdukt: 'Quel produit ?',
+    labelProduktSuche: 'Rechercher un produit',
     blockFahrzeug: 'Sur quel véhicule ?',
 
     svTitel: 'Fiabilité de la saisie',

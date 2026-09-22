@@ -253,19 +253,13 @@
   <section class="ansicht ansicht-fall" id="ansichtFall">
     <div class="breite">
 
-      <!-- Sichtbar entfernt, um Höhe zu sparen: Die Kopfzeile darüber sagt
-           bereits, wo man ist, und der Hinweis „fehlende Angaben blockieren
-           nicht" steht als Stichwortliste in der Belastbarkeits-Anzeige.
-           Die Überschrift BLEIBT für Screenreader — ohne sie hätte die Seite
-           keine h1, und `T.fallTitel` wird außerdem beim Kopieren des Falls
-           gebraucht (app.js). -->
-      <h1 class="nur-vorlesen" data-i18n="fallTitel">Fallaufnahme</h1>
+      <h1 class="aufnahme-titel" data-i18n="fallTitel">Fallaufnahme</h1>
 
       <form id="fallFormular" autocomplete="off">
         <div class="aufnahme">
 
-          <!-- ── Hauptspalte: das Gespräch ─────────────────────────── -->
-          <div class="spur-gespraech">
+          <!-- Vier Arbeitsschritte in natürlicher Lese- und Tab-Reihenfolge. -->
+          <div class="spur-ablauf">
 
             <section class="block block-haupt" data-block="anliegen">
               <div class="block-kopf-statisch">
@@ -280,7 +274,7 @@
 
                 <div class="feld-gruppe">
                   <span class="feld-label">
-                    <span data-i18n="labelBeobachtet">Mitschrift — in eigenen Worten <em>*</em></span>
+                    <label for="beobachtet" data-i18n="labelBeobachtet">Mitschrift — in eigenen Worten <em>*</em></label>
                     <button type="button" class="btn-diktat" id="diktat" hidden>
                       <span class="diktat-punkt" aria-hidden="true"></span>
                       <span data-i18n="diktatStart">Diktieren</span>
@@ -307,6 +301,111 @@
                     </select>
                   </label>
                 </div>
+              </div>
+            </section>
+
+            <section class="block" data-block="produkt">
+              <div class="block-kopf-statisch">
+                <span class="schritt">2</span>
+                <div class="block-titelgruppe">
+                  <h2 class="block-titel" id="blockProduktTitel" data-i18n="blockProdukt">Welches Produkt?</h2>
+                </div>
+                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
+              </div>
+              <div class="block-inhalt">
+
+                <div class="feld-gruppe">
+                  <label class="nur-vorlesen" for="produktSuche" data-i18n="labelProduktSuche">Produkt suchen</label>
+                  <div class="autocomplete">
+                    <input type="text" id="produktSuche" class="feld" data-i18n-ph="phProdukt"
+                           placeholder="Produkt suchen …" role="combobox"
+                           aria-expanded="false" aria-autocomplete="list" aria-controls="produktAuswahl">
+                    <div class="produkt-auswahl" id="produktAuswahl" role="listbox" hidden></div>
+                  </div>
+                  <div class="chips" id="produktChips"></div>
+                </div>
+
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelSeriennummer">Seriennummer</span>
+                  <input type="text" id="seriennummer" class="feld feld-mono" placeholder="0699-045" inputmode="numeric">
+                  <p class="feld-hilfe" data-i18n="hilfeSeriennummer">Steht auf dem Typenschild — Kunde muss ggf. nachsehen. Nicht die Artikelnummer (100699).</p>
+                  <div class="sn-erkennung" id="snErkennung" hidden></div>
+                </label>
+
+                <details class="nebenfelder">
+                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelSoftware">Softwarestand</span>
+                    <input type="text" id="softwarestand" class="feld feld-mono" placeholder="11.0.4">
+                    <p class="feld-hilfe" data-i18n="hilfeSoftware">Falls ablesbar — sonst leer lassen, nicht raten.</p>
+                  </label>
+                </details>
+              </div>
+            </section>
+
+            <section class="block" data-block="fahrzeug">
+              <div class="block-kopf-statisch">
+                <span class="schritt">3</span>
+                <div class="block-titelgruppe">
+                  <h2 class="block-titel" data-i18n="blockFahrzeug">Auf welchem Fahrzeug?</h2>
+                </div>
+                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
+              </div>
+              <div class="block-inhalt">
+
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelFahrzeug">Basisfahrzeug / Chassis</span>
+                  <div class="autocomplete">
+                    <input type="text" id="fahrzeugSuche" class="feld" data-i18n-ph="phFahrzeug"
+                           placeholder="z. B. Ducato, Sprinter, Transit …" role="combobox"
+                           aria-expanded="false" aria-autocomplete="list" aria-controls="fahrzeugListe">
+                    <ul class="ac-liste" id="fahrzeugListe" role="listbox" hidden></ul>
+                  </div>
+                  <p class="feld-hilfe" data-i18n="hilfeFahrzeug">Auch Schwestermodelle suchbar (Vivaro, Jumper, NV300 …).</p>
+                  <div class="gewaehlt" id="fahrzeugGewaehlt" hidden></div>
+                </label>
+
+                <label class="feld-gruppe">
+                  <span class="feld-label" data-i18n="labelBaujahr">Baujahr</span>
+                  <input type="number" id="baujahr" class="feld feld-mono" min="1990" max="2030" placeholder="2023">
+                </label>
+
+                <details class="nebenfelder">
+                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
+
+                  <div class="feld-reihe">
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelStartknopf">Startknopf</span>
+                      <select id="startknopf" class="feld">
+                        <option value="" data-i18n="optUnbekannt">Unbekannt</option>
+                        <option value="ja" data-i18n="optJa">Ja</option>
+                        <option value="nein" data-i18n="optNein">Nein</option>
+                      </select>
+                    </label>
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelAufbauart">Aufbauart</span>
+                      <select id="aufbauart" class="feld">
+                        <option value="" data-i18n="optBitteWaehlen">Bitte wählen</option>
+                        <option value="Kastenwagen" data-i18n="optKasten">Kastenwagen</option>
+                        <option value="teilintegriert" data-i18n="optTeil">Teilintegriert</option>
+                        <option value="vollintegriert" data-i18n="optVoll">Vollintegriert</option>
+                        <option value="Alkoven" data-i18n="optAlkoven">Alkoven</option>
+                        <option value="Liner" data-i18n="optLiner">Liner</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div class="feld-reihe">
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelAufbauhersteller">Aufbauhersteller</span>
+                      <input type="text" id="aufbauhersteller" class="feld" data-i18n-ph="phAufbauhersteller" placeholder="z. B. Knaus">
+                    </label>
+                    <label class="feld-gruppe">
+                      <span class="feld-label" data-i18n="labelEinbau">Einbau</span>
+                      <input type="text" id="einbau" class="feld" data-i18n-ph="phEinbau" placeholder="z. B. 03/2023, Fachbetrieb">
+                    </label>
+                  </div>
+                </details>
               </div>
             </section>
 
@@ -350,151 +449,30 @@
 
           </div>
 
-          <!-- ── Seitenspalte: die harten Fakten ───────────────────── -->
-          <aside class="spur-fakten">
-
-            <!-- Belastbarkeit, Warnungen und Absendeknopf stehen zusammen
-                 oben in der Faktenspalte: „Reicht das schon?" und
-                 „Abschicken" gehören zusammen und bleiben so im Bild. Auf
-                 schmalen Schirmen rutschen Warnungen und Knopf per `order`
-                 ans Ende, weil die Spalten dort untereinander stehen. -->
-            <div class="sicherheit-vorschau" id="sicherheitVorschau">
-              <div class="sv-kopf">
-                <span class="sv-titel" data-i18n="svTitel">Belastbarkeit der Aufnahme</span>
-                <span class="sv-wert" id="svWert">0<span class="sv-prozent">%</span></span>
+          <!-- Abschluss bleibt am Desktop sichtbar, ohne den Erfassungsfluss zu unterbrechen. -->
+          <aside class="spur-status">
+            <div class="abschlusskarte">
+              <div class="sicherheit-vorschau" id="sicherheitVorschau">
+                <div class="sv-kopf">
+                  <span class="sv-titel" data-i18n="svTitel">Belastbarkeit der Aufnahme</span>
+                  <span class="sv-wert" id="svWert">0<span class="sv-prozent">%</span></span>
+                </div>
+                <div class="sv-balken"><div class="sv-fuellung" id="svFuellung"></div></div>
+                <ul class="sv-liste" id="svListe"></ul>
               </div>
-              <div class="sv-balken"><div class="sv-fuellung" id="svFuellung"></div></div>
-              <ul class="sv-liste" id="svListe"></ul>
+
+              <div class="warnungen" id="warnungen"></div>
+
+              <div class="absende-leiste">
+                <button type="submit" class="btn-primaer btn-gross" id="absenden">
+                  <span data-i18n="absenden">Fall analysieren</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="btn-pfeil"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <p class="datenschutz-hinweis" data-i18n="datenschutz">
+                  Keine Passwörter, SIM-PINs oder Zugangsdaten eingeben. Es werden keine Kontaktdaten erfasst.
+                </p>
+              </div>
             </div>
-
-            <div class="warnungen" id="warnungen"></div>
-
-            <div class="absende-leiste">
-              <button type="submit" class="btn-primaer btn-gross" id="absenden">
-                <span data-i18n="absenden">Fall analysieren</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="btn-pfeil"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <p class="datenschutz-hinweis" data-i18n="datenschutz">
-                Keine Passwörter, SIM-PINs oder Zugangsdaten eingeben. Es werden keine Kontaktdaten erfasst.
-              </p>
-            </div>
-
-            <section class="block" data-block="produkt">
-              <div class="block-kopf-statisch">
-                <span class="schritt">2</span>
-                <div class="block-titelgruppe">
-                  <h2 class="block-titel" data-i18n="blockProdukt">Welches Produkt?</h2>
-                </div>
-                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
-              </div>
-              <div class="block-inhalt">
-
-                <div class="feld-gruppe">
-                  <!-- Überlagernde Liste wie beim Fahrzeugfeld: Sie belegte als
-                       aufgeklappter Kasten 232 px Höhe, auch ohne Eingabe —
-                       der größte Einzelposten auf dem Weg zu „alles auf einem
-                       Bildschirm". Jetzt öffnet sie beim Tippen oder Anklicken
-                       und legt sich über den Inhalt, statt ihn wegzuschieben. -->
-                  <div class="autocomplete">
-                    <input type="text" id="produktSuche" class="feld" data-i18n-ph="phProdukt"
-                           placeholder="Produkt suchen …" role="combobox"
-                           aria-expanded="false" aria-autocomplete="list" aria-controls="produktAuswahl">
-                    <div class="produkt-auswahl" id="produktAuswahl" role="listbox" hidden></div>
-                  </div>
-                  <div class="chips" id="produktChips"></div>
-                </div>
-
-                <label class="feld-gruppe">
-                  <span class="feld-label" data-i18n="labelSeriennummer">Seriennummer</span>
-                  <input type="text" id="seriennummer" class="feld feld-mono" placeholder="0699-045" inputmode="numeric">
-                  <p class="feld-hilfe" data-i18n="hilfeSeriennummer">Steht auf dem Typenschild — Kunde muss ggf. nachsehen. Nicht die Artikelnummer (100699).</p>
-                  <div class="sn-erkennung" id="snErkennung" hidden></div>
-                </label>
-
-                <!-- Zweitrangig: trägt nichts zur Sicherheitsbewertung bei
-                     (siehe lib/sicherheit.mjs, „Datenlage"). Deshalb
-                     eingeklappt — erreichbar, aber nicht im Weg. -->
-                <details class="nebenfelder">
-                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
-                  <label class="feld-gruppe">
-                    <span class="feld-label" data-i18n="labelSoftware">Softwarestand</span>
-                    <input type="text" id="softwarestand" class="feld feld-mono" placeholder="11.0.4">
-                    <p class="feld-hilfe" data-i18n="hilfeSoftware">Falls ablesbar — sonst leer lassen, nicht raten.</p>
-                  </label>
-                </details>
-              </div>
-            </section>
-
-            <section class="block" data-block="fahrzeug">
-              <div class="block-kopf-statisch">
-                <span class="schritt">3</span>
-                <div class="block-titelgruppe">
-                  <h2 class="block-titel" data-i18n="blockFahrzeug">Auf welchem Fahrzeug?</h2>
-                </div>
-                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
-              </div>
-              <div class="block-inhalt">
-
-                <label class="feld-gruppe">
-                  <span class="feld-label" data-i18n="labelFahrzeug">Basisfahrzeug / Chassis</span>
-                  <div class="autocomplete">
-                    <input type="text" id="fahrzeugSuche" class="feld" data-i18n-ph="phFahrzeug"
-                           placeholder="z. B. Ducato, Sprinter, Transit …" role="combobox"
-                           aria-expanded="false" aria-autocomplete="list" aria-controls="fahrzeugListe">
-                    <ul class="ac-liste" id="fahrzeugListe" role="listbox" hidden></ul>
-                  </div>
-                  <p class="feld-hilfe" data-i18n="hilfeFahrzeug">Auch Schwestermodelle suchbar (Vivaro, Jumper, NV300 …).</p>
-                  <div class="gewaehlt" id="fahrzeugGewaehlt" hidden></div>
-                </label>
-
-                <!-- Baujahr bleibt sichtbar: Es trägt zwar keine Punkte, geht
-                     aber in die Widerspruchsprüfung (Baujahr ↔ Generation). -->
-                <label class="feld-gruppe">
-                  <span class="feld-label" data-i18n="labelBaujahr">Baujahr</span>
-                  <input type="number" id="baujahr" class="feld feld-mono" min="1990" max="2030" placeholder="2023">
-                </label>
-
-                <!-- Der Rest ist Zusatzkontext ohne Wirkung auf Suche oder
-                     Sicherheitswert — eingeklappt statt gestrichen. -->
-                <details class="nebenfelder">
-                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
-
-                  <div class="feld-reihe">
-                    <label class="feld-gruppe">
-                      <span class="feld-label" data-i18n="labelStartknopf">Startknopf</span>
-                      <select id="startknopf" class="feld">
-                        <option value="" data-i18n="optUnbekannt">Unbekannt</option>
-                        <option value="ja" data-i18n="optJa">Ja</option>
-                        <option value="nein" data-i18n="optNein">Nein</option>
-                      </select>
-                    </label>
-                    <label class="feld-gruppe">
-                      <span class="feld-label" data-i18n="labelAufbauart">Aufbauart</span>
-                      <select id="aufbauart" class="feld">
-                        <option value="" data-i18n="optBitteWaehlen">Bitte wählen</option>
-                        <option value="Kastenwagen" data-i18n="optKasten">Kastenwagen</option>
-                        <option value="teilintegriert" data-i18n="optTeil">Teilintegriert</option>
-                        <option value="vollintegriert" data-i18n="optVoll">Vollintegriert</option>
-                        <option value="Alkoven" data-i18n="optAlkoven">Alkoven</option>
-                        <option value="Liner" data-i18n="optLiner">Liner</option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <div class="feld-reihe">
-                    <label class="feld-gruppe">
-                      <span class="feld-label" data-i18n="labelAufbauhersteller">Aufbauhersteller</span>
-                      <input type="text" id="aufbauhersteller" class="feld" data-i18n-ph="phAufbauhersteller" placeholder="z. B. Knaus">
-                    </label>
-                    <label class="feld-gruppe">
-                      <span class="feld-label" data-i18n="labelEinbau">Einbau</span>
-                      <input type="text" id="einbau" class="feld" data-i18n-ph="phEinbau" placeholder="z. B. 03/2023, Fachbetrieb">
-                    </label>
-                  </div>
-                </details>
-              </div>
-            </section>
-
           </aside>
         </div>
       </form>

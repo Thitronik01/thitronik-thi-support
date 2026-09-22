@@ -47,15 +47,15 @@
   --lime: #AFCA05;
 
   /* Flächen */
-  --bg: #F5F6F9;
+  --bg: #F2F4F8;
   --flaeche: #FFFFFF;
-  --flaeche-2: #F8F9FB;
+  --flaeche-2: #F7F9FC;
   --flaeche-3: #EFF1F5;
 
   /* Text */
   --text: #1A2233;
   --text-2: #5A6478;
-  --text-3: #8A93A6;
+  --text-3: #667389;
 
   /* Linien */
   --linie: #E4E7EE;
@@ -144,7 +144,7 @@ button { font: inherit; color: inherit; }
 }
 .kopf-inner {
   min-height: var(--kopf-h);
-  max-width: 1480px; margin: 0 auto; padding: 0 24px;
+  max-width: 1680px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 
@@ -180,14 +180,22 @@ button { font: inherit; color: inherit; }
   background: var(--navy); color: #FFFFFF;
   border: 1px solid var(--navy); border-radius: var(--r-1);
   font-size: .875rem; font-weight: 600; cursor: pointer;
-  transition: background var(--t), border-color var(--t), transform var(--t);
+  transition: background-color var(--t), border-color var(--t), transform 140ms var(--ease);
 }
 .btn-primaer:hover:not(:disabled) { background: var(--navy-tief); border-color: var(--navy-tief); }
-.btn-primaer:active:not(:disabled) { transform: translateY(1px); }
+.btn-primaer:active:not(:disabled) { transform: scale(.98); }
 .btn-primaer:disabled { opacity: .5; cursor: not-allowed; }
 .btn-voll { width: 100%; }
 .btn-gross { min-height: 44px; font-size: .9375rem; }
-.btn-pfeil { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+.btn-pfeil {
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  transition: transform 160ms var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primaer:hover:not(:disabled) .btn-pfeil { transform: translateX(3px); }
+}
 
 /* Geist: Text mit Symbol, ohne Rahmen. Für die Kopfzeile. */
 .btn-geist {
@@ -259,32 +267,100 @@ button { font: inherit; color: inherit; }
 
 /* ─── 5) Layout & Formular ─────────────────────────────────────────────── */
 main { flex: 1 1 auto; }
-.breite { max-width: 1480px; margin: 0 auto; padding: 20px 24px 24px; }
+.breite { max-width: 1680px; margin: 0 auto; padding: 18px 24px 32px; }
 .schmal { max-width: 900px; margin: 0 auto; padding: 24px 24px 48px; }
 
-/* Asymmetrisch: links das Gespräch (Fließtext), rechts die Fakten. */
+/* Kompakte Arbeitsfläche: links vier Schritte in Lese-Reihenfolge, rechts der
+   Abschluss. So bleibt der Gesprächsfluss zusammenhängend und der Status im
+   Blick, ohne Schritt 2 und 3 zu verdrängen. */
+.aufnahme-titel {
+  margin: 0 0 12px 2px;
+  color: var(--navy);
+  font-size: 1.125rem;
+  font-weight: 650;
+  letter-spacing: -.015em;
+}
 .aufnahme {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(360px, 1fr);
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 336px);
+  gap: 18px;
   align-items: start;
 }
-.spur-gespraech { display: grid; gap: 16px; min-width: 0; }
-.spur-fakten { display: grid; gap: 16px; min-width: 0; position: sticky; top: calc(var(--kopf-h) + 20px); }
+.spur-ablauf {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  min-width: 0;
+}
+.spur-status {
+  min-width: 0;
+  position: sticky;
+  top: calc(var(--kopf-h) + 18px);
+}
+.abschlusskarte {
+  padding: 18px;
+  background: linear-gradient(180deg, var(--flaeche) 0%, #FBFCFF 100%);
+  border: 1px solid var(--linie);
+  border-top: 3px solid var(--navy);
+  border-radius: var(--r-2);
+  box-shadow: 0 1px 2px rgba(26, 34, 51, .035);
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.abschlusskarte:has(.sicherheit-vorschau[data-stufe="mittel"]) {
+  border-top-color: var(--cyan);
+  box-shadow: 0 4px 14px rgba(59, 169, 211, .08);
+}
+.abschlusskarte:has(.sicherheit-vorschau[data-stufe="hoch"]) {
+  border-top-color: var(--lime);
+  box-shadow: 0 4px 14px rgba(95, 112, 3, .09);
+}
 
 /* Karte */
 .block {
+  position: relative;
   background: var(--flaeche);
   border: 1px solid var(--linie);
   border-radius: var(--r-2);
-  transition: border-color var(--t);
+  box-shadow: 0 1px 2px rgba(26, 34, 51, .035);
+  transition: border-color var(--t), box-shadow var(--t);
 }
-.block:focus-within { border-color: var(--linie-2); }
+.block::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 12px; bottom: 12px; left: -2px;
+  width: 3px;
+  background: var(--navy);
+  border-radius: var(--r-voll);
+  opacity: 0;
+  transform: scaleY(.65);
+  transform-origin: center;
+  pointer-events: none;
+  transition: opacity 140ms var(--ease), transform 180ms var(--ease);
+}
+.block:focus-within {
+  border-color: rgba(29, 54, 97, .42);
+  box-shadow: 0 0 0 3px rgba(29, 54, 97, .055);
+}
+.block:focus-within::before { opacity: 1; transform: scaleY(1); }
+.block:focus-within .block-kopf-statisch {
+  background: linear-gradient(90deg, var(--navy-hell), var(--flaeche-2) 72%);
+}
+.block:has(.block-ampel[data-ampel="teil"]) { border-color: var(--info-linie); }
+.block:has(.block-ampel[data-ampel="teil"]) .block-kopf-statisch {
+  background: linear-gradient(90deg, var(--info-bg), var(--flaeche-2) 72%);
+}
+.block:has(.block-ampel[data-ampel="voll"]) { border-color: var(--ok-linie); }
+.block:has(.block-ampel[data-ampel="voll"]) .block-kopf-statisch {
+  background: linear-gradient(90deg, var(--ok-bg), var(--flaeche-2) 72%);
+}
 
 .block-kopf-statisch {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: flex-start; gap: 12px;
   padding: 12px 18px;
+  background: var(--flaeche-2);
   border-bottom: 1px solid var(--linie);
+  border-radius: var(--r-2) var(--r-2) 0 0;
 }
 .schritt {
   flex: 0 0 auto;
@@ -294,17 +370,31 @@ main { flex: 1 1 auto; }
   border-radius: var(--r-1);
   font-size: .75rem; font-weight: 700;
   font-variant-numeric: tabular-nums;
+  box-shadow: 0 0 0 3px var(--navy-hell);
 }
+.block-ampel { margin-top: 3px; }
 .block-titelgruppe { flex: 1 1 auto; min-width: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .block-titel { font-size: .9375rem; font-weight: 600; color: var(--text); }
 .block-unter { font-size: .8125rem; color: var(--text-3); }
 
 .block-ampel {
-  flex: 0 0 auto; width: 8px; height: 8px; border-radius: var(--r-voll);
-  background: var(--linie-2); transition: all var(--t);
+  flex: 0 0 auto; width: 16px; height: 16px;
+  display: grid; place-items: center;
+  border: 1px solid var(--linie-2); border-radius: var(--r-voll);
+  background: transparent; color: var(--text-3);
+  font-size: .625rem; font-weight: 700; line-height: 1;
+  transition: background-color var(--t), border-color var(--t), color var(--t), box-shadow var(--t);
 }
-.block-ampel[data-ampel="teil"] { background: var(--cyan); }
-.block-ampel[data-ampel="voll"] { background: var(--lime); box-shadow: 0 0 0 3px var(--ok-bg); }
+.block-ampel[data-ampel="teil"] {
+  background: var(--info-bg); color: var(--info-text); border-color: var(--info-linie);
+  box-shadow: 0 0 0 3px rgba(59, 169, 211, .08);
+}
+.block-ampel[data-ampel="teil"]::after { content: '•'; }
+.block-ampel[data-ampel="voll"] {
+  background: var(--ok-text); color: #FFFFFF; border-color: var(--ok-text);
+  box-shadow: 0 0 0 3px var(--ok-bg);
+}
+.block-ampel[data-ampel="voll"]::after { content: '✓'; }
 
 .block-inhalt { padding: 16px 18px 18px; }
 
@@ -320,7 +410,7 @@ main { flex: 1 1 auto; }
 .feld-label em { color: var(--rot); font-style: normal; font-weight: 600; }
 
 .feld {
-  width: 100%; min-height: 38px; padding: 8px 11px;
+  width: 100%; min-height: 44px; padding: 9px 11px;
   background: var(--flaeche); color: var(--text);
   border: 1px solid var(--linie-2); border-radius: var(--r-1);
   font: inherit; font-size: .875rem; line-height: 1.4;
@@ -508,12 +598,9 @@ select.feld {
 .btn-diktat.ist-aktiv .diktat-punkt { background: var(--rot); animation: pochen 1.2s ease-in-out infinite; }
 @keyframes pochen { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 
-/* Belastbarkeit — steht ganz oben rechts: „reicht das schon?" */
+/* Belastbarkeit und Abschluss bilden eine gemeinsame, ruhige Statuskarte. */
 .sicherheit-vorschau {
-  padding: 14px 18px 16px;
-  background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--r-2);
+  padding: 0;
 }
 .sv-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .sv-titel { font-size: .8125rem; font-weight: 500; color: var(--text-2); }
@@ -522,23 +609,25 @@ select.feld {
 .sv-balken { height: 4px; margin: 10px 0 12px; background: var(--flaeche-3); border-radius: var(--r-voll); overflow: hidden; }
 .sv-fuellung {
   height: 100%; width: 0; background: var(--text-3); border-radius: var(--r-voll);
-  transition: width 400ms var(--ease), background 400ms var(--ease);
+  transition: width 260ms var(--ease), background-color 180ms var(--ease);
 }
 .sicherheit-vorschau[data-stufe="mittel"] .sv-fuellung { background: var(--cyan); }
 .sicherheit-vorschau[data-stufe="hoch"] .sv-fuellung { background: var(--lime); }
+.sicherheit-vorschau[data-stufe="mittel"] .sv-wert { color: var(--info-text); }
+.sicherheit-vorschau[data-stufe="hoch"] .sv-wert { color: var(--ok-text); }
 
 .sv-liste { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 5px; }
 .sv-liste:empty { display: none; }
 .sv-liste li {
   padding: 2px 9px;
-  background: var(--flaeche-3); color: var(--text-2);
+  background: var(--navy-hell); color: var(--text-2);
   border-radius: var(--r-voll);
   font-size: .75rem; line-height: 1.5; white-space: nowrap;
 }
 .sv-liste li.ist-erfuellt { color: var(--ok-text); background: var(--ok-bg); text-decoration: line-through; }
 
 /* Warnungen */
-.warnungen { display: grid; gap: 8px; }
+.warnungen { display: grid; gap: 8px; margin-top: 14px; }
 .warnungen:empty { display: none; }
 .warnung {
   display: flex; gap: 10px;
@@ -552,7 +641,13 @@ select.feld {
 .warnung-glyph { flex: 0 0 auto; line-height: 1.5; }
 
 /* Absende-Leiste */
-.absende-leiste { display: grid; gap: 8px; }
+.absende-leiste {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--linie);
+}
 .absende-leiste .btn-primaer { width: 100%; }
 .datenschutz-hinweis { margin: 0; font-size: .6875rem; color: var(--text-3); line-height: 1.45; }
 
@@ -934,20 +1029,25 @@ select.feld {
 
 /* ─── 8) Responsiv ─────────────────────────────────────────────────────── */
 @media (max-width: 1120px) {
-  /* Blöcke untereinander in Nummernfolge 1→2→3→4. `display: contents` hebt
-     die Spuren auf, damit die Blöcke per `order` sortierbar werden. */
-  .aufnahme { display: flex; flex-direction: column; gap: 16px; }
-  .spur-gespraech, .spur-fakten { display: contents; }
-  .spur-fakten { position: static; }
-  .sicherheit-vorschau { order: 0; }
-  .block[data-block="anliegen"] { order: 1; }
-  .block[data-block="produkt"] { order: 2; }
-  .block[data-block="fahrzeug"] { order: 3; }
-  .block[data-block="beobachtung"] { order: 4; }
-  .warnungen { order: 5; }
-  .absende-leiste { order: 6; padding-top: 14px; border-top: 1px solid var(--linie); justify-items: center; }
-  .absende-leiste .btn-primaer { width: auto; min-width: 260px; }
-  .datenschutz-hinweis { text-align: center; }
+  .aufnahme { grid-template-columns: 1fr; }
+  .spur-status { position: static; }
+  .abschlusskarte {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    column-gap: 22px;
+    align-items: center;
+  }
+  .warnungen { grid-column: 1; }
+  .absende-leiste {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    align-content: center;
+    margin: 0;
+    padding: 0 0 0 22px;
+    border-top: 0;
+    border-left: 1px solid var(--linie);
+  }
 }
 
 @media (max-width: 860px) {
@@ -955,6 +1055,17 @@ select.feld {
   .kopf-inner { padding: 0 16px; }
   .btn-geist span { display: none; }
   .btn-geist { padding: 0 8px; }
+  .spur-ablauf { grid-template-columns: 1fr; gap: 14px; }
+}
+
+@media (max-width: 680px) {
+  .abschlusskarte { display: block; }
+  .absende-leiste {
+    margin-top: 16px;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--linie);
+    border-left: 0;
+  }
 }
 
 @media (max-width: 560px) {
@@ -968,6 +1079,8 @@ select.feld {
   .nachricht-körper { padding: 14px 16px; }
   .btn-gross { width: 100%; }
   .ko-leiste { grid-template-columns: 1fr; }
+  .aufnahme-titel { margin-left: 0; }
+  .block-kopf-statisch, .block-inhalt { padding-left: 14px; padding-right: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
