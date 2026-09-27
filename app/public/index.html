@@ -14,7 +14,8 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <!-- Schrift liegt lokal, keine Verbindung zu Google (siehe styles.css). -->
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/styles.css?v=20260917b">
+<link rel="stylesheet" href="/assets/css/styles.css?v=20260927d">
+<link rel="stylesheet" href="/assets/css/arbeitsplatz.css?v=20260927d">
 </head>
 <body>
 
@@ -43,15 +44,16 @@
         <button type="button" class="sprach-btn" data-sprache="fr" aria-pressed="false">FR</button>
       </div>
       <span class="kopf-trenner" aria-hidden="true"></span>
-      <button type="button" class="btn-geist" id="verlaufOeffnen">
+      <button type="button" class="btn-geist" id="verlaufOeffnen" data-i18n-aria="verlauf" aria-label="Verlauf">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5M12 7v5l3 2"/></svg>
         <span data-i18n="verlauf">Verlauf</span>
       </button>
-      <button type="button" class="btn-geist" id="korrekturenOeffnen">
+      <button type="button" class="btn-geist" id="korrekturenOeffnen" data-i18n-aria="korrekturen" aria-label="Korrekturen">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
         <span data-i18n="korrekturen">Korrekturen</span>
       </button>
-      <button type="button" class="btn-sekundaer" id="neuerFall">
+      <button type="button" class="btn-geist" id="wissenOeffnen" hidden aria-label="Wissenspflege" data-i18n-aria="wissenOeffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H3V4Zm9 3a3 3 0 0 1 3-3h6v15h-5a4 4 0 0 0-4 2"/></svg><span data-i18n="wissenKurz">Wissen</span></button>
+      <button type="button" class="btn-sekundaer" id="neuerFall" data-i18n-aria="neuerFall" aria-label="Neuer Fall">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         <span data-i18n="neuerFall">Neuer Fall</span>
       </button>
@@ -67,7 +69,6 @@
             <span class="menue-name" id="menueName"></span>
             <span class="menue-meta" id="menueMeta"></span>
           </div>
-          <button type="button" class="menue-punkt" id="wissenOeffnen" hidden data-i18n="wissenOeffnen">Wissenspflege</button>
           <button type="button" class="menue-punkt" id="nutzerVerwalten" hidden data-i18n="nutzerVerwalten">Nutzer verwalten</button>
           <button type="button" class="menue-punkt" id="abmelden" data-i18n="abmelden">Abmelden</button>
         </div>
@@ -87,87 +88,6 @@
       <button type="button" class="btn-schliessen" id="verlaufSchliessen" aria-label="Schließen">×</button>
     </div>
     <div class="verlauf-liste" id="verlaufListe"></div>
-  </div>
-</div>
-
-<!-- ─── Support-Korrekturen ───────────────────────────────────────────── -->
-<!-- Liste aller Korrekturen mit Status. Freigeben und „Im Wiki" brauchen das
-     Freigabewort (zweite Rolle); Zurückziehen nur das Zugangswort.
-     Warum eine Liste und nicht nur der Knopf unter der Antwort: Eine
-     Korrektur, die niemand je wieder ansieht, bleibt ewig „ungeprüft" —
-     und damit ewig gedeckelt. Hier sieht man, was auf Entscheidung wartet. -->
-<div class="verlauf-overlay" id="korrekturenOverlay" hidden>
-  <div class="verlauf-box">
-    <div class="verlauf-kopf">
-      <div>
-        <h2 data-i18n="koListeTitel">Support-Korrekturen</h2>
-        <p class="verlauf-unter" data-i18n="koListeUnter">Versioniert im Repository. Freigeben und Archivieren braucht das Freigabewort.</p>
-      </div>
-      <button type="button" class="btn-schliessen" id="korrekturenSchliessen" aria-label="Schließen">×</button>
-    </div>
-    <div class="ko-leiste">
-      <input type="text" id="koName" class="feld" data-i18n-ph="koFeldName" placeholder="Dein Name" autocomplete="name">
-      <input type="password" id="koFreigabewort" class="feld" data-i18n-ph="koFreigabewort" placeholder="Freigabewort" autocomplete="off">
-    </div>
-    <p class="ko-meldung" id="koListeMeldung" hidden></p>
-    <div class="verlauf-liste" id="korrekturenListe"></div>
-  </div>
-</div>
-
-<!-- ─── Wissenspflege (Wissensmanager, Admin) ─────────────────────────── -->
-<!-- Zwei Reiter: Gewichtung je Artikel und Lücken. Beides sind Signale in
-     Richtung Wiki — Thi ist nicht das Wiki. -->
-<div class="verlauf-overlay" id="wissenOverlay" hidden>
-  <div class="verlauf-box verlauf-box-breit">
-    <div class="verlauf-kopf">
-      <div>
-        <h2 data-i18n="wiTitel">Wissenspflege</h2>
-        <p class="verlauf-unter" data-i18n="wiUnter">Quellen hoch- oder abstufen und sehen, wo die Dokumentation Lücken hat.</p>
-      </div>
-      <button type="button" class="btn-schliessen" id="wissenSchliessen" aria-label="Schließen">×</button>
-    </div>
-    <div class="reiter" role="tablist">
-      <button type="button" class="reiter-knopf ist-aktiv" data-reiter="gewichtung" role="tab" data-i18n="wiReiterGewichtung">Gewichtung</button>
-      <button type="button" class="reiter-knopf" data-reiter="luecken" role="tab" data-i18n="wiReiterLuecken">Lücken</button>
-    </div>
-
-    <div class="reiter-inhalt" id="reiterGewichtung">
-      <form class="wi-form" id="gewichtenForm" autocomplete="off">
-        <div class="autocomplete wi-artikel">
-          <input type="text" id="wiArtikelSuche" class="feld" data-i18n-ph="wiArtikelSuche" placeholder="Artikel suchen …" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="wiArtikelListe">
-          <ul class="ac-liste" id="wiArtikelListe" role="listbox" hidden></ul>
-          <input type="hidden" id="wiRoute">
-        </div>
-        <select id="wiStatus" class="feld">
-          <option value="normal" data-i18n="wiStatusNormal">Normal</option>
-          <option value="bevorzugt" data-i18n="wiStatusBevorzugt">Bevorzugt</option>
-          <option value="veraltet" data-i18n="wiStatusVeraltet">Veraltet</option>
-        </select>
-        <label class="wi-faktor">
-          <span data-i18n="wiFaktor">Faktor</span>
-          <input type="number" id="wiFaktor" class="feld feld-mono" min="0.1" max="3" step="0.1" value="1">
-        </label>
-        <input type="text" id="wiNotiz" class="feld" data-i18n-ph="wiNotiz" placeholder="Warum? (kurz)" maxlength="300">
-        <button type="submit" class="btn-primaer" data-i18n="wiSetzen">Setzen</button>
-      </form>
-      <p class="wi-hilfe" data-i18n="wiHilfe">Faktor 1 = unverändert, 2 = doppelt so stark, 0,5 = halb. „Veraltet“ drückt die Quelle ans Ende und deckelt die Sicherheit einer Antwort, die sich darauf stützt. Gestrichen wird nichts.</p>
-      <p class="ko-meldung" id="wiMeldung" hidden></p>
-      <div class="verlauf-liste" id="gewichtungListe"></div>
-    </div>
-
-    <div class="reiter-inhalt" id="reiterLuecken" hidden>
-      <div class="wi-leiste">
-        <span data-i18n="wiZeitraum">Zeitraum</span>
-        <select id="wiTage" class="feld">
-          <option value="7">7</option>
-          <option value="30" selected>30</option>
-          <option value="90">90</option>
-        </select>
-        <span data-i18n="wiTage">Tage</span>
-      </div>
-      <div class="wi-haeufig" id="wiHaeufig"></div>
-      <div class="verlauf-liste" id="lueckenListe"></div>
-    </div>
   </div>
 </div>
 
@@ -253,17 +173,32 @@
   <section class="ansicht ansicht-fall" id="ansichtFall">
     <div class="breite">
 
-      <h1 class="aufnahme-titel" data-i18n="fallTitel">Fallaufnahme</h1>
+      <div class="seiten-kopf">
+        <div>
+          <p class="seiten-kontext"><span class="kontext-strich" aria-hidden="true"></span><span data-i18n="arbeitsplatz">Dein Support-Arbeitsplatz</span></p>
+          <h1 class="aufnahme-titel" data-i18n="fallTitel">Fallaufnahme</h1>
+          <p class="seiten-beschreibung" data-i18n="fallIntro">Du schilderst das Anliegen. Thi findet die passenden Antworten.</p>
+        </div>
+        <ol class="prozess" data-i18n-aria="prozess" aria-label="Fallbearbeitung">
+          <li aria-current="step"><span>01</span><span data-i18n="prozessAufnahme">Aufnahme</span></li>
+          <li><span>02</span><span data-i18n="prozessAntwort">Analyse & Antwort</span></li>
+        </ol>
+      </div>
 
       <form id="fallFormular" autocomplete="off">
+        <fieldset class="anlass-wahl"><legend data-i18n="anlassLabel">Worum geht es?</legend>
+          <label><input type="radio" name="anlass" value="frage" checked><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v12H9l-4 4V4Z"/><path d="M9 8h6M9 12h4"/></svg><span data-i18n="anlassFrage">Produktfrage</span></span></label>
+          <label><input type="radio" name="anlass" value="diagnose"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg><span data-i18n="anlassDiagnose">Fehlersuche</span></span></label>
+          <label><input type="radio" name="anlass" value="einbau"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v5m8-5v5M6 8h12v4a6 6 0 0 1-12 0V8Zm6 10v4"/></svg><span data-i18n="anlassEinbau">Einbau & Einrichtung</span></span></label>
+        </fieldset>
         <div class="aufnahme">
 
           <!-- Vier Arbeitsschritte in natürlicher Lese- und Tab-Reihenfolge. -->
           <div class="spur-ablauf">
 
-            <section class="block block-haupt" data-block="anliegen">
+            <section class="block block-haupt" data-block="anliegen" id="schrittAnliegen">
               <div class="block-kopf-statisch">
-                <span class="schritt">1</span>
+                <span class="schritt">01</span>
                 <div class="block-titelgruppe">
                   <h2 class="block-titel" data-i18n="blockAnliegen">Anliegen</h2>
                   <p class="block-unter" data-i18n="unterAnliegen">Was schildert der Kunde?</p>
@@ -275,56 +210,47 @@
                 <div class="feld-gruppe">
                   <span class="feld-label">
                     <label for="beobachtet" data-i18n="labelBeobachtet">Mitschrift — in eigenen Worten <em>*</em></label>
+                    <span class="pflicht-label" data-i18n="pflicht">Pflichtfeld</span>
                     <button type="button" class="btn-diktat" id="diktat" hidden>
                       <span class="diktat-punkt" aria-hidden="true"></span>
                       <span data-i18n="diktatStart">Diktieren</span>
                     </button>
                   </span>
-                  <textarea id="beobachtet" class="feld feld-gross" rows="5" data-i18n-ph="phBeobachtet"
-                    placeholder="Einfach mitschreiben, während der Kunde erzählt — Fahrzeug, Produkt und Seriennummer erkennt Thi selbst."></textarea>
+                  <textarea id="beobachtet" class="feld feld-gross" rows="4" aria-required="true" aria-describedby="mitschriftHilfe" data-i18n-ph="phBeobachtet"
+                    placeholder="Was schildert der Kunde? Zum Beispiel: Die WiPro III löst beim Öffnen der Schiebetür keinen Alarm aus …"></textarea>
+                  <p class="mitschrift-hilfe" id="mitschriftHilfe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4m12-6h4a2 2 0 0 1 2 2v4M3 15v4a2 2 0 0 0 2 2h4m12-6v4a2 2 0 0 1-2 2h-4M8 12h8M12 8v8"/></svg><span data-i18n="mitschriftHilfe">Thi erkennt Produkt, Fahrzeug und Seriennummer in deiner Mitschrift.</span></p>
                   <div class="erkannt" id="erkannt" hidden></div>
                 </div>
 
-                <div class="feld-reihe">
-                  <label class="feld-gruppe">
-                    <span class="feld-label" data-i18n="labelErwartet">Erwartetes Verhalten</span>
-                    <input type="text" id="erwartet" class="feld" data-i18n-ph="phErwartet" placeholder="Was sollte stattdessen passieren?">
-                  </label>
-                  <label class="feld-gruppe">
-                    <span class="feld-label" data-i18n="labelRepro">Tritt auf</span>
-                    <select id="reproduzierbar" class="feld">
-                      <option value="" data-i18n="optBitteWaehlen">Bitte wählen</option>
-                      <option value="dauerhaft" data-i18n="optDauerhaft">Dauerhaft</option>
-                      <option value="sporadisch" data-i18n="optSporadisch">Sporadisch</option>
-                      <option value="reproduzierbar" data-i18n="optRepro">Zuverlässig reproduzierbar</option>
-                      <option value="einmalig" data-i18n="optEinmalig">Bisher einmalig</option>
-                    </select>
-                  </label>
-                </div>
+
               </div>
             </section>
 
-            <section class="block" data-block="produkt">
+            <section class="block" data-block="produkt" id="schrittProdukt">
               <div class="block-kopf-statisch">
-                <span class="schritt">2</span>
+                <span class="schritt">02</span>
                 <div class="block-titelgruppe">
                   <h2 class="block-titel" id="blockProduktTitel" data-i18n="blockProdukt">Welches Produkt?</h2>
+                  <p class="block-unter" data-i18n="unterProdukt">Das betroffene THITRONIK-System.</p>
                 </div>
                 <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
               </div>
               <div class="block-inhalt">
 
                 <div class="feld-gruppe">
-                  <label class="nur-vorlesen" for="produktSuche" data-i18n="labelProduktSuche">Produkt suchen</label>
-                  <div class="autocomplete">
+                  <label class="feld-label" for="produktSuche" data-i18n="labelProduktSuche">Produkt suchen</label>
+                  <div class="autocomplete suche-feld">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
                     <input type="text" id="produktSuche" class="feld" data-i18n-ph="phProdukt"
                            placeholder="Produkt suchen …" role="combobox"
                            aria-expanded="false" aria-autocomplete="list" aria-controls="produktAuswahl">
                     <div class="produkt-auswahl" id="produktAuswahl" role="listbox" hidden></div>
                   </div>
-                  <div class="chips" id="produktChips"></div>
+                  <div class="chips" id="produktChips"></div><div class="produkt-portraits" id="produktPortraits"></div>
                 </div>
 
+<details class="nebenfelder produkt-details" id="produktDetails">
+                  <summary><span data-i18n="produktDetails">Seriennummer & Software ergänzen</span><span id="produktDetailsKurz" class="kontext-kurz"></span></summary>
                 <label class="feld-gruppe">
                   <span class="feld-label" data-i18n="labelSeriennummer">Seriennummer</span>
                   <input type="text" id="seriennummer" class="feld feld-mono" placeholder="0699-045" inputmode="numeric">
@@ -332,8 +258,7 @@
                   <div class="sn-erkennung" id="snErkennung" hidden></div>
                 </label>
 
-                <details class="nebenfelder">
-                  <summary data-i18n="mehrAngaben">Weitere Angaben</summary>
+
                   <label class="feld-gruppe">
                     <span class="feld-label" data-i18n="labelSoftware">Softwarestand</span>
                     <input type="text" id="softwarestand" class="feld feld-mono" placeholder="11.0.4">
@@ -343,19 +268,21 @@
               </div>
             </section>
 
-            <section class="block" data-block="fahrzeug">
-              <div class="block-kopf-statisch">
-                <span class="schritt">3</span>
+            <details class="block kontext-block" data-block="fahrzeug" id="schrittFahrzeug">
+              <summary class="block-kopf-statisch">
+                <span class="schritt">03</span>
                 <div class="block-titelgruppe">
                   <h2 class="block-titel" data-i18n="blockFahrzeug">Auf welchem Fahrzeug?</h2>
+                  <p class="block-unter" data-i18n="unterFahrzeug">Damit die Lösung zum Fahrzeug passt.</p>
                 </div>
-                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
-              </div>
+                <span class="kontext-kurz" id="fahrzeugKurz"></span><span class="kontext-pfeil" aria-hidden="true">⌄</span>
+              </summary>
               <div class="block-inhalt">
 
                 <label class="feld-gruppe">
                   <span class="feld-label" data-i18n="labelFahrzeug">Basisfahrzeug / Chassis</span>
-                  <div class="autocomplete">
+                  <div class="autocomplete suche-feld">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
                     <input type="text" id="fahrzeugSuche" class="feld" data-i18n-ph="phFahrzeug"
                            placeholder="z. B. Ducato, Sprinter, Transit …" role="combobox"
                            aria-expanded="false" aria-autocomplete="list" aria-controls="fahrzeugListe">
@@ -407,18 +334,34 @@
                   </div>
                 </details>
               </div>
-            </section>
+            </details>
 
-            <section class="block block-haupt" data-block="beobachtung">
-              <div class="block-kopf-statisch">
-                <span class="schritt">4</span>
+            <details class="block kontext-block" data-block="beobachtung" id="schrittBeobachtung">
+              <summary class="block-kopf-statisch">
+                <span class="schritt">04</span>
                 <div class="block-titelgruppe">
                   <h2 class="block-titel" data-i18n="blockBeobachtung">Was zeigt das Gerät?</h2>
                   <p class="block-unter" data-i18n="unterBeobachtung">Am Telefon erfragen — je wörtlicher, desto besser.</p>
                 </div>
-                <span class="block-ampel" data-ampel="leer" aria-hidden="true"></span>
-              </div>
+                <span class="kontext-kurz" id="beobachtungKurz"></span><span class="kontext-pfeil" aria-hidden="true">⌄</span>
+              </summary>
               <div class="block-inhalt">
+                <div class="feld-reihe">
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelErwartet">Erwartetes Verhalten</span>
+                    <input type="text" id="erwartet" class="feld" data-i18n-ph="phErwartet" placeholder="Was sollte stattdessen passieren?">
+                  </label>
+                  <label class="feld-gruppe">
+                    <span class="feld-label" data-i18n="labelRepro">Tritt auf</span>
+                    <select id="reproduzierbar" class="feld">
+                      <option value="" data-i18n="optBitteWaehlen">Bitte wählen</option>
+                      <option value="dauerhaft" data-i18n="optDauerhaft">Dauerhaft</option>
+                      <option value="sporadisch" data-i18n="optSporadisch">Sporadisch</option>
+                      <option value="reproduzierbar" data-i18n="optRepro">Zuverlässig reproduzierbar</option>
+                      <option value="einmalig" data-i18n="optEinmalig">Bisher einmalig</option>
+                    </select>
+                  </label>
+                </div>
 
                 <label class="feld-gruppe">
                   <span class="feld-label">
@@ -445,20 +388,19 @@
                     placeholder="z. B. Handsender-Batterie getauscht — keine Änderung"></textarea>
                 </label>
               </div>
-            </section>
+            </details>
 
           </div>
 
           <!-- Abschluss bleibt am Desktop sichtbar, ohne den Erfassungsfluss zu unterbrechen. -->
           <aside class="spur-status">
             <div class="abschlusskarte">
+              <div class="abschluss-kopf"><span class="thi-symbol" aria-hidden="true">thi<span></span></span><div><h2 data-i18n="fallUeberblick">Dein Fall im Überblick</h2><p data-i18n="fallUeberblickUnter">Die Basis für eine fundierte Antwort.</p></div></div>
               <div class="sicherheit-vorschau" id="sicherheitVorschau">
-                <div class="sv-kopf">
-                  <span class="sv-titel" data-i18n="svTitel">Belastbarkeit der Aufnahme</span>
-                  <span class="sv-wert" id="svWert">0<span class="sv-prozent">%</span></span>
-                </div>
-                <div class="sv-balken"><div class="sv-fuellung" id="svFuellung"></div></div>
+                <p class="aufnahme-status" id="aufnahmeStatus" aria-live="polite"></p>
+                <p class="aufnahme-empfehlung" id="aufnahmeEmpfehlung"></p>
                 <ul class="sv-liste" id="svListe"></ul>
+                <p class="sv-hinweis" data-i18n="svHinweis">Fehlende Angaben kannst du später ergänzen.</p>
               </div>
 
               <div class="warnungen" id="warnungen"></div>
@@ -473,9 +415,19 @@
                 </p>
               </div>
             </div>
+            <div class="support-notiz">
+              <span class="notiz-label" data-i18n="notizLabel">Gut zu wissen</span>
+              <h3 data-i18n="notizTitel">Je genauer der Fall, desto hilfreicher die Antwort.</h3>
+              <p data-i18n="notizText">Blinkcodes, der genaue Wortlaut einer Meldung und bereits geprüfte Schritte helfen Thi bei der Suche.</p>
+              <div class="notiz-fuss"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4V4Zm9 3a3 3 0 0 1 3-3h5v15h-4a4 4 0 0 0-4 2"/></svg><span data-i18n="notizQuellen">Antworten mit THITRONIK-Quellen</span></div>
+            </div>
           </aside>
         </div>
       </form>
+      <div class="mobile-abschluss">
+        <div><span data-i18n="svKurz">Dein Fall</span><strong id="mobilStatus"></strong></div>
+        <button type="submit" form="fallFormular" class="btn-primaer" id="mobilAbsenden"><span data-i18n="absenden">Fall analysieren</span><svg class="btn-pfeil" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      </div>
 
     </div>
   </section>
@@ -483,17 +435,20 @@
   <!-- ══ Ansicht 2: Antwort ════════════════════════════════════════════ -->
   <section class="ansicht ansicht-antwort" id="ansichtAntwort" hidden>
     <div class="schmal">
-
+      <div class="antwort-kopf">
+        <div><p class="seiten-kontext"><span class="kontext-strich" aria-hidden="true"></span><span data-i18n="prozessAntwort">Analyse & Antwort</span></p><h1 data-i18n="antwortTitel">Gemeinsam zur Lösung.</h1><p class="seiten-beschreibung" data-i18n="antwortIntro">Dein Fall, die passenden Quellen und die nächsten Schritte.</p></div>
       <button type="button" class="btn-zurueck" id="zurueckZumFall">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span data-i18n="zurueck">Fall bearbeiten</span>
       </button>
+      </div>
 
       <div class="chat-verlauf" id="chatVerlauf" aria-live="polite" aria-atomic="false"></div>
 
       <form class="nachfrage" id="nachfrageFormular" hidden>
+        <label class="nur-vorlesen" for="nachfrage" data-i18n="phNachfrage">Nachfrage stellen …</label>
         <input type="text" id="nachfrage" class="feld" data-i18n-ph="phNachfrage" placeholder="Nachfrage stellen …">
-        <button type="submit" class="btn-primaer btn-rund" aria-label="Senden">
+        <button type="submit" class="btn-primaer btn-rund" data-i18n-aria="senden" aria-label="Senden">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </form>
@@ -501,16 +456,107 @@
     </div>
   </section>
 
+<!-- ─── Support-Korrekturen ───────────────────────────────────────────── -->
+<!-- Liste aller Korrekturen mit Status. Freigeben und „Im Wiki" brauchen das
+     Freigabewort (zweite Rolle); Zurückziehen nur das Zugangswort.
+     Warum eine Liste und nicht nur der Knopf unter der Antwort: Eine
+     Korrektur, die niemand je wieder ansieht, bleibt ewig „ungeprüft" —
+     und damit ewig gedeckelt. Hier sieht man, was auf Entscheidung wartet. -->
+<div class="ansicht arbeitsansicht" id="korrekturenOverlay" hidden>
+  <div class="arbeitsflaeche">
+    <div class="arbeitskopf">
+      <div>
+        <h1 tabindex="-1" data-i18n="koListeTitel">Support-Korrekturen</h1>
+        <p class="verlauf-unter" data-i18n="koListeUnter">Erfahrungen aus dem Support prüfen, freigeben und in die Wissensbasis übernehmen.</p>
+      </div>
+      <button type="button" class="btn-zurueck arbeits-zurueck" id="korrekturenSchliessen"><span aria-hidden="true">←</span><span data-i18n="zumFallZurueck">Zurück zum Fall</span></button>
+    </div>
+    <div class="ko-leiste">
+      <input type="text" id="koName" class="feld" data-i18n-ph="koFeldName" placeholder="Dein Name" autocomplete="name">
+      <input type="password" id="koFreigabewort" class="feld" data-i18n-ph="koFreigabewort" placeholder="Freigabewort" autocomplete="off">
+    </div>
+    <p class="ko-meldung" id="koListeMeldung" hidden></p>
+    <div class="arbeitsraster korrektur-raster">
+      <aside class="arbeitsliste"><label class="nur-vorlesen" for="korrekturSuche" data-i18n="koSuche">Korrekturen durchsuchen</label><input class="feld" type="search" id="korrekturSuche" data-i18n-ph="koSuche" placeholder="Korrekturen durchsuchen"><div class="ko-filter" id="korrekturFilter"></div><div class="verlauf-liste" id="korrekturenListe"></div></aside>
+      <section class="arbeitsdetail" id="korrekturDetail" aria-label="Korrektur" data-i18n-aria="korrekturDetail"><p class="verlauf-leer" data-i18n="koAuswaehlen">Wähle einen Eintrag, um ihn zu prüfen.</p></section>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Wissenspflege (Wissensmanager, Admin) ─────────────────────────── -->
+<!-- Zwei Reiter: Gewichtung je Artikel und Lücken. Beides sind Signale in
+     Richtung Wiki — Thi ist nicht das Wiki. -->
+<div class="ansicht arbeitsansicht" id="wissenOverlay" hidden>
+  <div class="arbeitsflaeche">
+    <div class="arbeitskopf">
+      <div>
+        <h1 tabindex="-1" data-i18n="wiTitel">Wissenspflege</h1>
+        <p class="verlauf-unter" data-i18n="wiUnter">Quellen hoch- oder abstufen und sehen, wo die Dokumentation Lücken hat.</p>
+      </div>
+      <button type="button" class="btn-zurueck arbeits-zurueck" id="wissenSchliessen"><span aria-hidden="true">←</span><span data-i18n="zumFallZurueck">Zurück zum Fall</span></button>
+    </div>
+    <div class="reiter" role="tablist">
+      <button type="button" class="reiter-knopf ist-aktiv" data-reiter="gewichtung" role="tab" data-i18n="wiReiterGewichtung">Gewichtung</button>
+      <button type="button" class="reiter-knopf" data-reiter="luecken" role="tab" data-i18n="wiReiterLuecken">Lücken</button>
+    </div>
+
+    <div class="reiter-inhalt" id="reiterGewichtung">
+      <p class="ko-meldung" id="wiMeldung" role="status" hidden></p>
+<div class="arbeitsraster wissen-raster">
+        <aside class="arbeitsliste"><label class="nur-vorlesen" for="wiBibliothekSuche" data-i18n="wiBibliothekSuche">Wissensbasis durchsuchen</label><input type="search" class="feld" id="wiBibliothekSuche" data-i18n-ph="wiBibliothekSuche" placeholder="Wissensbasis durchsuchen"><p class="bibliothek-zahl" id="wiBibliothekZahl"></p><div class="verlauf-liste" id="gewichtungListe"></div></aside>
+        <section class="arbeitsdetail wissen-editor"><button type="button" class="btn-zurueck detail-zurueck" id="wiDetailZurueck"><span aria-hidden="true">←</span><span data-i18n="wiBibliothekSuche">Wissensbasis durchsuchen</span></button><p class="notiz-label" data-i18n="wiEditorLabel">Quelle bearbeiten</p><h2 id="wiEditorTitel" tabindex="-1">Artikel auswählen</h2>      <p id="wiAuswahlHinweis" class="wi-auswahl-hinweis" data-i18n="wiAuswahlHilfe">Wähle links einen Artikel. Hier kannst du seine Gewichtung und Einordnung bearbeiten.</p><form class="wi-form" id="gewichtenForm" autocomplete="off">
+        <div class="autocomplete wi-artikel">
+          <label class="feld-label" for="wiArtikelSuche" data-i18n="wiQuelleLabel">Artikel</label>
+          <input type="text" id="wiArtikelSuche" class="feld" data-i18n-ph="wiArtikelSuche" data-i18n-aria="wiArtikelSuche" aria-label="Artikel suchen" placeholder="Artikel suchen …" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="wiArtikelListe">
+          <ul class="ac-liste" id="wiArtikelListe" role="listbox" hidden></ul>
+          <input type="hidden" id="wiRoute">
+        </div>
+        <label class="wi-einordnung"><span class="feld-label" data-i18n="wiEinordnung">Einordnung der Quelle</span><select id="wiStatus" class="feld" data-i18n-aria="wiEinordnung" aria-label="Einordnung der Quelle">
+          <option value="normal" data-i18n="wiStatusNormal">Normal</option>
+          <option value="bevorzugt" data-i18n="wiStatusBevorzugt">Bevorzugt</option>
+          <option value="veraltet" data-i18n="wiStatusVeraltet">Veraltet</option>
+        </select></label>
+        <label class="wi-faktor">
+          <span data-i18n="wiFaktor">Faktor</span>
+          <input type="number" id="wiFaktor" class="feld feld-mono" min="0.1" max="3" step="0.1" value="1">
+        </label>
+        <label class="wi-begruendung"><span class="feld-label" data-i18n="wiBegruendungLabel">Begründung</span><input type="text" id="wiNotiz" class="feld" data-i18n-ph="wiNotiz" placeholder="Warum? (kurz)" maxlength="300"></label>
+        <div class="wi-form-aktionen"><button type="submit" class="btn-primaer" data-i18n="wiSetzen">Setzen</button><button type="button" class="btn-sekundaer" id="wiZuruecksetzen" data-i18n="wiZuruecksetzen" disabled>Zurücksetzen</button></div>
+      </form>
+      <p class="wi-hilfe" data-i18n="wiHilfe">Faktor 1 = unverändert, 2 = doppelt so stark, 0,5 = halb. „Veraltet“ drückt die Quelle ans Ende und deckelt die Sicherheit einer Antwort, die sich darauf stützt. Gestrichen wird nichts.</p>
+</section>
+      </div>
+    </div>
+
+    <div class="reiter-inhalt" id="reiterLuecken" hidden>
+      <div class="wi-leiste">
+        <span data-i18n="wiZeitraum">Zeitraum</span>
+        <select id="wiTage" class="feld">
+          <option value="7">7</option>
+          <option value="30" selected>30</option>
+          <option value="90">90</option>
+        </select>
+        <span data-i18n="wiTage">Tage</span>
+      </div>
+      <div class="wi-haeufig" id="wiHaeufig"></div>
+      <div class="verlauf-liste" id="lueckenListe"></div>
+    </div>
+  </div>
+</div>
+
+
 </main>
 
 <footer class="fuss">
+  <span class="fuss-marke">THITRONIK <span>×</span> Thi</span>
   <span data-i18n="fussSupport">THITRONIK Support</span>
   <a href="tel:+494351767440112" class="fuss-tel">+49 (0)4351 76744-112</a>
 </footer>
 
 <script src="/assets/js/kataloge.js?v=20260917b"></script>
-<script src="/assets/js/i18n.js?v=20260917b"></script>
+<script src="/assets/js/i18n.js?v=20260927d"></script>
 <script src="/assets/js/erkennung.js?v=20260917b"></script>
-<script src="/assets/js/app.js?v=20260917b"></script>
+<script src="/assets/js/produktbilder.js?v=20260927d"></script>
+<script src="/assets/js/app.js?v=20260927d"></script>
 </body>
 </html>

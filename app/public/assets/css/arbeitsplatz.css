@@ -1,0 +1,185 @@
+/* Fallaufnahme, Quellenarbeit und Antworten: ein gemeinsamer Arbeitsplatz. */
+.anlass-wahl { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 24px; border: 0; }
+.anlass-wahl legend { float: left; margin: 0 18px 0 0; padding: 12px 0; font-size: .75rem; font-weight: 600; color: var(--text-2); }
+.anlass-wahl label { position: relative; cursor: pointer; }
+.anlass-wahl input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: pointer; }
+.anlass-wahl label > span { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 1px solid var(--linie-2); border-radius: 8px; background: white; font-size: .8125rem; color: var(--text-2); transition: border-color var(--t), background-color var(--t); }
+.anlass-wahl svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.anlass-wahl input:checked + span { background: var(--navy); border-color: var(--navy); color: white; }
+.anlass-wahl input:focus-visible + span { outline: 2px solid var(--navy); outline-offset: 3px; }
+.anlass-wahl label:hover > span { border-color: var(--navy); }
+.seiten-kopf { margin-bottom: 24px; }
+.spur-ablauf { align-items: start; gap: 18px; }
+#schrittAnliegen, #schrittProdukt, .kontext-block { grid-column: 1 / -1; }
+.block[data-block="anliegen"] .block-inhalt { display: block; }
+.block[data-block="anliegen"] textarea { min-height: 116px; }
+.block[data-block="anliegen"] .feld-gruppe { margin-bottom: 0; }
+.kontext-block > summary { padding: 20px 24px; min-height: 80px; cursor: pointer; list-style: none; }
+.kontext-block > summary::-webkit-details-marker { display: none; }
+.kontext-block > summary:hover { background: var(--flaeche-2); border-radius: inherit; }
+.kontext-block[open] > summary { border-bottom: 1px solid var(--linie); }
+.kontext-block .block-unter { display: none; }
+.kontext-kurz { font-size: .6875rem; color: var(--text-3); font-weight: 400; overflow-wrap: anywhere; }
+.kontext-block > summary > .kontext-kurz { margin-left: auto; text-align: right; max-width: 36%; }
+.kontext-pfeil { color: var(--text-3); font-size: 20px; margin-left: 5px; }
+.kontext-block[open] .kontext-pfeil { transform: rotate(180deg); }
+.produkt-details { margin-top: 20px; }
+.produkt-details > summary { min-height: 40px; }
+.produkt-details > summary .kontext-kurz { margin-left: 12px; }
+.produkt-details[open] > summary { margin-bottom: 14px; }
+.produkt-details > .feld-gruppe:last-child { margin-bottom: 0; }
+.aufnahme-status { color: var(--navy); font-weight: 650; font-size: 1.125rem; letter-spacing: -.025em; }
+.aufnahme-status[data-bereit="true"]::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok-text); margin: 0 9px 2px 0; }
+.aufnahme-empfehlung { font-size: .75rem; color: var(--text-2); margin: 8px 0 18px; line-height: 1.7; }
+.sv-liste { gap: 5px; }
+.sv-liste button { min-height: 46px; align-items: center; }
+.kontext-punkt { display: flex; flex-direction: column; gap: 1px; }
+.kontext-punkt small { font-size: .625rem; color: var(--text-3); font-weight: 400; }
+.ist-erfuellt .kontext-punkt small { color: var(--ok-text); }
+.abschluss-kopf { margin-bottom: 18px; padding-bottom: 18px; }
+.mobile-abschluss strong { font-size: .8125rem; }
+
+/* Originalfotos ergänzen die Produktauswahl, Namen bleiben immer sichtbar. */
+.produkt-portraits { margin-top: 16px; }
+.produkt-schnellwahl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 9px; }
+.produkt-vorschlag { display: flex; align-items: center; gap: 12px; text-align: left; padding: 12px; min-height: 94px; min-width: 0; border: 1px solid var(--linie); background: white; border-radius: 9px; cursor: pointer; font-size: .75rem; font-weight: 600; color: var(--navy); transition: border-color var(--t), background-color var(--t); }
+.produkt-vorschlag:hover { border-color: var(--navy); background: var(--flaeche-2); }
+.produkt-vorschlag img { width: 70px; height: 66px; object-fit: contain; mix-blend-mode: multiply; }
+.produkt-vorschlag span { min-width: 0; overflow-wrap: anywhere; }
+.produkt-bild-hilfe { margin-top: 9px; font-size: .625rem; color: var(--text-3); }
+#produktChips { gap: 10px; }
+#produktChips:empty { display: none; }
+#produktChips .chip { display: flex; flex: 1 1 240px; max-width: 100%; align-items: center; gap: 13px; padding: 12px; border-radius: 10px; background: var(--flaeche-2); border: 1px solid var(--linie-2); }
+#produktChips .chip img { width: 80px; height: 64px; object-fit: contain; mix-blend-mode: multiply; }
+.produkt-beschriftung { display: flex; flex-direction: column; min-width: 0; gap: 5px; }
+.produkt-beschriftung strong { font-size: .8125rem; color: var(--navy); font-weight: 600; overflow-wrap: anywhere; }
+.produkt-beschriftung small { color: var(--text-3); font-size: .625rem; }
+#produktChips .chip button { flex: 0 0 36px; min-width: 36px; height: 40px; margin-left: auto; border-radius: 6px; font-size: 20px; }
+.produkt-platzhalter { display: grid; place-items: center; flex: 0 0 64px; height: 54px; background: var(--navy-hell); color: var(--navy); border-radius: 8px; font-weight: 650; font-size: 1.125rem; }
+
+/* Korrekturen und Wissensbasis haben eigene Seiten mit Liste und Detail. */
+.arbeitsflaeche { max-width: 1380px; margin: 0 auto; padding: 38px 40px 56px; }
+.arbeitskopf { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.arbeitskopf h1 { font-size: 1.875rem; color: var(--navy); letter-spacing: -.045em; }
+.arbeitskopf .verlauf-unter { max-width: 680px; margin-top: 9px; line-height: 1.7; }
+.arbeits-zurueck { flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--linie-2); background: white; margin: 0; min-height: 40px; }
+.arbeitsraster { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 24px; align-items: start; }
+.arbeitsliste { min-width: 0; background: white; border: 1px solid var(--linie); border-radius: 12px; padding: 18px 14px 8px; position: sticky; top: calc(var(--kopf-h) + 24px); }
+.arbeitsliste > .feld { width: 100%; font-size: .8125rem; }
+.arbeitsliste .verlauf-liste { display: flex; flex-direction: column; gap: 5px; padding: 12px 0 0; max-height: calc(100dvh - var(--kopf-h) - 250px); min-height: 140px; overflow-y: auto; scrollbar-width: thin; }
+.arbeitsliste .ko-filter { padding: 13px 0 2px; gap: 5px; }
+.arbeitsliste .ko-filter button { padding: 5px 9px; font-size: .6875rem; }
+.bibliothek-eintrag { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; min-height: 108px; padding: 15px 13px; background: white; border: 1px solid transparent; border-bottom-color: var(--linie); border-radius: 8px; text-align: left; cursor: pointer; }
+.bibliothek-eintrag:hover { background: var(--flaeche-2); }
+.bibliothek-eintrag[aria-pressed="true"] { border-color: var(--linie-2); background: var(--navy-hell); box-shadow: inset 3px 0 0 var(--navy); }
+.bibliothek-eintrag strong { font-size: .8125rem; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.bibliothek-eintrag small { color: var(--text-3); font-size: .6875rem; }
+.bibliothek-eintrag .bibliothek-sprache { font-size: .5625rem; letter-spacing: .06em; color: var(--navy); font-weight: 650; }
+.bibliothek-zahl { padding: 12px 4px 0; font-size: .6875rem; color: var(--text-3); }
+.arbeitsdetail { min-width: 0; border: 1px solid var(--linie); background: white; border-radius: 12px; padding: 28px; min-height: 420px; overflow-wrap: anywhere; }
+.arbeitsdetail > .ko-eintrag { border: 0; padding: 0; border-radius: 0; }
+.arbeitsdetail .verlauf-zeile { align-items: flex-start; flex-wrap: wrap; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--linie); margin-bottom: 20px; }
+.arbeitsdetail h2.verlauf-titel { font-size: 1.375rem; color: var(--navy); flex: 1 1 240px; }
+.arbeitsdetail .verlauf-meta { font-size: .75rem; margin-bottom: 12px; overflow-wrap: anywhere; }
+.arbeitsdetail .verlauf-text { font-size: .9375rem; line-height: 1.8; margin: 18px 0; }
+.arbeitsdetail .ko-falsch { border-left: 2px solid var(--gefahr-linie); background: var(--gefahr-bg); padding: 12px 16px; font-size: .8125rem; line-height: 1.8; }
+.arbeitsdetail textarea.feld { margin-top: 22px; resize: vertical; min-height: 100px; line-height: 1.7; }
+.arbeitsdetail .ko-begruendung { margin: 28px 0 0; }
+.arbeitsdetail .ko-begruendung textarea { margin-top: 0; }
+.arbeitsdetail .ko-aktionen { gap: 9px; margin-top: 14px; flex-wrap: wrap; }
+.arbeitsdetail .ko-aktionen button { min-height: 42px; padding: 9px 14px; }
+.arbeitsdetail .ko-aktionen button:first-child { background: var(--navy); color: white; border-color: var(--navy); }
+.arbeitsansicht > .arbeitsflaeche > .ko-leiste { padding: 0; margin-bottom: 20px; max-width: 700px; }
+.arbeitsansicht .ko-meldung { margin: 16px 0; padding: 12px 16px; border-radius: 8px; }
+.kopf .btn-geist[aria-current="page"] { color: var(--navy); background: var(--navy-hell); }
+.detail-zurueck { display: none; }
+.arbeitsansicht .reiter { padding: 0; margin-bottom: 22px; }
+.arbeitsansicht .reiter-inhalt { padding: 0; }
+.wissen-editor h2 { font-size: 1.375rem; color: var(--navy); margin: 10px 0 14px; scroll-margin-top: calc(var(--kopf-h) + 24px); }
+.wi-auswahl-hinweis { font-size: .8125rem; color: var(--text-2); line-height: 1.8; max-width: 500px; }
+.wissen-editor .wi-form { padding: 24px 0 0; grid-template-columns: minmax(0, 1fr) 100px; gap: 18px; align-items: end; }
+.wissen-editor .wi-artikel, .wissen-editor #wiNotiz, .wi-form-aktionen { grid-column: 1 / -1; }
+.wi-begruendung { grid-column: 1 / -1; }
+.wi-einordnung { min-width: 0; }
+.wissen-editor .wi-artikel { margin-bottom: 2px; }
+.wi-form-aktionen { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 2px; }
+.wi-form-aktionen button { min-height: 44px; }
+.wissen-editor .wi-hilfe { border-top: 1px solid var(--linie); margin-top: 28px; padding: 18px 0 0; font-size: .75rem; line-height: 1.85; }
+#wiArtikelListe [aria-selected="true"] { background: var(--navy-hell); color: var(--navy); }
+#lueckenListe { padding: 0; }
+#reiterLuecken .wi-leiste { padding: 0; margin-bottom: 20px; }
+#reiterLuecken .wi-haeufig { padding: 0; margin-bottom: 20px; }
+
+/* Semantische Gliederung; Warnungen werden weder gekürzt noch eingeklappt. */
+.antwort-abschnitt { margin: 24px 0; }
+.antwort-abschnitt:first-child { margin-top: 0; }
+.antwort-kurz { padding: 20px 22px; border-left: 3px solid var(--navy); background: var(--navy-hell); border-radius: 0 8px 8px 0; }
+.antwort .antwort-kurz h2 { margin: 0 0 9px; font-size: .6875rem; text-transform: uppercase; letter-spacing: .07em; color: var(--navy); }
+.antwort .antwort-kurz > p { font-size: 1rem; line-height: 1.8; margin: 0 0 8px; }
+.antwort .antwort-kurz > :last-child { margin-bottom: 0; }
+.antwort-schritte > ol { padding-left: 26px; }
+.antwort-schritte > ol > li { padding-left: 6px; margin-bottom: 12px; }
+.antwort-schritte > ol > li::marker { color: var(--navy); font-weight: 700; }
+.antwort-quellen { border-top: 1px solid var(--linie); padding-top: 16px; color: var(--text-2); font-size: .75rem; }
+.antwort .antwort-quellen h2 { font-size: .8125rem; margin-top: 0; }
+.si-einordnung { font-size: .9375rem; color: var(--navy); }
+.sicherheit[data-stufe="mittel"] { border-left-color: var(--warn-text); background: var(--warn-bg); }
+.sicherheit[data-stufe="mittel"] .si-einordnung { color: var(--warn-text); }
+.sicherheit[data-stufe="gering"] .si-einordnung { color: var(--gefahr-text); }
+
+@media (max-width: 1200px) {
+  .arbeitsflaeche { padding: 32px 24px 48px; }
+  .arbeitsraster { grid-template-columns: 300px minmax(0, 1fr); gap: 18px; }
+  .produkt-vorschlag { flex-direction: column; text-align: center; gap: 8px; }
+  .kopf-aktionen { gap: 3px; }
+}
+@media (max-width: 1000px) {
+  .kopf .btn-geist span { display: none; }
+  .kopf .btn-geist { padding: 0 10px; }
+  .kontext-block > summary { padding: 18px 20px; }
+  .arbeitsraster { grid-template-columns: 270px minmax(0, 1fr); }
+  .arbeitsdetail { padding: 22px; }
+}
+@media (max-width: 760px) {
+  .anlass-wahl legend { float: none; width: 100%; padding: 0; margin: 0 0 5px; }
+  .anlass-wahl { margin-bottom: 18px; }
+  .anlass-wahl label { flex: 1; }
+  .anlass-wahl label > span { justify-content: center; padding: 10px 12px; }
+  .arbeitsflaeche { padding: 26px 20px 40px; }
+  .arbeitskopf { flex-direction: column; gap: 16px; margin-bottom: 24px; }
+  .arbeitskopf h1 { font-size: 1.625rem; }
+  .arbeitsraster { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .arbeitsliste { position: static; }
+  .arbeitsliste .verlauf-liste { max-height: none; }
+  .arbeitsdetail { display: none; min-height: 0; }
+  .detail-offen .arbeitsdetail { display: block; }
+  .detail-offen .arbeitsliste { display: none; }
+  .detail-zurueck { display: flex; align-items: center; gap: 8px; margin: 0 0 22px; min-height: 40px; }
+  .produkt-vorschlag { flex-direction: row; text-align: left; }
+}
+@media (max-width: 560px) {
+  .anlass-wahl { gap: 6px; }
+  .anlass-wahl label > span { min-height: 68px; flex-direction: column; gap: 6px; text-align: center; padding: 9px 6px; font-size: .6875rem; line-height: 1.35; }
+  .anlass-wahl label { min-width: 0; }
+  .kontext-block > summary { padding: 18px; gap: 9px; flex-wrap: wrap; }
+  .kontext-block .block-titelgruppe { flex: 1; }
+  .kontext-block > summary > .kontext-kurz { max-width: 100%; margin-left: 37px; text-align: left; order: 4; flex: 1 0 calc(100% - 37px); }
+  .produkt-vorschlag { flex-direction: column; text-align: center; padding: 9px 5px; gap: 6px; font-size: .6875rem; }
+  .produkt-vorschlag img { width: 64px; max-width: 100%; height: 56px; }
+  .produkt-schnellwahl { gap: 6px; }
+  #produktChips .chip { padding: 10px; gap: 10px; }
+  #produktChips .chip img { width: 62px; }
+  #produktChips .chip button { flex-basis: 40px; min-width: 40px; height: 44px; }
+  .mobile-abschluss { gap: 12px; }
+  .mobile-abschluss .btn-primaer { gap: 10px; padding: 10px 12px; font-size: .75rem; }
+  .arbeitsflaeche { padding: 24px 16px 36px; }
+  .arbeitsdetail { padding: 20px 18px; }
+  .arbeitsdetail h2.verlauf-titel { font-size: 1.1875rem; }
+  .arbeitsliste > .feld { font-size: 1rem; }
+  .arbeitsliste .ko-filter button { min-height: 40px; }
+  .wissen-editor .wi-form { grid-template-columns: minmax(0, 1fr) 76px; gap: 14px; }
+  .antwort-kurz { padding: 16px; }
+  .antwort .antwort-kurz > p { font-size: .9375rem; }
+  .kopf .kopf-aktionen { gap: 3px; }
+  .kopf .btn-geist { padding: 0 6px; }
+}

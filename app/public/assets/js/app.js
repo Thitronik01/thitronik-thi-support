@@ -19,6 +19,7 @@
     laeuft: false,
     zugangswort: '',
     fallGesendet: false,
+    anlass: 'frage',
   };
 
   var $ = function (id) { return document.getElementById(id); };
@@ -219,6 +220,7 @@
     var eintrag = {
       zeit: Date.now(),
       sprache: sprache,
+      anlass: zustand.anlass,
       fahrzeug: d.fahrzeug,
       baujahr: d.baujahr,
       aufbauart: d.aufbauart,
@@ -269,6 +271,7 @@
     $('ausloeser').value = f.ausloeser || '';
     $('reproduzierbar').value = f.reproduzierbar || '';
     $('bisher').value = f.bisher || '';
+    anlassSetzen(eintrag.anlass || 'frage', true);
 
     chipsRendern();
     produkteRendern('');
@@ -344,27 +347,99 @@
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !$('verlaufOverlay').hidden) $('verlaufOverlay').hidden = true;
-      if (e.key === 'Escape' && !$('korrekturenOverlay').hidden) $('korrekturenOverlay').hidden = true;
     });
     $('korrekturenOeffnen').addEventListener('click', function () {
-      $('korrekturenOverlay').hidden = false;
+      arbeitsansichtOeffnen('korrekturen');
       $('koName').value = nameLesen();
       korrekturenLaden();
     });
-    $('korrekturenSchliessen').addEventListener('click', function () { $('korrekturenOverlay').hidden = true; });
-    $('korrekturenOverlay').addEventListener('click', function (e) {
-      if (e.target === $('korrekturenOverlay')) $('korrekturenOverlay').hidden = true;
+    $('korrekturenSchliessen').addEventListener('click', arbeitsansichtSchliessen);
+
+    // Alle Dialoge bekommen denselben Tastaturfluss, auch Wissenspflege und
+    // Anmeldung. Das hidden-Attribut bleibt die zentrale Zustandsquelle.
+    var dialoge = Array.from(document.querySelectorAll('.verlauf-overlay, .zugang-overlay'));
+    var aktiverDialog = null;
+    var vorherigerFokus = null;
+    var hintergrund = [document.querySelector('.kopf'), $('hauptbereich'), document.querySelector('.fuss')];
+    function fokussierbar(dialog) {
+      return Array.from(dialog.querySelectorAll('button, input, select, textarea, a[href], summary, [tabindex="0"]'))
+        .filter(function (n) { return !n.disabled && n.tabIndex >= 0 && n.getClientRects().length && !n.closest('[hidden]'); });
+    }
+    function dialogZustand() {
+      var offen = dialoge.filter(function (n) { return !n.hidden; }).pop() || null;
+      hintergrund.forEach(function (n) { if (n) n.inert = !!offen; });
+      if (offen === aktiverDialog) return;
+      if (offen) {
+        if (!aktiverDialog) vorherigerFokus = document.activeElement;
+        aktiverDialog = offen;
+        if (!offen.contains(document.activeElement)) offen.focus({ preventScroll: true });
+      } else {
+        aktiverDialog = null;
+        if (vorherigerFokus && vorherigerFokus.isConnected && vorherigerFokus.getClientRects().length) vorherigerFokus.focus({ preventScroll: true });
+        else if (!$('nutzerMenue').hidden) $('nutzerKnopf').focus({ preventScroll: true });
+        else if (!$('ansichtFall').hidden) $('beobachtet').focus({ preventScroll: true });
+        vorherigerFokus = null;
+      }
+    }
+    var beobachter = new MutationObserver(dialogZustand);
+    dialoge.forEach(function (dialog) {
+      dialog.setAttribute('role', 'dialog');
+      dialog.setAttribute('aria-modal', 'true');
+      dialog.setAttribute('tabindex', '-1');
+      // Zugangsformulare wechseln innerhalb desselben Dialogs.
+      if (dialog.id === 'zugangOverlay') {
+        dialog.setAttribute('aria-label', 'THITRONIK · Thi');
+      } else {
+        var titel = dialog.querySelector('h2');
+        titel.id = dialog.id + 'Titel';
+        dialog.setAttribute('aria-labelledby', titel.id);
+      }
+      beobachter.observe(dialog, { attributes: true, attributeFilter: ['hidden'] });
+    });
+    document.querySelectorAll('.btn-schliessen').forEach(function (n) { n.setAttribute('data-i18n-aria', 'schliessen'); });
+    document.addEventListener('keydown', function (e) {
+      if (!aktiverDialog) return;
+      if (e.key === 'Escape' && aktiverDialog.id !== 'zugangOverlay') {
+        aktiverDialog.hidden = true;
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      var punkte = fokussierbar(aktiverDialog);
+      var erster = punkte[0];
+      var letzter = punkte[punkte.length - 1];
+      if (!erster) { e.preventDefault(); aktiverDialog.focus(); return; }
+      if (e.shiftKey && (document.activeElement === erster || document.activeElement === aktiverDialog)) {
+        e.preventDefault(); letzter.focus();
+      } else if (!e.shiftKey && (document.activeElement === letzter || !aktiverDialog.contains(document.activeElement))) {
+        e.preventDefault(); erster.focus();
+      }
     });
   }
 
   /* ─── Ansichtswechsel ───────────────────────────────────────────────── */
   // Die Fallaufnahme bekommt die volle Breite, die Antwort eine lesbare
   // Spalte. Statt beides nebeneinander zu quetschen, wird umgeschaltet.
+  var aktiveAnsicht = 'fall';
+  var arbeitsRueckkehr = { ansicht: 'fall', scroll: 0 };
   function ansichtZeigen(welche) {
-    var fall = welche === 'fall';
-    $('ansichtFall').hidden = !fall;
-    $('ansichtAntwort').hidden = fall;
+    aktiveAnsicht = welche;
+    var ansichten = { fall: 'ansichtFall', antwort: 'ansichtAntwort', korrekturen: 'korrekturenOverlay', wissen: 'wissenOverlay' };
+    Object.keys(ansichten).forEach(function (name) { $(ansichten[name]).hidden = name !== welche; });
+    ['korrekturenOeffnen', 'wissenOeffnen'].forEach(function (id, i) {
+      if (welche === (i ? 'wissen' : 'korrekturen')) $(id).setAttribute('aria-current', 'page');
+      else $(id).removeAttribute('aria-current');
+    });
     window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  function arbeitsansichtOeffnen(welche) {
+    if (aktiveAnsicht === 'fall' || aktiveAnsicht === 'antwort') arbeitsRueckkehr = { ansicht: aktiveAnsicht, scroll: window.scrollY };
+    ansichtZeigen(welche);
+    $(welche === 'wissen' ? 'wissenOverlay' : 'korrekturenOverlay').querySelector('h1').focus({ preventScroll: true });
+  }
+  function arbeitsansichtSchliessen() {
+    ansichtZeigen(arbeitsRueckkehr.ansicht);
+    window.scrollTo({ top: arbeitsRueckkehr.scroll, behavior: 'auto' });
+    $(arbeitsRueckkehr.ansicht === 'fall' ? 'beobachtet' : 'zurueckZumFall').focus({ preventScroll: true });
   }
 
   /* ─── Sprache ───────────────────────────────────────────────────────── */
@@ -381,6 +456,10 @@
       var wert = T[n.getAttribute('data-i18n-ph')];
       if (wert != null) n.setAttribute('placeholder', wert);
     });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (n) {
+      var wert = T[n.getAttribute('data-i18n-aria')];
+      if (wert != null) n.setAttribute('aria-label', wert);
+    });
 
     document.querySelectorAll('.sprach-btn').forEach(function (b) {
       var aktiv = b.getAttribute('data-sprache') === sprache;
@@ -393,6 +472,10 @@
     chipsRendern();
     seriennummerPruefen();
     widersprueche();
+    ampelnAktualisieren();
+    if (korrekturDaten) korrekturenRendern();
+    if (wiArtikel) wiBibliothekRendern();
+    if (!wiAuswahlRoute) $('wiEditorTitel').textContent = T.wiAuswaehlen;
     try { localStorage.setItem('thi_sprache', sprache); } catch (e) { /* egal */ }
   }
 
@@ -481,7 +564,17 @@
   function abgemeldet(meldung) {
     sitzungMerken(null);
     auth.nutzer = null;
+    // Ein Rollenwechsel darf keine geöffnete Verwaltungsansicht übernehmen.
+    if (aktiveAnsicht === 'wissen' || aktiveAnsicht === 'korrekturen') ansichtZeigen('fall');
+    wiArtikel = null; wiGewichtungen = []; wiGewichtungenGeladen = false; wiAuswahlRoute = ''; wiEntwuerfe = Object.create(null);
+    $('wiRoute').value = ''; $('wiArtikelSuche').value = ''; $('wiNotiz').value = '';
+    $('wiStatus').value = 'normal'; $('wiFaktor').value = 1;
+    $('wiEditorTitel').textContent = T.wiAuswaehlen;
+    $('wiAuswahlHinweis').hidden = false;
+    $('wissenOverlay').classList.remove('detail-offen');
+    korrekturDaten = null; korrekturEntwuerfe = Object.create(null);
     $('nutzerMenue').hidden = true;
+    $('wissenOeffnen').hidden = true;
     $('nutzerMenueListe').hidden = true;
     zugangAnsicht('loginForm');
     fehlerZeigen('loginFehler', meldung || '');
@@ -679,9 +772,76 @@
   }
 
   var wiArtikel = null; // [{route,title,lang,articleType}] — einmal geladen
+  var wiGewichtungen = [];
+  var wiGewichtungenGeladen = false;
+  var wiAuswahlRoute = '';
+  var wiEntwuerfe = Object.create(null);
+
+  function wiEntwurfMerken() {
+    if (!$('wiRoute').value) return;
+    wiEntwuerfe[$('wiRoute').value] = { status: $('wiStatus').value, faktor: $('wiFaktor').value, notiz: $('wiNotiz').value };
+  }
+
+  function wiArtikelWaehlen(a, fokus) {
+    wiEntwurfMerken();
+    var g = wiEntwuerfe[a.route] || wiGewichtungen.find(function (w) { return w.route === a.route; }) || a.gewichtung || {};
+    wiAuswahlRoute = a.route;
+    $('wiRoute').value = a.route;
+    $('wiArtikelSuche').value = a.title;
+    $('wiEditorTitel').textContent = a.title;
+    $('wiStatus').value = g.status || 'normal';
+    $('wiFaktor').value = g.faktor || 1;
+    $('wiNotiz').value = g.notiz || '';
+    $('wiMeldung').hidden = true;
+    $('wiAuswahlHinweis').hidden = true;
+    $('wiZuruecksetzen').disabled = !wiGewichtungen.some(function (w) { return w.route === a.route; });
+    wiListeSchliessen();
+    $('wissenOverlay').classList.add('detail-offen');
+    document.querySelectorAll('#gewichtungListe button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.route === a.route)); });
+    if (fokus) { $('wiEditorTitel').focus({ preventScroll: true }); if (innerWidth <= 760) $('wiEditorTitel').scrollIntoView({ block: 'start' }); }
+  }
+
+  function wiBibliothekRendern() {
+    var liste = $('gewichtungListe');
+    liste.replaceChildren();
+    var suche = $('wiBibliothekSuche').value.trim().toLowerCase();
+    var alle = (wiArtikel || []).filter(function (a) { return (a.title + ' ' + a.route).toLowerCase().includes(suche); });
+    $('wiBibliothekZahl').textContent = T.wiArtikelZahl.replace('{n}', String(alle.length));
+    if (!wiArtikel || !wiGewichtungenGeladen) { liste.appendChild(el('p', 'verlauf-leer', T.koLaden)); return; }
+    if (!alle.length) { liste.appendChild(el('p', 'verlauf-leer', T.wiKeineTreffer)); return; }
+    alle.forEach(function (a) {
+      var g = wiGewichtungen.find(function (w) { return w.route === a.route; });
+      var b = el('button', 'bibliothek-eintrag'); b.type = 'button'; b.dataset.route = a.route;
+      b.setAttribute('aria-pressed', String(a.route === wiAuswahlRoute));
+      b.appendChild(el('small', 'bibliothek-sprache', String(a.lang || '').toUpperCase()));
+      b.appendChild(el('strong', null, a.title));
+      if (g) {
+        var badge = el('span', 'wi-status', (g.status === 'veraltet' ? T.wiStatusVeraltet : g.status === 'bevorzugt' ? T.wiStatusBevorzugt : T.wiStatusNormal) + ' · ×' + Number(g.faktor));
+        badge.dataset.status = g.status; b.appendChild(badge);
+      } else b.appendChild(el('small', null, T.wiStatusNormal));
+      b.addEventListener('click', function () { wiArtikelWaehlen(a, true); });
+      liste.appendChild(b);
+    });
+    if (wiAuswahlRoute) {
+      var gewaehlt = (wiArtikel || []).find(function (a) { return a.route === wiAuswahlRoute; });
+      if (gewaehlt) $('wiEditorTitel').textContent = gewaehlt.title;
+    }
+    $('wiZuruecksetzen').disabled = !wiGewichtungen.some(function (w) { return w.route === $('wiRoute').value; });
+  }
+  $('wiBibliothekSuche').addEventListener('input', wiBibliothekRendern);
+  $('wiDetailZurueck').addEventListener('click', function () {
+    $('wissenOverlay').classList.remove('detail-offen');
+    var aktiv = Array.from($('gewichtungListe').querySelectorAll('button')).find(function (b) { return b.dataset.route === wiAuswahlRoute; });
+    (aktiv || $('wiBibliothekSuche')).focus();
+  });
 
   function reiterZeigen(name) {
-    document.querySelectorAll('.reiter-knopf').forEach(function (b) { b.classList.toggle('ist-aktiv', b.getAttribute('data-reiter') === name); });
+    document.querySelectorAll('.reiter-knopf').forEach(function (b) {
+      var aktiv = b.getAttribute('data-reiter') === name;
+      b.classList.toggle('ist-aktiv', aktiv);
+      b.setAttribute('aria-selected', String(aktiv));
+      b.tabIndex = aktiv ? 0 : -1;
+    });
     $('reiterGewichtung').hidden = name !== 'gewichtung';
     $('reiterLuecken').hidden = name !== 'luecken';
     if (name === 'gewichtung') gewichtungLaden();
@@ -690,29 +850,47 @@
 
   function wissenOeffnen(reiter, vorbelegung) {
     $('nutzerMenueListe').hidden = true;
-    $('wissenOverlay').hidden = false;
-    if (!wiArtikel) wissenApi({ aktion: 'artikel' }).then(function (a) { if (a.status === 200) wiArtikel = a.daten.artikel || []; });
+    if (aktiveAnsicht !== 'wissen') arbeitsansichtOeffnen('wissen');
+    if (!wiArtikel) wissenApi({ aktion: 'artikel' }).then(function (a) {
+      if (a.status === 200) { wiArtikel = a.daten.artikel || []; wiBibliothekRendern(); }
+      else { $('gewichtungListe').replaceChildren(); meldungSetzen($('wiMeldung'), a.daten.meldung || T.fehlerAllgemein, 'fehler'); }
+    }).catch(function () { meldungSetzen($('wiMeldung'), T.fehlerNetz, 'fehler'); });
     reiterZeigen(reiter || 'gewichtung');
     if (vorbelegung) {
-      $('wiRoute').value = vorbelegung.route;
-      $('wiArtikelSuche').value = vorbelegung.title;
-      $('wiStatus').value = (vorbelegung.gewichtung && vorbelegung.gewichtung.status) || 'normal';
-      $('wiFaktor').value = (vorbelegung.gewichtung && vorbelegung.gewichtung.faktor) || 1;
-      $('wiNotiz').value = (vorbelegung.gewichtung && vorbelegung.gewichtung.notiz) || '';
-      $('wiNotiz').focus();
+      wiArtikelWaehlen(vorbelegung, true);
     }
   }
 
   $('wissenOeffnen').addEventListener('click', function () { wissenOeffnen('gewichtung'); });
-  $('wissenSchliessen').addEventListener('click', function () { $('wissenOverlay').hidden = true; });
-  $('wissenOverlay').addEventListener('click', function (e) { if (e.target === $('wissenOverlay')) $('wissenOverlay').hidden = true; });
+  $('wissenSchliessen').addEventListener('click', arbeitsansichtSchliessen);
   document.querySelectorAll('.reiter-knopf').forEach(function (b) {
+    var panel = b.getAttribute('data-reiter') === 'gewichtung' ? 'reiterGewichtung' : 'reiterLuecken';
+    b.id = panel + 'Tab';
+    b.setAttribute('aria-controls', panel);
+    b.setAttribute('aria-selected', String(b.classList.contains('ist-aktiv')));
+    b.tabIndex = b.classList.contains('ist-aktiv') ? 0 : -1;
+    $(panel).setAttribute('role', 'tabpanel');
+    $(panel).setAttribute('aria-labelledby', b.id);
     b.addEventListener('click', function () { reiterZeigen(b.getAttribute('data-reiter')); });
+    b.addEventListener('keydown', function (e) {
+      if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].indexOf(e.key) < 0) return;
+      e.preventDefault();
+      var tabs = Array.from(document.querySelectorAll('.reiter-knopf'));
+      var ziel = e.key === 'Home' ? tabs[0] : e.key === 'End' ? tabs[tabs.length - 1] : tabs[(tabs.indexOf(b) + 1) % tabs.length];
+      ziel.focus();
+      reiterZeigen(ziel.getAttribute('data-reiter'));
+    });
   });
   $('wiTage').addEventListener('change', lueckenLaden);
 
   // Artikel-Autovervollständigung — dieselbe Mechanik wie beim Fahrzeug.
   var wiListe = $('wiArtikelListe');
+  var wiTreffer = [], wiAktiv = -1;
+  function wiListeSchliessen() {
+    wiListe.hidden = true; wiAktiv = -1;
+    $('wiArtikelSuche').setAttribute('aria-expanded', 'false');
+    $('wiArtikelSuche').removeAttribute('aria-activedescendant');
+  }
   function wiArtikelFiltern(text) {
     var q = text.trim().toLowerCase();
     if (!wiArtikel) return [];
@@ -723,41 +901,56 @@
     }).slice(0, 12);
   }
   function wiListeZeigen() {
-    var treffer = wiArtikelFiltern($('wiArtikelSuche').value);
+    var treffer = wiTreffer = wiArtikelFiltern($('wiArtikelSuche').value);
+    wiAktiv = -1;
+    $('wiArtikelSuche').removeAttribute('aria-activedescendant');
     wiListe.innerHTML = '';
-    if (!treffer.length) { wiListe.hidden = true; return; }
-    treffer.forEach(function (a) {
+    if (!treffer.length) { wiListeSchliessen(); return; }
+    treffer.forEach(function (a, i) {
       var li = el('li'); li.setAttribute('role', 'option');
+      li.id = 'wiOption' + i; li.setAttribute('aria-selected', 'false');
       li.appendChild(el('span', 'ac-titel', a.title));
-      li.appendChild(el('span', 'ac-meta', a.lang.toUpperCase() + ' · ' + a.articleType + ' · ' + a.route));
+      li.appendChild(el('span', 'ac-meta', String(a.lang || '').toUpperCase() + ' · ' + a.route));
       li.addEventListener('mousedown', function (ev) {
         ev.preventDefault();
-        $('wiRoute').value = a.route;
-        $('wiArtikelSuche').value = a.title;
-        wiListe.hidden = true;
+        wiArtikelWaehlen(a, false);
       });
       wiListe.appendChild(li);
     });
     wiListe.hidden = false;
+    $('wiArtikelSuche').setAttribute('aria-expanded', 'true');
   }
-  $('wiArtikelSuche').addEventListener('input', function () { $('wiRoute').value = ''; wiListeZeigen(); });
+  $('wiArtikelSuche').addEventListener('input', function () { wiEntwurfMerken(); $('wiRoute').value = ''; $('wiZuruecksetzen').disabled = true; wiListeZeigen(); });
   $('wiArtikelSuche').addEventListener('focus', wiListeZeigen);
-  $('wiArtikelSuche').addEventListener('blur', function () { setTimeout(function () { wiListe.hidden = true; }, 120); });
+  $('wiArtikelSuche').addEventListener('blur', function () { setTimeout(wiListeSchliessen, 120); });
+  $('wiArtikelSuche').addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { wiListeSchliessen(); e.stopPropagation(); return; }
+    if (e.key === 'Enter' && !wiListe.hidden && wiAktiv >= 0) { e.preventDefault(); wiArtikelWaehlen(wiTreffer[wiAktiv], false); return; }
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault(); if (wiListe.hidden) wiListeZeigen();
+    if (!wiTreffer.length) return;
+    wiAktiv = (wiAktiv + (e.key === 'ArrowDown' ? 1 : -1) + wiTreffer.length) % wiTreffer.length;
+    Array.from(wiListe.children).forEach(function (li, i) { li.setAttribute('aria-selected', String(i === wiAktiv)); });
+    $('wiArtikelSuche').setAttribute('aria-activedescendant', 'wiOption' + wiAktiv);
+    wiListe.children[wiAktiv].scrollIntoView({ block: 'nearest' });
+  });
 
   $('gewichtenForm').addEventListener('submit', function (e) {
     e.preventDefault();
     var meldung = $('wiMeldung');
+    if (!wiGewichtungenGeladen) { meldungSetzen(meldung, T.koLaden, 'warten'); return; }
     if (!$('wiRoute').value) { meldungSetzen(meldung, T.wiKeinArtikel, 'fehler'); return; }
     var knopf = e.target.querySelector('button[type="submit"]');
     knopf.disabled = true;
+    var route = $('wiRoute').value;
     wissenApi({
-      aktion: 'gewichten', route: $('wiRoute').value,
+      aktion: 'gewichten', route: route,
       status: $('wiStatus').value, faktor: Number($('wiFaktor').value) || 1, notiz: $('wiNotiz').value.trim(),
     }).then(function (a) {
       knopf.disabled = false;
       if (a.status === 200) {
         meldungSetzen(meldung, T.wiGesetzt, null);
-        $('wiRoute').value = ''; $('wiArtikelSuche').value = ''; $('wiNotiz').value = ''; $('wiFaktor').value = 1; $('wiStatus').value = 'normal';
+        delete wiEntwuerfe[route];
         gewichtungLaden();
       } else {
         meldungSetzen(meldung, a.daten.meldung || T.fehlerAllgemein, 'fehler');
@@ -766,37 +959,27 @@
   });
 
   function gewichtungLaden() {
-    var liste = $('gewichtungListe');
-    liste.innerHTML = '';
-    liste.appendChild(el('p', 'verlauf-leer', T.koLaden));
-    wissenApi({ aktion: 'gewichtung' }).then(function (a) {
-      liste.innerHTML = '';
+    if (!wiArtikel) wiBibliothekRendern();
+    return wissenApi({ aktion: 'gewichtung' }).then(function (a) {
       if (a.status !== 200) { meldungSetzen($('wiMeldung'), a.daten.meldung || T.fehlerAllgemein, 'fehler'); return; }
-      var alle = a.daten.gewichtung || [];
-      if (!alle.length) { liste.appendChild(el('p', 'verlauf-leer', T.wiLeer)); return; }
-      alle.forEach(function (g) {
-        var karte = el('div', 'verlauf-eintrag ko-eintrag');
-        var zeile = el('div', 'verlauf-zeile');
-        zeile.appendChild(el('span', 'verlauf-titel', g.title));
-        var st = el('span', 'wi-status', (g.status === 'veraltet' ? T.wiStatusVeraltet : g.status === 'bevorzugt' ? T.wiStatusBevorzugt : T.wiStatusNormal) + ' · ×' + Number(g.faktor));
-        st.setAttribute('data-status', g.status);
-        zeile.appendChild(st);
-        karte.appendChild(zeile);
-        karte.appendChild(el('div', 'verlauf-meta', g.route + (g.gesetzt_von ? ' · ' + T.wiVon + ' ' + g.gesetzt_von : '') + ' · ' + String(g.geaendert || '').slice(0, 10)));
-        if (g.notiz) karte.appendChild(el('div', 'verlauf-text', g.notiz));
-        var aktionen = el('div', 'ko-aktionen');
-        var bearbeiten = el('button', 'btn-klein', T.quelleGewichten); bearbeiten.type = 'button';
-        bearbeiten.addEventListener('click', function () { wissenOeffnen('gewichtung', { route: g.route, title: g.title, gewichtung: g }); });
-        var weg = el('button', 'btn-klein', T.wiZuruecksetzen); weg.type = 'button';
-        weg.addEventListener('click', function () {
-          wissenApi({ aktion: 'gewichtung-loeschen', route: g.route }).then(function () { gewichtungLaden(); });
-        });
-        aktionen.appendChild(bearbeiten); aktionen.appendChild(weg);
-        karte.appendChild(aktionen);
-        liste.appendChild(karte);
-      });
-    }).catch(function () { liste.innerHTML = ''; meldungSetzen($('wiMeldung'), T.fehlerNetz, 'fehler'); });
+      wiGewichtungen = a.daten.gewichtung || [];
+      wiGewichtungenGeladen = true;
+      wiBibliothekRendern();
+    }).catch(function () { meldungSetzen($('wiMeldung'), T.fehlerNetz, 'fehler'); });
   }
+
+  $('wiZuruecksetzen').addEventListener('click', function () {
+    var route = $('wiRoute').value;
+    if (!route) return;
+    var knopf = $('wiZuruecksetzen'); knopf.disabled = true;
+    wissenApi({ aktion: 'gewichtung-loeschen', route: route }).then(function (a) {
+      if (a.status !== 200) { knopf.disabled = false; meldungSetzen($('wiMeldung'), a.daten.meldung || T.fehlerAllgemein, 'fehler'); return; }
+      delete wiEntwuerfe[route];
+      if ($('wiRoute').value === route) { $('wiStatus').value = 'normal'; $('wiFaktor').value = 1; $('wiNotiz').value = ''; }
+      meldungSetzen($('wiMeldung'), T.wiGesetzt, null);
+      gewichtungLaden();
+    }).catch(function () { knopf.disabled = false; meldungSetzen($('wiMeldung'), T.fehlerNetz, 'fehler'); });
+  });
 
   function lueckenLaden() {
     var liste = $('lueckenListe');
@@ -1013,7 +1196,13 @@
     behälter.innerHTML = '';
     zustand.produkte.forEach(function (p) {
       var chip = el('span', 'chip');
-      chip.appendChild(document.createTextNode(p.name));
+      var bild = produktBild(p);
+      if (bild) chip.appendChild(bild);
+      else { var platz = el('span', 'produkt-platzhalter', 'thi'); platz.setAttribute('aria-hidden', 'true'); chip.appendChild(platz); }
+      var text = el('span', 'produkt-beschriftung');
+      text.appendChild(el('strong', null, p.name));
+      text.appendChild(el('small', null, p.nr ? T.artikelnummerKurz + ' ' + p.nr : p.gruppe));
+      chip.appendChild(text);
       var weg = el('button', null, '×');
       weg.type = 'button';
       weg.setAttribute('aria-label', (sprache === 'fr' ? 'Retirer ' : 'Entfernen ') + p.name);
@@ -1027,6 +1216,40 @@
       chip.appendChild(weg);
       behälter.appendChild(chip);
     });
+    produktVorschlaege();
+  }
+
+  function produktBild(p) {
+    var datei = (window.THI_PRODUKTBILDER || {})[p.name];
+    if (!datei) return null;
+    var bild = el('img', 'produkt-bild');
+    bild.src = '/assets/img/produkte/' + datei + '.png';
+    bild.alt = p.name + ' · ' + T.produktAbbildung;
+    bild.width = 96; bild.height = 72; bild.loading = 'lazy';
+    return bild;
+  }
+
+  function produktVorschlaege() {
+    var box = $('produktPortraits');
+    box.innerHTML = '';
+    if (!zustand.produkte.length) {
+      box.appendChild(el('p', 'produkt-vorschlag-titel', T.produktSchnellwahl));
+      var raster = el('div', 'produkt-schnellwahl');
+      ['WiPro III safe.lock', 'Pro-finder', 'BT-connect / Vernetzungsmodul'].forEach(function (name) {
+        var p = K.produkte.find(function (produkt) { return produkt.name === name; });
+        if (!p) return;
+        var knopf = el('button', 'produkt-vorschlag'); knopf.type = 'button';
+        var bild = produktBild(p); if (bild) knopf.appendChild(bild);
+        knopf.appendChild(el('span', null, p.name.split(' / ')[0]));
+        knopf.addEventListener('click', function () {
+          zustand.produkte.push(p); chipsRendern(); produkteRendern(''); ampelnAktualisieren(); widersprueche();
+          $('produktSuche').focus(); produktListeSchliessen();
+        });
+        raster.appendChild(knopf);
+      });
+      box.appendChild(raster);
+    }
+    if (!zustand.produkte.length || zustand.produkte.some(function (p) { return (window.THI_PRODUKTBILDER || {})[p.name]; })) box.appendChild(el('p', 'produkt-bild-hilfe', T.produktAbbildungHinweis));
   }
 
   $('produktSuche').addEventListener('input', function (e) {
@@ -1173,60 +1396,78 @@
     if (n) n.setAttribute('data-ampel', zustandName);
   }
 
-  // Spiegelt die Gewichtung aus netlify/functions/lib/sicherheit.mjs, damit die
-  // Vorschau während der Aufnahme dieselbe Zahl zeigt wie später die Antwort.
-  // Hier bewusst nur der Anteil DATENLAGE (max. 40 von 100) — die Quellenlage
-  // kennt erst der Server. Die Vorschau skaliert ihn deshalb auf 100 % und
-  // benennt, dass sie die Vollständigkeit der Aufnahme misst, nicht die Antwort.
-  function datenlageBerechnen() {
-    var punkte = 0;
-    var offen = [];
-    var erledigt = [];
-
-    function pruefe(erfuellt, wert, text) {
-      if (erfuellt) { punkte += wert; erledigt.push(text); }
-      else offen.push(text);
-    }
-
-    pruefe($('beobachtet').value.trim().length >= 15, 10, T.svProblem);
-    pruefe(zustand.produkte.length > 0, 10, T.svProdukt);
-    pruefe(!!(zustand.fahrzeug && !zustand.fahrzeug.fallback), 8, T.svFahrzeug);
-
-    var sn = snLesen($('seriennummer').value);
-    if (sn && sn.bekannt) { punkte += 7; erledigt.push(T.svSeriennummer); }
-    else if (sn && sn.praefix) { punkte += 2; offen.push(T.svSeriennummer); }
-    else offen.push(T.svSeriennummer);
-
-    pruefe(!!($('led').value.trim() || $('meldung').value.trim()), 5, T.svLed);
-
-    return { prozent: Math.round((Math.min(40, punkte) / 40) * 100), offen: offen, erledigt: erledigt };
+  // Die Aufnahme zeigt tatsächlich erfasste und zum Anlass passende Angaben.
+  // Die serverseitige Antwortbewertung bleibt davon unabhängig.
+  function kontextPunkte() {
+    var diagnose = zustand.anlass === 'diagnose';
+    var einbau = zustand.anlass === 'einbau';
+    var fahrzeugRelevant = einbau || (diagnose && zustand.produkte.some(function (p) {
+      return /WiPro|safe.lock|NFC|Fingerprint/i.test(p.name);
+    }));
+    var punkte = [
+      { feld: 'beobachtet', text: T.svProblem, gut: !!$('beobachtet').value.trim(), grund: T.empfehlungStart },
+      { feld: 'produktSuche', text: T.svProdukt, gut: zustand.produkte.length > 0, grund: T.hinweisProdukt }
+    ];
+    if (fahrzeugRelevant || zustand.fahrzeug) punkte.push({ feld: 'fahrzeugSuche', text: T.svFahrzeug, gut: !!zustand.fahrzeug, grund: T.hinweisFahrzeug });
+    if (diagnose || einbau || $('seriennummer').value.trim()) punkte.push({ feld: 'seriennummer', text: T.svSeriennummer, gut: !!$('seriennummer').value.trim(), grund: T.hinweisSerie });
+    if (diagnose || $('led').value.trim() || $('meldung').value.trim()) punkte.push({ feld: 'led', text: T.svLed, gut: !!($('led').value.trim() || $('meldung').value.trim()), grund: T.hinweisSignal });
+    if (diagnose || $('bisher').value.trim()) punkte.push({ feld: 'bisher', text: T.labelBisher, gut: !!$('bisher').value.trim(), grund: T.hinweisBisher });
+    if (einbau || $('softwarestand').value.trim()) punkte.push({ feld: 'softwarestand', text: T.labelSoftware, gut: !!$('softwarestand').value.trim(), grund: T.hinweisSoftware });
+    return punkte;
   }
 
-  function vorschauAktualisieren() {
-    var d = datenlageBerechnen();
-    var box = $('sicherheitVorschau');
-    box.setAttribute('data-stufe', d.prozent >= 75 ? 'hoch' : (d.prozent >= 45 ? 'mittel' : 'gering'));
-    $('svWert').firstChild.nodeValue = String(d.prozent);
-    $('svFuellung').style.width = d.prozent + '%';
+  function kontextFokus(id) {
+    var feld = $(id);
+    for (var n = feld.parentElement; n; n = n.parentElement) { if (n.tagName === 'DETAILS') n.open = true; }
+    feld.closest('.block').scrollIntoView({ block: 'start', behavior: 'auto' });
+    feld.focus({ preventScroll: true });
+  }
 
+  function anlassSetzen(anlass, aufklappen) {
+    zustand.anlass = ['frage', 'diagnose', 'einbau'].indexOf(anlass) >= 0 ? anlass : 'frage';
+    document.querySelectorAll('[name="anlass"]').forEach(function (n) { n.checked = n.value === zustand.anlass; });
+    if (aufklappen) {
+      $('schrittFahrzeug').open = zustand.anlass === 'einbau';
+      $('schrittBeobachtung').open = zustand.anlass === 'diagnose';
+      $('produktDetails').open = zustand.anlass !== 'frage';
+    }
+    vorschauAktualisieren();
+  }
+  document.querySelectorAll('[name="anlass"]').forEach(function (n) {
+    n.addEventListener('change', function () { if (n.checked) anlassSetzen(n.value, true); });
+  });
+
+  function vorschauAktualisieren() {
+    var bereit = !!$('beobachtet').value.trim();
+    $('aufnahmeStatus').textContent = bereit ? T.startklar : T.anliegenFehlt;
+    $('aufnahmeStatus').setAttribute('data-bereit', String(bereit));
+    $('aufnahmeEmpfehlung').textContent = !bereit ? T.empfehlungStart : zustand.anlass === 'diagnose' ? T.empfehlungDiagnose : zustand.anlass === 'einbau' ? T.empfehlungEinbau : T.empfehlungFrage;
+    $('mobilStatus').textContent = bereit ? T.kurzBereit : T.kurzAnliegen;
     var liste = $('svListe');
     liste.innerHTML = '';
-    // Offene Punkte zuerst — sie sind die Handlungsaufforderung.
-    d.offen.slice(0, 4).forEach(function (t) { liste.appendChild(el('li', null, t)); });
-    d.erledigt.slice(0, 2).forEach(function (t) {
-      var li = el('li', 'ist-erfuellt', t);
-      liste.appendChild(li);
+    kontextPunkte().forEach(function (punkt) {
+      var li = el('li', punkt.gut ? 'ist-erfuellt' : '');
+      var knopf = el('button'); knopf.type = 'button';
+      var inhalt = el('span', 'kontext-punkt');
+      inhalt.appendChild(el('span', null, punkt.text));
+      inhalt.appendChild(el('small', null, punkt.gut ? T.vorhanden : punkt.grund));
+      knopf.appendChild(inhalt);
+      knopf.title = punkt.grund;
+      knopf.setAttribute('aria-label', punkt.text + ': ' + (punkt.gut ? T.vorhanden : T.hilfreich) + '. ' + punkt.grund);
+      knopf.addEventListener('click', function () { kontextFokus(punkt.feld); });
+      li.appendChild(knopf); liste.appendChild(li);
     });
+    $('fahrzeugKurz').textContent = zustand.fahrzeug ? fahrzeugTitel(zustand.fahrzeug).split(' / ')[0] + ($('baujahr').value ? ' · ' + $('baujahr').value : '') : $('baujahr').value || T.kontextOptional;
+    $('beobachtungKurz').textContent = ['led', 'meldung', 'bisher', 'erwartet', 'reproduzierbar', 'ausloeser'].some(function (id) { return !!$(id).value.trim(); }) ? T.kontextErfasst : T.kontextOptional;
+    $('produktDetailsKurz').textContent = [$('seriennummer').value.trim(), $('softwarestand').value.trim()].filter(Boolean).join(' · ');
   }
 
   function ampelnAktualisieren() {
     var beob = $('beobachtet').value.trim();
-    ampelSetzen('anliegen', (beob.length >= 15 && $('reproduzierbar').value) ? 'voll'
-      : (beob ? 'teil' : 'leer'));
+    ampelSetzen('anliegen', beob ? 'voll' : 'leer');
 
     var prVoll = zustand.produkte.length > 0;
-    var snDa = !!$('seriennummer').value.trim();
-    ampelSetzen('produkt', (prVoll && snDa) ? 'voll' : (prVoll || snDa ? 'teil' : 'leer'));
+    ampelSetzen('produkt', prVoll ? 'voll' : 'leer');
 
     var fzVoll = !!zustand.fahrzeug;
     ampelSetzen('fahrzeug', (fzVoll && $('baujahr').value) ? 'voll'
@@ -1239,6 +1480,10 @@
   }
 
   $('beobachtet').addEventListener('input', function () {
+    $('beobachtet').removeAttribute('aria-invalid');
+    $('beobachtet').setAttribute('aria-describedby', 'mitschriftHilfe');
+    var fehler = $('beobachtetFehler');
+    if (fehler) fehler.remove();
     // Entprellt: die Auswertung soll beim Tippen nicht bei jedem Zeichen laufen.
     clearTimeout(erkennungTimer);
     erkennungTimer = setTimeout(erkennungAnwenden, 350);
@@ -1358,7 +1603,9 @@
     var n = el('div', 'nachricht');
     n.setAttribute('data-von', von);
     var kopf = el('div', 'nachricht-kopf');
-    kopf.appendChild(el('span', 'nachricht-punkt'));
+    var symbol = el('span', 'nachricht-punkt');
+    symbol.setAttribute('aria-hidden', 'true');
+    kopf.appendChild(symbol);
     kopf.appendChild(el('span', null, titel));
     n.appendChild(kopf);
     var körper = el('div', 'nachricht-körper');
@@ -1371,6 +1618,7 @@
   // Die Antwortansicht scrollt mit der Seite (kein eigener Scroll-Container
   // mehr), damit lange Antworten den ganzen Bildschirm nutzen können.
   function scrollen() {
+    if (aktiveAnsicht !== 'antwort') return;
     var letzte = $('chatVerlauf').lastElementChild;
     if (letzte) letzte.scrollIntoView({ block: 'end', behavior: 'auto' });
   }
@@ -1479,22 +1727,35 @@
     document.body.removeChild(feld);
   }
 
+  // Vorhandenen Modelltext nur gliedern, niemals kürzen oder neu interpretieren.
+  // Hinweise und Quellen bleiben offen sichtbar; auch alte Antwortformate bleiben erhalten.
+  function antwortGliedern(box) {
+    if (!box || box.dataset.gegliedert) return;
+    var abschnitt = box;
+    Array.from(box.childNodes).forEach(function (node) {
+      if (node.nodeType === 1 && /^H[23]$/.test(node.tagName)) {
+        var titel = node.textContent.trim().toLowerCase().replace(/\s*:$/, '');
+        var typ = /^(kurzantwort|réponse courte)$/.test(titel) ? 'kurz' : /^(nächste schritte|prochaines étapes)$/.test(titel) ? 'schritte' : /^(quellen|sources)$/.test(titel) ? 'quellen' : '';
+        if (typ) {
+          abschnitt = el('section', 'antwort-abschnitt antwort-' + typ);
+          box.insertBefore(abschnitt, node);
+        } else abschnitt = box;
+      }
+      if (abschnitt !== box) abschnitt.appendChild(node);
+    });
+    box.dataset.gegliedert = 'true';
+  }
+
   function sicherheitZeigen(körper, s) {
     if (!s) return;
     var box = el('div', 'sicherheit');
     box.setAttribute('data-stufe', s.stufe);
 
     var kopf = el('div', 'si-kopf');
-    var wert = el('span', 'si-wert', s.wert + ' %');
-    kopf.appendChild(wert);
+    var stufe = s.stufe === 'hoch' ? T.antwortBelegt : s.stufe === 'mittel' ? T.antwortPruefen : T.antwortUnsicher;
+    kopf.appendChild(el('strong', 'si-einordnung', stufe));
     kopf.appendChild(el('span', 'si-label', T.siLabel));
     box.appendChild(kopf);
-
-    var balken = el('div', 'si-balken');
-    var f = el('div', 'si-fuellung');
-    f.style.width = s.wert + '%';
-    balken.appendChild(f);
-    box.appendChild(balken);
 
     box.appendChild(el('p', 'si-text', T.siStufe[s.stufe] || ''));
 
@@ -1712,11 +1973,90 @@
     return form;
   }
 
-  // ── Liste mit Statuswechsel ──
+  // ── Liste mit Statuswechsel und lokalem Filter ──
+  var korrekturFilter = 'alle';
+  var korrekturDaten = null;
+  var korrekturAuswahl = null;
+  var korrekturEntwuerfe = Object.create(null);
+
+  function korrekturDetailZeigen(k, fokus) {
+    korrekturAuswahl = k.id;
+    var detail = $('korrekturDetail');
+    detail.innerHTML = '';
+    var zurueck = el('button', 'btn-zurueck detail-zurueck', '← ' + T.koDetailsZurueck);
+    zurueck.type = 'button';
+    zurueck.addEventListener('click', function () {
+      $('korrekturenOverlay').classList.remove('detail-offen');
+      var knopf = Array.from($('korrekturenListe').children).find(function (n) { return n.dataset.id === k.id; });
+      if (knopf) knopf.focus();
+    });
+    detail.appendChild(zurueck);
+    detail.appendChild(korrekturEintrag(k, korrekturDaten));
+    $('korrekturenListe').querySelectorAll('button[data-id]').forEach(function (n) { n.setAttribute('aria-pressed', String(n.dataset.id === k.id)); });
+    if (fokus) {
+      $('korrekturenOverlay').classList.add('detail-offen');
+      var titel = detail.querySelector('h2'); titel.tabIndex = -1; titel.focus({ preventScroll: true });
+      if (window.matchMedia('(max-width: 760px)').matches) detail.scrollIntoView({ block: 'start' });
+    }
+  }
+  $('korrekturSuche').addEventListener('input', korrekturenRendern);
+
+  function korrekturenRendern() {
+    if (!korrekturDaten) return;
+    var liste = $('korrekturenListe');
+    liste.innerHTML = '';
+    var suchtext = $('korrekturSuche').value.trim().toLocaleLowerCase(sprache);
+    var alle = (korrekturDaten.korrekturen || []).slice().reverse().filter(function (k) {
+      return !suchtext || [k.titel, k.text, k.autor].join(' ').toLocaleLowerCase(sprache).includes(suchtext);
+    });
+    function passt(k, filter) {
+      if (filter === 'offen') return k.status === 'ungeprueft' || k.status === 'wartet-freigabe';
+      if (filter === 'freigegeben') return k.status === 'freigegeben';
+      if (filter === 'archiv') return k.status === 'zurueckgezogen' || k.status === 'im-wiki';
+      return true;
+    }
+    var leiste = $('korrekturFilter');
+    if (!leiste) {
+      leiste = el('div', 'ko-filter');
+      leiste.id = 'korrekturFilter';
+      liste.before(leiste);
+    }
+    // Vorhandene Buttons behalten, damit der Fokus beim Filtern erhalten bleibt.
+    [['alle', 'koFilterAlle'], ['offen', 'koFilterOffen'], ['freigegeben', 'koFilterFreigegeben'], ['archiv', 'koFilterArchiv']].forEach(function (eintrag) {
+      var knopf = leiste.querySelector('[data-filter="' + eintrag[0] + '"]');
+      if (!knopf) {
+        knopf = el('button'); knopf.type = 'button';
+        knopf.setAttribute('data-filter', eintrag[0]);
+        knopf.addEventListener('click', function () { korrekturFilter = eintrag[0]; $('korrekturenOverlay').classList.remove('detail-offen'); korrekturenRendern(); });
+        leiste.appendChild(knopf);
+      }
+      knopf.textContent = T[eintrag[1]] + ' · ' + alle.filter(function (k) { return passt(k, eintrag[0]); }).length;
+      knopf.setAttribute('aria-pressed', String(korrekturFilter === eintrag[0]));
+    });
+    leiste.hidden = false;
+    var sichtbar = alle.filter(function (k) { return passt(k, korrekturFilter); });
+    if (!sichtbar.length) liste.appendChild(el('p', 'verlauf-leer', suchtext || alle.length ? T.koFilterLeer : T.koLeer));
+    sichtbar.forEach(function (k) {
+      var knopf = el('button', 'bibliothek-eintrag'); knopf.type = 'button'; knopf.dataset.id = k.id;
+      var status = el('span', 'ko-status', T.koStatus[k.status] || k.status); status.dataset.status = k.status;
+      knopf.appendChild(status);
+      knopf.appendChild(el('strong', null, k.titel));
+      knopf.appendChild(el('small', null, k.autor + ' · ' + String(k.erstellt || '').slice(0, 10)));
+      knopf.addEventListener('click', function () { korrekturDetailZeigen(k, true); });
+      liste.appendChild(knopf);
+    });
+    var ausgewaehlt = sichtbar.find(function (k) { return k.id === korrekturAuswahl; }) || sichtbar[0];
+    if (ausgewaehlt) korrekturDetailZeigen(ausgewaehlt, false);
+    else { $('korrekturDetail').innerHTML = ''; $('korrekturDetail').appendChild(el('p', 'verlauf-leer', T.koFilterLeer)); }
+  }
+
   function korrekturenLaden() {
     var liste = $('korrekturenListe');
     var meldung = $('koListeMeldung');
     liste.innerHTML = '';
+    korrekturDaten = null;
+    $('korrekturDetail').innerHTML = '';
+    if ($('korrekturFilter')) $('korrekturFilter').hidden = true;
     meldungSetzen(meldung, '', null);
     liste.appendChild(el('p', 'verlauf-leer', T.koLaden));
     korrekturApi('GET').then(function (antwort) {
@@ -1727,9 +2067,8 @@
       $('koName').parentNode.hidden = d.zugangsModus === 'login';
       if (!d.schreibenMoeglich) meldungSetzen(meldung, T.koNichtKonfiguriert, 'warten');
       else if (d.warnung) meldungSetzen(meldung, d.warnung, 'warten');
-      var eintraege = (d.korrekturen || []).slice().reverse();
-      if (!eintraege.length) { liste.appendChild(el('p', 'verlauf-leer', T.koLeer)); return; }
-      eintraege.forEach(function (k) { liste.appendChild(korrekturEintrag(k, d)); });
+      korrekturDaten = d;
+      korrekturenRendern();
     }).catch(function () {
       liste.innerHTML = '';
       meldungSetzen(meldung, T.fehlerNetz, 'fehler');
@@ -1739,7 +2078,7 @@
   function korrekturEintrag(k, konfig) {
     var karte = el('div', 'verlauf-eintrag ko-eintrag');
     var zeile = el('div', 'verlauf-zeile');
-    zeile.appendChild(el('span', 'verlauf-titel', k.titel));
+    zeile.appendChild(el('h2', 'verlauf-titel', k.titel));
     var status = el('span', 'ko-status', T.koStatus[k.status] || k.status);
     status.setAttribute('data-status', k.status);
     zeile.appendChild(status);
@@ -1750,22 +2089,33 @@
     karte.appendChild(el('div', 'verlauf-meta', meta));
     if (k.sicherheitsrelevant) karte.appendChild(el('div', 'ko-sicher', '⚠ ' + T.koSicher + (k.sicherheitsgrund ? ' — ' + k.sicherheitsgrund : '')));
     karte.appendChild(el('div', 'verlauf-meta', T.koBezug + ': ' + (k.bezug ? k.bezug.route + (k.bezug.anchor ? '#' + k.bezug.anchor : '') : '')));
-    karte.appendChild(el('div', 'verlauf-text', k.text));
-    if (k.widerspricht) karte.appendChild(el('div', 'verlauf-text', '≠ ' + k.widerspricht));
+    karte.appendChild(el('p', 'notiz-label', T.koNeueAussage));
+    karte.appendChild(el('div', 'verlauf-text ko-aussage', k.text));
+    if (k.widerspricht) {
+      karte.appendChild(el('p', 'notiz-label', T.koBisherigeAussage));
+      karte.appendChild(el('div', 'verlauf-text ko-falsch', k.widerspricht));
+    }
 
     var offen = k.status === 'ungeprueft' || k.status === 'wartet-freigabe' || k.status === 'freigegeben';
-    if (!offen) return karte;
-
-    var begruendung = el('input', 'feld'); begruendung.type = 'text'; begruendung.maxLength = 400;
-    begruendung.placeholder = T.koBegruendung;
-    karte.appendChild(begruendung);
-
-    var aktionen = el('div', 'ko-aktionen');
-    var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
+    if (!offen || !konfig.schreibenMoeglich) return karte;
 
     var login = konfig.zugangsModus === 'login';
     var darfFreigeben = !!konfig.freigabeMoeglich;
     var meine = login && auth.nutzer && (k.autorId ? k.autorId === auth.nutzer.id : String(k.autor || '').toLowerCase() === auth.nutzer.name.toLowerCase());
+    if (login && !darfFreigeben && !meine) return karte;
+
+    var begruendung = el('textarea', 'feld'); begruendung.rows = 3; begruendung.maxLength = 400;
+    begruendung.value = korrekturEntwuerfe[k.id] || '';
+    begruendung.addEventListener('input', function () { korrekturEntwuerfe[k.id] = begruendung.value; });
+    begruendung.placeholder = T.koBegruendung;
+    begruendung.setAttribute('aria-label', T.koBegruendung);
+    var begruendungFeld = el('label', 'feld-gruppe ko-begruendung');
+    begruendungFeld.appendChild(el('span', 'feld-label', T.koBegruendung));
+    begruendungFeld.appendChild(begruendung);
+    karte.appendChild(begruendungFeld);
+
+    var aktionen = el('div', 'ko-aktionen');
+    var meldung = el('p', 'ko-meldung'); meldung.hidden = true;
 
     function aktion(name, beschriftung, brauchtFreigabe) {
       // Login-Modus: Was die Rolle nicht erlaubt, wird gar nicht angeboten.
@@ -1786,7 +2136,10 @@
           if (antwort.status === 200) { korrekturenLaden(); return; }
           meldungSetzen(meldung, korrekturFehlertext(antwort), 'fehler');
           aktionen.querySelectorAll('button').forEach(function (x) { x.disabled = false; });
-        }).catch(function () { meldungSetzen(meldung, T.fehlerNetz, 'fehler'); });
+        }).catch(function () {
+          meldungSetzen(meldung, T.fehlerNetz, 'fehler');
+          aktionen.querySelectorAll('button').forEach(function (x) { x.disabled = false; });
+        });
       });
       aktionen.appendChild(b);
     }
@@ -1840,6 +2193,7 @@
     var knopf = $('absenden');
     var knopfText = knopf.querySelector('span');
     knopf.disabled = true;
+    $('mobilAbsenden').disabled = true;
     knopfText.textContent = T.absendenLaeuft;
 
     var m = nachrichtAnlegen('thi', T.vonThi);
@@ -1948,7 +2302,11 @@
       if (antwortText) {
         zustand.verlauf.push({ rolle: 'nutzer', text: frage || fallAlsText() });
         zustand.verlauf.push({ rolle: 'thi', text: antwortText });
+      } else if (!antwortBox || !antwortBox.textContent.trim()) {
+        if (!antwortBox) { antwortBox = el('div', 'antwort'); m.körper.appendChild(antwortBox); }
+        markdownRendern(antwortBox, T.fehlerLeereAntwort);
       }
+      antwortGliedern(antwortBox);
       sicherheitZeigen(m.körper, sicherheit);
       quellenZeigen(m.körper, quellen);
       kopierKnopf(m.körper, antwortText, sicherheit);
@@ -1966,6 +2324,7 @@
     } finally {
       zustand.laeuft = false;
       knopf.disabled = false;
+      $('mobilAbsenden').disabled = false;
       knopfText.textContent = T.absenden;
     }
   }
@@ -1989,14 +2348,15 @@
     // zu Platzhaltern. Fehlende Angaben senken stattdessen sichtbar die
     // Sicherheit der Antwort, und Thi fragt gezielt nach.
     if (!$('beobachtet').value.trim()) {
-      var box = $('warnungen');
-      var n = el('div', 'warnung');
-      n.setAttribute('data-schwere', 'warnung');
-      n.appendChild(el('span', 'warnung-glyph', '⚠'));
-      n.appendChild(el('span', null, T.fehlerPflicht));
-      box.insertBefore(n, box.firstChild);
+      if (!$('beobachtetFehler')) {
+        var n = el('p', 'feld-fehler', T.fehlerPflicht);
+        n.id = 'beobachtetFehler';
+        n.setAttribute('role', 'alert');
+        $('beobachtet').after(n);
+      }
+      $('beobachtet').setAttribute('aria-invalid', 'true');
+      $('beobachtet').setAttribute('aria-describedby', 'mitschriftHilfe beobachtetFehler');
       $('beobachtet').focus();
-      setTimeout(function () { n.remove(); }, 6000);
       return;
     }
     ansichtZeigen('antwort');
@@ -2024,9 +2384,14 @@
     zustand.verlauf = [];
     zustand.fallGesendet = false;
     $('fallFormular').reset();
+    anlassSetzen('frage', true);
     $('fahrzeugGewaehlt').hidden = true;
     $('snErkennung').hidden = true;
     $('warnungen').innerHTML = '';
+    $('erkannt').hidden = true;
+    $('beobachtet').removeAttribute('aria-invalid');
+    $('beobachtet').setAttribute('aria-describedby', 'mitschriftHilfe');
+    if ($('beobachtetFehler')) $('beobachtetFehler').remove();
     $('chatVerlauf').innerHTML = '';
     $('nachfrageFormular').hidden = true;
     chipsRendern();
