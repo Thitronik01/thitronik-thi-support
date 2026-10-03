@@ -1,11 +1,10 @@
 ---
 title: Ford Transit 7. Generation früh (2014–2015)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_ford_transit_7._generation_2014_2015.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ford-2014.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -16,6 +15,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in Ford Transit und Transit Custom der frühen 7. Generation von 2014 bis 2015. Das fahrzeugspezifische Einbauhandbuch Stand `12/20` dokumentiert Bedienkonzept, DIP-Profil, Demontage des Armaturenbretts, Bordcomputer, Massepunkt, Stecker C4, Fahrzeughupe, Status-LED, Funk-Zubehör und Funktionstest.
 
 > **Sicherheitsrelevante Bedienabgrenzung:** Die originale Ford-Funkfernbedienung wird von der WiPro bei diesem Modell **nicht ausgewertet**. Ihr Signal lässt sich nicht sicher vom Signal der mechanischen Türschlösser unterscheiden. Zum Schärfen und Entschärfen ist deshalb zwingend ein THITRONIK® Funk-Handsender 868 erforderlich.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ford Transit 2014–2015: ab `0823-011`, FAQ-Software `4.7`, `SW1 + SW2 + SW3 + SW4 + SW6 ON`. Originalschlüssel verriegelt das Fahrzeug, steuert aber nicht die WiPro; Alarmbedienung mit THITRONIK-Handsender. Hupenabgriff an Pin 4 blau/weiß des Schleifringsteckers: Den Schleifringstecker laut Anleitung nicht abziehen. Dieses Profil nicht auf Ford 2016 oder Facelift 2019 übertragen.
+
+Belege: [ford-2014, PDF 2](../../../quellen/fahrzeug-ford-2014.pdf#page=2), [ford-2014, PDF 4](../../../quellen/fahrzeug-ford-2014.pdf#page=4), [Q, PDF 4](../../../quellen/wipro-iii-faq.pdf#page=4).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -187,7 +196,7 @@ Die Fahrzeuganleitung dokumentiert die schwarzen und weißen Funk-Magnetkontakte
 |---|---|
 | Platinenrichtung | Sende-LED muss vom Magneten wegweisen |
 | Fehlmontage | Anlernen ist möglich, eine Alarmierung erfolgt jedoch nicht |
-| Geschlossener Abstand | Magnet im dokumentierten Bereich `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Bevorzugte Tür-/Klappenmontage | Sendergehäuse am Rahmen, Magnet am beweglichen Türblatt beziehungsweise an der Klappe |
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitungstemperatur | nicht unter `15 °C` |
@@ -197,7 +206,7 @@ Die Fahrzeuganleitung dokumentiert die schwarzen und weißen Funk-Magnetkontakte
 1. Kontakte vor der endgültigen Montage anlernen und am vorgesehenen Ort auf Reichweite prüfen.
 2. Sendergehäuse entsprechend Rahmenprofil, Rollo und Fenster ausrichten.
 3. Platine so einsetzen, dass die Sende-LED vom Magneten wegzeigt.
-4. Magnet im geschlossenen Zustand innerhalb des Bereichs `22–30 mm` positionieren.
+4. Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 5. Sicherstellen, dass sich der Magnet im Betrieb nur zwischen dem dokumentierten geschlossenen und geöffneten Bereich bewegt und nicht jenseits der roten Grenzlinie montiert ist.
 6. Klebeflächen reinigen, trocknen und entfetten.
 7. Klebepads nur bei mindestens `15 °C` verarbeiten und während der ersten `24 Stunden` nicht voll belasten.
@@ -208,6 +217,8 @@ Die Fahrzeuganleitung dokumentiert die schwarzen und weißen Funk-Magnetkontakte
 ## Funktionstest und Bedienquittungen
 
 ### Schärfen und Alarm auslösen
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 1. Fahrzeugtüren und alle angelernten Kontakte schließen.
 2. Taste „Verriegeln“ auf der originalen Ford-Fernbedienung drücken, um das Fahrzeug zu verriegeln.
@@ -260,18 +271,20 @@ Im Diagnosemodus jeden angelernten Funk-Sender am endgültigen Montageort auslö
 | Status-LED ohne Funktion | `8-mm`-Montage, rot/schwarzes Kabel und weißen Steckverbinder prüfen |
 | Zubehör lässt sich nicht anlernen | Kennzeichnung `868`, Auslösefolge, Anlernmodus und Speicherbestätigung prüfen |
 | Kontakt lässt sich anlernen, löst aber keinen Alarm aus | Platine möglicherweise mit Sende-LED zum Magneten montiert; Platine drehen |
-| Funkkontakt wird unzuverlässig empfangen | Montageort, Metallabschirmung, Antennenlage, `22–30 mm` und Adapter prüfen |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 
 Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbeseitigung]].
 
 ## Quellenbasis und Redaktionsentscheidung
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 - Primärquelle ist das neunseitige fahrzeugspezifische *Einbauhandbuch WiPro III – Ford Transit + Transit Custom, 7. Generation, 2014–2015*, Stand `12/20`.
 - Alle neun Seiten wurden vollständig textlich ausgewertet und visuell geprüft.
 - Seite 2 belegt die Nichtauswertung der Originalfernbedienung, den zwingenden Funk-Handsender, das Ford-Set ab `0823-011`, das DIP-Profil und die unbenutzten blauen Zentralverriegelungsleitungen.
 - Seiten 3 und 4 belegen Demontage, Bordcomputer, Massepunkt, C4-Pins 13/53/54/64/76, den Hupenanschluss an Pin 4, Status-LED und Anlernvorgang.
 - Seite 5 belegt die getrennte Verriegelungs- und Schärflogik, den mechanischen Einbruchtest, `30` Sekunden akustischen und `180` Sekunden optischen Alarm sowie den Alarmspeicher.
-- Seiten 6 bis 9 belegen Art. `100757`/`100758`, Platinenrichtung, Montagevarianten, Klebe- und Schraubbefestigung, Adapter `100428`/`100729` und den Bereich `22–30 mm`.
+- Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 - Das allgemeine Installationshandbuch Version `1.8` ergänzt die vollständig spannungsfreie DIP-Arbeit, CAN- und Funkdiagnose sowie systemweite Fehlerprüfung.
 - Der Softwarestand `4.7` stammt aus der freigegebenen Projekt-Kompatibilitätsmatrix; die Fahrzeuganleitung nennt selbst nur die Mindestseriennummer `0823-011`.
 - Die Quelle bezeichnet C4 Pin 64 als `+12 V (Radio)`. Eine darüber hinausgehende Klemmenbezeichnung wurde nicht ergänzt.

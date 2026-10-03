@@ -1,21 +1,23 @@
 ---
 title: 'THITRONIK® App — Befehle, Einrichtung und Fehlerbehebung'
 sources:
-  - sources/App Befehle 1.1.pdf
-  - sources/App Befehle 1.1.txt
-  - sources/Häufige Fragen zur THITRONIK® App.pdf
-  - sources/Häufige Fragen zur THITRONIK® App.txt
-  - sources/FAQ_Haeufige-Fragen-zur-THITRONIK-App_DE.md
-  - sources/THITRONIK-App__Snippets_DE.md
-  - sources/APP.docx
-  - sources/UTC.docx
-  - >-
-    sources/SMS-Konfiguration für Pro-Finder - SMS-Konfiguration für
-    Pro-Finder.csv
-  - sources/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf
-  - sources/Pro-finder__Manual__DE__2_7__Ausgänge-per-SMS-steuern.md
-  - sources/FAQ_Pro-finder__DE.md
-updated: '2026-07-14'
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "content/quellen/profinder-app-befehle-1.1.pdf"
+  - "sources/App Befehle 1.1.txt"
+  - "sources/Häufige Fragen zur THITRONIK® App.pdf"
+  - "sources/Häufige Fragen zur THITRONIK® App.txt"
+  - "sources/FAQ_Haeufige-Fragen-zur-THITRONIK-App_DE.md"
+  - "sources/THITRONIK-App__Snippets_DE.md"
+  - "sources/APP.docx"
+  - "sources/UTC.docx"
+  - "sources/SMS-Konfiguration für Pro-Finder - SMS-Konfiguration für Pro-Finder.csv"
+  - "sources/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf"
+  - "sources/Pro-finder__Manual__DE__2_7__Ausgänge-per-SMS-steuern.md"
+  - "sources/FAQ_Pro-finder__DE.md"
+updated: '2026-09-28'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -38,6 +40,8 @@ Die Befehle müssen als Text an die Rufnummer des Pro-Finders gesendet werden. I
 
 ### WiPro und Zentralverriegelung
 
+Historische öffentliche Matrix 1.1: Die französischen Formen gelten nicht pauschal für ab -045. Für Rev. 1.3 siehe den Abschnitt „Französische Befehle sind versionsabhängig“.
+
 | Funktion | Deutsch | English | Français | Svenska |
 |----------|---------|---------|----------|---------|
 | Scharfschalten | `scharf` | `arm` | `arme` | `skarp` |
@@ -50,6 +54,8 @@ Die Befehle müssen als Text an die Rufnummer des Pro-Finders gesendet werden. I
 ¹ Nur mit einer kompatiblen WiPro III safe.lock und passender Fahrzeuganbindung. Scharfschalten und Verriegeln beziehungsweise Unscharfschalten und Entriegeln sind grundsätzlich getrennte Funktionen.
 
 ### Ausgänge A und B
+
+Historische öffentliche Matrix 1.1: Die französischen Formen gelten nicht pauschal für ab -045. Für Rev. 1.3 siehe den Abschnitt „Französische Befehle sind versionsabhängig“.
 
 | Funktion | Deutsch | English | Français | Svenska |
 |----------|---------|---------|----------|---------|
@@ -67,12 +73,31 @@ Bei `a N` beziehungsweise `b N` wird `N` durch die gewünschte Dauer von **1 bis
 
 ### Geofencing und Abfragen
 
+Historische öffentliche Matrix 1.1: Die französischen Formen gelten nicht pauschal für ab -045. Für Rev. 1.3 siehe den Abschnitt „Französische Befehle sind versionsabhängig“.
+
 | Funktion | Deutsch | English | Français | Svenska |
 |----------|---------|---------|----------|---------|
 | Geofencing einschalten | `fence an` | `fence on` | `gardiennage active` | `fence pa` |
 | Geofencing ausschalten | `fence aus` | `fence off` | `gardiennage desactive` | `fence av` |
 | Status abfragen | `status` | `status` | `statut` | `status` |
 | Position abfragen | `pos` | `pos` | `pos` | `pos` |
+
+---
+
+### Französische Befehle sind versionsabhängig
+
+Die alte öffentliche Befehlsmatrix 1.1 und die ältere Rev. 2.6 verwenden andere französische Wörter als die Anleitung ab `0699-045`, Rev. 1.3. Die Gerätesprache und der tatsächliche Softwarestand entscheiden, nicht allein die Sprache der Supportfrage. Befehle nicht frei übersetzen oder mit typografischen Apostrophen verändern.
+
+| Funktion | Ältere öffentliche Matrix 1.1 | Anleitung ab -045, Rev. 1.3 |
+|---|---|---|
+| Scharf / unscharf | `arme` / `desarme` | `activer` / `desactiver` |
+| Status | `statut` | `rapport d etat` |
+| Geofencing ein / aus | `gardiennage active` / `gardiennage desactive` | `activer le gardiennage` / `desactiver le gardiennage` |
+| Anlernen ein / aus | `mode d'apprentissage active` / `mode d'apprentissage desactive` | `activer le mode d appairage` / `desactiver le mode d appairage` |
+| Ausgang A ein / aus | `a active` / `a desactivee` | `activer la sortie A` / `desactiver la sortie A` |
+| Ausgang A Impuls | Rev. 2.6: `a impulsion` | `sortie A impulsion` |
+
+Die Rev. 1.3 nennt `position` für den Standort und für die Zeitsteuerung `a %min%` mit 1–120 Minuten; der Platzhalter wird durch eine Zahl ersetzt, zum Beispiel `a 30`. Kein pauschales Alias-Versprechen für ältere Firmware. Belege: öffentliche Befehlsmatrix 1.1, PDF S. 1; Rev. 1.3, FR PDF S. 71–75. Die ältere Matrix gilt nicht als universelle Anleitung für alle Pro-Finder.
 
 ---
 
@@ -131,6 +156,8 @@ Ist die tatsächliche Seriennummer bei der App-Einrichtung nicht verfügbar, nen
 Ein Pro-Finder reagiert erst auf Bedienbefehle, nachdem mindestens eine Rufnummer mit einer Programmier-SMS hinterlegt wurde. Die App erzeugt diese SMS passend zum SIM-Kartentyp und zur Smartphone-Nutzung.
 
 ### Syntaxbeispiele
+
+**Historische Beispiele mit Sprachpräfix, keine allgemeine LTE-Anleitung.** Die folgenden Prepaid-Codes sind nur für passende Altgeräte bis -044 vorgesehen. Ab -045 ist die Restguthabenabfrage nicht unterstützt; die öffentliche Rev. 1.3 zeigt `+S49…` ohne Guthabencode und ohne Sprachpräfix. Die Beispiele nicht mischen; bei abweichender App-Syntax tatsächliche Seriennummer, Sprache und Softwarestand prüfen.
 
 | SIM-Karte | Smartphone/App | Standard ohne Smartphone-Kennzeichnung |
 |-----------|----------------|-----------------------------------------|

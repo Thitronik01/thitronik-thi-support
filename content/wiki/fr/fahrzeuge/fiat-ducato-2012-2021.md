@@ -1,19 +1,12 @@
 ---
-title: >-
-  Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano
-  (2012-2021)
+title: "Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012-2021)"
 sources:
-  - >-
-    D:/Anleitungen/Anleitungen/06_Max und KI Handover/Wipro III safe.lock/04
-    Einbauanleitungen/Art.Nr.101050/Fiat Ducato und
-    baugleiche/Einbauhandbuch_WiPro III safe.lock_Art.Nr.101050_Rev 1.0_DE.pdf
-  - >-
-    D:/Anleitungen/Anleitungen/01_Quellanleitungen/WiPro
-    III/wipro_iii-installationsanleitung_1.8.pdf
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf
-updated: '2026-07-19'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-platine.pdf"
+  - "D:/Anleitungen/Anleitungen/06_Max und KI Handover/Wipro III safe.lock/04 Einbauanleitungen/Art.Nr.101050/Fiat Ducato und baugleiche/Einbauhandbuch_WiPro III safe.lock_Art.Nr.101050_Rev 1.0_DE.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/fiat-ducato-2012-2021.md
@@ -24,6 +17,12 @@ translation_of: sources/fahrzeuge/fiat-ducato-2012-2021.md
 Cet article décrit l'installation d'un WiPro III safe.lock, réf. `101050`, dans la famille de véhicules Sevel documentée. Pour la configuration des commutateurs DIP et la sécurité de la clé, la notice spécifique au véhicule distingue les millésimes **2012-2018** et **2019+**.
 
 > **Limites d'application :** les connecteurs, l'affectation des broches et les couleurs de câble doivent correspondre au véhicule concerné. Si l'équipement, le calculateur de bord ou un câble identifié diffère de la documentation, aucun raccordement ne doit être effectué sur la base d'une supposition. Il faut alors consulter le constructeur du véhicule ou le support THITRONIK.
+
+## Limites du véhicule et sources contrôlées
+
+Ducato 2012–2021 : la FAQ safe.lock confirme `1050-001 / 5.9s` pour la famille 2006–2021. Le manuel de montage 2012–2021 manque dans le lot PDF contrôlé ; les anciens brochages et profils DIP du projet ne sont pas nouvellement vérifiés ici. Notice de platine = 2006–2012 ; FAQ = vulnérabilité Replay 2006–2018 et code tournant dès 2019. Conserver ces domaines distincts et identifier année et génération de clé avant toute confirmation.
+
+Sources : [S, PDF 4](../../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 23](../../../quellen/wipro-iii-safelock-faq.pdf#page=23), [safelock-platine, PDF 2](../../../quellen/fahrzeug-safelock-platine.pdf#page=2).
 
 ## Domaine d'application
 
@@ -59,6 +58,8 @@ Avant l'installation, contrôler et documenter les fonctions suivantes du véhic
 Sur les camping-cars intégraux, des portes ou trappes d'origine peuvent déjà être surveillées par le bus CAN. Un contact radiomagnétique supplémentaire n'est donc pas automatiquement nécessaire pour l'ouverture concernée ; la surveillance réelle doit être vérifiée avant le montage.
 
 ## Commutateurs DIP et sécurité de la clé
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 Régler les commutateurs DIP lorsque l'alimentation est coupée. La position **ON** correspond au sens indiqué par la flèche.
 

@@ -1,16 +1,16 @@
 ---
 title: Funk-Magnetkontakt 868 — Montage und Betrieb
 sources:
-  - sources/funk_magnetkontakt_sw.pdf
-  - sources/funk_magnetkontakt_ws.pdf
-  - sources/funk-magnetkontakte_montieren.pdf
-  - sources/funk-magnetkontakt-wasserdicht-868.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Fragen zu Funk-Magnetkontakt 868.pdf
-  - sources/Fragen zu Funk-Magnetkontakt 868 wasserdicht.pdf
-  - >-
-    https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/
-updated: '2026-07-18'
+  - "content/quellen/funk-magnetkontakt-montage-rev1.2.pdf"
+  - "content/quellen/funk-magnetkontakt-100757-rev1.3.pdf"
+  - "content/quellen/funk-magnetkontakt-100758-rev1.3.pdf"
+  - "content/quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf"
+  - "content/quellen/funk-magnetkontakt-faq.pdf"
+  - "content/quellen/funk-magnetkontakt-wasserdicht-faq.pdf"
+  - "content/quellen/funk-handsender-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -37,13 +37,15 @@ Die Standardausführung ist in Schwarz und Weiß erhältlich und eignet sich fü
 | Sendeleistung | < 10 mW | < 10 mW |
 | Abmessungen Sendeeinheit (B × H × T) | 44 × 34 × 15 mm | 52 × 35 × 14 mm |
 | Abmessungen Magnet (B × H × T) | nicht separat dokumentiert | 52 × 13 × 11 mm |
-| Gewicht | ca. 33 g | ca. 37 g |
+| Gewicht | ca. 33 g | 33 g laut Anleitung / 37 g laut Produktseite; Zuordnung offen |
 | Schutzart | keine Schutzart für Nässe dokumentiert | IP67 |
-| Temperaturbereich | −10 °C bis +60 °C | maximal −40 °C bis +125 °C laut aktueller Produktseite |
+| Temperaturbereich | −10 °C bis +60 °C | −40 °C bis +125 °C laut Website; Geltungsbereich ungeklärt, siehe Quellenhinweis |
 
 Die Funkreichweite ist ein Freifeldwert. Metallische Fahrzeugteile, der Montageort und andere Abschirmungen können den tatsächlich erreichbaren Abstand deutlich verringern.
 
-Die aktuelle THITRONIK-Produktseite nennt für die wasserdichte Ausführung etwa **37 g**. In der gedruckten Anleitung Rev. 1.0 stehen noch etwa **33 g**; für diesen Master gilt der aktuelle Produktstand.
+**Offener Quellenwiderspruch zum wasserdichten Magnetkontakt 106020:** Anleitung Rev. 1.0 nennt **33 g**, die Produktseite **37 g**. Eine Zuordnung zu Geräteständen fehlt; keiner der Werte ist als verbindlich aufgelöst. Beleg: [MW, PDF 17](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=17) und [Produktseite](https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/), geprüft am 01.10.2026.
+
+Die Website nennt außerdem −40 °C bis +125 °C als maximalen Temperaturbereich. Die Anleitung belegt diesen Bereich nicht. Offen bleibt, ob er für das vollständige betriebsbereite Gerät einschließlich CR2032 gilt. Daraus keine Freigabe für Batterie, Klebepad oder Dauerbetrieb bei diesen Extremtemperaturen ableiten.
 
 Die WiPro III kann insgesamt höchstens **100 Funksender** speichern. Funk-Magnetkontakte teilen sich diesen Speicher mit Funk-Handsendern, Funk-Kabelschleifen und anderem Funk-Zubehör.
 
@@ -107,7 +109,7 @@ Bleibt der Alarm aus, zunächst Anlernstatus und Batterie prüfen. Danach die Po
 
 Die Sende-LED muss **vom Magneten weg** zeigen. Die Platine wird entsprechend in das Sendergehäuse eingelegt und der Senderdeckel eingerastet.
 
-Die produktspezifische Montageanleitung nennt einen Montageradius von höchstens **25 mm**. Das WiPro-III-Installationshandbuch nennt konservativ etwa **22 mm**. Für eine belastbare Montage den Abstand im geschlossenen Zustand deshalb auf **höchstens 22 mm** auslegen und die Funktionsreserve durch einen Reichweiten- und Öffnungstest prüfen.
+**Offener Abstandskonflikt bei Standard-Magnetkontakten:** Die Montageanleitungen Rev. 1.2/1.3 nennen **25 mm**, die WiPro-III-Installation Rev. 1.8 etwa **22 mm**. Die Beschränkung auf höchstens 22 mm im geschlossenen Zustand ist hier eine vorsichtige redaktionelle Zwischenregel, keine belegte Auflösung nach Gerätestand. Am Fahrzeug Reichweite und Öffnungsalarm prüfen; bei abweichendem Einbau Herstellerzuordnung einholen. Belege: [M0, PDF 2](../../quellen/funk-magnetkontakt-montage-rev1.2.pdf#page=2), [M1, PDF 2](../../quellen/funk-magnetkontakt-100757-rev1.3.pdf#page=2), [M2, PDF 2](../../quellen/funk-magnetkontakt-100758-rev1.3.pdf#page=2); WiPro-Installation Rev. 1.8, PDF-Seite 7, Skizze 6; siehe [[WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge|WiPro III]].
 
 ### Klebe- oder Schraubbefestigung
 
@@ -174,6 +176,8 @@ Beide Ausführungen verwenden eine **CR2032-Knopfzelle mit 3 V**. Die typische L
 
 ### Niederbatterie-Signal
 
+**Quellenstand zum Batteriewarnton:** Die Zubehör-FAQ nennt 2 Sekunden; die WiPro-Bedienungsanleitung nennt 5 Sekunden. Die Zuordnung zu Geräte-/Softwareständen ist offen. Den zuletzt ausgelösten Sender, seine LED und die CR2032 prüfen; nicht allein aus der Tondauer auf einen Defekt schließen. Siehe [[WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge|WiPro III]].
+
 Bei einer schwachen Batterie von weniger als etwa **2,6 V** zeigt die WiPro beim Auslösen des Funk-Magnetkontakts folgende Hinweise:
 
 - Aus der Zentrale ertönt etwa **2 Sekunden** lang ein Signalton.
@@ -182,6 +186,8 @@ Bei einer schwachen Batterie von weniger als etwa **2,6 V** zeigt die WiPro beim
 Wenn eine CR2032-Funkkomponente wegen schwacher Batterie auffällt, empfiehlt sich die zeitnahe Prüfung weiterer Knopfzellen ähnlichen Alters.
 
 ### Standardausführung
+
+Das Standardgehäuse an der Einkerbung der langen Seite vorsichtig aufhebeln, Platine entnehmen und CR2032 polrichtig wechseln. Beim Wiedereinsetzen muss die LED weiterhin vom Magneten weg zeigen. Dieses Aufhebeln gilt nicht für das verschraubte wasserdichte Gehäuse. Beleg: [QH, PDF 2](../../quellen/funk-handsender-faq.pdf#page=2) und [M1, PDF 2](../../quellen/funk-magnetkontakt-100757-rev1.3.pdf#page=2).
 
 Für den Batteriewechsel der Standardausführung die zum Gehäusestand passende THITRONIK-Kurzanleitung aus dem Supportbereich verwenden. Alarmanlage vorher unscharf schalten, ausschließlich eine neue CR2032 einsetzen, die Polarität beachten und danach Gehäusesitz, Funktion und Reichweite prüfen.
 
@@ -215,25 +221,25 @@ Bei ungeklärten Empfangs- oder Alarmproblemen vollständige Seriennummern von A
 
 ## Häufige Fragen (FAQ)
 
-**Welche Ausführung benötige ich?**  
+### Welche Ausführung benötige ich?
 Für geschützte Einbauorte stehen Standardkontakte in Schwarz und Weiß zur Verfügung. Für Öffnungen im Feucht- oder Spritzwasserbereich ist die wasserdichte Ausführung mit Art.-Nr. 106020 und IP67 vorgesehen.
 
-**Warum kann ich den Standardkontakt anlernen, obwohl später kein Alarm ausgelöst wird?**  
+### Warum kann ich den Standardkontakt anlernen, obwohl später kein Alarm ausgelöst wird?
 Das geschieht häufig bei falsch herum eingesetzter Platine. Die Sende-LED muss vom Magneten weg zeigen. Nach der Korrektur immer einen Testalarm durchführen.
 
-**Wie groß darf der Abstand zwischen Sender und Magnet sein?**  
-Bei der wasserdichten Ausführung höchstens 22 mm. Für die Standardausführung nennt die produktspezifische Anleitung 25 mm, das WiPro-III-Installationshandbuch etwa 22 mm. Für eine zuverlässige Montage wird deshalb ein geschlossener Abstand von höchstens 22 mm empfohlen.
+### Wie groß darf der Abstand zwischen Sender und Magnet sein?
+Beim wasserdichten Funk-Magnetkontakt 106020 geschlossen höchstens 22 mm, zum Anlernen und Testen auf mehr als 30 mm trennen. Die Gehäusepfeile müssen zueinander zeigen. Für die Standardausführung nennt die produktspezifische Anleitung 25 mm, das WiPro-III-Installationshandbuch etwa 22 mm. Höchstens 22 mm ist hier eine redaktionelle Zwischenregel; der Quellenwiderspruch bleibt offen.
 
-**Wann brauche ich einen Montageadapter?**  
+### Wann brauche ich einen Montageadapter?
 Bei großen Spaltmaßen oder metallischen Heckgaragen. Für die Standardausführung gibt es Art.-Nr. 100428 in Schwarz und Art.-Nr. 100729 in Weiß.
 
-**Darf ich die wasserdichte Montageplatte verschrauben?**  
+### Darf ich die wasserdichte Montageplatte verschrauben?
 Ja. Dafür sind geeignete V4A-Senkkopfschrauben erforderlich; sie sind nicht im Lieferumfang enthalten. Schraubenart und -länge müssen zum Fahrzeugaufbau passen.
 
-**Brauche ich Funk-Magnetkontakte an bereits angezeigten Fahrzeugtüren?**  
+### Brauche ich Funk-Magnetkontakte an bereits angezeigten Fahrzeugtüren?
 In der Regel nicht, wenn die Tür über den CAN-Bus erfasst und von der WiPro III korrekt ausgewertet wird. Dies muss am Fahrzeug geprüft werden.
 
-**Was bedeutet der zweisekündige Signalton nach dem Öffnen?**  
+### Was bedeutet der zweisekündige Signalton nach dem Öffnen?
 Die Batterie des zuletzt betätigten Funk-Zubehörs ist schwach. Beim betroffenen Funk-Magnetkontakt bleibt zusätzlich die rote Sende-LED etwa 30 Sekunden sichtbar. Die CR2032 sollte zeitnah ersetzt werden.
 
 ---
@@ -254,3 +260,11 @@ Geräte und verbrauchte Batterien nicht über den Hausmüll entsorgen. Knopfzell
 - [[Funk-Kabelschleife 868 — Außensicherung für mobile Güter|Funk-Kabelschleife 868]]
 - [[Systemüberblick — THITRONIK-Produktwelt|Systemüberblick]]
 - [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbeseitigung]]
+
+---
+
+## Quellenprüfung und Dokumentstand
+
+Dokumentabgleich vom 01.10.2026, physische PDF-Seiten: [M0, PDF 2](../../quellen/funk-magnetkontakt-montage-rev1.2.pdf#page=2), [M1, PDF 2](../../quellen/funk-magnetkontakt-100757-rev1.3.pdf#page=2), [M2, PDF 2](../../quellen/funk-magnetkontakt-100758-rev1.3.pdf#page=2), [MW, PDF 3](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=3), [MW, PDF 4](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=4), [MW, PDF 5](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=5), [MW, PDF 6](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=6), [QM, PDF 1](../../quellen/funk-magnetkontakt-faq.pdf#page=1), [QMW, PDF 1](../../quellen/funk-magnetkontakt-wasserdicht-faq.pdf#page=1).
+
+Bestätigte Angaben und offene Abweichungen sind im [Prüfprotokoll](../../../docs/quellenpruefung/2026-10-01-funk.md).

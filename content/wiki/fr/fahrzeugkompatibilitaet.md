@@ -1,19 +1,16 @@
 ---
-title: >-
-  Compatibilité des véhicules — Matrice de présentation et principes de base du
-  DIP
+title: Compatibilité des véhicules — Matrice de présentation et principes de base du DIP
 sources:
-  - >-
-    D:/Anleitungen/Anleitungen/01_Quellanleitungen/WiPro
-    III/wipro_iii-installationsanleitung_1.8.pdf
-  - >-
-    D:/Anleitungen/Anleitungen/06_Max und KI Handover/Wipro III safe.lock/02
-    Bedienungsanleitung/bedienungsanleitung_zehn_sprachen/2025-05-05_Bedienungsanleitung_WiPro_III_WiPro_III_safe-lock_010_01_DE_original.docx
-  - 'https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii/'
-  - 'https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii-safelock/'
-  - fahrzeuge/*.md
-updated: '2026-07-22'
-confidence: high
+  - "content/quellen/fahrzeug-iveco-euro5.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "D:/Anleitungen/Anleitungen/06_Max und KI Handover/Wipro III safe.lock/02 Bedienungsanleitung/bedienungsanleitung_zehn_sprachen/2025-05-05_Bedienungsanleitung_WiPro_III_WiPro_III_safe-lock_010_01_DE_original.docx"
+  - "https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii/"
+  - "https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii-safelock/"
+  - "fahrzeuge/*.md"
+updated: '2026-10-01'
+confidence: medium
 lang: fr
 translation_of: sources/fahrzeugkompatibilitaet.md
 dealerStatus: approved
@@ -24,6 +21,12 @@ dealerStatus: approved
 Cette page fournit une orientation centrale pour sélectionner le véhicule et comprendre les principes de base des commutateurs DIP de la WiPro III. Les **instructions d’installation actuelles correspondant exactement au véhicule et à la version du système** prévalent toujours pour le montage, l’affectation des câbles et le codage. Le numéro de série, la version logicielle, l’année-modèle et l’équipement doivent tous correspondre.
 
 > **Sécurité :** l’installation et le raccordement doivent être effectués par un spécialiste qualifié. Ne jamais déduire les réglages DIP de ceux d’une variante de véhicule similaire. Identifier clairement le véhicule, l’année-modèle, la version du système, le numéro de série et la version logicielle avant de commencer.
+
+## Limites du véhicule et sources contrôlées
+
+Matrice véhicule, contrôle du 01/10/2026 : distinguer millésime, première immatriculation et date de notice. Iveco Daily semi-intégré/intégral : schéma `SW1 + SW2 + SW5 + SW6 ON`, SW5 seulement avec platine, fil bleu ZV non raccordé. FAQ : T5/T5 facelift `0823-001 / 2.1`, T6 `0823-012 / 5.1`, T6.1 et Crafter 2017–2024 `0823-019 / 6.8`. Nouveau Ford : conflit 5298-005/5298-006. La série seule ne garantit ni surveillance CAN des portes ni commande ZV : tester équipement, Sleep Mode et commandes de clé séparément. Chaque nouvelle variante exige sa propre notice.
+
+Sources : [iveco-euro5, PDF 2](../../quellen/fahrzeug-iveco-euro5.pdf#page=2), [Q, PDF 9](../../quellen/wipro-iii-faq.pdf#page=9), [Q, PDF 10](../../quellen/wipro-iii-faq.pdf#page=10), [S, PDF 4](../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 18](../../quellen/wipro-iii-safelock-faq.pdf#page=18).
 
 ## Commutateurs DIP — principes de base
 
@@ -43,6 +46,8 @@ La colonne **« DIP → ON »** indique les commutateurs de profil prescrits par
 
 ## Vue d’ensemble des véhicules par constructeur
 
+**Contradiction de sources, non résolu :** la [FAQ safe.lock](../../quellen/wipro-iii-safelock-faq.pdf) non datée, pages PDF 2–3, indique **1050-042 / Ducato 8–9 avec grand écran : 7.5.1s** et **1050-016 / Ducato 8 : 7.2s**. L'ancien historique du wiki donne **7.5.2s** et **7.1s** respectivement. Les CSV originaux cités n'existent pas dans le dossier local ; la mention « validé » du wiki ne résout pas ce conflit avec la source primaire. Faire confirmer numéro de série, logiciel réel et équipement par **THITRONIK** avant de promettre la compatibilité. Cette comparaison ne valide aucune des versions divergentes comme minimum définitif.
+
 ### Fiat / Peugeot / Citroën / Opel / Toyota
 
 | Véhicule | Année-modèle | DIP → ON | Version minimale / kit | Page détaillée |
@@ -50,7 +55,7 @@ La colonne **« DIP → ON »** indique les commutateurs de profil prescrits par
 | Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper | jusqu’en 2006 | SW6 | `0823-001` / `2.1` | [[Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (jusqu'en 2006)|Fiat Ducato 244]] |
 | Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper, Euro 4 | 2006–2011 | SW2 + SW6 | `0823-001` / `2.1` | [[Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006-2011)|Fiat Ducato X250]] |
 | Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano | 2012–2021 | selon la version | à partir du kit `1050-001` ; voir la page détaillée | [[Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012-2021)|Fiat Ducato 2012–2021]] |
-| Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano | 2022–2024 | selon le véhicule ; tester six combinaisons conformément aux instructions | `1050-016` / `7.1s` ; grand système d’infodivertissement : `1050-042` / `7.5.2s` | [[Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022-2024)|Fiat Ducato 2022–2024]] |
+| Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano | 2022–2024 | selon le véhicule ; tester six combinaisons conformément aux instructions | `1050-016` / `7.1s` (ancien wiki ; FAQ : 7.2s, non résolu) ; grand système d’infodivertissement : `1050-042` / `7.5.2s` (ancien wiki ; FAQ : 7.5.1s, non résolu) | [[Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022-2024)|Fiat Ducato 2022–2024]] |
 | Fiat Ducato restylé / Citroën Jumper / Peugeot Boxer / Opel Movano | à partir de 2024 | selon la variante | `1050-046` / `7.5.3s` | [[Fiat Ducato restylé / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)|Fiat Ducato à partir de 2024]] |
 | Fiat Talento / Renault Trafic III / Opel Vivaro B / Nissan NV300 | 2014–2021 | SW3 + SW6 | `0823-014` / `5.9` | [[Fiat Talento/Renault Trafic III/Opel Vivaro B/Nissan NV300 (2014-2021)|Fiat Talento]] |
 
@@ -59,7 +64,7 @@ La colonne **« DIP → ON »** indique les commutateurs de profil prescrits par
 | Véhicule | Année-modèle | DIP → ON | Version minimale / kit | Page détaillée |
 |---|---:|---|---|---|
 | Iveco Daily Euro 4 | 2006–2011 | SW4 + SW6 | `0823-001` / `2.1` | [[Iveco Daily Euro 4 (2006-2011)|Iveco Daily Euro 4]] |
-| Iveco Daily Euro 5 et plus récent | 2011–2024 | sans carte de conversion : SW2 + SW6 ; avec carte : SW2 + SW5 + SW6 | `0823-001` / `2.1` ; vérifier la version exacte | [[Iveco Daily Euro 5 et plus récent (2011-2024)|Iveco Daily Euro 5 et plus récent]] |
+| Iveco Daily Euro 5 et plus récent | 2011–2024 | sans carte de conversion : SW2 + SW6 ; avec carte : SW2 + SW5 + SW6 ; semi-intégré/intégral : SW1 + SW2 + SW5 + SW6, SW5 avec platine seulement, bleu non raccordé | `0823-001` / `2.1` ; vérifier la version exacte | [[Iveco Daily Euro 5 et plus récent (2011-2024)|Iveco Daily Euro 5 et plus récent]] |
 | Iveco Daily | à partir de l’année-modèle 2025/2026 | — | aucune installation homologuée actuellement en raison des modifications du BCM | — |
 
 ### Mercedes-Benz
@@ -69,14 +74,14 @@ La colonne **« DIP → ON »** indique les commutateurs de profil prescrits par
 | Mercedes Sprinter T1N | 2000–2006 | tous désactivés | `0823-001` / `2.1` | [[Mercedes Sprinter T1N (2000–2006)|Mercedes Sprinter T1N]] |
 | Mercedes Sprinter NCV3 / VW Crafter, BR906 | Sprinter 2006–2018 ; Crafter I 2006–2017 | SW1 + SW6 | `0823-001` / `2.1` | [[Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006-2018)|Mercedes Sprinter NCV3 / VW Crafter]] |
 | Mercedes Sprinter VS30, BR907/910 | depuis 2018 | Standard : SW4 + SW6 ; kit 5458 : tous sur OFF | Standard : `0823-019` / `6.8` ; quatre clés : `0823-034` ; safe.lock : `5458-001` / `1.0.0sx` | [[Mercedes Sprinter VS30 (BR907/910, depuis 2018)|Mercedes Sprinter VS30]] |
-| Mercedes-Benz Vito / Classe V W447 | 2014–06/2023 | SW1 + SW3 + SW4 + SW6 | `0823-014` / `6.2` | [[Mercedes Benz Vito W447 (2014-06/2023)|Mercedes-Benz Vito W447]] |
+| Mercedes-Benz Vito / Classe V W447 | 2014–06/2023 | SW1 + SW3 + SW4 + SW6 | `0823-014` / `6.2` (table DIP FAQ : 0823-013 / 5.6, non résolu) | [[Mercedes Benz Vito W447 (2014-06/2023)|Mercedes-Benz Vito W447]] |
 
 ### Renault / Opel / Nissan
 
 | Véhicule | Année-modèle | DIP → ON | Version minimale / kit | Page détaillée |
 |---|---:|---|---|---|
 | Renault Master II / Opel Movano A / Nissan Interstar | 1998–2010 | SW1 + SW2 + SW3 + SW6 | `0823-001` / `2.1` | [[Renault Master II / Opel Movano A / Nissan Interstar (1998–2010)|Renault Master II]] |
-| Renault Master III / Opel Movano B / Nissan NV400 | à partir de 2011 | SW2 + SW3 + SW6 | Set `100754` ; version minimale non indiquée dans la source véhicule | [[Renault Master III / Opel Movano B / Nissan NV400 (à partir de 2011)|Renault Master III]] |
+| Renault Master III / Opel Movano B / Nissan NV400 | à partir de 2011 | SW2 + SW3 + SW6 | Kit `100754` ; FAQ `0823-001 / 2.1–6.8` sans surveillance des portes coulissante/arrière ; dès `6.9`, réserve non répétée, tester toujours chaque porte | [[Renault Master III / Opel Movano B / Nissan NV400 (à partir de 2011)|Renault Master III]] |
 | Renault Master safe.lock | 2019–2024 | selon le kit | kit `105832` ; `5832-001` / `1.0.0sr` | [[Renault Master (2019–2024) — safe.lock|Renault Master safe.lock]] |
 | Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento | 2014–2021 | SW3 + SW6 | `0823-014` / `5.9` | [[Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento (2014-2021)|Renault Trafic III 2014–2021]] |
 | Renault Trafic III / Nissan Primastar | à partir de 2022 | SW1 + SW2 + SW4 + SW5 + SW6 | logiciel `6.10.0` au minimum ; aucun numéro de série minimal indiqué | [[Renault Trafic III / Nissan Primastar (à partir de 2022)|Renault Trafic III à partir de 2022]] |
@@ -89,20 +94,23 @@ La colonne **« DIP → ON »** indique les commutateurs de profil prescrits par
 | Ford Transit 7e génération, première version | 2014–2015 | SW1 + SW2 + SW3 + SW4 + SW6 | `0823-011` / `4.7` | [[Ford Transit 7e génération précoce (2014-2015)|Ford Transit 7G 2014–2015]] |
 | Ford Transit 7e génération | 2016–2019 | **SW2 + SW4 + SW6** | `0823-013` / `5.6` | [[Ford Transit 7e génération (2016-2019)|Ford Transit 7G 2016–2019]] |
 | Ford Transit 7e génération restylé | 2019–07/2024 | selon le véhicule ; voir la page détaillée | Standard : `0823-016` / `6.1` ; safe.lock : `5298-001` / `7.4.0s` | [[Ford Transit 7e génération Facelift (2019-07/2024)|Ford Transit restylé]] |
-| Ford Transit / Tourneo Custom / Transit Custom | à partir de 2024 ou 08/2023 | tous sur OFF | `5298-005` / `1.0.1sf` | [[Ford Transit / Tourneo Custom / Transit Custom (2024+)|Ford Transit à partir de 2024]] |
+| Ford Transit / Tourneo Custom / Transit Custom | à partir de 2024 ou 08/2023 | tous sur OFF | `5298-005` (ancien contenu ; FAQ : 5298-006, non résolu) / `1.0.1sf` | [[Ford Transit / Tourneo Custom / Transit Custom (2024+)|Ford Transit à partir de 2024]] |
 
 ### Volkswagen / MAN
 
 | Véhicule | Année-modèle | DIP → ON | Version minimale / kit | Page détaillée |
 |---|---:|---|---|---|
-| VW T5 | 2006–2009 | SW1 + SW3 + SW6 | aucun numéro de série ni logiciel minimum indiqué dans les sources primaires | [[VW T5 (2006-2009)|VW T5]] |
-| VW T5 restylé | à partir de l’année-modèle 2010 | SW1 + SW4 + SW6 | aucun numéro de série ni logiciel minimum indiqué dans les sources primaires | [[VW T5 facelift (à partir de MY 2010)|VW T5 restylé]] |
-| VW T6 | 2015–2019 | **SW3 + SW4 + SW6** | minimum `0823-012` ; aucun logiciel minimum indiqué dans les sources primaires | [[VW T6 (2015-2019)|VW T6]] |
-| VW T6.1 | à partir de 2019 | **SW2 + SW3 + SW4 + SW6** | minimum `0823-019` ; aucun logiciel minimum propre au véhicule indiqué dans la source primaire | [[VW T6.1 (à partir de 2019)|VW T6.1]] |
-| VW Crafter / MAN TGE sans bouton de démarrage | 2017–2024 | Standard : SW2 + SW3 + SW4 + SW6 | minimum `V6.8` ; aucun numéro de série minimal ; safe.lock uniquement avec la notice actuelle du kit | [[VW Crafter / MAN TGE (2017-2024, sans bouton de démarrage)|VW Crafter / MAN TGE 2017–2024]] |
+| VW T5 | 2006–2009 | SW1 + SW3 + SW6 | `0823-001` / `2.1` (FAQ) | [[VW T5 (2006-2009)|VW T5]] |
+| VW T5 restylé | à partir de l’année-modèle 2010 | SW1 + SW4 + SW6 | `0823-001` / `2.1` (FAQ) | [[VW T5 facelift (à partir de MY 2010)|VW T5 restylé]] |
+| VW T6 | 2015–2019, hors double cabine | **SW3 + SW4 + SW6** | FAQ : `0823-012 / 5.1` | [[VW T6 (2015-2019)|VW T6]] |
+| VW T6.1 | dès 2019, hors double cabine | **SW2 + SW3 + SW4 + SW6** | FAQ : `0823-019 / 6.8` | [[VW T6.1 (à partir de 2019)|VW T6.1]] |
+| VW Crafter / MAN TGE sans bouton de démarrage | 2017–2024 | Standard : SW2 + SW3 + SW4 + SW6 | `0823-019` / `6.8` (FAQ) ; safe.lock uniquement avec la notice actuelle du kit | [[VW Crafter / MAN TGE (2017-2024, sans bouton de démarrage)|VW Crafter / MAN TGE 2017–2024]] |
 | VW Crafter / MAN TGE avec bouton de démarrage | à partir de 2025 | non justifié publiquement | kit safe.lock `105458` ; aucun seuil minimum public actuel ; commande du verrouillage centralisé indisponible | [[VW Crafter / MAN TGE (2025+, avec bouton de démarrage)|VW Crafter / MAN TGE à partir de 2025]] |
 
 ### Cellules et variantes universelles
+
+Raccordement universel : un véhicule absent de la liste n’est pas pour autant compatible CAN ou autorisé pour la ZV safe.lock. Le tableau général donne SW1–SW4 OFF ; les fonctions complémentaires dépendent de la centrale. L’instruction particulière T1N impose les huit interrupteurs OFF, sans s’appliquer à tous les véhicules. Identifier année, centrale, logiciel et fonction des entrées analogiques ; bleu/bleu-noir n’ont pas nécessairement le même rôle sur ancien appareil et safe.lock.
+
 
 | Cas | Information essentielle | Page détaillée |
 |---|---|---|
@@ -137,7 +145,7 @@ SW5 ne doit pas être simplement ajouté aux commutateurs du véhicule. Sa posit
 
 | Version | Prescription documentée |
 |---|---|
-| Iveco Daily Euro 5 et plus récent | sans carte SW2 + SW6 ; avec carte SW2 + SW5 + SW6 |
+| Iveco Daily Euro 5 et plus récent | sans carte SW2 + SW6 ; avec carte SW2 + SW5 + SW6 ; semi-intégré/intégral : SW1 + SW2 + SW5 + SW6, SW5 avec platine seulement, bleu non raccordé |
 | Ford Transit restylé | Kit propre au véhicule à partir de `5298-001` / `7.4.0s` ; utiliser les instructions détaillées. |
 | Sprinter VS30 et Crafter / MAN TGE | Kit 5458 avec son propre réglage DIP ; utiliser les instructions détaillées. |
 | Renault Master 2019–2024 | Kit `105832`, centrale à partir de `5832-001` / `1.0.0sr` ; la clé d’origine commande uniquement les serrures ; utiliser la télécommande radio ou un autre accessoire THITRONIK compatible pour verrouiller/activer et déverrouiller/désactiver simultanément. |

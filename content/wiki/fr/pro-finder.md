@@ -1,26 +1,23 @@
 ---
 title: Pro-Finder — Module de télémétrie GSM/GPS
 sources:
-  - sources/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf
-  - sources/pro_finder-kurzanleitung-international.pdf
-  - sources/pro_finder-kurzanleitung-international_sn-045.pdf
-  - >-
-    sources/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf
-  - sources/pro-finder_ocr_abschrift.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Fragen zu Pro-finder.pdf
-  - sources/Pro Finder.docx
-  - sources/Anbieter.docx
-  - sources/Handy.docx
-  - sources/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf
-  - >-
-    sources/SMS-Konfiguration für Pro-Finder - SMS-Konfiguration für
-    Pro-Finder.csv
-  - wiki/app-befehle.md
-  - wiki/mobilfunk-sim.md
-  - wiki/seriennummern-softwarestaende.md
-  - wiki/stoerungsbeseitigung.md
-updated: '2026-07-15'
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "content/quellen/profinder-kurz-rev1.1.pdf"
+  - "sources/pro-finder_ocr_abschrift.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Pro Finder.docx"
+  - "sources/Anbieter.docx"
+  - "sources/Handy.docx"
+  - "sources/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf"
+  - "sources/SMS-Konfiguration für Pro-Finder - SMS-Konfiguration für Pro-Finder.csv"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/mobilfunk-sim.md"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+updated: '2026-09-28'
 confidence: high
 lang: fr
 translation_of: de/pro-finder.md
@@ -101,9 +98,9 @@ Le Pro-Finder est destiné à localiser et surveiller un véhicule. Associé à 
 |---|---|
 | Alimentation | 9–30 V CC ; compatibilité 24 V documentée à partir de `0699-003` |
 | Protection par fusible | 3 A conformément aux instructions d’installation propres au produit |
-| Courant de repos du Pro-Finder | env. 16–25 mA selon l’état de fonctionnement du module mobile |
+| Courant de repos du Pro-Finder | Rév. 1.3 à partir de -045 : env. 16–21 mA en fonctionnement normal ; env. 37 mA en recherche réseau. Rév. 2.6 : env. 21 mA normal |
 | Sorties A et B | 12 V, 500 mA maximum selon les instructions documentées |
-| Entrées de mesure de tension | U2–U5 sur les anciennes versions ; affectation exacte selon le numéro de série et les instructions |
+| Entrées de mesure de tension | U2–U5 également à partir de -045 ; broches 2–5, 0–30 V ; affichage selon le mode (rév. 1.3, PDF p. 56–59) |
 | Navigation par satellite | GPS ; GPS/QZSS documenté à partir de `0699-045` |
 | Numéros destinataires | jusqu’à 10 |
 | Température de fonctionnement | –10 °C à +80 °C |
@@ -124,7 +121,7 @@ La consommation du véhicule ne se limite pas au Pro-Finder. La charge de base d
 
 ### Raccordement électrique
 
-Le raccordement doit être réalisé selon les instructions fournies pour la génération réelle de l’appareil. L’ancien faisceau principal documente notamment :
+Le raccordement doit être réalisé selon les instructions fournies pour la génération réelle de l’appareil. Les rév. 2.6 et 1.3 à partir de -045 documentent toutes deux ce raccordement principal à huit broches :
 
 | Raccordement | Fonction |
 |---|---|
@@ -134,7 +131,7 @@ Le raccordement doit être réalisé selon les instructions fournies pour la gé
 | Broche 7, jaune | sortie A |
 | Broche 8, rouge | tension de fonctionnement |
 
-Si le faisceau est différent ou si l’appareil est à partir de `0699-045`, seules les instructions correspondantes font foi. La WiPro et le Pro-Finder doivent être raccordés à la même batterie du véhicule. Les deux modules sont reliés par le câble prévu à cet effet.
+Si le faisceau diffère, utiliser uniquement la notice correspondante. **Erreur de source, rév. 1.3 FR, PDF p. 59 :** le texte appelle à tort la broche 1 positive. Le schéma p. 56 et le texte allemand montrent la broche 1 à la masse et la broche 8 au positif. Ne pas câbler d’après cette phrase erronée ; arrêter le montage et faire confirmer par THITRONIK en cas d’écart. La WiPro et le Pro-Finder doivent être raccordés à la même batterie du véhicule. Les deux modules sont reliés par le câble prévu à cet effet.
 
 > **Charge des sorties :** ne pas charger les sorties A et B au-delà de 500 mA. Les charges plus importantes ou inductives nécessitent un circuit de relais correctement dimensionné avec une protection appropriée. Isoler séparément les fils inutilisés.
 
@@ -144,7 +141,7 @@ Insérer ou débrancher la carte SIM, les connecteurs et l’antenne uniquement 
 
 ## Carte SIM et réseau mobile
 
-Le Pro-Finder nécessite une SIM avec **SMS classiques, téléphonie et numéro clairement joignable**. Les données mobiles ne sont pas nécessaires à sa commande par SMS. Les cartes prépayées et les abonnements sont tous deux possibles si le forfait, le crédit ou l’état du contrat, le réseau et la règle PIN conviennent.
+Le Pro-Finder nécessite une SIM avec **SMS classiques, téléphonie et numéro clairement joignable**. **À partir du SN -045, la SIM doit aussi prendre en charge les données mobiles (4G/LTE)** selon la FAQ p. 1 et la notice abrégée rév. 1.3.2 p. 1. Seule l’ancienne notice Micro-SIM rév. 1.1 indique que les données ne sont pas nécessaires. **Multi-SIM non prise en charge** : un numéro propre est nécessaire (FAQ p. 1). Les cartes prépayées et les abonnements sont tous deux possibles si le forfait, le crédit ou l’état du contrat, le réseau et la règle PIN conviennent.
 
 | Numéro de série | SIM | PIN |
 |---|---|---|
@@ -160,30 +157,23 @@ Une homologation permanente d’un opérateur ou un tableau statique des arrêts
 
 ## Programmation des numéros destinataires
 
-Le Pro-Finder ne répond aux commandes qu’après la programmation réussie d’au moins un numéro. Le premier numéro est le **numéro maître**. Il peut ensuite remplacer le bloc de numéros enregistré au moyen d’un nouveau SMS de programmation.
+Programmer d’abord les numéros destinataires du Pro-Finder : **10 numéros maximum**. Le premier est le **numéro maître**. Un nouveau SMS de programmation envoyé par ce maître **remplace toute la liste** ; il n’ajoute pas simplement un destinataire.
 
-### Exemples de syntaxe
+### SMS de programmation selon la génération
 
-| Type de SIM | Marquage smartphone | SMS de programmation |
-|---|---|---|
-| Prépayée | oui | `*100#PDE+S491701234567` |
-| Prépayée | non | `*100#PDE+491701234567` |
-| Abonnement | oui | `DE+S491701234567` |
-| Abonnement | non | `DE+491701234567` |
+La notice publique à partir de `0699-045`, rév. 1.3 (06/2025), donne par exemple `+S491511142338-491736660456` : premier numéro autorisé avec marquage smartphone, deuxième numéro sans droit de commande. Remplacer les numéros d’exemple. `+` désigne un destinataire autorisé, `-` un destinataire non autorisé, `S` le lien cartographique. Utiliser l’indicatif international sans zéro national initial et **sans espaces** dans le SMS.
 
-| Élément | Signification |
-|---|---|
-| `*100#` | exemple propre à un opérateur pour consulter le crédit ; uniquement pour une carte prépayée et à adapter au fournisseur |
-| `P` | marquage d’une carte prépayée |
-| `DE` | langue allemande de l’appareil |
-| `+` | numéro autorisé ; le premier numéro est le numéro maître |
-| `-` | numéro destinataire non autorisé, sans droit de commande |
-| `S` | marquage smartphone pour obtenir un lien cartographique cliquable |
-| `491701234567` | exemple au format international, avec indicatif du pays et sans le zéro national initial |
+### Consulter le crédit prépayé : limite SN -044 / -045
 
-Ne pas ajouter d’espaces, de guillemets typographiques ni de formatage automatique dans le SMS de programmation. Aucun code de consultation du crédit ne doit être programmé pour une SIM avec abonnement. Un code incorrect peut retarder ou bloquer les messages d’alarme pendant que l’appareil attend la réponse de l’opérateur.
+La rév. 2.6 montre également `+S49…` sans interrogation du crédit ; pour les anciennes cartes prépayées compatibles, elle ajoute un code propre à l’opérateur et `P`, par exemple `*100#P+S49…`. **Aucun code de crédit pour un abonnement.** Selon la FAQ, l’interrogation du solde est prévue **uniquement jusqu’au SN -044**. **À partir du SN -045, pas de consultation du crédit par Pro-Finder** : utiliser le portail de l’opérateur. Une interrogation incorrecte peut bloquer les alarmes.
 
-Les codes de langue documentés sont `DE`, `FR`, `DK`, `GB`, `NL`, `IT`, `SE` et `CZ`. La procédure complète est décrite dans [[THITRONIK® App — commandes, configuration et dépannage]].
+Les exemples de configuration avec préfixe linguistique `DE`/`FR` viennent d’une autre famille documentaire. La notice publique rév. 1.3 ne montre pas ce préfixe. On ne peut donc affirmer ni qu’il est toujours obligatoire, ni qu’il est toujours invalide. Utiliser l’application avec le vrai numéro de série et la langue de l’appareil ; en cas de syntaxe différente, faire confirmer par THITRONIK avant de remplacer la liste. Ne pas combiner des syntaxes de révisions différentes.
+
+Sources : rév. 2.6, PDF p. 44–46 ; rév. 1.3, PDF p. 63–67 ; FAQ allemande, PDF p. 1, 4, 7.
+
+### Effacer les destinataires en position E
+
+**La position E efface tous les numéros destinataires, y compris le numéro maître.** Ce n’est ni une réparation générale, ni l’effacement des émetteurs WiPro ou d’un appairage Bluetooth. Pour une réinitialisation volontaire de la liste uniquement : laisser la SIM dans l’appareil, débrancher le faisceau principal, choisir E, rebrancher et attendre le clignotement jaune/vert. Revenir au mode initial et reprogrammer tous les destinataires nécessaires. Le maître connu peut aussi remplacer la liste entière par SMS. Sources : rév. 2.6, PDF p. 46 ; rév. 1.3, PDF p. 67.
 
 ---
 
@@ -207,21 +197,48 @@ La forme de commande valide dépend de la langue programmée dans le Pro-Finder.
 | Interroger les composants mémorisés | `melder` |
 | Activer ou désactiver le GPS | `gps an` ou `gps aus` |
 
-L’application prépare les commandes en fonction de la langue configurée. La commande par appel dépend du mode sélectionné : un appel peut demander un rapport d’état ou, avec une commande WiPro configurée en conséquence, modifier l’état d’alarme. Ne pas modifier la position du sélecteur sans vérifier le numéro de série, le type de raccordement et les instructions correspondantes.
+### Modes de fonctionnement, appel et tensions en mode 9
+
+L’application prépare les commandes en fonction de la langue configurée. **En modes 2 et 3, un appel fait basculer la WiPro entre armée et désarmée**, puis envoie le rapport : ce n’est pas une simple interrogation d’état. Le mode 0 est le réglage standard selon la FAQ, sans envoi périodique. Rév. 1.3 : modes 4/5/6/7, intervalles de 15 minutes / 60 minutes / 6 heures / 24 heures ; mode 9, U1–U5 sans intervalle automatique. La rév. 2.6 ne montre aucune tension en mode 9 : ne pas généraliser à toutes les générations (PDF p. 40 contre rév. 1.3 p. 58). Ne pas modifier la position du sélecteur sans vérifier le numéro de série, le type de raccordement et les instructions correspondantes.
 
 Les SMS d’alarme destinés à plusieurs numéros sont envoyés successivement. Si un test d’alarme contrôlé est arrêté immédiatement, les numéros enregistrés plus loin dans la séquence peuvent ne recevoir aucune notification.
 
 ---
 
+### Commandes françaises selon la version
+
+L’ancienne matrice publique 1.1 et la rév. 2.6 ne donnent pas les mêmes commandes françaises que la notice à partir de `0699-045`, rév. 1.3. Utiliser la langue programmée dans l’appareil et son logiciel réel, pas simplement la langue de la question. Ne pas traduire librement les commandes ni ajouter des apostrophes typographiques.
+
+| Fonction | Ancienne matrice publique 1.1 | Notice à partir de -045, rév. 1.3 |
+|---|---|---|
+| Armer / désarmer | `arme` / `desarme` | `activer` / `desactiver` |
+| État | `statut` | `rapport d etat` |
+| Geofencing actif / inactif | `gardiennage active` / `gardiennage desactive` | `activer le gardiennage` / `desactiver le gardiennage` |
+| Appairage actif / inactif | `mode d'apprentissage active` / `mode d'apprentissage desactive` | `activer le mode d appairage` / `desactiver le mode d appairage` |
+| Sortie A active / inactive | `a active` / `a desactivee` | `activer la sortie A` / `desactiver la sortie A` |
+| Impulsion sortie A | Rév. 2.6 : `a impulsion` | `sortie A impulsion` |
+
+La rév. 1.3 donne `position` pour la localisation et `a %min%` pour une durée de 1 à 120 minutes. Remplacer le paramètre par un nombre, par exemple `a 30` ; ne pas envoyer le paramètre littéral. Ne pas garantir la compatibilité de ces formes avec une ancienne version logicielle. Sources : matrice publique 1.1, PDF p. 1 ; rév. 1.3, PDF p. 71–75. L’ancienne matrice n’est pas une procédure universelle pour tous les Pro-Finder.
+
+---
+
 ## Geofencing et position
 
-Le geofencing surveille le déplacement du véhicule stationné par rapport à sa position initiale et le signale comme une alarme antivol silencieuse. Selon la documentation du produit, le geofencing est activé automatiquement lorsqu’une WiPro raccordée est armée. Il peut également être commandé par SMS ou, dans certains anciens modes configurés en conséquence, par une entrée de tension.
+Le geofencing signale le déplacement par une **alarme antivol silencieuse**. Avec une WiPro raccordée, l’armement l’active et le désarmement le désactive automatiquement. Les modes **8 et B** utilisent la **broche 3** : mode 8, plus de 6 V active / moins de 5 V désactive ; mode B, plus de 6 V désactive / moins de 5 V active. Pour les autres modes normaux, la notice décrit la commande SMS. Pour changer le point de référence, envoyer d’abord `desactiver le gardiennage`, puis `activer le gardiennage` sur un appareil configuré en français selon la rév. 1.3.
 
-Les documents de différentes générations indiquent des distances de déclenchement approximatives comprises entre **500 m et 1 km**. Ces valeurs ne constituent pas une limite géographique précise. La réception satellite, la version de l’appareil et le déroulement du déplacement influencent le déclenchement. Dans les bâtiments ou en présence de fortes réflexions GPS, un changement de position incohérent peut se produire ; si nécessaire, désactiver volontairement le geofencing à cet endroit avec `fence aus`, puis le réactiver ultérieurement.
+### Rayon du geofencing : original et erreur OCR
 
-Si aucune position GPS actuelle n’est disponible, le Pro-Finder attend jusqu’à environ **10 minutes**, selon la version, puis peut envoyer la dernière position valide. La mention `GPS: Standby` signifie que la position transmise n’est pas actuelle. L’heure UTC affichée correspond alors à la dernière position valide et pas nécessairement à l’heure d’envoi du message.
+La notice à partir de `0699-045`, **rév. 1.3, édition 06/2025**, indique **900 mètres** en allemand et en français. La transcription OCR lit par erreur 500 mètres à un endroit : retenir l’original visuel.
 
-Les positions servent à l’orientation et ne remplacent ni un système de localisation certifié ni l’intervention de la police. Ne pas intervenir soi-même en cas de vol.
+L’ancienne **rév. 2.6** indique **environ 1 km** en allemand et **environ 1,5 km** en français. C’est une **contradiction documentaire**, pas une plage réglable démontrée. Pour les anciens appareils, faire confirmer l’affectation par THITRONIK avec numéro de série et logiciel ; ne pas garantir un rayon unique. Même 900 mètres ne constituent pas une frontière géographique exacte. Les réflexions GPS dans les bâtiments peuvent produire des déplacements apparents.
+
+Sources : rév. 1.3, PDF p. 70, 72 / DE 19, 21 ; rév. 2.6, PDF p. 47, 50 / DE 12, 15. L’OCR n’est pas une source indépendante.
+
+### GPS en veille, dernière position et UTC
+
+**GPS: Standby** désigne la veille du récepteur, automatiquement réactivé lors d’un événement. Cette mention ne prouve pas à elle seule l’âge exact de la position. **Pas de position** dans la rév. 1.3 indique l’absence de position actuelle valide. Pro-Finder attend jusqu’à **10 minutes**, puis peut transmettre la **dernière position valide**. L’heure **UTC correspond à la dernière position reçue**, pas nécessairement à l’envoi du SMS. Ne pas présenter une ancienne position comme la position actuelle du véhicule.
+
+Sources : rév. 2.6, PDF p. 47, 50, 52 ; rév. 1.3, PDF p. 70, 73, 75.
 
 ---
 
@@ -247,9 +264,9 @@ Selon la génération, le mode de fonctionnement et les composants raccordés, u
 - l’état du geofencing
 - la position GPS et la vitesse
 - l’état des sorties A et B
-- l’alimentation U1 et, sur les anciens appareils, les entrées de mesure U2–U5 disponibles
-- la température de l’appareil à partir de `0699-045`
-- le crédit prépayé si un code de consultation adapté est programmé
+- l’alimentation U1 et les entrées U2–U5, également à partir de -045 ; affichage selon le mode
+- la température à proximité immédiate de l’appareil, déjà décrite en rév. 2.6 ; pas une mesure garantie de l’habitacle
+- le crédit prépayé uniquement sur les appareils compatibles jusqu’à -044 avec le bon code ; pas à partir de -045
 
 ---
 
@@ -267,12 +284,9 @@ L’immobilisation est annulée avec `a aus`. Elle est prévue uniquement pour u
 
 ## Sous-tension et veille
 
-- À une tension d’alimentation de **11,2 V**, le Pro-Finder envoie un avertissement de tension.
-- Il passe ensuite en veille pour protéger la batterie contre la décharge profonde et cesse temporairement de répondre aux commandes.
-- Après la recharge et avec une alimentation supérieure à **12,5 V**, il revient au fonctionnement normal.
-- Après un avertissement de sous-tension, contrôler la batterie, le système de charge et la charge permanente totale.
+Les notices rév. 2.6 et rév. 1.3 excluent explicitement le **mode B de l’avertissement de tension**. Pour la fonction décrite, une alimentation **durablement inférieure à 11,2 V** déclenche un avertissement et la mise en veille. Le retour au fonctionnement normal se fait **au-dessus de 12,5 V**. Ce n’est pas un déclenchement exactement à 11,2 V ni une validation des mêmes seuils pour toute installation 24 V.
 
-Un Pro-Finder qui ne répond pas n’est donc pas automatiquement défectueux. Contrôler d’abord la tension d’alimentation réelle au niveau de l’appareil et la capacité de charge de la batterie. Des réinitialisations répétées par le fusible ne corrigent pas la cause.
+En cas d’absence de réponse, contrôler l’alimentation à l’appareil, la batterie et la charge. Ne pas promettre un SMS de sous-tension en mode B ; cette exception ne prouve pas non plus l’absence de toutes les protections dans ce mode. Retirer plusieurs fois le fusible ne corrige pas la cause. Sources : rév. 2.6, PDF p. 47 / DE 12 ; rév. 1.3, PDF p. 70 / DE 19.
 
 ---
 
@@ -291,6 +305,14 @@ Un Pro-Finder qui ne répond pas n’est donc pas automatiquement défectueux. C
 | clignote en vert | fonctionnement normal | fonctionnement normal | enregistré sur le réseau et numéros présents |
 
 > **Important :** un clignotement jaune a une signification différente avant et à partir de `0699-045`. Un diagnostic précis de la LED est impossible sans le numéro de série complet.
+
+---
+
+### Diagnostic GPS en position F
+
+En **position F**, **rouge fixe : GPS non connecté**, **jaune clignotant : données GPS sans position valide**, **vert fixe : position GPS correcte**. Si le jaune clignote encore après cinq minutes, contrôler la réception et l’emplacement. Revenir ensuite au mode initial. En fonctionnement normal, le rouge fixe signifie au contraire SIM absente/défectueuse. Ne pas confondre les codes du diagnostic GPS avec ceux du fonctionnement normal.
+
+Pour le raccordement initial de l’antenne GPS externe optionnelle, les deux notices demandent une connexion hors tension puis au moins cinq minutes **au-dessus de 13,5 V** avec une réception satellite dégagée. Il s’agit de l’initialisation de l’antenne, pas d’une tension minimale universelle de fonctionnement. Sources : rév. 2.6, PDF p. 41–42 ; rév. 1.3, PDF p. 60–61.
 
 ---
 

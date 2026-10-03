@@ -1,0 +1,1009 @@
+{
+  "checkedAt": "2026-10-01T18:01:50.739Z",
+  "mode": "retrieval-only",
+  "liveModelEvaluated": false,
+  "total": 100,
+  "passed": 100,
+  "cases": [
+    {
+      "lang": "de",
+      "id": "wasser-standalone",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 2/13; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-ip67",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 2–4/13–15; WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-boden",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-orientierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-schrauben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 3–4/14–15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 5/16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-batterie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 6/17; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QW 2; WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "wasser-sms",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-orientierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "M0/M1/M2 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-abstand-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "M0/M1/M2 2/6; WiPro I 7/43; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-wasserdicht-abstand",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 4–5/15–16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-wasserdicht-platte",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-wasserdicht-schrauben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 3–4/14–15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-batterie-standard",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QH 2; M1 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-gewicht",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 17; WMW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-temperatur",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 17; WMW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "magnet-adapter",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "M0/M1/M2 3/7; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "schleife-varianten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 1/12; WL; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "schleife-alarm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "schleife-schrauben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "schleife-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "schleife-dichtung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QL 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "schleife-433",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "bereits geprüfte WiPro-FAQ; Quellenbericht WiPro; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "handsender-zv",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "H 1; WH; WiPro-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "handsender-panik",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WiPro-Bedienung; bereits geprüfte Seriengrenze; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "handsender-lernen",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WiPro Installation Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "handsender-batteriewarnung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QH 1–2; WiPro-Bedienung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-master",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 2; WiPro-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-quittierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-batterie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "N 3/13; WNM 8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-reichweite",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "N 3–6/13–16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-reset",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 7; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-speicher",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 5–6; WN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-nummer",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "N 1/52; WN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-standalone",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QR 1; R 2/8; Gas-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QR 1–2; WR; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-aktivieren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-stoffdecke",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/4/8/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-signale",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-batterie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "tsa-norm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/8; WR; WDIN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "bt-daten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 32; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "bt-rj10",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "bt-masse",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "bt-kopplung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "bt-reset",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 4/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "bt-smartwatch-zuordnung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QB 1–2; WBT; VM 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "vernetzung-wear-matrix",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "VM 1; QV 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "de",
+      "id": "vernetzung-ferne",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QV 3; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-standalone",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 2/13; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-ip67",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 2–4/13–15; WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-boden",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-orientierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-schrauben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 3–4/14–15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 5/16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-batterie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "W 6/17; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QW 2; WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "wasser-sms",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-orientierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "M0/M1/M2 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-abstand-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "M0/M1/M2 2/6; WiPro I 7/43; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-wasserdicht-abstand",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 4–5/15–16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-wasserdicht-platte",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-wasserdicht-schrauben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 3–4/14–15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-batterie-standard",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QH 2; M1 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-gewicht",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 17; WMW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-temperatur",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "MW 17; WMW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "magnet-adapter",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "M0/M1/M2 3/7; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "schleife-varianten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 1/12; WL; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "schleife-alarm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "schleife-schrauben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "schleife-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "schleife-dichtung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QL 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "schleife-433",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "bereits geprüfte WiPro-FAQ; Quellenbericht WiPro; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "handsender-zv",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "H 1; WH; WiPro-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "handsender-panik",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WiPro-Bedienung; bereits geprüfte Seriengrenze; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "handsender-lernen",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WiPro Installation Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "handsender-batteriewarnung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QH 1–2; WiPro-Bedienung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-master",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 2; WiPro-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-quittierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-batterie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "N 3/13; WNM 8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-reichweite",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "N 3–6/13–16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-reset",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 7; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-speicher",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WNM 5–6; WN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-nummer",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "N 1/52; WN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-standalone",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QR 1; R 2/8; Gas-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QR 1–2; WR; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-aktivieren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-stoffdecke",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/4/8/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-signale",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-batterie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-norm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "R 2/8; WR; WDIN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "bt-daten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 32; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "bt-rj10",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "bt-masse",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "bt-kopplung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "bt-reset",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "B 4/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "bt-smartwatch-zuordnung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QB 1–2; WBT; VM 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "vernetzung-wear-matrix",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "VM 1; QV 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    },
+    {
+      "lang": "fr",
+      "id": "vernetzung-ferne",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QV 3; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md"
+    }
+  ]
+}

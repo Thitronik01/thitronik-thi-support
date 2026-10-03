@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-02T20:21:36.502Z",
+  "appHealthHttp": 503,
+  "configuration": {
+    "apiUrlGesetzt": false,
+    "apiKeyGesetzt": false,
+    "modell": "anthropic/claude-sonnet-4.6",
+    "zugangsModus": "offen",
+    "zugangswortAktiv": false
+  },
+  "knowledgeBase": {
+    "gefunden": true,
+    "artikel": 224,
+    "abschnitte": 2837,
+    "proSprache": {
+      "fr": 71,
+      "de": 153
+    },
+    "durchschnittLaenge": 10446
+  },
+  "problems": [
+    "ANYMIZE_API_URL ist nicht gesetzt.",
+    "ANYMIZE_API_KEY ist nicht gesetzt.",
+    "Weder Login (THI_SUPABASE_URL) noch THI_ZUGANGSWORT ist gesetzt — die Seite ist öffentlich nutzbar und der API-Schlüssel damit auf fremde Kosten verwendbar."
+  ],
+  "modelCheck": null,
+  "modelAnswersEvaluated": 0,
+  "providerNetworkCallsMade": 0,
+  "status": "blocked-missing-provider-configuration",
+  "pilotCasesPrepared": 28,
+  "evaluatorAttempt": {
+    "mode": "judge",
+    "language": "de",
+    "limit": 1,
+    "exitCode": 1,
+    "reason": "ANYMIZE_API_URL und ANYMIZE_API_KEY fehlen; Abbruch vor erstem Fall."
+  },
+  "knowledgeBaseStage": "Health-Check vor Integration des neuen Herstellerhinweises; für echte Evaluation Server mit finalen Daten frisch starten.",
+  "currentPreparedData": {
+    "articles": 224,
+    "sections": 2841,
+    "artikelSha256": "f33729e7ef1f5a31d1c0083a2ae360888556b1ae77c217372a611ff05d182983",
+    "sektionenSha256": "e48373865964f37cefaf07d9f1c4ec60e55a42346b46f9f864f933900628778d"
+  },
+  "pendingInput": "Bestehende Test-App-Adresse mit autorisierter Sitzung oder lokale Provider-Konfiguration in app/.env. Keine Zugangsdaten im Bericht."
+}

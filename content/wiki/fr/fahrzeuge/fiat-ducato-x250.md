@@ -1,11 +1,9 @@
 ---
 title: 'Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006-2011)'
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_fiat_ducato_x250_euro_4_safe.lock.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ducato-x250.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/fiat-ducato-x250.md
@@ -16,6 +14,16 @@ translation_of: sources/fahrzeuge/fiat-ducato-x250.md
 Cet article décrit l'installation d'une WiPro III safe.lock sur les Fiat Ducato X250, Peugeot Boxer et Citroën Jumper Euro 4 de 2006 à 2011. Le manuel d'installation spécifique au véhicule, version `12/20`, documente la connexion CAN, les feux de détresse, le verrouillage centralisé, le klaxon du véhicule, l'allumage, l'alimentation et le test de fonctionnement avec la clé d'origine modifiée.
 
 > **Délimitation :** L'année de construction, le niveau d'émission, l'ordinateur de bord, les couleurs des fiches et des câbles doivent être vérifiés ensemble. Le dernier groupe de véhicules de 2012 appartient à [[Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012-2021)|Fiat Ducato 2012–2021]] ; [[Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (jusqu'en 2006)|Fiat Ducato 244]] s'applique au prédécesseur.
+
+## Limites du véhicule et sources contrôlées
+
+Ducato X250 Euro 4, 2006–2011 : `SW2 + SW6 ON`. CAN sur l’insert vert broche 5 (Low) / broche 6 (High), ou sur l’insert noir broche 25 (Low) / broche 24 (High). Les deux fils doivent appartenir à la même variante documentée. La notice 12/20 ne justifie pas à elle seule SW5 pour toute centrale nommée safe.lock ; identifier clé, platine de conversion et version.
+
+Sources : [ducato-x250, PDF 2](../../../quellen/fahrzeug-ducato-x250.pdf#page=2), [ducato-x250, PDF 4](../../../quellen/fahrzeug-ducato-x250.pdf#page=4).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Portée
 
@@ -134,6 +142,8 @@ La carte de conversion [[Carte de conversion safe.lock — sécurité de la clé
 La **télécommande d'origine du véhicule convertie** est utilisée dans le test de fonctionnement spécifique au véhicule. Sans conversion éprouvée ou avec protection générale active contre la relecture `SW5`, ce test ne peut pas être utilisé pour dériver une autorisation de fonctionnement pour la clé radio d'origine inchangée. Selon le système, l'émetteur radio portatif [[Émetteur radio 868 — télécommande pour WiPro III|Émetteur radio 868]] ou le module [[Module NFC — commande de la WiPro via NFC|Module NFC]] peuvent être utilisés comme méthodes de fonctionnement supplémentaires.
 
 ## Test fonctionnel final
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Fermez toutes les portes et armez-les à l'aide du bouton de verrouillage de la télécommande d'origine convertie du véhicule.
 2. Si le WiPro ne répond pas initialement, verrouillez-le et déverrouillez-le plusieurs fois afin que les données du CAN se synchronisent.

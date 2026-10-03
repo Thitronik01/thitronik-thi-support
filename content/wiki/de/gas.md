@@ -1,13 +1,13 @@
 ---
 title: G.A.S. — Standalone-Gaswarner mit interner Sirene
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas.pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS__105700__Overview_DE.md
-  - sources/Fragen zu G.A.S..pdf
-  - sources/Seriennummer 5700 G.A.S..csv
-updated: '2026-07-16'
+  - "content/quellen/gas-anleitung-rev1.1.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS__105700__Overview_DE.md"
+  - "content/quellen/gas-faq.pdf"
+  - "sources/Seriennummer 5700 G.A.S..csv"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -40,6 +40,8 @@ G.A.S. ist ein fest montierter, eigenständiger Gaswarner für Freizeitfahrzeuge
 | Typgenehmigung | ECE R10 |
 
 Die Grenzwerte des Steuerausgangs dürfen nicht überschritten werden. `Alarm OUT` ist keine Versorgung für beliebige Verbraucher.
+
+Beleg: [G, PDF 15](../../quellen/gas-anleitung-rev1.1.pdf#page=15).
 
 ## Schnellcheck
 
@@ -108,6 +110,8 @@ Die produktspezifische Anleitung ist für dieses Gerät maßgeblich und nennt ei
 
 Der Einbauort muss eine freie Luftzirkulation am Gerät ermöglichen. Das Gerät nicht verdecken, zustellen oder in einem geschlossenen Staufach montieren.
 
+Beleg: [G, PDF 2, 4](../../quellen/gas-anleitung-rev1.1.pdf#page=2).
+
 ## Mechanische Montage
 
 1. Spannungsfreien Montageort anhand der Abstandsvorgaben festlegen und verdeckte Leitungen oder Bauteile vor dem Bohren ausschließen.
@@ -125,12 +129,14 @@ Der Einbauort muss eine freie Luftzirkulation am Gerät ermöglichen. Das Gerät
 | Anschluss | Funktion | Vorgabe |
 |---|---|---|
 | `12/24V` | Positive Bordnetzversorgung | Passende abgesicherte 12-/24-V-DC-Versorgung verwenden |
-| `AGND` | Masse | Mit geeigneter Fahrzeugmasse verbinden |
+| `GND` | Masse | Mit geeigneter Fahrzeugmasse verbinden |
 | `ALARM OUT` | Optionaler Alarmausgang | Schaltet gegen Masse, maximal 0,10 A |
 
 Die Klemmhebel vollständig öffnen, abisolierte Leiter bis zum Anschlag einführen und die Hebel wieder schließen. Die Anschlussdarstellung der Anleitung verlangt den Anschluss **ohne Aderendhülsen**. Danach jede Ader mit einer leichten Zugprobe kontrollieren.
 
 Polarität, Absicherung und Versorgungsspannung vor dem Einschalten prüfen. Niemals an einer unter Spannung stehenden Klemme arbeiten.
+
+Beleg: [G, PDF 13](../../quellen/gas-anleitung-rev1.1.pdf#page=13). Die Zeichnung beschriftet die Masseklemme mit `GND`, nicht `AGND`.
 
 ## `Alarm OUT` und Back-up Sirene
 
@@ -167,6 +173,8 @@ Während der Aufwärmphase besteht noch keine bestätigte Betriebsbereitschaft. 
 
 Eine erloschene Anzeige ist keine Betriebsbereitschaft. Vor Reiseantritt und Übernachtung den grün blinkenden Zustand kontrollieren.
 
+Beleg: [G, PDF 2, 4](../../quellen/gas-anleitung-rev1.1.pdf#page=2).
+
 ## Alarmablauf und Stummschaltung
 
 Wird die Alarmschwelle länger als 30 Sekunden überschritten, beginnt der dokumentierte Alarmablauf:
@@ -179,6 +187,8 @@ Wird die Alarmschwelle länger als 30 Sekunden überschritten, beginnt der dokum
 
 > [!WARNING]
 > Stummschalten bestätigt keine sichere Atmosphäre und beseitigt keine Gasquelle. Bei jedem Alarm Personen und Tiere in Sicherheit bringen und die Ursache aus sicherer Position klären.
+
+Beleg: [G, PDF 2, 4](../../quellen/gas-anleitung-rev1.1.pdf#page=2).
 
 ## Ausschalten
 
@@ -245,7 +255,7 @@ Für eine zügige Prüfung folgende Angaben bereithalten:
 |---|---|
 | Produkt und Artikelnummer | G.A.S., `105700` |
 | Vollständige Seriennummer | Typenschild; nicht nur ein vermutetes Präfix |
-| Versorgungsspannung | Gemessener Wert an `12/24V` und `AGND` |
+| Versorgungsspannung | Gemessener Wert an `12/24V` und `GND` |
 | LED- und Signalzustand | Farbe, leuchtend/blinkend, Einzelton/Dauerton |
 | Zeitpunkt und Dauer | Direkt nach dem Einschalten, nach der Aufwärmphase oder im Betrieb |
 | Einbauort | Höhe, Abstand zu Heizung und Batterie, Luftzirkulation |

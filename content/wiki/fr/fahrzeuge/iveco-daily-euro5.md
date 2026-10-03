@@ -1,12 +1,12 @@
 ---
 title: Iveco Daily Euro 5 et plus récent (2011-2024)
 sources:
-  - sources/WiPro_III_Iveco_Daily_Euro_5_2011-2024_DE.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/ZV - IVECO Daily.pdf
-  - sources/Iceco Daily.docx
-  - sources/Fahrzeugbesonderheiten.docx
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-iveco-euro5.pdf"
+  - "content/quellen/fahrzeug-iveco-zv.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Iceco Daily.docx"
+  - "sources/Fahrzeugbesonderheiten.docx"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/iveco-daily-euro5.md
@@ -19,6 +19,16 @@ Cet article décrit l'installation d'un WiPro III ou WiPro III safe.lock sur les
 
 > **Limite du champ d'application :** l'année-modèle, l'ordinateur de bord, le connecteur, la broche et le code de câble doivent correspondre à la notice. La remarque sur les couleurs modifiées à partir de 2025 n'autorise pas l'installation sur la génération BCM 2025/2026.
 
+## Limites du véhicule et sources contrôlées
+
+Iveco Daily 2011–2024, notice 01/2026 page 2 : WiPro normale `SW2 + SW6 ON` ; safe.lock avec platine `SW2 + SW5 + SW6 ON` ; le troisième schéma, pour safe.lock semi-intégré/intégral, montre `SW1 + SW2 + SW5 + SW6 ON` et impose de ne pas raccorder le fil bleu de centralisation. La condition « SW5 seulement avec platine » reste valable. SW1 ne sert donc pas uniquement aux essais ZV. La matrice ZV contient douze combinaisons, sans autoriser tout véhicule inconnu. Les couleurs citées pour 2025 n’étendent pas le domaine 2011–2024. Les périodes du klaxon se chevauchent en 2017 et 2019 : vérifier raccordement et commutation.
+
+Sources : [iveco-euro5, PDF 2](../../../quellen/fahrzeug-iveco-euro5.pdf#page=2), [iveco-euro5, PDF 4](../../../quellen/fahrzeug-iveco-euro5.pdf#page=4), [iveco-euro5, PDF 5](../../../quellen/fahrzeug-iveco-euro5.pdf#page=5), [iveco-zv, PDF 1](../../../quellen/fahrzeug-iveco-zv.pdf#page=1).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
+
 ## Champ d'application
 
 | Élément | Exigence |
@@ -27,7 +37,7 @@ Cet article décrit l'installation d'un WiPro III ou WiPro III safe.lock sur les
 | Années-modèles | 2011-2024 ; vérifier la version réelle |
 | WiPro III ou safe.lock sans carte de conversion | `SW2 + SW6` sur `ON` |
 | WiPro III safe.lock avec carte de conversion | `SW2 + SW5 + SW6` sur `ON` |
-| Véhicules semi-intégrés ou intégraux avec carte | `SW2 + SW5 + SW6` ; ne pas raccorder le câble bleu d'ouverture |
+| Véhicules semi-intégrés ou intégraux avec carte | `SW1 + SW2 + SW5 + SW6` ; ne pas raccorder le câble bleu d'ouverture |
 | Base de compatibilité | `0823-001 / 2.1` ; vérifier l'appareil et le véhicule exacts |
 
 Un système spécifique peut être préconfiguré. Documenter néanmoins la position réelle. Vérifier numéro de série, logiciel et version sous [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]].
@@ -40,7 +50,7 @@ Un système spécifique peut être préconfiguré. Documenter néanmoins la posi
 | ancien aperçu et ancien texte | `SW1` ou `SW1 + SW5` | remplacé par le schéma actuel |
 | supplément de verrouillage centralisé | positions d'essai `SW1`/`SW3` | uniquement pour la matrice ci-dessous |
 
-Le schéma DIP a été contrôlé visuellement en haute résolution : `SW2` et `SW6` sont sur `ON`, et `SW5` s'ajoute **uniquement si une carte de conversion est montée**. `SW1` et `SW3` ne servent qu'aux douze essais du verrouillage centralisé. Voir [[Compatibilité des véhicules — Matrice de présentation et principes de base du DIP|Compatibilité des véhicules]].
+Le schéma DIP a été contrôlé visuellement en haute résolution : `SW2` et `SW6` sont sur `ON`, et `SW5` s'ajoute **uniquement si une carte de conversion est montée**. Le troisième schéma comporte aussi `SW1 ON` pour safe.lock semi-intégré/intégral. `SW1` n’est donc pas exclusivement un interrupteur d’essai ; la matrice séparée fait varier `SW1` et `SW3`. Voir [[Compatibilité des véhicules — Matrice de présentation et principes de base du DIP|Compatibilité des véhicules]].
 
 Ne pas déduire la présence de la [[Carte de conversion safe.lock — sécurité de la clé pour Ducato/Boxer/Jumper|carte de conversion safe.lock]] du seul nom safe.lock. Vérifier la clé et la version, particulièrement à partir de 2019.
 
@@ -65,7 +75,7 @@ Avant le montage :
 2. Déclencher chaque contact, détecteur de gaz ou boucle de câble deux ou trois fois.
 3. Vérifier l'enregistrement par le bip et la brève extinction de la LED.
 4. Couper l'alimentation et ouvrir le boîtier, sauf préconfiguration spécifique.
-5. Régler `SW2 + SW6` sur `ON` sans carte de conversion.
+5. Version normale sans platine : `SW2 + SW6 ON` ; pour safe.lock semi-intégré/intégral, consulter le troisième schéma avec `SW1 ON`.
 6. Ajouter `SW5` uniquement avec une carte confirmée.
 7. Fermer le boîtier et poursuivre le montage.
 
@@ -130,11 +140,11 @@ Les périodes se chevauchent en 2017 : vérifier l'emplacement, le connecteur E,
 
 ## Véhicules semi-intégrés et intégraux
 
-Ne **pas raccorder le câble bleu d'ouverture centralisée**. Le profil reste `SW2 + SW6`, plus `SW5` uniquement avec carte confirmée. Les anciens cas « Iveco Daily 4x4 2021 » et « Carthago 2022 » proviennent de fichiers Word absents localement et ne sont donc pas conservés comme solutions approuvées.
+Ne **pas raccorder le câble bleu d'ouverture centralisée**. Le troisième schéma page PDF 2 montre `SW1 + SW2 + SW5 + SW6 ON`. La condition SW5 uniquement avec platine reste valable ; faire confirmer séparément toute variante de carrosserie sans platine. Les anciens cas « Iveco Daily 4x4 2021 » et « Carthago 2022 » proviennent de fichiers Word absents localement et ne sont donc pas conservés comme solutions approuvées.
 
 ## Matrice d'adaptation centralisée avec SW1 et SW3
 
-Conditions constantes : bleu sur connecteur gris broche 1 / marron `0000`, bleu/noir sur connecteur vert broche 34 / vert `0968`, profil `SW2 + SW6` et `SW5` seulement avec carte.
+Conditions constantes : bleu sur connecteur gris broche 1 / marron `0000`, bleu/noir sur connecteur vert broche 34 / vert `0968`, profil selon le schéma véhicule, avec `SW1 ON` supplémentaire sur le schéma semi-intégré/intégral ; `SW5` seulement avec platine. Le supplément ne donne pas de version minimale et n’autorise pas un essai aveugle sur tout véhicule.
 
 | Étape | Bleu / broche 1 | Bleu-noir / broche 34 | SW1 | SW3 |
 |---:|---|---|---|---|
@@ -161,6 +171,8 @@ Cette matrice ne remplace pas le profil de base.
 
 ## Contrôle fonctionnel final
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 1. Fermer les portes et armer avec la touche de verrouillage de la télécommande autorisée.
 2. Si nécessaire, verrouiller/déverrouiller plusieurs fois pour synchroniser le CAN.
 3. Contrôler bip, clignotants et LED clignotante.
@@ -177,7 +189,7 @@ Une série de bips courts à l'armement signale un contact magnétique appris ou
 ## Contacts radio magnétiques
 
 - Orienter la LED de transmission de la carte à l'opposé de l'aimant.
-- Respecter une distance de `22-30 mm` et la ligne limite rouge.
+- Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 - Coller sur une surface propre, sèche et dégraissée, au-dessus de `15 °C`, puis attendre environ `24 heures`.
 - Pour un écart plus grand ou une meilleure orientation d'antenne, utiliser l'adaptateur `100428` ou `100729`.
 
@@ -200,12 +212,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Décision sur les sources
 
-- La notice véhicule de dix pages `01/2026` et le supplément ZV d'une page ont été intégralement contrôlés textuellement et visuellement.
-- Le schéma confirme `SW2 + SW6`, plus `SW5` seulement avec carte ; les anciennes valeurs `SW1` / `SW1 + SW5` sont corrigées.
-- Le supplément ZV est repris uniquement comme matrice de douze essais de `SW1`, `SW3` et des deux sorties.
-- La notice générale `1.8` complète la sécurité et le diagnostic sans primer sur l'instruction spécifique.
-- `Iceco Daily.docx` et `Fahrzeugbesonderheiten.docx` ne sont pas disponibles localement ; leurs affirmations 4x4/Carthago et l'interprétation fonctionnelle de `SW1`/`SW3` ne constituent pas des preuves.
-- La remarque 2025 est séparée du champ 2011-2024 et n'autorise pas la nouvelle génération BCM.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [iveco-euro5, PDF 2](../../../quellen/fahrzeug-iveco-euro5.pdf#page=2), [iveco-euro5, PDF 4](../../../quellen/fahrzeug-iveco-euro5.pdf#page=4), [iveco-euro5, PDF 5](../../../quellen/fahrzeug-iveco-euro5.pdf#page=5), [iveco-zv, PDF 1](../../../quellen/fahrzeug-iveco-zv.pdf#page=1).
 
 ## Références croisées
 

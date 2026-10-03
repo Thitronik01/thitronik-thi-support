@@ -1,9 +1,9 @@
 ---
 title: Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (jusqu'en 2006)
 sources:
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii_fiat_ducato_244.pdf'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ducato-244.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/fiat-ducato-244.md
@@ -14,6 +14,16 @@ translation_of: sources/fahrzeuge/fiat-ducato-244.md
 Cet article décrit l'installation d'un WiPro III sur Fiat Ducato 244, Peugeot Boxer et Citroën Jumper construits jusqu'en 2006. Les instructions spécifiques au véhicule à partir de `12/20` utilisent des connexions directes pour les clignotants, les portes de cabine, l'alimentation et la masse ; Une connexion CAN pour le WiPro n'est pas prévue dans ce schéma d'installation.
 
 > **Délimitation :** L'année de construction, le tableau de bord, le compteur de vitesse, la prise et les couleurs des câbles doivent correspondre aux instructions. Pour la génération X250 suivante, [[Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006-2011)|Fiat Ducato X250 2006-2011]] s'applique.
+
+## Limites du véhicule et sources contrôlées
+
+Ducato 244 : uniquement `SW6 ON`. La page 7 exclut la commande de l’alarme par la télécommande Fiat, contrairement au contrôle générique de la page 2. Ne pas promettre cette commande ; utiliser la télécommande THITRONIK et faire clarifier l’écart. Les 60 secondes concernent la temporisation d’armement des portes cabine câblées ; les contacts radio sont actifs immédiatement. Ce n’est pas une temporisation d’entrée.
+
+Sources : [ducato-244, PDF 2](../../../quellen/fahrzeug-ducato-244.pdf#page=2), [ducato-244, PDF 6](../../../quellen/fahrzeug-ducato-244.pdf#page=6), [ducato-244, PDF 7](../../../quellen/fahrzeug-ducato-244.pdf#page=7).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Portée
 
@@ -121,6 +131,8 @@ Pour la position indiquée dans la notice, un trou de diamètre `8 mm` est perc�
 Insérez la LED et reconnectez le câble LED rouge/noir avec le connecteur blanc à la contrepartie du jeu de câbles WiPro. Après le montage, la LED d'état doit être visible dans la direction de visualisation prévue.
 
 ## Test fonctionnel final
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Fermez toutes les portes et armez le WiPro à l'aide du bouton de verrouillage de l'émetteur radio portatif WiPro.
 2. Vérifiez s'il y a un bip, un clignotement des indicateurs de direction et une LED d'état clignotante pour confirmer l'armement.

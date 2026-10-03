@@ -14,6 +14,8 @@
 export function normalizeSearch(value) {
   return String(value || '')
     .toLowerCase()
+    // Gleiche französische Elisions-Normalisierung wie im App-Retrieval.
+    .replace(/['’‘ʼ]/g, ' ')
     .replace(/ä/g, 'ae')
     .replace(/ö/g, 'oe')
     .replace(/ü/g, 'ue')
@@ -115,6 +117,12 @@ function coverageFactor(matches, termCount) {
   return 0.55 + (0.45 * coverage);
 }
 
+// Eine konkrete Artikelnummer/Serienschwelle ist präziser als der in vielen
+// Überschriften wiederholte Produktname. Jahreszahlen und Versionen bleiben normal.
+function sectionBodyWeight(term) {
+  return /^(?:\d{6}|\d{4,6}-\d{3})$/.test(term) ? 12 : 1.5;
+}
+
 export function searchWiki(searchIndex, query, access, lang = 'de', limit = 12) {
   const q = normalizeSearch(query).trim();
   if (q.length < 2) return [];
@@ -168,6 +176,8 @@ export function searchSections(sectionIndex, query, access, lang = 'de', limit =
   const terms = retrievalTerms(query);
   const candidates = (sectionIndex || [])
     .filter((s) => s.lang === lang)
+    // Reine Gliederungsüberschriften ohne Belegtext dürfen keine Quelle verdrängen.
+    .filter((s) => String(s.body || '').trim())
     .filter((s) => access.canViewInternal || s.visibility !== 'internal');
   const weights = termWeights(candidates, terms);
   const vehicleIntent = hasVehicleIntent(query);
@@ -184,7 +194,7 @@ export function searchSections(sectionIndex, query, access, lang = 'de', limit =
         if (fields.heading.includes(term)) score += 14 * weight;
         if (fields.slug.includes(term)) score += 9 * weight;
         if (fields.title.includes(term)) score += 5 * weight;
-        if (fields.body.includes(term)) score += 1.5 * weight;
+        if (fields.body.includes(term)) score += sectionBodyWeight(term) * weight;
       }
       score *= coverageFactor(matches, terms.length);
       score += matches * matches;
@@ -212,7 +222,8 @@ export function searchSections(sectionIndex, query, access, lang = 'de', limit =
 export function bestSectionForRoute(sectionIndex, route, query, lang = 'de') {
   const terms = retrievalTerms(expandSearchQuery(query));
   if (!terms.length) return null;
-  const candidates = (sectionIndex || []).filter((s) => s.route === route && s.lang === lang);
+  const candidates = (sectionIndex || []).filter((s) =>
+    s.route === route && s.lang === lang && String(s.body || '').trim());
   const weights = termWeights(candidates, terms);
   let bestAnchored = null; // bester echter Unterabschnitt (H2/H3, verlinkbar)
   let bestAny = null; // bester Treffer überhaupt (inkl. Intro ohne Anker)
@@ -225,7 +236,7 @@ export function bestSectionForRoute(sectionIndex, route, query, lang = 'de') {
       matches += 1;
       const weight = weights.get(term) || 1;
       if (fields.heading.includes(term)) score += 12 * weight;
-      if (fields.body.includes(term)) score += 1.5 * weight;
+      if (fields.body.includes(term)) score += sectionBodyWeight(term) * weight;
     }
     if (score <= 0) continue;
     score *= coverageFactor(matches, terms.length);
@@ -250,6 +261,8 @@ export const PRODUCT_ALIASES = [
   [/ortung|\bgps\b|tracker|tracking|peilsender|orten\b/, 'pro-finder'],
   [/pro\s*-?\s*finder|profinder/, 'pro-finder'],
   [/bt\s*-?\s*connect|btconnect|\bbluetooth\b/, 'bt-connect'],
+  [/\bcamp\s*-?\s*lock\b|\bcamplock\b/, 'camplock-fingerprint'],
+  [/\bvan\s*-?\s*lock\b|\bvanlock\b/, 'vanlock-fingerprint'],
   [/fernbedienung|hand\s*-?\s*sender/, 'funk-handsender'],
   [/magnetkontakt|tuer\s*-?\s*kontakt|fensterkontakt/, 'funk-magnetkontakt'],
   [/\bnfc\b|schluesselkarte/, 'nfc-modul'],
@@ -295,13 +308,20 @@ const STOPWORDS_DE = new Set([
   'zur', 'tun', 'jetzt', 'dazu', 'davon', 'darauf', 'danach', 'denen', 'dies',
 ]);
 
+const STOPWORDS_FR = new Set([
+  'avec', 'aux', 'combien', 'comment', 'dans', 'des', 'elle', 'elles',
+  'est', 'etre', 'faut', 'fois', 'ils', 'les', 'mais', 'pas', 'peut',
+  'pour', 'que', 'quel', 'quelles', 'quels', 'qui', 'sur',
+  'une', 'vous', 'nous', 'dois', 'doit', 'sont',
+]);
+
 // Aussagekräftige Begriffe einer (normalisierten) Query: keine Stoppwörter,
 // mind. 3 Zeichen (oder Ziffern-haltig, z. B. "g5").
 export function salientTerms(text) {
   return normalizeSearch(text)
     .split(/\s+/)
     .map((t) => t.replace(/^[^a-z0-9]+|[^a-z0-9.-]+$/g, ''))
-    .filter((t) => t && !STOPWORDS_DE.has(t) && (t.length >= 3 || /\d/.test(t)));
+    .filter((t) => t && !STOPWORDS_DE.has(t) && !STOPWORDS_FR.has(t) && (t.length >= 3 || /\d/.test(t)));
 }
 
 // Baut die Retrieval-Query: kurze Folgefragen ("und wie lösche ich ihn?")

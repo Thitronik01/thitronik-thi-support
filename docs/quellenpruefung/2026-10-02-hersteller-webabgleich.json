@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-02",
+  "scope": "Gezielte aktuelle Prüfung zehn offizieller Fundstellen; keine vollständige Web-Neuprüfung aller 47 Fragen.",
+  "directManufacturerReplyReceived": false,
+  "sources": [
+    {
+      "id": "camp-van-hinweis",
+      "url": "https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/",
+      "finding": "Herstellerhinweis vom 27.07.2026 ergänzt; keine konkrete Serien- oder Update-Versionszuordnung angegeben.",
+      "questionIds": [
+        "CAMP-UPDATE"
+      ]
+    },
+    {
+      "id": "camp-van-anleitung",
+      "url": "https://www.thitronik.de/fileadmin/user_upload/downloads/anleitungen_und_einleger/camplock-fingerprint/camplock-vanlock-fingerprint.pdf",
+      "finding": "Onlinefassung weiterhin Rev. 1.0; technische Tabelle nennt 1,7 mA bei 24 V und VanLock 219 g, Einsatztext safe.lock. Das löst den Katalogkonflikt nicht.",
+      "questionIds": [
+        "CAMP-V1",
+        "CAMP-V2",
+        "CAMP-V3"
+      ]
+    },
+    {
+      "id": "profinder-faq",
+      "url": "https://www.thitronik.de/support/faq-produkte/produkt/pro-finder/",
+      "finding": "Aktuelle FAQ bestätigt Upgrade-Angebot für SN-008 bis SN-044. Die offenen Alias-, Pin-, Modus- und Schwellenfragen werden damit nicht beantwortet.",
+      "questionIds": [
+        "PRO-6"
+      ]
+    },
+    {
+      "id": "wipro-safelock-faq",
+      "url": "https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii-safelock/",
+      "finding": "FAQ nennt weiterhin 1050-016/7.2s, 1050-042/7.5.1S und Ford 5298-006/1.0.1sf. Keine vollständige historische Versionszuordnung.",
+      "questionIds": [
+        "WIPRO-4",
+        "AUTO-2",
+        "AUTO-4"
+      ]
+    },
+    {
+      "id": "gas-connect",
+      "url": "https://www.thitronik.de/produkte/produkt/gas-connect/",
+      "finding": "Produktseite weiterhin 34 mA und 35 g; Abweichung zur Anleitung 15/25 mA und 33 g bleibt.",
+      "questionIds": [
+        "GAS-1"
+      ]
+    },
+    {
+      "id": "gas-pro-iii-faq",
+      "url": "https://www.thitronik.de/support/faq-produkte/produkt/gas-pro-iii/",
+      "finding": "FAQ nennt weiterhin 8 m Sensorkabel; Dokumentabweichung 7/8 m nicht geklärt.",
+      "questionIds": [
+        "GAS-6"
+      ]
+    },
+    {
+      "id": "magnetkontakt",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868/",
+      "finding": "Produkttext beschreibt mindestens 22 mm; keine gerätebezogene Zuordnung der 22/25-mm-Dokumente.",
+      "questionIds": [
+        "FUNK-1"
+      ]
+    },
+    {
+      "id": "magnetkontakt-wasserdicht",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/",
+      "finding": "Seite weiterhin 37 g und -40 bis +125 Grad Celsius ohne klare Zuordnung zu Batterie/Gesamtgerät.",
+      "questionIds": [
+        "FUNK-2"
+      ]
+    },
+    {
+      "id": "wassermelder",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-wassermelder-868/",
+      "finding": "Produktseite bestätigt SMS mit Pro-finder; kein ausdrücklicher Nachweis für Unscharf-Alarm oder Anrufweg gefunden.",
+      "questionIds": [
+        "FUNK-7"
+      ]
+    },
+    {
+      "id": "bt-connect",
+      "url": "https://www.thitronik.de/produkte/produkt/bt-connect/",
+      "finding": "Smartwatch-Tabelle verwendet weiterhin 1290-Serien unter BT-connect. Zuordnung zur 6000-Reihe offen.",
+      "questionIds": [
+        "FUNK-8"
+      ]
+    }
+  ]
+}

@@ -1,21 +1,20 @@
 ---
 title: BT-connect — Bluetooth-Modul für WiPro III
 sources:
-  - sources/BT-connect__Overview_DE.md
-  - sources/Fragen zu BT-connect.pdf
-  - sources/FAQ_BT-connect_DE.md
-  - sources/Vernetzungsmodul und BT Connect unterschiede.md
-  - >-
-    sources/Kompatibilität Smartphone-Smartwatch mit Vernetzungsmodul Stand
-    08.23.pdf
-  - sources/Seriennummer 6000 BT-connect.csv
-  - sources/BT-connect_DE_RAG_Pack/BT-connect__Reference__Technische_Daten_DE.md
-  - sources/BT-connect_DE_RAG_Pack/BT-connect__Snippets_DE.md
-  - wiki/app-befehle.md
-  - wiki/seriennummern-softwarestaende.md
-  - wiki/stoerungsbeseitigung.md
-  - wiki/zugang-bedienung.md
-updated: '2026-07-15'
+  - "content/quellen/funk-bt-connect-rev1.1.pdf"
+  - "content/quellen/funk-bt-connect-faq.pdf"
+  - "sources/BT-connect__Overview_DE.md"
+  - "sources/FAQ_BT-connect_DE.md"
+  - "sources/Vernetzungsmodul und BT Connect unterschiede.md"
+  - "content/quellen/funk-vernetzungsmodul-kompatibilitaet-2023-08.pdf"
+  - "sources/Seriennummer 6000 BT-connect.csv"
+  - "sources/BT-connect_DE_RAG_Pack/BT-connect__Reference__Technische_Daten_DE.md"
+  - "sources/BT-connect_DE_RAG_Pack/BT-connect__Snippets_DE.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+  - "content/wiki/de/zugang-bedienung.md"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -121,6 +120,10 @@ Eine in der App ausgewählte Fahrzeug- oder Geräteoption erweitert nicht die vo
 
 ---
 
+### Smartwatch-Tabelle: Serienzuordnung offen
+
+Die BT-connect-FAQ nennt in ihrer Smartwatch-Tabelle Seriennummern **1290-xxx**, obwohl BT-connect die Produktfamilie **6000-** ist. Auch die am 01.10.2026 geprüfte Produktseite wiederholt diese Tabelle. Diese Angaben dürfen nicht als bestätigte Serien- oder Softwaregrenzen für BT-connect übernommen werden. Die Zuordnung muss der Hersteller klären; für eine konkrete Zusage Endgerät, Betriebssystem und App-Version prüfen. [FAQ, S. 1–2](../../quellen/funk-bt-connect-faq.pdf#page=1) · [BT-connect](https://www.thitronik.de/produkte/produkt/bt-connect/)
+
 ## Montage und elektrischer Anschluss
 
 BT-connect im trockenen Fahrzeuginnenraum und in der Nähe der WiPro montieren. Taster und LED müssen für Kopplung und Service erreichbar bleiben. Kabel zugentlastet, scheuerfrei und fern von heißen oder beweglichen Teilen verlegen.
@@ -134,11 +137,13 @@ BT-connect im trockenen Fahrzeuginnenraum und in der Nähe der WiPro montieren. 
 
 Beide RJ10-Buchsen sind gleichwertig. Bei einer Kombination aus WiPro und Pro-Finder spielt es daher keine Rolle, welches der beiden Geräte an Buchse 1 beziehungsweise 2 angeschlossen wird.
 
+An die RJ10-Buchsen dürfen ausschließlich WiPro III (safe.lock) und Pro-Finder angeschlossen werden; Anschluss oder Steuerung anderer Geräte ist nicht zulässig. Die Spannungsversorgung wird parallel zur WiPro und/oder zum Pro-Finder angeschlossen. Vor Arbeiten an deren Masseverbindung unbedingt den Spannungsversorgungsstecker des BT-connect abziehen. [Anleitung Rev. 1.1, S. 2](../../quellen/funk-bt-connect-rev1.1.pdf#page=2)
+
 > ⚠️ **Elektrische Arbeiten:** Vor Arbeiten an Masse, Versorgung oder den verbundenen Geräten den Spannungsversorgungsstecker des BT-connect abziehen. Verdrahtung nur nach der passenden Einbauanleitung und durch fachkundige Personen ändern. Ungenutzte Leitungen isolieren.
 
 ---
 
-## Erstkopplung mit der THITRONIK® App
+## Erstkopplung mit der THITRONIK App
 
 Die Bezeichnungen einzelner App-Menüs können sich mit der App-Version ändern. Der dokumentierte Ablauf ist:
 
@@ -151,7 +156,7 @@ Die Bezeichnungen einzelner App-Menüs können sich mit der App-Version ändern.
 7. Fahrzeug beziehungsweise Einstellungen speichern.
 8. Verbindung und gewünschte Funktionen im Fahrzeugumfeld kontrolliert testen.
 
-Wenn BT-connect in den Bluetooth-Einstellungen des Endgeräts bereits als alte oder fehlerhafte Kopplung erscheint, diesen Eintrag vor dem neuen Versuch entfernen. Die Kopplung in der THITRONIK® App durchführen und nicht allein im allgemeinen Bluetooth-Menü des Betriebssystems.
+Wenn BT-connect in den Bluetooth-Einstellungen des Endgeräts bereits als verbunden oder gekoppelt erscheint, diesen Eintrag vor dem neuen Versuch entfernen. Die Kopplung in der THITRONIK® App durchführen und nicht allein im allgemeinen Bluetooth-Menü des Betriebssystems.
 
 > **Koppelmodus und Reset unterscheiden:** Das Starten des Koppelmodus löscht nicht automatisch alle gespeicherten Geräte. Der vollständige Reset im nächsten Abschnitt tut dies.
 
@@ -247,3 +252,12 @@ Die strukturierte Erfassung ist unter [[Support-Fallaufnahme — Pflichtangaben 
 - [[Support-Fallaufnahme — Pflichtangaben und Eskalationsprüfung]]
 - [[Artikelnummern-Register — Dokumentierte THITRONIK-Produkte und Zubehör]]
 - [[Systemüberblick — THITRONIK-Produktwelt]]
+
+
+## Geprüfte Originalbelege
+
+- [Anschluss und zugelassene Geräte](../../quellen/funk-bt-connect-rev1.1.pdf#page=2)
+- [App-Kopplung und vorherige OS-Kopplung](../../quellen/funk-bt-connect-rev1.1.pdf#page=3)
+- [Vollständiger Reset und Zugang](../../quellen/funk-bt-connect-rev1.1.pdf#page=4)
+- [Technische Daten: 9 Geräte, 50 m Freifeld, <1,5 mA](../../quellen/funk-bt-connect-rev1.1.pdf#page=32)
+- [FAQ und historische Kompatibilitätsangaben](../../quellen/funk-bt-connect-faq.pdf#page=1)

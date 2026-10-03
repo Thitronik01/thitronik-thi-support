@@ -1,11 +1,11 @@
 ---
 title: KeyStrap - support d acces NFC
 sources:
-  - https://www.thitronik.de/produkte/produkt/keystrap/
-  - https://www.thitronik.de/produkte/produkt/nfc-modul/
-  - sources/nfc_modul-kurzanleitung.pdf
-  - wiki/nfc-modul.md
-  - wiki/zugang-bedienung.md
+  - "https://www.thitronik.de/produkte/produkt/keystrap/"
+  - "https://www.thitronik.de/produkte/produkt/nfc-modul/"
+  - "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf"
+  - "content/wiki/de/nfc-modul.md"
+  - "content/wiki/de/zugang-bedienung.md"
 updated: 2026-07-07
 confidence: high
 dealerStatus: approved

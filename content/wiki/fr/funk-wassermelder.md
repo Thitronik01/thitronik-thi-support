@@ -1,11 +1,11 @@
 ---
 title: Détecteur d'eau sans fil 868 — détecteur d'eau sans fil
 sources:
-  - sources/funk-wassermelder-868.pdf
-  - sources/Fragen zu Funk-Wassermelder 868.pdf
-  - sources/Seriennummer 1011 C.A.S. III.csv
-  - 'https://www.thitronik.de/produkte/produkt/funk-wassermelder-868/'
-updated: '2026-07-19'
+  - "content/quellen/funk-wassermelder-106021-rev1.0.pdf"
+  - "content/quellen/funk-wassermelder-faq.pdf"
+  - "sources/Seriennummer 1011 C.A.S. III.csv"
+  - "https://www.thitronik.de/produkte/produkt/funk-wassermelder-868/"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/funk-wassermelder.md
@@ -71,6 +71,8 @@ L’unité émettrice, le capteur au bout d’un câble de 30 cm, la plaque de m
 
 ## Compatibilité et versions minimales
 
+### Numéros de série et logiciels pour le détecteur d’eau
+
 Selon la page produit actuelle, le détecteur d’eau sans fil peut être utilisé à partir des versions d’appareils suivantes :
 
 | Système | À partir du numéro de série | À partir de la version logicielle |
@@ -119,6 +121,8 @@ Avant le montage définitif, effectuer un essai provisoire de portée et de fonc
 
 ### Fixation de la plaque de montage avec la pastille adhésive
 
+Vérifier l’orientation avant la fixation : ergots vers le haut, émetteur à faire coulisser vers le bas. La LED se trouve ensuite en haut à droite et le câble sort en bas. Cette règle concerne le détecteur d’eau, pas les flèches du contact magnétique étanche.
+
 1. Déterminer des emplacements appropriés pour l’unité émettrice et le capteur.
 2. Préparer la surface de collage avec un produit de nettoyage adapté ; elle doit être propre, sèche et exempte de graisse.
 3. Appliquer la pastille adhésive sur la plaque de montage, puis fixer la plaque à l’emplacement prévu.
@@ -129,6 +133,8 @@ Une surface insuffisamment nettoyée peut entraîner le décollement du détecte
 
 ### Fixation alternative par vissage
 
+#### Détecteur d’eau : vis pour le capteur et l’émetteur
+
 Si le collage n’est pas possible, la notice autorise une fixation par vissage. Les repères correspondants se trouvent à l’intérieur du boîtier de l’émetteur.
 
 1. Avant de percer, vérifier les conduites, réservoirs, éléments électriques et l’épaisseur du matériau derrière le point de fixation.
@@ -138,6 +144,8 @@ Si le collage n’est pas possible, la notice autorise une fixation par vissage.
 > **IMPORTANT :** La vis A2 de 2,9 × 13 mm fournie est destinée au capteur. Ne pas l’utiliser sans vérification comme vis de fixation pour l’unité émettrice ou des éléments du véhicule. Des vis inadaptées ou trop longues peuvent endommager le véhicule ou des composants dissimulés.
 
 ### Fixation du capteur et mise en place de l’unité émettrice
+
+#### Détecteur d’eau : faire coulisser l’émetteur sur la plaque de montage
 
 1. Positionner le boîtier du capteur situé au bout du câble de 30 cm sur le point exposé prévu.
 2. Fixer le capteur à travers l’orifice prévu avec la vis fournie.
@@ -150,6 +158,8 @@ Si le collage n’est pas possible, la notice autorise une fixation par vissage.
 ---
 
 ## Enregistrement dans WiPro III
+
+Après l’apprentissage, tester le détecteur d’eau avec une WiPro armée. La procédure ne prouve pas une alerte à l’état désarmé. Relier les broches avec un chiffon humide, contrôler l’alarme puis sécher les contacts.
 
 Le détecteur d’eau se déclenche lorsque ses broches de contact sont reliées. La notice prévoit son enregistrement après le montage.
 
@@ -165,6 +175,10 @@ Les autres méthodes d’apprentissage et procédures de suppression sont décri
 ---
 
 ## Test de fonctionnement final
+
+### Tester le détecteur d’eau : armer la WiPro
+
+Le test d’eau documenté exige une **WiPro armée**. Cette procédure ne prouve pas une alerte à l’état désarmé ; ne pas transposer les règles des alarmes gaz/CO au détecteur d’eau. Source : [W, PDF 16](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=16).
 
 1. S’assurer que WiPro III ou WiPro III safe.lock est armé.
 2. Relier de nouveau les broches de contact du capteur avec un chiffon humide ou un matériau conducteur.
@@ -195,6 +209,8 @@ Le fabricant exclut toute responsabilité pour les dégâts des eaux et dommages
 
 ## Pile et indication de pile faible
 
+**État des sources du signal de pile faible :** la FAQ des accessoires indique 2 secondes, la notice WiPro 5 secondes. L’attribution aux versions matérielles/logicielles reste non résolue. Contrôler le dernier émetteur déclenché, sa LED et sa CR2032 ; la durée seule ne permet pas de conclure à une panne. Voir [[WiPro III — système d'alarme radio pour véhicules de loisirs|WiPro III]].
+
 Le détecteur d’eau sans fil utilise une **pile bouton CR2032 de 3 V** remplaçable. Son autonomie typique est d’environ deux ans ; les longues périodes de froid ont davantage d’influence que le nombre de signaux émis. Selon le fabricant, les piles bouton inutilisées peuvent être stockées jusqu’à dix ans ; respecter les indications et la date de péremption inscrites sur la pile.
 
 La FAQ actuelle du fabricant recommande les piles Panasonic. Il convient de remplacer la pile environ tous les deux ans, par exemple à l’occasion du contrôle technique ou d’un contrôle de l’installation de gaz.
@@ -217,7 +233,7 @@ Si un accessoire radio signale une pile faible, les autres piles bouton CR2032 d
 3. Ouvrir prudemment le boîtier ; la carte électronique et le support de pile se trouvent à l’intérieur.
 4. Faire glisser avec précaution la pile CR2032 usagée hors de son support.
 5. Insérer une pile CR2032 neuve de même type en respectant la polarité.
-6. Refermer le boîtier et serrer uniformément les deux vis.
+6. Vérifier la propreté et le bon positionnement du joint, refermer le boîtier et serrer uniformément les deux vis.
 7. Replacer l’unité émettrice sur la plaque de montage et l’enclencher complètement.
 8. Déclencher le détecteur d’eau et effectuer le test de fonctionnement complet.
 
@@ -259,31 +275,31 @@ Si le problème persiste, documenter pour l’assistance les numéros de série 
 
 ## Questions fréquentes (FAQ)
 
-**Le détecteur d’eau sans fil peut-il fonctionner de manière autonome ?**  
+### Le détecteur d’eau sans fil peut-il fonctionner de manière autonome ?
 Non. Il s’agit d’un accessoire pour les systèmes d’alarme WiPro III compatibles, dont il utilise les dispositifs d’alerte.
 
-**Quel est le numéro d’article du détecteur d’eau sans fil ?**  
+### Quel est le numéro d’article du détecteur d’eau sans fil ?
 La notice et la page produit actuelles indiquent **106021**.
 
-**Où le capteur doit-il être monté ?**  
+### Broches et câble du détecteur d’eau : où les placer ?
 Au point exposé, de manière à ce que les deux broches de contact touchent le sol. L’unité émettrice reste au bout du câble de 30 cm dans une zone sèche et facilement accessible.
 
-**L’unité émettrice peut-elle être montée à l’extérieur puisqu’elle est classée IP67 ?**  
+### L’unité émettrice peut-elle être montée à l’extérieur puisqu’elle est classée IP67 ?
 Non. La notice limite l’utilisation prévue à l’intérieur des véhicules de camping et exige une zone de montage sèche pour l’unité émettrice.
 
-**Quelle version de WiPro est requise ?**  
+### Quelle version de WiPro est requise ?
 Les versions minimales figurent dans le tableau de compatibilité. Les appareils plus anciens nécessitent une mise à niveau ou une mise à jour.
 
-**Comment le détecteur d’eau est-il déclenché et enregistré ?**  
+### Comment le détecteur d’eau est-il déclenché et enregistré ?
 En reliant les broches de contact avec un matériau conducteur, par exemple un chiffon humide. WiPro doit alors se trouver en mode d’apprentissage.
 
-**Quelle notification Pro-Finder transmet-il ?**  
+### Quelle notification Pro-Finder transmet-il ?
 La page produit actuelle documente une notification d’alarme par SMS. Un appel supplémentaire n’est pas expressément garanti pour ce capteur.
 
-**Combien de temps la pile dure-t-elle ?**  
+### Combien de temps la pile dure-t-elle ?
 La pile CR2032 dure généralement environ deux ans. Lorsque sa tension descend sous environ 2,6 V, WiPro signale au déclenchement qu’elle doit être remplacée.
 
-**Le détecteur d’eau doit-il être réenregistré après le remplacement de la pile ?**  
+### Le détecteur d’eau doit-il être réenregistré après le remplacement de la pile ?
 Non. Un test de fonctionnement complet reste toutefois nécessaire ensuite.
 
 ---
@@ -305,3 +321,11 @@ Ne pas jeter l’appareil ni la pile usagée avec les ordures ménagères. Dépo
 - [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]]
 - [[Vue d’ensemble du système — gamme de produits THITRONIK|Vue d’ensemble du système]]
 - [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]]
+
+---
+
+## Vérification des sources et versions documentaires
+
+Comparaison documentaire du 01.10.2026, pages physiques des PDF : [W, PDF 13](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=13), [W, PDF 14](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=14), [W, PDF 15](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=15), [W, PDF 16](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=16), [W, PDF 17](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=17), [W, PDF 17](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=17), [QW, PDF 1](../../quellen/funk-wassermelder-faq.pdf#page=1).
+
+Les confirmations et divergences sont consignées dans le [rapport de vérification](../../../docs/quellenpruefung/2026-10-01-funk.md).

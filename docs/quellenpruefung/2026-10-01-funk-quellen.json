@@ -1,0 +1,491 @@
+{
+  "checkedAt": "2026-10-01",
+  "scope": "Ausgewählte DE-/FR-Fachseiten, gemeinsame Abbildungen und technische Tabellen; keine Vollprüfung weiterer Sprachen",
+  "visualPageCount": 109,
+  "sources": [
+    {
+      "key": "H",
+      "id": "f789a9205410",
+      "path": "content/quellen/funk-handsender-101064-einleger.pdf",
+      "sha256": "f789a9205410e15eb1ce88858364cd56d4aacd6302116e456b2aaae6d00499ef",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Handsender 868/einleger_funk_handsender_2_101064_ce.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "L1",
+      "id": "b34a3d9cf921",
+      "path": "content/quellen/funk-kabelschleife-101068-rev1.1.pdf",
+      "sha256": "b34a3d9cf921d12a80e1c5e3f624944a330e54e22b1f333d1d2c5e38a3deb6f6",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_schwarz.pdf"
+      ],
+      "pages": 12,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "L2",
+      "id": "50ff6384476f",
+      "path": "content/quellen/funk-kabelschleife-100761-rev1.1.pdf",
+      "sha256": "50ff6384476f5a73b9925a5943e9044ce4cfa78c4db5c1967a3f521365376198",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_weiss.pdf"
+      ],
+      "pages": 12,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "L3",
+      "id": "4c6c2eab3839",
+      "path": "content/quellen/funk-kabelschleife-xl-101074-rev1.1.pdf",
+      "sha256": "4c6c2eab38390807f22812d658dccc64c70ab82d77ae4d5aed3224d232c09b22",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_xl_schwarz.pdf"
+      ],
+      "pages": 12,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "L4",
+      "id": "5246c8f041de",
+      "path": "content/quellen/funk-kabelschleife-xl-100944-rev1.1.pdf",
+      "sha256": "5246c8f041de5ff68adf863969c3d1901b087be039fdc91137d9d672d6c7e021",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_xl_weiss.pdf"
+      ],
+      "pages": 12,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "M0",
+      "id": "17b988bcc1ec",
+      "path": "content/quellen/funk-magnetkontakt-montage-rev1.2.pdf",
+      "sha256": "17b988bcc1ec4c7756611cc841d50f9d872a193d2b1101a775c55984897a321e",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk-magnetkontakte_montieren.pdf"
+      ],
+      "pages": 22,
+      "visualPages": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        22
+      ],
+      "revision": "1.2",
+      "role": "primary"
+    },
+    {
+      "key": "M1",
+      "id": "e0830c572491",
+      "path": "content/quellen/funk-magnetkontakt-100757-rev1.3.pdf",
+      "sha256": "e0830c57249142d3b53cd7db0aa068b6a3cf35403c2131a0c0275f5d6d6b2dfd",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk_magnetkontakt_sw.pdf"
+      ],
+      "pages": 22,
+      "visualPages": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        22
+      ],
+      "revision": "1.3",
+      "role": "primary"
+    },
+    {
+      "key": "M2",
+      "id": "e388356b6880",
+      "path": "content/quellen/funk-magnetkontakt-100758-rev1.3.pdf",
+      "sha256": "e388356b6880d5bb3cf63a83172e8e463a67230a7a31adf4dfc7063197033d41",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk_magnetkontakt_ws.pdf"
+      ],
+      "pages": 22,
+      "visualPages": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        22
+      ],
+      "revision": "1.3",
+      "role": "primary"
+    },
+    {
+      "key": "MW",
+      "id": "08d590b1d101",
+      "path": "content/quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf",
+      "sha256": "08d590b1d101db7b2818633dd838f5c395916c0698e05f6c15afc67c20734906",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868 wasserdicht/funk-magnetkontakt-wasserdicht-868.pdf"
+      ],
+      "pages": 17,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "revision": "1.0",
+      "role": "primary"
+    },
+    {
+      "key": "W",
+      "id": "1c7466a1e68b",
+      "path": "content/quellen/funk-wassermelder-106021-rev1.0.pdf",
+      "sha256": "1c7466a1e68bd3142dc45c9f8c65c8b485aea72a027233e13d6089de5a972b56",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Wassermelder 868/funk-wassermelder-868.pdf"
+      ],
+      "pages": 17,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "revision": "1.0",
+      "role": "primary"
+    },
+    {
+      "key": "N",
+      "id": "aaf0719343fd",
+      "path": "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf",
+      "sha256": "aaf0719343fd4a33504d74f8286a9e1d9267531b827ac0e715627316c0166f01",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/NFC Modul/nfc_modul-kurzanleitung.pdf",
+        "Anleitungen/de/nfc_modul-kurzanleitung.pdf"
+      ],
+      "pages": 52,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        13,
+        14,
+        15,
+        16,
+        52
+      ],
+      "revision": "2.3",
+      "role": "primary"
+    },
+    {
+      "key": "R",
+      "id": "e624d4eafbde",
+      "path": "content/quellen/funk-tsa-rauchmelder-rev1.1.pdf",
+      "sha256": "e624d4eafbde04a8633fe36b904edac8367b963d659b5998d15b8dd6779825e4",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/T.S.A. Funk-Rauchmelder/funk-rauchmelder-t.s.a..pdf"
+      ],
+      "pages": 32,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        32
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "QH",
+      "id": "8e388d564c0b",
+      "path": "content/quellen/funk-handsender-faq.pdf",
+      "sha256": "8e388d564c0bb8f6989253fb3f29ca7adb1e9dfd2b293cbe409f2f50babbfc1f",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Handsender 868.pdf"
+      ],
+      "pages": 4,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QL",
+      "id": "35c0260ddf42",
+      "path": "content/quellen/funk-kabelschleife-faq.pdf",
+      "sha256": "35c0260ddf42cd21865ba6ec0cdaa87728ae91fbd2a0acf6f04186aa47191d2c",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Kabelschleife 868.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QMW",
+      "id": "f1bc5e8510f0",
+      "path": "content/quellen/funk-magnetkontakt-wasserdicht-faq.pdf",
+      "sha256": "f1bc5e8510f02090ef7b799c2aa9cb8af6274aed1dfbe4667066d41774d280bd",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Magnetkontakt 868 wasserdicht.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QM",
+      "id": "080d09cb80f1",
+      "path": "content/quellen/funk-magnetkontakt-faq.pdf",
+      "sha256": "080d09cb80f1c2b01e5444496a11aadffef369bb9b1d8084aa7496dd29e2d608",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Magnetkontakt 868.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QW",
+      "id": "3a95b2c21208",
+      "path": "content/quellen/funk-wassermelder-faq.pdf",
+      "sha256": "3a95b2c212089e5f9cd67acc8c5ece29575cd818fd818512d45a62c75739d8b1",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Wassermelder 868.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QN",
+      "id": "3282330c1b89",
+      "path": "content/quellen/funk-nfc-faq.pdf",
+      "sha256": "3282330c1b8931bec8743ff52633f20c86943881a592e89dd6d4f75a3b3a2586",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu NFC Modul.pdf"
+      ],
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QR",
+      "id": "799cd97d2e3e",
+      "path": "content/quellen/funk-tsa-rauchmelder-faq.pdf",
+      "sha256": "799cd97d2e3ef4975e660787a332a65ab7feaacef0327a3e58afdb7355479516",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu T.S.A. Funk-Rauchmelder.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "B",
+      "id": "67dc7b3b5d38",
+      "path": "content/quellen/funk-bt-connect-rev1.1.pdf",
+      "sha256": "67dc7b3b5d388c2dab569a5dbcb403983ef188fab2f15051b4a2e6099a24842b",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/BT-connect/BT-connect.pdf"
+      ],
+      "pages": 32,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        32
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "QB",
+      "id": "12faf57bc265",
+      "path": "content/quellen/funk-bt-connect-faq.pdf",
+      "sha256": "12faf57bc26548ab0b0da3de41380f86c61571c483562726f4203c138d30bcb3",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu BT-connect.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "QV",
+      "id": "e21b992d9a94",
+      "path": "content/quellen/funk-vernetzungsmodul-faq.pdf",
+      "sha256": "e21b992d9a94bb8744de642942ea6317c51a44509ea6a9cd006f0074da5195df",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Bluetooth-Vernetzungsmodul.pdf"
+      ],
+      "pages": 3,
+      "visualPages": [
+        1,
+        2,
+        3
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "VM",
+      "id": "161acf11083a",
+      "path": "content/quellen/funk-vernetzungsmodul-kompatibilitaet-2023-08.pdf",
+      "sha256": "161acf11083a1c09ff7d8516e8b072ca01824c5c86da33559edc545e706db189",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Kompatibilität Smartphone-Smartwatch mit Vernetzungsmodul Stand 08.23.pdf"
+      ],
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "revision": "08.2023",
+      "role": "primary"
+    }
+  ],
+  "webSources": [
+    {
+      "key": "WH",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-handsender-868/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WL",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-kabelschleife-868/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WM",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WMW",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WW",
+      "url": "https://www.thitronik.de/produkte/produkt/funk-wassermelder-868/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WN",
+      "url": "https://www.thitronik.de/produkte/produkt/nfc-modul/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WNM",
+      "url": "https://www.thitronik.de/support/downloads/nfc-modul-bedienungsanleitung/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WR",
+      "url": "https://www.thitronik.de/produkte/produkt/tsa-funk-rauchmelder/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WDIN",
+      "url": "https://www.dinmedia.de/de/norm/din-en-14604/115461758",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WBT",
+      "url": "https://www.thitronik.de/produkte/produkt/bt-connect/",
+      "checkedAt": "2026-10-01"
+    }
+  ]
+}

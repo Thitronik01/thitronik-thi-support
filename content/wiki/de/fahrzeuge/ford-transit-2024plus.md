@@ -1,12 +1,15 @@
 ---
 title: Ford Transit / Tourneo Custom / Transit Custom (2024+)
 sources:
-  - sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv
-  - sources/Fahrzeugbesonderheiten.docx
-  - sources/WiPro III 5 safe.lock.docx
-  - sources/WiPro III 6 safe.lock.docx
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.2.pdf"
+  - "sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv"
+  - "sources/Fahrzeugbesonderheiten.docx"
+  - "sources/WiPro III 5 safe.lock.docx"
+  - "sources/WiPro III 6 safe.lock.docx"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: medium
 lang: de
 dealerStatus: approved
@@ -18,6 +21,12 @@ Dieser Artikel beschreibt den Einbau des Ford-spezifischen **WiPro III safe.lock
 
 > **Kritische Abgrenzung:** Dieses Profil ist nur für den **Campingmodus** dokumentiert. Das Fahrzeug mit einem unterstützten THITRONIK® Bedienweg verriegeln. Wird zuerst mit dem Originalschlüssel verriegelt, kann die spätere Entriegelung mit THITRONIK® Zubehör blockiert sein.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ford Transit 2024+ / Custom 2023+: Serienkonflikt `5298-005` im bisherigen Projektregister gegenüber `5298-006 / 1.0.1sf` in der FAQ. Ohne zugehörige Serienliste und Einbauunterlage ist 5298-005 keine bestätigte Mindestfreigabe. Die genaue Monatsgrenze 07/2024 beziehungsweise 08/2023 ist durch diese FAQ nicht belegt. Campingmodus: mit THITRONIK verriegeln, wenn später damit entriegelt werden soll; Originalschlüssel-Verriegelung lässt sich bei nicht deaktivierbarer Schaltersperre nicht mit THITRONIK-Zubehör öffnen. Originalschlüssel kann eine THITRONIK-Verriegelung öffnen; Auto-Close ist dann nicht aktiv.
+
+Belege: [S, PDF 4](../../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 5](../../../quellen/wipro-iii-safelock-faq.pdf#page=5), [S, PDF 16](../../../quellen/wipro-iii-safelock-faq.pdf#page=16), [S, PDF 17](../../../quellen/wipro-iii-safelock-faq.pdf#page=17).
+
 ## Geltungsbereich
 
 | Merkmal | Vorgabe |
@@ -26,7 +35,7 @@ Dieser Artikel beschreibt den Einbau des Ford-spezifischen **WiPro III safe.lock
 | Ford Transit | ab `07/2024` |
 | Tourneo Custom / Transit Custom | ab `08/2023` |
 | System | WiPro III safe.lock Set Ford, Art. `105298` |
-| Mindeststand | `5298-005 / 1.0.1sf` |
+| Mindeststand | `5298-005 / 1.0.1sf` (Altbestand; FAQ 5298-006, ungeklärt) |
 | Fahrzeugprofil | `SW1` bis `SW8` jeweils `OFF` |
 | Betriebsart | ausschließlich Campingmodus; kein dokumentierter Normalbetrieb |
 | Erkennungsmerkmale | Digitaltacho und, bei entsprechender Automatik-Ausführung, Drehwahlschalter für die Fahrstufen |
@@ -37,13 +46,15 @@ Die genannten Erkennungsmerkmale unterstützen die Zuordnung, ersetzen aber nich
 
 | Ab Set-Seriennummer | Software / Stand | Bedeutung für diesen Einbau |
 |---|---|---|
-| `5298-005` | `1.0.1sf` | Mindeststand für Ford Transit ab `07/2024` sowie Tourneo Custom / Transit Custom ab `08/2023`; Campingmodus und Aussperrschutz |
+| `5298-005` (Altbestand; FAQ 5298-006, ungeklärt) | `1.0.1sf` | Mindeststand für Ford Transit ab `07/2024` sowie Tourneo Custom / Transit Custom ab `08/2023`; Campingmodus und Aussperrschutz |
 | `5298-006` | Kabelsatzänderung | blaue safe.lock Leitungen besitzen direkte Steckkontakte für J4 Pin 9 und Pin 23 |
 | `5298-008` | `1.0.3sf` | dokumentierte Korrektur des Aussperrschutzes bei Kombination mit Pro-Finder für Ford Transit `2019–2024`; nicht ohne Variantenprüfung als pauschaler Mindeststand für alle 2024+-Fahrzeuge verwenden |
 
 Der Artikel trennt bewusst **Fahrzeugunterstützung** ab `5298-005` und **Kabelsatzbauform** ab `5298-006`. Vor Arbeitsbeginn vollständige Seriennummer, Softwarestand und vorhandene Kontaktbauform dokumentieren. Weitere Schwellen stehen unter [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern und Softwarestände]].
 
 ## DIP-Profil sicher einstellen
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Für die hier behandelte neue Ford-Generation müssen **alle acht DIP-Schalter auf `OFF`** stehen.
 
@@ -72,6 +83,8 @@ Grundlagen zu den DIP-Funktionen enthält [[Fahrzeugkompatibilität — Übersic
 Benötigt werden unter anderem geeignetes Demontagewerkzeug, Multimeter, Crimpwerkzeug, freigegebene Verbinder, Isoliermaterial und Mittel zur Zugentlastung. Der konkrete Demontageweg ist in den lokal erhaltenen Quellen nicht belastbar dokumentiert und wird deshalb hier nicht rekonstruiert.
 
 ## Anschlussübersicht
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 | Fahrzeuganschluss | Fahrzeugleitung | WiPro-Leitung | Funktion |
 |---|---|---|---|
@@ -134,6 +147,8 @@ Fahrzeughupe, interne Sirene und gegebenenfalls eine separate Zusatzsirene sind 
 
 ## Campingmodus und Bedienwege
 
+**Präzisierung aus Bedienungsanleitung Rev. 1.3 (06/2025), PDF-S. 6:** Beim Transit 2024+ und Transit Custom 2023+ ist die Schaltersperre nicht deaktivierbar. Nach Verriegeln/Scharfschalten mit dem Originalschlüssel ist Entriegeln/Unscharfschalten über THITRONIK Zubehör nicht möglich. Im Campingbetrieb deshalb mit THITRONIK Zubehör verriegeln; Entriegeln mit dem Originalschlüssel bleibt danach möglich, Auto-Close ist inaktiv. Die Quelle nennt zugleich Transit 2019–2024 / Custom bis 2023 für die ältere deaktivierbare Variante. Wegen der überlappenden Jahresgrenzen die konkrete Modellgeneration prüfen. Diese Ergänzung betrifft die Bedienung; sie bestätigt keine Einbaupins.
+
 | Handlung | Dokumentiertes Verhalten / Vorgabe |
 |---|---|
 | Verriegeln mit THITRONIK® Zubehör | vorgesehener Bedienweg im Campingmodus; die fahrzeugseitige Auto-Close-Funktion ist danach inaktiv |
@@ -146,6 +161,8 @@ Als THITRONIK® Bedienweg kommen je nach vorhandener und freigegebener Ausstattu
 Bei Kombination mit [[Pro-Finder — GSM/GPS Telemetriemodul|Pro-Finder]] vollständige Seriennummer und Software dokumentieren. Die Schwelle `5298-008 / 1.0.3sf` ist als Aussperrschutz-Korrektur für Ford Transit `2019–2024` belegt; bei der neuen Fahrzeugvariante muss ihre Anwendbarkeit anhand des konkreten Sets geprüft werden.
 
 ## Funk-Zubehör anlernen und prüfen
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Funk-Zubehör vor der endgültigen Montage anlernen und am vorgesehenen Montageort auf Reichweite prüfen.
 

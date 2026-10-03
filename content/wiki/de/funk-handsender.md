@@ -1,13 +1,13 @@
 ---
 title: Funk-Handsender 868 — Fernbedienung für WiPro III
 sources:
-  - sources/einleger_funk_handsender_2_101064_ce.pdf
-  - sources/Funk-Handsender_868__101064__Overview_DE.md
-  - sources/Funk-Handsender_868__101064__Reference__Technische_Daten_DE.md
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Funk Zubehör.docx
-  - sources/Fragen zu Funk-Handsender 868.pdf
-updated: '2026-07-18'
+  - "content/quellen/funk-handsender-101064-einleger.pdf"
+  - "content/quellen/funk-handsender-faq.pdf"
+  - "sources/Funk-Handsender_868__101064__Overview_DE.md"
+  - "sources/Funk-Handsender_868__101064__Reference__Technische_Daten_DE.md"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Funk Zubehör.docx"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -55,6 +55,10 @@ Der Handsender besitzt eine Taste mit Lautsprechersymbol und eine Taste mit durc
 Die Rückmeldung der Fahrzeugblinker und die Bedienung der Zentralverriegelung setzen eine passende Fahrzeuginstallation voraus.
 
 ### Besonderheit bei WiPro III safe.lock
+
+#### Funk-Handsender 101064: Alarm und Zentralverriegelung
+
+An einer normalen WiPro III schaltet der Funk-Handsender 101064 nur den Alarm. Die Zentralverriegelung wird nur mit kompatibler safe.lock-Anbindung und passendem Fahrzeugprofil mitbedient.
 
 Bei kompatibler safe.lock-Anbindung werden in der Regel zwei Vorgänge gekoppelt:
 
@@ -104,10 +108,12 @@ Der Funk-Handsender verwendet eine **CR2032-Knopfzelle mit 3 V**. Die typische L
 
 ### Niederbatterie-Signal
 
+**Quellenstand zum Batteriewarnton:** Die Zubehör-FAQ nennt 2 Sekunden; die WiPro-Bedienungsanleitung nennt 5 Sekunden. Die Zuordnung zu Geräte-/Softwareständen ist offen. Den zuletzt ausgelösten Sender, seine LED und die CR2032 prüfen; nicht allein aus der Tondauer auf einen Defekt schließen. Siehe [[WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge|WiPro III]].
+
 Bei einer schwachen Senderbatterie zeigt die WiPro nach dem Betätigen des Handsenders folgende Hinweise:
 
 - Aus der WiPro III-Zentrale ertönt etwa **2 Sekunden** lang ein Signalton.
-- Die rote Sende-LED am Handsender erlischt erst nach ungefähr **30 Sekunden**.
+- Die FAQ nennt allgemein etwa **30 Sekunden** rote Sender-LED, ordnet diesen optischen Hinweis im detaillierten Absatz aber ausdrücklich Magnetkontakt und Kabelschleife zu. Für den Handsender ist diese Zuordnung nicht eindeutig; eine fehlende 30-Sekunden-Anzeige schließt eine schwache Batterie nicht aus.
 
 ### Batteriewechsel
 
@@ -131,7 +137,7 @@ Wenn eine CR2032-Funkkomponente wegen schwacher Batterie auffällt, empfiehlt si
 | Beobachtung | Mögliche Ursache | Maßnahme |
 |-------------|------------------|----------|
 | Keine Reaktion auf Tastendruck | Handsender nicht angelernt | Handsender nach dem vorgesehenen Verfahren anlernen |
-| 2 Sekunden Signalton, rote Sender-LED bleibt lange an | CR2032 schwach | Batterie ersetzen und Funktion prüfen |
+| Batteriewarnton nach Tastendruck, etwa 2 Sekunden laut FAQ / 5 Sekunden laut WiPro-Anleitung | CR2032 schwach | Batterie ersetzen und Funktion prüfen |
 | Funktion nur in geringer Entfernung | Batterie schwach oder Funkweg abgeschirmt | Batterie prüfen; Abstand und Position zur WiPro III verändern |
 | Alarm lässt sich bedienen, Fahrzeug wird aber nicht ver- oder entriegelt | keine oder nicht kompatible safe.lock-Anbindung | Fahrzeugprofil, Verkabelung und Softwarestand prüfen lassen |
 | Panikalarm startet nicht | Tastenkombination passt nicht zum Serienstand | Seriennummer prüfen und den passenden Tastenablauf verwenden |
@@ -142,22 +148,22 @@ Bei ungeklärten Reichweiten- oder Bedienproblemen vollständige Seriennummern v
 
 ## Häufige Fragen (FAQ)
 
-**Mit welchen Systemen ist der Funk-Handsender 868 kompatibel?**  
+### Mit welchen Systemen ist der Funk-Handsender 868 kompatibel?
 Mit der WiPro III-Produktfamilie. Eine Verwendung mit anderen Funksystemen ist nicht vorgesehen.
 
-**Verriegelt der Handsender immer auch das Fahrzeug?**  
+### Verriegelt der Handsender immer auch das Fahrzeug?
 Nein. Er schaltet die Alarmanlage scharf oder unscharf. Die Zentralverriegelung wird nur bei kompatibler WiPro III safe.lock-Anbindung und passendem Fahrzeugprofil mitbedient.
 
-**Welche Batterie wird benötigt?**  
+### Welche Batterie wird benötigt?
 Eine CR2032-Knopfzelle mit 3 V. Die typische Lebensdauer beträgt etwa zwei Jahre.
 
-**Muss der Handsender nach einem Batteriewechsel neu angelernt werden?**  
+### Muss der Handsender nach einem Batteriewechsel neu angelernt werden?
 Nein. Nach dem Wechsel sind lediglich Polung, Gehäusemontage und Funktion zu prüfen.
 
-**Wie erkenne ich eine schwache Batterie?**  
-Beim Betätigen ertönt etwa 2 Sekunden lang ein Signalton aus der WiPro III-Zentrale; die rote Sende-LED am Handsender bleibt ungefähr 30 Sekunden aktiv.
+### Wie erkenne ich eine schwache Batterie?
+Die Zubehör-FAQ nennt etwa 2 Sekunden Warnton, die WiPro-Anleitung 5 Sekunden; die Zuordnung ist offen. Die 30-Sekunden-LED ist für den Handsender nicht eindeutig belegt. Batterie und zuletzt ausgelösten Sender prüfen.
 
-**Wie beende ich einen Panikalarm?**  
+### Wie beende ich einen Panikalarm?
 Eine beliebige Taste am Funk-Handsender drücken.
 
 ---
@@ -178,3 +184,11 @@ Das Gerät und verbrauchte Batterien nicht über den Hausmüll entsorgen. Knopfz
 - [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]]
 - [[Funk-Kabelschleife 868 — Außensicherung für mobile Güter|Funk-Kabelschleife 868]]
 - [[Pro-Finder — GSM/GPS Telemetriemodul|Pro-Finder]]
+
+---
+
+## Quellenprüfung und Dokumentstand
+
+Dokumentabgleich vom 01.10.2026, physische PDF-Seiten: [H, PDF 1](../../quellen/funk-handsender-101064-einleger.pdf#page=1), [H, PDF 2](../../quellen/funk-handsender-101064-einleger.pdf#page=2), [QH, PDF 1](../../quellen/funk-handsender-faq.pdf#page=1), [QH, PDF 2](../../quellen/funk-handsender-faq.pdf#page=2).
+
+Bestätigte Angaben und offene Abweichungen sind im [Prüfprotokoll](../../../docs/quellenpruefung/2026-10-01-funk.md).

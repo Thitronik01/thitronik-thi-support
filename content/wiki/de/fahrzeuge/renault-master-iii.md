@@ -1,9 +1,10 @@
 ---
 title: Renault Master III / Opel Movano B / Nissan NV400 (ab 2011)
 sources:
-  - sources/wipro_iii_renault_master_ab_2011_01.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-21'
+  - "content/quellen/fahrzeug-master-iii.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -15,7 +16,19 @@ Dieser Artikel beschreibt den belegten Einbau der WiPro III in den Renault Maste
 
 > **Abgleichpflicht:** Die aktuelle Primärquelle trägt ausschließlich die Bezeichnung Renault Master. Beim Opel Movano B, Nissan NV400 sowie bei abweichendem Baujahr, Aufbau oder Steckerbild müssen P201, Pinlage, Leitungsfarbe und Signal am konkreten Fahrzeug bestätigt werden. Bei einer Abweichung nicht nach Plattformähnlichkeit oder Farbe weiterarbeiten, sondern THITRONIK-Support einbeziehen.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Master III: Anleitung 04/25 „ab 2011“, `SW2 + SW3 + SW6 ON`, Set `100754`; sie nennt selbst keine Mindestsoftware. Die FAQ belegt jedoch `0823-001 / 2.1–6.8` mit fehlender Überwachung von Schiebe- und Hecktür, daher zusätzliche Magnetkontakte. Die Zeile ab `6.9` enthält diesen Hinweis nicht mehr; daraus folgt keine garantierte Überwachung jeder Tür. Jede Tür testen. Originalschlüssel steuert WiPro nicht. P201: CAN-Low Pin 19 natur, CAN-High Pin 39 orange. „New Master“ im PDF-Titel ist keine Freigabe für Master IV.
+
+Belege: [master-iii, PDF 2](../../../quellen/fahrzeug-master-iii.pdf#page=2), [master-iii, PDF 4](../../../quellen/fahrzeug-master-iii.pdf#page=4), [master-iii, PDF 5](../../../quellen/fahrzeug-master-iii.pdf#page=5), [Q, PDF 7](../../../quellen/wipro-iii-faq.pdf#page=7), [Q, PDF 8](../../../quellen/wipro-iii-faq.pdf#page=8).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
+
 ## Geltungsbereich und freigegebener Stand
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 | Merkmal | Freigegebener Stand |
 |---|---|
@@ -37,8 +50,8 @@ Der separate [[Renault Master (2019–2024) — safe.lock|Renault Master 2019–
 |---|---|
 | Profil, Set, Demontage, P201, Versorgung, Hupe und Funktionstest | das fahrzeugspezifische Handbuch Stand `04/25` ist vorrangig |
 | WiPro-Pinrollen, `10-A`-Absicherung und optionale Sirene | Installationshandbuch Version `1.8` ergänzt die Fahrzeugquelle |
-| Mindestseriennummer | weder die aktuelle Fahrzeugquelle noch die allgemeine Fahrzeugtabelle nennt einen Mindeststand; die alte Angabe `0823-014` wird nicht freigegeben |
-| früherer Matrixhinweis `0823-001 / 2.1` und Software `6.9` | in den verfügbaren Quellen nicht belegt und aus allen Sprachmatrizen zu entfernen |
+| FAQ-Ergänzung | `0823-001 / 2.1–6.8`: Schiebe-/Hecktür nicht überwacht; ab 6.9 separate FAQ-Zeile ohne diesen Hinweis, jede Tür trotzdem prüfen. |
+| FAQ-Ergänzung | `0823-001 / 2.1–6.8`: Schiebe-/Hecktür nicht überwacht; ab 6.9 separate FAQ-Zeile ohne diesen Hinweis, jede Tür trotzdem prüfen. |
 | Türabdeckung | jede Öffnung einzeln prüfen; die alte pauschale Aussage zu nicht überwachten Schiebe- und Hecktüren ist nicht haltbar |
 | Bedienung | der aktuelle Einbauablauf verwendet verbindlich den THITRONIK Funk-Handsender; eine Änderung des Alarmzustands über den Originalschlüssel wird nicht zugesagt |
 | Abschlusstest auf Quellseite 6 | „Schritt 7 wiederholen“ ist ein interner Verweisfehler; nach Inhalt ist der erste Funktionstest aus Schritt 5 zu wiederholen |
@@ -178,7 +191,7 @@ Die Fahrzeugquelle dokumentiert die Kontakte Art. `100757` in Schwarz und `10075
 
 1. Sender möglichst am festen Rahmen und Magnet am beweglichen Tür-, Fenster- oder Klappenteil montieren.
 2. Platine so einsetzen, dass die Sende-LED **vom Magneten weg** zeigt. Bei falscher Orientierung ist Anlernen möglich, eine Alarmierung jedoch nicht.
-3. Magnet im empfohlenen Bereich von `22–30 mm` positionieren und nicht jenseits der roten Grenzlinie montieren.
+3. Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 4. Bei größerem Spalt oder ungünstiger Antennenausrichtung Adapter `100428` oder `100729` verwenden.
 5. Klebeflächen sauber, trocken und fettfrei vorbereiten; Klebepads nicht unter `15 °C` verarbeiten und etwa `24 h` unbelastet aushärten lassen.
 6. Wo Klebemontage nicht zuverlässig möglich ist, die Markierungen im Sendergehäuse für eine Schraubbefestigung nutzen.
@@ -199,6 +212,8 @@ Eine Anzeige im Kombiinstrument ist ein wichtiger Hinweis auf CAN-Erfassung, ers
 Die alte pauschale Aussage, Schiebe- und Hecktüren seien nicht vollständig überwacht, wird damit durch eine fahrzeugbezogene Prüfung ersetzt.
 
 ## Erster Funktionstest und CAN-Diagnose
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 1. Alle relevanten Anschlüsse prüfen und Versorgung herstellen.
 2. Alle Türen und Kontakte schließen.
@@ -224,7 +239,7 @@ Der aktuelle Fahrzeugtest belegt den THITRONIK Funk-Handsender 868 als Bedienweg
 - Alarmzustand bei der Übergabe immer an Status-LED und realer Alarmreaktion demonstrieren.
 - Originalschlüssel und THITRONIK Funk-Handsender getrennt testen und dokumentieren.
 - **SW5 nicht als Teil des Grundprofils einschalten.** Die allgemeine Replay-Funktion ist geräteabhängig und sperrt die Steuerung über den Fahrzeugfunkschlüssel, nicht die CAN-Türauswertung.
-- Keine unbelegte Sonderregel ab Software `6.9` anwenden.
+- Die FAQ-Zeile ab 6.9 belegt keine pauschale Überwachung aller Aufbautüren.
 
 Siehe [[Funk-Handsender 868 — Fernbedienung für WiPro III|Funk-Handsender 868]].
 
@@ -263,6 +278,8 @@ Siehe [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbe
 
 ## Übergabe und Dokumentation
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 In der Arbeitskarte festhalten:
 
 - Fahrzeugmodell, Modelljahr, FIN und Aufbauvariante
@@ -281,14 +298,7 @@ Bei der Übergabe dokumentierten Bedienweg, Alarmzustandsanzeige, Türabdeckung 
 
 ## Quellenentscheidung
 
-- Das zehnseitige THITRONIK-Einbauhandbuch *WiPro III (New) Renault Master ab 2011*, Stand `04/25`, wurde vollständig textlich und visuell geprüft. Es belegt Set `100754`, Vorprüfung, `SW2 + SW3 + SW6`, Demontage, P201-Pins, Versorgung, Hupenanschluss, Status-LED, Anlernung, Funktionsprüfung und Magnetkontaktmontage.
-- Das allgemeine Installationshandbuch Version `1.8` ergänzt die eindeutigen WiPro-Pinrollen, `10-A`-Absicherung, optionale Sirenen und allgemeine Diagnose. Bei Widersprüchen hat die aktuelle Fahrzeugquelle Vorrang.
-- Deshalb gelten `30 s` akustischer und `180 s` optischer Alarm statt der älteren allgemeinen `120 s`-Angabe.
-- Die aktuelle Fahrzeugquelle nennt keinen Mindeststand. Weder `0823-014` noch `0823-001 / 2.1` und eine Sonderregel ab Software `6.9` werden als fahrzeugspezifische Freigabe fortgeführt.
-- Die Primärquelle belegt nur Renault Master. Opel Movano B und Nissan NV400 bleiben Projektzuordnungen mit verpflichtendem Abgleich am Fahrzeug.
-- Die pauschale Altangabe zu Schiebe- und Hecktüren wurde durch die von der Quelle verlangte Einzelprüfung der CAN-Erfassung ersetzt.
-- Der fehlerhafte Quellverweis auf „Schritt 7“ wird sachlich als Wiederholung des ersten Funktionstests aus Schritt 5 behandelt.
-- `FAQ_WiPro-III_DE.md` ist lokal nicht auffindbar und wurde nicht als Beleg verwendet.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [master-iii, PDF 2](../../../quellen/fahrzeug-master-iii.pdf#page=2), [master-iii, PDF 4](../../../quellen/fahrzeug-master-iii.pdf#page=4), [master-iii, PDF 5](../../../quellen/fahrzeug-master-iii.pdf#page=5), [Q, PDF 7](../../../quellen/wipro-iii-faq.pdf#page=7), [Q, PDF 8](../../../quellen/wipro-iii-faq.pdf#page=8).
 
 ## Querverweise
 

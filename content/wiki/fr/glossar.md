@@ -1,20 +1,19 @@
 ---
 title: Glossaire — Termes techniques du système THITRONIK
 sources:
-  - wiki/_index.md
-  - wiki/wipro-iii.md
-  - wiki/pro-finder.md
-  - wiki/gas-pro-iii.md
-  - wiki/fahrzeugkompatibilitaet.md
-  - wiki/anlernvorgang.md
-  - wiki/nfc-modul.md
-  - wiki/funk-rauchmelder.md
-  - wiki/sirenen-hupen.md
-  - sources/37_faq.md
-  - sources/Renault Traffic III.docx
-  - >-
-    sources/WiPro_QuickStart_DE_RAG_Pack/WiPro__QuickStart__Alarm_Ventcheck_Panikalarm_DE.md
-  - sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/01_index.md
+  - "content/wiki/de/_index.md"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/pro-finder.md"
+  - "content/wiki/de/gas-pro-iii.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/anlernvorgang.md"
+  - "content/wiki/de/nfc-modul.md"
+  - "content/wiki/de/funk-rauchmelder.md"
+  - "content/wiki/de/sirenen-hupen.md"
+  - "sources/37_faq.md"
+  - "sources/Renault Traffic III.docx"
+  - "sources/WiPro_QuickStart_DE_RAG_Pack/WiPro__QuickStart__Alarm_Ventcheck_Panikalarm_DE.md"
+  - "sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/01_index.md"
 updated: '2026-07-14'
 confidence: high
 lang: fr

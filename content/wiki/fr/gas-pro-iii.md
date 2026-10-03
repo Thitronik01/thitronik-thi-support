@@ -1,22 +1,22 @@
 ---
 title: G.A.S.-pro III — Avertisseur de gaz pour véhicules de loisirs
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-pro-iii/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii-kurzanleitung.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii_co-kurzanleitung.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf
-  - 'https://www.thitronik.de/recall/'
-  - 'https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/'
-  - sources/GAS-pro-III__QuickGuide__Overview_DE.md
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/zusatzsensor_gas-pro_iii_de_en_fr.pdf
-  - sources/GAS-pro-III-CO__QuickGuide__Overview_DE.md
-  - sources/Fragen zu G.A.S.-pro III.pdf
-  - sources/Gaswarner.docx
-updated: '2026-07-17'
+  - "content/quellen/gas-pro-iii-kurz-rev1.3.pdf"
+  - "content/quellen/gas-pro-iii-co-kurz-rev1.3.pdf"
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "content/quellen/gas-zusatzsensor-iii-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-pro-iii/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii-kurzanleitung.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii_co-kurzanleitung.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf"
+  - "https://www.thitronik.de/recall/"
+  - "https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/"
+  - "sources/GAS-pro-III__QuickGuide__Overview_DE.md"
+  - "content/quellen/gas-zusatzsensor-iii-anleitung.pdf"
+  - "sources/GAS-pro-III-CO__QuickGuide__Overview_DE.md"
+  - "content/quellen/gas-pro-iii-faq.pdf"
+  - "sources/Gaswarner.docx"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/gas-pro-iii.md
@@ -42,7 +42,7 @@ G.A.S.-pro III est un avertisseur de gaz modulaire destiné à une installation 
 | Consommation selon la page produit | 26 mA | 9 mA |
 | Entrées de capteur | 1 interne, 1 externe | 1 interne, 1 externe |
 | Sensibilité indiquée sur la page produit | 700 ppm de butane | 50 ppm de CO |
-| Sirène interne | 94 dB | 94 dB |
+| Sirène interne | 94 dB à 30 cm | 94 dB à 30 cm |
 | Plage de température maximale | −20 °C à +60 °C | −20 °C à +60 °C |
 | Humidité de fonctionnement selon le guide rapide | 0–90 % HR, sans condensation | 0–90 % HR, sans condensation |
 | Dimensions (L × H × P) | 61 × 97 × 35 mm | 61 × 97 × 35 mm |
@@ -50,6 +50,10 @@ G.A.S.-pro III est un avertisseur de gaz modulaire destiné à une installation 
 | Homologation | conformément au règlement ECE R10 | conformément au règlement ECE R10 |
 
 Le guide rapide indique un maximum de 0,50 A sous 12 V ou de 0,25 A sous 24 V pour la sortie commutant le positif. Les charges raccordées, le fusible, la section des conducteurs et la logique de sortie doivent correspondre à la configuration DIP réelle. Ne pas raccorder directement une charge si son courant de démarrage ou son courant permanent dépasse la valeur admise pour la sortie.
+
+Source : [K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1).
+
+Source : [KCO, PDF 1](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=1).
 
 ## Vérification rapide
 
@@ -60,7 +64,7 @@ Le guide rapide indique un maximum de 0,50 A sous 12 V ou de 0,25 A sous 24 V po
 | Capteur intégré | gaz ou CO selon la version |
 | Entrées pour capteur externe | 1 |
 | Intégration dans les systèmes d’alarme THITRONIK | par radio ; vérifier la compatibilité concrète et la procédure de mémorisation |
-| Sirène interne | 94 dB |
+| Sirène interne | 94 dB à 30 cm |
 | Montage du G.A.S.-pro III | verticalement, à environ 10–20 cm au-dessus du plancher |
 | Montage du G.A.S.-pro III CO | verticalement, à environ 10–20 cm sous le plafond |
 | Câble du capteur supplémentaire | par prudence, longueur totale maximale de 7 m |
@@ -134,7 +138,9 @@ Un capteur supplémentaire externe, un capteur CO externe et une sirène externe
 
 Les guides rapides spécifiques au produit et les informations techniques complémentaires actuelles sont prioritaires pour le montage et le raccordement. N’utiliser une hauteur ou une longueur de câble supérieure que si des documents actuels ou THITRONIK la confirment pour la combinaison précise d’appareil et de capteur.
 
-Les documents divergent également sur l’orientation de l’appareil : le guide rapide G.A.S.-pro III montre l’interrupteur ON/OFF vers le bas, tandis que le guide rapide CO le montre vers le haut ; les informations complémentaires communes plus récentes indiquent de manière générale « vers le bas ». Ne pas reprendre l’orientation de l’autre version. Comparer le gabarit de perçage, les marquages de l’appareil et le guide correspondant à l’appareil précis ; clarifier toute incertitude avec THITRONIK avant le montage.
+Les documents divergent également sur l’orientation de l’appareil : le guide rapide G.A.S.-pro III montre l’interrupteur ON/OFF vers le bas, tandis que le guide rapide CO le montre vers le haut ; les informations complémentaires communes indiquent de manière générale « vers le bas ». Ne pas reprendre l’orientation de l’autre version. Comparer le gabarit de perçage, les marquages de l’appareil et le guide correspondant à l’appareil précis ; clarifier toute incertitude avec THITRONIK avant le montage.
+
+Révisions : les deux guides rapides [K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1) / [KCO, PDF 1](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=1) portent la rév. 1.3. Les informations techniques indiquent rév. 1.2 en couverture et rév. 1.1 sur les titres DE/FR ([T, PDF 1–2](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=1), PDF 14). Aucune chronologie certaine ne peut en être déduite. La divergence d’orientation oppose [T, PDF 5, 17](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=5) à [KCO, PDF 2](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=2) et au gabarit CO [T, PDF 63](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=63).
 
 ## Planification du montage
 
@@ -150,6 +156,10 @@ Les documents divergent également sur l’orientation de l’appareil : le guid
 | Porte coulissante, rideau ou zones séparées | prévoir un point de détection supplémentaire de l’autre côté |
 
 La position de montage dépend du gaz à détecter et non du chemin de câble le plus pratique. Un capteur de gaz monté en partie basse ne remplace pas un capteur CO proche du plafond ; un capteur CO proche du plafond ne remplace pas un capteur de gaz. Maintenir les ouvertures des capteurs dégagées et ne pas couvrir, peindre ou asperger l’appareil de produit nettoyant.
+
+Source : [K, PDF 2](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=2).
+
+Source : [KCO, PDF 2](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=2).
 
 ## Montage de l’appareil principal
 
@@ -188,6 +198,8 @@ Les exigences suivantes s’appliquent aux bornes à ressort :
 
 Assurer la décharge de traction et la protection contre les contacts. Ne pas ouvrir une borne sous tension, ponter un fusible ou court-circuiter la sortie `SIR+` pour effectuer un essai.
 
+Source : [T, PDF 4–5](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=4).
+
 ## Commutateurs DIP
 
 Les huit commutateurs DIP se trouvent au dos de l’appareil. Ne modifier leurs positions que hors tension et après avoir documenté le réglage initial.
@@ -204,6 +216,8 @@ Les huit commutateurs DIP se trouvent au dos de l’appareil. Ne modifier leurs 
 | 8 | non utilisé | non utilisé |
 
 Le commutateur DIP 5 concerne l’évaluation du GPL et des gaz narcotiques, pas la détection du CO. La réduction du volume, la mise en sourdine ou une logique de sortie modifiée ne doivent pas rendre une alarme imperceptible dans les zones de couchage ou de séjour. Ne raccorder vannes, ventilateurs ou autres actionneurs qu’après une conception professionnelle du système.
+
+Source : [T, PDF 3, 15](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=3). SIR+ commute le positif à la tension d’alimentation, au maximum 0,50 A à 12 V / 0,25 A à 24 V ([K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1)). Ne pas confondre avec Alarm OUT commutant à la masse sur G.A.S./G.A.S.-connect. DIP 6–8 ne sont pas utilisés ; aucune fonction de réinitialisation ou radio ne peut en être déduite.
 
 ## Mise en marche, arrêt et préchauffage
 
@@ -228,7 +242,7 @@ L’appareil possède des LED distinctes pour le capteur interne et le capteur e
 | Fonctionnement normal, DIP 2 ON | vert fixe avec luminosité réduite | aucune alarme |
 | Alarme gaz ou CO | la LED concernée clignote rapidement en rouge puis s’estompe | sirène interne ; radio et `SIR+` selon l’état de fonctionnement |
 | Défaut de capteur | la LED du capteur concerné clignote en jaune | une tonalité par seconde |
-| Sous-tension | les deux LED pulsent en jaune | trois séries de trois tonalités en une minute, puis arrêt |
+| Sous-tension | les deux LED pulsent en jaune | nombre de tonalités divergent DE/FR (voir ci-dessous), puis arrêt |
 | Surchauffe | les deux LED clignotent successivement en rouge, vert, magenta, bleu, jaune et turquoise | tonalité continue montante et descendante |
 | Arrêt | bleu, vert, rouge, puis extinction | suite de tonalités descendantes |
 
@@ -263,6 +277,8 @@ Une éventuelle alarme reste visible sur les LED. Le système d’alarme dans le
 > [!WARNING]
 > Uniquement sur G.A.S.-pro III CO, une concentration de CO très élevée est prioritaire : la sirène interne n’est alors pas mise en sourdine malgré le mode pause. La mise en sourdine n’élimine ni le gaz ni le CO et ne confirme pas que l’atmosphère est sûre.
 
+La priorité CO dans [T, PDF 6, 18](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6) ne cite explicitement que la sirène interne du G.A.S.-pro III CO. Ne pas en déduire une réactivation radio ou SIR+, ni un seuil ppm précis. Le comportement avec IGN actif ou avec un capteur CO externe n’est pas détaillé séparément ; demander confirmation à THITRONIK avant de le garantir.
+
 ## Entrée de contact `IGN`
 
 `IGN` se raccorde à la borne 15 du véhicule. Tant qu’une tension y est présente, G.A.S.-pro III est mis en sourdine :
@@ -274,11 +290,17 @@ Une éventuelle alarme reste visible sur les LED. Le système d’alarme dans le
 
 L’avertisseur de gaz reste néanmoins raccordé à une alimentation permanente. `IGN` ne remplace pas une protection électrique appropriée et n’est pas une borne d’alimentation. Après le montage, contrôler le comportement avec le contact mis et coupé.
 
+La priorité CO dans [T, PDF 6, 18](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6) ne cite explicitement que la sirène interne du G.A.S.-pro III CO. Ne pas en déduire une réactivation radio ou SIR+, ni un seuil ppm précis. Le comportement avec IGN actif ou avec un capteur CO externe n’est pas détaillé séparément ; demander confirmation à THITRONIK avant de le garantir.
+
 ## Sous-tension, surchauffe et défaut de capteur
+
+### G.A.S.-pro III : surchauffe, toutes les couleurs et WiPro
+
+Lors d’une **surchauffe au-dessus de 60 °C à l’intérieur du G.A.S.-pro III**, les LED clignotent dans toutes les couleurs et un son montant/descendant est émis. **Aucun signal** n’est transmis par la WiPro III / safe.lock appairée pour cette surchauffe. Ne pas confondre avec un défaut de capteur (jaune, un bip par seconde) ou un gaz détecté. Source : [T, PDF 18](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=18).
 
 | Avertissement | Déclencheur / indication | Réaction sûre |
 |---|---|---|
-| Sous-tension | moins de 11,1 V ; trois séries de trois tonalités en une minute, les deux LED pulsent en jaune | faire contrôler correctement l’alimentation de bord et la batterie ; l’appareil s’arrête pour éviter une décharge profonde |
+| Sous-tension | moins de 11,1 V ; les deux LED pulsent en jaune, nombre de tonalités divergent DE/FR | faire contrôler correctement l’alimentation de bord et la batterie ; l’appareil s’arrête pour éviter une décharge profonde |
 | Surchauffe | température de l’appareil supérieure à 60 °C ; tonalité continue montante et descendante, LED multicolores clignotantes | vérifier la source de chaleur et le lieu de montage, puis laisser refroidir l’appareil ; aucun message d’alarme gaz normal via WiPro III |
 | Défaut de capteur | une tonalité par seconde et la LED du capteur concerné clignote en jaune | ne pas considérer le système comme entièrement opérationnel ; contacter le revendeur ou le support THITRONIK |
 
@@ -286,11 +308,15 @@ Après un arrêt pour sous-tension, les informations techniques complémentaires
 
 Selon le guide, un avertissement de surchauffe n’est pas transmis par une WiPro III ou WiPro III safe.lock reliée. Ne pas confondre un avertissement de surchauffe avec une alarme gaz ; vérifier si le lieu de montage est exposé directement à l’air chaud, à une accumulation de chaleur ou à une température ambiante hors plage admise.
 
+**Divergence de sous-tension :** [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6) indique sous 11,1 V **trois séries de trois tonalités** en une minute ; [T, PDF 18](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=18) indique **trois tonalités**. Les deux versions exigent un **rallumage manuel** après rétablissement de la tension et mentionnent l’avertissement batterie de la WiPro appairée. Le nombre de tonalités reste à clarifier : ne pas l’utiliser seul comme code de diagnostic. Aucun seuil 24 V distinct n’est indiqué ici ; ne pas doubler 11,1 V par déduction.
+
 ## Durée de vie des capteurs CO
 
 G.A.S.-pro III CO et le capteur CO externe possèdent une date d’expiration. Elle est indiquée avec le mois et l’année sur la plaque signalétique sous la mention `Exp. Date`. Le capteur CO doit être remplacé par THITRONIK au plus tard à cette date ; les informations techniques complémentaires décrivent ce remplacement comme un service payant.
 
 Ne pas tenter de remettre en service un appareil expiré par une réinitialisation, un nettoyage ou un essai improvisé. Contacter le revendeur ou le support THITRONIK en indiquant le produit, le numéro d’article, le numéro de série et l’`Exp. Date`. Détails sous [[Capteur CO — capteur supplémentaire de monoxyde de carbone]].
+
+Source : [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6).
 
 ## Capteur supplémentaire externe
 
@@ -301,6 +327,14 @@ Le [[Capteur additionnel G.A.S.-pro III — capteur de gaz externe]], article `1
 Pour les rallonges, utiliser par prudence une **longueur totale maximale de 7 m**. Employer une section de conducteur au moins égale à celle du câble de capteur existant, réaliser une jonction électriquement fiable et protégée mécaniquement, et ne pas poser le câble de capteur avec des câbles de puissance perturbateurs. N’utiliser la valeur générale de 8 m indiquée dans la FAQ qu’après confirmation pour la combinaison précise.
 
 ## Mise en service et contrôle fonctionnel
+
+### G.A.S.-pro III : tester avec du gaz de briquet ?
+
+| Contrôle | Consigne |
+|---|---|
+| Test utilisateur avec un gaz d’essai | non prévu ; ne pas utiliser de gaz de briquet |
+
+Les guides rapides excluent cette vérification sur place en raison de l’algorithme et décrivent l’autotest. La recommandation générique de la FAQ constitue une divergence, pas une autorisation pour la génération III. Sources : [K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1), [KCO, PDF 1](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=1), [QZ, PDF 2](../../quellen/gas-zusatzsensor-iii-faq.pdf#page=2).
 
 1. Vérifier la version, le numéro d’article, la hauteur de montage et une éventuelle implication dans le rappel.
 2. Contrôler le support, l’orientation de l’appareil, la réserve de câble, les bornes et le fusible.
@@ -315,6 +349,8 @@ Selon les deux guides rapides, il n’est pas possible d’effectuer sur place u
 
 > [!CAUTION]
 > Ne pas exposer l’appareil à du gaz de briquet, des gaz d’échappement, de la fumée, des solvants ou une flamme nue pour le tester. Ne faire effectuer un contrôle technique que selon une procédure du fabricant expressément homologuée pour cette version de l’appareil.
+
+Divergence sur le test : la FAQ générale du capteur supplémentaire [QZ, PDF 2](../../quellen/gas-zusatzsensor-iii-faq.pdf#page=2) recommande un briquet ; les guides G.A.S.-pro III [K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1) / [KCO, PDF 1](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=1) excluent un test sur place au gaz en raison de l’algorithme. Ne pas recommander de test au briquet pour cette combinaison III. La procédure de l’ancienne G.A.S.-pro n’est pas transférable.
 
 ## Comportement en cas d’alarme gaz ou CO
 
@@ -342,6 +378,8 @@ La page de rappel THITRONIK actuelle concerne une combinaison précisément déf
 | Action | mise à jour logicielle gratuite par THITRONIK |
 
 Si la combinaison est concernée, photographier tout le dos de l’appareil en veillant à ce que le numéro de série soit lisible, puis l’enregistrer sur la page de rappel officielle. Ne pas débrancher soi-même les câbles et attendre la réponse de THITRONIK avant toute dépose supplémentaire. Ne pas classer d’autres versions ou numéros de série comme concernés ou non concernés uniquement en raison d’une désignation similaire.
+
+[Page officielle du rappel](https://www.thitronik.de/recall/) vérifiée le **01/10/2026**. La vérification du rappel et la mise à jour du fabricant ne valent pas validation complète de cette base de connaissances.
 
 ## Dépannage sûr
 

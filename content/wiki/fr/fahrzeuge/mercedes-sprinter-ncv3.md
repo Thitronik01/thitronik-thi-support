@@ -1,10 +1,10 @@
 ---
 title: 'Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006-2018)'
 sources:
-  - sources/wipro_iii_mercedes_sprinter_ncv3_vw_crafter_ab_2006.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Mercedes.docx
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-sprinter-ncv3.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Mercedes.docx"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/mercedes-sprinter-ncv3.md
@@ -15,6 +15,16 @@ translation_of: sources/fahrzeuge/mercedes-sprinter-ncv3.md
 Cet article décrit l'installation d'un WiPro III sur le Mercedes Sprinter NCV3/BR906 de 2006 à 2018 et le VW Crafter de première génération de 2006 à 2017. La notice véhicule `06/21` couvre contrôle, DIP, CAN, quatre fils de clignotants, masse, allumage, alimentation, sirène, LED, accessoires radio, essais et diagnostic.
 
 > **Limite :** l'année-modèle, la génération électronique, le répartiteur CAN, l'ordinateur de bord, les connecteurs et les couleurs doivent correspondre. Le Sprinter VS30 dès 2018 et le Crafter II dès 2017 utilisent d'autres instructions.
+
+## Limites du véhicule et sources contrôlées
+
+Sprinter NCV3 / Crafter I : `SW1 + SW6 ON`. Quatre sorties séparées par répartiteur à diodes : X3 broches 15/16 et X9 broches 13/24. Ne pas confondre X9 broche 24 avec la broche 25, également noir/vert mais plus épaisse. Le klaxon n’est pas alimenté sans contact ; prévoir une sirène. OBD broche 8 rose/noir n’est utilisable comme contact que si le signal y est effectivement présent.
+
+Sources : [sprinter-ncv3, PDF 2](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=2), [sprinter-ncv3, PDF 4](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=4), [sprinter-ncv3, PDF 6](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=6).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Champ d'application
 
@@ -137,6 +147,8 @@ Voir [[Sirènes et klaxons — moyens d'alarme acoustiques|Sirènes et klaxons]]
 
 ## Premier contrôle fonctionnel
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 1. Fermer les portes cabine et armer avec la touche de verrouillage d'origine.
 2. Si nécessaire, verrouiller/déverrouiller plusieurs fois pour synchroniser CAN.
 3. Vérifier bip, clignotants et LED clignotante.
@@ -167,7 +179,7 @@ La mémoire est non volatile ; une suppression efface tous les émetteurs. Voir 
 Pour les contacts réf. `100757` et `100758` :
 
 - Orienter la LED d'émission à l'opposé de l'aimant ; une mauvaise orientation permet l'apprentissage mais empêche l'alarme.
-- Respecter `22-30 mm` et la ligne limite rouge.
+- Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 - Tester la portée avant collage.
 - Surface propre, sèche et dégraissée ; pas sous `15 °C`, puis environ `24 heures` de prise.
 - Utiliser l'adaptateur `100428` ou `100729` si l'écart ou l'orientation l'exige.
@@ -208,12 +220,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Décision sur les sources
 
-- La notice véhicule de 13 pages `06/21` a été entièrement contrôlée textuellement et visuellement.
-- Son schéma confirme `SW1 + SW6` ; l'ancien tableau limité aux commutateurs 1-4 ne permet pas de supprimer `SW6`.
-- La PDF établit répartiteur CAN, quatre clignotants, masse `M10`, OBD 8, `F10 / 15 A`, deux sirènes, centrale et essais.
-- Le manuel `1.8` confirme les broches WiPro 1/7/11/12/14/15/16/17/18, `100455`, sécurité et diagnostic ; le spécifique prime.
-- « Sirène obligatoire » devient « fortement recommandée » ; safe.lock et l'ancien emplacement générique sont supprimés faute de preuve.
-- `Mercedes.docx` est absent localement et non utilisé.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [sprinter-ncv3, PDF 2](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=2), [sprinter-ncv3, PDF 4](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=4), [sprinter-ncv3, PDF 6](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=6).
 
 ## Références croisées
 

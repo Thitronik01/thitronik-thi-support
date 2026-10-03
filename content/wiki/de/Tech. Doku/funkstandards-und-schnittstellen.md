@@ -1,12 +1,12 @@
 ---
 title: Funkstandards & Schnittstellen — technische Abgrenzung
 sources:
-  - sources/nfc_modul-kurzanleitung.pdf
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-  - sources/BT-connect__Reference__Technische_Daten_DE.md
-  - sources/Vernetzungsmodul_101290__Reference__Technische_Daten_DE.md
-  - sources/wipro_deutsche_bedienungsanleitung_abschrift.txt
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
+  - "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf"
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "sources/BT-connect__Reference__Technische_Daten_DE.md"
+  - "sources/Vernetzungsmodul_101290__Reference__Technische_Daten_DE.md"
+  - "sources/wipro_deutsche_bedienungsanleitung_abschrift.txt"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
 updated: '2026-07-22'
 confidence: high
 lang: de

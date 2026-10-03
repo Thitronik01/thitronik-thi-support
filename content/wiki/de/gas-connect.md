@@ -1,15 +1,14 @@
 ---
 title: G.A.S.-connect — Funk-Gaswarner für WiPro III
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-connect/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-connect/g.a.s.-connect.pdf
-  - sources/Fragen zu G.A.S.-connect.pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Overview_DE.md
-  - >-
-    sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Reference__Technische_Daten_DE.md
-  - sources/Seriennummer G.A.S.-connect (5750).csv
-updated: '2026-07-16'
+  - "content/quellen/gas-connect-anleitung-rev1.0.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-connect/"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-connect/g.a.s.-connect.pdf"
+  - "content/quellen/gas-connect-faq.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Overview_DE.md"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Reference__Technische_Daten_DE.md"
+  - "sources/Seriennummer G.A.S.-connect (5750).csv"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -47,7 +46,7 @@ G.A.S.-connect ist ein fahrzeugversorgter Funk-Gaswarner für Propan, Butan und 
 | Funkkonformität laut Anleitung | Richtlinie 2014/53/EU |
 | Fahrzeugzulassung laut Produktseite | ECE R10 |
 
-Die aktuelle offizielle Produktseite nennt abweichend **ca. 28/15 mA** und **ca. 35 g**. Diese Werte stimmen mit den dort veröffentlichten Daten des Standalone-Geräts G.A.S. überein, während die G.A.S.-connect-Anleitung zusätzlich die Funkdaten ausweist. Für diesen Master gelten deshalb die Werte der produktspezifischen Anleitung. Wenn Strombudget oder Gewicht für eine konkrete Freigabe entscheidend sind, Typenschild, beiliegende Anleitung und THITRONIK-Support abgleichen.
+Die am 01.10.2026 geprüfte [offizielle Produktseite](https://www.thitronik.de/produkte/produkt/gas-connect/) nennt abweichend **ca. 34 mA** ohne getrennte 12-/24-V-Angabe und **ca. 35 g**. [C, PDF 25](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=25) nennt dagegen **15 mA bei 12 V / 25 mA bei 24 V** und **33 g**. Der Quellenkonflikt ist offen; weder die Stromwerte vertauschen noch 28/15 mA vom Standalone-G.A.S. übernehmen. Für eine verbindliche Strombilanz den konkreten Gerätestand mit THITRONIK klären.
 
 ## Schnellcheck
 
@@ -133,6 +132,8 @@ Die produktspezifische Anleitung schreibt für G.A.S.-connect eine Montage **etw
 
 Bei räumlicher Trennung durch Vorhänge oder Schiebetüren kann ein weiterer eigenständiger Gaswarner beziehungsweise ein weiterer passend eingebundener Funk-Gaswarner erforderlich sein. An G.A.S.-connect selbst kann kein externer Zusatzsensor angeschlossen werden.
 
+Beleg: [C, PDF 2, 6](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=2).
+
 ## Funkprüfung vor der endgültigen Montage
 
 Die Funkverbindung wird vor dem Bohren am vorgesehenen Einbauort geprüft:
@@ -162,12 +163,14 @@ Die Freifeldangabe von ca. 75 m berücksichtigt weder Fahrzeugaufbau noch Metall
 | Anschluss | Funktion | Vorgabe |
 |---|---|---|
 | `12/24V` | Positive Fahrzeugversorgung | Geeignete, abgesicherte 12-/24-V-DC-Versorgung verwenden |
-| `AGND` | Masse | Mit geeigneter Fahrzeugmasse verbinden |
+| `GND` | Masse | Mit geeigneter Fahrzeugmasse verbinden |
 | `ALARM OUT` | Optionaler Alarmausgang | Schaltet gegen Masse, maximal 0,10 A |
 
 Die Hebel der Steckklemme vollständig herunterdrücken, die abisolierten Leiter bis zum Anschlag einführen und die Klemme wieder schließen. Die Anschlusszeichnung der Anleitung verlangt den Anschluss **ohne Aderendhülsen**. Anschließend jede Ader mit einer leichten Zugprobe kontrollieren.
 
 Polarität, Absicherung und Versorgungsspannung vor dem Einschalten prüfen. G.A.S.-connect wird aus dem Fahrzeug versorgt und besitzt keine zu wechselnde CR2032-Knopfzelle.
+
+Beleg: [C, PDF 23](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=23). Die Zeichnung beschriftet die Masseklemme mit `GND`, nicht `AGND`.
 
 ## `Alarm OUT` und Back-up Sirene
 
@@ -200,6 +203,8 @@ Die Anleitung dokumentiert beim Einschalten von G.A.S.-connect keine Drei-Ton-Be
 
 Das Einschalten ist hier der Auslöser des Anlernsignals. Ein bereits eingeschaltetes Gerät gegebenenfalls ausschalten und nach Aktivierung des Anlernmodus erneut einschalten. Die allgemeinen Speicher-, Lösch- und Anlernregeln stehen unter [[Anlernvorgang — Funk-Zubehör an WiPro III anlernen]].
 
+Beleg: [C, PDF 3, 7](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=3).
+
 ## Betriebs- und LED-Zustände
 
 | Zustand | Anzeige / Signal | Bedeutung und Maßnahme |
@@ -213,7 +218,13 @@ Das Einschalten ist hier der Auslöser des Anlernsignals. Ein bereits eingeschal
 
 Vor Reiseantritt und Übernachtung grün blinkende Anzeige sowie betriebsbereite WiPro prüfen.
 
+Beleg: [C, PDF 3, 7](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=3).
+
 ## Alarmablauf über WiPro
+
+### G.A.S.-connect: Warnblinker und Alarmdauer
+
+Die G.A.S.-connect-Anleitung Rev. 1.0 nennt für Gasalarm **180 Sekunden Warnblinker** sowie je **30 Sekunden** interne WiPro-Sirene und Fahrzeughupe. Die Gas-Alarmschwelle muss zuvor länger als 30 Sekunden überschritten sein. Der Quellenkonflikt zur WiPro mit **120/180 Sekunden** bleibt offen; die genaue Zentralenversion abgleichen. Beleg: [C, PDF 3/7](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=3).
 
 Wird die Sensor-Alarmschwelle länger als 30 Sekunden überschritten, beginnt der dokumentierte Ablauf:
 
@@ -226,6 +237,8 @@ Wird die Sensor-Alarmschwelle länger als 30 Sekunden überschritten, beginnt de
 7. Wird die Schwelle erneut länger als 30 Sekunden überschritten, beginnt der Ablauf erneut.
 
 Die tatsächlichen Alarmgeber hängen von WiPro-Ausführung, Fahrzeugprofil, Anschluss und Konfiguration ab. Sirene, Fahrzeughupe und Blinker sind unterschiedliche Komponenten und dürfen nicht gleichgesetzt werden.
+
+Beleg: [C, PDF 3](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=3). Die 180 Sekunden für die Warnblinker stehen in dieser G.A.S.-connect-Anleitung. Der bereits dokumentierte WiPro-Quellenkonflikt 120/180 Sekunden bleibt offen; keine pauschale Dauer für alle Zentralen zusagen.
 
 ## Alarm beenden und Ereignis erkennen
 
@@ -306,7 +319,7 @@ Keine Sicherung überbrücken, keine Ausgangsleitung kurzschließen, keine Funk-
 | Vollständige Seriennummer | Typenschild, üblicher Präfix `5750-`; nicht nur den Präfix melden |
 | WiPro-Ausführung und Seriennummer | WiPro III oder WiPro III safe.lock, vollständige Seriennummer |
 | Fahrzeug und Baujahr | Hersteller, Modell, Modelljahr |
-| Versorgungsspannung | Messwert an `12/24V` und `AGND` |
+| Versorgungsspannung | Messwert an `12/24V` und `GND` |
 | LED-Zustand | Farbe, leuchtend oder blinkend, Zeitpunkt und Dauer |
 | Anlernstatus | Wann und wie von der WiPro bestätigt |
 | Montageort | Höhe, Abstand zu Heizung/Batterie, Entfernung und Hindernisse zur WiPro |

@@ -1,9 +1,10 @@
 ---
 title: Renault Master III / Opel Movano B / Nissan NV400 (à partir de 2011)
 sources:
-  - sources/wipro_iii_renault_master_ab_2011_01.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-21'
+  - "content/quellen/fahrzeug-master-iii.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/renault-master-iii.md
@@ -15,7 +16,19 @@ Cet article décrit le montage documenté de la WiPro III sur le Renault Master 
 
 > **Comparaison obligatoire :** la source primaire actuelle porte uniquement la désignation Renault Master. Sur un Opel Movano B, un Nissan NV400, une autre année, carrosserie ou connectique, confirmer P201, la broche, la couleur et le signal sur le véhicule concerné. En cas d’écart, ne pas poursuivre par similitude ou couleur ; contacter l’assistance THITRONIK.
 
+## Limites du véhicule et sources contrôlées
+
+Master III : notice 04/25 « dès 2011 », `SW2 + SW3 + SW6 ON`, kit `100754`, sans logiciel minimum indiqué dans ce manuel. La FAQ documente toutefois `0823-001 / 2.1–6.8` sans surveillance des portes coulissante et arrière : contacts magnétiques supplémentaires. La ligne dès `6.9` ne répète pas cette réserve, mais cela ne garantit pas la surveillance de toutes les portes. Tester chaque porte. La clé d’origine ne commande pas WiPro. P201 : CAN-Low broche 19 naturel, CAN-High broche 39 orange. Le titre « New Master » ne valide pas Master IV.
+
+Sources : [master-iii, PDF 2](../../../quellen/fahrzeug-master-iii.pdf#page=2), [master-iii, PDF 4](../../../quellen/fahrzeug-master-iii.pdf#page=4), [master-iii, PDF 5](../../../quellen/fahrzeug-master-iii.pdf#page=5), [Q, PDF 7](../../../quellen/wipro-iii-faq.pdf#page=7), [Q, PDF 8](../../../quellen/wipro-iii-faq.pdf#page=8).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
+
 ## Domaine d’application et configuration validée
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 | Caractéristique | Configuration validée |
 |---|---|
@@ -38,7 +51,7 @@ Le [[Renault Master (2019–2024) — safe.lock|Renault Master 2019–2024 avec 
 | Profil, kit, dépose, P201, alimentation, avertisseur et essai | priorité au manuel véhicule état `04/25` |
 | Rôle des broches WiPro, fusible `10 A` et sirène facultative | compléments du manuel version `1.8` |
 | Numéro de série minimal | aucune source disponible n’en indique ; l’ancienne valeur `0823-014` n’est pas validée |
-| Ancienne note `0823-001 / 2.1` et logiciel `6.9` | non étayée et à retirer de toutes les matrices |
+| Complément FAQ | `0823-001 / 2.1–6.8`: portes coulissante/arrière non surveillées ; ligne dès 6.9 sans cette réserve, vérifier néanmoins chaque porte. |
 | Couverture des portes | tester chaque ouverture ; l’ancienne affirmation générale sur portes coulissantes et arrière est infondée |
 | Commande | la procédure actuelle impose la télécommande THITRONIK ; aucune garantie de changement d’état par la clé d’origine |
 | Essai final page 6 | « répéter l’étape 7 » est un renvoi erroné ; le contenu impose de répéter l’essai initial de l’étape 5 |
@@ -178,7 +191,7 @@ La source documente les contacts Art. `100757` noirs et `100758` blancs et les a
 
 1. Monter de préférence l’émetteur sur le cadre fixe et l’aimant sur la partie mobile.
 2. Placer la carte avec la LED d’émission **à l’opposé de l’aimant**. Une mauvaise orientation permet la mémorisation, mais pas l’alarme.
-3. Placer l’aimant dans la plage `22–30 mm` et pas au-delà de la ligne rouge.
+3. Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 4. Pour un écart supérieur ou une mauvaise orientation d’antenne, utiliser `100428` ou `100729`.
 5. Nettoyer, sécher et dégraisser ; ne pas coller sous `15 °C` et laisser sans charge environ `24 h`.
 6. Si le collage est peu fiable, utiliser les repères internes pour une fixation vissée.
@@ -199,6 +212,8 @@ L’affichage au combiné est un indice important de détection CAN, mais ne rem
 Cette vérification remplace l’ancienne affirmation générale sur les portes coulissantes et arrière.
 
 ## Premier essai fonctionnel et diagnostic CAN
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Contrôler les raccordements et rétablir l’alimentation.
 2. Fermer toutes les portes et tous les contacts.
@@ -224,7 +239,7 @@ L’essai actuel documente la télécommande THITRONIK 868 : une touche quelconq
 - À la remise, démontrer l’état par la LED et une réaction réelle.
 - Tester et documenter séparément clé d’origine et télécommande THITRONIK.
 - **Ne pas activer SW5 dans le profil de base.** La fonction générale contre la relecture dépend de l’appareil et bloque la commande par clé d’origine, pas la détection CAN des portes.
-- Ne pas appliquer de règle spéciale non étayée à partir du logiciel `6.9`.
+- La ligne FAQ dès 6.9 ne garantit pas la surveillance de toutes les portes cellule.
 
 Voir [[Émetteur radio 868 — télécommande pour WiPro III|Émetteur radio 868]].
 
@@ -263,6 +278,8 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]] et 
 
 ## Remise et documentation
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 Consigner sur la fiche :
 
 - modèle, année, VIN et variante de carrosserie
@@ -281,14 +298,7 @@ Consigner sur la fiche :
 
 ## Décision relative aux sources
 
-- Le manuel THITRONIK de dix pages *WiPro III (New) Renault Master à partir de 2011*, état `04/25`, a été entièrement contrôlé comme texte et visuellement. Il documente kit `100754`, contrôles préalables, `SW2 + SW3 + SW6`, dépose, P201, alimentation, avertisseur, LED, mémorisation, essais et contacts magnétiques.
-- Le manuel général version `1.8` complète le rôle des broches, le fusible `10 A`, les sirènes et le diagnostic. La source véhicule actuelle prévaut.
-- Les durées applicables sont donc `30 s` sonore et `180 s` visuelle, pas l’ancienne valeur générale `120 s`.
-- La source actuelle ne donne aucun minimum. Ni `0823-014`, ni `0823-001 / 2.1`, ni une règle à partir de `6.9` ne sont conservés comme validation véhicule.
-- La source primaire ne documente que Renault Master. Opel Movano B et Nissan NV400 restent des attributions de projet avec comparaison obligatoire.
-- L’ancienne affirmation générale sur portes coulissantes/arrière est remplacée par le contrôle individuel CAN demandé.
-- Le mauvais renvoi « étape 7 » est traité comme répétition de l’essai initial de l’étape 5.
-- `FAQ_WiPro-III_DE.md` est introuvable localement et n’a pas servi de preuve.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [master-iii, PDF 2](../../../quellen/fahrzeug-master-iii.pdf#page=2), [master-iii, PDF 4](../../../quellen/fahrzeug-master-iii.pdf#page=4), [master-iii, PDF 5](../../../quellen/fahrzeug-master-iii.pdf#page=5), [Q, PDF 7](../../../quellen/wipro-iii-faq.pdf#page=7), [Q, PDF 8](../../../quellen/wipro-iii-faq.pdf#page=8).
 
 ## Renvois
 

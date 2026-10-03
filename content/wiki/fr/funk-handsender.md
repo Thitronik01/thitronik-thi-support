@@ -1,13 +1,13 @@
 ---
 title: Émetteur radio 868 — télécommande pour WiPro III
 sources:
-  - sources/einleger_funk_handsender_2_101064_ce.pdf
-  - sources/Funk-Handsender_868__101064__Overview_DE.md
-  - sources/Funk-Handsender_868__101064__Reference__Technische_Daten_DE.md
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Funk Zubehör.docx
-  - sources/Fragen zu Funk-Handsender 868.pdf
-updated: '2026-07-18'
+  - "content/quellen/funk-handsender-101064-einleger.pdf"
+  - "content/quellen/funk-handsender-faq.pdf"
+  - "sources/Funk-Handsender_868__101064__Overview_DE.md"
+  - "sources/Funk-Handsender_868__101064__Reference__Technische_Daten_DE.md"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Funk Zubehör.docx"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/funk-handsender.md
@@ -55,6 +55,10 @@ La télécommande possède une touche avec un symbole de haut-parleur et une tou
 La confirmation par les feux de détresse et la commande du verrouillage centralisé nécessitent une installation adaptée au véhicule.
 
 ### Particularité de WiPro III safe.lock
+
+#### Télécommande 101064 : alarme et verrouillage des portes
+
+Avec une WiPro III standard, la télécommande 101064 commande l’alarme. Le verrouillage des portes ne fonctionne qu’avec une connexion safe.lock compatible et un profil véhicule adapté.
 
 Avec un raccordement safe.lock compatible, deux opérations sont généralement associées :
 
@@ -104,10 +108,12 @@ La télécommande radio utilise une **pile bouton CR2032 de 3 V**. Sa durée de 
 
 ### Signal de pile faible
 
+**État des sources du signal de pile faible :** la FAQ des accessoires indique 2 secondes, la notice WiPro 5 secondes. L’attribution aux versions matérielles/logicielles reste non résolue. Contrôler le dernier émetteur déclenché, sa LED et sa CR2032 ; la durée seule ne permet pas de conclure à une panne. Voir [[WiPro III — système d'alarme radio pour véhicules de loisirs|WiPro III]].
+
 Lorsque la pile de la télécommande est faible, WiPro fournit les indications suivantes après l’utilisation de la télécommande :
 
 - Un signal d’avertissement retentit pendant environ **2 secondes** au niveau de la centrale WiPro III.
-- La LED d’émission rouge de la télécommande ne s’éteint qu’après environ **30 secondes**.
+- La FAQ évoque en général une LED rouge pendant **30 secondes**, mais son paragraphe détaillé attribue ce signal au contact magnétique et à la boucle de câble. L’attribution à la télécommande est ambiguë ; l’absence de ce signal n’exclut pas une pile faible.
 
 ### Remplacement de la pile
 
@@ -131,7 +137,7 @@ Si un composant radio alimenté par une pile CR2032 signale une pile faible, con
 | Observation | Cause possible | Mesure à prendre |
 |-------------|----------------|------------------|
 | Aucune réaction lorsque l’on appuie sur une touche | télécommande non mémorisée | mémoriser la télécommande selon la procédure prévue |
-| Signal de 2 secondes ; la LED d’émission rouge reste longtemps allumée | pile CR2032 faible | remplacer la pile et contrôler le fonctionnement |
+| Signal après utilisation : environ 2 secondes selon la FAQ / 5 secondes selon la notice WiPro | pile CR2032 faible | remplacer la pile et contrôler le fonctionnement |
 | Fonctionnement uniquement à courte distance | pile faible ou liaison radio masquée | contrôler la pile ; modifier la distance et la position par rapport à WiPro III |
 | Le système d’alarme peut être commandé, mais le véhicule ne se verrouille ou ne se déverrouille pas | raccordement safe.lock absent ou incompatible | faire contrôler le profil du véhicule, le câblage et la version logicielle |
 | L’alarme panique ne démarre pas | la combinaison de touches ne correspond pas à la plage de numéros de série | vérifier le numéro de série et utiliser la séquence de touches correspondante |
@@ -142,22 +148,22 @@ Si un problème de portée ou de commande persiste, relever à l’intention du 
 
 ## Questions fréquentes (FAQ)
 
-**Avec quels systèmes la télécommande radio 868 est-elle compatible ?**  
+### Avec quels systèmes la télécommande radio 868 est-elle compatible ?
 Avec la gamme WiPro III. Son utilisation avec d’autres systèmes radio n’est pas prévue.
 
-**La télécommande verrouille-t-elle toujours également le véhicule ?**  
+### La télécommande verrouille-t-elle toujours également le véhicule ?
 Non. Elle arme ou désarme le système d’alarme. Le verrouillage centralisé n’est commandé qu’avec un raccordement WiPro III safe.lock compatible et un profil de véhicule adapté.
 
-**Quelle pile faut-il utiliser ?**  
+### Quelle pile faut-il utiliser ?
 Une pile bouton CR2032 de 3 V. Sa durée de vie habituelle est d’environ deux ans.
 
-**Faut-il mémoriser à nouveau la télécommande après le remplacement de la pile ?**  
+### Faut-il mémoriser à nouveau la télécommande après le remplacement de la pile ?
 Non. Après le remplacement, il suffit de contrôler la polarité, le montage du boîtier et le fonctionnement.
 
-**Comment reconnaître une pile faible ?**  
-Lors de l’utilisation de la télécommande, un signal retentit pendant environ 2 secondes au niveau de la centrale WiPro III et la LED d’émission rouge reste allumée pendant environ 30 secondes.
+### Comment reconnaître une pile faible ?
+La FAQ indique environ 2 secondes, la notice WiPro 5 secondes ; leur attribution reste ouverte. La LED de 30 secondes n’est pas clairement attribuée à la télécommande. Contrôler la pile et le dernier émetteur déclenché.
 
-**Comment arrêter une alarme panique ?**  
+### Comment arrêter une alarme panique ?
 Appuyer sur l’une des deux touches de la télécommande radio.
 
 ---
@@ -178,3 +184,11 @@ Ne pas jeter l’appareil ni les piles usagées avec les ordures ménagères. D�
 - [[Contact radiomagnétique 868 — montage et fonctionnement|Contact magnétique radio 868]]
 - [[Boucle de câble radio 868 — sécurité externe pour marchandises mobiles|Boucle de câble radio 868]]
 - [[Pro-Finder — Module de télémétrie GSM/GPS|Pro-Finder]]
+
+---
+
+## Vérification des sources et versions documentaires
+
+Comparaison documentaire du 01.10.2026, pages physiques des PDF : [H, PDF 1](../../quellen/funk-handsender-101064-einleger.pdf#page=1), [H, PDF 2](../../quellen/funk-handsender-101064-einleger.pdf#page=2), [QH, PDF 1](../../quellen/funk-handsender-faq.pdf#page=1), [QH, PDF 2](../../quellen/funk-handsender-faq.pdf#page=2).
+
+Les confirmations et divergences sont consignées dans le [rapport de vérification](../../../docs/quellenpruefung/2026-10-01-funk.md).

@@ -1,22 +1,21 @@
 ---
 title: CO-Sensor — Kohlenmonoxid-Zusatzsensor
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/CO-Sensor__100433__Overview_DE.md
-  - sources/CO-Sensor__100433__Reference__Software_Seriennummern_DE.md
-  - sources/handbuch_gas-pro_2.5.pdf
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/Seriennummer 0433 CO-Sensor.csv
-  - wiki/gas-pro.md
-  - wiki/gas-pro-iii.md
-  - wiki/stoerungsbeseitigung.md
-updated: '2026-07-16'
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "content/quellen/gas-co-sensor-anleitung.pdf"
+  - "content/quellen/gas-co-sensor-faq.pdf"
+  - "content/quellen/gas-pro-handbuch-rev2.5.pdf"
+  - "https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf"
+  - "sources/CO-Sensor__100433__Overview_DE.md"
+  - "sources/CO-Sensor__100433__Reference__Software_Seriennummern_DE.md"
+  - "sources/Seriennummer 0433 CO-Sensor.csv"
+  - "content/wiki/de/gas-pro.md"
+  - "content/wiki/de/gas-pro-iii.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -108,7 +107,7 @@ Der neuere Sensortyp **`SNO433-003`** erfordert an der G.A.S.-pro mindestens **S
 
 Die offizielle CO-Sensor-Anleitung schreibt **1.04i**. Eine verkürzte Schreibweise `1.4i` darf nicht als eigener oder abweichender Softwarestand behandelt werden. Weitere Produktgrenzen stehen unter [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine]].
 
----
+Beleg: [SCO, PDF 2](../../quellen/gas-co-sensor-anleitung.pdf#page=2). Die Grenze 0001-003 und Software 1.04i betrifft die ältere G.A.S.-pro, nicht die G.A.S.-pro III. SNO433-003 ist die Sensorbezeichnung in dieser Anleitung; die vollständigen Typenschilder prüfen.
 
 ## Lieferumfang
 
@@ -136,7 +135,7 @@ Für eine konservative, produktspezifische Auslegung **maximal 7 m Gesamtlänge*
 
 ## Montageort planen
 
-Kohlenmonoxid ist minimal leichter als Luft. Der CO-Sensor wird deshalb an einer senkrechten Fläche **knapp unter der Fahrzeugdecke** montiert. Die Montagezeichnung des Sensors nennt **10–30 cm** Abstand zur Decke.
+Gemäß der produktspezifischen Montagezeichnung wird der CO-Sensor an einer senkrechten Fläche **knapp unter der Fahrzeugdecke** montiert. Die Montagezeichnung des Sensors nennt **10–30 cm** Abstand zur Decke.
 
 - Überwachungsbereich und Schlafplätze berücksichtigen.
 - Räumliche Trennungen durch Türen oder Vorhänge bei der Systemplanung beachten.
@@ -149,7 +148,7 @@ Kohlenmonoxid ist minimal leichter als Luft. Der CO-Sensor wird deshalb an einer
 
 Die deckennahe Position des CO-Sensors darf nicht auf Propan-/Butan- oder Narkosegassensoren übertragen werden; diese Gase erfordern eine andere Montagehöhe.
 
----
+Die Montagequellen für den externen CO-Sensor widersprechen sich: [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) verlangt deckennahe Montage, [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) erlaubt im französischen Text beliebige Höhe, [O, PDF 24](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=24) zeigt **10–50 cm unter der Decke**. Die eigene CO-Sensor-Zeichnung [SCO, PDF 3](../../quellen/gas-co-sensor-anleitung.pdf#page=3) zeigt **10–30 cm unter der Decke**. Keine beliebige Montagehöhe freigeben; zum Sensor gehörende Zeichnung und Hauptgerät abgleichen und den Konflikt bei THITRONIK klären. Die 10–20 cm des Hauptgeräts G.A.S.-pro III CO sind keine Ersatzvorgabe für jeden externen CO-Sensor.
 
 ## Sensor montieren
 
@@ -187,7 +186,7 @@ Historisch dokumentierte Kabelfarben dienen nur als Prüfhilfe:
 
 Klemmenbezeichnung und produktspezifischer Anschlussplan haben Vorrang vor der Kabelfarbe. Bei abweichenden Farben nicht nach Vermutung anschließen.
 
----
+Beleg: [SCO, PDF 2](../../quellen/gas-co-sensor-anleitung.pdf#page=2).
 
 ## Anschluss an G.A.S.-pro III
 
@@ -203,7 +202,7 @@ Bei der G.A.S.-pro III gelten andere Klemmenregeln als bei der älteren G.A.S.-p
 
 Die Anschlussregel „keine Aderendhülsen“ ist ausdrücklich produktspezifisch und darf nicht auf die G.A.S.-pro übertragen werden.
 
----
+Beleg: [SCO, PDF 3](../../quellen/gas-co-sensor-anleitung.pdf#page=3).
 
 ## Inbetriebnahme
 
@@ -232,7 +231,7 @@ Ein fehlerfreier Start ersetzt weder die Kontrolle des Ablaufdatums noch die reg
 
 Die G.A.S.-pro-Anleitung verlangt keinen separaten Feuerzeuggas-Funktionstest für den CO-Sensor, weil dieser nur auf Kohlenmonoxid reagiert. Niemals Abgase, offene Flammen oder unkontrollierte Verbrennung zur Prüfung in das Fahrzeug einleiten.
 
----
+Die generische Feuerzeug-Testantwort im CO-FAQ [QCO, PDF 2](../../quellen/gas-co-sensor-faq.pdf#page=2) ist **keine CO-Prüfanweisung**. Maßgeblich für diese Abgrenzung ist [O, PDF 4, 10](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=4).
 
 ## Ablaufdatum und Austausch
 
@@ -247,7 +246,7 @@ CO-Sensoren haben eine begrenzte Nutzungsdauer. Maßgeblich ist das auf dem Type
 
 Ein überschrittenes Ablaufdatum kann die zuverlässige CO-Erkennung beeinträchtigen. Das Fehlen einer Fehlermeldung ist kein Nachweis, dass ein abgelaufener Sensor noch sicher arbeitet.
 
----
+Beleg: [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6).
 
 ## Sicherheit im Alarmfall
 

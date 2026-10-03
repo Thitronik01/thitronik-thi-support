@@ -1,0 +1,248 @@
+{
+  "checked": "2026-09-28",
+  "originalsUnchanged": true,
+  "visualPageCount": 107,
+  "scope": "DE/FR passages; no claim to have checked other language versions",
+  "sources": [
+    {
+      "id": "981e5a86ee1c",
+      "path": "content/quellen/profinder-handbuch-rev2.6.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf",
+        "Anleitungen/de/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf"
+      ],
+      "sha256": "981e5a86ee1c9fa46734cb2ea4fa4cd06eb65c5be62d2a6e4114165c8243a1e8",
+      "bytes": 1449781,
+      "totalPages": 72,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "a1e1ae9b1a6e",
+      "path": "content/quellen/profinder-ab045-handbuch-rev1.3.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf",
+        "Anleitungen/de/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf"
+      ],
+      "sha256": "a1e1ae9b1a6e0e1c5a21a82f3639a0facff60073f702ff9443428addd5d94bb2",
+      "bytes": 10044621,
+      "totalPages": 247,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "f737c39a10da",
+      "path": "content/quellen/profinder-kurz-rev1.1.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro_finder-kurzanleitung-international.pdf",
+        "Anleitungen/de/pro_finder-kurzanleitung-international.pdf"
+      ],
+      "sha256": "f737c39a10dab22ed0eec9332d653eeeac70703fe58a6e8712e4e70eb3d09ceb",
+      "bytes": 1210133,
+      "totalPages": 2,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "a73a4dc7ee1d",
+      "path": "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro_finder-kurzanleitung-international_sn-045.pdf",
+        "Anleitungen/de/pro_finder-kurzanleitung-international_sn-045.pdf"
+      ],
+      "sha256": "a73a4dc7ee1d8843c8f3beef423da4be8d2b81347adf89560d8e1f4deaf2dc23",
+      "bytes": 4445759,
+      "totalPages": 2,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "b445be238844",
+      "path": "content/quellen/profinder-faq.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Pro-finder.pdf"
+      ],
+      "sha256": "b445be238844ad86bfa72d73f24dc6993bd126fdc6fcbc2e36c2942e4abe6c93",
+      "bytes": 148752,
+      "totalPages": 7,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "f850deebc144",
+      "path": "content/quellen/profinder-app-befehle-1.1.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/App Befehle 1.1.pdf"
+      ],
+      "sha256": "f850deebc1445fc9eb9772cc18285221639df54c10c65ed7debd8bd0347984e7",
+      "bytes": 148017,
+      "totalPages": 1,
+      "visuallyReviewedPhysicalPages": [
+        1
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "c32c46009dd7",
+      "path": "content/quellen/profinder-abschaltung-einpolig-rev2.0.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Abschalteinrichtungen/abschalteinrichtung_einpolig.pdf"
+      ],
+      "sha256": "c32c46009dd79f0a83c62e0aec329506e31ce1f3cef2a7a22fc04a2d4bf679f9",
+      "bytes": 742805,
+      "totalPages": 2,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "9c8df348b7fb",
+      "path": "content/quellen/profinder-abschaltung-mehrpolig-rev1.0.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Abschalteinrichtungen/Abschalteinrichtung_mehrpolig.pdf"
+      ],
+      "sha256": "9c8df348b7fbc9f9559bbe4cd06ea59305d1b644891dfa9650b5f49fd06b4507",
+      "bytes": 653807,
+      "totalPages": 2,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "2110b33a5de3",
+      "path": null,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf"
+      ],
+      "sha256": "2110b33a5de3f77f73c4d7df9e5504af5dd17d50b44a8e06aa0c53f673bc87b4",
+      "bytes": 516010,
+      "totalPages": 3,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3
+      ],
+      "role": "internal-reference-only"
+    },
+    {
+      "id": "bdf15a3b2f43",
+      "path": null,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/pro-finder_ocr_abschrift.pdf"
+      ],
+      "sha256": "bdf15a3b2f433e7563412c5e3201ee1b13859203ec7729fcf4b22c59c4739d4a",
+      "bytes": 429046,
+      "totalPages": 248,
+      "visuallyReviewedPhysicalPages": [],
+      "role": "ocr-derivative-not-primary"
+    }
+  ]
+}

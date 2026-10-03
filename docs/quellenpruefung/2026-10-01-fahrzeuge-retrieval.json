@@ -1,0 +1,849 @@
+{
+  "checkedAt": "2026-10-01T20:53:18.280Z",
+  "mode": "retrieval-only",
+  "liveModelEvaluated": false,
+  "total": 84,
+  "passed": 84,
+  "cases": [
+    {
+      "lang": "de",
+      "id": "adria-15min",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "adria-2021 PDF 2"
+    },
+    {
+      "lang": "de",
+      "id": "ducato244-verzoegerung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ducato-244 PDF 2; ducato-244 PDF 6; ducato-244 PDF 7"
+    },
+    {
+      "lang": "de",
+      "id": "x250-can",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ducato-x250 PDF 2; ducato-x250 PDF 4"
+    },
+    {
+      "lang": "de",
+      "id": "fiat-talento-keyless",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8"
+    },
+    {
+      "lang": "de",
+      "id": "renault-trafic-iii-2014-keyless",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8"
+    },
+    {
+      "lang": "de",
+      "id": "ford6-deadlock",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2006 PDF 2; ford-2006 PDF 4; Q PDF 4"
+    },
+    {
+      "lang": "de",
+      "id": "ford2014-oem",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2014 PDF 2; ford-2014 PDF 4; Q PDF 4"
+    },
+    {
+      "lang": "de",
+      "id": "ford2016-uebergang",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2016 PDF 2; ford-2016 PDF 4; Q PDF 4"
+    },
+    {
+      "lang": "de",
+      "id": "fordfacelift-schwelle",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2019 PDF 2; ford-2019 PDF 5; Q PDF 5; S PDF 6; S PDF 20"
+    },
+    {
+      "lang": "de",
+      "id": "iveco4-can",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro4 PDF 2; iveco-euro4 PDF 4"
+    },
+    {
+      "lang": "de",
+      "id": "iveco5-integriert",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro5 PDF 2; iveco-euro5 PDF 4; iveco-euro5 PDF 5; iveco-zv PDF 1"
+    },
+    {
+      "lang": "de",
+      "id": "ncv3-blinker",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-ncv3 PDF 2; sprinter-ncv3 PDF 4; sprinter-ncv3 PDF 6"
+    },
+    {
+      "lang": "de",
+      "id": "t1n-dip",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-t1n PDF 2"
+    },
+    {
+      "lang": "de",
+      "id": "vs30-versorgung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-vs30 PDF 2; sprinter-vs30 PDF 5; sprinter-vs30 PDF 7; Q PDF 6; S PDF 19; S PDF 20"
+    },
+    {
+      "lang": "de",
+      "id": "master2-relais",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "master-ii PDF 2; master-ii PDF 4; master-ii PDF 7"
+    },
+    {
+      "lang": "de",
+      "id": "master3-tueren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "master-iii PDF 2; master-iii PDF 4; master-iii PDF 5; Q PDF 7; Q PDF 8"
+    },
+    {
+      "lang": "de",
+      "id": "trafic2022-hupe",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "trafic-2022 PDF 2; trafic-2022 PDF 4; trafic-2022 PDF 5"
+    },
+    {
+      "lang": "de",
+      "id": "crafter-sleep",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "crafter-2017 PDF 2; crafter-2017 PDF 4; Q PDF 9; S PDF 12; S PDF 18; S PDF 19"
+    },
+    {
+      "lang": "de",
+      "id": "vw-t5-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t5 PDF 2; t5 PDF 4; Q PDF 9"
+    },
+    {
+      "lang": "de",
+      "id": "vw-t5-facelift-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t5-facelift PDF 2; t5-facelift PDF 4; Q PDF 9"
+    },
+    {
+      "lang": "de",
+      "id": "t6-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 9; S PDF 12; S PDF 13"
+    },
+    {
+      "lang": "de",
+      "id": "t61-sleep",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 10; S PDF 21"
+    },
+    {
+      "lang": "de",
+      "id": "ducato2012-quellen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 4; S PDF 23; safelock-platine PDF 2"
+    },
+    {
+      "lang": "de",
+      "id": "ducato8-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 3; S PDF 22"
+    },
+    {
+      "lang": "de",
+      "id": "ducato2024-menue",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 2; S PDF 22"
+    },
+    {
+      "lang": "de",
+      "id": "ford2024-konflikt",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 4; S PDF 5; S PDF 16; S PDF 17"
+    },
+    {
+      "lang": "de",
+      "id": "vito-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q PDF 6; Q PDF 13"
+    },
+    {
+      "lang": "de",
+      "id": "master2019-schluessel",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 10; S PDF 11"
+    },
+    {
+      "lang": "de",
+      "id": "crafter2025-datum",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 18"
+    },
+    {
+      "lang": "de",
+      "id": "universal-grenze",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "I PDF 5; sprinter-t1n PDF 2; Q PDF 2"
+    },
+    {
+      "lang": "de",
+      "id": "platine-tasten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "safelock-platine PDF 2; safelock-platine PDF 4; safelock-platine PDF 12; S PDF 23; S PDF 24"
+    },
+    {
+      "lang": "de",
+      "id": "upgrade-leitungen",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q PDF 5; Q PDF 6; Q PDF 9; Q PDF 10; Q PDF 13; S PDF 4; S PDF 5; safelock-upgrade PDF 2; update-service-2024 PDF 1"
+    },
+    {
+      "lang": "de",
+      "id": "matrix-iveco",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro5 PDF 2; Q PDF 9; Q PDF 10; S PDF 4; S PDF 18"
+    },
+    {
+      "lang": "de",
+      "id": "iveco2025-farbe",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro5 PDF 2; iveco-euro5 PDF 4; iveco-euro5 PDF 5; iveco-zv PDF 1"
+    },
+    {
+      "lang": "de",
+      "id": "trafic-hupenfarbe",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8"
+    },
+    {
+      "lang": "de",
+      "id": "fordfacelift-zuendung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2019 PDF 2; ford-2019 PDF 5; Q PDF 5; S PDF 6; S PDF 20"
+    },
+    {
+      "lang": "de",
+      "id": "vs30-ils",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-vs30 PDF 2; sprinter-vs30 PDF 5; sprinter-vs30 PDF 7; Q PDF 6; S PDF 19; S PDF 20"
+    },
+    {
+      "lang": "de",
+      "id": "master2-p202",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "master-ii PDF 2; master-ii PDF 4; master-ii PDF 7"
+    },
+    {
+      "lang": "de",
+      "id": "t61-can-gruen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 10; S PDF 21"
+    },
+    {
+      "lang": "de",
+      "id": "crafter-sicherung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "crafter-2017 PDF 2; crafter-2017 PDF 4; Q PDF 9; S PDF 12; S PDF 18; S PDF 19"
+    },
+    {
+      "lang": "de",
+      "id": "ford-camping",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 4; S PDF 5; S PDF 16; S PDF 17"
+    },
+    {
+      "lang": "de",
+      "id": "platine-kompatible-zentrale",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 24; safelock-platine PDF 2/4"
+    },
+    {
+      "lang": "fr",
+      "id": "adria-15min",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "adria-2021 PDF 2"
+    },
+    {
+      "lang": "fr",
+      "id": "ducato244-verzoegerung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ducato-244 PDF 2; ducato-244 PDF 6; ducato-244 PDF 7"
+    },
+    {
+      "lang": "fr",
+      "id": "x250-can",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ducato-x250 PDF 2; ducato-x250 PDF 4"
+    },
+    {
+      "lang": "fr",
+      "id": "fiat-talento-keyless",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8"
+    },
+    {
+      "lang": "fr",
+      "id": "renault-trafic-iii-2014-keyless",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8"
+    },
+    {
+      "lang": "fr",
+      "id": "ford6-deadlock",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2006 PDF 2; ford-2006 PDF 4; Q PDF 4"
+    },
+    {
+      "lang": "fr",
+      "id": "ford2014-oem",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2014 PDF 2; ford-2014 PDF 4; Q PDF 4"
+    },
+    {
+      "lang": "fr",
+      "id": "ford2016-uebergang",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2016 PDF 2; ford-2016 PDF 4; Q PDF 4"
+    },
+    {
+      "lang": "fr",
+      "id": "fordfacelift-schwelle",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2019 PDF 2; ford-2019 PDF 5; Q PDF 5; S PDF 6; S PDF 20"
+    },
+    {
+      "lang": "fr",
+      "id": "iveco4-can",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro4 PDF 2; iveco-euro4 PDF 4"
+    },
+    {
+      "lang": "fr",
+      "id": "iveco5-integriert",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro5 PDF 2; iveco-euro5 PDF 4; iveco-euro5 PDF 5; iveco-zv PDF 1"
+    },
+    {
+      "lang": "fr",
+      "id": "ncv3-blinker",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-ncv3 PDF 2; sprinter-ncv3 PDF 4; sprinter-ncv3 PDF 6"
+    },
+    {
+      "lang": "fr",
+      "id": "t1n-dip",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-t1n PDF 2"
+    },
+    {
+      "lang": "fr",
+      "id": "vs30-versorgung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-vs30 PDF 2; sprinter-vs30 PDF 5; sprinter-vs30 PDF 7; Q PDF 6; S PDF 19; S PDF 20"
+    },
+    {
+      "lang": "fr",
+      "id": "master2-relais",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "master-ii PDF 2; master-ii PDF 4; master-ii PDF 7"
+    },
+    {
+      "lang": "fr",
+      "id": "master3-tueren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "master-iii PDF 2; master-iii PDF 4; master-iii PDF 5; Q PDF 7; Q PDF 8"
+    },
+    {
+      "lang": "fr",
+      "id": "trafic2022-hupe",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "trafic-2022 PDF 2; trafic-2022 PDF 4; trafic-2022 PDF 5"
+    },
+    {
+      "lang": "fr",
+      "id": "crafter-sleep",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "crafter-2017 PDF 2; crafter-2017 PDF 4; Q PDF 9; S PDF 12; S PDF 18; S PDF 19"
+    },
+    {
+      "lang": "fr",
+      "id": "vw-t5-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t5 PDF 2; t5 PDF 4; Q PDF 9"
+    },
+    {
+      "lang": "fr",
+      "id": "vw-t5-facelift-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t5-facelift PDF 2; t5-facelift PDF 4; Q PDF 9"
+    },
+    {
+      "lang": "fr",
+      "id": "t6-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 9; S PDF 12; S PDF 13"
+    },
+    {
+      "lang": "fr",
+      "id": "t61-sleep",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 10; S PDF 21"
+    },
+    {
+      "lang": "fr",
+      "id": "ducato2012-quellen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 4; S PDF 23; safelock-platine PDF 2"
+    },
+    {
+      "lang": "fr",
+      "id": "ducato8-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 3; S PDF 22"
+    },
+    {
+      "lang": "fr",
+      "id": "ducato2024-menue",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 2; S PDF 22"
+    },
+    {
+      "lang": "fr",
+      "id": "ford2024-konflikt",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 4; S PDF 5; S PDF 16; S PDF 17"
+    },
+    {
+      "lang": "fr",
+      "id": "vito-version",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q PDF 6; Q PDF 13"
+    },
+    {
+      "lang": "fr",
+      "id": "master2019-schluessel",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 10; S PDF 11"
+    },
+    {
+      "lang": "fr",
+      "id": "crafter2025-datum",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 18"
+    },
+    {
+      "lang": "fr",
+      "id": "universal-grenze",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "I PDF 5; sprinter-t1n PDF 2; Q PDF 2"
+    },
+    {
+      "lang": "fr",
+      "id": "platine-tasten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "safelock-platine PDF 2; safelock-platine PDF 4; safelock-platine PDF 12; S PDF 23; S PDF 24"
+    },
+    {
+      "lang": "fr",
+      "id": "upgrade-leitungen",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q PDF 5; Q PDF 6; Q PDF 9; Q PDF 10; Q PDF 13; S PDF 4; S PDF 5; safelock-upgrade PDF 2; update-service-2024 PDF 1"
+    },
+    {
+      "lang": "fr",
+      "id": "matrix-iveco",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro5 PDF 2; Q PDF 9; Q PDF 10; S PDF 4; S PDF 18"
+    },
+    {
+      "lang": "fr",
+      "id": "iveco2025-farbe",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "iveco-euro5 PDF 2; iveco-euro5 PDF 4; iveco-euro5 PDF 5; iveco-zv PDF 1"
+    },
+    {
+      "lang": "fr",
+      "id": "trafic-hupenfarbe",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8"
+    },
+    {
+      "lang": "fr",
+      "id": "fordfacelift-zuendung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "ford-2019 PDF 2; ford-2019 PDF 5; Q PDF 5; S PDF 6; S PDF 20"
+    },
+    {
+      "lang": "fr",
+      "id": "vs30-ils",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "sprinter-vs30 PDF 2; sprinter-vs30 PDF 5; sprinter-vs30 PDF 7; Q PDF 6; S PDF 19; S PDF 20"
+    },
+    {
+      "lang": "fr",
+      "id": "master2-p202",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "master-ii PDF 2; master-ii PDF 4; master-ii PDF 7"
+    },
+    {
+      "lang": "fr",
+      "id": "t61-can-gruen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 10; S PDF 21"
+    },
+    {
+      "lang": "fr",
+      "id": "crafter-sicherung",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "crafter-2017 PDF 2; crafter-2017 PDF 4; Q PDF 9; S PDF 12; S PDF 18; S PDF 19"
+    },
+    {
+      "lang": "fr",
+      "id": "ford-camping",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 4; S PDF 5; S PDF 16; S PDF 17"
+    },
+    {
+      "lang": "fr",
+      "id": "platine-kompatible-zentrale",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S PDF 24; safelock-platine PDF 2/4"
+    }
+  ]
+}

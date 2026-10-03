@@ -1,13 +1,13 @@
 ---
 title: T.S.A. — Détecteur de fumée sans fil pour WiPro III
 sources:
-  - sources/funk-rauchmelder-t.s.a..pdf
-  - sources/T.S.A Rauchmelder.docx
-  - sources/Fragen zu T.S.A. Funk-Rauchmelder.pdf
-  - 'https://www.thitronik.de/produkte/produkt/tsa-funk-rauchmelder/'
-  - 'https://www.thitronik.de/produkte/produkt/montageadapter-tsa/'
-  - 'https://www.dinmedia.de/de/norm/din-en-14604/115461758'
-updated: '2026-07-19'
+  - "content/quellen/funk-tsa-rauchmelder-rev1.1.pdf"
+  - "content/quellen/funk-tsa-rauchmelder-faq.pdf"
+  - "sources/T.S.A Rauchmelder.docx"
+  - "https://www.thitronik.de/produkte/produkt/tsa-funk-rauchmelder/"
+  - "https://www.thitronik.de/produkte/produkt/montageadapter-tsa/"
+  - "https://www.dinmedia.de/de/norm/din-en-14604/115461758"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/funk-rauchmelder.md
@@ -20,6 +20,8 @@ Le T.S.A. est un détecteur de fumée sans fil destiné aux véhicules de loisir
 > **IMPORTANT :** Le T.S.A. détecte la fumée, mais pas les gaz tels que le butane, le propane, les gaz narcotiques ou le monoxyde de carbone. Ces dangers nécessitent un avertisseur de gaz adapté, tel que [[G.A.S.-pro III — Avertisseur de gaz pour véhicules de loisirs|G.A.S.-pro III]] ou [[G.A.S.-connect — alarme de gaz sans fil pour WiPro III|G.A.S.-connect]].
 
 ---
+
+**Limite pour le CO :** G.A.S.-connect ne détecte pas le monoxyde de carbone. Le CO nécessite une version CO prévue à cet effet ou une combinaison autorisée avec un capteur CO ; voir [[Capteur CO — capteur supplémentaire de monoxyde de carbone|Capteur CO]].
 
 ## Caractéristiques techniques
 
@@ -130,6 +132,8 @@ Si le véhicule possède un plafond en tissu, ne pas coller le T.S.A. directemen
 
 ### Variante 2 : montage avec l’adaptateur
 
+**Divergence de traduction :** la dernière étape française (PDF 10) mentionne le plafond, alors que la préparation et la page allemande 4 indiquent la paroi. La procédure murale ci-dessous suit le texte allemand et le montage latéral illustré ; le mot français divergent reste à corriger par le fabricant. Ne pas coller sur du tissu. Sources : [R, PDF 4](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=4), [R, PDF 10](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=10).
+
 1. Dégraisser la surface de montage arrondie de l’adaptateur.
 2. Retirer le film protecteur rouge de la pastille adhésive ronde double face du détecteur.
 3. Poser le détecteur sur la surface arrondie de l’adaptateur et presser fermement les deux pièces l’une contre l’autre pendant au moins **60 secondes**.
@@ -202,6 +206,8 @@ La pile au lithium CR123A de 3 V est intégrée à demeure et ne peut pas être 
 
 ### Avertissement de pile en fin de vie
 
+La CR123A du T.S.A. est fixe et ne peut pas être remplacée. En fin de pile, remplacer le détecteur complet, au plus tard après dix ans. La mise en sourdine est seulement temporaire.
+
 1. Un signal bref toutes les **43 secondes** indique que la pile a atteint la fin de sa durée de vie.
 2. Maintenir la touche de test enfoncée pendant **3 secondes** pour couper l’avertissement pendant **8 heures**.
 3. Remplacer le détecteur dès que l’avertissement a été émis plus de quatre fois ; la mise en sourdine ne dispense pas de remplacer l’appareil.
@@ -239,28 +245,28 @@ Si le problème reste inexpliqué, documenter pour le support les numéros de s�
 
 ## Questions fréquentes (FAQ)
 
-**Puis-je utiliser le T.S.A. sans WiPro III ?**  
+### Puis-je utiliser le T.S.A. sans WiPro III ?
 Oui. En fonctionnement autonome, le T.S.A. émet une alerte locale. Le klaxon du véhicule, les feux de détresse, le SMS et l’appel ne sont pas disponibles sans intégration au système.
 
-**Quelle version du système est nécessaire pour l’intégration radio ?**  
+### Quelle version du système est nécessaire pour l’intégration radio ?
 Les versions minimales figurent dans le tableau de compatibilité. Les appareils plus anciens nécessitent une mise à niveau ou une mise à jour.
 
-**Le T.S.A. avertit-il de la présence de butane, de propane, de gaz narcotiques ou de monoxyde de carbone ?**  
+### Le T.S.A. avertit-il de la présence de butane, de propane, de gaz narcotiques ou de monoxyde de carbone ?
 Non. Ces dangers nécessitent un avertisseur de gaz adapté.
 
-**Puis-je utiliser le détecteur dans une soute arrière contenant des vélos électriques ?**  
+### Puis-je utiliser le détecteur dans une soute arrière contenant des vélos électriques ?
 Oui. Le fabricant recommande expressément cette utilisation, surtout lorsque des vélos électriques y sont rangés ou rechargés. La fumée doit pouvoir atteindre le détecteur sans obstacle.
 
-**La pile peut-elle être remplacée ?**  
+### La pile peut-elle être remplacée ?
 Non. La CR123A est intégrée à demeure. Remplacer l’appareil complet dès l’émission d’un avertissement de pile ou au plus tard après dix ans.
 
-**Comment distinguer l’avertissement de pile et le mode de défaut ?**  
+### Comment distinguer l’avertissement de pile et le mode de défaut ?
 Un signal bref toutes les 43 secondes indique que la pile est en fin de vie. Trois signaux brefs toutes les 43 secondes indiquent le mode de défaut.
 
-**Puis-je coller le T.S.A. directement sur un plafond en tissu ?**  
+### Puis-je coller le T.S.A. directement sur un plafond en tissu ?
 Non. Utiliser l’adaptateur 105755 en blanc ou 105756 en gris et le fixer sur un élément latéral en plastique proche du plafond.
 
-**Le T.S.A. suffit-il pour avertir une personne malentendante ?**  
+### Le T.S.A. suffit-il pour avertir une personne malentendante ?
 Pas nécessairement. Son aptitude et un dispositif d’alerte complémentaire doivent être évalués individuellement.
 
 ---
@@ -285,3 +291,11 @@ Comme le T.S.A. contient une pile au lithium intégrée à demeure, ne pas le je
 - [[G.A.S.-connect — alarme de gaz sans fil pour WiPro III|G.A.S.-connect]]
 - [[Vue d’ensemble du système — gamme de produits THITRONIK|Vue d’ensemble du système]]
 - [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]]
+
+---
+
+## Vérification des sources et versions documentaires
+
+Comparaison documentaire du 01.10.2026, pages physiques des PDF : [R, PDF 8](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=8), [R, PDF 9](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=9), [R, PDF 10](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=10), [QR, PDF 1](../../quellen/funk-tsa-rauchmelder-faq.pdf#page=1).
+
+Les confirmations et divergences sont consignées dans le [rapport de vérification](../../../docs/quellenpruefung/2026-10-01-funk.md).

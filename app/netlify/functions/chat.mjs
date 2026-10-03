@@ -25,6 +25,7 @@ import {
 } from './lib/search-core.js';
 import { pruefeGefahr, pruefeWidersprueche, baueSuchanfrage, fahrzeugGewichten } from './lib/fall.mjs';
 import { bewerteSicherheit, leseModellStufe } from './lib/sicherheit.mjs';
+import { artikelKontext } from './lib/kontext.mjs';
 import { SYSTEM, GEFAHR_ANTWORT, KEIN_TREFFER, SUPPORT_TELEFON } from './lib/prompts.mjs';
 import { wirksameKorrekturen, korrekturAlsArtikel, KORREKTUR_BEILAGE_MAX } from './lib/korrekturen.mjs';
 import { ZUGANGSWORT, zugangPruefen, clientIp } from './lib/zugang.mjs';
@@ -444,6 +445,7 @@ export default async function handler(anfrage) {
   // nur, wer eingeloggt ist. Im Zugangswort-Modus bleibt es beim Standard-
   // bestand, weil dort niemand identifiziert ist.
   const zugang = { canViewInternal: !nutzer.platzhalter && darf(nutzer, 'intern.lesen') };
+  const sichtbareSektionen = basis.sektionen.filter((s) => zugang.canViewInternal || s.visibility !== 'internal');
   const vorherige = verlauf.filter((n) => n.rolle === 'nutzer').map((n) => n.text);
   const anfrageText = frage || baueSuchanfrage(fall);
   const suche = buildRetrievalQuery(anfrageText, vorherige);
@@ -522,7 +524,7 @@ export default async function handler(anfrage) {
   });
   for (const t of artikelTreffer.slice(0, MAX_KONTEXT)) {
     if (t.articleType === 'korrektur') { quellen.push(quelleAusKorrektur(t)); continue; }
-    const abschnitt = bestSectionForRoute(basis.sektionen, t.route, suche, t.lang);
+    const abschnitt = bestSectionForRoute(sichtbareSektionen, t.route, suche, t.lang);
     quellen.push({
       route: t.route, title: t.title, lang: t.lang, articleType: t.articleType,
       anchor: abschnitt?.anchor || '', headingPath: abschnitt?.headingPath || '',
@@ -565,7 +567,10 @@ export default async function handler(anfrage) {
     }
   }
 
-  // 6) Kontext bauen: Top-2 mit großem Fenster, Rest als Passagen-Fenster.
+  // 6) Kontext bauen: Top-2 mit 6000 Zeichen, weitere Quellen mit 1400.
+  // Kurze zitierte Abschnitte und ggf. ein zweiter relevanter Abschnitt werden
+  // innerhalb dieses Budgets erhalten. Bei zu langen Abschnitten bleibt das
+  // bisherige fragebezogene Fenster bestehen (lib/kontext.mjs).
   //
   // Beide Fenster werden AN DER FRAGE ausgerichtet, nicht am Textanfang. Das
   // klingt nach einer Kleinigkeit, ist aber der Unterschied zwischen „Antwort
@@ -589,7 +594,9 @@ export default async function handler(anfrage) {
     const bestand = q.korrektur ? basis.korrekturen : basis.artikel;
     const artikel = bestand.find((a) => a.route === q.route && a.lang === q.lang);
     const voll = String(artikel?.body || '');
-    const text = q.korrektur ? voll : extractSnippet(voll, suche, i < 2 ? 6000 : 1400);
+    const text = q.korrektur ? voll : artikelKontext(artikel, sichtbareSektionen, suche, {
+      limit: i < 2 ? 6000 : 1400, canViewInternal: zugang.canViewInternal, anchor: q.anchor,
+    });
     return { ...q, text: text || artikel?.excerpt || '' };
   }).filter((k) => k.text);
 

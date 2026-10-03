@@ -1,0 +1,406 @@
+{
+  "checkedAt": "2026-10-01",
+  "scope": "Dokumentabgleich DE/FR, kein Geräte- oder Live-Antworttest",
+  "count": 57,
+  "claims": [
+    {
+      "id": "F01",
+      "topic": "Wasser: Produktrolle",
+      "source": "W 2/13",
+      "status": "bestätigt",
+      "finding": "106021 ist Zubehör für kompatible WiPro III/safe.lock; kein autonomer akustischer Melder."
+    },
+    {
+      "id": "F02",
+      "topic": "Wasser: Einsatzgrenze",
+      "source": "W 2–4/13–15; WW",
+      "status": "bestätigt",
+      "finding": "Nur Campingfahrzeug-Innenraum, Sendeeinheit trocken und erreichbar. IP67 der Website erlaubt keine Außenmontage oder Dauerimmersion."
+    },
+    {
+      "id": "F03",
+      "topic": "Wasser: Sensorlage",
+      "source": "W 4/15",
+      "status": "bestätigt",
+      "finding": "30-cm-Leitung und beide Kontaktstifte mit Bodenkontakt; Sender bleibt trocken. Im Abruf zusammengehalten."
+    },
+    {
+      "id": "F04",
+      "topic": "Wasser: Kleben",
+      "source": "W 3/14",
+      "status": "bestätigt",
+      "finding": "Untergrund sauber, trocken und fettfrei; mindestens 15 °C, etwa 24 h bis Endfestigkeit."
+    },
+    {
+      "id": "F05",
+      "topic": "Wasser: Schrauben",
+      "source": "W 3–4/14–15",
+      "status": "bestätigt",
+      "finding": "Sensor bekommt beiliegende A2-Senkkopfschraube 2,9 × 13; andere Befestigung mit geeigneten V4A-Senkkopfschrauben, nicht beiliegend. Markierungen im Sendergehäuse."
+    },
+    {
+      "id": "F06",
+      "topic": "Wasser: Orientierung",
+      "source": "W 4/15",
+      "status": "bestätigt",
+      "finding": "Plattennasen nach oben, Sender nach unten einschieben; LED oben rechts, Kabel unten. Nicht die Magnetkontakt-Pfeilregel übernehmen."
+    },
+    {
+      "id": "F07",
+      "topic": "Wasser: Lernen und Testen",
+      "source": "W 5/16",
+      "status": "präzisiert",
+      "finding": "Zum Lernen Kontakte leitend überbrücken und Zentralenquittung abwarten. Endtest bei scharfer WiPro; daraus kein Nachweis einer Alarmierung im unscharfen Zustand."
+    },
+    {
+      "id": "F08",
+      "topic": "Wasser: Batterie",
+      "source": "W 6/17; QW 1",
+      "status": "ergänzt",
+      "finding": "CR2032 polrichtig einsetzen; Gehäuseschrauben und in der Zeichnung gezeigte Dichtung beachten. Dichtungskontrolle in beiden Sprachen ergänzt."
+    },
+    {
+      "id": "F09",
+      "topic": "Wasser: Version und Fernalarm",
+      "source": "QW 2; WW",
+      "status": "bestätigt",
+      "finding": "Mindeststände der fünf aktuellen Systemvarianten erneut abgeglichen. SMS belegt; zusätzlicher Anruf nicht zugesichert. Historische C.A.S.-Liste nicht neu vollgeprüft."
+    },
+    {
+      "id": "F10",
+      "topic": "Magnet: Varianten",
+      "source": "M0/M1/M2 1; MW 1–2/12–13",
+      "status": "bestätigt",
+      "finding": "Standard 100757/100758 und wasserdicht 106020 sind getrennte Bauformen mit eigenen Montagevorgaben."
+    },
+    {
+      "id": "F11",
+      "topic": "Magnet: Standard-LED",
+      "source": "M0/M1/M2 2/6",
+      "status": "bestätigt",
+      "finding": "LED vom Magneten weg. Falsche Platinenorientierung kann Anlernen erlauben, ohne danach Alarm auszulösen; Öffnungstest erforderlich."
+    },
+    {
+      "id": "F12",
+      "topic": "Magnet: Standard-Abstand",
+      "source": "M0/M1/M2 2/6; WiPro I 7–9/43–45 (Vorprüfung)",
+      "status": "offen",
+      "finding": "25 mm in Zubehöranleitungen gegenüber 22 mm in WiPro-Installation. 22 mm nur als redaktionelle Zwischenregel, nicht als bewiesene Revisionszuordnung ausgewiesen."
+    },
+    {
+      "id": "F13",
+      "topic": "Magnet: Standard-Klebepad",
+      "source": "M0/M1/M2 2/6",
+      "status": "bestätigt",
+      "finding": "Unbedruckte Seite auf raue Fahrzeugfläche; auf Glas/Acryl bedruckte Seite nach außen. 15 °C/24 h eingehalten."
+    },
+    {
+      "id": "F14",
+      "topic": "Magnet: Adapter und CAN",
+      "source": "M0/M1/M2 3/7; QM 1–2",
+      "status": "bestätigt",
+      "finding": "Adapter 100428 schwarz / 100729 weiß. Zusätzlicher Kontakt an bereits zuverlässig per CAN ausgewerteter Fahrzeugtür normalerweise unnötig; Erkennung am Fahrzeug prüfen."
+    },
+    {
+      "id": "F15",
+      "topic": "Magnet: Wasserdichte Abstände",
+      "source": "MW 4–5/15–16",
+      "status": "bestätigt",
+      "finding": "Geschlossen höchstens 22 mm; zum Lernen/Testen mehr als 30 mm trennen. Gehäusepfeile zueinander, Plattennasen vom Magneten weg."
+    },
+    {
+      "id": "F16",
+      "topic": "Magnet: Wasserdichte Befestigung",
+      "source": "MW 3–4/14–15",
+      "status": "bestätigt",
+      "finding": "Magnet mit beiliegenden Schrauben. Alternative Plattenbefestigung mit nicht beiliegenden V4A-Senkkopfschrauben; Markierungen in der Platte."
+    },
+    {
+      "id": "F17",
+      "topic": "Magnet: Batteriezugang",
+      "source": "QH 2; MW 6/17; M1/M2 2/6",
+      "status": "ergänzt",
+      "finding": "Standardgehäuse seitlich an Kerbe öffnen und Platine entnehmen; wasserdichtes Gehäuse verschraubt. CR2032, Polung und bei wasserdichtem Gehäuse Dichtung beachten."
+    },
+    {
+      "id": "F18",
+      "topic": "Magnet: Gewicht",
+      "source": "MW 17; WMW",
+      "status": "offen",
+      "finding": "33 g Anleitung / 37 g Website. Bisherige Vorrangbehauptung zugunsten der Website entfernt; keine bestätigte Zuordnung zu Geräteständen."
+    },
+    {
+      "id": "F19",
+      "topic": "Magnet: Extremtemperaturen",
+      "source": "MW 17; WMW",
+      "status": "offen",
+      "finding": "Website nennt −40..+125 °C, Anleitung bestätigt diese Grenze nicht. Geltung für komplettes Gerät einschließlich CR2032 ungeklärt; keine pauschale Betriebsfreigabe daraus."
+    },
+    {
+      "id": "F20",
+      "topic": "Magnet: Mehrsprachige Tabelle",
+      "source": "M0/M1/M2 22",
+      "status": "offen",
+      "finding": "DE/FR nennen <10 mW; englische Tabellenzeile nennt <10 W. DE/FR bleiben bei mW; keine vollständige Prüfung weiterer Sprachen behauptet."
+    },
+    {
+      "id": "F21",
+      "topic": "Schleife: Varianten",
+      "source": "L1–L4 1/12; WL",
+      "status": "bestätigt",
+      "finding": "101068/100761: schwarz/weiß, 2,5 m; 101074/100944: XL schwarz/weiß, 5 m. Alle vier Tabellen geben 77 g an, ohne weitere Gewichtsabgrenzung."
+    },
+    {
+      "id": "F22",
+      "topic": "Schleife: Alarmbedingungen",
+      "source": "L1–L4 2/4; WL",
+      "status": "bestätigt",
+      "finding": "Entnahme und Kabelunterbrechung lösen bei eingelernter Komponente, vorhandener Funkverbindung und scharfem System aus; Fremdmagnet-Erkennung auf Produktseite."
+    },
+    {
+      "id": "F23",
+      "topic": "Schleife: Test",
+      "source": "L1–L4 2/4",
+      "status": "bestätigt",
+      "finding": "Vor endgültiger Montage entriegeln durch Druck auf Unterseite; scharfe Anlage, Empfang prüfen, Abschirmung berücksichtigen. Kein Zerschneiden als Test nötig."
+    },
+    {
+      "id": "F24",
+      "topic": "Schleife: Schrauben",
+      "source": "L1–L4 2/4",
+      "status": "bestätigt",
+      "finding": "Nur beiliegende Edelstahlschrauben, ebene Montage ohne Verzug. Bestehender Sikaflex-Verweis stammt aus der bereits geprüften WiPro-Installation."
+    },
+    {
+      "id": "F25",
+      "topic": "Schleife: Batteriewechsel",
+      "source": "QL 2",
+      "status": "bestätigt",
+      "finding": "Unterseitige Schrauben lösen, CR2032 polrichtig einsetzen, Gummidichtung korrekt ausrichten und Funkfunktion prüfen."
+    },
+    {
+      "id": "F26",
+      "topic": "Schleife: Systemgrenzen",
+      "source": "L1–L4 1; WiPro-Vorprüfung",
+      "status": "wiederholungsprüfung",
+      "finding": "WiPro-Familie und gemeinsamer Senderspeicher; bestehende Abgrenzung zu 433-MHz-Systemen im Retrieval erneut geprüft, nicht als neue PDF-Erkenntnis gezählt."
+    },
+    {
+      "id": "F27",
+      "topic": "Handsender: Produktdaten",
+      "source": "H 1–2",
+      "status": "bestätigt",
+      "finding": "101064, CR2032 3 V, 868,35 MHz, <10 mW, maximal 75 m Freifeld, 20 g, 67 × 35 × 15 mm."
+    },
+    {
+      "id": "F28",
+      "topic": "Handsender: Alarm und ZV",
+      "source": "H 1; WH; WiPro-Vorprüfung",
+      "status": "bestätigt",
+      "finding": "Normal-WiPro bedient Alarm; Zentralverriegelung nur mit passender safe.lock-/Fahrzeuganbindung. Abgrenzung in eigenem abrufbarem Absatz erhalten."
+    },
+    {
+      "id": "F29",
+      "topic": "Handsender: Panik und Master",
+      "source": "WiPro-Bedienung/Installation aus Vorprüfung",
+      "status": "wiederholungsprüfung",
+      "finding": "Seriengrenze 0756-063 für Paniktastenfolge, beliebige Taste zum Beenden sowie erster Handsender als Master in neuen DE/FR-Abruffällen erneut geprüft."
+    },
+    {
+      "id": "F30",
+      "topic": "Handsender: Batterieöffnung",
+      "source": "QH 2",
+      "status": "bestätigt",
+      "finding": "Schrauben entfernen; CR2032 gleichen Typs polrichtig einsetzen. Keinen Schnappdeckelablauf des Standard-Magnetkontakts übertragen."
+    },
+    {
+      "id": "F31",
+      "topic": "Funk: Batteriewarnton",
+      "source": "QH/QL/QM/QW jeweils 1; QMW 1; WiPro-Vorprüfung",
+      "status": "offen",
+      "finding": "Zubehör-FAQ: 2 s Warnton; WiPro-Bedienung: 5 s. Offene Geräte-/Softwarezuordnung in vier Zubehörartikeln pro Sprache sichtbar gemacht."
+    },
+    {
+      "id": "F32",
+      "topic": "Handsender: LED-Zuordnung",
+      "source": "QH 1–2",
+      "status": "offen",
+      "finding": "FAQ nennt 30 s Sender-LED allgemein, detaillierter Absatz ordnet sie Magnetkontakt und Kabelschleife zu. Eindeutige Handsender-Zusage entfernt; fehlende LED-Dauer schließt schwache Batterie nicht aus."
+    },
+    {
+      "id": "F33",
+      "topic": "NFC: Produktkennung",
+      "source": "N 1/52; WN",
+      "status": "offen",
+      "finding": "Vorderseite 105299, Rückseite 101052 in derselben Rev. 2.3. Website bestätigt 105299; Rückseitenkennung nicht als alternative Bestellnummer übernehmen."
+    },
+    {
+      "id": "F34",
+      "topic": "NFC: Strom und Funk",
+      "source": "N 3/13",
+      "status": "bestätigt",
+      "finding": "3× AAA Alkaline LR03, 4,5 V, bis 1 Jahr; NFC 13,56 MHz und Verbindung zur Zentrale 868,35 MHz / 75 m nicht verwechseln."
+    },
+    {
+      "id": "F35",
+      "topic": "NFC: Medienreichweite",
+      "source": "N 3–6/13–16",
+      "status": "bestätigt",
+      "finding": "KeyCard ca. 25 mm, KeyTag ca. 20 mm, KeyStrap max. 15 mm. Armband nur für einwandige Scheiben bis 15 mm; Nähe zum Modul erforderlich."
+    },
+    {
+      "id": "F36",
+      "topic": "NFC: Armbandvarianten",
+      "source": "N 6/16",
+      "status": "bestätigt",
+      "finding": "M bis 216 mm, L bis 232 mm Handgelenkumfang. Nicht alle KeyStraps pauschal auf 216 mm begrenzen."
+    },
+    {
+      "id": "F37",
+      "topic": "NFC: Zentrale anlernen",
+      "source": "N 2/12; WNM Kap. 2",
+      "status": "korrigiert",
+      "finding": "Zuerst Handsender als Master; NFC mit mitgelieferter Karte auslösen. WiPro III quittiert akustisch, WiPro easy per Zentralen-LED; vorher stand pauschal akustische Bestätigung."
+    },
+    {
+      "id": "F38",
+      "topic": "NFC: Tags und Reset",
+      "source": "WNM Kap. 5–7",
+      "status": "bestätigt",
+      "finding": "Maximal 14 Medien einschließlich gelieferter Karte. 3 s: Lernmodus; 10 s: alle Tags löschen, keine Einzelwahl. Getrennt vom WiPro-Senderspeicher."
+    },
+    {
+      "id": "F39",
+      "topic": "NFC: LED und Batterie",
+      "source": "WNM Kap. 4/8; QN 1",
+      "status": "bestätigt",
+      "finding": "Blau 2× Originaltag, 1× Fremdtag; rot dauerhaft blinkend voller Speicher, rot 20 s leer. Nur Alkaline; beheizte Frontscheibe verkürzt Laufzeit. Web-Anleitung nicht aus Kurzanleitung abgeleitet."
+    },
+    {
+      "id": "F40",
+      "topic": "NFC: Webabweichungen",
+      "source": "WNM Kap. 2/5/8/10; N 3/13",
+      "status": "offen",
+      "finding": "Web-Kap. 2 nennt pauschal 20 mm, Kap. 10 unterscheidet Medien. Kap. 5 nennt Schließen nach links, Kap. 8 nach rechts. Bestehendes neutrales Schließen beibehalten; keine gegensätzliche Drehrichtung ergänzt."
+    },
+    {
+      "id": "F41",
+      "topic": "T.S.A.: eigenständig und CO",
+      "source": "R 2/8; QR 1; Gas-Vorprüfung",
+      "status": "präzisiert",
+      "finding": "Standalone möglich; Rauch, kein Gas/CO. G.A.S.-connect ausdrücklich nicht als CO-Schutz anbieten; CO-spezifische Ausführung/Sensor nötig."
+    },
+    {
+      "id": "F42",
+      "topic": "T.S.A.: Versionsgrenzen",
+      "source": "QR 1–2; WR",
+      "status": "bestätigt",
+      "finding": "WiPro 0823-021/6.8, safe.lock 1050-004/6.7s, Ford 5298-001/7.4.0s, Sprinter 5458-001/1.0.5 sx, Pro-Finder 0699-013/9.1; Standalone getrennt."
+    },
+    {
+      "id": "F43",
+      "topic": "T.S.A.: Aktivieren und Lernen",
+      "source": "R 3/9",
+      "status": "bestätigt",
+      "finding": "Montageplatte drücken UND im Uhrzeigersinn bis Einrasten drehen aktiviert; interner Knopf für Lernen, Testtaste am Gerät für Funktionstest."
+    },
+    {
+      "id": "F44",
+      "topic": "T.S.A.: Montage",
+      "source": "R 2–4/8–10",
+      "status": "bestätigt",
+      "finding": "Kein direktes Kleben auf Stoffdecke. Seitlicher Kunststoff mit Adapter 105755 weiß / 105756 grau; Klebeverbindungen mindestens 60 s andrücken."
+    },
+    {
+      "id": "F45",
+      "topic": "T.S.A.: FR-Adaptertext",
+      "source": "R 4/10",
+      "status": "offen",
+      "finding": "Letzter FR-Schritt sagt Decke trotz Wand in Vorbereitung und DE-Ablauf. Seitliche Wandmontage wird beibehalten und Quellenabweichung kenntlich gemacht."
+    },
+    {
+      "id": "F46",
+      "topic": "T.S.A.: Signale und Lebensdauer",
+      "source": "R 2/8",
+      "status": "bestätigt",
+      "finding": "Standby-LED alle 344 s; 1 Ton/43 s Batterieende, 3 Töne/43 s Fehler. Feste CR123A; ganzes Gerät spätestens nach 10 Jahren ersetzen. 3 s Taste mutet Batteriewarnung 8 h."
+    },
+    {
+      "id": "F47",
+      "topic": "T.S.A.: Fernalarm und Test",
+      "source": "R 2–3/8–9",
+      "status": "bestätigt",
+      "finding": "Testtaste >1 s; konfigurierte WiPro und Pro-Finder mitprüfen. SMS und Anruf dokumentiert, getrennt vom Wassermelder. Lokalen Alarm und Fahrzeugalarm separat beenden."
+    },
+    {
+      "id": "F48",
+      "topic": "T.S.A.: Norm und Temperatur",
+      "source": "R 2/8; WR; WDIN",
+      "status": "offen",
+      "finding": "Gerät −10..55 °C, Klebepad −35..93 °C auseinanderhalten. Anleitung/Website nennen DIN EN 14064, DIN Media führt Rauchwarnmelder unter DIN EN 14604; keine eigene Konformitätszusage."
+    },
+    {
+      "id": "F49",
+      "topic": "T.S.A.: Austauschformulierung",
+      "source": "R 2/8",
+      "status": "offen",
+      "finding": "Mehr als vier Batteriewarnungen ist ohne Definition des Zählereignisses dokumentiert; keine vier garantierten 8-h-Verlängerungen daraus ableiten. Bei Batterieende Austausch veranlassen."
+    },
+    {
+      "id": "F50",
+      "topic": "BT-connect: technische Daten",
+      "source": "B 1/32; WBT",
+      "status": "bestätigt",
+      "finding": "106000, 12/24 V DC, <1,5 mA, −20..70 °C, maximal 50 m Freifeld, 53 × 57 × 26 mm, ca. 41 g, Bluetooth 5.0 LE, 9 gekoppelte Geräte und 2 RJ10; keine garantierte Fahrzeugreichweite."
+    },
+    {
+      "id": "F51",
+      "topic": "BT-connect: Anschluss",
+      "source": "B 2/8",
+      "status": "präzisiert",
+      "finding": "Zwei gleichwertige RJ10 ausschließlich für WiPro III (safe.lock) und Pro-Finder; andere Geräte unzulässig. Versorgung parallel, vor Massearbeiten an WiPro/Pro-Finder den BT-connect-Versorgungsstecker abziehen."
+    },
+    {
+      "id": "F52",
+      "topic": "BT-connect: Neukopplung",
+      "source": "B 3/9",
+      "status": "korrigiert",
+      "finding": "Vorhandene OS-Kopplung vor dem neuen App-Pairing entfernen, nicht nur alte oder fehlerhafte Einträge. Taster bis dauerhaft blau, in Fahrzeugkonfiguration koppeln und Einstellungen speichern."
+    },
+    {
+      "id": "F53",
+      "topic": "BT-connect: Vollreset",
+      "source": "B 4/10",
+      "status": "bestätigt",
+      "finding": "Taster beim Wiederherstellen der Versorgung gedrückt halten bis dauerhaft blau; alle Geräte gelöscht und Lernmodus aktiv. Auch OS-Einträge entfernen. Keine belegte selektive Löschung; unabhängigen Zugang vorhalten."
+    },
+    {
+      "id": "F54",
+      "topic": "BT-connect: Smartwatch-Zuordnung",
+      "source": "QB 1–2; VM 1; WBT",
+      "status": "offen",
+      "finding": "BT-connect-FAQ und aktuelle Produktseite verwenden 1290-Seriengrenzen der älteren Modulreihe trotz BT-connect-Familie 6000-. Nicht als bestätigte BT-connect-Schwellen übertragen; Herstellerzuordnung fehlt."
+    },
+    {
+      "id": "F55",
+      "topic": "Vernetzungsmodul: historische Matrix",
+      "source": "VM 1; QV 1–2",
+      "status": "bestätigt",
+      "finding": "08.2023: 1290-001/V1.6 ohne Wear OS 2/3; 1290-002..009/V2.0 mit Wear OS 2, ohne 3; ab 1290-010/V2.1.0 mit beiden. iOS 12, Android 5.1.1 und watchOS 7 sind historische Mindestangaben, keine heutige Pauschalfreigabe."
+    },
+    {
+      "id": "F56",
+      "topic": "Bluetooth: lokale und ferne Bedienung",
+      "source": "QV 3; QB 2",
+      "status": "bestätigt",
+      "finding": "Bluetooth-Nahbedienung und Mobilfunk/SMS über zusätzlichen Pro-Finder getrennt; Vernetzungsmodul oder BT-connect allein ersetzt keine Mobilfunk-Fernbedienung."
+    },
+    {
+      "id": "F57",
+      "topic": "Bluetooth: Alarm und Zentralverriegelung",
+      "source": "QV 2–3; QB 1–2",
+      "status": "bestätigt",
+      "finding": "WiPro III scharf/unscharf; Zentralverriegelung zusätzlich bei passender safe.lock-Anbindung. Bestehende Abgrenzung bestätigt. Weitere Altdaten zu Speicher, Strom und Reset des Vernetzungsmoduls sind nicht neu durch ein Originalhandbuch geprüft."
+    }
+  ]
+}

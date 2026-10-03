@@ -1,11 +1,15 @@
 ---
 title: Mobilfunk und SIM-Karten — Pro-Finder sicher in Betrieb nehmen
 sources:
+  - content/quellen/profinder-ab045-handbuch-rev1.3.pdf
+  - content/quellen/profinder-ab045-kurz-rev1.3.2.pdf
+  - content/quellen/profinder-handbuch-rev2.6.pdf
+  - content/quellen/profinder-faq.pdf
   - sources/APP.docx
   - sources/Anbieter.docx
   - sources/Handy.docx
   - sources/Pro-finder_Update_2018.docx
-updated: '2026-07-15'
+updated: '2026-09-28'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -21,7 +25,7 @@ Diese Seite erklärt, wie eine SIM-Karte für den Pro-Finder ausgewählt, vorber
 
 - Vollständige Seriennummer des Pro-Finders ablesen; führende Nullen beibehalten.
 - Passendes SIM-Format und die richtige PIN-Einstellung anhand der Tabelle wählen.
-- Tarif mit **klassischen SMS und Telefonie** verwenden. Eine reine Daten-SIM ist ungeeignet.
+- Tarif mit **klassischen SMS und Telefonie** verwenden, ab -045 zusätzlich **mobile Daten (4G/LTE)**. Eine reine Daten-SIM und Multi-SIM sind ungeeignet.
 - Karte aktivieren, Rufnummer und gegebenenfalls Guthaben prüfen.
 - Mailbox, Rufumleitungen und störende Komfortdienste über das Kundenkonto, den Anbieter oder ein Smartphone deaktivieren.
 - Die SIM zuerst im Smartphone mit einem Anruf und einer klassischen SMS testen, dann in den spannungsfreien Pro-Finder einsetzen.
@@ -58,14 +62,16 @@ Diese Seite erklärt, wie eine SIM-Karte für den Pro-Finder ausgewählt, vorber
 | SMS | Klassische SMS müssen gesendet und empfangen werden können. |
 | Telefonie | Eingehende und ausgehende Anrufe müssen möglich sein. |
 | Eigene Rufnummer | Die Nummer muss bekannt und eindeutig erreichbar sein. |
-| Mobile Daten | Für die SMS-Steuerung des Pro-Finders nicht erforderlich; das Smartphone benötigt für App- und Kartendienste gegebenenfalls Datenzugang. |
+| Mobile Daten | Ab SN -045 muss die SIM mobile Daten (4G/LTE), SMS und Telefonie unterstützen. Nur die ältere Micro-SIM-Kurzfassung Rev. 1.1 nennt Daten als nicht erforderlich. Belege: FAQ S. 1; Kurzfassung ab -045 Rev. 1.3.2 S. 1. |
 | Prepaid oder Vertrag | Beides ist möglich, wenn die übrigen Anforderungen erfüllt sind. |
 
 Eine als 5G vermarktete SIM ist nicht automatisch ungeeignet. Entscheidend ist, ob der Tarif zusätzlich die vom jeweiligen Pro-Finder unterstützte Mobilfunktechnik sowie SMS und Telefonie bereitstellt. Ein 5G-only-, Daten-only- oder SMS-loser IoT-Tarif ist ungeeignet.
 
-Eine Multi-SIM ist nur nach Einzelfallprüfung sinnvoll. Für klare Zustellung und einfache Diagnose ist eine eigene Rufnummer für den Pro-Finder vorzuziehen.
+**Multi-SIM wird nicht unterstützt. Pro-Finder benötigt eine eigene Rufnummer** (FAQ S. 1; Kurzfassung ab -045 Rev. 1.3.2 S. 1). Multi-SIM nicht mit einer Multioperator-Karte gleichsetzen; deren gesonderte Einschränkung steht in der französischen Rev. 1.3, PDF S. 62. Die SIM- und Roamingbedingungen sind konkret abzuklären.
 
 ### Prepaid und Guthabenabfrage
+
+Die folgenden `P`-/Code-Regeln gelten nur für unterstützte Geräte **bis SN -044**. **Ab SN -045 ist keine Restguthabenabfrage über Pro-Finder vorgesehen**; Guthaben im Providerportal prüfen und gegebenenfalls automatische Aufladung einrichten. Keine Guthabencodes aus der Altanleitung in die LTE-Konfiguration übernehmen. Beleg: FAQ PDF S. 4.
 
 - Guthaben, Gültigkeit und automatische Aufladung so organisieren, dass die Karte nicht unbemerkt gesperrt wird.
 - Den Buchstaben `P` in der Programmier-SMS nur bei Prepaid verwenden.
@@ -120,7 +126,7 @@ Programmierbefehle dürfen nicht als iMessage versendet werden. Für die Einrich
 3. Spannung wieder einschalten und das Einbuchen abwarten.
 4. Programmier-SMS exakt und ohne zusätzliche Leerzeichen senden.
 5. Antwort-SMS prüfen.
-6. Pro-Finder anrufen und einen kontrollierten Alarmtest durchführen.
+6. Vor einem Testanruf die Betriebsart prüfen: **In 2 und 3 verändert der Anruf den WiPro-Scharfzustand**. Für eine reine Abfrage den passenden Status-SMS-Befehl verwenden; Alarmtest kontrolliert durchführen.
 7. Bei Prepaid nach dem Test das verbleibende Guthaben prüfen.
 
 Ein Testanruf liefert nur einen Hinweis:

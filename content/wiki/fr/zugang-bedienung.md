@@ -1,17 +1,20 @@
 ---
 title: Supports d’accès et commande — voies d’accès dans le système THITRONIK
 sources:
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-  - wiki/wipro-iii.md
-  - wiki/funk-handsender.md
-  - wiki/nfc-modul.md
-  - wiki/bt-connect.md
-  - wiki/vernetzungsmodul.md
-  - wiki/pro-finder.md
-  - wiki/app-befehle.md
-  - wiki/safe-lock-umruestplatine.md
-  - wiki/fahrzeugkompatibilitaet.md
-updated: '2026-07-15'
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/funk-handsender.md"
+  - "content/wiki/de/nfc-modul.md"
+  - "content/wiki/de/bt-connect.md"
+  - "content/wiki/de/vernetzungsmodul.md"
+  - "content/wiki/de/pro-finder.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/safe-lock-umruestplatine.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/quellen/camplock-fingerprint.pdf"
+  - "content/quellen/camplock-vanlock-fingerprint.pdf"
+  - "content/quellen/katalog_thitronik_de.pdf"
+updated: 2026-09-28
 confidence: high
 lang: fr
 translation_of: sources/zugang-bedienung.md
@@ -31,7 +34,7 @@ Cette page distingue le **support d’accès**, le **lecteur ou dispositif de co
 
 | Niveau | Exemples | Classification |
 |--------|----------|----------------|
-| Technologie d’accès installée dans le véhicule | CampLock Fingerprint, module NFC, BT-connect | Technologie ou lecteur installé dans le véhicule |
+| Technologie d’accès installée dans le véhicule | CampLock Fingerprint, VanLock Fingerprint, module NFC, BT-connect | Technologie ou lecteur installé dans le véhicule |
 | Support d’accès personnel | Empreinte digitale, télécommande radio 868, KeyCard, KeyTag, KeyStrap, smartphone ou montre connectée | Support avec lequel une personne déclenche une commande |
 | Commande à distance | Pro-Finder via le réseau mobile | Commande à distance, transmission d’alarme et localisation ; pas un accès de proximité principal |
 | Voie d’origine du véhicule | Clé d’origine du véhicule | Commande dépendant du profil du véhicule, du raccordement CAN, de la variante WiPro et de la configuration |
@@ -43,7 +46,9 @@ Cette page distingue le **support d’accès**, le **lecteur ou dispositif de co
 | Élément | Type | Verrouiller/déverrouiller | Armer/désarmer | Portée | Condition | Détails |
 |---------|------|---------------------------|----------------|--------|-----------|---------|
 | Clé d’origine du véhicule | voie radio du véhicule | fonction du véhicule | selon le véhicule | portée de la clé du véhicule | profil de véhicule pris en charge et raccordement correct ; protection contre le rejeu inactive | [[WiPro III — système d'alarme radio pour véhicules de loisirs]] |
-| CampLock Fingerprint | accès biométrique à la porte | oui | si relié à une WiPro compatible | directement à la porte | porte de cellule Hartal avec verrouillage centralisé | — |
+| CampLock Fingerprint 106111/106144 | accès biométrique à la porte | porte de cellule Hartal ; véhicule entier avec safe.lock | si appairé | directement à la porte | porte Hartal avec verrouillage centralisé ; WiPro III ou WiPro III safe.lock | [[CampLock Fingerprint]] |
+| CampLock Fingerprint 106111-002/106144-002 | accès biométrique | véhicule entier | oui | directement au capteur | WiPro III safe.lock selon la notice commune ; vérifier l’intégration de la porte | [[CampLock Fingerprint]] |
+| VanLock Fingerprint 106259/106260 | accès biométrique | véhicule entier | oui | directement au capteur | WiPro III safe.lock selon la notice commune ; le catalogue cite aussi WiPro III, donc vérifier la version | [[VanLock Fingerprint]] |
 | Télécommande radio 868 | radio 868 MHz | uniquement avec un raccordement safe.lock compatible | oui | jusqu’à 75 m en champ libre | WiPro III ou WiPro III safe.lock | [[Émetteur radio 868 — télécommande pour WiPro III]] |
 | Module NFC | lecteur NFC relié à la WiPro par radio 868 MHz | uniquement avec un raccordement safe.lock compatible | oui | proximité NFC du module | système compatible et support NFC mémorisé | [[module NFC — Contrôlez le WiPro via NFC]] |
 | KeyCard | support d’accès NFC | via le module NFC | via le module NFC | env. 25 mm | module NFC requis | — |
@@ -67,20 +72,23 @@ Cette page distingue le **support d’accès**, le **lecteur ou dispositif de co
 
 ## 1. CampLock Fingerprint
 
-**Réf. 106111 (argent) / 106144 (noir)**  
-Accès biométrique pour les **portes de cellule Hartal avec verrouillage centralisé**.
+**Réf. 106111/106144 :** accès biométrique pour les **portes de cellule Hartal avec verrouillage centralisé**. Selon sa notice propre, WiPro III commande la porte et l’alarme ; WiPro III safe.lock peut aussi commander le véhicule entier (notice CampLock, p. 2 du PDF).
+
+**Réf. 106111-002/106144-002 :** la notice commune CampLock/VanLock décrit un fonctionnement exclusivement avec **WiPro III safe.lock**. Ses conditions ne doivent pas être appliquées d’office à l’ancienne version CampLock (notice commune, p. 20–21 du PDF).
 
 ### Fonctions et caractéristiques
 
-- déverrouillage et verrouillage de la porte par **empreinte digitale**
-- commande simultanée possible du système d’alarme THITRONIK
-- compatible avec **WiPro III** et **WiPro III safe.lock**
-- **2 empreintes maîtres** et **16 empreintes mémorisables**
+- Le verrouillage et la commande de l’alarme dépendent de la **référence et de la variante WiPro**.
+- Jusqu’à **16 empreintes au total** ; les deux premières deviennent des empreintes maîtres.
 - indice de protection **IP67**
 
 ### Classification
 
-CampLock Fingerprint est installé directement sur la porte de cellule. Il ne remplace ni Pro-Finder ni le module NFC, mais constitue une voie d’accès biométrique distincte.
+La notice de l’ancien CampLock décrit la porte Hartal. Pour la version -002, vérifier l’intégration du véhicule et de la porte dans les documents correspondants. Voir [[CampLock Fingerprint]].
+
+### VanLock Fingerprint
+
+**Réf. 106259/106260.** La notice commune décrit VanLock avec CampLock -002 pour WiPro III safe.lock (p. 20–21 du PDF). Le catalogue allemand cite aussi WiPro III pour les mêmes références (p. 25 du PDF) ; en cas de divergence, vérifier la version de l’appareil et faire confirmer sa compatibilité. Utilisation, gestion des empreintes et dépannage : [[VanLock Fingerprint]].
 
 ---
 

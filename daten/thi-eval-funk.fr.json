@@ -1,0 +1,1069 @@
+{
+  "_hinweis": "Dokumentbasierte Belegfälle, einschließlich ausdrücklich gekennzeichneter Wiederholungsfälle aus der WiPro-Prüfung. Reiner Retrieval-/Kontexttest; keine Bewertung generierter Antworten.",
+  "cases": [
+    {
+      "id": "wasser-standalone",
+      "question": "Le détecteur d’eau 106021 peut-il fonctionner de manière autonome sans WiPro ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "pas destiné à fonctionner de manière autonome",
+        "compatible"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "pas destiné à fonctionner de manière autonome; compatible",
+      "source": "W 2/13; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "pas destiné à fonctionner de manière autonome",
+        "compatible"
+      ]
+    },
+    {
+      "id": "wasser-ip67",
+      "question": "Peut-on monter le détecteur d’eau IP67 dehors ou en immersion permanente ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "zone intérieure sèche",
+        "n’étend pas",
+        "immersion permanente"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "zone intérieure sèche; n’étend pas; immersion permanente",
+      "source": "W 2–4/13–15; WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "zone intérieure sèche",
+        "n’étend pas",
+        "immersion permanente"
+      ]
+    },
+    {
+      "id": "wasser-boden",
+      "question": "Où placer les broches du détecteur d’eau et quelle est la longueur de son câble ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "touchent le sol",
+        "30 cm",
+        "sèche"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "touchent le sol; 30 cm; sèche",
+      "source": "W 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "touchent le sol",
+        "30 cm",
+        "sèche"
+      ]
+    },
+    {
+      "id": "wasser-orientierung",
+      "question": "Comment faire coulisser l’unité émettrice du détecteur d’eau sur la plaque ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "ergots",
+        "vers le bas",
+        "haut à droite"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ergots; vers le bas; haut à droite",
+      "source": "W 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "ergots",
+        "vers le bas",
+        "haut à droite"
+      ]
+    },
+    {
+      "id": "wasser-schrauben",
+      "question": "Quelles vis utiliser pour le capteur et l’émetteur du détecteur d’eau ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "2,9 × 13",
+        "V4A",
+        "ne sont pas fournies"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "2,9 × 13; V4A; ne sont pas fournies",
+      "source": "W 3–4/14–15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "2,9 × 13",
+        "V4A",
+        "ne sont pas fournies"
+      ]
+    },
+    {
+      "id": "wasser-test",
+      "question": "Comment tester le détecteur d’eau, faut-il armer la WiPro ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "WiPro armée",
+        "chiffon humide",
+        "ne prouve pas"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "WiPro armée; chiffon humide; ne prouve pas",
+      "source": "W 5/16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "WiPro armée",
+        "chiffon humide",
+        "ne prouve pas"
+      ]
+    },
+    {
+      "id": "wasser-batterie",
+      "question": "Comment remplacer la pile du détecteur d’eau et contrôler le joint ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "CR2032",
+        "joint",
+        "polarité"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "CR2032; joint; polarité",
+      "source": "W 6/17; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "CR2032",
+        "joint",
+        "polarité"
+      ]
+    },
+    {
+      "id": "wasser-version",
+      "question": "Quels numéros de série et logiciels WiPro III et Pro-Finder acceptent le détecteur d’eau ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "0823-021",
+        "6.8",
+        "0699-013",
+        "9.1"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "0823-021; 6.8; 0699-013; 9.1",
+      "source": "QW 2; WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "0823-021",
+        "6.8",
+        "0699-013",
+        "9.1"
+      ]
+    },
+    {
+      "id": "wasser-sms",
+      "question": "Le détecteur d’eau garantit-il un appel Pro-Finder en plus du SMS ?",
+      "expected": [
+        "/fr/funk-wassermelder"
+      ],
+      "antwort_muss": [
+        "SMS",
+        "ne garantit pas d’appel"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "SMS; ne garantit pas d’appel",
+      "source": "WW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-wassermelder",
+      "kontext_muss": [
+        "SMS",
+        "ne garantit pas d’appel"
+      ]
+    },
+    {
+      "id": "magnet-orientierung",
+      "question": "Contact magnétique standard mémorisé mais sans alarme : dans quel sens orienter la LED ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "à l’opposé de l’aimant",
+        "mémorisation",
+        "aucune alarme"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "à l’opposé de l’aimant; mémorisation; aucune alarme",
+      "source": "M0/M1/M2 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "à l’opposé de l’aimant",
+        "mémorisation",
+        "aucune alarme"
+      ]
+    },
+    {
+      "id": "magnet-abstand-konflikt",
+      "question": "Pour le contact magnétique standard, faut-il respecter 25 mm ou 22 mm ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "25 mm",
+        "22 mm",
+        "règle éditoriale provisoire",
+        "non résolue"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "25 mm; 22 mm; règle éditoriale provisoire; non résolue",
+      "source": "M0/M1/M2 2/6; WiPro I 7/43; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "25 mm",
+        "22 mm",
+        "règle éditoriale provisoire",
+        "non résolue"
+      ]
+    },
+    {
+      "id": "magnet-wasserdicht-abstand",
+      "question": "Quelle distance pour le contact magnétique étanche 106020 fermé et pendant l’apprentissage ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "22 mm",
+        "30 mm",
+        "l’une vers l’autre"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "22 mm; 30 mm; l’une vers l’autre",
+      "source": "MW 4–5/15–16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "22 mm",
+        "30 mm",
+        "l’une vers l’autre"
+      ]
+    },
+    {
+      "id": "magnet-wasserdicht-platte",
+      "question": "Dans quel sens orienter les ergots et les flèches de la plaque du contact magnétique étanche ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "ergots d’arrêt",
+        "à l’opposé de l’aimant",
+        "sens de la flèche"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ergots d’arrêt; à l’opposé de l’aimant; sens de la flèche",
+      "source": "MW 4/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "ergots d’arrêt",
+        "à l’opposé de l’aimant",
+        "sens de la flèche"
+      ]
+    },
+    {
+      "id": "magnet-wasserdicht-schrauben",
+      "question": "Les vis V4A de la plaque du contact magnétique étanche sont-elles fournies ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "V4A",
+        "ne sont pas fournies"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "V4A; ne sont pas fournies",
+      "source": "MW 3–4/14–15; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "V4A",
+        "ne sont pas fournies"
+      ]
+    },
+    {
+      "id": "magnet-batterie-standard",
+      "question": "Comment ouvrir le contact magnétique standard pour remplacer la CR2032 ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "encoche",
+        "côté long",
+        "à l’opposé de l’aimant"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "encoche; côté long; à l’opposé de l’aimant",
+      "source": "QH 2; M1 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "encoche",
+        "côté long",
+        "à l’opposé de l’aimant"
+      ]
+    },
+    {
+      "id": "magnet-gewicht",
+      "question": "Le contact magnétique étanche 106020 pèse-t-il 33 g ou 37 g ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "33 g",
+        "37 g",
+        "non résolue"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "33 g; 37 g; non résolue",
+      "source": "MW 17; WMW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "33 g",
+        "37 g",
+        "non résolue"
+      ]
+    },
+    {
+      "id": "magnet-temperatur",
+      "question": "Le contact magnétique étanche avec CR2032 est-il autorisé en permanence à 125 °C ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "125 °C",
+        "Ne pas en déduire",
+        "CR2032"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "125 °C; Ne pas en déduire; CR2032",
+      "source": "MW 17; WMW; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "125 °C",
+        "Ne pas en déduire",
+        "CR2032"
+      ]
+    },
+    {
+      "id": "magnet-adapter",
+      "question": "Quels adaptateurs de contact magnétique conviennent aux grands écarts ou soutes métalliques ?",
+      "expected": [
+        "/fr/funk-magnetkontakt"
+      ],
+      "antwort_muss": [
+        "100428",
+        "100729"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "100428; 100729",
+      "source": "M0/M1/M2 3/7; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-magnetkontakt",
+      "kontext_muss": [
+        "100428",
+        "100729"
+      ]
+    },
+    {
+      "id": "schleife-varianten",
+      "question": "Quelle référence et longueur pour la boucle de câble radio XL blanche ?",
+      "expected": [
+        "/fr/funk-kabelschleife"
+      ],
+      "antwort_muss": [
+        "100944",
+        "5 m",
+        "100761",
+        "2,5 m"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "100944; 5 m; 100761; 2,5 m",
+      "source": "L1–L4 1/12; WL; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-kabelschleife",
+      "kontext_muss": [
+        "100944",
+        "5 m",
+        "100761",
+        "2,5 m"
+      ]
+    },
+    {
+      "id": "schleife-alarm",
+      "question": "Le retrait de la boucle de câble radio du support déclenche-t-il toujours une alarme ?",
+      "expected": [
+        "/fr/funk-kabelschleife"
+      ],
+      "antwort_muss": [
+        "armé",
+        "mémorisée",
+        "liaison radio"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "armé; mémorisée; liaison radio",
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-kabelschleife",
+      "kontext_muss": [
+        "armé",
+        "mémorisée",
+        "liaison radio"
+      ]
+    },
+    {
+      "id": "schleife-schrauben",
+      "question": "Puis-je utiliser d’autres vis que celles fournies pour la boucle de câble radio ?",
+      "expected": [
+        "/fr/funk-kabelschleife"
+      ],
+      "antwort_muss": [
+        "vis",
+        "autres matériaux",
+        "fonction"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "vis; autres matériaux; fonction",
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-kabelschleife",
+      "kontext_muss": [
+        "vis",
+        "autres matériaux",
+        "fonction"
+      ]
+    },
+    {
+      "id": "schleife-test",
+      "question": "Comment tester la portée de la boucle de câble radio avant sa fixation définitive ?",
+      "expected": [
+        "/fr/funk-kabelschleife"
+      ],
+      "antwort_muss": [
+        "armer",
+        "face inférieure",
+        "blindage métallique"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "armer; face inférieure; blindage métallique",
+      "source": "L1–L4 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-kabelschleife",
+      "kontext_muss": [
+        "armer",
+        "face inférieure",
+        "blindage métallique"
+      ]
+    },
+    {
+      "id": "schleife-dichtung",
+      "question": "Quelle pile et quel joint contrôler lors du remplacement de la pile de la boucle de câble radio ?",
+      "expected": [
+        "/fr/funk-kabelschleife"
+      ],
+      "antwort_muss": [
+        "CR2032",
+        "joint en caoutchouc",
+        "polarité"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "CR2032; joint en caoutchouc; polarité",
+      "source": "QL 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-kabelschleife",
+      "kontext_muss": [
+        "CR2032",
+        "joint en caoutchouc",
+        "polarité"
+      ]
+    },
+    {
+      "id": "schleife-433",
+      "question": "La boucle de câble radio 868 fonctionne-t-elle avec une ancienne WiPro all in one 433 MHz ?",
+      "expected": [
+        "/fr/funk-kabelschleife"
+      ],
+      "antwort_muss": [
+        "Non",
+        "433",
+        "pas"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Non; 433; pas",
+      "source": "bereits geprüfte WiPro-FAQ; Quellenbericht WiPro; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-kabelschleife",
+      "kontext_muss": [
+        "Non",
+        "433",
+        "pas"
+      ]
+    },
+    {
+      "id": "handsender-zv",
+      "question": "La télécommande 101064 verrouille-t-elle les portes avec une WiPro III standard ?",
+      "expected": [
+        "/fr/funk-handsender"
+      ],
+      "antwort_muss": [
+        "qu’avec",
+        "safe.lock",
+        "profil"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "qu’avec; safe.lock; profil",
+      "source": "H 1; WH; WiPro-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-handsender",
+      "kontext_muss": [
+        "qu’avec",
+        "safe.lock",
+        "profil"
+      ]
+    },
+    {
+      "id": "handsender-panik",
+      "question": "Comment déclencher puis arrêter l’alarme panique avec la télécommande avant et à partir de 0756-063 ?",
+      "expected": [
+        "/fr/funk-handsender"
+      ],
+      "antwort_muss": [
+        "0756-063",
+        "simultanément",
+        "seconde",
+        "l’une des deux touches"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "0756-063; simultanément; seconde; l’une des deux touches",
+      "source": "WiPro-Bedienung; bereits geprüfte Seriengrenze; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-handsender",
+      "kontext_muss": [
+        "0756-063",
+        "simultanément",
+        "seconde",
+        "l’une des deux touches"
+      ]
+    },
+    {
+      "id": "handsender-lernen",
+      "question": "Comment mémoriser la première télécommande sur la centrale WiPro III ?",
+      "expected": [
+        "/fr/funk-handsender"
+      ],
+      "antwort_muss": [
+        "télécommande maître",
+        "B",
+        "double signal"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "télécommande maître; B; double signal",
+      "source": "WiPro Installation Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-handsender",
+      "kontext_muss": [
+        "télécommande maître",
+        "B",
+        "double signal"
+      ]
+    },
+    {
+      "id": "handsender-batteriewarnung",
+      "question": "Comment reconnaître une pile faible de télécommande : 2 ou 5 secondes et LED de 30 secondes ?",
+      "expected": [
+        "/fr/funk-handsender"
+      ],
+      "antwort_muss": [
+        "2 secondes",
+        "5 secondes",
+        "pas clairement"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "2 secondes; 5 secondes; pas clairement",
+      "source": "QH 1–2; WiPro-Bedienung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-handsender",
+      "kontext_muss": [
+        "2 secondes",
+        "5 secondes",
+        "pas clairement"
+      ]
+    },
+    {
+      "id": "nfc-master",
+      "question": "Puis-je mémoriser le module NFC en premier comme maître sur une WiPro vide ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "Ne pas",
+        "premier",
+        "télécommande principale"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Ne pas; premier; télécommande principale",
+      "source": "WNM 2; WiPro-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "Ne pas",
+        "premier",
+        "télécommande principale"
+      ]
+    },
+    {
+      "id": "nfc-quittierung",
+      "question": "Comment WiPro easy confirme-t-elle l’apprentissage du module NFC, contrairement à WiPro III ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "signal sonore sur WiPro III",
+        "LED de la centrale sur WiPro easy"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "signal sonore sur WiPro III; LED de la centrale sur WiPro easy",
+      "source": "WNM 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "signal sonore sur WiPro III",
+        "LED de la centrale sur WiPro easy"
+      ]
+    },
+    {
+      "id": "nfc-batterie",
+      "question": "Quelles piles pour le module NFC et faut-il réenregistrer les tags après remplacement ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "alcalines",
+        "AAA",
+        "LR03",
+        "pas nécessaire"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "alcalines; AAA; LR03; pas nécessaire",
+      "source": "N 3/13; WNM 8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "alcalines",
+        "AAA",
+        "LR03",
+        "pas nécessaire"
+      ]
+    },
+    {
+      "id": "nfc-reichweite",
+      "question": "Quelles portées NFC KeyCard KeyTag KeyStrap et quelle vitre pour le bracelet ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "25 mm",
+        "20 mm",
+        "15 mm",
+        "simple"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "25 mm; 20 mm; 15 mm; simple",
+      "source": "N 3–6/13–16; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "25 mm",
+        "20 mm",
+        "15 mm",
+        "simple"
+      ]
+    },
+    {
+      "id": "nfc-reset",
+      "question": "Puis-je effacer un seul tag NFC perdu ou la réinitialisation efface-t-elle tous les tags ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "10 secondes",
+        "tous",
+        "pas possible"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "10 secondes; tous; pas possible",
+      "source": "WNM 7; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "10 secondes",
+        "tous",
+        "pas possible"
+      ]
+    },
+    {
+      "id": "nfc-speicher",
+      "question": "Combien de supports NFC peut-on enregistrer, la KeyCard fournie est-elle comprise ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "14",
+        "KeyCard fournie"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "14; KeyCard fournie",
+      "source": "WNM 5–6; WN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "14",
+        "KeyCard fournie"
+      ]
+    },
+    {
+      "id": "nfc-nummer",
+      "question": "La référence du module NFC est-elle 105299 ou 101052 ?",
+      "expected": [
+        "/fr/nfc-modul"
+      ],
+      "antwort_muss": [
+        "105299",
+        "101052",
+        "n’est pas une référence"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "105299; 101052; n’est pas une référence",
+      "source": "N 1/52; WN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "nfc-modul",
+      "kontext_muss": [
+        "105299",
+        "101052",
+        "n’est pas une référence"
+      ]
+    },
+    {
+      "id": "tsa-standalone",
+      "question": "Le détecteur de fumée T.S.A. marche-t-il sans WiPro et G.A.S.-connect remplace-t-il un capteur CO ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "autonome",
+        "G.A.S.-connect ne détecte pas le monoxyde de carbone"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "autonome; G.A.S.-connect ne détecte pas le monoxyde de carbone",
+      "source": "QR 1; R 2/8; Gas-Vorprüfung; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "autonome",
+        "G.A.S.-connect ne détecte pas le monoxyde de carbone"
+      ]
+    },
+    {
+      "id": "tsa-version",
+      "question": "Quelles versions pour le détecteur de fumée T.S.A. avec safe.lock Ford, Sprinter et Pro-Finder ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "5298-001",
+        "7.4.0s",
+        "5458-001",
+        "1.0.5",
+        "9.1"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "5298-001; 7.4.0s; 5458-001; 1.0.5; 9.1",
+      "source": "QR 1–2; WR; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "5298-001",
+        "7.4.0s",
+        "5458-001",
+        "1.0.5",
+        "9.1"
+      ]
+    },
+    {
+      "id": "tsa-aktivieren",
+      "question": "Comment activer le détecteur de fumée T.S.A. avec sa plaque de montage ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "sens des aiguilles",
+        "appuyant",
+        "s’enclenche"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "sens des aiguilles; appuyant; s’enclenche",
+      "source": "R 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "sens des aiguilles",
+        "appuyant",
+        "s’enclenche"
+      ]
+    },
+    {
+      "id": "tsa-stoffdecke",
+      "question": "Peut-on coller le T.S.A. sur un plafond en tissu, où poser l’adaptateur ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "Ne pas coller",
+        "tissu",
+        "paroi",
+        "60 secondes"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Ne pas coller; tissu; paroi; 60 secondes",
+      "source": "R 2/4/8/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "Ne pas coller",
+        "tissu",
+        "paroi",
+        "60 secondes"
+      ]
+    },
+    {
+      "id": "tsa-signale",
+      "question": "Que signifient un ou trois signaux brefs toutes les 43 secondes sur le T.S.A. ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "43 secondes",
+        "Pile",
+        "Mode de défaut"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "43 secondes; Pile; Mode de défaut",
+      "source": "R 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "43 secondes",
+        "Pile",
+        "Mode de défaut"
+      ]
+    },
+    {
+      "id": "tsa-batterie",
+      "question": "Puis-je remplacer la CR123A du T.S.A. et combien de temps couper l’avertissement ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "ne peut pas être remplacée",
+        "3 secondes",
+        "8 heures",
+        "dix ans"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ne peut pas être remplacée; 3 secondes; 8 heures; dix ans",
+      "source": "R 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "ne peut pas être remplacée",
+        "3 secondes",
+        "8 heures",
+        "dix ans"
+      ]
+    },
+    {
+      "id": "tsa-norm",
+      "question": "Quelle norme pour le détecteur de fumée T.S.A. : DIN EN 14064 ou DIN EN 14604 ?",
+      "expected": [
+        "/fr/funk-rauchmelder"
+      ],
+      "antwort_muss": [
+        "14064",
+        "14604",
+        "ne revendique pas"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "14064; 14604; ne revendique pas",
+      "source": "R 2/8; WR; WDIN; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "funk-rauchmelder",
+      "kontext_muss": [
+        "14064",
+        "14604",
+        "ne revendique pas"
+      ]
+    },
+    {
+      "id": "bt-daten",
+      "question": "Combien d’appareils BT-connect mémorise-t-il, avec quelle portée et consommation ?",
+      "expected": [
+        "/fr/bt-connect"
+      ],
+      "antwort_muss": [
+        "9 au maximum",
+        "50 m au maximum",
+        "inférieure à 1,5 mA"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "9 au maximum; 50 m au maximum; inférieure à 1,5 mA",
+      "source": "B 32; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "bt-connect",
+      "kontext_muss": [
+        "9 au maximum",
+        "50 m au maximum",
+        "inférieure à 1,5 mA"
+      ]
+    },
+    {
+      "id": "bt-rj10",
+      "question": "Puis-je raccorder d’autres appareils aux prises RJ10 du BT-connect ?",
+      "expected": [
+        "/fr/bt-connect"
+      ],
+      "antwort_muss": [
+        "Seuls WiPro III",
+        "Pro-Finder",
+        "d’autres appareils est interdit"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Seuls WiPro III; Pro-Finder; d’autres appareils est interdit",
+      "source": "B 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "bt-connect",
+      "kontext_muss": [
+        "Seuls WiPro III",
+        "Pro-Finder",
+        "d’autres appareils est interdit"
+      ]
+    },
+    {
+      "id": "bt-masse",
+      "question": "Que faire sur BT-connect avant de travailler sur le raccordement à la masse du WiPro ?",
+      "expected": [
+        "/fr/bt-connect"
+      ],
+      "antwort_muss": [
+        "Avant toute intervention sur leur raccordement à la masse",
+        "débrancher impérativement le connecteur d’alimentation"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Avant toute intervention sur leur raccordement à la masse; débrancher impérativement le connecteur d’alimentation",
+      "source": "B 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "bt-connect",
+      "kontext_muss": [
+        "Avant toute intervention sur leur raccordement à la masse",
+        "débrancher impérativement le connecteur d’alimentation"
+      ]
+    },
+    {
+      "id": "bt-kopplung",
+      "question": "Comment appairer BT-connect s’il apparaît déjà comme connecté dans le smartphone ?",
+      "expected": [
+        "/fr/bt-connect"
+      ],
+      "antwort_muss": [
+        "comme connecté ou appairé",
+        "supprimer cette entrée",
+        "bleu de façon continue",
+        "Enregistrer"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "comme connecté ou appairé; supprimer cette entrée; bleu de façon continue; Enregistrer",
+      "source": "B 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "bt-connect",
+      "kontext_muss": [
+        "comme connecté ou appairé",
+        "supprimer cette entrée",
+        "bleu de façon continue",
+        "Enregistrer"
+      ]
+    },
+    {
+      "id": "bt-reset",
+      "question": "Comment supprimer tous les appareils mémorisés dans BT-connect ?",
+      "expected": [
+        "/fr/bt-connect"
+      ],
+      "antwort_muss": [
+        "Rétablir l’alimentation tout en maintenant le bouton enfoncé",
+        "tous les appareils mémorisés sont supprimés",
+        "paramètres Bluetooth"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Rétablir l’alimentation tout en maintenant le bouton enfoncé; tous les appareils mémorisés sont supprimés; paramètres Bluetooth",
+      "source": "B 4/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "bt-connect",
+      "kontext_muss": [
+        "Rétablir l’alimentation tout en maintenant le bouton enfoncé",
+        "tous les appareils mémorisés sont supprimés",
+        "paramètres Bluetooth"
+      ]
+    },
+    {
+      "id": "bt-smartwatch-zuordnung",
+      "question": "Le tableau des montres 1290 de la FAQ BT-connect valide-t-il mon BT-connect 6000 ?",
+      "expected": [
+        "/fr/bt-connect"
+      ],
+      "antwort_muss": [
+        "1290-xxx",
+        "6000-",
+        "ne constituent pas des seuils",
+        "fabricant doit clarifier"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1290-xxx; 6000-; ne constituent pas des seuils; fabricant doit clarifier",
+      "source": "QB 1–2; WBT; VM 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "bt-connect",
+      "kontext_muss": [
+        "1290-xxx",
+        "6000-",
+        "ne constituent pas des seuils",
+        "fabricant doit clarifier"
+      ]
+    },
+    {
+      "id": "vernetzung-wear-matrix",
+      "question": "Quels numéros de série du module Bluetooth de mise en réseau prennent en charge Wear OS 2 et Wear OS 3 ?",
+      "expected": [
+        "/fr/vernetzungsmodul"
+      ],
+      "antwort_muss": [
+        "1290-001 / V1.6",
+        "ne sont pas pris en charge",
+        "1290-002 à 1290-009 / V2.0",
+        "mais pas Wear OS 3",
+        "1290-010 / V2.1.0",
+        "août 2023"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1290-001 / V1.6; ne sont pas pris en charge; 1290-002 à 1290-009 / V2.0; mais pas Wear OS 3; 1290-010 / V2.1.0; août 2023",
+      "source": "VM 1; QV 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "vernetzungsmodul",
+      "kontext_muss": [
+        "1290-001 / V1.6",
+        "ne sont pas pris en charge",
+        "1290-002 à 1290-009 / V2.0",
+        "mais pas Wear OS 3",
+        "1290-010 / V2.1.0",
+        "août 2023"
+      ]
+    },
+    {
+      "id": "vernetzung-ferne",
+      "question": "Le module Bluetooth de mise en réseau peut-il commander à distance par SMS sans Pro-Finder ?",
+      "expected": [
+        "/fr/vernetzungsmodul"
+      ],
+      "antwort_muss": [
+        "commande Bluetooth locale",
+        "Pro-Finder fournit",
+        "commande mobile/SMS séparée"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "commande Bluetooth locale; Pro-Finder fournit; commande mobile/SMS séparée",
+      "source": "QV 3; Quellenkennungen: docs/quellenpruefung/2026-10-01-funk.md",
+      "kategorie": "vernetzungsmodul",
+      "kontext_muss": [
+        "commande Bluetooth locale",
+        "Pro-Finder fournit",
+        "commande mobile/SMS séparée"
+      ]
+    }
+  ]
+}

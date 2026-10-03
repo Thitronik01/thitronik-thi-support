@@ -1,0 +1,621 @@
+{
+  "_hinweis": "Dokumentbasierte Fahrzeug- und Versionsfälle. Retrieval/Kontext, keine Live-Modellantworten. Quellen im Manifest 2026-10-01-fahrzeuge-quellen.json.",
+  "cases": [
+    {
+      "id": "adria-15min",
+      "question": "Adria Coral Matrix 2021: Warum alle 15 Minuten CAN-Alarm an der Aufbautür und wie bleibt sie überwacht?",
+      "expected": [
+        "/de/fahrzeuge/adria-coral-matrix"
+      ],
+      "kontext_muss": [
+        "15 Minuten",
+        "weiß/braun",
+        "beide Enden",
+        "Funk-Magnetkontakt"
+      ],
+      "source": "adria-2021 PDF 2",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ducato244-verzoegerung",
+      "question": "Ducato 244: Sind 60 Sekunden eine Eintrittsverzögerung für alle Kontakte?",
+      "expected": [
+        "/de/fahrzeuge/fiat-ducato-244"
+      ],
+      "kontext_muss": [
+        "60 Sekunden",
+        "Scharfschaltverzögerung",
+        "Funkkontakte",
+        "nicht um eine Eintrittsverzögerung"
+      ],
+      "source": "ducato-244 PDF 2; ducato-244 PDF 6; ducato-244 PDF 7",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "x250-can",
+      "question": "Ducato X250 Euro 4: Welche CAN-Pins im grünen oder schwarzen Einsatz, darf ich die Varianten mischen?",
+      "expected": [
+        "/de/fahrzeuge/fiat-ducato-x250"
+      ],
+      "kontext_muss": [
+        "Pin 5",
+        "Pin 6",
+        "Pin 25",
+        "Pin 24",
+        "derselben"
+      ],
+      "source": "ducato-x250 PDF 2; ducato-x250 PDF 4",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "fiat-talento-keyless",
+      "question": "Fiat Talento: Kann ich mit Keyless-Entry die WiPro über den Originalschlüssel steuern?",
+      "expected": [
+        "/de/fahrzeuge/fiat-talento"
+      ],
+      "kontext_muss": [
+        "0823-014",
+        "5.9",
+        "Keyless-Entry",
+        "nicht steuern"
+      ],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "renault-trafic-iii-2014-keyless",
+      "question": "Renault Trafic III 2014–2021: Kann ich mit Keyless-Entry die WiPro über den Originalschlüssel steuern?",
+      "expected": [
+        "/de/fahrzeuge/renault-trafic-iii-2014"
+      ],
+      "kontext_muss": [
+        "0823-014",
+        "5.9",
+        "Keyless-Entry",
+        "nicht steuern"
+      ],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ford6-deadlock",
+      "question": "Ford Transit 2006–2013 ohne Deadlock: Ist WiPro mit THITRONIK-Handsender freigegeben?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-6g"
+      ],
+      "kontext_muss": [
+        "Quellenkonflikt",
+        "ohne Deadlock",
+        "keine Einbaufreigabe"
+      ],
+      "source": "ford-2006 PDF 2; ford-2006 PDF 4; Q PDF 4",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ford2014-oem",
+      "question": "Ford Transit 2014–2015: Steuert der Originalschlüssel die WiPro, welcher Mindeststand?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-7g-2014"
+      ],
+      "kontext_muss": [
+        "0823-011",
+        "4.7",
+        "Originalschlüssel",
+        "nicht"
+      ],
+      "source": "ford-2014 PDF 2; ford-2014 PDF 4; Q PDF 4",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ford2016-uebergang",
+      "question": "Ford Transit 2016–2019: Gilt die alte Anleitung für jedes Fahrzeug von 2019 und für Deadlock?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-7g-2016"
+      ],
+      "kontext_muss": [
+        "2016–2018",
+        "2016–2019",
+        "Generation",
+        "Deadlock",
+        "keine Freigabe"
+      ],
+      "source": "ford-2016 PDF 2; ford-2016 PDF 4; Q PDF 4",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "fordfacelift-schwelle",
+      "question": "Ford Transit Facelift 2019: Reicht 0823-013 oder brauche ich 0823-016 und 6.1?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-7g-facelift"
+      ],
+      "kontext_muss": [
+        "0823-013",
+        "0823-016",
+        "6.1",
+        "nicht als Freigabe"
+      ],
+      "source": "ford-2019 PDF 2; ford-2019 PDF 5; Q PDF 5; S PDF 6; S PDF 20",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "iveco4-can",
+      "question": "Iveco Daily Euro 4: Welches DIP-Profil und welche CAN-Pins gelten gegenüber Euro 5?",
+      "expected": [
+        "/de/fahrzeuge/iveco-daily-euro4"
+      ],
+      "kontext_muss": [
+        "SW4 + SW6",
+        "Pin 5",
+        "Pin 25",
+        "Pin 24"
+      ],
+      "source": "iveco-euro4 PDF 2; iveco-euro4 PDF 4",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "iveco5-integriert",
+      "question": "Iveco Daily Euro 5 teilintegriert mit safe.lock Umrüstplatine: SW1 einschalten und blaue ZV-Leitung anschließen?",
+      "expected": [
+        "/de/fahrzeuge/iveco-daily-euro5"
+      ],
+      "kontext_muss": [
+        "SW1 + SW2 + SW5 + SW6",
+        "nicht anzuschließen",
+        "SW5 nur bei Umrüstplatine"
+      ],
+      "source": "iveco-euro5 PDF 2; iveco-euro5 PDF 4; iveco-euro5 PDF 5; iveco-zv PDF 1",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ncv3-blinker",
+      "question": "Sprinter NCV3: Ist der Blinker an X9 Pin 24 oder 25?",
+      "expected": [
+        "/de/fahrzeuge/mercedes-sprinter-ncv3"
+      ],
+      "kontext_muss": [
+        "X9",
+        "Pin 24",
+        "Pin 25",
+        "nicht mit",
+        "verwechseln"
+      ],
+      "source": "sprinter-ncv3 PDF 2; sprinter-ncv3 PDF 4; sprinter-ncv3 PDF 6",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "t1n-dip",
+      "question": "Sprinter T1N 2000–2006: Reicht SW1 bis SW4 OFF oder müssen alle Schalter aus?",
+      "expected": [
+        "/de/fahrzeuge/mercedes-sprinter-t1n"
+      ],
+      "kontext_muss": [
+        "SW1–SW8 OFF",
+        "all in one",
+        "Geräteversion"
+      ],
+      "source": "sprinter-t1n PDF 2",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "vs30-versorgung",
+      "question": "Sprinter VS30: Was passiert mit WiPro an Klemme 30T nach Abschaltung?",
+      "expected": [
+        "/de/fahrzeuge/mercedes-sprinter-vs30"
+      ],
+      "kontext_muss": [
+        "30T",
+        "unscharf",
+        "10 A"
+      ],
+      "source": "sprinter-vs30 PDF 2; sprinter-vs30 PDF 5; sprinter-vs30 PDF 7; Q PDF 6; S PDF 19; S PDF 20",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "master2-relais",
+      "question": "Renault Master II verriegelt bei Fahrtantritt: Welches Öffnerrelais und was mit Kontakt 87?",
+      "expected": [
+        "/de/fahrzeuge/renault-master-ii"
+      ],
+      "kontext_muss": [
+        "85",
+        "86",
+        "87a",
+        "87, Schließer/NO",
+        "nicht verwendet",
+        "einzeln isolieren"
+      ],
+      "source": "master-ii PDF 2; master-ii PDF 4; master-ii PDF 7",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "master3-tueren",
+      "question": "Renault Master III WiPro Software 6.8 oder 6.9: Werden Schiebe- und Hecktür sicher überwacht?",
+      "expected": [
+        "/de/fahrzeuge/renault-master-iii"
+      ],
+      "kontext_muss": [
+        "2.1–6.8",
+        "6.9",
+        "Magnetkontakte",
+        "keine garantierte"
+      ],
+      "source": "master-iii PDF 2; master-iii PDF 4; master-iii PDF 5; Q PDF 7; Q PDF 8",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "trafic2022-hupe",
+      "question": "Trafic III Primastar 2022: Ist Hupen-Pin 10 an WiPro oder am Fahrzeugstecker?",
+      "expected": [
+        "/de/fahrzeuge/renault-trafic-iii-2022"
+      ],
+      "kontext_muss": [
+        "16-poligen Fahrzeugstecker",
+        "rosa WiPro",
+        "nicht den WiPro-Stecker"
+      ],
+      "source": "trafic-2022 PDF 2; trafic-2022 PDF 4; trafic-2022 PDF 5",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "crafter-sleep",
+      "question": "Crafter MAN TGE 2017–2024 safe.lock Sleep Mode: Wie prüfe ich die ZV nach acht Minuten?",
+      "expected": [
+        "/de/fahrzeuge/vw-crafter-man-tge-2017"
+      ],
+      "kontext_muss": [
+        "per Funk",
+        "acht Minuten",
+        "nur die Fahrertür",
+        "nicht möglich"
+      ],
+      "source": "crafter-2017 PDF 2; crafter-2017 PDF 4; Q PDF 9; S PDF 12; S PDF 18; S PDF 19",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "vw-t5-version",
+      "question": "VW T5 2006–2009: Gibt es eine belegte Mindestseriennummer und Software für WiPro?",
+      "expected": [
+        "/de/fahrzeuge/vw-t5"
+      ],
+      "kontext_muss": [
+        "0823-001",
+        "2.1",
+        "SW1 + SW3 + SW6"
+      ],
+      "source": "t5 PDF 2; t5 PDF 4; Q PDF 9",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "vw-t5-facelift-version",
+      "question": "VW T5 Facelift Modelljahr 2010: Gibt es eine belegte Mindestseriennummer und Software für WiPro?",
+      "expected": [
+        "/de/fahrzeuge/vw-t5-facelift"
+      ],
+      "kontext_muss": [
+        "0823-001",
+        "2.1",
+        "SW1 + SW4 + SW6"
+      ],
+      "source": "t5-facelift PDF 2; t5-facelift PDF 4; Q PDF 9",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "t6-version",
+      "question": "VW T6 2015–2019 Doppelkabine: Gilt 0823-012 Software 5.1 auch für DoKa?",
+      "expected": [
+        "/de/fahrzeuge/vw-t6"
+      ],
+      "kontext_muss": [
+        "0823-012",
+        "5.1",
+        "außer DoKa"
+      ],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 9; S PDF 12; S PDF 13",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "t61-sleep",
+      "question": "VW T6.1 ab 2021 safe.lock: Drei Minuten warten nach mechanischem Verriegeln, was muss sich öffnen?",
+      "expected": [
+        "/de/fahrzeuge/vw-t6-1"
+      ],
+      "kontext_muss": [
+        "mechanisch",
+        "drei Minuten",
+        "außer der Fahrertür",
+        "nicht mehr ansteuern"
+      ],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 10; S PDF 21",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ducato2012-quellen",
+      "question": "Ducato 2012–2021 safe.lock: Sind Pinbelegung und DIP jetzt am Original-PDF geprüft?",
+      "expected": [
+        "/de/fahrzeuge/fiat-ducato-2012-2021"
+      ],
+      "kontext_muss": [
+        "1050-001",
+        "5.9s",
+        "nicht neu verifiziert"
+      ],
+      "source": "S PDF 4; S PDF 23; safelock-platine PDF 2",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ducato8-konflikt",
+      "question": "Ducato 8 großes Touch-Infotainment 1050-042: Ist 7.5.1s oder 7.5.2s der Mindeststand?",
+      "expected": [
+        "/de/fahrzeuge/fiat-ducato-2022-2024"
+      ],
+      "kontext_muss": [
+        "1050-042",
+        "7.5.1s",
+        "7.5.2s",
+        "offen"
+      ],
+      "source": "S PDF 3; S PDF 22",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ducato2024-menue",
+      "question": "Ducato Facelift 2024+: Welche Seriengrenze und welche Einstellungen nach einem Fahrzeugupdate?",
+      "expected": [
+        "/de/fahrzeuge/fiat-ducato-2024plus"
+      ],
+      "kontext_muss": [
+        "1050-046",
+        "7.5.3s",
+        "Türentriegelung beim Aussteigen",
+        "Blinker beim Verriegeln"
+      ],
+      "source": "S PDF 2; S PDF 22",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ford2024-konflikt",
+      "question": "Ford Transit 2024+ safe.lock: Ist 5298-005 oder 5298-006 die belegte Seriengrenze?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-2024plus"
+      ],
+      "kontext_muss": [
+        "5298-005",
+        "5298-006",
+        "keine bestätigte"
+      ],
+      "source": "S PDF 4; S PDF 5; S PDF 16; S PDF 17",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "vito-version",
+      "question": "Vito W447: FAQ sagt 0823-014 6.2 und DIP-Tabelle 0823-013 5.6, welcher Stand stimmt?",
+      "expected": [
+        "/de/fahrzeuge/mercedes-vito-w447"
+      ],
+      "kontext_muss": [
+        "0823-014",
+        "6.2",
+        "0823-013",
+        "5.6",
+        "Herstellerzuordnung"
+      ],
+      "source": "Q PDF 6; Q PDF 13",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "master2019-schluessel",
+      "question": "Renault Master 2019–2024 safe.lock: Schärft der Originalschlüssel die Alarmanlage?",
+      "expected": [
+        "/de/fahrzeuge/renault-master-2019"
+      ],
+      "kontext_muss": [
+        "5832-001",
+        "1.0.0sr",
+        "ausschließlich die Fahrzeugschlösser",
+        "THITRONIK"
+      ],
+      "source": "S PDF 10; S PDF 11",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "crafter2025-datum",
+      "question": "Crafter MAN TGE 2025 mit Startknopf: Ist die Anleitung Stand 07/2025 eine Freigabe für mein Modell?",
+      "expected": [
+        "/de/fahrzeuge/vw-crafter-man-tge-2025"
+      ],
+      "kontext_muss": [
+        "2017–2024",
+        "Dokumentdatum",
+        "Originalanleitung",
+        "offen"
+      ],
+      "source": "S PDF 18",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "universal-grenze",
+      "question": "Fahrzeug nicht gelistet: Bedeutet Universalanschluss automatisch CAN und safe.lock Kompatibilität?",
+      "expected": [
+        "/de/fahrzeuge/universalanschluss",
+        "/de/fahrzeugkompatibilitaet"
+      ],
+      "kontext_muss": [
+        "keine CAN-Kompatibilität",
+        "keine safe.lock",
+        "Gerätestand"
+      ],
+      "source": "I PDF 5; sprinter-t1n PDF 2; Q PDF 2",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "platine-tasten",
+      "question": "safe.lock Umrüstplatine 101052: Muss ich den Transponder kopieren und kann ich den Laderaum separat öffnen?",
+      "expected": [
+        "/de/safe-lock-umruestplatine"
+      ],
+      "kontext_muss": [
+        "Transponder",
+        "aller Türen",
+        "getrennter Laderaumzugang entfällt"
+      ],
+      "source": "safelock-platine PDF 2; safelock-platine PDF 4; safelock-platine PDF 12; S PDF 23; S PDF 24",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "upgrade-leitungen",
+      "question": "WiPro safe.lock Hardwareupgrade: Zwei oder drei Leitungen nachrüsten und Funkzubehör erneut anlernen?",
+      "expected": [
+        "/de/seriennummern-softwarestaende",
+        "/de/wipro-iii"
+      ],
+      "kontext_muss": [
+        "Pin 20",
+        "Pin 19",
+        "Pin 16",
+        "zwei neue Leitungen",
+        "keine Ader",
+        "neu anlernen"
+      ],
+      "source": "Q PDF 5; Q PDF 6; Q PDF 9; Q PDF 10; Q PDF 13; S PDF 4; S PDF 5; safelock-upgrade PDF 2; update-service-2024 PDF 1",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "matrix-iveco",
+      "question": "Fahrzeugkompatibilität Übersichtsmatrix: Welche DIP-Sonderstellung für Iveco Daily teilintegriert?",
+      "expected": [
+        "/de/fahrzeugkompatibilitaet"
+      ],
+      "kontext_muss": [
+        "SW1 + SW2 + SW5 + SW6",
+        "blaue ZV-Leitung unverbunden"
+      ],
+      "source": "iveco-euro5 PDF 2; Q PDF 9; Q PDF 10; S PDF 4; S PDF 18",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "iveco2025-farbe",
+      "question": "Iveco Daily 2025: Beweist die weiß-rote Ader in der 2011–2024 Anleitung eine Einbaufreigabe?",
+      "expected": [
+        "/de/fahrzeuge/iveco-daily-euro5"
+      ],
+      "kontext_muss": [
+        "2025",
+        "keine Einbaufreigabe"
+      ],
+      "source": "iveco-euro5 PDF 2; iveco-euro5 PDF 4; iveco-euro5 PDF 5; iveco-zv PDF 1",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "trafic-hupenfarbe",
+      "question": "Renault Trafic III 2014–2021: Hupe an rosa oder graue WiPro-Leitung Pin 12?",
+      "expected": [
+        "/de/fahrzeuge/renault-trafic-iii-2014"
+      ],
+      "kontext_muss": [
+        "graue WiPro-Leitung Pin 12",
+        "schwarze Fahrzeugader"
+      ],
+      "source": "talento-trafic-2014 PDF 2; talento-trafic-2014 PDF 3; talento-trafic-2014 PDF 5; Q PDF 3; Q PDF 8",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "fordfacelift-zuendung",
+      "question": "Ford Transit Facelift 2019 Zündung: J1 Pin 2 oder Lenksäulenstecker Pin 1?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-7g-facelift"
+      ],
+      "kontext_muss": [
+        "Lenksäulenstecker Pin 1",
+        "nicht J1 Pin 2"
+      ],
+      "source": "ford-2019 PDF 2; ford-2019 PDF 5; Q PDF 5; S PDF 6; S PDF 20",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "vs30-ils",
+      "question": "Sprinter VS30 ILS: Vordere Blinker direkt ansteuern oder 220 Ohm an Pin 14?",
+      "expected": [
+        "/de/fahrzeuge/mercedes-sprinter-vs30"
+      ],
+      "kontext_muss": [
+        "keine Leistungsansteuerung",
+        "220 Ohm",
+        "Pin 14",
+        "FAQ",
+        "bestätigen"
+      ],
+      "source": "sprinter-vs30 PDF 2; sprinter-vs30 PDF 5; sprinter-vs30 PDF 7; Q PDF 6; S PDF 19; S PDF 20",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "master2-p202",
+      "question": "Renault Master II: Welcher Stecker ist P202 für Warnblinker Pin 36 im grünen Einsatz?",
+      "expected": [
+        "/de/fahrzeuge/renault-master-ii"
+      ],
+      "kontext_muss": [
+        "P202",
+        "zwei verschieden",
+        "Pin 36",
+        "keine eigenmächtige"
+      ],
+      "source": "master-ii PDF 2; master-ii PDF 4; master-ii PDF 7",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "t61-can-gruen",
+      "question": "VW T6.1: Ist CAN-High grün oder orange/grün wie beim T6?",
+      "expected": [
+        "/de/fahrzeuge/vw-t6-1"
+      ],
+      "kontext_muss": [
+        "CAN-High grün",
+        "beim T6",
+        "orange/grün"
+      ],
+      "source": "t6-t61 PDF 2; t6-t61 PDF 3; Q PDF 10; S PDF 21",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "crafter-sicherung",
+      "question": "Crafter MAN TGE 2017–2024: 5 A oder 10 A Sicherung an der Starterbatterie?",
+      "expected": [
+        "/de/fahrzeuge/vw-crafter-man-tge-2017"
+      ],
+      "kontext_muss": [
+        "5 A",
+        "nicht den 10-A-Wert"
+      ],
+      "source": "crafter-2017 PDF 2; crafter-2017 PDF 4; Q PDF 9; S PDF 12; S PDF 18; S PDF 19",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "ford-camping",
+      "question": "Ford Transit 2024 Campingmodus: Kann ich nach Verriegeln mit Originalschlüssel per THITRONIK öffnen?",
+      "expected": [
+        "/de/fahrzeuge/ford-transit-2024plus"
+      ],
+      "kontext_muss": [
+        "Originalschlüssel-Verriegelung",
+        "nicht mit THITRONIK",
+        "Auto-Close"
+      ],
+      "source": "S PDF 4; S PDF 5; S PDF 16; S PDF 17",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    },
+    {
+      "id": "platine-kompatible-zentrale",
+      "question": "Ist die safe.lock Umrüstplatine eine eigenständige Alarmanlage oder mit Modul 101051 nutzbar?",
+      "expected": [
+        "/de/safe-lock-umruestplatine"
+      ],
+      "kontext_muss": [
+        "kein eigenständiges Alarmprodukt",
+        "WiPro III safe.lock",
+        "101051"
+      ],
+      "source": "S PDF 24; safelock-platine PDF 2/4",
+      "kategorie": "fahrzeuge-versionsgrenzen"
+    }
+  ]
+}

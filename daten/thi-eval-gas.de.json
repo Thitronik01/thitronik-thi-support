@@ -1,0 +1,852 @@
+{
+  "_hinweis": "Dokumentbasierte Belegfälle; reine Retrieval-/Kontextprüfung, keine Bewertung generierter Antworten. Quellenkennungen und physische PDF-Seiten im Gas-Prüfbericht.",
+  "cases": [
+    {
+      "id": "gas-alone",
+      "question": "Braucht G.A.S. 105700 eine WiPro und erkennt er CO?",
+      "expected": [
+        "/de/gas"
+      ],
+      "antwort_muss": [
+        "ohne WiPro",
+        "Kohlenmonoxid",
+        "Nein"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ohne WiPro; Kohlenmonoxid; Nein",
+      "source": "G 2/4; QG 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "gas-alone",
+      "kontext_muss": [
+        "ohne WiPro",
+        "Kohlenmonoxid",
+        "Nein"
+      ]
+    },
+    {
+      "id": "gas-output",
+      "question": "G.A.S. 105700: Liefert Alarm OUT Plus oder schaltet er gegen Masse?",
+      "expected": [
+        "/de/gas"
+      ],
+      "antwort_muss": [
+        "gegen Masse",
+        "0,10 A",
+        "GND"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "gegen Masse; 0,10 A; GND",
+      "source": "G 13/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "gas-output",
+      "kontext_muss": [
+        "gegen Masse",
+        "0,10 A",
+        "GND"
+      ]
+    },
+    {
+      "id": "gas-delay",
+      "question": "G.A.S. 105700: Wie lange muss die Alarmschwelle überschritten sein, bevor die Sirene startet?",
+      "expected": [
+        "/de/gas"
+      ],
+      "antwort_muss": [
+        "länger als 30 Sekunden",
+        "weitere"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "länger als 30 Sekunden; weitere",
+      "source": "G 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "gas-delay",
+      "kontext_muss": [
+        "länger als 30 Sekunden",
+        "weitere"
+      ]
+    },
+    {
+      "id": "gas-fault",
+      "question": "G.A.S. 105700 blinkt gelb und hat einen Dauerton. Was bedeutet das?",
+      "expected": [
+        "/de/gas"
+      ],
+      "antwort_muss": [
+        "Gelb blinkend",
+        "Dauerton",
+        "Sensorfehler"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Gelb blinkend; Dauerton; Sensorfehler",
+      "source": "G 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "gas-fault",
+      "kontext_muss": [
+        "Gelb blinkend",
+        "Dauerton",
+        "Sensorfehler"
+      ]
+    },
+    {
+      "id": "connect-siren",
+      "question": "Hat G.A.S.-connect eine eigene interne Sirene?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "keine interne Sirene",
+        "WiPro"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "keine interne Sirene; WiPro",
+      "source": "QC 1; C 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "connect-siren",
+      "kontext_muss": [
+        "keine interne Sirene",
+        "WiPro"
+      ]
+    },
+    {
+      "id": "connect-current",
+      "question": "G.A.S.-connect: Welcher Stromverbrauch gilt bei 12 und 24 V, 15/25 oder 34 mA?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "15 mA",
+        "25 mA",
+        "34 mA",
+        "Quellenkonflikt"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "15 mA; 25 mA; 34 mA; Quellenkonflikt",
+      "source": "C 25; WC; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "connect-current",
+      "kontext_muss": [
+        "15 mA",
+        "25 mA",
+        "34 mA",
+        "Quellenkonflikt"
+      ]
+    },
+    {
+      "id": "connect-terminal",
+      "question": "Wie heißt die Masseklemme von G.A.S.-connect im Anschlussplan?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "GND",
+        "ohne Aderendhülsen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "GND; ohne Aderendhülsen",
+      "source": "C 23; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "connect-terminal",
+      "kontext_muss": [
+        "GND",
+        "ohne Aderendhülsen"
+      ]
+    },
+    {
+      "id": "connect-learning",
+      "question": "Wie wird G.A.S.-connect an WiPro III angelernt?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "Anlernmodus",
+        "einschalten",
+        "Signalton"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Anlernmodus; einschalten; Signalton",
+      "source": "C 3/7; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "connect-learning",
+      "kontext_muss": [
+        "Anlernmodus",
+        "einschalten",
+        "Signalton"
+      ]
+    },
+    {
+      "id": "connect-blinkers",
+      "question": "Wie lange blinken die Warnblinker beim G.A.S.-connect Gasalarm?",
+      "expected": [
+        "/de/gas-connect"
+      ],
+      "antwort_muss": [
+        "180",
+        "120/180",
+        "offen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "180; 120/180; offen",
+      "source": "C 3/7; offener WiPro-Konflikt; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "connect-blinkers",
+      "kontext_muss": [
+        "180",
+        "120/180",
+        "offen"
+      ]
+    },
+    {
+      "id": "plug-ppm",
+      "question": "G.A.S.-plug: Bedeutet ab 50 ppm eine CO-Alarmschwelle?",
+      "expected": [
+        "/de/gas-plug"
+      ],
+      "antwort_muss": [
+        "50 ppm",
+        "keine CO-Alarmschwelle",
+        "erkennt kein CO"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "50 ppm; keine CO-Alarmschwelle; erkennt kein CO",
+      "source": "P 13; QP 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "plug-ppm",
+      "kontext_muss": [
+        "50 ppm",
+        "keine CO-Alarmschwelle",
+        "erkennt kein CO"
+      ]
+    },
+    {
+      "id": "plug-cycle",
+      "question": "G.A.S.-plug: Startet der Alarm sofort und wie lange dauert der Alarmzyklus?",
+      "expected": [
+        "/de/gas-plug"
+      ],
+      "antwort_muss": [
+        "unmittelbar",
+        "30 Sekunden",
+        "60 Sekunden"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "unmittelbar; 30 Sekunden; 60 Sekunden",
+      "source": "P 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "plug-cycle",
+      "kontext_muss": [
+        "unmittelbar",
+        "30 Sekunden",
+        "60 Sekunden"
+      ]
+    },
+    {
+      "id": "plug-fault",
+      "question": "G.A.S.-plug zeigt dauerhaft gelb und piept kontinuierlich. Sensorfehler?",
+      "expected": [
+        "/de/gas-plug"
+      ],
+      "antwort_muss": [
+        "dauerhaft",
+        "kontinuierlich",
+        "Sensorfehler"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "dauerhaft; kontinuierlich; Sensorfehler",
+      "source": "P 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "plug-fault",
+      "kontext_muss": [
+        "dauerhaft",
+        "kontinuierlich",
+        "Sensorfehler"
+      ]
+    },
+    {
+      "id": "plug-volume",
+      "question": "G.A.S.-plug: 82 oder 85 dB Lautstärke?",
+      "expected": [
+        "/de/gas-plug"
+      ],
+      "antwort_muss": [
+        "82",
+        "85",
+        "offen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "82; 85; offen",
+      "source": "P 13; WP; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "plug-volume",
+      "kontext_muss": [
+        "82",
+        "85",
+        "offen"
+      ]
+    },
+    {
+      "id": "old-sensors",
+      "question": "G.A.S.-pro ältere Serie: Hat die Zentrale einen Sensor und wie viele externe Sensoren sind möglich?",
+      "expected": [
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "keinen Gassensor",
+        "bis zu drei"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "keinen Gassensor; bis zu drei",
+      "source": "O 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "old-sensors",
+      "kontext_muss": [
+        "keinen Gassensor",
+        "bis zu drei"
+      ]
+    },
+    {
+      "id": "old-ign",
+      "question": "G.A.S.-pro ältere Serie: Ist die Anlage bei Zündung ein aktiv?",
+      "expected": [
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "Zündung ein",
+        "inaktiv",
+        "Zündung aus"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Zündung ein; inaktiv; Zündung aus",
+      "source": "O 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "old-ign",
+      "kontext_muss": [
+        "Zündung ein",
+        "inaktiv",
+        "Zündung aus"
+      ]
+    },
+    {
+      "id": "old-voltage",
+      "question": "G.A.S.-pro ältere Serie: Sind 8–30 V oder 9–30 V Betriebsspannung belegt?",
+      "expected": [
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "8–30 V",
+        "9–30 V",
+        "Quellenkonflikte"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "8–30 V; 9–30 V; Quellenkonflikte",
+      "source": "O 4/10/23; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "old-voltage",
+      "kontext_muss": [
+        "8–30 V",
+        "9–30 V",
+        "Quellenkonflikte"
+      ]
+    },
+    {
+      "id": "old-siren",
+      "question": "G.A.S.-pro ältere Serie: Zusatzsirene 100190 oder 100191?",
+      "expected": [
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "100190",
+        "100191",
+        "Quellenkonflikt"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "100190; 100191; Quellenkonflikt",
+      "source": "O 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "old-siren",
+      "kontext_muss": [
+        "100190",
+        "100191",
+        "Quellenkonflikt"
+      ]
+    },
+    {
+      "id": "old-height",
+      "question": "G.A.S.-pro ältere Serie: Darf der CO-Sensor in beliebiger Höhe montiert werden?",
+      "expected": [
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "beliebige",
+        "10–50",
+        "10–30",
+        "widersprechen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "beliebige; 10–50; 10–30; widersprechen",
+      "source": "O 2/8/24; SCO 3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "old-height",
+      "kontext_muss": [
+        "beliebige",
+        "10–50",
+        "10–30",
+        "widersprechen"
+      ]
+    },
+    {
+      "id": "old-beeps",
+      "question": "G.A.S.-pro ältere Serie: Bedeutet dreifaches Piepen Sensorplatz 3?",
+      "expected": [
+        "/de/gas-pro"
+      ],
+      "antwort_muss": [
+        "keine gesicherte Zuordnung",
+        "Sensorplatz"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "keine gesicherte Zuordnung; Sensorplatz",
+      "source": "QO 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "old-beeps",
+      "kontext_muss": [
+        "keine gesicherte Zuordnung",
+        "Sensorplatz"
+      ]
+    },
+    {
+      "id": "iii-variants",
+      "question": "G.A.S.-pro III: Was unterscheiden 101286 und 101287 bei der CO-Erkennung?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "101286",
+        "101287",
+        "ohne externen CO-Sensor kein"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "101286; 101287; ohne externen CO-Sensor kein",
+      "source": "K/KCO 1–2; WIII; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-variants",
+      "kontext_muss": [
+        "101286",
+        "101287",
+        "ohne externen CO-Sensor kein"
+      ]
+    },
+    {
+      "id": "iii-output",
+      "question": "G.A.S.-pro III: Welche Belastbarkeit und Polarität hat SIR+ bei 12 und 24 V?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "positiv",
+        "0,50 A",
+        "0,25 A"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "positiv; 0,50 A; 0,25 A",
+      "source": "K/KCO 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-output",
+      "kontext_muss": [
+        "positiv",
+        "0,50 A",
+        "0,25 A"
+      ]
+    },
+    {
+      "id": "iii-dip4",
+      "question": "G.A.S.-pro III: Was macht DIP 4 ON mit SIR+ bei Ruhe und Alarm?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "Ruhezustand",
+        "0 V",
+        "Ventil"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Ruhezustand; 0 V; Ventil",
+      "source": "T 3/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-dip4",
+      "kontext_muss": [
+        "Ruhezustand",
+        "0 V",
+        "Ventil"
+      ]
+    },
+    {
+      "id": "iii-dip678",
+      "question": "G.A.S.-pro III: Sind DIP 6, 7 und 8 für einen Funk-Reset?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "DIP 6–8",
+        "unbenutzt",
+        "keine Reset"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "DIP 6–8; unbenutzt; keine Reset",
+      "source": "T 3/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-dip678",
+      "kontext_muss": [
+        "DIP 6–8",
+        "unbenutzt",
+        "keine Reset"
+      ]
+    },
+    {
+      "id": "iii-pause",
+      "question": "G.A.S.-pro III CO: Welche Alarmwege unterdrückt die Pause und was hat CO-Vorrang?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "60",
+        "Funk",
+        "SIR+",
+        "interne Sirene",
+        "Keine automatische Wiederaktivierung"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "60; Funk; SIR+; interne Sirene; Keine automatische Wiederaktivierung",
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-pause",
+      "kontext_muss": [
+        "60",
+        "Funk",
+        "SIR+",
+        "interne Sirene",
+        "Keine automatische Wiederaktivierung"
+      ]
+    },
+    {
+      "id": "iii-under",
+      "question": "G.A.S.-pro III: Unterspannung 11,1 V, drei oder neun Töne und automatischer Neustart?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "11,1",
+        "dreimal drei Töne",
+        "drei Töne",
+        "manuelles Wiedereinschalten"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "11,1; dreimal drei Töne; drei Töne; manuelles Wiedereinschalten",
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-under",
+      "kontext_muss": [
+        "11,1",
+        "dreimal drei Töne",
+        "drei Töne",
+        "manuelles Wiedereinschalten"
+      ]
+    },
+    {
+      "id": "iii-over",
+      "question": "G.A.S.-pro III: Alle Farben blinken bei Übertemperatur. Meldet WiPro diesen Alarm?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "60",
+        "kein Signal",
+        "Übertemperatur"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "60; kein Signal; Übertemperatur",
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-over",
+      "kontext_muss": [
+        "60",
+        "kein Signal",
+        "Übertemperatur"
+      ]
+    },
+    {
+      "id": "iii-orientation",
+      "question": "G.A.S.-pro III CO: Schalter nach oben oder nach unten montieren?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "nach oben",
+        "nach unten",
+        "Dokumentabweichung"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "nach oben; nach unten; Dokumentabweichung",
+      "source": "KCO 2; T 5/17/63; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-orientation",
+      "kontext_muss": [
+        "nach oben",
+        "nach unten",
+        "Dokumentabweichung"
+      ]
+    },
+    {
+      "id": "iii-test",
+      "question": "Kann ich G.A.S.-pro III mit Feuerzeuggas testen, wie in der FAQ?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "Quellenkonflikt Funktionstest",
+        "keinen Feuerzeugtest",
+        "Selbsttest"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Quellenkonflikt Funktionstest; keinen Feuerzeugtest; Selbsttest",
+      "source": "K/KCO 1; QZ 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-test",
+      "kontext_muss": [
+        "Quellenkonflikt Funktionstest",
+        "keinen Feuerzeugtest",
+        "Selbsttest"
+      ]
+    },
+    {
+      "id": "iii-recall",
+      "question": "G.A.S.-pro III 1286-010 mit Zusatzsensor 101289: Ist diese Kombination vom Rückruf betroffen?",
+      "expected": [
+        "/de/gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "1286-010",
+        "101289",
+        "kostenloses Softwareupdate"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1286-010; 101289; kostenloses Softwareupdate",
+      "source": "WRecall; QIII 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "iii-recall",
+      "kontext_muss": [
+        "1286-010",
+        "101289",
+        "kostenloses Softwareupdate"
+      ]
+    },
+    {
+      "id": "co-software",
+      "question": "CO-Sensor SNO433-003: Welche Software braucht die alte G.A.S.-pro 0001-002?",
+      "expected": [
+        "/de/co-sensor"
+      ],
+      "antwort_muss": [
+        "1.04i",
+        "SN0001-002",
+        "Softwareupdate"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1.04i; SN0001-002; Softwareupdate",
+      "source": "SCO 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "co-software",
+      "kontext_muss": [
+        "1.04i",
+        "SN0001-002",
+        "Softwareupdate"
+      ]
+    },
+    {
+      "id": "co-ferrules",
+      "question": "CO-Sensor: Aderendhülsen bei G.A.S.-pro oder G.A.S.-pro III verwenden?",
+      "expected": [
+        "/de/co-sensor"
+      ],
+      "antwort_muss": [
+        "G.A.S.-pro",
+        "Aderendhülsen verwenden",
+        "keine Aderendhülsen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "G.A.S.-pro; Aderendhülsen verwenden; keine Aderendhülsen",
+      "source": "SCO 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "co-ferrules",
+      "kontext_muss": [
+        "G.A.S.-pro",
+        "Aderendhülsen verwenden",
+        "keine Aderendhülsen"
+      ]
+    },
+    {
+      "id": "co-expiry",
+      "question": "CO-Sensor: Kann ein Reset das Exp. Date verlängern?",
+      "expected": [
+        "/de/co-sensor"
+      ],
+      "antwort_muss": [
+        "Exp. Date",
+        "ersetzen",
+        "nicht durch Reset"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Exp. Date; ersetzen; nicht durch Reset",
+      "source": "T 6; nicht als Gas-Sensor-Lebensdauer verallgemeinern; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "co-expiry",
+      "kontext_muss": [
+        "Exp. Date",
+        "ersetzen",
+        "nicht durch Reset"
+      ]
+    },
+    {
+      "id": "co-height",
+      "question": "CO-Sensor 100433: Welcher Abstand zur Decke, 10–30 oder 10–50 cm?",
+      "expected": [
+        "/de/co-sensor"
+      ],
+      "antwort_muss": [
+        "10–30",
+        "10–50",
+        "widersprechen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "10–30; 10–50; widersprechen",
+      "source": "SCO 3; O 24; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "co-height",
+      "kontext_muss": [
+        "10–30",
+        "10–50",
+        "widersprechen"
+      ]
+    },
+    {
+      "id": "co-test",
+      "question": "CO-Sensor: Gilt die Feuerzeug-Testantwort der CO-FAQ auch für Kohlenmonoxid?",
+      "expected": [
+        "/de/co-sensor"
+      ],
+      "antwort_muss": [
+        "keine CO-Prüfanweisung",
+        "Feuerzeuggas"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "keine CO-Prüfanweisung; Feuerzeuggas",
+      "source": "QCO 2; O 4/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "co-test",
+      "kontext_muss": [
+        "keine CO-Prüfanweisung",
+        "Feuerzeuggas"
+      ]
+    },
+    {
+      "id": "extra-wiring",
+      "question": "Zusatzsensor 101289: Wohin kommen Grün, Weiß und Braun?",
+      "expected": [
+        "/de/zusatzsensor-gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "Grün",
+        "SENSIG",
+        "Weiß",
+        "SEN−",
+        "Braun",
+        "SEN+"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Grün; SENSIG; Weiß; SEN−; Braun; SEN+",
+      "source": "SZ 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "extra-wiring",
+      "kontext_muss": [
+        "Grün",
+        "SENSIG",
+        "Weiß",
+        "SEN−",
+        "Braun",
+        "SEN+"
+      ],
+      "kontext_exakt": [
+        "SENSIG",
+        "SEN−",
+        "SEN+"
+      ]
+    },
+    {
+      "id": "extra-length",
+      "question": "Zusatzsensor 101289: 7 oder 8 m Gesamtlänge, zusätzlich zum 2-m-Kabel?",
+      "expected": [
+        "/de/zusatzsensor-gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "7 m",
+        "8 m",
+        "2 m",
+        "Gesamtlänge"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "7 m; 8 m; 2 m; Gesamtlänge",
+      "source": "K/KCO 2; QZ 2; WZ; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "extra-length",
+      "kontext_muss": [
+        "7 m",
+        "8 m",
+        "2 m",
+        "Gesamtlänge"
+      ]
+    },
+    {
+      "id": "extra-height",
+      "question": "Zusatzsensor 101289: Montagehöhe 10–20 oder 10–30 cm über dem Boden?",
+      "expected": [
+        "/de/zusatzsensor-gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "10–20",
+        "10–30",
+        "Quellenabweichungen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "10–20; 10–30; Quellenabweichungen",
+      "source": "SZ 2–3; K 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "extra-height",
+      "kontext_muss": [
+        "10–20",
+        "10–30",
+        "Quellenabweichungen"
+      ]
+    },
+    {
+      "id": "extra-test",
+      "question": "Zusatzsensor 101289: FAQ sagt Feuerzeugtest, die Kurzanleitung nicht. Was gilt?",
+      "expected": [
+        "/de/zusatzsensor-gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "Quellenkonflikt Funktionstest",
+        "keinen Feuerzeugtest"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Quellenkonflikt Funktionstest; keinen Feuerzeugtest",
+      "source": "QZ 2; K/KCO 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "extra-test",
+      "kontext_muss": [
+        "Quellenkonflikt Funktionstest",
+        "keinen Feuerzeugtest"
+      ]
+    },
+    {
+      "id": "extra-capacity",
+      "question": "Können zwei Zusatzsensoren 101289 parallel an G.A.S.-pro III angeschlossen werden?",
+      "expected": [
+        "/de/zusatzsensor-gas-pro-iii"
+      ],
+      "antwort_muss": [
+        "genau einen externen",
+        "Keine zwei Sensoren parallel"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "genau einen externen; Keine zwei Sensoren parallel",
+      "source": "K/KCO 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "extra-capacity",
+      "kontext_muss": [
+        "genau einen externen",
+        "Keine zwei Sensoren parallel"
+      ]
+    },
+    {
+      "id": "diagnostic-under",
+      "question": "G.A.S.-pro III Störungsbeseitigung: Beide LEDs gelb und Unterspannung, stimmen DE und FR bei der Tonanzahl überein?",
+      "expected": [
+        "/de/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "dreimal drei Töne",
+        "drei Töne",
+        "manuelles Wiedereinschalten"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "dreimal drei Töne; drei Töne; manuelles Wiedereinschalten",
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md",
+      "kategorie": "diagnostic-under",
+      "kontext_muss": [
+        "dreimal drei Töne",
+        "drei Töne",
+        "manuelles Wiedereinschalten"
+      ]
+    }
+  ]
+}

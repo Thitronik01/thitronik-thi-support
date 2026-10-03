@@ -1,9 +1,11 @@
 ---
 title: 'VW Crafter / MAN TGE (2017-2024, sans bouton de démarrage)'
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_crafter___man_tge_2017-2024.pdf'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-crafter-2017.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/vw-crafter-man-tge-2017.md
@@ -14,6 +16,12 @@ translation_of: sources/fahrzeuge/vw-crafter-man-tge-2017.md
 Installation de la WiPro III standard dans les VW Crafter II et MAN TGE 2017–2024. Le manuel véhicule `07/2025` documente la version `V6.8`, le démontage, l'alimentation, le CAN, les feux de détresse, les sirènes, la LED, les accessoires et les essais.
 
 > **Limite :** la source disponible ne décrit pas le kit safe.lock `105458`. Pour les véhicules 2025+ avec bouton, voir [[VW Crafter / MAN TGE (2025+, avec bouton de démarrage)|VW Crafter / MAN TGE à partir de 2025]]. Vérifier ensemble véhicule, année, démarrage et version WiPro.
+
+## Limites du véhicule et sources contrôlées
+
+Crafter / MAN TGE 2017–2024 standard : `SW2 + SW3 + SW4 + SW6 ON`, `V6.8` ; la FAQ ajoute `0823-019`. PDF 07/2025 : batterie de démarrage directe avec `5 A`, pas les 10 A du Sprinter. safe.lock utilise la branche `5458-001 / 1.0.0sx`. Test Sleep selon FAQ : verrouiller par radio avec la clé d’origine, attendre huit minutes, ouvrir mécaniquement à la serrure conducteur. Si seule la porte conducteur s’ouvre, safe.lock ne peut pas piloter la ZV. Ne pas confondre avec les trois minutes du T6.1. Chez Knaus, la porte cellule peut être exclue de la commande ZV ; vérifier séparément sa surveillance CAN.
+
+Sources : [crafter-2017, PDF 2](../../../quellen/fahrzeug-crafter-2017.pdf#page=2), [crafter-2017, PDF 4](../../../quellen/fahrzeug-crafter-2017.pdf#page=4), [Q, PDF 9](../../../quellen/wipro-iii-faq.pdf#page=9), [S, PDF 12](../../../quellen/wipro-iii-safelock-faq.pdf#page=12), [S, PDF 18](../../../quellen/wipro-iii-safelock-faq.pdf#page=18), [S, PDF 19](../../../quellen/wipro-iii-safelock-faq.pdf#page=19).
 
 ## Champ d'application
 
@@ -26,7 +34,7 @@ Installation de la WiPro III standard dans les VW Crafter II et MAN TGE 2017–2
 | Alimentation | batterie de démarrage, fil rouge protégé par `5 A` |
 | CAN | faisceau de colonne; faisceau de porte seulement si absent pour cause d'équipement |
 
-Aucun numéro de série minimal n'est indiqué. Consigner série, logiciel et matériel; voir [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]].
+Le manuel ne donne pas de série minimale ; la FAQ confirme `0823-019 / 6.8`. Consigner série, logiciel et matériel; voir [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]].
 
 ## Hiérarchie des sources et anciennes indications supprimées
 
@@ -35,9 +43,9 @@ Aucun numéro de série minimal n'est indiqué. Consigner série, logiciel et ma
 | safe.lock `105458`, `SW3`, séries `5458-001`–`5458-013` | absents du PDF; non repris |
 | BCM A 16/17, BCM C 42 | aucun connecteur/pin véhicule indiqué; utiliser lieu et couleurs |
 | ZV module de porte pin 1 | non documenté; ne pas raccorder |
-| test veille huit minutes | source ancienne manquante; absent du PDF |
-| cas Knaus/Cobra/trois clés | non vérifiables localement; supprimés |
-| klaxon `105339` obligatoire | non démontré; sirène normale ou de secours recommandée |
+| test de veille de huit minutes | documenté pour safe.lock par la FAQ PDF 18 ; ne constitue pas un câblage WiPro standard |
+| cas Knaus/Cobra/trois clés | exception de porte cellule Knaus documentée par la FAQ PDF 19 ; autres procédures Cobra/trois clés toujours non étayées |
+| klaxon `105339` obligatoire | PDF standard : sirène normale ou de secours recommandée ; FAQ safe.lock PDF 12/17 : klaxon supplémentaire requis ou vivement recommandé, sans référence article. Identifier la variante et son avertisseur |
 | fusible `10 A` | remplacé ici par la valeur spécifique `5 A` |
 
 Les deux PDF locaux sont identiques octet par octet. Ne pas reconstruire les DOCX/CSV manquants. Avec un kit safe.lock réel, arrêter et demander sa notice actuelle.
@@ -212,7 +220,7 @@ Essai :
 | Articles | `100757` noir, `100758` blanc |
 | Carte | LED d'émission opposée à l'aimant; inversée, apprentissage possible mais pas d'alarme |
 | Variantes | couché gauche/droite, debout ou sur vitre |
-| Aimant | plage fermée `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Surface | propre, sèche, dégraissée |
 | Collage | pas sous `15 °C`; résistance finale après `24 heures` |
 | Adaptateurs | `100428` / `100729` pour écart ou antenne |
@@ -241,9 +249,9 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 - Page 2: standard `V6.8`, `SW2 + SW3 + SW4 + SW6`.
 - Pages 3–5: démontage, emplacement, batterie, `5 A`, OBD, CAN et détresse.
 - Pages 6–7: sirènes, pins `11`/`15`/`16`, `8 mm`, apprentissage, commande, panique, aération, `4 secondes`, `4 minutes`.
-- Pages 8–11: `100757`/`100758`, orientation, variantes, `100428`/`100729`, `15 °C`, `24 heures`, `22–30 mm`.
+- Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 - Le manuel général `1.8` complète sécurité, pins et durées 30/120 secondes.
-- Les deux PDF sont identiques; les DOCX/CSV manquants n'ont pas été reconstruits. Les données safe.lock, veille, BCM, module de porte, Knaus et versions non prouvées ont été supprimées.
+- Les deux PDF sont identiques. Les DOCX/CSV absents restent une lacune pour le câblage safe.lock. La FAQ citée établit désormais le test de veille, le cas Knaus et la version minimale, sans valider les broches BCM/ZV manquantes.
 - La valeur spécifique `5 A` prévaut ici.
 
 Sources primaires :

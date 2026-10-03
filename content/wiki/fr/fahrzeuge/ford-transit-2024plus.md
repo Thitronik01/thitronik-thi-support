@@ -1,12 +1,15 @@
 ---
 title: Ford Transit / Tourneo Custom / Transit Custom (2024+)
 sources:
-  - sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv
-  - sources/Fahrzeugbesonderheiten.docx
-  - sources/WiPro III 5 safe.lock.docx
-  - sources/WiPro III 6 safe.lock.docx
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.2.pdf"
+  - "sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv"
+  - "sources/Fahrzeugbesonderheiten.docx"
+  - "sources/WiPro III 5 safe.lock.docx"
+  - "sources/WiPro III 6 safe.lock.docx"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: medium
 lang: fr
 translation_of: sources/fahrzeuge/ford-transit-2024plus.md
@@ -18,6 +21,12 @@ Cet article décrit le montage du **kit WiPro III safe.lock Ford** dans la nouve
 
 > **Limitation critique :** ce profil est documenté uniquement pour le **mode camping**. Verrouiller le véhicule avec un moyen de commande THITRONIK® pris en charge. Un verrouillage préalable avec la clé d’origine peut bloquer le déverrouillage ultérieur avec les accessoires THITRONIK®.
 
+## Limites du véhicule et sources contrôlées
+
+Ford Transit 2024+ / Custom 2023+ : conflit de série entre `5298-005` dans le registre ancien et `5298-006 / 1.0.1sf` dans la FAQ. Sans liste de série et notice correspondantes, 5298-005 n’est pas un minimum confirmé. La FAQ ne prouve pas les limites mensuelles 07/2024 ou 08/2023. Mode camping : verrouiller avec THITRONIK pour pouvoir ensuite déverrouiller avec ces accessoires ; après verrouillage par clé d’origine, la Schaltersperre non désactivable empêche l’ouverture THITRONIK. La clé d’origine peut ouvrir un verrouillage THITRONIK ; Auto-Close est alors inactif.
+
+Sources : [S, PDF 4](../../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 5](../../../quellen/wipro-iii-safelock-faq.pdf#page=5), [S, PDF 16](../../../quellen/wipro-iii-safelock-faq.pdf#page=16), [S, PDF 17](../../../quellen/wipro-iii-safelock-faq.pdf#page=17).
+
 ## Champ d’application
 
 | Caractéristique | Prescription |
@@ -26,7 +35,7 @@ Cet article décrit le montage du **kit WiPro III safe.lock Ford** dans la nouve
 | Ford Transit | à partir de `07/2024` |
 | Tourneo Custom / Transit Custom | à partir de `08/2023` |
 | Système | kit WiPro III safe.lock Ford, réf. `105298` |
-| Version minimale | `5298-005 / 1.0.1sf` |
+| Version minimale | `5298-005 / 1.0.1sf` (ancien contenu ; FAQ 5298-006, non résolu) |
 | Profil véhicule | `SW1` à `SW8` tous sur `OFF` |
 | Mode de fonctionnement | uniquement mode camping ; fonctionnement normal non documenté |
 | Signes distinctifs | combiné d’instruments numérique et, selon la version automatique, sélecteur rotatif de vitesses |
@@ -37,13 +46,15 @@ Ces signes aident à identifier le modèle, mais ne remplacent pas le contrôle 
 
 | À partir du numéro de série | Logiciel / version | Importance pour ce montage |
 |---|---|---|
-| `5298-005` | `1.0.1sf` | minimum pour Ford Transit dès `07/2024` et Tourneo Custom / Transit Custom dès `08/2023` ; mode camping et protection anti-enfermement |
+| `5298-005` (ancien contenu ; FAQ 5298-006, non résolu) | `1.0.1sf` | minimum pour Ford Transit dès `07/2024` et Tourneo Custom / Transit Custom dès `08/2023` ; mode camping et protection anti-enfermement |
 | `5298-006` | modification du faisceau | les fils safe.lock bleus possèdent des contacts directs pour J4 broches 9 et 23 |
 | `5298-008` | `1.0.3sf` | correction documentée de la protection anti-enfermement avec Pro-Finder pour Ford Transit `2019–2024` ; ne pas en faire un minimum général pour tous les véhicules 2024+ sans contrôler la variante |
 
 Cet article distingue volontairement la **prise en charge du véhicule** dès `5298-005` et la **version du faisceau** dès `5298-006`. Relever le numéro de série complet, le logiciel et le type de contacts avant de commencer. Voir [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]].
 
 ## Régler le profil DIP en toute sécurité
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 Pour cette nouvelle génération Ford, les **huit commutateurs DIP doivent être sur `OFF`**.
 
@@ -72,6 +83,8 @@ Voir [[Compatibilité des véhicules — Matrice de présentation et principes d
 Prévoir les outils de dépose adaptés, un multimètre, une pince à sertir, des raccords homologués, de l’isolant et des moyens de décharge de traction. Le parcours de démontage exact n’est pas établi par les sources locales et n’est donc pas reconstitué.
 
 ## Vue d’ensemble des raccordements
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 | Raccord véhicule | Fil véhicule | Fil WiPro | Fonction |
 |---|---|---|---|
@@ -133,6 +146,8 @@ Ne pas inverser CAN-High et CAN-Low. L’affectation générale WiPro confirme b
 Le klaxon du véhicule, la sirène interne et une éventuelle sirène auxiliaire sont distincts. Voir [[Sirènes et klaxons — moyens d'alarme acoustiques|Sirènes et klaxons]].
 
 ## Mode camping et moyens de commande
+
+**Précision de la notice rév. 1.3 (06/2025), page PDF 43 :** sur Transit 2024+ et Transit Custom 2023+, le verrouillage des interrupteurs ne peut pas être désactivé. Après verrouillage/armement avec la clé d'origine, déverrouillage/désarmement par THITRONIK impossible. En camping, verrouiller avec THITRONIK ; la clé d'origine peut ensuite déverrouiller et Auto-Close reste inactif. La source mentionne également Transit 2019–2024 / Custom jusqu'en 2023 pour l'ancienne variante désactivable. Les années se chevauchent : contrôler la génération exacte. Cette précision de commande ne valide aucune broche d'installation.
 
 | Action | Comportement documenté / prescription |
 |---|---|

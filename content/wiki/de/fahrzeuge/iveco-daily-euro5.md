@@ -1,12 +1,12 @@
 ---
 title: Iveco Daily Euro 5 und neuer (2011–2024)
 sources:
-  - sources/WiPro_III_Iveco_Daily_Euro_5_2011-2024_DE.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/ZV - IVECO Daily.pdf
-  - sources/Iceco Daily.docx
-  - sources/Fahrzeugbesonderheiten.docx
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-iveco-euro5.pdf"
+  - "content/quellen/fahrzeug-iveco-zv.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Iceco Daily.docx"
+  - "sources/Fahrzeugbesonderheiten.docx"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -18,6 +18,16 @@ Dieser Artikel beschreibt den Einbau einer WiPro III beziehungsweise WiPro III s
 
 > **Abgrenzung:** Modelljahr, Bordcomputer, Stecker, Pinbelegung und Leitungscode müssen gemeinsam zur Anleitung passen. Hinweise der Quelle auf geänderte Kabelfarben ab 2025 erweitern den Geltungsbereich nicht. Für Iveco Daily ab Modelljahr 2025/2026 liegt im Projekt wegen BCM-Änderungen keine Einbaufreigabe vor.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Iveco Daily 2011–2024, Anleitung 01/2026, Seite 2: normale WiPro `SW2 + SW6 ON`; safe.lock mit Umrüstplatine `SW2 + SW5 + SW6 ON`; die dritte Grafik für teil- und vollintegrierte safe.lock-Fahrzeuge zeigt `SW1 + SW2 + SW5 + SW6 ON` und verlangt, die blaue ZV-Leitung nicht anzuschließen. Der Hinweis „SW5 nur bei Umrüstplatine“ bleibt gültig. SW1 ist somit nicht ausschließlich ein ZV-Testschalter. Die ZV-Zusatzmatrix nennt zwölf Kombinationen, aber keine allgemeine Freigabe unbekannter Fahrzeuge. Kabelfarben ab 2025 erweitern nicht den Titelbereich 2011–2024. Bei der Hupe überschneiden sich die Angaben sowohl 2017 als auch 2019; Anschluss und Schaltart am Fahrzeug klären.
+
+Belege: [iveco-euro5, PDF 2](../../../quellen/fahrzeug-iveco-euro5.pdf#page=2), [iveco-euro5, PDF 4](../../../quellen/fahrzeug-iveco-euro5.pdf#page=4), [iveco-euro5, PDF 5](../../../quellen/fahrzeug-iveco-euro5.pdf#page=5), [iveco-zv, PDF 1](../../../quellen/fahrzeug-iveco-zv.pdf#page=1).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
+
 ## Geltungsbereich
 
 | Merkmal | Vorgabe |
@@ -26,7 +36,7 @@ Dieser Artikel beschreibt den Einbau einer WiPro III beziehungsweise WiPro III s
 | Modelljahre | 2011–2024; tatsächliche Ausführung prüfen |
 | WiPro III beziehungsweise safe.lock ohne Umrüstplatine | `SW2 + SW6` auf `ON` |
 | WiPro III safe.lock mit Umrüstplatine | `SW2 + SW5 + SW6` auf `ON` |
-| Teil- und vollintegrierte Fahrzeuge mit Umrüstplatine | `SW2 + SW5 + SW6`; blaue ZV-Öffnen-Leitung nicht anschließen |
+| Teil- und vollintegrierte Fahrzeuge mit Umrüstplatine | `SW1 + SW2 + SW5 + SW6`; blaue ZV-Öffnen-Leitung nicht anschließen |
 | Kompatibilitätsbasis | `0823-001 / 2.1` aus der freigegebenen Übersicht; genaue Geräte- und Fahrzeugausführung prüfen |
 
 Bei fahrzeugspezifisch vorkonfigurierten Anlagen entfällt die DIP-Umstellung. Die tatsächlich vorgefundene Stellung ist dennoch zu dokumentieren. Seriennummer, Softwarestand und Geräteausführung sind über [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern und Softwarestände]] zu prüfen.
@@ -39,7 +49,7 @@ Bei fahrzeugspezifisch vorkonfigurierten Anlagen entfällt die DIP-Umstellung. D
 | ältere allgemeine Installationsübersicht und Altbestand | abweichende Iveco-Gruppenangaben, zuletzt fälschlich `SW1` beziehungsweise `SW1 + SW5` | durch die aktuelle fahrzeugspezifische Grafik ersetzt |
 | ZV-Zusatzquelle | zusätzliche Teststellungen von `SW1` und `SW3` | nur für die dokumentierte ZV-Anpassmatrix, nicht als Ersatz des Grundprofils |
 
-Die Abbildung im Handbuch wurde hochauflösend visuell geprüft. `SW2` und `SW6` stehen bei WiPro III auf `ON`; `SW5` kommt **nur bei verwendeter Umrüstplatine** hinzu. `SW1` und `SW3` gehören ausschließlich zu den zwölf ZV-Prüfkombinationen weiter unten. Grundlagen beschreibt [[Fahrzeugkompatibilität — Übersichtsmatrix & DIP-Grundlagen|Fahrzeugkompatibilität]].
+Die Abbildung im Handbuch wurde hochauflösend visuell geprüft. `SW2` und `SW6` stehen bei WiPro III auf `ON`; `SW5` kommt **nur bei verwendeter Umrüstplatine** hinzu. Die dritte Grafik zeigt zusätzlich `SW1 ON` bei teil- und vollintegrierten safe.lock-Fahrzeugen. `SW1` ist daher nicht ausschließlich ein Testschalter; die separate ZV-Matrix variiert `SW1` und `SW3`. Grundlagen beschreibt [[Fahrzeugkompatibilität — Übersichtsmatrix & DIP-Grundlagen|Fahrzeugkompatibilität]].
 
 Die [[safe.lock Umrüstplatine — Schlüsselsicherheit für Ducato/Boxer/Jumper|safe.lock Umrüstplatine]] ist nicht allein aus der Bezeichnung „safe.lock“ abzuleiten. Vor allem ab Modelljahr 2019 ist die tatsächliche Schlüssel- und Systemausführung zu prüfen; `SW5` niemals ohne nachgewiesene Umrüstplatine aktivieren.
 
@@ -67,7 +77,7 @@ Funk-Magnetkontakte, Funk-Gaswarner und Funk-Kabelschleifen vor dem Einbau anler
 2. Jeden zu speichernden Kontakt, Gaswarner oder jede Kabelschleife zwei- bis dreimal auslösen.
 3. Piepton und kurz erlöschende LED als Speicherbestätigung prüfen.
 4. Spannungsversorgung entfernen und WiPro-Gehäuse öffnen, sofern die Anlage nicht bereits fahrzeugspezifisch vorkonfiguriert ist.
-5. Für WiPro III und safe.lock ohne Umrüstplatine `SW2 + SW6` auf `ON` stellen.
+5. Für die normale Ausführung ohne Umrüstplatine `SW2 + SW6 ON`; bei teil-/vollintegriertem safe.lock die gesonderte dritte Grafik mit `SW1 ON` beachten.
 6. Nur bei nachgewiesener Umrüstplatine zusätzlich `SW5` auf `ON` stellen.
 7. Gehäuse schließen und mit der Installation fortfahren.
 
@@ -143,17 +153,17 @@ Bereits ab Modelljahr 2018 empfiehlt die Primärquelle eine [[Sirenen und Hupen 
 
 ## Teil- und vollintegrierte Fahrzeuge
 
-Bei teil- und vollintegrierten Iveco-Daily-Aufbauten wird die **blaue ZV-Öffnen-Leitung nicht angeschlossen**. Das Grundprofil bleibt `SW2 + SW6`; `SW5` kommt nur bei nachgewiesener Umrüstplatine hinzu.
+Bei teil- und vollintegrierten Iveco-Daily-Aufbauten wird die **blaue ZV-Öffnen-Leitung nicht angeschlossen**. Die zugehörige dritte Grafik auf PDF-Seite 2 zeigt `SW1 + SW2 + SW5 + SW6 ON`. Der Hinweis `SW5` nur bei nachgewiesener Umrüstplatine bleibt bestehen; die Ausführung ohne Umrüstplatine bei abweichendem Aufbau gesondert bestätigen.
 
 Die im Altbestand genannten Sonderfälle „Iveco Daily 4×4 MJ 2021“ und „Carthago 2022“ stammen aus den lokal fehlenden Word-Dateien und werden deshalb nicht als freigegebene fahrzeugspezifische Lösung fortgeführt. Eine abweichende ZV-Funktion ist mit der folgenden Zusatzmatrix und bei Bedarf mit THITRONIK Support zu prüfen.
 
 ## ZV-Anpassmatrix mit SW1 und SW3
 
-Die einseitige Zusatzquelle `ZV - IVECO Daily.pdf` enthält zwölf Prüfschritte. Konstant sind:
+Die einseitige Zusatzquelle `ZV - IVECO Daily.pdf` enthält zwölf Kombinationen, ohne eigene Geräte-/Versionsgrenze. Sie ist keine allgemeine Freigabe zum Durchprobieren. Anschlussgrundlagen:
 
 - blaue WiPro-Leitung an grauem Stecker Pin 1, braune Fahrzeugleitung `0000`;
 - blau/schwarze WiPro-Leitung an grünem Stecker Pin 34, grüne Fahrzeugleitung `0968`;
-- das Grundprofil `SW2 + SW6` sowie `SW5` nur bei Umrüstplatine.
+- Grundprofil nach der passenden Fahrzeugabbildung wählen; die teil-/vollintegrierte Grafik enthält zusätzlich `SW1 ON`. `SW5` nur bei Umrüstplatine.
 
 | Schritt | Blau / Pin 1 | Blau-schwarz / Pin 34 | SW1 | SW3 |
 |---:|---|---|---|---|
@@ -180,6 +190,8 @@ Diese Matrix ist kein alternativer Standard-DIP-Satz. Sie darf nur zur gezielten
 
 ## Abschließende Funktionsprüfung
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 1. Fahrzeugtüren schließen und System mit der Verriegeln-Taste der freigegebenen Fahrzeugfernbedienung scharfschalten.
 2. Falls die WiPro zunächst nicht reagiert, mehrmals ver- und entriegeln, damit sich die CAN-Daten synchronisieren.
 3. Piepton, Blinken der Fahrtrichtungsanzeiger und blinkende Status-LED als Aktivierungsbestätigung prüfen.
@@ -198,7 +210,7 @@ Eine Folge kurzer Pieptöne beim Scharfschalten weist auf einen offenen angelern
 Für Funk-Magnetkontakte gelten:
 
 - Platine so einsetzen, dass die Sende-LED vom Magneten wegweist; falsche Ausrichtung erlaubt zwar das Anlernen, verhindert aber die Alarmierung.
-- Magnet im dokumentierten Bereich von `22–30 mm` positionieren und nicht jenseits der roten Grenzlinie montieren.
+- Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 - Klebefläche sauber, trocken und fettfrei vorbereiten.
 - Nicht unter `15 °C` verarbeiten; etwa `24 Stunden` bis zur Endfestigkeit abwarten.
 - Für größere Abstände oder bessere Antennenausrichtung Montageadapter Art. `100428` oder `100729` verwenden.
@@ -222,12 +234,7 @@ Weitere Prüfungen beschreibt [[Störungsbeseitigung — Sichere Diagnose häufi
 
 ## Quellenentscheidung
 
-- Das zehnseitige fahrzeugspezifische Einbauhandbuch *WiPro III + safe.lock – Iveco Daily 2011–2024 (Euro 5 und neuer)*, Stand `01/2026`, wurde vollständig textlich und visuell geprüft.
-- Seine DIP-Grafik belegt `SW2 + SW6`. `SW5` wird ausschließlich bei vorhandener Umrüstplatine ergänzt. Die falsche Altbestands- und Matrixangabe `SW1` beziehungsweise `SW1 + SW5` wurde korrigiert.
-- Die einseitige Zusatzquelle `ZV - IVECO Daily.pdf` wurde vollständig visuell geprüft und als zwölfstufige Anpassmatrix für `SW1`, `SW3` sowie die beiden ZV-Ausgänge übernommen.
-- Das allgemeine Installationshandbuch Version `1.8` ergänzt Sicherheits- und Diagnosegrundlagen; abweichende ältere Fahrzeuggruppenangaben haben keinen Vorrang.
-- `Iceco Daily.docx` und `Fahrzeugbesonderheiten.docx` sind lokal nicht auffindbar. Daraus stammende 4×4-/Carthago-Sonderaussagen und eine Funktionsdeutung von `SW1`/`SW3` wurden nicht als belegt übernommen.
-- Die Hinweise der Primärquelle zu Kabelfarben ab 2025 wurden vom Geltungsbereich 2011–2024 getrennt; sie begründen keine Freigabe für die abweichende BCM-Generation.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [iveco-euro5, PDF 2](../../../quellen/fahrzeug-iveco-euro5.pdf#page=2), [iveco-euro5, PDF 4](../../../quellen/fahrzeug-iveco-euro5.pdf#page=4), [iveco-euro5, PDF 5](../../../quellen/fahrzeug-iveco-euro5.pdf#page=5), [iveco-zv, PDF 1](../../../quellen/fahrzeug-iveco-zv.pdf#page=1).
 
 ## Querverweise
 

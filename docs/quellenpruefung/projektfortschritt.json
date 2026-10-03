@@ -1,0 +1,321 @@
+{
+  "planVersion": 1,
+  "updated": "2026-10-02",
+  "scope": "Dokumentengestützte Fachprüfung der DE-/FR-RAG-Wissensbasis",
+  "metric": "Gewichtete abgeschlossene Arbeitsschritte; keine Seitenquote und keine Antwortsicherheit",
+  "totalPoints": 100,
+  "completedPoints": 71,
+  "percent": 71,
+  "packages": [
+    {
+      "id": "bestand",
+      "weight": 10,
+      "completed": 10
+    },
+    {
+      "id": "camp-van",
+      "weight": 15,
+      "completed": 10,
+      "steps": [
+        {
+          "id": "aussagenmatrix",
+          "weight": 5,
+          "done": true
+        },
+        {
+          "id": "de-fr-integration",
+          "weight": 3,
+          "done": true
+        },
+        {
+          "id": "lokale-belegtests",
+          "weight": 2,
+          "done": true
+        },
+        {
+          "id": "live-modell-eval",
+          "weight": 2,
+          "done": false
+        },
+        {
+          "id": "herstellerklaerung",
+          "weight": 3,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "wipro-safelock",
+      "weight": 15,
+      "completed": 10,
+      "steps": [
+        {
+          "id": "bedienungs-aussagenmatrix",
+          "weight": 4,
+          "done": true
+        },
+        {
+          "id": "installation-faq-abgleich",
+          "weight": 1,
+          "done": true
+        },
+        {
+          "id": "de-fr-integration",
+          "weight": 3,
+          "done": true
+        },
+        {
+          "id": "lokale-belegtests",
+          "weight": 2,
+          "done": true
+        },
+        {
+          "id": "live-modell-eval",
+          "weight": 2,
+          "done": false
+        },
+        {
+          "id": "herstellerklaerung",
+          "weight": 3,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "pro-finder",
+      "weight": 15,
+      "completed": 10,
+      "steps": [
+        {
+          "id": "aussagenmatrix",
+          "weight": 5,
+          "done": true
+        },
+        {
+          "id": "de-fr-integration",
+          "weight": 3,
+          "done": true
+        },
+        {
+          "id": "lokale-belegtests",
+          "weight": 2,
+          "done": true
+        },
+        {
+          "id": "live-modell-eval",
+          "weight": 2,
+          "done": false
+        },
+        {
+          "id": "herstellerklaerung",
+          "weight": 3,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "gas-co-sensorik",
+      "weight": 10,
+      "completed": 7,
+      "steps": [
+        {
+          "id": "aussagenmatrix",
+          "weight": 4,
+          "done": true
+        },
+        {
+          "id": "de-fr-integration",
+          "weight": 2,
+          "done": true
+        },
+        {
+          "id": "lokale-belegtests",
+          "weight": 1,
+          "done": true
+        },
+        {
+          "id": "live-modell-eval",
+          "weight": 1,
+          "done": false
+        },
+        {
+          "id": "herstellerklaerung",
+          "weight": 2,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "funk-zubehoer",
+      "weight": 10,
+      "completed": 7,
+      "steps": [
+        {
+          "id": "aussagenmatrix",
+          "weight": 4,
+          "done": true
+        },
+        {
+          "id": "de-fr-integration",
+          "weight": 2,
+          "done": true
+        },
+        {
+          "id": "lokale-belegtests",
+          "weight": 1,
+          "done": true
+        },
+        {
+          "id": "live-modell-eval",
+          "weight": 1,
+          "done": false
+        },
+        {
+          "id": "herstellerklaerung",
+          "weight": 2,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "fahrzeuge",
+      "weight": 15,
+      "completed": 10,
+      "steps": [
+        {
+          "id": "aussagenmatrix",
+          "weight": 5,
+          "done": true
+        },
+        {
+          "id": "de-fr-integration",
+          "weight": 3,
+          "done": true
+        },
+        {
+          "id": "lokale-belegtests",
+          "weight": 2,
+          "done": true
+        },
+        {
+          "id": "live-modell-eval",
+          "weight": 2,
+          "done": false
+        },
+        {
+          "id": "herstellerklaerung",
+          "weight": 3,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "abschluss-evaluation",
+      "weight": 10,
+      "completed": 7,
+      "steps": [
+        {
+          "id": "importqualitaet",
+          "weight": 3,
+          "done": true
+        },
+        {
+          "id": "produktuebergreifender-gesamtvergleich",
+          "weight": 3,
+          "done": true
+        },
+        {
+          "id": "live-evaluation-vorbereiten",
+          "weight": 1,
+          "done": true
+        },
+        {
+          "id": "live-antwort-evaluation-und-abnahme",
+          "weight": 3,
+          "done": false
+        }
+      ]
+    }
+  ],
+  "openDependencies": [
+    "CampLock 24-V-Stromaufnahme verbindlich klären",
+    "VanLock Kompatibilität, 24-V-Stromaufnahme und Gewichtsabgrenzung verbindlich klären",
+    "Live-Modellzugang für Antwort-Evaluation bereitstellen",
+    "WiPro optische Alarmdauer 120/180 Sekunden verbindlich klären",
+    "WiPro DE/FR-Bedienabweichungen, Ford-Übergangsmodelle und Zustand nach Teillöschung klären",
+    "WiPro Vent-check 4/5 s und Batteriewarnton 2/5 s verbindlich zuordnen",
+    "WiPro Pin-2/3-Farben, Pin-13-Funktion und Diagnose-Tasterbuchstaben klären",
+    "Ducato 1050-016/-042: widersprüchliche Softwarestände anhand Herstellerquelle klären",
+    "Pro-Finder Altgeräte: Geofencing 1 km DE / 1,5 km FR verbindlich zuordnen",
+    "Pro-Finder: Programmierpräfixe, französische Befehls-Aliasse und detaillierte Serien-/Softwaregrenzen bestätigen",
+    "Pro-Finder Rev. 1.3: falsche FR-Pluszuordnung Pin 1 korrigieren und Modus-9-Versionsgrenze bestätigen",
+    "Pro-Finder: Unterspannungsschwellen für 24 V und Schutzfunktionen in Betriebsart B klären",
+    "G.A.S.-connect: Stromaufnahme 15/25 gegenüber 34 mA und Gewicht 33/35 g nach Gerätestand klären",
+    "G.A.S.-plug: Schalldruck 82/85 dB samt Messbedingungen klären",
+    "G.A.S.-pro III: Dokumentrevisionen 1.3/1.2/1.1 und widersprüchliche CO-Schalterausrichtung zuordnen",
+    "G.A.S.-pro III: Unterspannungs-Tonfolge DE/FR und gesonderte 24-V-Schwellen klären",
+    "G.A.S.-pro III: CO-Vorrang bei IGN, externem CO-Sensor und Funk-/SIR+-Ausgängen verbindlich klären",
+    "Gas-Sensorik: Kabelgrenzen 7/8 m und Montagehöhen 10–20/10–30 cm gerätebezogen bestätigen",
+    "Alte G.A.S.-pro: Spannung 8–30/9–30 V und widersprüchliche CO-Montage DE/FR/Zeichnung klären",
+    "Alte G.A.S.-pro: Zusatzsirenen-Bestellnummer DE 100190 / FR 100191 zuordnen",
+    "CO-Sensor: alte 40-mA- und aktuelle 6-mA-Angabe anhand Sensor-/Serienstand zuordnen",
+    "G.A.S.-pro III und Zusatzsensor: gültiges Prüfverfahren trotz widersprüchlicher Feuerzeug-FAQ und Austauschbarkeit des Sensorkopfs belegen",
+    "Standard-Magnetkontakt: Abstand 22/25 mm nach Geräte- und Zentralenstand zuordnen",
+    "Wasserdichter Magnetkontakt: Gewicht 33/37 g und Temperaturgeltung −40..+125 °C einschließlich Batterie klären",
+    "Funk-Handsender: 30-Sekunden-LED eindeutig zuordnen; Batteriewarnton 2/5 Sekunden bleibt offene WiPro-Frage",
+    "Magnetkontakt: englische Tabellenangabe <10 W gegenüber DE/FR <10 mW berichtigen lassen",
+    "NFC-Kurzanleitung: Rückseitenkennung 101052 gegenüber Produkt 105299 sowie Web-Drehrichtung und pauschale 20-mm-Angabe klären",
+    "T.S.A.: Norm 14064/14604, FR-Adaptermontage Decke/Wand und Zählung der Batteriewarnungen verbindlich klären",
+    "Funk-Wassermelder: Alarm im unscharfen Zustand und zusätzliche Anrufweiterleitung nicht durch den geprüften Testablauf belegt",
+    "BT-connect: Smartwatch-Kompatibilität der 6000-Reihe klären; FAQ und Produktseite verwenden 1290-Seriengrenzen des älteren Vernetzungsmoduls",
+    "Fahrzeuge: fehlende Detailanleitungen für sieben Profile sowie safe.lock-Anschlussvarianten VS30/Crafter beschaffen und nachprüfen; Quellenmanifest 2026-10-01-fahrzeuge beachten",
+    "Ford: Deadlock-Freigaben 2006–2013 bzw. 2016/2019, Facelift-Seriengrenze 0823-013/-016 und Monatsgrenzen klären",
+    "Ford 2024+: 5298-005/-006 und behauptete Aussperrschutz-Firmware 5298-008/1.0.3sf anhand Primärunterlagen bestätigen",
+    "Vito W447: widersprüchliche FAQ-Stände 0823-014/6.2 und 0823-013/5.6 klären",
+    "Sprinter VS30: ILS-Ansteuerung der vorderen Blinker zwischen Fahrzeug-PDF und FAQ zuordnen",
+    "Master II: doppelte Steckerbezeichnung P202 und Pin-36-Zuordnung verbindlich bestätigen; Master III Türüberwachung ab 6.9 einzeln klären",
+    "Iveco Euro 5: überlappende Hupen-/Modelljahrgrenzen und Geltung der Farbnotiz ab 2025 klären",
+    "safe.lock-Upgrade: drei Leitungen in Rev. 2.0 gegenüber zwei Leitungen im Serviceformular 2024 sowie 0823-019-Servicegrenze klären",
+    "safe.lock-Umrüstplatine: Schlüssel-/Baujahrgeltung 2006–2012 gegenüber 2006–2018 und Iveco ab 2011 verbindlich zuordnen",
+    "Ducato 244: widersprüchliche Aussagen zur Originalschlüssel-Bedienung in derselben Fahrzeug-PDF klären",
+    "Quellenherkunft nach Pflege 02.10.2026: 982 unterschiedliche historische Dateiverweise nicht auffindbar (908 Markdown-Auszüge, 70 Redaktionsdateien, vier PDF-Verweise); zehn weitere PDFs nur im Anleitungen-Ordner vorhanden, ein Sammelverweis gesondert dokumentiert. Siehe 2026-10-02-quellenpflege.md.",
+    "Redaktionsstatus: elf FR-Seiten bereits in Git-HEAD internal_only; mitgelieferte Originale ohne expliziten Status. Abweichung zum vorhandenen Standard-Export bleibt ungeklärt, keine neue Freigabe. Siehe 2026-10-02-fr-redaktionsstatus.json.",
+    "Live-Antwortprüfung: 28 Pilotfälle vorbereitet; lokale API-Adresse und API-Schlüssel fehlen am 02.10.2026, Authentifizierung und Modellverfügbarkeit danach separat prüfen",
+    "CampLock/VanLock: Herstellerhinweis 27.07.2026 zu Zentralverriegelung; betroffene Serien und verfügbare Update-Version bestätigen. Frage CAMP-UPDATE."
+  ],
+  "nextIndependentWork": "Versandweg/Empfänger für die vorbereitete Herstelleranfrage festlegen und Antworten anhand der Frage-IDs belegen. Für Live-Evaluation Test-App-Adresse und autorisierte Sitzung oder lokale Provider-Konfiguration bereitstellen; anschließend 28 DE/FR-Pilotfälle ausführen.",
+  "resolvedDependencies": [
+    {
+      "item": "Gesamt-Importqualität: vor Vollimport code/wiki-ingest.mjs ebenfalls auf Erhalt von SMS-Steuerzeichen anpassen und mit den exakten Pro-Finder-Kontexttests prüfen",
+      "resolvedAt": "2026-10-02",
+      "evidence": "2026-10-02-gesamtvergleich.md"
+    }
+  ],
+  "maintenanceLog": [
+    {
+      "date": "2026-10-02",
+      "package": "quellenpflege",
+      "evidence": "2026-10-02-quellenpflege.md",
+      "normalizedReferences": 713,
+      "duplicatesRemoved": 144,
+      "pdfCopiesVerified": 81,
+      "originalFilesVerified": 114,
+      "progressPointsAdded": 0,
+      "reason": "Pflege innerhalb bereits gewerteter Bestands-/Importarbeit; keine Live-Evaluation oder Herstellerklärung abgeschlossen."
+    }
+  ],
+  "manufacturerClarification": {
+    "questionnaire": "2026-10-02-herstellerfragen.json",
+    "questionCount": 47,
+    "status": "prepared-not-sent",
+    "answersReceived": 0,
+    "webSourcesChecked": 10
+  },
+  "liveEvaluation": {
+    "pilotCases": 28,
+    "attemptedAt": "2026-10-02",
+    "status": "blocked-missing-provider-configuration",
+    "modelAnswersEvaluated": 0,
+    "evidence": "2026-10-02-live-ausfuehrung.json"
+  }
+}

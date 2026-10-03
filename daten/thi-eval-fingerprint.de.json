@@ -1,0 +1,324 @@
+{
+  "_hinweis": "CampLock-/VanLock-Goldfälle, belegt durch die Hersteller-PDFs in content/quellen/ und die überarbeiteten Wiki-Artikel. Separater Lauf: node werkzeuge/antwort-eval.mjs --sprache de --gold ../daten/thi-eval-fingerprint.de.json --judge",
+  "cases": [
+    {
+      "id": "camp-ohne-suffix-wipro-iii",
+      "question": "Mein CampLock hat die Artikelnummer 106111. Kann es mit einer WiPro III ohne safe.lock die Hartal-Aufbautür bedienen?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "106111",
+        "WiPro III",
+        "Aufbautür"
+      ],
+      "antwort_darf_nicht": [
+        "106111 benötigt zwingend WiPro III safe.lock",
+        "mit WiPro III ohne safe.lock unmöglich"
+      ],
+      "beleg": "Mit WiPro III: Aufbautür ver-/entriegeln und Alarm scharf-/unscharfschalten. Mit WiPro III safe.lock: gesamtes Fahrzeug ver-/entriegeln und Alarm scharf-/unscharfschalten.",
+      "source": "content/wiki/de/camplock-fingerprint.md, Welche Ausführung ist verbaut?; camplock-fingerprint.pdf, physische PDF-S. 2",
+      "kategorie": "variante",
+      "kontext_muss": [
+        "106111 / 106144",
+        "Mit WiPro III",
+        "Aufbautür"
+      ]
+    },
+    {
+      "id": "camp-002-voraussetzung",
+      "question": "Gilt die WiPro-III-Freigabe des alten CampLock auch für CampLock 106111-002?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "106111-002",
+        "WiPro III safe.lock"
+      ],
+      "antwort_darf_nicht": [
+        "auch ohne safe.lock freigegeben",
+        "gleiche Freigabe wie 106111"
+      ],
+      "beleg": "Die gemeinsame CampLock-/VanLock-Anleitung beschreibt den Betrieb mit WiPro III safe.lock: Fahrzeug ver-/entriegeln und Alarm scharf-/unscharfschalten. Eine Freigabe für WiPro III ohne safe.lock oder eine bestimmte Hartal-Tür nennt sie nicht.",
+      "source": "content/wiki/de/camplock-fingerprint.md, Welche Ausführung ist verbaut?; camplock-vanlock-fingerprint.pdf, physische PDF-S. 1–3",
+      "kategorie": "voraussetzung",
+      "kontext_muss": [
+        "106111-002",
+        "Eine Freigabe für WiPro III ohne safe.lock"
+      ]
+    },
+    {
+      "id": "van-quellenkonflikt",
+      "question": "VanLock 106259: Reicht eine normale WiPro III? Im Katalog steht ja, in der Bedienungsanleitung etwas anderes.",
+      "expected": [
+        "/de/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "Katalog",
+        "Bedienungsanleitung",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [
+        "zweifelsfrei mit WiPro III kompatibel",
+        "zweifelsfrei nur safe.lock kompatibel"
+      ],
+      "beleg": "Die Quellen lösen diesen Widerspruch nicht auf. Die Anleitung trägt kein sichtbares Ausgabedatum; ein PDF-Erstellungsdatum allein beweist keine Änderung der Hardware.",
+      "source": "content/wiki/de/vanlock-fingerprint.md, Quellenkonflikt und Versionsprüfung; Katalog PDF-S. 25, gemeinsame Anleitung PDF-S. 3 und 10",
+      "kategorie": "quellenkonflikt",
+      "kontext_muss": [
+        "Katalog",
+        "safe.lock",
+        "ungeklärt"
+      ]
+    },
+    {
+      "id": "finger-speicher-gesamt",
+      "question": "Kann ich bei VanLock 16 Benutzerfinger zusätzlich zu zwei Master-Fingern speichern?",
+      "expected": [
+        "/de/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "16",
+        "insgesamt",
+        "Master"
+      ],
+      "antwort_darf_nicht": [
+        "18 Finger",
+        "16 zusätzliche Benutzerfinger"
+      ],
+      "beleg": "Insgesamt sind höchstens 16 Finger einschließlich der zwei Master-Finger möglich.",
+      "source": "content/wiki/de/vanlock-fingerprint.md, Finger und Alarmsystem anlernen; camplock-vanlock-fingerprint.pdf, physische PDF-S. 4–5 und 10",
+      "kategorie": "kapazitaet",
+      "kontext_muss": [
+        "16 Finger einschließlich der zwei Master-Finger"
+      ]
+    },
+    {
+      "id": "finger-einzeln-loeschen",
+      "question": "Wie lösche ich beim CampLock nur einen verlorenen Benutzerfinger, ohne die anderen zu löschen?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "alle",
+        "Master-Finger",
+        "10"
+      ],
+      "antwort_darf_nicht": [
+        "einzeln löschen möglich",
+        "nur diesen Finger entfernen"
+      ],
+      "beleg": "Die Anleitungen beschreiben kein selektives Löschen: Immer werden alle angelernten Finger einschließlich der Master-Finger entfernt.",
+      "source": "content/wiki/de/camplock-fingerprint.md, Alle Finger löschen; camplock-fingerprint.pdf, physische PDF-S. 1, gemeinsame Anleitung PDF-S. 8–9",
+      "kategorie": "loeschen",
+      "kontext_muss": [
+        "alle angelernten Finger einschließlich der Master-Finger"
+      ]
+    },
+    {
+      "id": "camp-24v-konflikt",
+      "question": "Wie viel Strom benötigt CampLock 106111 bei 24 V: 0,6 oder 1,7 mA?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "0,6",
+        "1,7",
+        "Katalog",
+        "Kurzanleitung"
+      ],
+      "antwort_darf_nicht": [
+        "zweifelsfrei 1,7 mA",
+        "zweifelsfrei 0,6 mA"
+      ],
+      "beleg": "Beide Quellenwerte für dieselben Artikelnummern nennen, Widerspruch ungeklärt; nicht allein durch -002 erklären.",
+      "source": "C1 S. 1; K1 S. 25 / gedruckt 49; C2 S. 10",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "0,6 mA",
+        "1,7 mA",
+        "Quellenkonflikt"
+      ]
+    },
+    {
+      "id": "van-gewicht-konflikt",
+      "question": "Mein VanLock 106260 soll 151 g wiegen. Warum steht in der Anleitung 219 g?",
+      "expected": [
+        "/de/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "151",
+        "219",
+        "Katalog",
+        "Anleitung"
+      ],
+      "antwort_darf_nicht": [
+        "151 g ist falsch",
+        "219 g ist falsch"
+      ],
+      "beleg": "Quellen widersprechen sich beim Gewicht für dieselben VanLock-Artikelnummern; keine Hardwareänderung als bewiesen ausgeben.",
+      "source": "C2 S. 10; K1 S. 25 / gedruckt 48",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "151 g",
+        "219 g",
+        "Quellenkonflikt"
+      ]
+    },
+    {
+      "id": "camp-weiterer-finger-tuer",
+      "question": "CampLock 106111 ohne -002: Muss ich die Hartal-Tür schließen, bevor ich einen weiteren Finger anlerne?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "schließen",
+        "Master",
+        "15"
+      ],
+      "antwort_darf_nicht": [
+        "Tür muss offen bleiben"
+      ],
+      "beleg": "Zuerst Tür schließen; registrierten Master fünf Sekunden bis Gelb halten; neuen Finger 15-mal auflegen.",
+      "source": "C1 S. 2, Weitere Finger anlernen",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "ohne -002 zuerst die Hartal-Aufbautür schließen",
+        "15-mal"
+      ]
+    },
+    {
+      "id": "van-roter-sensor",
+      "question": "VanLock blinkt nach meinem Finger rot. Ist die Alarmanlage jetzt unscharf?",
+      "expected": [
+        "/de/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "nicht erkannt",
+        "unverändert"
+      ],
+      "antwort_darf_nicht": [
+        "Rot bestätigt das Unscharfschalten"
+      ],
+      "beleg": "Rotes Blinken am Fingerprint-Sensor bedeutet nicht erkannt; Verriegelungs- und Alarmzustand unverändert.",
+      "source": "C2 S. 7 / FR 25",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "Finger nicht erkannt",
+        "unverändert"
+      ]
+    },
+    {
+      "id": "camp-master-fehlt",
+      "question": "Ich habe bei CampLock keinen registrierten Master-Finger mehr. Wie setze ich den Sensor zurück?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "Master",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [
+        "mit einem neuen Finger zurücksetzen",
+        "Batterie abklemmen löscht alle Finger"
+      ],
+      "beleg": "Die Dokumente beschreiben keinen Sensor-Reset ohne registrierten Master; Hersteller/Fachbetrieb einbeziehen.",
+      "source": "C1 S. 1; C2 S. 8–9",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "kein Master-Finger mehr verfügbar",
+        "keinen alternativen Löschweg"
+      ]
+    },
+    {
+      "id": "van-loeschen-bestaetigen",
+      "question": "VanLock: Muss ich nach dem roten Blinken das Löschen der Finger noch bestätigen?",
+      "expected": [
+        "/de/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "zehn Sekunden",
+        "Master",
+        "alle"
+      ],
+      "antwort_darf_nicht": [
+        "Finger werden ohne Bestätigung gelöscht"
+      ],
+      "beleg": "Nach Abheben innerhalb zehn Sekunden mit demselben Master bestätigen; sonst Abbruch; immer alle Finger.",
+      "source": "C2 S. 8–9 / FR 26–27",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "Innerhalb von zehn Sekunden",
+        "Ohne diese Bestätigung bricht der Vorgang ab"
+      ]
+    },
+    {
+      "id": "camp-en-loeschfehler",
+      "question": "CampLock-Kurzanleitung auf Englisch: zehn Sekunden bis Gelb und noch fünf bis Rot – stimmt das?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "fünf",
+        "Englisch"
+      ],
+      "antwort_darf_nicht": [
+        "insgesamt 15 Sekunden halten"
+      ],
+      "beleg": "Englische alte Passage widerspricht DE/FR; dokumentierte Folge fünf Sekunden Gelb plus fünf Sekunden Rot.",
+      "source": "C1 S. 1 Feld 11; C2 DE S. 8, EN S. 17, FR S. 26",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "englischen",
+        "fünf Sekunden bis Gelb und weitere fünf bis Rot"
+      ]
+    },
+    {
+      "id": "camplock-herstellerhinweis-20260727",
+      "question": "Camplock Fingerprint: Herstellerhinweis 27.07.2026 zur Zentralverriegelung?",
+      "expected": [
+        "/de/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "27.07.2026",
+        "Fahrzeugschlüssel"
+      ],
+      "antwort_darf_nicht": [
+        "Das Update ist verfügbar",
+        "Alle Serien sind betroffen"
+      ],
+      "beleg": "Fahrzeugschlüssel mitführen; Versionszuordnung beim Hersteller klären.",
+      "source": "https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/",
+      "kategorie": "herstellerhinweis",
+      "kontext_muss": [
+        "27.07.2026",
+        "Fahrzeugschlüssel mitführen",
+        "verfügbare Update-Version"
+      ]
+    },
+    {
+      "id": "vanlock-herstellerhinweis-20260727",
+      "question": "Vanlock Fingerprint: Herstellerhinweis 27.07.2026 zur Zentralverriegelung?",
+      "expected": [
+        "/de/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "27.07.2026",
+        "Fahrzeugschlüssel"
+      ],
+      "antwort_darf_nicht": [
+        "Das Update ist verfügbar",
+        "Alle Serien sind betroffen"
+      ],
+      "beleg": "Fahrzeugschlüssel mitführen; Versionszuordnung beim Hersteller klären.",
+      "source": "https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/",
+      "kategorie": "herstellerhinweis",
+      "kontext_muss": [
+        "27.07.2026",
+        "Fahrzeugschlüssel mitführen",
+        "verfügbare Update-Version"
+      ]
+    }
+  ],
+  "_pruefstand": "2026-09-28; Quellen-Codes C1/C2/K1: docs/quellenpruefung/2026-09-28-camplock-vanlock.md. kontext_muss prüft Belege, nicht erzeugte Modellantworten."
+}

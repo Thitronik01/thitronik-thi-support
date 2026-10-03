@@ -1,11 +1,10 @@
 ---
 title: Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento (2014–2021)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_fiat_talento___renault_trafic_iii.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-talento-trafic-2014.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -16,6 +15,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in Renault Trafic III, Opel Vivaro B, Nissan NV300 und Fiat Talento der Baujahre 2014 bis 2021. Das fahrzeugspezifische Einbauhandbuch Stand `05/22` dokumentiert das Fahrzeugprofil, den CAN-Anschluss, Warnblinker, Versorgung, Zündung, Masse, Fahrzeughupe, Status-LED, Funk-Zubehör und den abschließenden Funktionstest.
 
 > **Abgrenzung:** Für Renault Trafic III und Nissan Primastar ab 2022 gelten ein vollständig abweichendes DIP-Profil (`SW1 + SW2 + SW4 + SW5 + SW6`) und eine andere CAN-Anschlussstelle; siehe [[Renault Trafic III / Nissan Primastar (ab 2022)|Renault Trafic III ab 2022]].
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Talento / Trafic III / Vivaro B / NV300, 2014–2021: Die Anleitung 05/22 nennt `0823-014` und `SW3 + SW6 ON`; die FAQ ergänzt Software `5.9`. Mit Keyless-Entry kann der Originalschlüssel die WiPro III laut FAQ nicht steuern. CAN an S1: Pin 4 grau → weiß/orange, Pin 3 grün → violett/orange. Besonderheit Hupe: schwarze Fahrzeugader am zweipoligen Stecker unter dem Lenkrad → graue WiPro-Leitung Pin 12. Nicht die rosa Hupenleitung eines anderen Fahrzeugprofils übernehmen.
+
+Belege: [talento-trafic-2014, PDF 2](../../../quellen/fahrzeug-talento-trafic-2014.pdf#page=2), [talento-trafic-2014, PDF 3](../../../quellen/fahrzeug-talento-trafic-2014.pdf#page=3), [talento-trafic-2014, PDF 5](../../../quellen/fahrzeug-talento-trafic-2014.pdf#page=5), [Q, PDF 3](../../../quellen/wipro-iii-faq.pdf#page=3), [Q, PDF 8](../../../quellen/wipro-iii-faq.pdf#page=8).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -135,7 +144,7 @@ Die Funk-Magnetkontakte erst nach dem Anlernen und einem Reichweitentest endgül
 |---|---|
 | Platinenlage | Sende-LED vom Magneten wegweisend ausrichten |
 | Fehlmontage | zeigt die Sende-LED zum Magneten, ist Anlernen möglich, eine Alarmierung erfolgt jedoch nicht |
-| Magnetposition | im geschlossenen Zustand innerhalb des dokumentierten Bereichs von etwa `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitungstemperatur | nicht unter `15 °C` |
 | Endfestigkeit der Klebepads | nach etwa `24 Stunden` |
@@ -157,7 +166,7 @@ Der folgende Ablauf entspricht dem fahrzeugspezifischen Handbuch bei **nicht akt
 8. Blinkfolge des Alarmspeichers über die Status-LED kontrollieren.
 9. Testalarm mit jedem angelernten Funk-Magnetkontakt, jeder Funk-Kabelschleife und jedem weiteren Funk-Sensor wiederholen.
 
-Das allgemeine Installationshandbuch nennt in seiner Funktionsübersicht `120 Sekunden` für die optische Alarmierung, im detaillierten Testkapitel jedoch `180 Sekunden`. Für dieses Fahrzeug gilt die konkrete Angabe von `180 Sekunden` aus dem neueren fahrzeugspezifischen Handbuch.
+Quellenkonflikt: 180 s optisch in der Fahrzeuganleitung, 120 s in der allgemeinen Bedienungsanleitung. Gerätestand-Zuordnung offen; keine neue Vorrangentscheidung.
 
 ## CAN- und Funkdiagnose
 
@@ -195,7 +204,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 - Die Seiten 6 bis 9 belegen Montage, Platinenrichtung, Magnetabstand, Klebehinweise und Adapter der Funk-Magnetkontakte.
 - Das allgemeine Installationshandbuch Version `1.8` ergänzt Sicherheitsregeln, Replay-Schutz, Diagnose und systemübergreifende Fehlerprüfung.
 - Die Fahrzeuganleitung nennt ausdrücklich mindestens `0823-014`; der Softwarestand `5.9` stammt ergänzend aus der freigegebenen Projekt-Kompatibilitätsmatrix.
-- Bei der widersprüchlichen allgemeinen Angabe zur optischen Alarmdauer hat die konkrete neuere Fahrzeuganleitung mit `180 Sekunden` Vorrang.
+- Die optische Alarmdauer bleibt ein Quellenkonflikt: `180 Sekunden` in der Fahrzeuganleitung gegenüber `120 Sekunden` in der allgemeinen Bedienungsanleitung. Ohne Zuordnung zum Gerätestand besteht keine belastbare Vorrangentscheidung.
 
 Verwendete Primärquellen:
 

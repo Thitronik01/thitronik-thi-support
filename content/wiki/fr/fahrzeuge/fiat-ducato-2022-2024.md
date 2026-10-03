@@ -1,14 +1,13 @@
 ---
 title: Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022-2024)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf
-  - 'D:/Texte/de/seriennummern-softwarestaende.md'
-  - 'D:/Texte/de/fahrzeugkompatibilitaet.md'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/fahrzeuge/fiat-ducato-2022-2024.md'
-updated: '2026-07-19'
-confidence: high
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/fahrzeuge/fiat-ducato-2022-2024.md"
+updated: '2026-10-01'
+confidence: medium
 lang: fr
 translation_of: sources/fahrzeuge/fiat-ducato-2022-2024.md
 ---
@@ -19,6 +18,12 @@ Cet article décrit le raccordement d'une WiPro III safe.lock au Fiat Ducato 8/9
 
 > **Délimitation :** la première immatriculation ne suffit pas. Vérifier ensemble carrosserie, année-modèle, calculateur, connecteurs, numéro de série et logiciel WiPro. L'électronique restylée relève de [[Fiat Ducato restylé / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)|Fiat Ducato à partir de 2024]].
 
+## Limites du véhicule et sources contrôlées
+
+Ducato 8/9 : conflit non résolu, `1050-016` associé à `7.1s` dans l’ancien contenu mais `7.2s` dans la FAQ ; `1050-042` à `7.5.2s` contre `7.5.1s` avec grand écran Fiat. La FAQ indique Ducato 8 2021–2023 et 8/9 2023–2024 : l’intervalle 2022–2024 de l’article ne suffit pas à identifier l’électronique. Activer clignotement au verrouillage et déverrouillage à la sortie. Le manuel original des six combinaisons DIP manque dans le lot PDF ; leur séquence n’est pas nouvellement confirmée.
+
+Sources : [S, PDF 3](../../../quellen/wipro-iii-safelock-faq.pdf#page=3), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
+
 ## Domaine d'application
 
 | Caractéristique | Exigence |
@@ -28,8 +33,8 @@ Cet article décrit le raccordement d'une WiPro III safe.lock au Fiat Ducato 8/9
 | Alarme | WiPro III safe.lock ou WiPro III convertie professionnellement |
 | Raccordement | calculateur de carrosserie près de la boîte à fusibles, derrière le vide-poches |
 | DIP | selon le véhicule ; contrôler successivement six combinaisons documentées |
-| Minimum standard | `1050-016` / logiciel `7.1s` |
-| Minimum grand écran tactile Fiat | `1050-042` / logiciel `7.5.2s` |
+| Minimum standard | `1050-016` / logiciel `7.1s` (ancien wiki ; FAQ : 7.2s, non résolu) |
+| Minimum grand écran tactile Fiat | `1050-042` / logiciel `7.5.2s` (ancien wiki ; FAQ : 7.5.1s, non résolu) |
 
 Pour la génération précédente, voir [[Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012-2021)|Fiat Ducato 2012-2021]]. Les préfixes et jalons complets figurent dans [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]].
 
@@ -37,10 +42,10 @@ Pour la génération précédente, voir [[Fiat Ducato / Citroën Jumper / Peugeo
 
 | Version du véhicule | Numéro de série minimal | Logiciel associé | Classement |
 |---|---|---|---|
-| Ducato 8, année-modèle 2021/2022 | `1050-016` | `7.1s` | première prise en charge documentée |
-| Ducato 8/9 avec grand écran tactile Fiat | `1050-042` | `7.5.2s` | minimum fiable de l'historique validé |
+| Ducato 8, année-modèle 2021/2022 | `1050-016` | `7.1s` (ancien wiki ; FAQ : 7.2s, non résolu) | première prise en charge documentée |
+| Ducato 8/9 avec grand écran tactile Fiat | `1050-042` | `7.5.2s` (ancien wiki ; FAQ : 7.5.1s, non résolu) | minimum logiciel non résolu face à la FAQ |
 
-L'ancienne page véhicule indique `7.5.1S` pour le grand écran. L'historique validé associe toutefois `1050-042` à `7.5.2s` et le définit comme minimum. La règle est donc **`1050-042` et au moins `7.5.2s`**. Ne pas confondre référence, numéro de série complet et logiciel installé.
+**Contradiction de sources, non résolu :** la [FAQ safe.lock](../../../quellen/wipro-iii-safelock-faq.pdf) non datée, pages PDF 2–3, indique **1050-042 / Ducato 8–9 avec grand écran : 7.5.1s** et **1050-016 / Ducato 8 : 7.2s**. L'ancien historique du wiki donne **7.5.2s** et **7.1s** respectivement. Les CSV originaux cités n'existent pas dans le dossier local ; la mention « validé » du wiki ne résout pas ce conflit avec la source primaire. Faire confirmer numéro de série, logiciel réel et équipement par **THITRONIK** avant de promettre la compatibilité. Cette comparaison ne valide aucune des versions divergentes comme minimum définitif.
 
 ## Sécurité et préparation
 
@@ -54,6 +59,8 @@ L'ancienne page véhicule indique `7.5.1S` pour le grand écran. L'historique va
 Avant intervention, documenter télécommande, verrouillage centralisé, klaxon, affichage des portes, témoins et défauts existants.
 
 ## Détermination sûre de la configuration DIP
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 Reprendre les six combinaisons de la notice actuelle spécifique au véhicule. Ne jamais tester une position non documentée.
 
@@ -70,6 +77,8 @@ Reprendre les six combinaisons de la notice actuelle spécifique au véhicule. N
 > **Important :** ne jamais modifier les DIP sous tension. Armement/désarmement et verrouillage/déverrouillage sont des fonctions distinctes.
 
 ## Accès au calculateur et raccordement de base
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 1. Déposer le vide-poches et les garnitures selon les instructions du véhicule.
 2. Dégager le calculateur près de la boîte à fusibles.
@@ -160,10 +169,7 @@ Pour les contrôles généraux, voir [[Dépannage — diagnostic sûr des probl�
 
 ## Décision sur les sources
 
-- Broches, fils et six combinaisons DIP proviennent du fonds rédactionnel conservé ; les fichiers DOCX primaires cités n'existent plus localement.
-- Les seuils `1050-016 / 7.1s` et `1050-042 / 7.5.2s` suivent [[Numéros de série et versions logicielles — préfixes, seuils et jalons|l'historique validé]].
-- Les quatre pages de *WiPro III safe.lock Upgrade*, révision `2.0`, ont été contrôlées textuellement et visuellement. Elles confirment les broches 20, 19 et 16 et le nouvel apprentissage.
-- Sans notice actuelle spécifique au véhicule, ne jamais reconstruire ni deviner les DIP ou des fils différents.
+La notice complète de montage véhicule manque dans le lot PDF. Ce contrôle porte uniquement sur la compatibilité et les versions sourcées ci-dessus ; les anciennes données IDML/du projet et leurs images ne sont pas nouvellement vérifiées. Sources : [S, PDF 3](../../../quellen/wipro-iii-safelock-faq.pdf#page=3), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
 
 ## Renvois
 

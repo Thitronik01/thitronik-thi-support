@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-02",
+  "frWarnings": 11,
+  "originalStatuses": {
+    "not-specified": 11
+  },
+  "headStatuses": {
+    "internal_only": 11
+  },
+  "changedBodies": [
+    "content/wiki/de/quellen-matrix.md",
+    "content/wiki/fr/quellen-matrix.md"
+  ],
+  "changedAccessOrEditorialMetadata": [],
+  "unchangedDataFiles": [
+    "artikel.json",
+    "artikel.mjs",
+    "korrekturen.json",
+    "korrekturen.mjs",
+    "sektionen.json",
+    "sektionen.mjs"
+  ]
+}

@@ -1,8 +1,8 @@
 ---
 title: Übersetzungs-Glossar - Mehrsprachige Spezialbegriffe
 sources:
-  - wiki/de/terminologie-und-schreibweisen.md
-  - wiki/Glossar/01_final/thitronik-wortglossar-v2.csv
+  - "content/wiki/de/terminologie-und-schreibweisen.md"
+  - "wiki/Glossar/01_final/thitronik-wortglossar-v2.csv"
 updated: '2026-07-13'
 confidence: high
 lang: de

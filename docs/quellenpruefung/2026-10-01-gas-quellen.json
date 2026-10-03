@@ -1,0 +1,348 @@
+{
+  "checkedAt": "2026-10-01",
+  "scope": "Ausgewählte DE-/FR-Fachseiten, Abbildungen und technische Tabellen; keine Vollprüfung weiterer Sprachen",
+  "visualPageCount": 74,
+  "sources": [
+    {
+      "key": "G",
+      "id": "76cf1e683df9",
+      "path": "content/quellen/gas-anleitung-rev1.1.pdf",
+      "sha256": "76cf1e683df9ae633ce7256db5d117628dc4f18a82d49ec2f2bdbd97593b5b58",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S. (Gaswarner)/g.a.s..pdf"
+      ],
+      "pages": 15,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12,
+        13,
+        14,
+        15
+      ],
+      "revision": "1.1",
+      "role": "primary"
+    },
+    {
+      "key": "C",
+      "id": "21e15d7e3cbc",
+      "path": "content/quellen/gas-connect-anleitung-rev1.0.pdf",
+      "sha256": "21e15d7e3cbcc87308f1a7c175a116f0dd30f24665b6da92c0424a4e6b54a6b3",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-connect/g.a.s.-connect.pdf"
+      ],
+      "pages": 25,
+      "visualPages": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        22,
+        23,
+        24,
+        25
+      ],
+      "revision": "1.0",
+      "role": "primary"
+    },
+    {
+      "key": "P",
+      "id": "7b77bd706beb",
+      "path": "content/quellen/gas-plug-anleitung-rev1.0.pdf",
+      "sha256": "7b77bd706bebbe82e86eb3e37889a85fcda3fc4f3130b43b98ecc72fe6bc0aae",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-plug all-in-one/g.a.s.-plug_all-in-one.pdf"
+      ],
+      "pages": 13,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12,
+        13
+      ],
+      "revision": "1.0",
+      "role": "primary"
+    },
+    {
+      "key": "K",
+      "id": "7346def3c397",
+      "path": "content/quellen/gas-pro-iii-kurz-rev1.3.pdf",
+      "sha256": "7346def3c397c5e9458a8837503f5c36745080f52f515e3f89df4693a8bc0459",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/gas_pro_iii-kurzanleitung.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "1.3",
+      "role": "primary"
+    },
+    {
+      "key": "KCO",
+      "id": "c5c76bbc1fee",
+      "path": "content/quellen/gas-pro-iii-co-kurz-rev1.3.pdf",
+      "sha256": "c5c76bbc1fee220b92e8b2911f40c95fdc7a6e140ebb06f2c9b4e2d60830e173",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/gas_pro_iii_co-kurzanleitung.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "1.3",
+      "role": "primary"
+    },
+    {
+      "key": "T",
+      "id": "418f0c839399",
+      "path": "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf",
+      "sha256": "418f0c839399a2e0c7529e28565a9ee10649fb17a542b16e3cb398262ed5058e",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/technische_zusatzinformationen_gas-pro_iii.pdf",
+        "Anleitungen/de/technische_zusatzinformationen_gas-pro_iii.pdf"
+      ],
+      "pages": 63,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        62,
+        63
+      ],
+      "revision": "Cover 1.2; DE/FR-Innentitel 1.1",
+      "role": "primary"
+    },
+    {
+      "key": "SCO",
+      "id": "82ce735dfbc3",
+      "path": "content/quellen/gas-co-sensor-anleitung.pdf",
+      "sha256": "82ce735dfbc37bbdcf9b5e106b8878ef097dee8b1e20dac82035ab5d8643f8ab",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/CO-Sensor fuer G.A.S.-pro/co_sensor-de_en_fr.pdf"
+      ],
+      "pages": 4,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "SZ",
+      "id": "fa5225769065",
+      "path": "content/quellen/gas-zusatzsensor-iii-anleitung.pdf",
+      "sha256": "fa52257690654ad941cb4224d7429c9bacf81c70fa9acb327095318b9b89f0ff",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Zusatzsensor fuer G.A.S.-pro III/zusatzsensor_gas-pro_iii_de_en_fr.pdf",
+        "Anleitungen/de/zusatzsensor_gas-pro_iii_de_en_fr.pdf"
+      ],
+      "pages": 4,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QCO",
+      "id": "2520f109f895",
+      "path": "content/quellen/gas-co-sensor-faq.pdf",
+      "sha256": "2520f109f89561017ff8c5af6a138ee60567f3ab12da47efa0b9ddf1a394d201",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu CO-Sensor für G.A.S.-pro und G.A.S.-pro III.pdf"
+      ],
+      "pages": 3,
+      "visualPages": [
+        1,
+        2,
+        3
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QC",
+      "id": "1c5e831e66de",
+      "path": "content/quellen/gas-connect-faq.pdf",
+      "sha256": "1c5e831e66de0592c06ceeba0b0180061c5bb0544bc6ce6a7c280e9862766411",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-connect.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QP",
+      "id": "b438dc500603",
+      "path": "content/quellen/gas-plug-faq.pdf",
+      "sha256": "b438dc5006032d85f57e8c0a782e26ca5d46a9bbc60f2fd93f48517e82b5882e",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-plug „all in one“.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QIII",
+      "id": "487fda76da67",
+      "path": "content/quellen/gas-pro-iii-faq.pdf",
+      "sha256": "487fda76da67cc0b4030f6198ce3b3321b9086f77c6da9e8c78dff04656ed5e0",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-pro III.pdf"
+      ],
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QO",
+      "id": "85e7267c6872",
+      "path": "content/quellen/gas-pro-faq.pdf",
+      "sha256": "85e7267c68727a05492316d15d3900d6644631ce2263da77e389ac1aa5691f18",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-pro.pdf"
+      ],
+      "pages": 3,
+      "visualPages": [
+        1,
+        2,
+        3
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QG",
+      "id": "b9b3b4fa3ddb",
+      "path": "content/quellen/gas-faq.pdf",
+      "sha256": "b9b3b4fa3ddb701167e586e2d403cb3dd4a941a851fcb502813c337bfcda78a3",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S..pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "QZ",
+      "id": "c02146df0d8f",
+      "path": "content/quellen/gas-zusatzsensor-iii-faq.pdf",
+      "sha256": "c02146df0d8f0309091b0dd183039c003d4c089d5c1d91bc3661d6dc9f50fd9d",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Zusatzsensor für G.A.S.-pro III.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": null,
+      "role": "primary"
+    },
+    {
+      "key": "O",
+      "id": "7f66a388a8e1",
+      "path": "content/quellen/gas-pro-handbuch-rev2.5.pdf",
+      "sha256": "7f66a388a8e14833bf2f97093a0122be1d1367e188cf851756ad1a20d8f0c7fd",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/handbuch_gas-pro_2.5.pdf"
+      ],
+      "pages": 28,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        23,
+        24,
+        25,
+        28
+      ],
+      "revision": "2.5 auf sichtbarer Rückseite; 2.2 nur in extrahiertem Deckblatttext",
+      "role": "primary"
+    }
+  ],
+  "webSources": [
+    {
+      "key": "WRecall",
+      "url": "https://www.thitronik.de/recall/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WC",
+      "url": "https://www.thitronik.de/produkte/produkt/gas-connect/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WZ",
+      "url": "https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WCO",
+      "url": "https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WP",
+      "url": "https://www.thitronik.de/produkte/produkt/gas-plug-all-in-one/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WIII",
+      "url": "https://www.thitronik.de/produkte/produkt/gas-pro-iii/",
+      "checkedAt": "2026-10-01"
+    },
+    {
+      "key": "WO",
+      "url": "https://www.thitronik.de/produkte/produkt/gas-pro/",
+      "checkedAt": "2026-10-01"
+    }
+  ],
+  "extractionCautions": [
+    "O: Revision 2.2 aus Deckblatt-Textlayer nicht als sichtbare Revision übernommen; Rückseite PDF 28 zeigt 2.5.",
+    "QIII: Textlayer enthält zusätzliche generische Montage-/Gasabsätze, die im gerenderten Blatt nicht sichtbar sind; nicht als sichtbare FAQ-Belege verwendet."
+  ]
+}

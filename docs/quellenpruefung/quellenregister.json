@@ -1,0 +1,1976 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-02",
+  "scope": "Lokale Dateizuordnung und Integrität; keine zusätzliche fachliche Freigabe. Seitenzahlen aus PDF-Inventar, Prüftiefe nur aus verlinkten Paketberichten.",
+  "inventory": "docs/quellenpruefung/2026-09-27-pdf-inventar.csv",
+  "canonicalWikiLanguage": "de",
+  "canonicalWikiLanguageEvidence": "code/wiki-ingest.mjs: CANONICAL_LANG und resolveSourceReference",
+  "sources": [
+    {
+      "path": "content/quellen/camplock-fingerprint.pdf",
+      "sha256": "41507cb7e7db4d2c389508bb6c60f861f0758ebb08f6eb57b7e7fb573a783156",
+      "pages": 2,
+      "bytes": 2580766,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/CampLock Fingerprint/camplock-fingerprint.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/camplock-vanlock-fingerprint.pdf",
+      "sha256": "2ee4a19ec75837b3fa471b60aafbdc2d4fa0bc5fca430235b3b66136d0791e97",
+      "pages": 91,
+      "bytes": 3752109,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/CampLock Fingerprint/camplock-vanlock-fingerprint.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-adria-2021.pdf",
+      "sha256": "88e15f87329e4ea72a46cf2da7401fc2665698bb5f4fa060cd24a6a21d6e2e74",
+      "pages": 2,
+      "bytes": 144518,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/installationshinweise-wipro-iii-und-wipro-iii-safe.lock-adria-coral-und-matrix-ab-mj-2021.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "adria-2021",
+          "revision": "08/21",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-crafter-2017.pdf",
+      "sha256": "58c2c10b0feab9e65a0e48e2577fd85064515777811a9c320c93d407ff7ef7d5",
+      "pages": 11,
+      "bytes": 5124285,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_crafter___man_tge_2017-2024 (1).pdf",
+        "Anleitungen/de/wipro_iii_vw_crafter___man_tge_2017-2024.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "crafter-2017",
+          "revision": "07/2025",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-ducato-244.pdf",
+      "sha256": "eabb7aa5366e3a649fc97e516efd215d1c7b5ed50b78fbbc2e7e08234d123044",
+      "pages": 11,
+      "bytes": 774576,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_fiat_ducato_244.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "ducato-244",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-ducato-x250.pdf",
+      "sha256": "aeb5f2d709a782aaef06c840ed121bdd75484372cbd67d7fb002a2f3a2adc80e",
+      "pages": 11,
+      "bytes": 912448,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_fiat_ducato_x250_euro_4_safe.lock.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "ducato-x250",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-ford-2006.pdf",
+      "sha256": "92889b43e6ebb81b6747842377ce537619c754a884e935820b1a317fbf1371e5",
+      "pages": 9,
+      "bytes": 1029540,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_6._generation_2006-2013.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "ford-2006",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-ford-2014.pdf",
+      "sha256": "0f09f338b7c1b59f6381a65439ea529512a4929dccdffe30077c7af968cae938",
+      "pages": 9,
+      "bytes": 591990,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_7._generation_2014_2015.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "ford-2014",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-ford-2016.pdf",
+      "sha256": "68f673c7b8982648e22af6a4a3f306858ff81b7e0d077bfd21221c3631a73cc1",
+      "pages": 9,
+      "bytes": 916955,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_7._generation_2016-2019.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "ford-2016",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-ford-2019.pdf",
+      "sha256": "aed4374e7526c78524bac89903e49dde1f0a6362c3f38e0887f56ba1ec821217",
+      "pages": 11,
+      "bytes": 1853256,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_2019.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "ford-2019",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-iveco-euro4.pdf",
+      "sha256": "6a6358e0cb25db7ff3a412af0c5de97191929a4a40d01d502a14717aefd8f2f9",
+      "pages": 10,
+      "bytes": 1121891,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_iveco_daily_euro_4.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "iveco-euro4",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-iveco-euro5.pdf",
+      "sha256": "6d2efad4901709629782c026e2f2d4456fc718ca51549b84f69c785803ad9fe6",
+      "pages": 10,
+      "bytes": 5836216,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/WiPro_III_Iveco_Daily_Euro_5_2011-2024_DE.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "iveco-euro5",
+          "revision": "01/2026",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-iveco-zv.pdf",
+      "sha256": "a95c4aa4e48506d68b886bb042cebf1e36e170d62bb6d7ec80b6d2f548540e8a",
+      "pages": 1,
+      "bytes": 104271,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/ZV - IVECO Daily.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "iveco-zv",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-master-ii.pdf",
+      "sha256": "f1a187b62f5c4054f2bfd75fe546c787e1477d57febc56bf4676e95ec684e300",
+      "pages": 11,
+      "bytes": 1175975,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_renault_master_ii_1998-2010.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "master-ii",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-master-iii.pdf",
+      "sha256": "9fc73228358d5795e7e26116f0d9032d96c21127e76e0d83ed099002a62b3901",
+      "pages": 10,
+      "bytes": 773332,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_renault_master_ab_2011_01.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "master-iii",
+          "revision": "04/25",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-safelock-platine.pdf",
+      "sha256": "b6c32564e69aa86b44708744ac0cb3dcbc8bba6c622568eade75516185969b0e",
+      "pages": 12,
+      "bytes": 483275,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/safe.lock Umruestplatine/safe-lock_umruestplatine.pdf",
+        "Anleitungen/de/safe-lock_umruestplatine.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "safelock-platine",
+          "revision": "1.3",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-safelock-upgrade.pdf",
+      "sha256": "82c5e9cac76bc05a823ff65bb660c351f150819b44153b98fc1ee11e661adc08",
+      "pages": 4,
+      "bytes": 1587735,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "safelock-upgrade",
+          "revision": "2.0",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-sprinter-ncv3.pdf",
+      "sha256": "5f290645d5169ce721757aa09b1b40c3b91497986d8bf5812c7c3c535f519110",
+      "pages": 13,
+      "bytes": 3524134,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_mercedes_sprinter_ncv3_vw_crafter_ab_2006.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "sprinter-ncv3",
+          "revision": "06/21",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-sprinter-t1n.pdf",
+      "sha256": "0d190b0c3f61894cbe4c5ba4868d0cfb4aab5166a4f9f41d2562d7d046083fb2",
+      "pages": 2,
+      "bytes": 29040,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_mercedes_sprinter_t1n.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "sprinter-t1n",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-sprinter-vs30.pdf",
+      "sha256": "8a734a717da1d33798b7c302fc4db262a1c53931d6058048398a3d3947beee49",
+      "pages": 14,
+      "bytes": 3583349,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_mercedes_sprinter_vs30_01.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "sprinter-vs30",
+          "revision": "03/23",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-t5-facelift.pdf",
+      "sha256": "150be1e9a5dff3746e85461fef85b8ada63b697caaa6f8b23a4c8143787f77db",
+      "pages": 9,
+      "bytes": 669471,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_t5_facelift_2009_.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "t5-facelift",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-t5.pdf",
+      "sha256": "9e3c3939b2025cc0f5c479b2684efa8025daa370ee93e11d09ec36c20f4fecb9",
+      "pages": 10,
+      "bytes": 1151513,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_t5_2006-2009.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "t5",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-t6-t61.pdf",
+      "sha256": "fdc0ab7467056bf3415b631e3a0338576a88351646274913d2a72e06157f0bef",
+      "pages": 10,
+      "bytes": 1273701,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_t6_2015_.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "t6-t61",
+          "revision": "12/20",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-talento-trafic-2014.pdf",
+      "sha256": "915fd4a8e5feb6deb16861adf9346aeda2ae3cf4133bf4e5a98d4b425098a138",
+      "pages": 9,
+      "bytes": 293077,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_fiat_talento___renault_trafic_iii.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "talento-trafic-2014",
+          "revision": "05/22",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-trafic-2022.pdf",
+      "sha256": "4108275821a46270e9996e1109ab1d097870248616bd4112040b68cc92aa015d",
+      "pages": 10,
+      "bytes": 2631748,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_renault_trafic_iii___nissan_primastar_2022_.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "trafic-2022",
+          "revision": "08/22",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/fahrzeug-update-service-2024.pdf",
+      "sha256": "430e39c0a4b72d2b1bfb4a57da04e9f0b5c8b049f2264b1f9e4bb5d671e23b53",
+      "pages": 1,
+      "bytes": 1601223,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii_upgrade_update_service_2024-de.pdf",
+        "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/wipro_iii_upgrade_update_service_2024-de.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "update-service-2024",
+          "revision": "2024",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-bt-connect-faq.pdf",
+      "sha256": "12faf57bc26548ab0b0da3de41380f86c61571c483562726f4203c138d30bcb3",
+      "pages": 2,
+      "bytes": 85499,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu BT-connect.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QB",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-bt-connect-rev1.1.pdf",
+      "sha256": "67dc7b3b5d388c2dab569a5dbcb403983ef188fab2f15051b4a2e6099a24842b",
+      "pages": 32,
+      "bytes": 3132374,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/BT-connect/BT-connect.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "B",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-handsender-101064-einleger.pdf",
+      "sha256": "f789a9205410e15eb1ce88858364cd56d4aacd6302116e456b2aaae6d00499ef",
+      "pages": 2,
+      "bytes": 226651,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Handsender 868/einleger_funk_handsender_2_101064_ce.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "H",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-handsender-faq.pdf",
+      "sha256": "8e388d564c0bb8f6989253fb3f29ca7adb1e9dfd2b293cbe409f2f50babbfc1f",
+      "pages": 4,
+      "bytes": 113494,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Handsender 868.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QH",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-kabelschleife-100761-rev1.1.pdf",
+      "sha256": "50ff6384476f5a73b9925a5943e9044ce4cfa78c4db5c1967a3f521365376198",
+      "pages": 12,
+      "bytes": 126805,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_weiss.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "L2",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-kabelschleife-101068-rev1.1.pdf",
+      "sha256": "b34a3d9cf921d12a80e1c5e3f624944a330e54e22b1f333d1d2c5e38a3deb6f6",
+      "pages": 12,
+      "bytes": 110998,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_schwarz.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "L1",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-kabelschleife-faq.pdf",
+      "sha256": "35c0260ddf42cd21865ba6ec0cdaa87728ae91fbd2a0acf6f04186aa47191d2c",
+      "pages": 2,
+      "bytes": 85263,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Kabelschleife 868.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QL",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-kabelschleife-xl-100944-rev1.1.pdf",
+      "sha256": "5246c8f041de5ff68adf863969c3d1901b087be039fdc91137d9d672d6c7e021",
+      "pages": 12,
+      "bytes": 130378,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_xl_weiss.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "L4",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-kabelschleife-xl-101074-rev1.1.pdf",
+      "sha256": "4c6c2eab38390807f22812d658dccc64c70ab82d77ae4d5aed3224d232c09b22",
+      "pages": 12,
+      "bytes": 130414,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_xl_schwarz.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "L3",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-magnetkontakt-100757-rev1.3.pdf",
+      "sha256": "e0830c57249142d3b53cd7db0aa068b6a3cf35403c2131a0c0275f5d6d6b2dfd",
+      "pages": 22,
+      "bytes": 224979,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk_magnetkontakt_sw.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "M1",
+          "revision": "1.3",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-magnetkontakt-100758-rev1.3.pdf",
+      "sha256": "e388356b6880d5bb3cf63a83172e8e463a67230a7a31adf4dfc7063197033d41",
+      "pages": 22,
+      "bytes": 209456,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk_magnetkontakt_ws.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "M2",
+          "revision": "1.3",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-magnetkontakt-faq.pdf",
+      "sha256": "080d09cb80f1c2b01e5444496a11aadffef369bb9b1d8084aa7496dd29e2d608",
+      "pages": 2,
+      "bytes": 73851,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Magnetkontakt 868.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QM",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-magnetkontakt-montage-rev1.2.pdf",
+      "sha256": "17b988bcc1ec4c7756611cc841d50f9d872a193d2b1101a775c55984897a321e",
+      "pages": 22,
+      "bytes": 205071,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk-magnetkontakte_montieren.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "M0",
+          "revision": "1.2",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf",
+      "sha256": "08d590b1d101db7b2818633dd838f5c395916c0698e05f6c15afc67c20734906",
+      "pages": 17,
+      "bytes": 800535,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868 wasserdicht/funk-magnetkontakt-wasserdicht-868.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "MW",
+          "revision": "1.0",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-magnetkontakt-wasserdicht-faq.pdf",
+      "sha256": "f1bc5e8510f02090ef7b799c2aa9cb8af6274aed1dfbe4667066d41774d280bd",
+      "pages": 2,
+      "bytes": 73883,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Magnetkontakt 868 wasserdicht.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QMW",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-nfc-faq.pdf",
+      "sha256": "3282330c1b8931bec8743ff52633f20c86943881a592e89dd6d4f75a3b3a2586",
+      "pages": 1,
+      "bytes": 39695,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu NFC Modul.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QN",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf",
+      "sha256": "aaf0719343fd4a33504d74f8286a9e1d9267531b827ac0e715627316c0166f01",
+      "pages": 52,
+      "bytes": 1352001,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/NFC Modul/nfc_modul-kurzanleitung.pdf",
+        "Anleitungen/de/nfc_modul-kurzanleitung.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "N",
+          "revision": "2.3",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-tsa-rauchmelder-faq.pdf",
+      "sha256": "799cd97d2e3ef4975e660787a332a65ab7feaacef0327a3e58afdb7355479516",
+      "pages": 2,
+      "bytes": 54759,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu T.S.A. Funk-Rauchmelder.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QR",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-tsa-rauchmelder-rev1.1.pdf",
+      "sha256": "e624d4eafbde04a8633fe36b904edac8367b963d659b5998d15b8dd6779825e4",
+      "pages": 32,
+      "bytes": 1272172,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/T.S.A. Funk-Rauchmelder/funk-rauchmelder-t.s.a..pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "R",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-vernetzungsmodul-faq.pdf",
+      "sha256": "e21b992d9a94bb8744de642942ea6317c51a44509ea6a9cd006f0074da5195df",
+      "pages": 3,
+      "bytes": 90593,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Bluetooth-Vernetzungsmodul.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QV",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-vernetzungsmodul-kompatibilitaet-2023-08.pdf",
+      "sha256": "161acf11083a1c09ff7d8516e8b072ca01824c5c86da33559edc545e706db189",
+      "pages": 1,
+      "bytes": 406154,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Kompatibilität Smartphone-Smartwatch mit Vernetzungsmodul Stand 08.23.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "VM",
+          "revision": "08.2023",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-wassermelder-106021-rev1.0.pdf",
+      "sha256": "1c7466a1e68bd3142dc45c9f8c65c8b485aea72a027233e13d6089de5a972b56",
+      "pages": 17,
+      "bytes": 678729,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Funk-Wassermelder 868/funk-wassermelder-868.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "W",
+          "revision": "1.0",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/funk-wassermelder-faq.pdf",
+      "sha256": "3a95b2c212089e5f9cd67acc8c5ece29575cd818fd818512d45a62c75739d8b1",
+      "pages": 2,
+      "bytes": 78615,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Funk-Wassermelder 868.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-funk-quellen.json",
+          "key": "QW",
+          "revision": "ohne sichtbare Revision",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-anleitung-rev1.1.pdf",
+      "sha256": "76cf1e683df9ae633ce7256db5d117628dc4f18a82d49ec2f2bdbd97593b5b58",
+      "pages": 15,
+      "bytes": 582729,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S. (Gaswarner)/g.a.s..pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "G",
+          "revision": "1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-co-sensor-anleitung.pdf",
+      "sha256": "82ce735dfbc37bbdcf9b5e106b8878ef097dee8b1e20dac82035ab5d8643f8ab",
+      "pages": 4,
+      "bytes": 333248,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/CO-Sensor fuer G.A.S.-pro/co_sensor-de_en_fr.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "SCO",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-co-sensor-faq.pdf",
+      "sha256": "2520f109f89561017ff8c5af6a138ee60567f3ab12da47efa0b9ddf1a394d201",
+      "pages": 3,
+      "bytes": 105018,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu CO-Sensor für G.A.S.-pro und G.A.S.-pro III.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QCO",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-connect-anleitung-rev1.0.pdf",
+      "sha256": "21e15d7e3cbcc87308f1a7c175a116f0dd30f24665b6da92c0424a4e6b54a6b3",
+      "pages": 25,
+      "bytes": 635641,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-connect/g.a.s.-connect.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "C",
+          "revision": "1.0",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-connect-faq.pdf",
+      "sha256": "1c5e831e66de0592c06ceeba0b0180061c5bb0544bc6ce6a7c280e9862766411",
+      "pages": 2,
+      "bytes": 92938,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-connect.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QC",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-faq.pdf",
+      "sha256": "b9b3b4fa3ddb701167e586e2d403cb3dd4a941a851fcb502813c337bfcda78a3",
+      "pages": 2,
+      "bytes": 91043,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S..pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QG",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-plug-anleitung-rev1.0.pdf",
+      "sha256": "7b77bd706bebbe82e86eb3e37889a85fcda3fc4f3130b43b98ecc72fe6bc0aae",
+      "pages": 13,
+      "bytes": 120817,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-plug all-in-one/g.a.s.-plug_all-in-one.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "P",
+          "revision": "1.0",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-plug-faq.pdf",
+      "sha256": "b438dc5006032d85f57e8c0a782e26ca5d46a9bbc60f2fd93f48517e82b5882e",
+      "pages": 2,
+      "bytes": 70838,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-plug „all in one“.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QP",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-pro-faq.pdf",
+      "sha256": "85e7267c68727a05492316d15d3900d6644631ce2263da77e389ac1aa5691f18",
+      "pages": 3,
+      "bytes": 102854,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-pro.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QO",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-pro-handbuch-rev2.5.pdf",
+      "sha256": "7f66a388a8e14833bf2f97093a0122be1d1367e188cf851756ad1a20d8f0c7fd",
+      "pages": 28,
+      "bytes": 2779921,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/handbuch_gas-pro_2.5.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "O",
+          "revision": "2.5 auf sichtbarer Rückseite; 2.2 nur in extrahiertem Deckblatttext",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-pro-iii-co-kurz-rev1.3.pdf",
+      "sha256": "c5c76bbc1fee220b92e8b2911f40c95fdc7a6e140ebb06f2c9b4e2d60830e173",
+      "pages": 2,
+      "bytes": 2326051,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/gas_pro_iii_co-kurzanleitung.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "KCO",
+          "revision": "1.3",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-pro-iii-faq.pdf",
+      "sha256": "487fda76da67cc0b4030f6198ce3b3321b9086f77c6da9e8c78dff04656ed5e0",
+      "pages": 1,
+      "bytes": 82371,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu G.A.S.-pro III.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QIII",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-pro-iii-kurz-rev1.3.pdf",
+      "sha256": "7346def3c397c5e9458a8837503f5c36745080f52f515e3f89df4693a8bc0459",
+      "pages": 2,
+      "bytes": 2328350,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/gas_pro_iii-kurzanleitung.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "K",
+          "revision": "1.3",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf",
+      "sha256": "418f0c839399a2e0c7529e28565a9ee10649fb17a542b16e3cb398262ed5058e",
+      "pages": 63,
+      "bytes": 826308,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/technische_zusatzinformationen_gas-pro_iii.pdf",
+        "Anleitungen/de/technische_zusatzinformationen_gas-pro_iii.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "T",
+          "revision": "Cover 1.2; DE/FR-Innentitel 1.1",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-zusatzsensor-iii-anleitung.pdf",
+      "sha256": "fa52257690654ad941cb4224d7429c9bacf81c70fa9acb327095318b9b89f0ff",
+      "pages": 4,
+      "bytes": 498581,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Zusatzsensor fuer G.A.S.-pro III/zusatzsensor_gas-pro_iii_de_en_fr.pdf",
+        "Anleitungen/de/zusatzsensor_gas-pro_iii_de_en_fr.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "SZ",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/gas-zusatzsensor-iii-faq.pdf",
+      "sha256": "c02146df0d8f0309091b0dd183039c003d4c089d5c1d91bc3661d6dc9f50fd9d",
+      "pages": 2,
+      "bytes": 89908,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Zusatzsensor für G.A.S.-pro III.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-10-01-gas-quellen.json",
+          "key": "QZ",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/katalog_thitronik_de.pdf",
+      "sha256": "b78e48aba47d6948591d6af1d4a29367fdc154c7761aed8c6c374fee4fb7400e",
+      "pages": 47,
+      "bytes": 7261561,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_de.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-ab045-handbuch-rev1.3.pdf",
+      "sha256": "a1e1ae9b1a6e0e1c5a21a82f3639a0facff60073f702ff9443428addd5d94bb2",
+      "pages": 247,
+      "bytes": 10044621,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf",
+        "Anleitungen/de/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "a1e1ae9b1a6e",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf",
+      "sha256": "a73a4dc7ee1d8843c8f3beef423da4be8d2b81347adf89560d8e1f4deaf2dc23",
+      "pages": 2,
+      "bytes": 4445759,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro_finder-kurzanleitung-international_sn-045.pdf",
+        "Anleitungen/de/pro_finder-kurzanleitung-international_sn-045.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "a73a4dc7ee1d",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-abschaltung-einpolig-rev2.0.pdf",
+      "sha256": "c32c46009dd79f0a83c62e0aec329506e31ce1f3cef2a7a22fc04a2d4bf679f9",
+      "pages": 2,
+      "bytes": 742805,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Abschalteinrichtungen/abschalteinrichtung_einpolig.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "c32c46009dd7",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-abschaltung-mehrpolig-rev1.0.pdf",
+      "sha256": "9c8df348b7fbc9f9559bbe4cd06ea59305d1b644891dfa9650b5f49fd06b4507",
+      "pages": 2,
+      "bytes": 653807,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Abschalteinrichtungen/Abschalteinrichtung_mehrpolig.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "9c8df348b7fb",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-app-befehle-1.1.pdf",
+      "sha256": "f850deebc1445fc9eb9772cc18285221639df54c10c65ed7debd8bd0347984e7",
+      "pages": 1,
+      "bytes": 148017,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/App Befehle 1.1.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "f850deebc144",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-faq.pdf",
+      "sha256": "b445be238844ad86bfa72d73f24dc6993bd126fdc6fcbc2e36c2942e4abe6c93",
+      "pages": 7,
+      "bytes": 148752,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu Pro-finder.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "b445be238844",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-handbuch-rev2.6.pdf",
+      "sha256": "981e5a86ee1c9fa46734cb2ea4fa4cd06eb65c5be62d2a6e4114165c8243a1e8",
+      "pages": 72,
+      "bytes": 1449781,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf",
+        "Anleitungen/de/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "981e5a86ee1c",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/profinder-kurz-rev1.1.pdf",
+      "sha256": "f737c39a10dab22ed0eec9332d653eeeac70703fe58a6e8712e4e70eb3d09ceb",
+      "pages": 2,
+      "bytes": 1210133,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/Pro-finder/pro_finder-kurzanleitung-international.pdf",
+        "Anleitungen/de/pro_finder-kurzanleitung-international.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-profinder-quellen.json",
+          "key": "f737c39a10da",
+          "revision": null,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-faq.pdf",
+      "sha256": "0a5013e02c0b6e8f6097df3bb98969ecd76caf6817b3268e591c59ed43843026",
+      "pages": 20,
+      "bytes": 216631,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu WiPro III.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-installation-quellen.json",
+          "key": "0a5013e02c0b",
+          "revision": null,
+          "role": null
+        },
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "Q",
+          "revision": null,
+          "role": "reused-primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-installation-rev1.8.pdf",
+      "sha256": "9393f60f59205d73c92a4306b39345772b4cebba27650d45ad00cff394fa7293",
+      "pages": 128,
+      "bytes": 3239605,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii-installationsanleitung_1.8.pdf",
+        "Anleitungen/de/wipro_iii-installationsanleitung_1.8.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-installation-quellen.json",
+          "key": "9393f60f5920",
+          "revision": null,
+          "role": null
+        },
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "I",
+          "revision": null,
+          "role": "reused-primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-kurzanleitung-rev1.6.pdf",
+      "sha256": "44824bae21b0267dd50d661674a1e286dabb2141371f7984ce377e6084ba213c",
+      "pages": 2,
+      "bytes": 7327257,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii.pdf",
+        "Anleitungen/de/wipro_iii.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-installation-quellen.json",
+          "key": "44824bae21b0",
+          "revision": null,
+          "role": null
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-safelock-bedienung-rev1.2.pdf",
+      "sha256": "b275b6e76b6dc6d8b6d008ffa3eb18f7f72d1d4b059562239d5dc2ce3cae3e01",
+      "pages": 182,
+      "bytes": 20210426,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii_safe-lock_bedienungsanleitung_zehn_sprachen.pdf",
+        "Anleitungen/de/wipro_iii_safe-lock_bedienungsanleitung_zehn_sprachen.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-safelock.md"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf",
+      "sha256": "5976e52fecff6c77e19741be092299c4185c405eaa8547fb54636c6b8f781547",
+      "pages": 191,
+      "bytes": 11109837,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/bedienungsanleitung_wipro_iii_safe-lock.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-safelock.md"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-safelock-faq.pdf",
+      "sha256": "57dd814b34a9bfcf08e21cd581dfe08ed5eb1e2fa5f3e8dd3b63299aa192d005",
+      "pages": 31,
+      "bytes": 299459,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu WiPro III safe.lock.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-installation-quellen.json",
+          "key": "57dd814b34a9",
+          "revision": null,
+          "role": null
+        },
+        {
+          "report": "docs/quellenpruefung/2026-10-01-fahrzeuge-quellen.json",
+          "key": "S",
+          "revision": null,
+          "role": "reused-primary"
+        }
+      ]
+    },
+    {
+      "path": "content/quellen/wipro-iii-safelock-kurzanleitung-rev1.3.pdf",
+      "sha256": "23de77ae12c52c00c5861176d5c4eb826de94b08141fe7a6f16f99a888152b13",
+      "pages": 2,
+      "bytes": 7338256,
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/wipro_iii_safe.lock.pdf",
+        "Anleitungen/de/wipro_iii_safe.lock.pdf"
+      ],
+      "reviewEvidence": [
+        {
+          "report": "docs/quellenpruefung/2026-09-28-wipro-installation-quellen.json",
+          "key": "23de77ae12c5",
+          "revision": null,
+          "role": null
+        }
+      ]
+    }
+  ],
+  "originalPdfFiles": [
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_ch.pdf",
+      "sha256": "dd446222f103bb42d4ed21b67ce7ffa9ce9e1d9d768f3a1c94f92efe146c4514",
+      "pages": 47
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_cz.pdf",
+      "sha256": "0523a6052b7ed7f5aa15124a340caf9f1bc1f3c5ac504d77ae08beba0035973c",
+      "pages": 47
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_de.pdf",
+      "sha256": "b78e48aba47d6948591d6af1d4a29367fdc154c7761aed8c6c374fee4fb7400e",
+      "pages": 47
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_en.pdf",
+      "sha256": "efa0161c0413964be7be0108bd779bd983bb18ae7e509895d527fb512516a067",
+      "pages": 47
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_fr.pdf",
+      "sha256": "dd446222f103bb42d4ed21b67ce7ffa9ce9e1d9d768f3a1c94f92efe146c4514",
+      "pages": 47
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_pl.pdf",
+      "sha256": "d7d36077b80aaa974ca83fbbc57ab2c0379d4c69f46fd0cdab3ae67647c0dd2c",
+      "pages": 47
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/00 - Kataloge/katalog_thitronik_se_02.pdf",
+      "sha256": "b3d33eb2d555de7343c98f41c2bd1b617c3c93206c8a47df99f8aad7f3583eac",
+      "pages": 45
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Abschalteinrichtungen/abschalteinrichtung_einpolig.pdf",
+      "sha256": "c32c46009dd79f0a83c62e0aec329506e31ce1f3cef2a7a22fc04a2d4bf679f9",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Abschalteinrichtungen/Abschalteinrichtung_mehrpolig.pdf",
+      "sha256": "9c8df348b7fbc9f9559bbe4cd06ea59305d1b644891dfa9650b5f49fd06b4507",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Backup-Sirene/back-up_sirene_anleitung.pdf",
+      "sha256": "153aef0a9688b71d70f8cf1503bcfb2bee7c2d0940a9caaa0af05450f4355f4d",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/BT-connect/BT-connect.pdf",
+      "sha256": "67dc7b3b5d388c2dab569a5dbcb403983ef188fab2f15051b4a2e6099a24842b",
+      "pages": 32
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/CampLock Fingerprint/camplock-fingerprint.pdf",
+      "sha256": "41507cb7e7db4d2c389508bb6c60f861f0758ebb08f6eb57b7e7fb573a783156",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/CampLock Fingerprint/camplock-vanlock-fingerprint.pdf",
+      "sha256": "2ee4a19ec75837b3fa471b60aafbdc2d4fa0bc5fca430235b3b66136d0791e97",
+      "pages": 91
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/CO-Sensor fuer G.A.S.-pro/co_sensor-de_en_fr.pdf",
+      "sha256": "82ce735dfbc37bbdcf9b5e106b8878ef097dee8b1e20dac82035ab5d8643f8ab",
+      "pages": 4
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Handsender 868/einleger_funk_handsender_2_101064_ce.pdf",
+      "sha256": "f789a9205410e15eb1ce88858364cd56d4aacd6302116e456b2aaae6d00499ef",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_schwarz.pdf",
+      "sha256": "b34a3d9cf921d12a80e1c5e3f624944a330e54e22b1f333d1d2c5e38a3deb6f6",
+      "pages": 12
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_weiss.pdf",
+      "sha256": "50ff6384476f5a73b9925a5943e9044ce4cfa78c4db5c1967a3f521365376198",
+      "pages": 12
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_xl_schwarz.pdf",
+      "sha256": "4c6c2eab38390807f22812d658dccc64c70ab82d77ae4d5aed3224d232c09b22",
+      "pages": 12
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Kabelschleife 868/funk-kabelschleife_868_xl_weiss.pdf",
+      "sha256": "5246c8f041de5ff68adf863969c3d1901b087be039fdc91137d9d672d6c7e021",
+      "pages": 12
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk-magnetkontakte_montieren.pdf",
+      "sha256": "17b988bcc1ec4c7756611cc841d50f9d872a193d2b1101a775c55984897a321e",
+      "pages": 22
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk_magnetkontakt_sw.pdf",
+      "sha256": "e0830c57249142d3b53cd7db0aa068b6a3cf35403c2131a0c0275f5d6d6b2dfd",
+      "pages": 22
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868/funk_magnetkontakt_ws.pdf",
+      "sha256": "e388356b6880d5bb3cf63a83172e8e463a67230a7a31adf4dfc7063197033d41",
+      "pages": 22
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Magnetkontakt 868 wasserdicht/funk-magnetkontakt-wasserdicht-868.pdf",
+      "sha256": "08d590b1d101db7b2818633dd838f5c395916c0698e05f6c15afc67c20734906",
+      "pages": 17
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Funk-Wassermelder 868/funk-wassermelder-868.pdf",
+      "sha256": "1c7466a1e68bd3142dc45c9f8c65c8b485aea72a027233e13d6089de5a972b56",
+      "pages": 17
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/G.A.S. (Gaswarner)/g.a.s..pdf",
+      "sha256": "76cf1e683df9ae633ce7256db5d117628dc4f18a82d49ec2f2bdbd97593b5b58",
+      "pages": 15
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/G.A.S.-connect/g.a.s.-connect.pdf",
+      "sha256": "21e15d7e3cbcc87308f1a7c175a116f0dd30f24665b6da92c0424a4e6b54a6b3",
+      "pages": 25
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/G.A.S.-plug all-in-one/g.a.s.-plug_all-in-one.pdf",
+      "sha256": "7b77bd706bebbe82e86eb3e37889a85fcda3fc4f3130b43b98ecc72fe6bc0aae",
+      "pages": 13
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/gas_pro_iii-kurzanleitung.pdf",
+      "sha256": "7346def3c397c5e9458a8837503f5c36745080f52f515e3f89df4693a8bc0459",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/gas_pro_iii_co-kurzanleitung.pdf",
+      "sha256": "c5c76bbc1fee220b92e8b2911f40c95fdc7a6e140ebb06f2c9b4e2d60830e173",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/G.A.S.-pro III/technische_zusatzinformationen_gas-pro_iii.pdf",
+      "sha256": "418f0c839399a2e0c7529e28565a9ee10649fb17a542b16e3cb398262ed5058e",
+      "pages": 63
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/NFC Modul/nfc_modul-kurzanleitung.pdf",
+      "sha256": "aaf0719343fd4a33504d74f8286a9e1d9267531b827ac0e715627316c0166f01",
+      "pages": 52
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Pro-finder/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf",
+      "sha256": "981e5a86ee1c9fa46734cb2ea4fa4cd06eb65c5be62d2a6e4114165c8243a1e8",
+      "pages": 72
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Pro-finder/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf",
+      "sha256": "a1e1ae9b1a6e0e1c5a21a82f3639a0facff60073f702ff9443428addd5d94bb2",
+      "pages": 247
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Pro-finder/pro_finder-kurzanleitung-international.pdf",
+      "sha256": "f737c39a10dab22ed0eec9332d653eeeac70703fe58a6e8712e4e70eb3d09ceb",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Pro-finder/pro_finder-kurzanleitung-international_sn-045.pdf",
+      "sha256": "a73a4dc7ee1d8843c8f3beef423da4be8d2b81347adf89560d8e1f4deaf2dc23",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/safe.lock Umruestplatine/safe-lock_umruestplatine.pdf",
+      "sha256": "b6c32564e69aa86b44708744ac0cb3dcbc8bba6c622568eade75516185969b0e",
+      "pages": 12
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/T.S.A. Funk-Rauchmelder/funk-rauchmelder-t.s.a..pdf",
+      "sha256": "e624d4eafbde04a8633fe36b904edac8367b963d659b5998d15b8dd6779825e4",
+      "pages": 32
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii-installationsanleitung_1.8.pdf",
+      "sha256": "9393f60f59205d73c92a4306b39345772b4cebba27650d45ad00cff394fa7293",
+      "pages": 128
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii.pdf",
+      "sha256": "44824bae21b0267dd50d661674a1e286dabb2141371f7984ce377e6084ba213c",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii_safe-lock_bedienungsanleitung_zehn_sprachen.pdf",
+      "sha256": "b275b6e76b6dc6d8b6d008ffa3eb18f7f72d1d4b059562239d5dc2ce3cae3e01",
+      "pages": 182
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii_upgrade_update_service_2024-de.pdf",
+      "sha256": "430e39c0a4b72d2b1bfb4a57da04e9f0b5c8b049f2264b1f9e4bb5d671e23b53",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/bedienungsanleitung_wipro_iii_safe-lock.pdf",
+      "sha256": "5976e52fecff6c77e19741be092299c4185c405eaa8547fb54636c6b8f781547",
+      "pages": 191
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/wipro_iii_safe.lock.pdf",
+      "sha256": "23de77ae12c52c00c5861176d5c4eb826de94b08141fe7a6f16f99a888152b13",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/wipro_iii_upgrade_update_service_2024-de.pdf",
+      "sha256": "430e39c0a4b72d2b1bfb4a57da04e9f0b5c8b049f2264b1f9e4bb5d671e23b53",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Zusatzhupe/zusatzhupe.pdf",
+      "sha256": "36d0e8e3a8d0c3f9e83f484089488cde6c5436ced27528e4cf659ec10cc1ef62",
+      "pages": 16
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Zusatzsensor fuer G.A.S.-pro III/zusatzsensor_gas-pro_iii_de_en_fr.pdf",
+      "sha256": "fa52257690654ad941cb4224d7429c9bacf81c70fa9acb327095318b9b89f0ff",
+      "pages": 4
+    },
+    {
+      "path": "Anleitungen/01_Quellanleitungen/Zusatzsirene/zusatzsirene_anleitung.pdf",
+      "sha256": "25e17cbd85dd11f2578b7057d468faf4bf4b8ac013be6659e1e95b625119f2d6",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/de/App Befehle 1.1.pdf",
+      "sha256": "f850deebc1445fc9eb9772cc18285221639df54c10c65ed7debd8bd0347984e7",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/de/FAQ Allgemeine Fragen.pdf",
+      "sha256": "748821d4558bf49f01fdf0eb664163dbd3a037ae07dfafb70d2afd5269003fa8",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Bluetooth-Vernetzungsmodul.pdf",
+      "sha256": "e21b992d9a94bb8744de642942ea6317c51a44509ea6a9cd006f0074da5195df",
+      "pages": 3
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu BT-connect.pdf",
+      "sha256": "12faf57bc26548ab0b0da3de41380f86c61571c483562726f4203c138d30bcb3",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu CO-Sensor für G.A.S.-pro und G.A.S.-pro III.pdf",
+      "sha256": "2520f109f89561017ff8c5af6a138ee60567f3ab12da47efa0b9ddf1a394d201",
+      "pages": 3
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Funk-Handsender 868.pdf",
+      "sha256": "8e388d564c0bb8f6989253fb3f29ca7adb1e9dfd2b293cbe409f2f50babbfc1f",
+      "pages": 4
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Funk-Kabelschleife 868.pdf",
+      "sha256": "35c0260ddf42cd21865ba6ec0cdaa87728ae91fbd2a0acf6f04186aa47191d2c",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Funk-Magnetkontakt 868 wasserdicht.pdf",
+      "sha256": "f1bc5e8510f02090ef7b799c2aa9cb8af6274aed1dfbe4667066d41774d280bd",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Funk-Magnetkontakt 868.pdf",
+      "sha256": "080d09cb80f1c2b01e5444496a11aadffef369bb9b1d8084aa7496dd29e2d608",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Funk-Wassermelder 868.pdf",
+      "sha256": "3a95b2c212089e5f9cd67acc8c5ece29575cd818fd818512d45a62c75739d8b1",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu G.A.S.-connect.pdf",
+      "sha256": "1c5e831e66de0592c06ceeba0b0180061c5bb0544bc6ce6a7c280e9862766411",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu G.A.S.-plug „all in one“.pdf",
+      "sha256": "b438dc5006032d85f57e8c0a782e26ca5d46a9bbc60f2fd93f48517e82b5882e",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu G.A.S.-pro III.pdf",
+      "sha256": "487fda76da67cc0b4030f6198ce3b3321b9086f77c6da9e8c78dff04656ed5e0",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu G.A.S.-pro.pdf",
+      "sha256": "85e7267c68727a05492316d15d3900d6644631ce2263da77e389ac1aa5691f18",
+      "pages": 3
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu G.A.S..pdf",
+      "sha256": "b9b3b4fa3ddb701167e586e2d403cb3dd4a941a851fcb502813c337bfcda78a3",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu NFC Modul.pdf",
+      "sha256": "3282330c1b8931bec8743ff52633f20c86943881a592e89dd6d4f75a3b3a2586",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Pro-finder.pdf",
+      "sha256": "b445be238844ad86bfa72d73f24dc6993bd126fdc6fcbc2e36c2942e4abe6c93",
+      "pages": 7
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu safe.lock Umrüstplatine.pdf",
+      "sha256": "ca19024dcf768c76813dad7c120f042ebf6b903ff4451df85977bc39d0d2b92f",
+      "pages": 3
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu T.S.A. Funk-Rauchmelder.pdf",
+      "sha256": "799cd97d2e3ef4975e660787a332a65ab7feaacef0327a3e58afdb7355479516",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu WiPro III safe.lock.pdf",
+      "sha256": "57dd814b34a9bfcf08e21cd581dfe08ed5eb1e2fa5f3e8dd3b63299aa192d005",
+      "pages": 31
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu WiPro III.pdf",
+      "sha256": "0a5013e02c0b6e8f6097df3bb98969ecd76caf6817b3268e591c59ed43843026",
+      "pages": 20
+    },
+    {
+      "path": "Anleitungen/de/Fragen zu Zusatzsensor für G.A.S.-pro III.pdf",
+      "sha256": "c02146df0d8f0309091b0dd183039c003d4c089d5c1d91bc3661d6dc9f50fd9d",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/handbuch_gas-pro_2.5.pdf",
+      "sha256": "7f66a388a8e14833bf2f97093a0122be1d1367e188cf851756ad1a20d8f0c7fd",
+      "pages": 28
+    },
+    {
+      "path": "Anleitungen/de/installationshinweise-wipro-iii-und-wipro-iii-safe.lock-adria-coral-und-matrix-ab-mj-2021.pdf",
+      "sha256": "88e15f87329e4ea72a46cf2da7401fc2665698bb5f4fa060cd24a6a21d6e2e74",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/Kompatibilität Smartphone-Smartwatch mit Vernetzungsmodul Stand 08.23.pdf",
+      "sha256": "161acf11083a1c09ff7d8516e8b072ca01824c5c86da33559edc545e706db189",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/de/nfc_modul-kurzanleitung.pdf",
+      "sha256": "aaf0719343fd4a33504d74f8286a9e1d9267531b827ac0e715627316c0166f01",
+      "pages": 52
+    },
+    {
+      "path": "Anleitungen/de/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf",
+      "sha256": "2110b33a5de3f77f73c4d7df9e5504af5dd17d50b44a8e06aa0c53f673bc87b4",
+      "pages": 3
+    },
+    {
+      "path": "Anleitungen/de/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf",
+      "sha256": "981e5a86ee1c9fa46734cb2ea4fa4cd06eb65c5be62d2a6e4114165c8243a1e8",
+      "pages": 72
+    },
+    {
+      "path": "Anleitungen/de/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf",
+      "sha256": "a1e1ae9b1a6e0e1c5a21a82f3639a0facff60073f702ff9443428addd5d94bb2",
+      "pages": 247
+    },
+    {
+      "path": "Anleitungen/de/pro-finder_ocr_abschrift.pdf",
+      "sha256": "bdf15a3b2f433e7563412c5e3201ee1b13859203ec7729fcf4b22c59c4739d4a",
+      "pages": 248
+    },
+    {
+      "path": "Anleitungen/de/pro_finder-kurzanleitung-international.pdf",
+      "sha256": "f737c39a10dab22ed0eec9332d653eeeac70703fe58a6e8712e4e70eb3d09ceb",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/pro_finder-kurzanleitung-international_sn-045.pdf",
+      "sha256": "a73a4dc7ee1d8843c8f3beef423da4be8d2b81347adf89560d8e1f4deaf2dc23",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/safe-lock_umruestplatine.pdf",
+      "sha256": "b6c32564e69aa86b44708744ac0cb3dcbc8bba6c622568eade75516185969b0e",
+      "pages": 12
+    },
+    {
+      "path": "Anleitungen/de/technische_zusatzinformationen_gas-pro_iii.pdf",
+      "sha256": "418f0c839399a2e0c7529e28565a9ee10649fb17a542b16e3cb398262ed5058e",
+      "pages": 63
+    },
+    {
+      "path": "Anleitungen/de/thitronik-eckernfoerde-flyer_2023.pdf",
+      "sha256": "eaf1d2f31c865905987761adc5f09cac828a9fa4d727fc816107571478383470",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/thitronik-kleiner_reisefuehrer_2023.pdf",
+      "sha256": "b572876009c2a251831abd230da51266208a6d69a3f87d0207fbb0d2c4198242",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/thitronik_reisefuehrer_2024.pdf",
+      "sha256": "db6f9b362ae8c80eb15573234cd89a6421e545a6a6ae76eb43016d90089b6231",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/thitronik_zugang_nur_zugang_v2.pdf",
+      "sha256": "124c20a1acf1ac51fa9587767cd8b6386940e2792bdeb4326589c202005a356a",
+      "pages": 8
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii-installationsanleitung_1.8.pdf",
+      "sha256": "9393f60f59205d73c92a4306b39345772b4cebba27650d45ad00cff394fa7293",
+      "pages": 128
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii.pdf",
+      "sha256": "44824bae21b0267dd50d661674a1e286dabb2141371f7984ce377e6084ba213c",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_fiat_ducato_244.pdf",
+      "sha256": "eabb7aa5366e3a649fc97e516efd215d1c7b5ed50b78fbbc2e7e08234d123044",
+      "pages": 11
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_fiat_ducato_x250_euro_4_safe.lock.pdf",
+      "sha256": "aeb5f2d709a782aaef06c840ed121bdd75484372cbd67d7fb002a2f3a2adc80e",
+      "pages": 11
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_fiat_talento___renault_trafic_iii.pdf",
+      "sha256": "915fd4a8e5feb6deb16861adf9346aeda2ae3cf4133bf4e5a98d4b425098a138",
+      "pages": 9
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_ford_transit_2019.pdf",
+      "sha256": "aed4374e7526c78524bac89903e49dde1f0a6362c3f38e0887f56ba1ec821217",
+      "pages": 11
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_ford_transit_6._generation_2006-2013.pdf",
+      "sha256": "92889b43e6ebb81b6747842377ce537619c754a884e935820b1a317fbf1371e5",
+      "pages": 9
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_ford_transit_7._generation_2014_2015.pdf",
+      "sha256": "0f09f338b7c1b59f6381a65439ea529512a4929dccdffe30077c7af968cae938",
+      "pages": 9
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_ford_transit_7._generation_2016-2019.pdf",
+      "sha256": "68f673c7b8982648e22af6a4a3f306858ff81b7e0d077bfd21221c3631a73cc1",
+      "pages": 9
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_iveco_daily_euro_4.pdf",
+      "sha256": "6a6358e0cb25db7ff3a412af0c5de97191929a4a40d01d502a14717aefd8f2f9",
+      "pages": 10
+    },
+    {
+      "path": "Anleitungen/de/WiPro_III_Iveco_Daily_Euro_5_2011-2024_DE.pdf",
+      "sha256": "6d2efad4901709629782c026e2f2d4456fc718ca51549b84f69c785803ad9fe6",
+      "pages": 10
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_mercedes_sprinter_ncv3_vw_crafter_ab_2006.pdf",
+      "sha256": "5f290645d5169ce721757aa09b1b40c3b91497986d8bf5812c7c3c535f519110",
+      "pages": 13
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_mercedes_sprinter_t1n.pdf",
+      "sha256": "0d190b0c3f61894cbe4c5ba4868d0cfb4aab5166a4f9f41d2562d7d046083fb2",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_mercedes_sprinter_vs30_01.pdf",
+      "sha256": "8a734a717da1d33798b7c302fc4db262a1c53931d6058048398a3d3947beee49",
+      "pages": 14
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_renault_master_ab_2011_01.pdf",
+      "sha256": "9fc73228358d5795e7e26116f0d9032d96c21127e76e0d83ed099002a62b3901",
+      "pages": 10
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_renault_master_ii_1998-2010.pdf",
+      "sha256": "f1a187b62f5c4054f2bfd75fe546c787e1477d57febc56bf4676e95ec684e300",
+      "pages": 11
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_renault_trafic_iii___nissan_primastar_2022_.pdf",
+      "sha256": "4108275821a46270e9996e1109ab1d097870248616bd4112040b68cc92aa015d",
+      "pages": 10
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_safe-lock_bedienungsanleitung_zehn_sprachen.pdf",
+      "sha256": "b275b6e76b6dc6d8b6d008ffa3eb18f7f72d1d4b059562239d5dc2ce3cae3e01",
+      "pages": 182
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_safe.lock.pdf",
+      "sha256": "23de77ae12c52c00c5861176d5c4eb826de94b08141fe7a6f16f99a888152b13",
+      "pages": 2
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_vw_crafter___man_tge_2017-2024 (1).pdf",
+      "sha256": "58c2c10b0feab9e65a0e48e2577fd85064515777811a9c320c93d407ff7ef7d5",
+      "pages": 11
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_vw_crafter___man_tge_2017-2024.pdf",
+      "sha256": "58c2c10b0feab9e65a0e48e2577fd85064515777811a9c320c93d407ff7ef7d5",
+      "pages": 11
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_vw_t5_2006-2009.pdf",
+      "sha256": "9e3c3939b2025cc0f5c479b2684efa8025daa370ee93e11d09ec36c20f4fecb9",
+      "pages": 10
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_vw_t5_facelift_2009_.pdf",
+      "sha256": "150be1e9a5dff3746e85461fef85b8ada63b697caaa6f8b23a4c8143787f77db",
+      "pages": 9
+    },
+    {
+      "path": "Anleitungen/de/wipro_iii_vw_t6_2015_.pdf",
+      "sha256": "fdc0ab7467056bf3415b631e3a0338576a88351646274913d2a72e06157f0bef",
+      "pages": 10
+    },
+    {
+      "path": "Anleitungen/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf",
+      "sha256": "82c5e9cac76bc05a823ff65bb660c351f150819b44153b98fc1ee11e661adc08",
+      "pages": 4
+    },
+    {
+      "path": "Anleitungen/de/zusatzhupe.pdf",
+      "sha256": "36d0e8e3a8d0c3f9e83f484089488cde6c5436ced27528e4cf659ec10cc1ef62",
+      "pages": 16
+    },
+    {
+      "path": "Anleitungen/de/zusatzsensor_gas-pro_iii_de_en_fr.pdf",
+      "sha256": "fa52257690654ad941cb4224d7429c9bacf81c70fa9acb327095318b9b89f0ff",
+      "pages": 4
+    },
+    {
+      "path": "Anleitungen/de/zusatzsirene_anleitung.pdf",
+      "sha256": "25e17cbd85dd11f2578b7057d468faf4bf4b8ac013be6659e1e95b625119f2d6",
+      "pages": 1
+    },
+    {
+      "path": "Anleitungen/de/ZV - IVECO Daily.pdf",
+      "sha256": "a95c4aa4e48506d68b886bb042cebf1e36e170d62bb6d7ec80b6d2f548540e8a",
+      "pages": 1
+    }
+  ]
+}

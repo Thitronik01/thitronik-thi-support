@@ -1,11 +1,15 @@
 ---
 title: Réseaux mobiles et cartes SIM — mise en service sûre du Pro-Finder
 sources:
+  - content/quellen/profinder-ab045-handbuch-rev1.3.pdf
+  - content/quellen/profinder-ab045-kurz-rev1.3.2.pdf
+  - content/quellen/profinder-handbuch-rev2.6.pdf
+  - content/quellen/profinder-faq.pdf
   - sources/APP.docx
   - sources/Anbieter.docx
   - sources/Handy.docx
   - sources/Pro-finder_Update_2018.docx
-updated: '2026-07-15'
+updated: '2026-09-28'
 confidence: high
 lang: fr
 translation_of: de/mobilfunk-sim.md
@@ -21,7 +25,7 @@ Cette page explique comment choisir, préparer et tester une carte SIM pour le P
 
 - Relever le numéro de série complet du Pro-Finder en conservant les zéros initiaux.
 - Choisir le bon format de SIM et le réglage du code PIN d’après le tableau.
-- Utiliser un forfait avec **SMS classiques et téléphonie**. Une SIM réservée aux données ne convient pas.
+- Utiliser un forfait avec **SMS classiques et téléphonie**, et à partir de -045 aussi **données mobiles (4G/LTE)**. Une SIM de données seules et Multi-SIM ne conviennent pas.
 - Activer la carte et vérifier son numéro ainsi que, le cas échéant, son crédit.
 - Désactiver la messagerie vocale, les renvois d’appel et les services complémentaires gênants via le compte client, l’opérateur ou un smartphone.
 - Tester d’abord la SIM dans un smartphone avec un appel et un SMS classique, puis l’insérer dans le Pro-Finder hors tension.
@@ -58,14 +62,16 @@ Cette page explique comment choisir, préparer et tester une carte SIM pour le P
 | SMS | L’envoi et la réception de SMS classiques doivent être possibles. |
 | Téléphonie | Les appels entrants et sortants doivent être disponibles. |
 | Numéro propre | Le numéro doit être connu et joignable sans ambiguïté. |
-| Données mobiles | Inutiles pour la commande du Pro-Finder par SMS ; le smartphone peut en avoir besoin pour l’application et les cartes. |
+| Données mobiles | À partir du SN -045, la SIM doit prendre en charge données mobiles (4G/LTE), SMS et téléphonie. Seule l’ancienne notice Micro-SIM rév. 1.1 dit que les données sont inutiles. Sources : FAQ p. 1 ; notice abrégée -045 rév. 1.3.2 p. 1. |
 | Prépayé ou abonnement | Les deux conviennent si toutes les autres exigences sont remplies. |
 
 Une SIM commercialisée comme 5G n’est pas automatiquement inadaptée. Le forfait doit également fournir la technologie mobile prise en charge par le Pro-Finder concerné, ainsi que les SMS et la téléphonie. Un forfait 5G uniquement, données uniquement ou IoT sans SMS ne convient pas.
 
-Une solution Multi-SIM ne doit être utilisée qu’après examen du cas particulier. Pour une distribution claire des messages et un diagnostic simple, il est préférable d’attribuer un numéro dédié au Pro-Finder.
+**Multi-SIM non prise en charge : Pro-Finder exige un numéro propre** (FAQ p. 1 ; notice abrégée -045 rév. 1.3.2 p. 1). Ne pas confondre Multi-SIM et carte multiopérateur ; la notice française rév. 1.3, PDF p. 62, impose une restriction distincte concernant cette dernière. Vérifier les conditions précises de la SIM et de l’itinérance.
 
 ### Cartes prépayées et consultation du crédit
+
+Les règles `P`/code ci-dessous concernent uniquement les appareils compatibles **jusqu’au SN -044**. **À partir du SN -045, pas de consultation du crédit par Pro-Finder** ; utiliser le portail de l’opérateur et, si nécessaire, la recharge automatique. Ne pas reprendre les codes de l’ancienne notice dans la configuration LTE. Source : FAQ PDF p. 4.
 
 - Organiser le crédit, la durée de validité et la recharge automatique afin d’éviter un blocage inaperçu de la carte.
 - Utiliser la lettre `P` dans le SMS de programmation uniquement pour une carte prépayée.
@@ -120,7 +126,7 @@ Les commandes de programmation ne doivent pas être envoyées par iMessage. Pend
 3. Rétablir l’alimentation et attendre l’enregistrement sur le réseau.
 4. Envoyer le SMS de programmation exactement, sans espaces supplémentaires.
 5. Contrôler le SMS de réponse.
-6. Appeler le Pro-Finder et effectuer un test d’alarme contrôlé.
+6. Vérifier le mode avant un appel test : **en modes 2 et 3, l’appel modifie l’armement de la WiPro**. Pour une simple interrogation, utiliser le SMS d’état adapté ; effectuer le test d’alarme de façon contrôlée.
 7. Pour une SIM prépayée, vérifier le crédit restant après le test.
 
 Un appel de test ne fournit qu’un indice :

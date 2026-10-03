@@ -1,13 +1,13 @@
 ---
 title: G.A.S.-plug „all in one" — Mobiler Gaswarner
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-plug-all-in-one/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/g.a.s.-plug_all-in-one.pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS-plug-all-in-one__100042__Overview_DE.md
-  - sources/Fragen zu G.A.S.-plug „all in one“.pdf
-  - sources/Seriennummer 0042 G.A.S.-plug .csv
-updated: '2026-07-16'
+  - "content/quellen/gas-plug-anleitung-rev1.0.pdf"
+  - "content/quellen/gas-plug-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-plug-all-in-one/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/g.a.s.-plug_all-in-one.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-plug-all-in-one__100042__Overview_DE.md"
+  - "sources/Seriennummer 0042 G.A.S.-plug .csv"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -40,6 +40,8 @@ G.A.S.-plug „all in one“ ist ein mobiler, eigenständiger Gaswarner für Pro
 | Gesamter Anzeigezyklus | 60 Sekunden |
 
 Die aktuelle offizielle Produktseite nennt bei der Lautstärke abweichend **ca. 85 dB**, während die dort verlinkte produktspezifische Anleitung **82 dB** ausweist. Dieser Master verwendet den Wert der Anleitung und dokumentiert die Abweichung. Wenn der Schalldruck für eine konkrete Freigabe entscheidend ist, beiliegende Anleitung, Kennzeichnung und THITRONIK-Support abgleichen.
+
+Beleg: [P, PDF 13](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=13). Die Angabe ab 50 ppm ist keine CO-Alarmschwelle: G.A.S.-plug erkennt kein CO. Die Website wurde am 01.10.2026 erneut geprüft; der Unterschied 82/85 dB bleibt offen.
 
 ## Schnellcheck
 
@@ -144,6 +146,8 @@ Die Anleitung beschreibt die reguläre Betriebsbereitschaft nach etwa vier Minut
 
 Dauerhaftes Gelb direkt nach dem Einstecken ist zunächst die Aufwärmphase. Bleibt der Zustand über die zulässige Erstinbetriebnahme hinaus bestehen oder ertönt zusätzlich ein Dauerton, liegt ein Sensorfehler nahe.
 
+Beleg: [P, PDF 2, 4](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=2).
+
 ## Alarmablauf
 
 Beim Überschreiten der Sensor-Alarmschwelle beginnt der Alarm unmittelbar:
@@ -155,6 +159,8 @@ Beim Überschreiten der Sensor-Alarmschwelle beginnt der Alarm unmittelbar:
 5. Die Wiederholung endet, sobald der Messwert unter den Schwellwert fällt oder das Gerät von der Versorgung getrennt wird.
 
 G.A.S.-plug steuert keine WiPro, Fahrzeughupe, Blinker, SMS oder externen Alarmgeber an. Die lokale Hörbarkeit hängt deshalb von Steckdosenposition, Fahrzeuggrundriss und Umgebungsgeräuschen ab.
+
+Beleg: [P, PDF 2, 4](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=2).
 
 ## Alarm beenden
 
@@ -188,6 +194,8 @@ Die offizielle THITRONIK-FAQ erlaubt einen regelmäßigen Test mit einem handels
 5. Gerät wieder vollständig betriebsbereit werden lassen.
 
 Keine Propangasflasche, keinen Brennspiritus, kein unkontrolliert freigesetztes Prüfgas und keine offene Flamme verwenden. Diese Verfahren können den Sensorkopf beschädigen oder Brand- und Explosionsgefahr verursachen. Bei Unsicherheit den Test durch einen Fachbetrieb ausführen lassen.
+
+Quellenabgrenzung: [QP, PDF 2](../../quellen/gas-plug-faq.pdf#page=2). Diese allgemeine FAQ ersetzt kein gerätespezifisches Prüfverfahren. Ihre Absätze zur grünen OEM-Ader und zur Verlängerung von GBA-I/Funk-Gaswarnern sind keine Anschlussfreigabe für den Steckdosen-G.A.S.-plug. Den Gastest niemals auf CO-Sensoren oder G.A.S.-pro III übertragen.
 
 ## Verhalten bei Gasalarm
 

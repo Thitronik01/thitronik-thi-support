@@ -1,13 +1,12 @@
 ---
 title: Fiat Ducato restylé / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf
-  - 'D:/Texte/de/seriennummern-softwarestaende.md'
-  - 'D:/Texte/de/fahrzeugkompatibilitaet.md'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/fahrzeuge/fiat-ducato-2024plus.md'
-updated: '2026-07-19'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/fahrzeuge/fiat-ducato-2024plus.md"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/fiat-ducato-2024plus.md
@@ -18,6 +17,12 @@ translation_of: sources/fahrzeuge/fiat-ducato-2024plus.md
 Cet article décrit le raccordement d'une WiPro III safe.lock au Fiat Ducato restylé et aux modèles équivalents documentés à partir de 2024. Plusieurs couleurs de fils et les broches du connecteur gris diffèrent de la génération 2022-2024.
 
 > **Délimitation :** la première immatriculation ne suffit pas. Vérifier année-modèle, calculateur, connecteurs, couleurs, numéro de série et logiciel WiPro. Si l'électricité correspond à l'ancienne version, utiliser [[Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022-2024)|Fiat Ducato 2022-2024]].
+
+## Limites du véhicule et sources contrôlées
+
+Ducato facelift 2024+ : FAQ `1050-046 / 7.5.3s`. Activer clignotement au verrouillage et déverrouillage à la sortie, puis revérifier après une mise à jour du véhicule. Le manuel original de cette variante manque dans le lot PDF. La ligne de compatibilité ne valide ni brochage ni réglage DIP ; obtenir la notice exacte.
+
+Sources : [S, PDF 2](../../../quellen/wipro-iii-safelock-faq.pdf#page=2), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
 
 ## Domaine d'application
 
@@ -54,6 +59,8 @@ Avant intervention, documenter télécommande, verrouillage centralisé, klaxon,
 
 ## Détermination sûre de la configuration DIP
 
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
+
 Le fonds conservé qualifie le réglage DIP de dépendant du véhicule ou de la variante, sans tableau complet fiable. Reprendre le réglage de la notice actuelle correspondant exactement au véhicule.
 
 1. Noter le numéro de série WiPro complet et le logiciel installé.
@@ -68,6 +75,8 @@ Le fonds conservé qualifie le réglage DIP de dépendant du véhicule ou de la 
 > **Important :** ne jamais modifier les DIP sous tension. Ne pas reconstruire ni tester des combinaisons non documentées.
 
 ## Accès au calculateur et raccordement de base
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 1. Déposer le vide-poches et les garnitures selon les instructions du véhicule.
 2. Dégager le calculateur près de la boîte à fusibles.
@@ -158,10 +167,7 @@ Pour les contrôles généraux, voir [[Dépannage — diagnostic sûr des probl�
 
 ## Décision sur les sources
 
-- Les broches et fils du restylage proviennent du fonds rédactionnel conservé ; les DOCX primaires cités ne sont plus présents localement.
-- Le seuil `1050-046 / 7.5.3s` suit [[Numéros de série et versions logicielles — préfixes, seuils et jalons|l'historique validé]].
-- Les quatre pages de *WiPro III safe.lock Upgrade*, révision `2.0`, ont été contrôlées textuellement et visuellement. Elles confirment les broches 20, 19 et 16 et le nouvel apprentissage.
-- La notice de mise à niveau n'est pas une notice de câblage véhicule. Ne pas reconstruire ni deviner DIP ou fils manquants.
+La notice complète de montage véhicule manque dans le lot PDF. Ce contrôle porte uniquement sur la compatibilité et les versions sourcées ci-dessus ; les anciennes données IDML/du projet et leurs images ne sont pas nouvellement vérifiées. Sources : [S, PDF 2](../../../quellen/wipro-iii-safelock-faq.pdf#page=2), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
 
 ## Renvois
 

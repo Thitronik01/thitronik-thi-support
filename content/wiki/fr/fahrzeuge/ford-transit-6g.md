@@ -1,11 +1,10 @@
 ---
 title: Ford Transit 6e génération (2006–2013)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_ford_transit_6._generation_2006-2013.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ford-2006.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/ford-transit-6g.md
@@ -13,11 +12,25 @@ translation_of: sources/fahrzeuge/ford-transit-6g.md
 
 # Ford Transit 6e génération (2006–2013)
 
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
+
 Ce document décrit le montage d’une WiPro III dans le Ford Transit de 6e génération, de 2006 à 2013. La notice spécifique, version `12/20`, couvre profil DIP, boîte à gants, boîtier de fusibles, masse, CAN, feux de détresse, verrouillage centralisé, klaxon, allumage, alimentation, LED d’état et essai final.
 
 > **Distinction essentielle :** la télécommande d’origine ne commande la WiPro qu’avec la fonction **Deadlock/double verrouillage**. Sans Deadlock, utiliser l’émetteur radio THITRONIK® gris ; le CAN surveille néanmoins les portes de cabine.
 
+## Limites du véhicule et sources contrôlées
+
+Ford Transit 2006–2013 : `SW1 + SW2 + SW6 ON`. Conflit Deadlock : le manuel 12/20 prévoit une commande THITRONIK séparée sans Deadlock, alors que la FAQ limite l’utilisation de WiPro III aux véhicules avec Deadlock. Sans Deadlock, ne pas déduire une autorisation de montage de l’ancien manuel ; confirmation fabricant nécessaire. Avec Deadlock, l’essai prévoit deux verrouillages. C6 broche 21 gris/orange = CAN-High, broche 31 violet/orange = CAN-Low.
+
+Sources : [ford-2006, PDF 2](../../../quellen/fahrzeug-ford-2006.pdf#page=2), [ford-2006, PDF 4](../../../quellen/fahrzeug-ford-2006.pdf#page=4), [Q, PDF 4](../../../quellen/wipro-iii-faq.pdf#page=4).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
+
 ## Champ d’application
+
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
 
 | Caractéristique | Prescription |
 |---|---|
@@ -31,6 +44,8 @@ Ce document décrit le montage d’une WiPro III dans le Ford Transit de 6e gén
 La notice véhicule ne donne aucun minimum ; `0823-001 / 2.1` provient de la matrice homologuée. Voir [[Numéros de série et versions logicielles — préfixes, seuils et jalons|Numéros de série et versions logicielles]].
 
 ## Définir le profil DIP et la commande
+
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
 
 La valeur spécifique `SW1 + SW2 + SW6` prévaut sur l’ancien tableau général, qui ne représente que SW1 à SW4.
 
@@ -149,20 +164,22 @@ La notice concerne les références noire `100757` et blanche `100758`. Voir [[C
 |---|---|
 | Orientation | LED d’émission opposée à l’aimant |
 | Mauvaise orientation | mémorisation possible mais aucune alarme |
-| Distance fermée | `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Montage préféré | émetteur sur cadre, aimant sur ouvrant |
 | Collage | surface propre, sèche, dégraissée ; au moins `15 °C` ; résistance finale après `24 h` |
 | Grand écart / antenne | adaptateur `100428` ou `100729` |
 
 1. Mémoriser et tester la portée avant fixation.
 2. Orienter boîtier et carte avec la LED opposée à l’aimant.
-3. Positionner l’aimant à `22–30 mm` en fermeture.
+3. Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 4. Nettoyer et dégraisser ; respecter `15 °C` et `24 h`.
 5. Utiliser les points de vissage si le collage ne convient pas et un adaptateur si nécessaire.
 
 ## Essai fonctionnel et confirmations
 
 ### Véhicule avec Deadlock
+
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
 
 1. Fermer portes et contacts, puis appuyer deux fois sur « verrouiller ».
 2. Vérifier un signal sonore, les clignotants et la LED d’état clignotante.
@@ -171,10 +188,14 @@ La notice concerne les références noire `100757` et blanche `100758`. Voir [[C
 
 ### Véhicule sans Deadlock
 
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
+
 1. Armer et désarmer avec l’émetteur THITRONIK® gris.
 2. Vérifier que le CAN continue de détecter les portes de cabine.
 
 ### Alarme d’essai
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Armer par la méthode adaptée, puis ouvrir une porte ou un contact radio.
 2. Contrôler l’alarme acoustique environ `30 secondes` et l’alarme optique environ `180 secondes`.
@@ -198,6 +219,8 @@ Déclencher chaque émetteur à son emplacement définitif. Sans confirmation so
 
 ## Défauts typiques
 
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
+
 | Défaut | Contrôle / correction |
 |---|---|
 | Télécommande d’origine sans effet | vérifier la présence du Deadlock ; sinon utiliser l’émetteur gris |
@@ -215,8 +238,10 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Sources et décision rédactionnelle
 
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard sans Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
+
 - Source principale : notice spécifique de neuf pages, version `12/20`, intégralement analysée et contrôlée visuellement.
-- Pages 2–5 : profil DIP, commande, accès, masse, raccordements, fusible, LED et essai ; pages 6–9 : références, orientation, fixation, adaptateurs et `22–30 mm`.
+- Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 - Le manuel général `1.8` complète sécurité, diagnostics et dépannage.
 - `0823-001 / 2.1` vient de la matrice homologuée ; la notice véhicule ne donne aucun minimum.
 - `SW1 + SW2 + SW6` prévaut sur l’ancien tableau général.

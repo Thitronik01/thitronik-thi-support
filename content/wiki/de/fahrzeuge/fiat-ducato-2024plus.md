@@ -1,13 +1,12 @@
 ---
 title: Fiat Ducato Facelift / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf
-  - 'D:/Texte/de/seriennummern-softwarestaende.md'
-  - 'D:/Texte/de/fahrzeugkompatibilitaet.md'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/fahrzeuge/fiat-ducato-2024plus.md'
-updated: '2026-07-19'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/fahrzeuge/fiat-ducato-2024plus.md"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -18,6 +17,12 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Anschluss einer WiPro III safe.lock an das Fiat-Ducato-Facelift und die dokumentierten baugleichen Modelle ab 2024. Gegenüber der Fahrzeuggruppe 2022–2024 ändern sich mehrere Leitungsfarben und die Pinbelegung am grauen Stecker.
 
 > **Abgrenzung:** Die Erstzulassung allein reicht nicht zur Zuordnung. Modelljahr, Bordcomputer, Stecker, Leitungsfarben, WiPro-Seriennummer und Softwarestand müssen gemeinsam geprüft werden. Entspricht die Elektrik der früheren Ausführung, gilt [[Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022–2024)|Fiat Ducato 2022–2024]].
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ducato Facelift 2024+: FAQ belegt `1050-046 / 7.5.3s`. „Blinker beim Verriegeln“ und „Türentriegelung beim Aussteigen“ müssen aktiv sein; nach Fahrzeug-Softwareupdate erneut prüfen. Das Original-Einbauhandbuch dieser Variante fehlt im PDF-Bestand. Die bestätigte Kompatibilitätszeile belegt keine Pins oder DIP-Einstellung; hierfür die konkrete Fahrzeugunterlage beschaffen.
+
+Belege: [S, PDF 2](../../../quellen/wipro-iii-safelock-faq.pdf#page=2), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
 
 ## Geltungsbereich
 
@@ -54,6 +59,8 @@ Vor Beginn sind Funk-Fernbedienung, Zentralverriegelung, Fahrzeughupe, Türanzei
 
 ## DIP-Konfiguration sicher festlegen
 
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
+
 Der lokale Redaktionsbestand bezeichnet die DIP-Konfiguration als fahrzeug- beziehungsweise variantenabhängig, enthält aber keine belastbare vollständige Schaltertabelle. Die Stellung muss deshalb aus der aktuellen Einbauunterlage für die konkrete Fahrzeugausführung übernommen werden.
 
 1. Vollständige WiPro-Seriennummer und installierten Softwarestand notieren.
@@ -68,6 +75,8 @@ Der lokale Redaktionsbestand bezeichnet die DIP-Konfiguration als fahrzeug- bezi
 > **Wichtig:** DIP-Schalter niemals unter Spannung umstellen. Nicht dokumentierte Kombinationen dürfen weder rekonstruiert noch probeweise durchgeschaltet werden.
 
 ## Zugang zum Bordcomputer und Grundanschluss
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 1. Ablagefach und erforderliche Verkleidungsteile nach Fahrzeugvorgabe entfernen.
 2. Bordcomputer neben dem Sicherungskasten zugänglich machen.
@@ -158,10 +167,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 ## Quellenentscheidung
 
-- Die Facelift-spezifischen Pin- und Leitungsangaben stammen aus dem vorhandenen fahrzeugspezifischen Redaktionsbestand; die dort genannten DOCX-Primärdateien sind im lokalen Quellbestand nicht mehr auffindbar.
-- Die Freigabegrenze `1050-046 / 7.5.3s` folgt der freigegebenen [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern- und Versionshistorie]].
-- Die vierseitige THITRONIK-Zusatzanleitung *WiPro III safe.lock Upgrade*, Revision `2.0`, wurde vollständig textlich und visuell geprüft. Sie belegt die WiPro-Pins 20, 19 und 16 sowie das notwendige erneute Anlernen des Funk-Zubehörs.
-- Die Upgrade-Anleitung ist keine fahrzeugspezifische Anschlussanleitung. Fehlende DIP-Stellungen oder abweichende Fahrzeugleitungen dürfen nicht rekonstruiert oder erraten werden.
+Die passende vollständige Fahrzeug-Einbauanleitung fehlt im geprüften PDF-Bestand. Dieser Block prüft nur die oben belegten Kompatibilitäts- und Versionsaussagen; ältere IDML-/Projektangaben und deren Bilder sind nicht erneut verifiziert. Belege: [S, PDF 2](../../../quellen/wipro-iii-safelock-faq.pdf#page=2), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
 
 ## Querverweise
 

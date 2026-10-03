@@ -1,31 +1,27 @@
 ---
 title: Bluetooth-Vernetzungsmodul — Smartphone-Steuerung via Bluetooth
 sources:
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/alarmanlagen/anleitungen/vernetzungsmodul-de_en_fr.pdf
-  - 'https://www.thitronik.de/produkte/produkt/bluetooth-vernetzungsmodul/'
-  - sources/Vernetzungsmodul.docx
-  - sources/Apple Watch app Info von Jan.docx
-  - sources/Sicherheitslücken BluetoothSMS; Spoofing.docx
-  - sources/Vernetzungsmodul und BT Connect unterschiede.md
-  - sources/Vernetzungsmodul_101290__Overview_DE.md
-  - sources/Vernetzungsmodul_101290__Reference__Technische_Daten_DE.md
-  - sources/Vernetzungsmodul_101290__Reference__Lieferumfang_DE.md
-  - sources/Vernetzungsmodul_101290__Guide__Anschluss_Montage_DE.md
-  - sources/Vernetzungsmodul_101290__HowTo__App_Anlernen_Koppeln_DE.md
-  - sources/Vernetzungsmodul_101290__HowTo__Geraete_loeschen_Reset_DE.md
-  - >-
-    sources/Vernetzungsmodul_101290__Safety__Spannung_trennen_vor_Massearbeiten_DE.md
-  - sources/Vernetzungsmodul_101290__Safety__Wichtiger_Hinweis_Haftung_DE.md
-  - sources/Fragen zu Bluetooth-Vernetzungsmodul.pdf
-  - >-
-    sources/Kompatibilität Smartphone-Smartwatch mit Vernetzungsmodul Stand
-    08.23.pdf
-  - sources/Seriennummer 1290 Bluetooth-Vernetzungsmodul.csv
-  - wiki/bt-connect.md
-  - wiki/app-befehle.md
-  - wiki/stoerungsbeseitigung.md
-updated: '2026-07-16'
+  - "content/quellen/funk-vernetzungsmodul-faq.pdf"
+  - "content/quellen/funk-vernetzungsmodul-kompatibilitaet-2023-08.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/alarmanlagen/anleitungen/vernetzungsmodul-de_en_fr.pdf"
+  - "https://www.thitronik.de/produkte/produkt/bluetooth-vernetzungsmodul/"
+  - "sources/Vernetzungsmodul.docx"
+  - "sources/Apple Watch app Info von Jan.docx"
+  - "sources/Sicherheitslücken BluetoothSMS; Spoofing.docx"
+  - "sources/Vernetzungsmodul und BT Connect unterschiede.md"
+  - "sources/Vernetzungsmodul_101290__Overview_DE.md"
+  - "sources/Vernetzungsmodul_101290__Reference__Technische_Daten_DE.md"
+  - "sources/Vernetzungsmodul_101290__Reference__Lieferumfang_DE.md"
+  - "sources/Vernetzungsmodul_101290__Guide__Anschluss_Montage_DE.md"
+  - "sources/Vernetzungsmodul_101290__HowTo__App_Anlernen_Koppeln_DE.md"
+  - "sources/Vernetzungsmodul_101290__HowTo__Geraete_loeschen_Reset_DE.md"
+  - "sources/Vernetzungsmodul_101290__Safety__Spannung_trennen_vor_Massearbeiten_DE.md"
+  - "sources/Vernetzungsmodul_101290__Safety__Wichtiger_Hinweis_Haftung_DE.md"
+  - "sources/Seriennummer 1290 Bluetooth-Vernetzungsmodul.csv"
+  - "content/wiki/de/bt-connect.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -107,6 +103,8 @@ Scharfschalten/Unscharfschalten und Verriegeln/Entriegeln sind getrennte Funktio
 
 ## Systemaufbau mit WiPro und Pro-Finder
 
+### Bluetooth-Vernetzungsmodul: lokal per Bluetooth, aus der Ferne per SMS
+
 Das Vernetzungsmodul besitzt zwei gleichwertige RJ10-Buchsen:
 
 | Anschluss | Verbindung / Funktion |
@@ -116,7 +114,7 @@ Das Vernetzungsmodul besitzt zwei gleichwertige RJ10-Buchsen:
 | GND | Fahrzeugmasse |
 | 12/24 V | Dauerstromversorgung parallel zu WiPro III und/oder Pro-Finder |
 
-Bei einer Kombination aus WiPro und Pro-Finder spielt es keine Rolle, welches Gerät an welcher RJ10-Buchse angeschlossen wird. Das Vernetzungsmodul ermöglicht dann die lokale Bluetooth-Bedienung; der Pro-Finder stellt abhängig von seiner Konfiguration einen separaten Mobilfunk-/SMS-Bedienweg bereit. Beide Wege sind technisch und diagnostisch getrennt zu behandeln.
+Bei einer Kombination aus WiPro und Pro-Finder spielt es keine Rolle, welches Gerät an welcher RJ10-Buchse angeschlossen wird. Das Vernetzungsmodul ermöglicht dann die lokale Bluetooth-Bedienung; der Pro-Finder stellt abhängig von seiner Konfiguration einen separaten Mobilfunk-/SMS-Bedienweg bereit. Beide Wege sind technisch und diagnostisch getrennt zu behandeln. [FAQ: Bluetooth im Nahbereich, SMS über Pro-Finder aus der Ferne](../../quellen/funk-vernetzungsmodul-faq.pdf#page=3)
 
 ---
 
@@ -213,12 +211,16 @@ Das Modul speichert höchstens **8 Endgeräte**. Ein Wechsel der Fahrzeugbatteri
 
 Die folgenden Angaben sind ein dokumentierter Kompatibilitätsstand aus **August 2023**, keine dauerhafte Freigabe für aktuelle Betriebssysteme:
 
+### Seriennummern und Wear OS 2/3 beim Bluetooth-Vernetzungsmodul (Stand August 2023)
+
 | Produktstand | Software | iPhone | Android | Apple Watch | Wear OS 2 | Wear OS 3 |
 |---|---|---|---|---|---|---|
 | alle dokumentierten 1290-Stände | alle | iOS 12.0 oder höher | Android 5.1.1 oder höher | abhängig vom Serien-/Softwarestand | abhängig vom Serien-/Softwarestand | abhängig vom Serien-/Softwarestand |
 | `1290-001` | `V1.6` | ✓ | ✓ | watchOS 7.0 oder höher | — | — |
 | `1290-002` bis `1290-009` | `V2.0` | ✓ | ✓ | watchOS 7.0 oder höher | ✓ | — |
 | `1290-010` und höher | `V2.1.0` | ✓ | ✓ | watchOS 7.0 oder höher | ✓ | ✓ |
+
+Dokumentabgleich vom 01.10.2026: Beim Vernetzungsmodul **1290-001 / V1.6** sind Wear OS 2 und Wear OS 3 nicht freigegeben. **1290-002 bis 1290-009 / V2.0** unterstützt Wear OS 2, aber nicht Wear OS 3; **ab 1290-010 / V2.1.0** nennt die Matrix beide. Diese historische Matrix betrifft das Vernetzungsmodul **1290-**, nicht automatisch BT-connect **6000-**. [Originalmatrix 08.2023](../../quellen/funk-vernetzungsmodul-kompatibilitaet-2023-08.pdf#page=1)
 
 Eine frühere interne Apple-Watch-Notiz nannte für einen damaligen Rollout watchOS 6 oder höher. Für den dokumentierten Snapshot von August 2023 ist die Tabelle mit watchOS 7.0 oder höher maßgeblich. Vor einer heutigen Zusage immer Endgerät, Betriebssystem, App-Version, Seriennummer, Softwarestand und gewünschte Funktion gemeinsam prüfen.
 

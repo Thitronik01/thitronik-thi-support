@@ -1,6 +1,7 @@
 ---
 title: Renault Master (2019–2024) — safe.lock
 sources:
+  - content/quellen/wipro-iii-safelock-faq.pdf
   - sources/Fahrzeugbesonderheiten.docx
   - sources/Seriennummer 5832 Wipro III safe.lock Renault Set .csv
   - sources/Wipro III 9 safe.lock.docx
@@ -9,7 +10,7 @@ sources:
     https://www.thitronik.de/news-und-termine/news/neu-verfuegbar-wipro-iii-safelock-fuer-den-renault-master-2019-bis-2024/
   - >-
     https://www.thitronik.de/fileadmin/user_upload/downloads/alarmanlagen/anleitungen/wipro_iii_safe.lock.pdf
-updated: '2026-07-21'
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/renault-master-2019.md
@@ -20,6 +21,16 @@ translation_of: sources/fahrzeuge/renault-master-2019.md
 Cet article décrit l’état vérifié du projet pour la WiPro III safe.lock dans le Renault Master des années-modèles 2019–2024 avec le kit spécifique au véhicule, réf. `105832`. Il regroupe la page produit du fabricant, la communication du fabricant du 16 juillet 2025, le guide abrégé rév. `1.3` et les registres de projet validés, en délimitant clairement les sources.
 
 > **Limite de validation :** les trois fichiers internes cités dans l’ancienne version ne sont pas disponibles localement. Les sources publiques du fabricant ne contiennent aucun tableau spécifique au véhicule pour les connecteurs, broches, couleurs de fils, fusibles ou réglages DIP. Ces anciennes valeurs ne sont donc pas reprises comme données de montage validées. Le document d’atelier THITRONIK actuel, spécifique au kit `105832`, est indispensable avant le montage.
+
+## Limites du véhicule et sources contrôlées
+
+Master 2019–2024 safe.lock : FAQ `5832-001 / 1.0.0sr`. La clé d’origine commande uniquement les serrures. Pour verrouiller/armer et déverrouiller/désarmer simultanément, utiliser les accessoires THITRONIK. Le manuel standard « Master dès 2011 » ne remplace pas la notice du kit safe.lock, absente du lot PDF ; ne pas reprendre ses DIP ou broches ZV.
+
+Sources : [S, PDF 10](../../../quellen/wipro-iii-safelock-faq.pdf#page=10), [S, PDF 11](../../../quellen/wipro-iii-safelock-faq.pdf#page=11).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Champ d’application et état vérifié
 
@@ -124,6 +135,8 @@ Sur le Renault Master 2019–2024, le verrouillage du véhicule et l’état de 
 
 ## Mise en service et essai fonctionnel
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 1. Contrôler tous les raccordements, fusibles, points de masse et le profil de l’appareil avec le document d’atelier actuel.
 2. Rebrancher la batterie du véhicule et les batteries auxiliaires selon les consignes du fabricant.
 3. Vérifier qu’aucun voyant, message d’erreur ou nouveau défaut mémorisé n’est apparu.
@@ -172,12 +185,7 @@ Lors de la remise, montrer que la clé d’origine ne fait que verrouiller et d�
 
 ## Décision relative aux sources
 
-- La page produit THITRONIK actuelle confirme Renault Master 2019–2024, le kit réf. `105832`, la version minimale `5832-001 / 1.0.0sr` et la logique de commande distincte de la clé d’origine.
-- La communication du fabricant du 16 juillet 2025 confirme la disponibilité et l’obligation d’utiliser la télécommande radio ou un autre accessoire THITRONIK pour activer et désactiver.
-- Le guide abrégé WiPro III safe.lock de deux pages, rév. `1.3`, a été vérifié textuellement et visuellement ; les valeurs système, confirmations, Vent-check, alarme panique et durées d’alarme en sont issus.
-- Le registre de projet confirme la branche logicielle distincte `5832-` et la première version documentée `5832-001 / 1.0.0sr`.
-- Les fichiers `Fahrzeugbesonderheiten.docx`, `Seriennummer 5832 Wipro III safe.lock Renault Set .csv` et `Wipro III 9 safe.lock.docx` sont introuvables localement. Aucune broche, couleur de fil, position DIP ou procédure de montage spécifique au véhicule provenant de l’ancien contenu n’est donc validée.
-- L’ancienne indication relative au mode camping n’était pas étayée par les sources Renault accessibles du fabricant et a été supprimée.
+La notice complète de montage véhicule manque dans le lot PDF. Ce contrôle porte uniquement sur la compatibilité et les versions sourcées ci-dessus ; les anciennes données IDML/du projet et leurs images ne sont pas nouvellement vérifiées. Sources : [S, PDF 10](../../../quellen/wipro-iii-safelock-faq.pdf#page=10), [S, PDF 11](../../../quellen/wipro-iii-safelock-faq.pdf#page=11).
 
 ## Renvois
 

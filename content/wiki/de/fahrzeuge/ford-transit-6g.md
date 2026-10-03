@@ -1,11 +1,10 @@
 ---
 title: Ford Transit 6. Generation (2006–2013)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_ford_transit_6._generation_2006-2013.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ford-2006.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -13,11 +12,25 @@ dealerStatus: approved
 
 # Ford Transit 6. Generation (2006–2013)
 
+> **Quellenkonflikt zur Freigabe:** Die folgenden Bedienwege beschreiben die ältere Fahrzeug-PDF. Die FAQ schließt Standard-WiPro ohne Deadlock aus. Für diese Variante auch mit THITRONIK-Handsender keine Einbaufreigabe aus dem beschriebenen Ablauf ableiten; Herstellerklärung erforderlich.
+
 Dieser Artikel beschreibt den Einbau einer WiPro III in den Ford Transit der 6. Generation von 2006 bis 2013. Das fahrzeugspezifische Einbauhandbuch Stand `12/20` dokumentiert DIP-Profil, Handschuhfach- und Sicherungskastenzugang, Massepunkt, CAN-Bus, Warnblinker, Zentralverriegelung, Fahrzeughupe, Zündung, Spannungsversorgung, Status-LED, Bedienlogik und Funktionstest.
 
 > **Wichtige Bedienabgrenzung:** Nur ein Fahrzeug mit **Deadlock/Doppelverriegelung** kann die WiPro über die originale Fahrzeugfernbedienung schärfen und entschärfen. Ohne Deadlock wird die WiPro mit dem grauen THITRONIK® Funk-Handsender bedient; der CAN-Anschluss wertet die Fahrerhaustüren trotzdem aus.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ford Transit 2006–2013: `SW1 + SW2 + SW6 ON`. Quellenkonflikt zum Deadlock: Das Handbuch 12/20 erlaubt ohne Deadlock eine getrennte Bedienung mit THITRONIK-Handsender; die FAQ beschränkt dagegen die Verwendung der WiPro III insgesamt auf Fahrzeuge mit Deadlock. Daher ohne Deadlock keine Einbaufreigabe aus der älteren Anleitung ableiten; Herstellerklärung erforderlich. Mit Deadlock zeigt der Funktionstest zweimaliges Verriegeln. C6 Pin 21 grau/orange ist CAN-High, Pin 31 violett/orange CAN-Low.
+
+Belege: [ford-2006, PDF 2](../../../quellen/fahrzeug-ford-2006.pdf#page=2), [ford-2006, PDF 4](../../../quellen/fahrzeug-ford-2006.pdf#page=4), [Q, PDF 4](../../../quellen/wipro-iii-faq.pdf#page=4).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
+
 ## Geltungsbereich
+
+> **Quellenkonflikt zur Freigabe:** Die folgenden Bedienwege beschreiben die ältere Fahrzeug-PDF. Die FAQ schließt Standard-WiPro ohne Deadlock aus. Für diese Variante auch mit THITRONIK-Handsender keine Einbaufreigabe aus dem beschriebenen Ablauf ableiten; Herstellerklärung erforderlich.
 
 | Merkmal | Vorgabe |
 |---|---|
@@ -33,6 +46,8 @@ Dieser Artikel beschreibt den Einbau einer WiPro III in den Ford Transit der 6. 
 Die Mindestschwelle stammt aus der freigegebenen Projektmatrix; das Fahrzeughandbuch selbst nennt keinen Serien- oder Softwarestand. Seriennummer und Software sind deshalb vor dem Einbau zusätzlich über [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern und Softwarestände]] zu prüfen.
 
 ## DIP-Profil und Bedienvariante festlegen
+
+> **Quellenkonflikt zur Freigabe:** Die folgenden Bedienwege beschreiben die ältere Fahrzeug-PDF. Die FAQ schließt Standard-WiPro ohne Deadlock aus. Für diese Variante auch mit THITRONIK-Handsender keine Einbaufreigabe aus dem beschriebenen Ablauf ableiten; Herstellerklärung erforderlich.
 
 Das fahrzeugspezifische Handbuch verlangt `SW1 + SW2 + SW6`. Diese konkrete Stellung hat Vorrang vor der älteren allgemeinen Tabelle, die bei „Ford Transit ab 2006“ nur die Schalter 1 bis 4 abbildet und deshalb `SW6` nicht aufführt.
 
@@ -175,7 +190,7 @@ Das Fahrzeughandbuch dokumentiert die schwarzen und weißen Funk-Magnetkontakte 
 |---|---|
 | Platinenrichtung | Sende-LED muss vom Magneten wegweisen |
 | Fehlmontage | zeigt die Sende-LED zum Magneten, ist Anlernen möglich, eine Alarmierung erfolgt jedoch nicht |
-| Geschlossener Abstand | Magnet im dokumentierten Bereich von `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Bevorzugte Tür-/Klappenmontage | Sendergehäuse am Rahmen, Magnet am beweglichen Türblatt beziehungsweise an der Klappe |
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitungstemperatur | nicht unter `15 °C` |
@@ -185,7 +200,7 @@ Das Fahrzeughandbuch dokumentiert die schwarzen und weißen Funk-Magnetkontakte 
 1. Kontakte vor der endgültigen Befestigung anlernen und am vorgesehenen Ort auf Reichweite prüfen.
 2. Sendergehäuse passend zu Rahmenprofil, Rollo und Fenster ausrichten.
 3. Platine so einsetzen, dass die Sende-LED vom Magneten wegzeigt.
-4. Magnet im geschlossenen Zustand innerhalb des Bereichs `22–30 mm` positionieren.
+4. Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 5. Klebeflächen reinigen, trocknen und entfetten.
 6. Klebepads nur bei mindestens `15 °C` verarbeiten und während der ersten `24 Stunden` nicht voll belasten.
 7. Bei ungeeigneter Klebemontage die markierten Schraubpunkte im Sendergehäuse verwenden.
@@ -194,6 +209,8 @@ Das Fahrzeughandbuch dokumentiert die schwarzen und weißen Funk-Magnetkontakte 
 ## Funktionstest und Bedienquittungen
 
 ### Fahrzeug mit Deadlock
+
+> **Quellenkonflikt zur Freigabe:** Die folgenden Bedienwege beschreiben die ältere Fahrzeug-PDF. Die FAQ schließt Standard-WiPro ohne Deadlock aus. Für diese Variante auch mit THITRONIK-Handsender keine Einbaufreigabe aus dem beschriebenen Ablauf ableiten; Herstellerklärung erforderlich.
 
 1. Alle Fahrerhaustüren und angelernten Kontakte schließen.
 2. Verriegelungstaste der Original-Fahrzeugfernbedienung zweimal drücken, um Deadlock und WiPro zu aktivieren.
@@ -204,11 +221,15 @@ Das Fahrzeughandbuch dokumentiert die schwarzen und weißen Funk-Magnetkontakte 
 
 ### Fahrzeug ohne Deadlock
 
+> **Quellenkonflikt zur Freigabe:** Die folgenden Bedienwege beschreiben die ältere Fahrzeug-PDF. Die FAQ schließt Standard-WiPro ohne Deadlock aus. Für diese Variante auch mit THITRONIK-Handsender keine Einbaufreigabe aus dem beschriebenen Ablauf ableiten; Herstellerklärung erforderlich.
+
 1. WiPro mit dem grauen THITRONIK® Funk-Handsender schärfen.
 2. Prüfen, dass der CAN-Anschluss die Fahrerhaustüren weiterhin erfasst.
 3. WiPro mit dem Funk-Handsender entschärfen und die Rückmeldungen kontrollieren.
 
 ### Testalarm
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 1. WiPro mit dem zur Fahrzeugvariante passenden Bedienweg schärfen.
 2. Eine Fahrerhaustür oder eine mit Funk-Magnetkontakt gesicherte Öffnung öffnen.
@@ -236,6 +257,8 @@ Im Diagnosemodus jeden angelernten Funk-Sender am endgültigen Montageort auslö
 
 ## Typische Fehlerbilder
 
+> **Quellenkonflikt zur Freigabe:** Die folgenden Bedienwege beschreiben die ältere Fahrzeug-PDF. Die FAQ schließt Standard-WiPro ohne Deadlock aus. Für diese Variante auch mit THITRONIK-Handsender keine Einbaufreigabe aus dem beschriebenen Ablauf ableiten; Herstellerklärung erforderlich.
+
 | Fehlerbild | Prüfung / Maßnahme |
 |---|---|
 | Originalfernbedienung steuert die WiPro nicht | prüfen, ob Deadlock überhaupt vorhanden ist; ohne Deadlock den grauen Funk-Handsender verwenden |
@@ -257,7 +280,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 - Primärquelle ist das neunseitige fahrzeugspezifische *Einbauhandbuch WiPro III – Ford Transit ab Baujahr 2006*, Stand `12/20`.
 - Alle neun Seiten wurden vollständig textlich ausgewertet und visuell geprüft. Die Seiten 2 bis 5 belegen DIP-Profil, Bedienvarianten, Demontage, Massepunkt, sämtliche Fahrzeuganschlüsse, Sicherung, Status-LED und Funktionstest.
-- Die Seiten 6 bis 9 belegen Art.-Nr. `100757`/`100758`, Platinenrichtung, Montagevarianten, Klebe- und Schraubbefestigung, Montageadapter sowie den Magnetbereich `22–30 mm`.
+- Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 - Das allgemeine Installationshandbuch Version `1.8` ergänzt die spannungsfreie DIP-Arbeit, CAN- und Funkdiagnose, allgemeinen Testalarm und systemweite Fehlerprüfung.
 - Der Mindeststand `0823-001 / 2.1` stammt aus der freigegebenen Projekt-Kompatibilitätsmatrix; das Fahrzeughandbuch nennt selbst keinen Mindeststand.
 - Bei der DIP-Stellung hat die konkrete neuere Fahrzeuganleitung mit `SW1 + SW2 + SW6` Vorrang vor der historischen allgemeinen Tabelle, die nur Schalter 1 bis 4 darstellt.

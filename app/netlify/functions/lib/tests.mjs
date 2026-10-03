@@ -13,12 +13,13 @@
 
 import { pruefeGefahr, leseSeriennummer, pruefeWidersprueche, baueSuchanfrage, fahrzeugGewichten } from './fall.mjs';
 import { bewerteSicherheit, leseModellStufe } from './sicherheit.mjs';
-import { extractSnippet, searchWiki, buildRetrievalQuery } from './search-core.js';
+import { extractSnippet, searchWiki, searchSections, buildRetrievalQuery } from './search-core.js';
 import {
   STATUS, validiereNotiz, erzeugeNotiz, wechsleStatus, istSicherheitsrelevant,
   wirksameKorrekturen, korrekturAlsArtikel, kontextText, baueModulText, ueberfaellige,
 } from './korrekturen.mjs';
 import ARTIKEL from '../../../data/artikel.mjs';
+import SEKTIONEN from '../../../data/sektionen.mjs';
 
 let ok = 0;
 let fehlgeschlagen = 0;
@@ -227,6 +228,31 @@ const qOhne = baueSuchanfrage({
   fehlerbild: { beobachtet: 'Test' }, produkte: [], produktSlugs: [],
 });
 pruefe('Fallback-Fahrzeug verwässert die Query nicht', !qOhne.includes('universalanschluss'), qOhne);
+pruefe('Camp Lock als Produktalias erkannt', buildRetrievalQuery('Camp Lock Finger löschen').includes('camplock-fingerprint'));
+pruefe('Van Lock als Produktalias erkannt', buildRetrievalQuery('Van Lock Finger löschen').includes('vanlock-fingerprint'));
+
+// Die PDF-Korrekturen müssen im tatsächlich importierten App-Bündel erreichbar
+// sein. Ein Wiki-Treffer allein genügt nicht: Die richtige Passage braucht
+// einen Abschnittsanker für die Quellenanzeige.
+const fingerprintFaelle = [
+  ['de', 'Camp Lock 106111 Masterfinger löschen', '/de/camplock-fingerprint', 'alle-finger-löschen'],
+  ['de', 'Van Lock 106259 einzelnen Finger löschen', '/de/vanlock-fingerprint', 'alle-finger-löschen'],
+  ['de', 'CampLock 106111-002 WiPro III ohne safe.lock', '/de/camplock-fingerprint', 'welche-ausführung-ist-verbaut'],
+  ['de', 'VanLock 106259 WiPro III Katalog Bedienungsanleitung Widerspruch', '/de/vanlock-fingerprint', 'quellenkonflikt-und-versionsprüfung'],
+  ['fr', 'Comment effacer les empreintes sur Van Lock ?', '/fr/vanlock-fingerprint', 'effacer-toutes-les-empreintes'],
+  ['fr', 'Camp Lock 106111-002 fonctionne avec WiPro III sans safe.lock ?', '/fr/camplock-fingerprint', 'quelle-version-est-installée-'],
+];
+for (const [lang, frage, route, anker] of fingerprintFaelle) {
+  const query = buildRetrievalQuery(frage);
+  const zugang = { canViewInternal: false };
+  const artikelTreffer = searchWiki(ARTIKEL, query, zugang, lang, 1)[0];
+  const abschnittTreffer = searchSections(SEKTIONEN, query, zugang, lang, 3);
+  pruefe(`${lang}: Fingerprint-Artikel zu ${frage.slice(0, 30)}…`, artikelTreffer?.route === route,
+    artikelTreffer?.route || 'kein Treffer');
+  pruefe(`${lang}: Belegabschnitt zu ${frage.slice(0, 30)}…`,
+    abschnittTreffer.some((t) => t.route === route && t.anchor === anker),
+    abschnittTreffer.map((t) => `${t.route}#${t.anchor}`).join(' | '));
+}
 
 // ─── 6) Fahrzeug-Gewichtung ─────────────────────────────────────────────────
 console.log('\n6) Fahrzeug-Gewichtung (der Kern-Gewinn der Formatvorlage)');

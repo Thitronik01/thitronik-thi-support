@@ -30,6 +30,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import GithubSlugger from 'github-slugger';
+import { extractPlainText, markdownLines } from './wiki-klartext.mjs';
 import {
   INTERNAL_SECTION_ANCHORS,
   dealerHeadingsFor,
@@ -639,11 +640,8 @@ function extractHeadings(markdown) {
   // CRLF-toleranter Split — sonst frisst der nachfolgende `.` in der Regex
   // das \r nicht (JS-`.` matcht keine Line-Terminator) und `(.+)$` matched
   // nicht. Vorher waren ALLE Headings in CRLF-Dateien unsichtbar.
-  const lines = markdown.split(/\r?\n/);
-  let inCodeBlock = false;
-  for (const line of lines) {
-    if (line.trim().startsWith('```')) { inCodeBlock = !inCodeBlock; continue; }
-    if (inCodeBlock) continue;
+  for (const { line, code } of markdownLines(markdown)) {
+    if (code) continue;
     const match = line.match(/^(#{1,6})\s+(.+)$/);
     if (match) {
       const level = match[1].length;
@@ -664,13 +662,11 @@ function extractHeadings(markdown) {
 // hereingereicht, damit die Anker exakt dieselben Slugger-IDs sind wie in
 // extractHeadings/HTML (keine zweite, abweichende Slugifizierung).
 function buildSections(markdown, headings) {
-  const lines = markdown.split(/\r?\n/);
   const sections = [];
   let hIdx = 0; // Zeiger in headings[] — Überschriften erscheinen in Zeilenreihenfolge
   let current = null; // aktueller Abschnitt-Akkumulator
   let currentH2 = null; // letzte H2 für den headingPath von H3-Abschnitten
   let introLines = [];
-  let inCodeBlock = false;
 
   const flush = () => {
     if (current) {
@@ -681,13 +677,8 @@ function buildSections(markdown, headings) {
     }
   };
 
-  for (const line of lines) {
-    if (line.trim().startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      (current ? current._md : introLines).push(line);
-      continue;
-    }
-    const match = !inCodeBlock && line.match(/^(#{1,6})\s+(.+)$/);
+  for (const { line, code } of markdownLines(markdown)) {
+    const match = !code && line.match(/^(#{1,6})\s+(.+)$/);
     if (match) {
       const level = match[1].length;
       const heading = headings[hIdx] || { level, text: match[2].trim(), id: '' };
@@ -724,22 +715,6 @@ function buildSections(markdown, headings) {
     });
   }
   return sections;
-}
-
-function extractPlainText(markdown) {
-  // WICHTIG: Das Frontmatter ist hier bereits via gray-matter entfernt
-  // (parsed.content). Eine zusätzliche /^---…---/-Ersetzung würde fälschlich den
-  // Inhalt ZWISCHEN den ersten beiden `---`-Trennlinien (horizontale Regeln, als
-  // Abschnittstrenner genutzt) löschen — so verschwanden ganze Abschnitte inkl.
-  // `> **WICHTIG:**`-Hinweise aus Suche UND Thi-RAG. Daher NICHT wieder einfügen.
-  return markdown
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/!\[.*?\]\(.*?\)/g, '')
-    .replace(/\[([^\]]+)\]\(.*?\)/g, '$1')
-    .replace(/\[\[([^\]|]+)\|?([^\]]*)\]\]/g, (_, target, label) => label || target)
-    .replace(/[#*_~`>|]/g, '')
-    .replace(/\n{2,}/g, '\n')
-    .trim();
 }
 
 function splitTitleVariants(title) {

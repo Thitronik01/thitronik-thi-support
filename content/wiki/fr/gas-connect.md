@@ -1,15 +1,14 @@
 ---
 title: G.A.S.-connect — alarme de gaz sans fil pour WiPro III
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-connect/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-connect/g.a.s.-connect.pdf
-  - sources/Fragen zu G.A.S.-connect.pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Overview_DE.md
-  - >-
-    sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Reference__Technische_Daten_DE.md
-  - sources/Seriennummer G.A.S.-connect (5750).csv
-updated: '2026-07-16'
+  - "content/quellen/gas-connect-anleitung-rev1.0.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-connect/"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-connect/g.a.s.-connect.pdf"
+  - "content/quellen/gas-connect-faq.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Overview_DE.md"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Reference__Technische_Daten_DE.md"
+  - "sources/Seriennummer G.A.S.-connect (5750).csv"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/gas-connect.md
@@ -48,7 +47,7 @@ G.A.S.-connect est un détecteur de gaz radio alimenté par le véhicule, conçu
 | Conformité radio selon la notice | Directive 2014/53/UE |
 | Homologation pour véhicules selon la page produit | ECE R10 |
 
-La page produit officielle actuelle indique toutefois **env. 28/15 mA** et **env. 35 g**. Ces valeurs correspondent aux données du modèle autonome G.A.S. publiées sur cette même page, tandis que la notice de G.A.S.-connect fournit en plus les caractéristiques radio. Le présent document retient donc les valeurs de la notice propre au produit. Si le bilan électrique ou le poids est déterminant pour une validation concrète, comparer la plaque signalétique, la notice fournie et les informations de l’assistance THITRONIK.
+La [page produit officielle](https://www.thitronik.de/produkte/produkt/gas-connect/) consultée le 01/10/2026 indique **env. 34 mA**, sans séparation 12/24 V, et **env. 35 g**. [C, PDF 25](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=25) indique **15 mA à 12 V / 25 mA à 24 V** et **33 g**. La divergence reste ouverte : ne pas inverser ces valeurs ni reprendre les 28/15 mA du G.A.S. autonome. Faire confirmer la version précise par THITRONIK avant un bilan électrique définitif.
 
 ## Contrôle rapide
 
@@ -79,6 +78,10 @@ La page produit officielle actuelle indique toutefois **env. 28/15 mA** et **env
 G.A.S.-connect ne possède pas de sirène interne, mais dispose bien d’une sortie d’alarme électrique en option. Il ne faut donc pas confondre « sans sirène propre » et « sans sortie d’alarme propre ».
 
 ## Conditions système et voies d’alarme
+
+### G.A.S.-connect : sirène interne et WiPro
+
+G.A.S.-connect ne possède **pas de sirène interne**. Le système WiPro III / WiPro III safe.lock assure la sirène, le klaxon et les feux de détresse. Alarm OUT reste une sortie optionnelle pour une sirène de secours : absence de sirène intégrée ne signifie pas absence de sortie électrique. Source : [QC, PDF 1](../../quellen/gas-connect-faq.pdf#page=1).
 
 | Élément | Requis ? | Fonction |
 |---|---|---|
@@ -134,6 +137,8 @@ La notice propre au produit impose pour G.A.S.-connect un montage **à environ 1
 
 Lorsque des rideaux ou des portes coulissantes séparent les espaces, un autre détecteur de gaz autonome ou un autre détecteur radio correctement intégré peut être nécessaire. Aucun capteur supplémentaire externe ne peut être raccordé directement à G.A.S.-connect.
 
+Source : [C, PDF 2, 6](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=2).
+
 ## Contrôle radio avant le montage définitif
 
 La liaison radio doit être contrôlée à l’emplacement prévu avant de percer :
@@ -163,12 +168,14 @@ La portée d’environ 75 m en champ libre ne tient compte ni de la structure du
 | Borne | Fonction | Consigne |
 |---|---|---|
 | `12/24V` | Alimentation positive du véhicule | Utiliser une alimentation 12/24 V CC adaptée et protégée par fusible |
-| `AGND` | Masse | Relier à une masse appropriée du véhicule |
+| `GND` | Masse | Relier à une masse appropriée du véhicule |
 | `ALARM OUT` | Sortie d’alarme facultative | Commutation vers la masse, 0,10 A maximum |
 
 Abaisser complètement les leviers du bornier, introduire les conducteurs dénudés jusqu’en butée, puis refermer le bornier. Le schéma de raccordement de la notice exige un branchement **sans embouts de câblage**. Contrôler ensuite chaque conducteur en tirant légèrement dessus.
 
 Vérifier la polarité, la protection par fusible et la tension d’alimentation avant la mise sous tension. G.A.S.-connect est alimenté par le véhicule et ne possède aucune pile bouton CR2032 à remplacer.
+
+Source : [C, PDF 23](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=23). Le dessin nomme la borne de masse `GND`, et non `AGND`.
 
 ## `Alarm OUT` et sirène de secours
 
@@ -201,6 +208,8 @@ Contrairement au modèle autonome G.A.S., la notice ne documente aucune confirma
 
 La mise en marche déclenche ici le signal d’apprentissage. Si l’appareil est déjà allumé, l’éteindre si nécessaire, puis le rallumer après avoir activé le mode d’apprentissage. Les règles générales relatives à la mémoire, à la suppression et à l’apprentissage figurent sous [[Processus d'apprentissage — apprentissage des accessoires radio sur WiPro III]].
 
+Source : [C, PDF 3, 7](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=3).
+
 ## États de fonctionnement et de la LED
 
 | État | Indication / signal | Signification et mesure |
@@ -213,6 +222,8 @@ La mise en marche déclenche ici le signal d’apprentissage. Si l’appareil es
 | Confirmation d’apprentissage | Signal sonore de la WiPro | Affectation radio reconnue ; ne pas confondre avec un test du capteur |
 
 Avant le départ et avant de passer la nuit dans le véhicule, vérifier le clignotement vert ainsi que l’état opérationnel de la WiPro.
+
+Source : [C, PDF 3, 7](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=3).
 
 ## Déroulement de l’alarme via WiPro
 
@@ -227,6 +238,8 @@ Si le seuil d’alarme du capteur est dépassé pendant plus de 30 secondes, la 
 7. Si le seuil est de nouveau dépassé pendant plus de 30 secondes, la séquence recommence.
 
 Les avertisseurs réellement activés dépendent de la version de la WiPro, du profil du véhicule, du raccordement et de la configuration. La sirène, le klaxon du véhicule et les clignotants sont des composants distincts et ne doivent pas être confondus.
+
+Source : [C, PDF 7](../../quellen/gas-connect-anleitung-rev1.0.pdf#page=7). Les 180 secondes des feux de détresse viennent de cette notice G.A.S.-connect. La divergence WiPro déjà documentée de 120/180 secondes reste ouverte ; ne pas généraliser cette durée à toutes les centrales.
 
 ## Arrêt de l’alarme et identification de l’événement
 
@@ -307,7 +320,7 @@ Ne jamais ponter un fusible, court-circuiter une sortie, désactiver globalement
 | Numéro de série complet | Plaque signalétique, préfixe habituel `5750-` ; ne pas communiquer uniquement le préfixe |
 | Version et numéro de série de la WiPro | WiPro III ou WiPro III safe.lock, numéro de série complet |
 | Véhicule et année | Constructeur, modèle, année-modèle |
-| Tension d’alimentation | Valeur mesurée entre `12/24V` et `AGND` |
+| Tension d’alimentation | Valeur mesurée entre `12/24V` et `GND` |
 | État de la LED | Couleur, fixe ou clignotante, moment et durée |
 | État de l’apprentissage | Quand et comment la WiPro l’a confirmé |
 | Emplacement de montage | Hauteur, distance du chauffage/de la batterie, distance et obstacles jusqu’à la WiPro |

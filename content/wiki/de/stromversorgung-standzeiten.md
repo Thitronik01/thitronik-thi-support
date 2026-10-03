@@ -1,10 +1,14 @@
 ---
 title: 'Stromversorgung & Standzeiten — Ruhestrom, Unterspannung und Ladepraxis'
 sources:
-  - sources/Stromverbrauch.docx
-  - wiki/wipro-iii.md
-  - wiki/pro-finder.md
-updated: '2026-07-15'
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "sources/Stromverbrauch.docx"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/pro-finder.md"
+updated: '2026-09-28'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -21,8 +25,9 @@ Querschnittsseite für Supportfälle rund um **leere Starterbatterien**, **läng
 | Komponente | Richtwert | Einordnung |
 |------------|-----------|------------|
 | WiPro III safe.lock | ca. **11 mA** | Ruhestrom der Alarmzentrale im Standby |
-| Pro-Finder | ca. **16–25 mA** | abhängig vom Betriebszustand des Mobilfunkmoduls |
-| Kombination | ca. **27–36 mA** | nur THITRONIK-Komponenten, **ohne** Fahrzeuggrundlast |
+| Pro-Finder ab -045, Rev. 1.3 | ca. **16–21 mA** normal; ca. **37 mA** bei Netzsuche | PDF S. 25; nicht mit einem niedrigen GPS-Standby-Verbrauch gleichsetzen |
+| Pro-Finder, ältere Rev. 2.6 | ca. **21 mA** normal | PDF S. 18 |
+| Kombination mit angenommener WiPro-Last 11 mA | rechnerisch **27–32 mA** im normalen Pro-Finder-Betrieb | 11 + 16–21 mA; kein gemessener Gesamtwert, **ohne** Fahrzeuggrundlast |
 
 > **Wichtig:** Diese Werte beschreiben nur die THITRONIK-Komponenten. Wegfahrsperre, Steuergeräte, Funkempfänger, Türsysteme oder andere Kriechströme des Fahrzeugs kommen zusätzlich hinzu.
 
@@ -59,10 +64,9 @@ Bei einer Dauerlast von **50 mA** werden pro Tag etwa **1,2 Ah** verbraucht.
 
 ## Unterspannung beim Pro-Finder
 
-- Bei einer Versorgungsspannung von **11,2 V** sendet der Pro-Finder eine Warn-SMS.
-- Danach geht das Gerät in eine **Pause / einen Standby-Zustand** und sendet bzw. empfängt keine Befehle mehr.
-- Die Batterie sollte ab diesem Zeitpunkt zeitnah geladen werden, um Zellschäden zu vermeiden.
-- Für die restlichen Spannungsschwellen und die Rückkehr in den Normalbetrieb siehe [[Pro-Finder]].
+Die Anleitungen Rev. 2.6 und Rev. 1.3 beschreiben die **Spannungswarnung ausdrücklich nicht in Betriebsart B**. Für die dokumentierte Warnfunktion gilt: Sinkt die Versorgung **dauerhaft unter 11,2 V**, sendet Pro-Finder eine Warnung und geht in Standby. Erst **über 12,5 V** kehrt er in den Normalbetrieb zurück. Die Angabe ist keine Warnung exakt beim Erreichen von 11,2 V und kein Nachweis für dieselben Schwellen in jeder 24-V-Installation.
+
+Bei ausbleibender Reaktion tatsächliche Versorgung am Gerät, Batterie und Ladeanlage prüfen. Keine Unterspannungswarnung in Betriebsart B versprechen. Die Ausnahme nicht als Nachweis dafür interpretieren, dass in B sämtliche Schutzfunktionen fehlen. Wiederholtes Ziehen der Sicherung behebt die Ursache nicht. Belege: Rev. 2.6, PDF S. 12 / FR 47; Rev. 1.3, PDF S. 19 / FR 70.
 
 ---
 

@@ -1,13 +1,15 @@
 ---
 title: 'Mercedes Sprinter VS30 (BR907/910, depuis 2018)'
 sources:
-  - sources/wipro_iii_mercedes_sprinter_vs30_01.pdf
-  - >-
-    sources/Einbauhandbuch_WiPro III safe.lock_Art.Nr.105458(Mercedes Sprinter
-    VS30)_Rev 1.0_DE.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
+  - "content/quellen/fahrzeug-sprinter-vs30.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.2.pdf"
+  - "sources/Einbauhandbuch_WiPro III safe.lock_Art.Nr.105458(Mercedes Sprinter VS30)_Rev 1.0_DE.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
 translation_of: de/fahrzeuge/mercedes-sprinter-vs30.md
-updated: '2026-07-20'
+updated: '2026-10-01'
 confidence: high
 lang: fr
 ---
@@ -17,6 +19,12 @@ lang: fr
 Cet article décrit l'installation d'une WiPro III ou d'une WiPro III safe.lock dans le Mercedes Sprinter VS30 BR907/BR910 à partir de 2018. La notice standard de `03/23` et la notice safe.lock plus récente de `01/24`, rév. `1.0`, documentent deux profils DIP distincts ainsi que le calculateur de carrosserie, les clignotants, le CAN, l'allumage, l'alimentation, les sirènes, les emplacements de montage, les accessoires radio et le contrôle final.
 
 > **Délimitation :** ne mélangez jamais le profil DIP ni la commande de verrouillage centralisé de la WiPro III standard et du kit safe.lock `105458`. La génération du véhicule, le type de phare, le calculateur, le connecteur, la broche, la couleur du fil et la version de l'appareil doivent tous correspondre à la notice choisie.
+
+## Limites du véhicule et sources contrôlées
+
+Sprinter VS30 standard : `V6.8`, FAQ `0823-019 / 6.8`, `SW4 + SW6 ON`. MR2 broche 5 = clignotant avant droit, explicitement pas broche 36. Avec ILS, aucune commande de puissance à l’avant : le PDF 03/23 décrit en alternative rouge/rose via `220 Ohm` à la broche 14 jaune/rouge pour tous les clignotants ; la FAQ ne cite que l’arrière. Confirmer la variante. La borne `30T` peut se couper ; WiPro redémarre alors désarmée. Le PDF recommande les bornes batterie directes avec `10 A`. En safe.lock, distinguer affichage de porte, surveillance CAN et commande ZV ; Eura, Hymer et l’absence de module de porte peuvent limiter le fonctionnement.
+
+Sources : [sprinter-vs30, PDF 2](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=2), [sprinter-vs30, PDF 5](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=5), [sprinter-vs30, PDF 7](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=7), [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [S, PDF 19](../../../quellen/wipro-iii-safelock-faq.pdf#page=19), [S, PDF 20](../../../quellen/wipro-iii-safelock-faq.pdf#page=20).
 
 ## Champ d'application
 
@@ -261,7 +269,7 @@ Pour les contacts réf. `100757` et `100758` :
 1. Alignez le boîtier de l'émetteur avec cadre, store et fenêtre.
 2. Placez la carte de sorte que la LED d'émission soit orientée à l'opposé de l'aimant.
 3. Évitez l'orientation inverse : la programmation fonctionne alors, mais pas l'alarme.
-4. Placez l'aimant dans la plage `22–30 mm` et pas au-delà de la limite rouge.
+4. Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 5. Contrôlez réception et fonction à l'emplacement prévu avant collage.
 6. Nettoyez, séchez et dégraissez la surface.
 7. Ne collez pas sous `15 °C` et attendez environ `24 heures` pour la résistance finale.
@@ -272,6 +280,12 @@ Pour les contacts réf. `100757` et `100758` :
 Autres informations : [[Contact radiomagnétique 868 — montage et fonctionnement|Contact radiomagnétique 868]].
 
 ## Logique de commande et contrôle fonctionnel final
+
+### safe.lock : dix bips anti-enfermement dès 1.2.0sx
+
+**Avertissement anti-enfermement à partir de 1.2.0sx :** dix bips courts et rapides accompagnés du clignotement rapide des feux avertissent du risque lié au verrouillage par clé d'origine. Les commandes THITRONIK, NFC et application ne peuvent ensuite pas déverrouiller. En camping, verrouiller avec THITRONIK ; la clé d'origine peut ensuite déverrouiller et Auto-Close reste inactif. Pour un stationnement prolongé sans recharge, la notice recommande la clé d'origine (Sleep Mode). Source : rév. 1.3, page PDF 42. À distinguer des dix clignotements de la LED d'état avec pause de cinq secondes (mémoire d'alarme Pro-Finder).
+
+### Commande et contrôle final
 
 Avec la WiPro III standard, la clé radio d'origine arme au verrouillage et désarme au déverrouillage. En mode camping, safe.lock peut en plus commander le verrouillage avec l'émetteur THITRONIK, le module NFC, le Pro-finder ou le module Bluetooth.
 
@@ -287,7 +301,7 @@ Avec la WiPro III standard, la clé radio d'origine arme au verrouillage et dés
 8. Arrêtez l'alarme avec une touche ou la touche d'ouverture de la clé du véhicule.
 9. Ouvrez séparément chaque porte d'origine et chaque contact lorsque le système est armé.
 10. Armez avec un contact ouvert et contrôlez ventilation et exclusion du contact.
-11. Fermez le contact et contrôlez sa réactivation après environ `4 secondes`.
+11. Fermez le contact et contrôlez sa réactivation après environ `4 secondes`. La notice générale rév. 1.3, page PDF 47, indique au moins 5 secondes ; cette divergence entre sources n'est pas encore clarifiée selon les versions.
 12. Préchauffez le détecteur de gaz environ `4 minutes` et testez-le selon sa notice.
 13. Testez la boucle radio en la retirant de son support.
 14. Contrôlez complètement la commande analogique à quatre voies ou numérique ILS.
@@ -316,13 +330,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Décision relative aux sources
 
-- La notice standard de 14 pages *WiPro III – Mercedes Sprinter VS30*, état `03/23`, a été contrôlée intégralement par extraction de texte et examen visuel.
-- La notice safe.lock de 14 pages pour le kit réf. `105458`, état `01/24`, rév. `1.0`, a également été contrôlée intégralement et prévaut pour cette version.
-- Le profil standard `SW4 + SW6` et le profil safe.lock `SW1–SW8 OFF` sont documentés séparément.
-- Les deux sources confirment les variantes de calculateur, clignotants, CAN, allumage, batterie directe, hibernation, LED `8 mm`, sirènes, emplacement, accessoires radio et valeurs des contacts.
-- La source safe.lock récente ajoute la commande de verrouillage uniquement au module de porte conducteur, connecteur 5 bleu, broche 4.
-- `0823-019`, `0823-034` et `5458-006 / 1.2.0sx` sont identifiés comme matrice et registre projet validés, et non comme contenu du PDF véhicule `01/24`.
-- Les notes Word absentes n'ont pas servi de preuve ; les instructions relatives aux carrossiers, sièges confort, PSM et `F61` ont été supprimées.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [sprinter-vs30, PDF 2](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=2), [sprinter-vs30, PDF 5](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=5), [sprinter-vs30, PDF 7](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=7), [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [S, PDF 19](../../../quellen/wipro-iii-safelock-faq.pdf#page=19), [S, PDF 20](../../../quellen/wipro-iii-safelock-faq.pdf#page=20).
 
 ## Références croisées
 

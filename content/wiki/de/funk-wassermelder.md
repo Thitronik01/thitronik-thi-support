@@ -1,11 +1,11 @@
 ---
 title: Funk-Wassermelder 868 — Kabelloser Wassermelder
 sources:
-  - sources/funk-wassermelder-868.pdf
-  - sources/Fragen zu Funk-Wassermelder 868.pdf
-  - sources/Seriennummer 1011 C.A.S. III.csv
-  - 'https://www.thitronik.de/produkte/produkt/funk-wassermelder-868/'
-updated: '2026-07-19'
+  - "content/quellen/funk-wassermelder-106021-rev1.0.pdf"
+  - "content/quellen/funk-wassermelder-faq.pdf"
+  - "sources/Seriennummer 1011 C.A.S. III.csv"
+  - "https://www.thitronik.de/produkte/produkt/funk-wassermelder-868/"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -71,6 +71,8 @@ Die Sendeeinheit, der Sensor am 30 cm langen Kabel, die Montageplatte, das Klebe
 
 ## Kompatibilität und Mindeststände
 
+### Funk-Wassermelder: Seriennummern und Softwarestände
+
 Laut aktueller Produktseite kann der Funk-Wassermelder ab den folgenden Geräteständen verwendet werden:
 
 | System | Ab Seriennummer | Ab Softwareversion |
@@ -119,6 +121,8 @@ Vor der endgültigen Montage einen provisorischen Reichweiten- und Funktionstest
 
 ### Montageplatte mit Klebepad befestigen
 
+Vor dem Befestigen die Ausrichtung prüfen: Rastnasen nach oben; die Sendeeinheit wird nach unten aufgeschoben. Danach liegt die LED oben rechts, das Sensorkabel tritt unten aus. Dies gilt für den Wassermelder, nicht für die Pfeilausrichtung des wasserdichten Magnetkontakts.
+
 1. Geeignete Position für Sendeeinheit und Sensor festlegen.
 2. Klebefläche mit einem geeigneten Reinigungsmittel vorbereiten; sie muss sauber, trocken und fettfrei sein.
 3. Klebepad an der Montageplatte anbringen und die Montageplatte an der vorgesehenen Position befestigen.
@@ -129,6 +133,8 @@ Eine unzureichend gereinigte Fläche kann dazu führen, dass sich der Wassermeld
 
 ### Alternative Schraubbefestigung
 
+#### Wassermelder: Schrauben für Wassersensor und Sendeeinheit
+
 Wenn eine Klebemontage nicht möglich ist, erlaubt die Anleitung eine Schraubbefestigung. Die entsprechenden Markierungen befinden sich an der Innenseite des Sendergehäuses.
 
 1. Vor dem Bohren Leitungen, Tanks, elektrische Bauteile und die Materialstärke hinter der Befestigungsstelle prüfen.
@@ -138,6 +144,8 @@ Wenn eine Klebemontage nicht möglich ist, erlaubt die Anleitung eine Schraubbef
 > **WICHTIG:** Die mitgelieferte Schraube 2,9 × 13 mm aus A2 ist für den Sensor vorgesehen. Sie darf nicht ungeprüft als Befestigungsschraube für Sendeeinheit oder Fahrzeugbauteile verwendet werden. Falsche oder zu lange Schrauben können das Fahrzeug oder verdeckte Komponenten beschädigen.
 
 ### Sensor befestigen und Sendeeinheit einsetzen
+
+#### Funk-Wassermelder: Sendeeinheit auf die Montageplatte schieben
 
 1. Sensorgehäuse am Ende des 30-cm-Kabels am vorgesehenen Gefahrenpunkt positionieren.
 2. Sensor mit der mitgelieferten Schraube durch die vorgesehene Bohrung befestigen.
@@ -150,6 +158,8 @@ Wenn eine Klebemontage nicht möglich ist, erlaubt die Anleitung eine Schraubbef
 ---
 
 ## An die WiPro III anlernen
+
+Nach dem Anlernen folgt der Wassertest: Er verlangt eine scharfgeschaltete WiPro. Ein Alarm im unscharfen Zustand ist dadurch nicht belegt. Kontaktstifte mit einem feuchten Tuch überbrücken, Alarm kontrollieren und anschließend trocknen.
 
 Der Wassermelder wird durch Überbrücken seiner Kontaktstifte ausgelöst. Die Anleitung sieht das Anlernen nach der Montage vor.
 
@@ -165,6 +175,10 @@ Weitere Anlernmethoden und Löschverfahren stehen unter [[Anlernvorgang — Funk
 ---
 
 ## Abschließender Funktionstest
+
+### Funk-Wassermelder testen: WiPro scharfschalten
+
+Der dokumentierte Wassertest verlangt eine **scharfgeschaltete WiPro**. Eine Alarmierung im unscharfen Zustand ist durch diesen Testablauf nicht belegt; die Gas-/CO-Alarmregeln nicht auf den Wassermelder übertragen. Beleg: [W, PDF 5](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=5).
 
 1. Sicherstellen, dass WiPro III beziehungsweise WiPro III safe.lock scharfgeschaltet ist.
 2. Kontaktstifte des Sensors erneut mit einem feuchten Tuch oder leitenden Material überbrücken.
@@ -195,6 +209,8 @@ Der Hersteller schließt eine Haftung für Wasser- und Folgeschäden aus, die tr
 
 ## Batterie und Niederbatterieanzeige
 
+**Quellenstand zum Batteriewarnton:** Die Zubehör-FAQ nennt 2 Sekunden; die WiPro-Bedienungsanleitung nennt 5 Sekunden. Die Zuordnung zu Geräte-/Softwareständen ist offen. Den zuletzt ausgelösten Sender, seine LED und die CR2032 prüfen; nicht allein aus der Tondauer auf einen Defekt schließen. Siehe [[WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge|WiPro III]].
+
 Der Funk-Wassermelder verwendet eine austauschbare **CR2032-Knopfzelle mit 3 V**. Die typische Batterielebensdauer beträgt etwa zwei Jahre; lange Kälteperioden wirken sich stärker aus als die Anzahl der Sendesignale. Unbenutzte Knopfzellen können laut Herstellerangabe bis zu zehn Jahre gelagert werden; den Aufdruck und das Haltbarkeitsdatum beachten.
 
 Die aktuelle Hersteller-FAQ empfiehlt Panasonic-Batterien. Die Batterie sollte etwa alle zwei Jahre ersetzt werden, beispielsweise im Zusammenhang mit einem TÜV-Termin oder einer Gasprüfung.
@@ -217,7 +233,7 @@ Meldet ein Funk-Zubehör eine schwache Batterie, haben andere CR2032-Knopfzellen
 3. Gehäuse vorsichtig öffnen; im Inneren befinden sich Platine und Batteriehalterung.
 4. Verbrauchte CR2032 vorsichtig aus der Halterung schieben.
 5. Neue CR2032 gleichen Typs mit korrekter Polarität einsetzen.
-6. Gehäuse wieder zusammensetzen und die beiden Schrauben gleichmäßig festziehen.
+6. Dichtung auf sauberen, korrekten Sitz prüfen, Gehäuse zusammensetzen und die beiden Schrauben gleichmäßig festziehen.
 7. Sendeeinheit wieder auf die Montageplatte setzen und vollständig einrasten lassen.
 8. Wassermelder auslösen und den vollständigen Funktionstest durchführen.
 
@@ -259,31 +275,31 @@ Bei ungeklärten Problemen vollständige Seriennummern und Softwarestände von W
 
 ## Häufige Fragen (FAQ)
 
-**Kann der Funk-Wassermelder eigenständig betrieben werden?**  
+### Kann der Funk-Wassermelder eigenständig betrieben werden?
 Nein. Er ist Zubehör für kompatible WiPro-III-Alarmsysteme und benötigt deren Alarmierung.
 
-**Welche Artikelnummer hat der Funk-Wassermelder?**  
+### Welche Artikelnummer hat der Funk-Wassermelder?
 Die aktuelle Anleitung und Produktseite nennen **106021**.
 
-**Wo wird der Sensor montiert?**  
-Am gefährdeten Punkt so, dass beide Kontaktstifte Bodenkontakt haben. Die Sendeeinheit bleibt am 30-cm-Kabel im trockenen und gut zugänglichen Bereich.
+### Kontaktstifte und Kabel des Funk-Wassermelders: wo montieren?
+Am gefährdeten Punkt so, dass beide Kontaktstifte Bodenkontakt haben. Die Sendeeinheit bleibt über das 30 cm lange Kabel im trockenen und gut zugänglichen Bereich verbunden.
 
-**Kann die Sendeeinheit außen montiert werden, weil IP67 angegeben ist?**  
+### Kann die Sendeeinheit außen montiert werden, weil IP67 angegeben ist?
 Nein. Die Anleitung beschränkt den bestimmungsgemäßen Gebrauch auf den Innenbereich von Campingfahrzeugen und verlangt für die Sendeeinheit einen trockenen Montagebereich.
 
-**Welche WiPro-Version ist erforderlich?**  
+### Welche WiPro-Version ist erforderlich?
 Die Mindeststände stehen in der Kompatibilitätstabelle. Ältere Geräte benötigen ein Upgrade beziehungsweise Update.
 
-**Wie wird der Wassermelder ausgelöst und angelernt?**  
+### Wie wird der Wassermelder ausgelöst und angelernt?
 Durch leitendes Überbrücken der Kontaktstifte, beispielsweise mit einem feuchten Tuch. WiPro muss sich dabei im Anlernmodus befinden.
 
-**Welche Meldung überträgt Pro-Finder?**  
+### Welche Meldung überträgt Pro-Finder?
 Die aktuelle Produktseite dokumentiert eine SMS-Alarmbenachrichtigung. Ein zusätzlicher Anruf ist für diesen Sensor nicht ausdrücklich zugesichert.
 
-**Wie lange hält die Batterie?**  
+### Batterielebensdauer des Funk-Wassermelders
 Die CR2032 hält typischerweise etwa zwei Jahre. Bei einer Spannung unter etwa 2,6 V meldet WiPro beim Auslösen den Batteriewechselbedarf.
 
-**Muss der Wassermelder nach dem Batteriewechsel neu angelernt werden?**  
+### Muss der Wassermelder nach dem Batteriewechsel neu angelernt werden?
 Nein. Anschließend ist jedoch ein vollständiger Funktionstest erforderlich.
 
 ---
@@ -305,3 +321,11 @@ Gerät und verbrauchte Batterie nicht über den Hausmüll entsorgen. Die CR2032 
 - [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern und Softwarestände]]
 - [[Systemüberblick — THITRONIK-Produktwelt|Systemüberblick]]
 - [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbeseitigung]]
+
+---
+
+## Quellenprüfung und Dokumentstand
+
+Dokumentabgleich vom 01.10.2026, physische PDF-Seiten: [W, PDF 2](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=2), [W, PDF 3](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=3), [W, PDF 4](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=4), [W, PDF 5](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=5), [W, PDF 6](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=6), [W, PDF 17](../../quellen/funk-wassermelder-106021-rev1.0.pdf#page=17), [QW, PDF 1](../../quellen/funk-wassermelder-faq.pdf#page=1).
+
+Bestätigte Angaben und offene Abweichungen sind im [Prüfprotokoll](../../../docs/quellenpruefung/2026-10-01-funk.md).

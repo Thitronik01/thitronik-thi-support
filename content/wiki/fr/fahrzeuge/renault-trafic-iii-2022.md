@@ -1,11 +1,9 @@
 ---
 title: Renault Trafic III / Nissan Primastar (à partir de 2022)
 sources:
-  - >-
-    H:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_renault_trafic_iii___nissan_primastar_2022_.pdf
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-trafic-2022.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/renault-trafic-iii-2022.md
@@ -16,6 +14,16 @@ translation_of: sources/fahrzeuge/renault-trafic-iii-2022.md
 Cet article décrit l'installation d'une WiPro III dans un Renault Trafic III ou un Nissan Primastar à partir de l'année-modèle 2022. Le manuel spécifique au véhicule, version `08/22`, couvre le profil, le démontage, les raccordements CAN et feux de détresse, l'alimentation, l'allumage, la masse, le klaxon, la LED d'état, le Pro-Finder optionnel, les accessoires radio et le contrôle final.
 
 > **Délimitation :** la version à partir de 2022 n'utilise ni le même réglage DIP de base ni le même point de raccordement CAN que la plate-forme 2014–2021. Contrôler ensemble véhicule, année-modèle, connecteur gris à 40 broches, numéros de broche et couleurs de fil ; voir [[Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento (2014–2021)|Renault Trafic III 2014–2021]].
+
+## Limites du véhicule et sources contrôlées
+
+Trafic III / Primastar dès 2022 : au moins `6.10.0`, `SW1 + SW2 + SW4 + SW5 + SW6 ON`. Connecteur véhicule gris 40 pôles : CAN-High broche 26 verte, CAN-Low broche 27 marron, feux de détresse broche 13 bleue. Klaxon : broche 10 du connecteur véhicule 16 pôles sous le volant, fil bleu → fil rose WiPro. Cette broche 10 n’est pas celle de la centrale WiPro ; ne pas transformer son raccord d’antenne en sortie de klaxon.
+
+Sources : [trafic-2022, PDF 2](../../../quellen/fahrzeug-trafic-2022.pdf#page=2), [trafic-2022, PDF 4](../../../quellen/fahrzeug-trafic-2022.pdf#page=4), [trafic-2022, PDF 5](../../../quellen/fahrzeug-trafic-2022.pdf#page=5).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Champ d'application
 
@@ -142,7 +150,7 @@ Fixez définitivement les contacts radiomagnétiques après un entraînement et 
 | Variantes de montage | couchée à gauche, couchée à droite, verticale ou, si nécessaire, sur la vitre |
 | Emplacement du tableau | Alignez la LED de transmission de l'aimant pour indiquer le chemin |
 | Assemblage incorrect | Si la LED de transmission pointe vers l'aimant, l'apprentissage est possible, mais aucune alarme ne se produit. |
-| Position de l'aimant | une fois fermé, dans la plage documentée d'environ `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | surface adhésive | propre, sec et sans graisse |
 | Température de traitement | pas sous `15 °C` |
 | Résistance finale des pastilles adhésives | après environ `24 heures` |
@@ -163,7 +171,7 @@ Si possible, fixez le boîtier de l'émetteur au cadre et l'aimant au vantail ou
 9. Contrôler la séquence de clignotement de la mémoire d'alarme sur la LED d'état.
 10. Répéter le test avec chaque contact, boucle de câble et autre capteur radio mémorisé.
 
-La valeur spécifique de `180 secondes` du manuel véhicule plus récent prévaut sur l'indication générale de `120 secondes`.
+Conflit de sources : 180 s visuelles dans la notice véhicule, 120 s dans la notice générale. Attribution par version non résolue ; aucune nouvelle règle de priorité.
 
 ## Diagnostic CAN et radio
 
@@ -204,7 +212,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 - Le manuel général `1.8` complète sécurité, effet de `SW5`, broches de faisceau 6/7/9/11/17/18 et diagnostics.
 - La broche `10` est celle du connecteur véhicule ; la broche `9` du faisceau suit le brochage WiPro général.
 - Les anciennes valeurs `SW3 + SW6` et `0823-019 / 7.1` sont remplacées ; aucun numéro de série minimal n'est prouvé.
-- La durée spécifique de `180 secondes` prévaut sur l'indication générale de `120 secondes`.
+Conflit de sources : 180 s visuelles dans la notice véhicule, 120 s dans la notice générale. Attribution par version non résolue ; aucune nouvelle règle de priorité.
 
 Sources primaires :
 

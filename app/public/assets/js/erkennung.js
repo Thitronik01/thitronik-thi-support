@@ -6,7 +6,7 @@
    herausziehen.
 
    BEWUSST OHNE SPRACHMODELL. Die Erkennung läuft lokal gegen die Kataloge
-   (30 Fahrzeuge, 48 Produkte, 11 Seriennummern-Präfixe):
+   (30 Fahrzeuge, 56 Produkte, 11 Seriennummern-Präfixe):
      — sofort, ohne Wartezeit beim Tippen
      — kostenlos, kein Aufruf je Tastendruck
      — nachvollziehbar: jeder Treffer lässt sich auf eine Katalogzeile
@@ -142,18 +142,33 @@
     { muster: /pro-?finder|ortung|\bgps\b|tracker|peilsender/i, artikel: 'Pro-finder' },
     { muster: /bt-?connect|bluetooth/i, artikel: 'BT-connect / Vernetzungsmodul' },
     { muster: /\bnfc\b|keycard|schluesselkarte/i, artikel: 'NFC-Modul' },
+    { muster: /\bcamp[\s-]*lock\b/i, artikel: 'CampLock Fingerprint' },
+    { muster: /\bvan[\s-]*lock\b/i, artikel: 'VanLock Fingerprint' },
     { muster: /zusatzsirene|zweitsirene/i, artikel: 'Zusatzsirene' },
     { muster: /abschalteinrichtung|motorsperre|stilllegung/i, artikel: 'Abschalteinrichtung einpolig' },
     { muster: /umruestplatine|umbauplatine/i, artikel: 'Umrüstplatine' },
   ];
 
+  function nummerImText(text, nr) {
+    var escaped = String(nr).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // \b allein würde 106111 auch in 106111-002 finden. Ein angehängtes
+    // numerisches Varianten-Suffix gehört zur vollständigen Artikelnummer.
+    return new RegExp('\\b' + escaped + '\\b(?!-\\d)').test(text);
+  }
+
+  function fingerprintSlug(slug) {
+    return slug === 'camplock-fingerprint' || slug === 'vanlock-fingerprint';
+  }
+
   function produkte(text) {
     var t = String(text || '');
+    var tNormal = normal(t);
     var gefunden = [];
 
     // 1) Exakte Produktnamen aus dem Katalog
     K.produkte.forEach(function (p) {
-      if (normal(t).indexOf(normal(p.name)) >= 0) gefunden.push(p.name);
+      if (fingerprintSlug(p.slug) && p.nr && !nummerImText(t, p.nr)) return;
+      if (tNormal.indexOf(normal(p.name)) >= 0) gefunden.push(p.name);
     });
 
     // 2) Umgangssprache
@@ -165,9 +180,18 @@
     // 3) Artikelnummern
     K.produkte.forEach(function (p) {
       if (!p.nr) return;
-      if (new RegExp('\\b' + p.nr + '\\b').test(t) && gefunden.indexOf(p.name) < 0) {
+      if (nummerImText(t, p.nr) && gefunden.indexOf(p.name) < 0) {
         gefunden.push(p.name);
       }
+    });
+
+    // Eine bekannte Variante ist präziser als der namenbasierte Familientreffer.
+    ['camplock-fingerprint', 'vanlock-fingerprint'].forEach(function (slug) {
+      var familie = K.produkte.find(function (p) { return p.slug === slug && !p.nr; });
+      var variante = K.produkte.some(function (p) {
+        return p.slug === slug && p.nr && gefunden.indexOf(p.name) >= 0;
+      });
+      if (familie && variante) gefunden = gefunden.filter(function (name) { return name !== familie.name; });
     });
 
     // safe.lock schlägt die Standardvariante: Wer „safe.lock" sagt, meint nicht

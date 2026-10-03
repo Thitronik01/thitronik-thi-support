@@ -9,10 +9,23 @@
   },
   "scripts": {
     "dev": "node dev-server.mjs",
-    "test": "node netlify/functions/lib/tests.mjs",
+    "test": "node netlify/functions/lib/tests.mjs && node --test netlify/functions/lib/kontext.test.mjs netlify/functions/lib/search-sprache.test.mjs werkzeuge/wiki-sync-basis.test.mjs werkzeuge/wiki-gesamt-sync.test.mjs werkzeuge/daten-bauen.test.mjs werkzeuge/antwort-eval.test.mjs werkzeuge/quellenpflege.test.mjs && node werkzeuge/fingerprint-belege-pruefen.mjs && node werkzeuge/wipro-belege-pruefen.mjs && node werkzeuge/profinder-belege-pruefen.mjs && node werkzeuge/gas-belege-pruefen.mjs && node werkzeuge/funk-belege-pruefen.mjs && node werkzeuge/fahrzeuge-belege-pruefen.mjs && node werkzeuge/wiki-gesamt-sync.mjs --check && node werkzeuge/quellenpflege.mjs --check",
+    "test:fingerprint": "node werkzeuge/fingerprint-belege-pruefen.mjs",
+    "test:wipro": "node werkzeuge/wipro-belege-pruefen.mjs",
+    "test:profinder": "node werkzeuge/profinder-belege-pruefen.mjs",
     "eval": "node werkzeuge/antwort-eval.mjs",
     "deploy-pruefen": "node werkzeuge/deploy-pruefen.mjs",
     "daten": "node werkzeuge/daten-bauen.mjs",
-    "korrekturen-pruefen": "node werkzeuge/korrekturen-pruefen.mjs"
+    "korrekturen-pruefen": "node werkzeuge/korrekturen-pruefen.mjs",
+    "test:gas": "node werkzeuge/gas-belege-pruefen.mjs",
+    "test:funk": "node werkzeuge/funk-belege-pruefen.mjs",
+    "test:fahrzeuge": "node werkzeuge/fahrzeuge-belege-pruefen.mjs",
+    "wiki:check": "node werkzeuge/wiki-gesamt-sync.mjs --check",
+    "wiki:sync": "node werkzeuge/wiki-gesamt-sync.mjs --write",
+    "test:gesamt": "node werkzeuge/gesamtvergleich.mjs",
+    "sources:check": "node werkzeuge/quellenpflege.mjs --check",
+    "sources:originals": "node werkzeuge/quellenpflege.mjs --check --originals",
+    "sources:pflege": "node werkzeuge/quellenpflege.mjs --write",
+    "sources:matrix": "node werkzeuge/quellenmatrix-bauen.mjs"
   }
 }

@@ -1,0 +1,167 @@
+{
+  "checked": "2026-09-28",
+  "originalsUnchanged": true,
+  "visualPageCount": 92,
+  "sources": [
+    {
+      "id": "9393f60f5920",
+      "path": "content/quellen/wipro-iii-installation-rev1.8.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii-installationsanleitung_1.8.pdf",
+        "Anleitungen/de/wipro_iii-installationsanleitung_1.8.pdf"
+      ],
+      "sha256": "9393f60f59205d73c92a4306b39345772b4cebba27650d45ad00cff394fa7293",
+      "bytes": 3239605,
+      "totalPages": 128,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "languageScope": "DE/FR und Deckblatt"
+    },
+    {
+      "id": "0a5013e02c0b",
+      "path": "content/quellen/wipro-iii-faq.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu WiPro III.pdf"
+      ],
+      "sha256": "0a5013e02c0b6e8f6097df3bb98969ecd76caf6817b3268e591c59ed43843026",
+      "bytes": 216631,
+      "totalPages": 20,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "languageScope": "DE"
+    },
+    {
+      "id": "57dd814b34a9",
+      "path": "content/quellen/wipro-iii-safelock-faq.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Fragen zu WiPro III safe.lock.pdf"
+      ],
+      "sha256": "57dd814b34a9bfcf08e21cd581dfe08ed5eb1e2fa5f3e8dd3b63299aa192d005",
+      "bytes": 299459,
+      "totalPages": 31,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "languageScope": "DE"
+    },
+    {
+      "id": "44824bae21b0",
+      "path": "content/quellen/wipro-iii-kurzanleitung-rev1.6.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii.pdf",
+        "Anleitungen/de/wipro_iii.pdf"
+      ],
+      "sha256": "44824bae21b0267dd50d661674a1e286dabb2141371f7984ce377e6084ba213c",
+      "bytes": 7327257,
+      "totalPages": 2,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2
+      ],
+      "languageScope": "DE/FR-Spalten und gemeinsame Symbole"
+    },
+    {
+      "id": "23de77ae12c5",
+      "path": "content/quellen/wipro-iii-safelock-kurzanleitung-rev1.3.pdf",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/wipro_iii_safe.lock.pdf",
+        "Anleitungen/de/wipro_iii_safe.lock.pdf"
+      ],
+      "sha256": "23de77ae12c52c00c5861176d5c4eb826de94b08141fe7a6f16f99a888152b13",
+      "bytes": 7338256,
+      "totalPages": 2,
+      "visuallyReviewedPhysicalPages": [
+        1,
+        2
+      ],
+      "languageScope": "DE/FR-Spalten und gemeinsame Symbole"
+    }
+  ]
+}

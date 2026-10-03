@@ -1,9 +1,10 @@
 ---
 title: Mercedes Benz Vito W447 (2014–06/2023)
 sources:
-  - sources/WiPro III Mercedes Vito W447 2014+.idml
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-20'
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "sources/WiPro III Mercedes Vito W447 2014+.idml"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -14,6 +15,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in Mercedes-Benz Vito und V-Klasse W447 von 2014 bis einschließlich 06/2023. Die fahrzeugspezifische Redaktionsquelle Stand `04/20`, die freigegebene Projektmatrix und das allgemeine Installationshandbuch Version `1.8` werden dabei mit klarer Quellenabgrenzung zusammengeführt.
 
 > **Abgrenzung:** Diese Freigabe gilt nicht automatisch für Fahrzeuge nach `06/2023`, abweichende Bordnetzsteuergeräte, nicht identische Steckerbilder oder eine WiPro III safe.lock. Vor jedem Anschluss müssen Ausstattung, Stecker, Leitungsfarbe, Spannung und Funktion am tatsächlichen Fahrzeug geprüft werden.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Vito / V-Klasse W447: Die FAQ widerspricht sich: Kompatibilitätstabelle `0823-014 / 6.2`, DIP-Tabelle `0823-013 / 5.6`. Daraus keine Freigabe für das ältere Gerät ableiten; Herstellerzuordnung erforderlich. Vorhandene IDML-Auswertung und fehlende Bildverknüpfungen wurden in diesem PDF-Block nicht erneut geprüft. Die FAQ bestätigt bei ILS nur hintere Blinker, liefert aber keine sichere Zuordnung der doppelt vorkommenden Kabelfarben zu einzelnen Pins. Ein vollständiges passendes Original-PDF fehlt.
+
+Belege: [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [Q, PDF 13](../../../quellen/wipro-iii-faq.pdf#page=13).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich und Versionsbasis
 
@@ -70,6 +81,8 @@ Vor Beginn prüfen und dokumentieren:
 
 ## Geräteprofil und DIP-Schalter einstellen
 
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
+
 | Einstellung | Stellung | Bedeutung |
 |---|---|---|
 | aktuelles Vito-Projektprofil | `SW1 + SW3 + SW4 + SW6 ON` | Fahrzeugprofil gemäß freigegebener Projektmatrix |
@@ -101,6 +114,8 @@ Vor Beginn prüfen und dokumentieren:
 
 ## CAN-Bus anschließen und diagnostizieren
 
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
+
 | Fahrzeugleitung | WiPro-Leitung | WiPro-Pin | Signal |
 |---|---|---|---|
 | braun/rot | weiß/orange | 17 | CAN-High |
@@ -115,6 +130,8 @@ Vor Beginn prüfen und dokumentieren:
 7. Flackert die Status-LED bei CAN-Verkehr nicht, Verbindung prüfen und insbesondere eine Vertauschung von CAN-High und CAN-Low ausschließen.
 
 ## Analoge Blinker am Bordnetzsteuergerät anschließen
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Die Fahrzeugquelle verwendet für die vier analogen Blinkerleitungen den Diodenverteiler. Die beiden WiPro-Blinkerausgänge liegen am 20-poligen Stecker auf Pin `12` und Pin `14`; für die Verteilung auf vier Fahrzeugleitungen ist Art. `100455` vorgesehen. Vor Bestellung prüfen, ob der Verteiler bereits im tatsächlich vorhandenen Set enthalten ist.
 
@@ -139,6 +156,8 @@ Die Fahrzeugquelle verwendet für die vier analogen Blinkerleitungen den Diodenv
 
 ## Dauerplus, Zündung und Masse anschließen
 
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
+
 | Funktion | Fahrzeugpunkt | Fahrzeugleitung | WiPro-Leitung / Pin |
 |---|---|---|---|
 | Klemme 30 | Schraubklemme `M6` im Sicherungskasten | — | rot, Pin `11`, über `10 A` |
@@ -155,6 +174,8 @@ Die Fahrzeugquelle verwendet für die vier analogen Blinkerleitungen den Diodenv
 8. Dauerplus, Zündungsplus und Spannungsabfall unter Last vor dem endgültigen Zusammenbau erneut messen.
 
 ## Zusatzsirene oder Back-up Sirene anschließen
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Die Fahrzeughupe wird bei ausgeschalteter Zündung nicht mit Spannung versorgt. Eine direkte Hupenansteuerung ist daher für den Alarmfall nicht sinnvoll. Die Fahrzeugquelle empfiehlt dringend eine Sirene oder Back-up Sirene im Motorraum; eine Kabeldurchführung liegt fahrerseitig an der Spritzwand im Bereich des Motorhaubenzugs.
 
@@ -203,6 +224,8 @@ Bei gleichzeitigem Ortungsmodul Einbauort, Versorgung und Masse im selben Arbeit
 
 ## Funk-Zubehör anlernen
 
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
+
 1. Sämtliches Zubehör mit Kennzeichnung `868` vor der endgültigen Montage bereitlegen.
 2. 20-poligen Stecker anschließen und Taster rechts neben dem Anschlussstecker gedrückt halten, bis die Anlage piept und die LED dauerhaft leuchtet.
 3. Jeden Funk-Magnetkontakt, Funk-Handsender, Funk-Gaswarner und jede Funk-Kabelschleife zwei- bis dreimal auslösen.
@@ -221,7 +244,7 @@ Für die dokumentierten Kontakte Art. `100757` schwarz und `100758` weiß gelten
 1. Sendergehäuse passend zu Fensterrahmen, Tür oder Klappe ausrichten.
 2. Platine so einsetzen, dass die Sende-LED vom Magneten wegweist.
 3. Falsche Orientierung vermeiden: Anlernen ist dann möglich, eine Alarmierung jedoch nicht.
-4. Magnet im fahrzeugspezifisch dokumentierten Bereich `22–30 mm` und nicht jenseits der roten Grenzlinie positionieren.
+4. Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 5. Vor dem Kleben Empfang und Funktion am geplanten Ort prüfen.
 6. Klebefläche reinigen, trocknen und entfetten.
 7. Nicht unter `15 °C` verkleben und etwa `24 Stunden` bis zur Endfestigkeit abwarten.
@@ -232,6 +255,8 @@ Für die dokumentierten Kontakte Art. `100757` schwarz und `100758` weiß gelten
 Weitere Hinweise: [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 
 ## Bedienlogik und abschließender Funktionstest
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 Im Grundprofil schärft der originale Fahrzeugfunkschlüssel beim Verriegeln und entschärft beim Entriegeln. Eine direkte separate Verbindung der blauen beziehungsweise blau/schwarzen WiPro-ZV-Leitungen ist in der Vito-Quelle nicht dokumentiert; ungenutzte Leitungen bleiben einzeln isoliert.
 
@@ -274,12 +299,7 @@ Siehe [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbe
 
 ## Quellenentscheidung
 
-- Das IDML *WiPro III Mercedes Vito W447 2014+* wurde vollständig auf enthaltene Story-Texte, Tabellen, Seitenzuordnung, Metadaten und verknüpfte Grafiken geprüft.
-- Die Quelle nennt Stand `04/20`, WiPro-Set `100754`, Mindest-SN `0823-014`, `SW1 + SW3 + SW4`, Demontage, CAN-Farben, vier Blinkerleitungen, Versorgung, Masse, Sirenen, Status-LED, Anlernen, Testzeiten und Magnetkontaktwerte.
-- Die freigegebene Projektmatrix ergänzt den Modellzeitraum bis `06/2023`, Software `6.2` und `SW6`; diese Ergänzungen sind im Artikel transparent gekennzeichnet.
-- Das allgemeine Installationshandbuch `1.8` wurde für Sicherheitsregeln, 20-polige Pinbelegung, Replay-Schutz, Diagnose und Sirenenlogik verwendet; alle 15 deutschen PDF-Seiten wurden textlich und visuell geprüft.
-- Die fehlenden IDML-Bilddateien verhindern die sichere Rekonstruktion von Blinkerpins und der eindeutigen Vorder-/Hinterachszuordnung der doppelt vorkommenden Leitungsfarben. Deshalb sind nur die im Text belegten Stecker und Farben freigegeben.
-- Die Altbeschriftung von CAN-High/CAN-Low sowie die alten Angaben „Stecker M violett“ und „schwarz/grau“ wurden anhand der vorhandenen Quellen korrigiert.
+Die passende vollständige Fahrzeug-Einbauanleitung fehlt im geprüften PDF-Bestand. Dieser Block prüft nur die oben belegten Kompatibilitäts- und Versionsaussagen; ältere IDML-/Projektangaben und deren Bilder sind nicht erneut verifiziert. Belege: [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [Q, PDF 13](../../../quellen/wipro-iii-faq.pdf#page=13).
 
 ## Querverweise
 

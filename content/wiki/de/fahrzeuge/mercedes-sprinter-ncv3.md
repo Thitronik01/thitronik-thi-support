@@ -1,10 +1,10 @@
 ---
 title: 'Mercedes Sprinter NCV3 / VW Crafter (BR906, 2006–2018)'
 sources:
-  - sources/wipro_iii_mercedes_sprinter_ncv3_vw_crafter_ab_2006.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Mercedes.docx
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-sprinter-ncv3.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Mercedes.docx"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -15,6 +15,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in den Mercedes Sprinter NCV3/BR906 der Modelljahre 2006 bis 2018 und den technisch verwandten VW Crafter der ersten Generation von 2006 bis 2017. Das fahrzeugspezifische Einbauhandbuch Stand `06/21` dokumentiert Fahrzeugprüfung, DIP-Profil, CAN-Anschluss, vier getrennte Blinkerleitungen, Masse, Zündung, Versorgung, Sirene, Status-LED, Funk-Zubehör, Funktionstest und Diagnose.
 
 > **Abgrenzung:** Modelljahr, Karosserie- und Elektronikgeneration, CAN-Verteiler, Bordcomputer, Stecker und Leitungsfarben müssen gemeinsam zur Anleitung passen. Für Mercedes Sprinter VS30/BR907/910 ab 2018 und VW Crafter der zweiten Generation ab 2017 gelten eigene Artikel und andere Anschlüsse.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Sprinter NCV3 / Crafter I: `SW1 + SW6 ON`. Vier Blinkerleitungen über Diodenverteiler: X3 Pin 15/16 und X9 Pin 13/24. X9 Pin 24 nicht mit Pin 25 verwechseln, ebenfalls schwarz/grün, aber dicker. Die Fahrzeughupe hat ohne Zündung keine Versorgung; Sirene vorsehen. OBD Pin 8 rosa/schwarz darf nur bei tatsächlich vorhandenem Zündungssignal verwendet werden.
+
+Belege: [sprinter-ncv3, PDF 2](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=2), [sprinter-ncv3, PDF 4](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=4), [sprinter-ncv3, PDF 6](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=6).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -137,6 +147,8 @@ Auswahl und Abgrenzung der Alarmgeber: [[Sirenen und Hupen — Akustische Alarmm
 
 ## Ersten Funktionstest durchführen
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 1. Alle Fahrerhaustüren schließen und mit der Verriegelungstaste der originalen Fahrzeugfernbedienung schärfen.
 2. Falls die WiPro noch nicht reagiert, mehrmals verriegeln und entriegeln, bis die CAN-Daten synchronisiert sind.
 3. Piepton, Blinken der Fahrtrichtungsanzeiger und blinkende Status-LED als Aktivierungsquittung prüfen.
@@ -167,7 +179,7 @@ Der Senderspeicher bleibt auch bei langfristiger Spannungsunterbrechung erhalten
 Für Funk-Magnetkontakte Art. `100757` und `100758` gelten folgende Vorgaben:
 
 - Platine so einsetzen, dass die Sende-LED vom Magneten wegweist. Die falsche Orientierung lässt zwar Anlernen zu, verhindert aber den Alarm.
-- Magnet im dokumentierten Bereich von `22–30 mm` und nicht jenseits der roten Grenzlinie positionieren.
+- Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 - Vor dem Kleben Reichweite und Empfang am vorgesehenen Montageort prüfen.
 - Klebefläche reinigen, trocknen und entfetten; nicht unter `15 °C` verarbeiten und etwa `24 Stunden` Endfestigkeit abwarten.
 - Bei größerem Abstand oder ungünstiger Antennenausrichtung Montageadapter Art. `100428` oder `100729` verwenden.
@@ -208,12 +220,7 @@ Siehe [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbe
 
 ## Quellenentscheidung
 
-- Das 13-seitige fahrzeugspezifische Einbauhandbuch *WiPro III – Mercedes Sprinter NCV3 / VW Crafter ab 2006*, Stand `06/21`, wurde vollständig textlich und visuell geprüft.
-- Das DIP-Bild bestätigt `SW1 + SW6`. Die ältere allgemeine Tabelle zeigt nur Schalter 1–4; daraus darf `SW6` nicht entfernt werden.
-- Die Fahrzeug-PDF belegt CAN-Verteiler, alle vier Blinkeranschlüsse, Masse `M10`, OBD Pin 8, `F10 / 15 A`, beide Sirenenschaltungen, Montageort der Zentrale und vollständige Prüfabläufe.
-- Das allgemeine Installationshandbuch `1.8` bestätigt WiPro-Pins 1/7/11/12/14/15/16/17/18, Diodenverteiler `100455`, Sicherheitsregeln und Diagnose; fahrzeugspezifische Angaben haben Vorrang.
-- Die alte Pflichtformulierung zur Sirene wurde auf „dringend empfohlen“ korrigiert. Der unbelegte safe.lock-Verweis und der falsche allgemeine Montageort wurden entfernt.
-- `Mercedes.docx` ist lokal nicht verfügbar und wurde nicht als Beleg verwendet.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [sprinter-ncv3, PDF 2](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=2), [sprinter-ncv3, PDF 4](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=4), [sprinter-ncv3, PDF 6](../../../quellen/fahrzeug-sprinter-ncv3.pdf#page=6).
 
 ## Querverweise
 

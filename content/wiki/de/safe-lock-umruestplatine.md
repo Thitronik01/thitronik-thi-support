@@ -1,12 +1,12 @@
 ---
 title: safe.lock Umrüstplatine — Schlüsselsicherheit für Ducato/Boxer/Jumper
 sources:
-  - sources/safe-lock_umruestplatine.pdf
-  - sources/FAQ_safe-lock_Umruestplatine__101052_DE.md
-  - >-
-    sources/safe-lock_Umruestplatine__101052__Legal__Konformitaet_2014-53-EU_DE.md
-  - sources/Fragen zu safe.lock Umrüstplatine.pdf
-updated: '2026-07-15'
+  - "content/quellen/fahrzeug-safelock-platine.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "sources/FAQ_safe-lock_Umruestplatine__101052_DE.md"
+  - "sources/safe-lock_Umruestplatine__101052__Legal__Konformitaet_2014-53-EU_DE.md"
+  - "sources/Fragen zu safe.lock Umrüstplatine.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -18,9 +18,15 @@ Art.-Nr.: 101052 | Revision: 1.3
 
 Die safe.lock Umrüstplatine schließt in Verbindung mit der **WiPro III safe.lock** eine fahrzeugseitige **Sicherheitslücke**, die durch uncodierte Fahrzeugschlüssel verursacht wird.
 
-> **Abgrenzung:** Die Umrüstplatine ist **kein eigenständiges Alarmprodukt**. Sie ergänzt ausschließlich eine vorhandene bzw. gleichzeitig installierte **WiPro III safe.lock**.
+> **Abgrenzung:** Die Umrüstplatine ist **kein eigenständiges Alarmprodukt**. Sie benötigt ein kompatibles safe.lock-System: **WiPro III safe.lock** oder **safe.lock Modul 101051**. Die Platine allein bietet keine Alarmdetektion. Beleg: [FAQ, PDF 24](../../quellen/wipro-iii-safelock-faq.pdf#page=24).
 
 ---
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Umrüstplatine Art. `101052`, Rev. 1.3: DE und FR bestätigen den vorherigen Transponder-Kopiervorgang sowie das gemeinsame Entriegeln aller Türen mit beiden Öffnungstasten eines Dreitastenschlüssels. Ein getrennter Laderaumzugang entfällt. Die Anleitung nennt 2006–2012, die FAQ 2006–2018 und Iveco-Unterstützung ab 2011. Diese unterschiedlichen Zeiträume sind ohne konkrete Schlüsselzuordnung keine allgemeine Freigabe. 3 V CR2032, etwa zwei Jahre, `868,35 MHz`, `<10 mW`, −20 bis +80 °C sind in DE/FR belegt. Die englische Tabelle druckt „86835MHz“; den fehlenden Dezimaltrenner nicht übernehmen.
+
+Belege: [safelock-platine, PDF 2](../../quellen/fahrzeug-safelock-platine.pdf#page=2), [safelock-platine, PDF 4](../../quellen/fahrzeug-safelock-platine.pdf#page=4), [safelock-platine, PDF 12](../../quellen/fahrzeug-safelock-platine.pdf#page=12), [S, PDF 23](../../quellen/wipro-iii-safelock-faq.pdf#page=23), [S, PDF 24](../../quellen/wipro-iii-safelock-faq.pdf#page=24).
 
 ## Technische Daten
 
@@ -99,8 +105,8 @@ Das Fahrzeug kann mit dem umgerüsteten Schlüssel **wie gewohnt** bedient werde
 
 ## Produktabgrenzung und Konformität
 
-- Erfordert immer eine **WiPro III safe.lock** als Zentrale
-- Dient der **Schlüsselsicherheit**, nicht der eigenständigen Alarmdetektion
+- Benötigt ein kompatibles **safe.lock-System**: WiPro III safe.lock oder safe.lock Modul `101051` gemäß [FAQ, PDF 24](../../quellen/wipro-iii-safelock-faq.pdf#page=24). Die Platine allein ersetzt keine Zentrale.
+- Ist **kein eigenständiges Alarmprodukt**; dient der Schlüsselsicherheit. Die Alarmdetektion benötigt ein dafür vorgesehenes Alarmsystem.
 - Konformitäts- und Funkhinweise richten sich nach den zum Produkt gehörenden Unterlagen
 - Einbau und Transponder-Kopiervorgang gehören in die Hand erfahrener safe.lock Premiumpartner
 

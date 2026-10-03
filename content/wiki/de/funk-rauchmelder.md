@@ -1,13 +1,13 @@
 ---
 title: T.S.A. — Funk-Rauchmelder für WiPro III
 sources:
-  - sources/funk-rauchmelder-t.s.a..pdf
-  - sources/T.S.A Rauchmelder.docx
-  - sources/Fragen zu T.S.A. Funk-Rauchmelder.pdf
-  - 'https://www.thitronik.de/produkte/produkt/tsa-funk-rauchmelder/'
-  - 'https://www.thitronik.de/produkte/produkt/montageadapter-tsa/'
-  - 'https://www.dinmedia.de/de/norm/din-en-14604/115461758'
-updated: '2026-07-19'
+  - "content/quellen/funk-tsa-rauchmelder-rev1.1.pdf"
+  - "content/quellen/funk-tsa-rauchmelder-faq.pdf"
+  - "sources/T.S.A Rauchmelder.docx"
+  - "https://www.thitronik.de/produkte/produkt/tsa-funk-rauchmelder/"
+  - "https://www.thitronik.de/produkte/produkt/montageadapter-tsa/"
+  - "https://www.dinmedia.de/de/norm/din-en-14604/115461758"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -20,6 +20,8 @@ Der T.S.A. ist ein Funk-Rauchmelder für Freizeitfahrzeuge. Er kann eigenständi
 > **WICHTIG:** Der T.S.A. erkennt Rauch, aber keine Gase wie Butan, Propan, Narkosegase oder Kohlenmonoxid. Für diese Gefahren sind geeignete Gaswarner wie [[G.A.S.-pro III — Gaswarner für Freizeitfahrzeuge|G.A.S.-pro III]] oder [[G.A.S.-connect — Funk-Gaswarner für WiPro III|G.A.S.-connect]] erforderlich.
 
 ---
+
+**CO-Abgrenzung:** G.A.S.-connect erkennt kein Kohlenmonoxid. Für CO ist eine dafür vorgesehene CO-Ausführung beziehungsweise eine freigegebene Kombination mit CO-Sensor erforderlich; siehe [[CO-Sensor — Kohlenmonoxid-Zusatzsensor|CO-Sensor]].
 
 ## Technische Daten
 
@@ -130,6 +132,8 @@ Bei einer Stoffdecke den T.S.A. nicht direkt an den Stoff kleben. Das mitgeliefe
 
 ### Variante 2: Montage mit Montageadapter
 
+**Sprachabweichung in der Anleitung:** Der letzte Schritt auf FR-PDF-Seite 10 nennt die Decke, obwohl Vorbereitung und DE-Seite 4 die Seitenwand vorgeben. Die folgende Wandmontage stützt sich auf den DE-Ablauf und die dargestellte seitliche Adaptermontage, nicht auf das widersprüchliche FR-Wort. Kein Kleben auf Stoff. Belege: [R, PDF 4](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=4), [R, PDF 10](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=10).
+
 1. Abgerundete Montagefläche des Adapters entfetten.
 2. Rote Schutzfolie vom runden doppelseitigen Klebepad des Rauchmelders entfernen.
 3. Rauchmelder auf die abgerundete Adapterfläche setzen und beide Teile mindestens **60 Sekunden** fest zusammendrücken.
@@ -202,6 +206,8 @@ Die Lithium-Batterie CR123A mit 3 V ist fest integriert und kann nicht gewechsel
 
 ### Batteriewarnung
 
+Die CR123A im T.S.A. ist fest eingebaut und kann nicht gewechselt werden. Bei Batterieende den kompletten Rauchmelder ersetzen, spätestens nach zehn Jahren. Die Stummschaltung ist nur vorübergehend.
+
 1. Ein einzelner kurzer Signalton alle **43 Sekunden** kennzeichnet das Ende der Batterielebensdauer.
 2. Test-Taste **3 Sekunden** gedrückt halten, um die Batteriewarnung für **8 Stunden** stummzuschalten.
 3. Rauchmelder ersetzen, sobald die Batteriewarnung mehr als viermal ausgegeben wurde; die Stummschaltung ersetzt den Geräteaustausch nicht.
@@ -239,28 +245,28 @@ Bei ungeklärten Problemen vollständige Seriennummern und Softwarestände von T
 
 ## Häufige Fragen (FAQ)
 
-**Kann ich den T.S.A. ohne WiPro III verwenden?**  
+### Kann ich den T.S.A. ohne WiPro III verwenden?
 Ja. Im Standalone-Betrieb warnt der T.S.A. lokal. Fahrzeughupe, Blinker, SMS und Anruf stehen ohne Systemintegration nicht zur Verfügung.
 
-**Welche Systemversion ist für die Funk-Integration erforderlich?**  
+### Welche Systemversion ist für die Funk-Integration erforderlich?
 Die Mindeststände stehen in der Kompatibilitätstabelle. Ältere Geräte benötigen ein Upgrade beziehungsweise Update.
 
-**Warnt der T.S.A. vor Butan, Propan, Narkosegasen oder Kohlenmonoxid?**  
+### Warnt der T.S.A. vor Butan, Propan, Narkosegasen oder Kohlenmonoxid?
 Nein. Dafür ist ein geeigneter Gaswarner erforderlich.
 
-**Kann ich den Rauchmelder in einer Heckgarage mit E-Bikes verwenden?**  
+### Kann ich den Rauchmelder in einer Heckgarage mit E-Bikes verwenden?
 Ja. Der Hersteller empfiehlt diesen Einsatz ausdrücklich, besonders bei Lagerung oder Ladung von E-Bikes. Der Rauch muss den Melder ungehindert erreichen können.
 
-**Kann die Batterie gewechselt werden?**  
+### Kann die Batterie gewechselt werden?
 Nein. Die CR123A ist fest integriert. Bei Batteriewarnung oder spätestens nach zehn Jahren wird das vollständige Gerät ersetzt.
 
-**Wie unterscheide ich Batterie- und Fehlermeldung?**  
+### Wie unterscheide ich Batterie- und Fehlermeldung?
 Ein kurzer Signalton alle 43 Sekunden weist auf das Ende der Batterielebensdauer hin. Drei kurze Signaltöne alle 43 Sekunden kennzeichnen den Fehlermodus.
 
-**Darf ich den T.S.A. direkt an eine Stoffdecke kleben?**  
+### Darf ich den T.S.A. direkt an eine Stoffdecke kleben?
 Nein. Dafür ist der Montageadapter 105755 in Weiß beziehungsweise 105756 in Grau vorgesehen; er wird an einem seitlichen Kunststoffelement nahe der Decke befestigt.
 
-**Ist der T.S.A. für Personen mit Hörbehinderung ausreichend?**  
+### Ist der T.S.A. für Personen mit Hörbehinderung ausreichend?
 Unter Umständen nicht. Die Eignung und ein zusätzliches Warnkonzept müssen individuell geprüft werden.
 
 ---
@@ -285,3 +291,11 @@ Den T.S.A. wegen der fest integrierten Lithium-Batterie nicht über den Hausmül
 - [[G.A.S.-connect — Funk-Gaswarner für WiPro III|G.A.S.-connect]]
 - [[Systemüberblick — THITRONIK-Produktwelt|Systemüberblick]]
 - [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbeseitigung]]
+
+---
+
+## Quellenprüfung und Dokumentstand
+
+Dokumentabgleich vom 01.10.2026, physische PDF-Seiten: [R, PDF 2](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=2), [R, PDF 3](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=3), [R, PDF 4](../../quellen/funk-tsa-rauchmelder-rev1.1.pdf#page=4), [QR, PDF 1](../../quellen/funk-tsa-rauchmelder-faq.pdf#page=1).
+
+Bestätigte Angaben und offene Abweichungen sind im [Prüfprotokoll](../../../docs/quellenpruefung/2026-10-01-funk.md).

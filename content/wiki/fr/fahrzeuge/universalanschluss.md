@@ -1,8 +1,10 @@
 ---
 title: Connexion universelle (véhicules anciens / non répertoriés)
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/fahrzeug-sprinter-t1n.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/universalanschluss.md
@@ -13,6 +15,12 @@ translation_of: sources/fahrzeuge/universalanschluss.md
 Cet article décrit le raccordement conventionnel d'une WiPro III à un véhicule sans intégration CAN exploitable. Il ne s'applique aux véhicules anciens ou non documentés que si chaque signal analogique requis a été mesuré sur le véhicule réel et reconnu électriquement adapté.
 
 > **Limite importante :** « non répertorié » ne signifie pas automatiquement « raccordable en universel ». Sur un véhicule moderne en réseau, ne jamais se fier uniquement à la couleur ou à une fonction supposée. Une instruction THITRONIK spécifique au véhicule reste prioritaire.
+
+## Limites du véhicule et sources contrôlées
+
+Raccordement universel : un véhicule absent de la liste n’est pas pour autant compatible CAN ou autorisé pour la ZV safe.lock. Le tableau général donne SW1–SW4 OFF ; les fonctions complémentaires dépendent de la centrale. L’instruction particulière T1N impose les huit interrupteurs OFF, sans s’appliquer à tous les véhicules. Identifier année, centrale, logiciel et fonction des entrées analogiques ; bleu/bleu-noir n’ont pas nécessairement le même rôle sur ancien appareil et safe.lock.
+
+Sources : [I, PDF 5](../../../quellen/wipro-iii-installation-rev1.8.pdf#page=5), [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2), [Q, PDF 2](../../../quellen/wipro-iii-faq.pdf#page=2).
 
 ## Champ d'application
 
@@ -170,15 +178,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Décision relative aux sources
 
-- La totalité de la partie allemande du *Manuel d'installation WiPro III*, révision `1.8`, couverture et pages 1–18, a été contrôlée textuellement et visuellement.
-- La page 4 exige le schéma universel conventionnel et explicitement `SW1–SW4 OFF`.
-- Les pages 6, 11 et 12 établissent le connecteur, les fonctions des broches, `10 A`, l'éclairage/contact, deux branches de clignotants, la sirène, la LED et les fils CAN inutilisés.
-- Les pages 5–10 établissent apprentissage, montage, diagnostic, sirène et délai de `60 secondes`.
-- L'ancien « tous les commutateurs OFF » a été corrigé; aucune position universelle non démontrée n'est inventée pour `SW6`.
-
-Source primaire :
-
-- `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf`
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [I, PDF 5](../../../quellen/wipro-iii-installation-rev1.8.pdf#page=5), [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2), [Q, PDF 2](../../../quellen/wipro-iii-faq.pdf#page=2).
 
 ## Articles connexes
 

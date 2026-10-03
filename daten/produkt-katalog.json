@@ -1,8 +1,8 @@
 {
-  "generiert": "2026-09-15",
-  "quelle": "lib/arbeitskarte-data.js (initialMaterials) + search-index.json",
+  "generiert": "2026-09-25",
+  "quelle": "lib/arbeitskarte-data.js (initialMaterials) + search-index.json; CampLock/VanLock-Ergänzung aus content/quellen/camplock-fingerprint.pdf und content/quellen/camplock-vanlock-fingerprint.pdf",
   "hinweis": "Kontrolliertes Vokabular fuer das Feld \"verbaute Produkte\". Artikelnummern sind produktiv und verifiziert. NICHT als Freitext erfassen.",
-  "anzahl_produkte": 48,
+  "anzahl_produkte": 56,
   "gruppen": [
     "Alarmsystem",
     "Zubehör",
@@ -161,6 +161,46 @@
       "gruppe": "Zubehör",
       "artikel": "THITRONIK KeyStrap L rot",
       "artikelnummer": "105469"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "CampLock Fingerprint",
+      "artikelnummer": null
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "CampLock Fingerprint 106111",
+      "artikelnummer": "106111"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "CampLock Fingerprint 106144",
+      "artikelnummer": "106144"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "CampLock Fingerprint 106111-002",
+      "artikelnummer": "106111-002"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "CampLock Fingerprint 106144-002",
+      "artikelnummer": "106144-002"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "VanLock Fingerprint",
+      "artikelnummer": null
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "VanLock Fingerprint 106259",
+      "artikelnummer": "106259"
+    },
+    {
+      "gruppe": "Zubehör",
+      "artikel": "VanLock Fingerprint 106260",
+      "artikelnummer": "106260"
     },
     {
       "gruppe": "Gaswarnsystem",

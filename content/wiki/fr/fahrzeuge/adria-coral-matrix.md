@@ -1,15 +1,9 @@
 ---
-title: >-
-  Adria Coral / Matrix (à partir de l'année modèle 2021) — informations sur le
-  montage du camping-car
+title: "Adria Coral / Matrix (à partir de l'année modèle 2021) — informations sur le montage du camping-car"
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/installationshinweise-wipro-iii-und-wipro-iii-safe.lock-adria-coral-und-matrix-ab-mj-2021.pdf
-  - >-
-    D:/Anleitungen/Anleitungen/01_Quellanleitungen/WiPro
-    III/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-adria-2021.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/adria-coral-matrix.md
@@ -20,6 +14,12 @@ translation_of: sources/fahrzeuge/adria-coral-matrix.md
 Sur les Adria Coral et Matrix à partir de l’année-modèle 2021 équipés de la **nouvelle version de la porte de cellule**, la conception électrique du contact de porte de cellule peut déclencher régulièrement une alarme du bus CAN après l’installation d’une WiPro III ou d’une WiPro III safe.lock. Cet article décrit la modification prévue pour la cellule Adria.
 
 > **Délimitation :** il ne s’agit pas d’une configuration distincte du véhicule de base. Le réglage DIP, le raccordement CAN et toutes les autres affectations de câbles dépendent exclusivement des instructions actuelles du véhicule de base effectivement utilisé et de la version WiPro installée.
+
+## Limites du véhicule et sources contrôlées
+
+Adria Coral/Matrix à partir du millésime 2021 : la note 08/21 vise la nouvelle porte cellule et une alarme CAN récurrente toutes les 15 minutes environ. L’intervention en atelier concerne le fil blanc/marron à l’interface carrossier du montant B côté passager : séparer et isoler les deux extrémités, puis protéger la porte avec un contact magnétique radio 868. La centralisation reste fonctionnelle selon la notice. Ne pas généraliser à une autre version de porte.
+
+Sources : [adria-2021, PDF 2](../../../quellen/fahrzeug-adria-2021.pdf#page=2).
 
 ## Champ d’application
 

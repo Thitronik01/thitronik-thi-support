@@ -1,14 +1,13 @@
 ---
 title: Fiat Ducato 8/9 / Citroën Jumper / Peugeot Boxer / Opel Movano (2022–2024)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf
-  - 'D:/Texte/de/seriennummern-softwarestaende.md'
-  - 'D:/Texte/de/fahrzeugkompatibilitaet.md'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/fahrzeuge/fiat-ducato-2022-2024.md'
-updated: '2026-07-19'
-confidence: high
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/fahrzeuge/fiat-ducato-2022-2024.md"
+updated: '2026-10-01'
+confidence: medium
 lang: de
 dealerStatus: approved
 ---
@@ -19,6 +18,12 @@ Dieser Artikel beschreibt den Anschluss einer WiPro III safe.lock an Fiat Ducato
 
 > **Abgrenzung:** Die Erstzulassung allein reicht nicht zur Fahrzeugzuordnung. Bauform, Modelljahr, Bordcomputer, Stecker, Seriennummer und Softwarestand der WiPro müssen gemeinsam geprüft werden. Fahrzeuge mit dem späteren Facelift und abweichender Elektronik gehören zu [[Fiat Ducato Facelift / Citroën Jumper / Peugeot Boxer / Opel Movano (2024+)|Fiat Ducato ab 2024]].
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ducato 8/9: Der Konflikt bleibt offen: `1050-016` mit `7.1s` im Altbestand gegenüber `7.2s` in der FAQ; `1050-042` mit `7.5.2s` gegenüber `7.5.1s` bei großem Fiat-Touch-Infotainment. Die FAQ nennt für Ducato 8 2021–2023 und für 8/9 2023–2024; die Artikelspanne 2022–2024 allein identifiziert die Elektronik nicht. „Blinker beim Verriegeln“ und „Türentriegelung beim Aussteigen“ müssen aktiviert sein. Die passende Original-Einbauanleitung mit sechs DIP-Kombinationen fehlt im PDF-Bestand; deren Prüffolge ist nicht neu bestätigt.
+
+Belege: [S, PDF 3](../../../quellen/wipro-iii-safelock-faq.pdf#page=3), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
+
 ## Geltungsbereich
 
 | Merkmal | Vorgabe |
@@ -28,8 +33,8 @@ Dieser Artikel beschreibt den Anschluss einer WiPro III safe.lock an Fiat Ducato
 | Alarmsystem | WiPro III safe.lock beziehungsweise fachgerecht auf safe.lock erweiterte WiPro III |
 | Anschlussort | Bordcomputer neben dem Sicherungskasten hinter dem Ablagefach |
 | DIP-Konfiguration | fahrzeugabhängig; sechs dokumentierte Kombinationen nacheinander prüfen |
-| Mindeststand Standardausführung | `1050-016` / Software `7.1s` |
-| Mindeststand großes Fiat-Touch-Infotainment | `1050-042` / Software `7.5.2s` |
+| Mindeststand Standardausführung | `1050-016` / Software `7.1s` (Altbestand; FAQ: 7.2s, ungeklärt) |
+| Mindeststand großes Fiat-Touch-Infotainment | `1050-042` / Software `7.5.2s` (Altbestand; FAQ: 7.5.1s, ungeklärt) |
 
 Für die ältere Fahrzeuggruppe gilt [[Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012–2021)|Fiat Ducato 2012–2021]]. Vollständige Präfixe und Softwaremeilensteine stehen unter [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern und Softwarestände]].
 
@@ -37,10 +42,10 @@ Für die ältere Fahrzeuggruppe gilt [[Fiat Ducato / Citroën Jumper / Peugeot B
 
 | Fahrzeugausführung | Mindest-Seriennummer | Zugeordneter Softwarestand | Einordnung |
 |---|---|---|---|
-| Ducato 8, Modelljahr 2021/2022 | `1050-016` | `7.1s` | erste dokumentierte Unterstützung dieser Fahrzeuggeneration |
-| Ducato 8/9 mit großem Fiat-Touch-Infotainment | `1050-042` | `7.5.2s` | belastbarer Mindeststand der freigegebenen Versionshistorie |
+| Ducato 8, Modelljahr 2021/2022 | `1050-016` | `7.1s` (Altbestand; FAQ: 7.2s, ungeklärt) | erste dokumentierte Unterstützung dieser Fahrzeuggeneration |
+| Ducato 8/9 mit großem Fiat-Touch-Infotainment | `1050-042` | `7.5.2s` (Altbestand; FAQ: 7.5.1s, ungeklärt) | Software-Mindeststand wegen FAQ-Widerspruch offen |
 
-Der Altbestand der Fahrzeugseite nennt beim großen Infotainment `7.5.1S`. Die freigegebene Seriennummern- und Versionshistorie ordnet der Mindest-Seriennummer `1050-042` jedoch `7.5.2s` zu und bezeichnet diesen Stand als Mindestvoraussetzung. Für die Freigabe ist deshalb die Kombination **`1050-042` und mindestens `7.5.2s`** maßgeblich. Artikelnummer, vollständige Seriennummer und tatsächlich installierte Software dürfen nicht miteinander verwechselt werden.
+**Quellenwiderspruch, ungeklärt:** Die undatierte [safe.lock-FAQ](../../../quellen/wipro-iii-safelock-faq.pdf), PDF-S. 2–3, nennt für **1050-042 / Ducato 8–9 mit großem Infotainment 7.5.1s** und für **1050-016 / Ducato 8 7.2s**. Der bisherige Wiki-Versionsverlauf nennt **7.5.2s** beziehungsweise **7.1s**. Die dort referenzierten CSV-Originale sind im lokalen Quellenordner nicht vorhanden; die Bezeichnung „freigegeben“ im Wiki löst diesen Primärquellenkonflikt nicht. Vor einer Kompatibilitätszusage Seriennummer, tatsächliche Software und Fahrzeugausstattung durch **THITRONIK** bestätigen lassen. Keine der abweichenden Softwareangaben ist durch diesen Abgleich verbindlich als Mindeststand freigegeben.
 
 ## Sicherheit und Vorbereitung
 
@@ -54,6 +59,8 @@ Der Altbestand der Fahrzeugseite nennt beim großen Infotainment `7.5.1S`. Die f
 Vor Beginn sind Funk-Fernbedienung, Zentralverriegelung, Fahrzeughupe, Türanzeigen, Warnlampen und vorhandene Fehlerspeichereinträge zu prüfen und zu dokumentieren.
 
 ## DIP-Konfiguration sicher ermitteln
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Die sechs fahrzeugabhängigen DIP-Kombinationen müssen aus der aktuellen fahrzeugspezifischen Einbauunterlage übernommen werden. Nicht dokumentierte Schalterstellungen dürfen nicht ausprobiert werden.
 
@@ -70,6 +77,8 @@ Die sechs fahrzeugabhängigen DIP-Kombinationen müssen aus der aktuellen fahrze
 > **Wichtig:** DIP-Schalter niemals unter Spannung umstellen. Scharf-/Unscharfschalten und Ver-/Entriegeln bleiben getrennte Funktionen und müssen im Test einzeln bewertet werden.
 
 ## Zugang zum Bordcomputer und Grundanschluss
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 1. Ablagefach und erforderliche Verkleidungsteile nach Fahrzeugvorgabe entfernen.
 2. Bordcomputer neben dem Sicherungskasten zugänglich machen.
@@ -160,10 +169,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 ## Quellenentscheidung
 
-- Die Pin- und Leitungsangaben sowie das Verfahren mit sechs DIP-Kombinationen stammen aus dem vorhandenen fahrzeugspezifischen Redaktionsbestand; die dort genannten DOCX-Primärdateien sind im lokalen Quellbestand nicht mehr auffindbar.
-- Die Schwellen `1050-016 / 7.1s` und `1050-042 / 7.5.2s` folgen der freigegebenen [[Seriennummern und Softwarestände — Präfixe, Schwellen und Meilensteine|Seriennummern- und Versionshistorie]].
-- Die vierseitige THITRONIK-Zusatzanleitung *WiPro III safe.lock Upgrade*, Revision `2.0`, wurde vollständig textlich und visuell geprüft. Sie belegt die WiPro-Pins 20, 19 und 16 sowie das notwendige erneute Anlernen des Funk-Zubehörs.
-- Bei fehlender aktueller fahrzeugspezifischer Einbauunterlage dürfen weder die sechs DIP-Kombinationen noch abweichende Leitungen rekonstruiert oder erraten werden.
+Die passende vollständige Fahrzeug-Einbauanleitung fehlt im geprüften PDF-Bestand. Dieser Block prüft nur die oben belegten Kompatibilitäts- und Versionsaussagen; ältere IDML-/Projektangaben und deren Bilder sind nicht erneut verifiziert. Belege: [S, PDF 3](../../../quellen/wipro-iii-safelock-faq.pdf#page=3), [S, PDF 22](../../../quellen/wipro-iii-safelock-faq.pdf#page=22).
 
 ## Querverweise
 

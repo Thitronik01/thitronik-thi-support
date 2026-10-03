@@ -1,0 +1,225 @@
+{
+  "checkedAt": "2026-09-28T17:47:13.212Z",
+  "mode": "retrieval-only",
+  "liveModelEvaluated": false,
+  "total": 24,
+  "passed": 24,
+  "cases": [
+    {
+      "lang": "de",
+      "id": "camp-ohne-suffix-wipro-iii",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/de/camplock-fingerprint.md, Welche Ausführung ist verbaut?; camplock-fingerprint.pdf, physische PDF-S. 2"
+    },
+    {
+      "lang": "de",
+      "id": "camp-002-voraussetzung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/de/camplock-fingerprint.md, Welche Ausführung ist verbaut?; camplock-vanlock-fingerprint.pdf, physische PDF-S. 1–3"
+    },
+    {
+      "lang": "de",
+      "id": "van-quellenkonflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/de/vanlock-fingerprint.md, Quellenkonflikt und Versionsprüfung; Katalog PDF-S. 25, gemeinsame Anleitung PDF-S. 3 und 10"
+    },
+    {
+      "lang": "de",
+      "id": "finger-speicher-gesamt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/de/vanlock-fingerprint.md, Finger und Alarmsystem anlernen; camplock-vanlock-fingerprint.pdf, physische PDF-S. 4–5 und 10"
+    },
+    {
+      "lang": "de",
+      "id": "finger-einzeln-loeschen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/de/camplock-fingerprint.md, Alle Finger löschen; camplock-fingerprint.pdf, physische PDF-S. 1, gemeinsame Anleitung PDF-S. 8–9"
+    },
+    {
+      "lang": "de",
+      "id": "camp-24v-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 S. 1; K1 S. 25 / gedruckt 49; C2 S. 10"
+    },
+    {
+      "lang": "de",
+      "id": "van-gewicht-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C2 S. 10; K1 S. 25 / gedruckt 48"
+    },
+    {
+      "lang": "de",
+      "id": "camp-weiterer-finger-tuer",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 S. 2, Weitere Finger anlernen"
+    },
+    {
+      "lang": "de",
+      "id": "van-roter-sensor",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C2 S. 7 / FR 25"
+    },
+    {
+      "lang": "de",
+      "id": "camp-master-fehlt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 S. 1; C2 S. 8–9"
+    },
+    {
+      "lang": "de",
+      "id": "van-loeschen-bestaetigen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C2 S. 8–9 / FR 26–27"
+    },
+    {
+      "lang": "de",
+      "id": "camp-en-loeschfehler",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 S. 1 Feld 11; C2 DE S. 8, EN S. 17, FR S. 26"
+    },
+    {
+      "lang": "fr",
+      "id": "camp-sans-suffixe-wipro-iii",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/fr/camplock-fingerprint.md, Quelle version est installée ? ; camplock-fingerprint.pdf, p. 2 du PDF physique"
+    },
+    {
+      "lang": "fr",
+      "id": "camp-002-condition",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/fr/camplock-fingerprint.md, Quelle version est installée ? ; notice commune, p. 20–21 du PDF physique"
+    },
+    {
+      "lang": "fr",
+      "id": "van-sources-contradictoires",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/fr/vanlock-fingerprint.md, Divergence entre les sources et vérification de la version ; catalogue p. 25, notice commune p. 21 et 28 du PDF"
+    },
+    {
+      "lang": "fr",
+      "id": "capacite-empreintes",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/fr/vanlock-fingerprint.md, Enregistrer les empreintes et appairer l'alarme ; notice commune, p. 22–23 et 28 du PDF"
+    },
+    {
+      "lang": "fr",
+      "id": "effacer-un-seul-doigt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/wiki/fr/camplock-fingerprint.md, Effacer tous les doigts ; guide CampLock p. 1, notice commune p. 26–27 du PDF"
+    },
+    {
+      "lang": "fr",
+      "id": "camp-24v-divergence",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 p. 1; K1 p. 25 / imprimée 49; C2 FR p. 28"
+    },
+    {
+      "lang": "fr",
+      "id": "van-poids-divergence",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C2 FR p. 28; K1 p. 25 / imprimée 48"
+    },
+    {
+      "lang": "fr",
+      "id": "camp-autre-doigt-porte",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 p. 2, Appairage d’autres empreintes"
+    },
+    {
+      "lang": "fr",
+      "id": "van-capteur-rouge",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C2 FR p. 25"
+    },
+    {
+      "lang": "fr",
+      "id": "camp-maitre-perdu",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 p. 1; C2 FR p. 26–27"
+    },
+    {
+      "lang": "fr",
+      "id": "van-confirmer-effacement",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C2 FR p. 26–27"
+    },
+    {
+      "lang": "fr",
+      "id": "camp-erreur-guide-anglais",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "C1 p. 1 panneau 11; C2 FR p. 26, EN p. 17"
+    }
+  ]
+}

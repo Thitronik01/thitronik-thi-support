@@ -1,40 +1,40 @@
 ---
 title: FAQ Master — Alle häufigen Fragen auf einen Blick
 sources:
-  - wiki/support-fallaufnahme.md
-  - wiki/stoerungsbeseitigung.md
-  - wiki/seriennummern-softwarestaende.md
-  - wiki/artikelnummern.md
-  - wiki/zugang-bedienung.md
-  - wiki/anlernvorgang.md
-  - wiki/stromversorgung-standzeiten.md
-  - wiki/wipro-iii.md
-  - wiki/pro-finder.md
-  - wiki/mobilfunk-sim.md
-  - wiki/bt-connect.md
-  - wiki/nfc-modul.md
-  - wiki/vernetzungsmodul.md
-  - wiki/gas.md
-  - wiki/gas-pro.md
-  - wiki/gas-pro-iii.md
-  - wiki/gas-connect.md
-  - wiki/gas-plug.md
-  - wiki/co-sensor.md
-  - wiki/zusatzsensor-gas-pro-iii.md
-  - wiki/funk-handsender.md
-  - wiki/funk-magnetkontakt.md
-  - wiki/funk-kabelschleife.md
-  - wiki/funk-rauchmelder.md
-  - wiki/funk-wassermelder.md
-  - wiki/safe-lock-umruestplatine.md
-  - wiki/app-befehle.md
-  - wiki/sirenen-hupen.md
-  - sources/FAQ Allgemeine Fragen.pdf
-  - sources/Fragen zu WiPro III.pdf
-  - sources/Fragen zu Pro-finder.pdf
-  - sources/Fragen zu BT-connect.pdf
-  - sources/Fragen zu G.A.S.-pro III.pdf
-  - sources/Häufige Fragen zur THITRONIK® App.pdf
+  - "content/wiki/de/support-fallaufnahme.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/artikelnummern.md"
+  - "content/wiki/de/zugang-bedienung.md"
+  - "content/wiki/de/anlernvorgang.md"
+  - "content/wiki/de/stromversorgung-standzeiten.md"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/pro-finder.md"
+  - "content/wiki/de/mobilfunk-sim.md"
+  - "content/wiki/de/bt-connect.md"
+  - "content/wiki/de/nfc-modul.md"
+  - "content/wiki/de/vernetzungsmodul.md"
+  - "content/wiki/de/gas.md"
+  - "content/wiki/de/gas-pro.md"
+  - "content/wiki/de/gas-pro-iii.md"
+  - "content/wiki/de/gas-connect.md"
+  - "content/wiki/de/gas-plug.md"
+  - "content/wiki/de/co-sensor.md"
+  - "content/wiki/de/zusatzsensor-gas-pro-iii.md"
+  - "content/wiki/de/funk-handsender.md"
+  - "content/wiki/de/funk-magnetkontakt.md"
+  - "content/wiki/de/funk-kabelschleife.md"
+  - "content/wiki/de/funk-rauchmelder.md"
+  - "content/wiki/de/funk-wassermelder.md"
+  - "content/wiki/de/safe-lock-umruestplatine.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/sirenen-hupen.md"
+  - "sources/FAQ Allgemeine Fragen.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "content/quellen/funk-bt-connect-faq.pdf"
+  - "content/quellen/gas-pro-iii-faq.pdf"
+  - "sources/Häufige Fragen zur THITRONIK® App.pdf"
 updated: '2026-07-15'
 confidence: high
 lang: de

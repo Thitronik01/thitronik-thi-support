@@ -1,16 +1,15 @@
 ---
 title: G.A.S.-pro (anciennes séries) — Alarme gaz et CO
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-pro/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf
-  - sources/handbuch_gas-pro_2.5.pdf
-  - sources/Fragen zu CO-Sensor für G.A.S.-pro und G.A.S.-pro III.pdf
-  - sources/Fragen zu G.A.S.-pro.pdf
-  - sources/Gaswarner.docx
-updated: '2026-07-17'
+  - "content/quellen/gas-co-sensor-anleitung.pdf"
+  - "content/quellen/gas-pro-faq.pdf"
+  - "content/quellen/gas-pro-handbuch-rev2.5.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-pro/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf"
+  - "content/quellen/gas-co-sensor-faq.pdf"
+  - "sources/Gaswarner.docx"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/gas-pro.md
@@ -20,7 +19,7 @@ translation_of: de/gas-pro.md
 
 **Numéro d’article de l’appareil principal :** impossible à déterminer sans ambiguïté à partir des documents évalués  
 **Désignation du manuel :** Manuel 2.5  
-**Révision du document indiquée dans le manuel :** 2.2
+**Révision visible au dos du document (PDF p. 28) :** 2.5
 
 G.A.S.-pro est un avertisseur de gaz modulaire à installation fixe, pouvant recevoir jusqu’à trois capteurs externes. Dans sa configuration de base, il détecte le propane, le butane et les gaz narcotiques/anesthésiants ; avec un capteur CO compatible, le système peut également surveiller le monoxyde de carbone. La centrale possède un avertisseur sonore intégré, des entrées AutoSense, une compensation dynamique de la température et un autotest permanent.
 
@@ -52,6 +51,8 @@ THITRONIK classe le manuel parmi les produits archivés, tandis que la page prod
 | Garantie indiquée dans le manuel | 36 mois à compter de la date d’achat |
 
 Les valeurs n’ont pas été harmonisées silencieusement : le manuel indique la plage d’entrée électrique et des consommations distinctes pour la centrale et les types de capteurs, tandis que la page produit actuelle indique la tension nominale et une valeur arrondie par capteur. Pour le choix du fusible, le dimensionnement des câbles ou le calcul du courant de veille, consulter le manuel fourni avec l’appareil précis, la configuration réelle des capteurs et, si nécessaire, l’assistance THITRONIK. L’existence d’un droit à garantie dans un cas particulier dépend de la date d’achat, du justificatif et des conditions applicables.
+
+Autres divergences : [O, PDF 4, 10](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=4) indique **9–30 V**, mais le schéma [O, PDF 23](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=23) indique **8–30 V**. Ne pas en déduire une autorisation sous 9 V. Les anciens **40 mA pour le CO** ne sont pas une valeur universelle pour le capteur actuel 100433 : sa [page produit](https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/) indique **6 mA** (vérifiée le 01/10/2026). Vérifier ensemble la version du capteur et la centrale. Les **300 ppm CO** de l’ancien manuel ne sont ni une limite générale sans danger, ni le seuil du G.A.S.-pro III CO.
 
 ## Vérification rapide
 
@@ -95,6 +96,10 @@ Les valeurs n’ont pas été harmonisées silencieusement : le manuel indique l
 Les déodorants, lotions après-rasage, produits nettoyants agressifs, l’alcool dans l’haleine, les vapeurs de cuisson et d’autres substances similaires à des gaz peuvent également déclencher une réaction du capteur. Il faut néanmoins traiter d’abord toute alarme comme un événement gazeux réel et n’en rechercher la cause que depuis un endroit sûr.
 
 ## Configuration du système et équipement en capteurs
+
+### Ancien G.A.S.-pro : centrale et capteurs externes
+
+La centrale de l’ancien G.A.S.-pro ne contient **aucun capteur de gaz intégré**. Elle accepte **jusqu’à trois capteurs externes** ; les types raccordés déterminent la détection gaz ou CO. Ne pas confondre avec l’unique entrée externe du G.A.S.-pro III. Source : [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8).
 
 La centrale ne contient aucun capteur de gaz. Selon le manuel, jusqu’à trois capteurs peuvent être raccordés à ses entrées AutoSense :
 
@@ -142,6 +147,10 @@ Le GPL et les gaz narcotiques sont plus lourds que l’air. Monter le capteur co
 
 Ne pas couvrir les ouvertures des capteurs. Les solvants, le silicone, les aérosols puissants, le flux direct d’air chaud et les zones durablement humides peuvent perturber la mesure ou endommager le capteur.
 
+### Ancien G.A.S.-pro : capteur CO à toute hauteur ?
+
+Les sources divergent pour le capteur CO externe : [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) demande une pose près du plafond, [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) autorise toute hauteur dans le texte français, et [O, PDF 24](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=24) montre **10–50 cm sous le plafond**. Le dessin propre au capteur CO [SCO, PDF 3](../../quellen/gas-co-sensor-anleitung.pdf#page=3) montre **10–30 cm sous le plafond**. Ne pas autoriser une hauteur arbitraire ; comparer le dessin du capteur et la centrale, puis faire clarifier la divergence par THITRONIK. Les 10–20 cm de l’unité principale G.A.S.-pro III CO ne remplacent pas la consigne de chaque capteur CO externe.
+
 ## Montage des capteurs
 
 1. Mettre entièrement le système hors tension.
@@ -165,6 +174,8 @@ En cas de montage dissimulé, respecter les points suivants :
 - Si nécessaire, installer la sirène supplémentaire article `100190`.
 - Le témoin de fonctionnement doit rester visible ; si nécessaire, installer le témoin externe article `100034`.
 - Les bornes, le fusible et le cheminement des câbles doivent rester accessibles pour un diagnostic professionnel.
+
+Divergence sur la sirène supplémentaire : le texte allemand [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) indique **100190**, le français [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) **100191**. La liste reprend la référence allemande ; faire confirmer la référence par THITRONIK avant commande.
 
 ## Raccordement électrique
 
@@ -191,6 +202,10 @@ Ne jamais utiliser les couleurs seules comme autorisation de raccordement. Contr
 
 ## Raccordement à l’allumage et autorisation de fonctionnement
 
+### Ancien G.A.S.-pro : contact mis ou coupé sur IGN
+
+**Contact mis : inactif. Contact coupé : actif.** Cette règle IGN concerne l’ancienne G.A.S.-pro. Après activation, attendre le préchauffage et le clignotement périodique du témoin. Ne pas remplacer cette règle par le mode silencieux du G.A.S.-pro III. Source : [O, PDF 9](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=9).
+
 La variante recommandée dans le manuel utilise `IGN` pour la commande automatique :
 
 | État du véhicule | G.A.S.-pro |
@@ -199,6 +214,8 @@ La variante recommandée dans le manuel utilise `IGN` pour la commande automatiq
 | Allumage mis | inactif |
 
 Il est également possible d’appliquer `+12 V` sur `IGN` par l’intermédiaire d’un interrupteur. Une désactivation pendant la conduite ne doit pas être confondue avec un défaut. Après chaque réactivation, attendre la fin du préchauffage puis confirmer le clignotement périodique du témoin de fonctionnement.
+
+Source : [O, PDF 3, 9](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=3).
 
 ## Mise en service et phase de préchauffage
 
@@ -220,6 +237,8 @@ Le manuel ne fournit aucune attribution fiable de couleur au témoin de fonction
 | Défaut du capteur ou du câble | signal sonore intermittent jusqu’à la correction du défaut |
 
 Ne pas transposer la durée de 10 secondes pour le CO à G.A.S.-pro III ou à d’autres dispositifs d’alarme. La logique de sortie et la durée du signal sont propres au produit.
+
+Source : [O, PDF 3, 9](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=3).
 
 ## Comportement en cas d’alarme gaz ou CO
 
@@ -247,7 +266,13 @@ Ne pas approcher de flamme du capteur et ne pas utiliser de bouteille de propane
 
 Le capteur CO ne réagit pas au gaz de briquet. Le manuel n’exige aucun test utilisateur distinct pour ce capteur. Un contrôle au CO ne doit être effectué que par du personnel qualifié avec une méthode appropriée et contrôlée ; ne jamais introduire de gaz d’échappement ou de combustion ouverte dans l’habitacle.
 
+Source : [O, PDF 4, 10](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=4).
+
 ## Défauts du capteur et signaux sonores
+
+### Ancien G.A.S.-pro : un, deux ou trois bips et numéro de capteur
+
+Le nombre de bips **n’est pas un code confirmé pour le capteur 1, 2 ou 3**. La FAQ décrit une possible variation du capteur ou du logiciel, pas une correspondance numérotée. Faire vérifier le câblage et la version de l’ancienne G.A.S.-pro. Source : [QO, PDF 2–3](../../quellen/gas-pro-faq.pdf#page=2).
 
 L’autotest permanent peut signaler des erreurs de câblage, des défauts de capteur et certaines variations du logiciel ou du capteur.
 
@@ -260,6 +285,8 @@ L’autotest permanent peut signaler des erreurs de câblage, des défauts de ca
 | Alarme immédiatement après le premier préchauffage | le capteur peut être affecté par un stockage incorrect ou une contamination ; suivre la procédure du fabricant et contacter l’assistance en cas de répétition |
 
 Dans les sources du fabricant évaluées, le nombre de signaux sonores **n’est pas une attribution confirmée aux emplacements de capteur 1, 2 ou 3**. Ne pas établir de diagnostic d’emplacement à partir du nombre de signaux.
+
+Source : [QO, PDF 2–3](../../quellen/gas-pro-faq.pdf#page=2).
 
 ## Dépannage sûr
 
@@ -297,6 +324,8 @@ Avant le raccordement, poser des embouts de câble et vérifier l’entrée de c
 | `100089` | Sirène de secours 12 V | vérifier l’autorisation de raccordement propre au produit |
 
 Utiliser uniquement des accessoires d’origine ou des composants expressément homologués. Ne pas déduire le numéro d’article de l’appareil principal G.A.S.-pro installé à partir des numéros d’accessoires ou des numéros de série ; voir [[Registre des numéros d’article — produits et accessoires]] et [[Sirènes et klaxons — moyens d'alarme acoustiques]].
+
+Divergence sur la sirène supplémentaire : le texte allemand [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) indique **100190**, le français [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) **100191**. La liste reprend la référence allemande ; faire confirmer la référence par THITRONIK avant commande.
 
 ## Différences avec G.A.S.-pro III
 

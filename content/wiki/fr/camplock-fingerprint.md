@@ -1,12 +1,12 @@
 ---
 title: CampLock Fingerprint - acces biometrique
 sources:
-  - https://www.thitronik.de/produkte/produkt/camplock-fingerprint/
-  - https://www.thitronik.de/preise/
-  - wiki/zugang-bedienung.md
-  - wiki/wipro-iii.md
-updated: 2026-07-07
-confidence: high
+  - https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/
+  - content/quellen/camplock-fingerprint.pdf
+  - content/quellen/camplock-vanlock-fingerprint.pdf
+  - content/quellen/katalog_thitronik_de.pdf
+updated: 2026-10-02
+confidence: medium
 dealerStatus: approved
 lang: fr
 translation_of: wiki/de/camplock-fingerprint.md
@@ -14,79 +14,86 @@ translation_of: wiki/de/camplock-fingerprint.md
 
 # CampLock Fingerprint - acces biometrique
 
-CampLock Fingerprint est l acces biometrique pour portes cellule Hartal avec verrouillage central. L empreinte commande la porte et peut suivre automatiquement l etat de l alarme THITRONIK selon l appairage.
+CampLock Fingerprint permet de verrouiller et de déverrouiller par empreinte digitale. Les portes commandées et le système WiPro prévu dépendent de la **référence de l’appareil**. Le verrouillage et l’alarme sont deux fonctions distinctes ; elles fonctionnent ensemble après l’appairage de CampLock avec la WiPro compatible.
 
-## Compatibilite
+## Avis constructeur : garder la clé du véhicule
 
-- Compatible avec WiPro III et WiPro III safe.lock.
-- Developpe pour de nombreuses portes cellule Hartal avec verrouillage central.
-- Armer/desarmer est possible avec WiPro III; verrouiller/deverrouiller exige WiPro III safe.lock et une connexion adaptee.
-- Le montage mecanique et electrique doit etre effectue par du personnel qualifie.
+Avis constructeur du **27.07.2026** : des conditions de tension défavorables peuvent perturber le verrouillage centralisé. **Garder la clé du véhicule sur soi.** Cet avis ne précise ni les séries concernées ni une version de mise à jour disponible. ([THITRONIK, Abruf 02.10.2026](https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/))
 
-## Donnees techniques
+## Quelle version est installée ?
 
-| Parameter | Valeur |
-|-----------|------|
-| Article no. | 106111 silver / 106144 black |
-| Power supply | 12/24 V DC |
-| Radio range | max. 150 m free field |
-| Frequency | 868,35 MHz |
-| Compatibilité | WiPro III / WiPro III safe.lock |
-| Dimensions | control unit 100 x 71 x 22 mm; fingerprint sensor D = 41 mm, L = 53 mm |
-| Poids | ca. 213 g on product page; catalogue states ca. 156 g |
-| Current draw | 1,2 mA at 12 V DC; product page: 1,7 mA at 24 V DC |
-| Housing protection | IP67 |
-| Master fingers | 2 |
-| Appairage fingers | 16 |
+| Référence CampLock | Notice et fonction décrite |
+|---|---|
+| **106111 / 106144** | Le guide rapide CampLock décrit de nombreuses portes de cellule Hartal à verrouillage centralisé. Avec **WiPro III** : verrouillage/déverrouillage de la porte et activation/désactivation de l’alarme. Avec **WiPro III safe.lock** : verrouillage/déverrouillage de l’ensemble du véhicule et activation/désactivation de l’alarme. |
+| **106111-002 / 106144-002** | La notice commune CampLock/VanLock décrit l’utilisation avec **WiPro III safe.lock** : verrouillage/déverrouillage du véhicule et activation/désactivation de l’alarme. Elle ne confirme ni la compatibilité avec une WiPro III sans safe.lock, ni celle avec un modèle précis de porte Hartal. |
 
-## Cas d utilisation
+L’ancien guide rapide précise aussi que CampLock transmet à l’alarme associée l’état ouvert ou fermé de la porte de cellule Hartal. Un contact magnétique radio supplémentaire n’est alors pas nécessaire sur cette porte. La notice commune ne formule pas cette indication pour la version **-002**. (Guide rapide, p. 2 du PDF physique ; notice commune, p. 20–21 du PDF physique.)
 
-- Acces sans cle par empreinte digitale au vehicule.
-- Acces pratique lorsque KeyCard, KeyTag ou telecommande radio n est pas disponible.
-- Couplage automatique avec l alarme THITRONIK lors de l ouverture et fermeture, si l appairage est correct.
+## Enregistrer les doigts et appairer la WiPro
 
-## Montage / configuration
+1. **Vérifier la référence et la configuration du véhicule.** Le montage et le raccordement électrique doivent être effectués par du personnel qualifié. Ces notices d’utilisation ne donnent pas de brochage propre au véhicule ; il faut suivre la notice d’installation correspondante. (Guide rapide, p. 2 du PDF ; notice commune, p. 21 du PDF.)
+2. **Enregistrer au moins un doigt.** Pour les références 106111/106144, fermer d’abord la porte de cellule Hartal : la LED du capteur s’allume en jaune. Pour les références 106111-002/106144-002, elle s’allume automatiquement en jaune lors de la première mise en service. Poser le nouveau doigt **15 fois de suite** sur le capteur. Après l’enregistrement, la LED clignote cinq fois en vert. Les deux premiers doigts enregistrés deviennent automatiquement des **doigts maîtres**. (Guide rapide, p. 2 du PDF ; notice commune, p. 22 du PDF.)
+3. **Enregistrer d’autres doigts.** Pour **106111/106144 sans -002, fermer d’abord la porte de cellule Hartal**. Maintenir un doigt maître déjà enregistré sur le capteur pendant environ cinq secondes, jusqu’à ce que la LED s’allume en jaune. Poser le nouveau doigt 15 fois de suite ; cinq clignotements verts confirment l’enregistrement. La mémoire accepte **16 doigts au maximum au total**, y compris les deux doigts maîtres : il ne s’agit pas de 16 utilisateurs supplémentaires. (Guide rapide, p. 2 du PDF ; notice commune, p. 23 et 28 du PDF.)
+4. **Appairer CampLock avec la WiPro.** Activer le mode d’appairage de la WiPro prise en charge en suivant sa notice. Avec les références **-002**, déclencher une transmission en utilisant un doigt déjà enregistré. Avec les références sans suffixe **-002**, l’ouverture ou la fermeture de la porte Hartal peut également déclencher une transmission ; la transmission **par le capteur** exige toutefois que la porte soit fermée. Un bref signal sonore de la WiPro et l’extinction de sa LED d’état pendant environ une seconde confirment l’appairage. Quitter ensuite le mode d’appairage de la WiPro. (Guide rapide, p. 1–2 du PDF ; notice commune, p. 24 du PDF.)
 
-1. Verifier la compatibilite vehicule et porte avant montage.
-2. Monter l unite de commande et le capteur selon la notice et alimenter en 12/24 V.
-3. Appairer le systeme Fingerprint avec WiPro III ou WiPro III safe.lock.
-4. Memoriser d abord les 2 doigts maitre, puis les doigts utilisateur.
-5. Tester: deverrouiller, verrouiller, armer/desarmer et, avec safe.lock, verrouillage central.
+Pour tester la version **-002**, fermer toutes les portes, verrouiller avec un doigt enregistré, vérifier toutes les portes commandées et le clignotement de la LED d’état de la WiPro, puis déverrouiller avec le doigt et contrôler la désactivation de l’alarme. L’ancien guide rapide propose aussi un test d’alarme : verrouiller la porte de cellule avec le doigt, puis l’ouvrir avec la clé mécanique ; son ouverture doit déclencher l’alarme. (Guide rapide, p. 1 du PDF ; notice commune, p. 24 du PDF.)
 
-## Limites et erreurs typiques
+## Utilisation et signaux lumineux
 
-- L empreinte digitale ne remplace pas un acces de secours planifie; garder telecommande, NFC ou cle d origine disponible.
-- Des doigts mouilles, sales ou blesses peuvent compliquer la reconnaissance.
-- Avec WiPro III sans safe.lock, le verrouillage central n est pas integre comme acces vehicule complet.
-- CampLock ne convient pas automatiquement a chaque porte cellule; la compatibilite Hartal est decisive.
+| LED du capteur | Signification et réaction |
+|---|---|
+| **Cinq clignotements verts** | Doigt reconnu ou enregistrement réussi. En fonctionnement, le verrouillage change d’état et l’alarme appairée s’active ou se désactive. |
+| **Clignotement rouge après la lecture** | Doigt non reconnu. Le verrouillage et l’alarme conservent leur état. |
+| **Voyant jaune pendant l’enregistrement** | Le capteur est prêt à enregistrer un doigt. |
 
-## FAQ
+(Guide rapide, p. 1–2 du PDF ; notice commune, p. 22–23 et 25 du PDF.)
 
-**Combien de doigts peuvent etre memorises?**
-Jusqu a 16 doigts, dont 2 doigts maitre.
+## Effacer tous les doigts
 
-**Le systeme peut-il armer/desarmer automatiquement l alarme?**
-Oui, s il est correctement appaire avec le systeme d alarme THITRONIK.
+Les notices ne décrivent **aucun effacement individuel** : tous les doigts enregistrés, y compris les doigts maîtres, sont supprimés. Un doigt maître déjà enregistré est nécessaire. Pour les références sans suffixe **-002**, fermer d’abord la porte de cellule. (Guide rapide, p. 1 du PDF ; notice commune, p. 26–27 du PDF.)
 
-**safe.lock est-il obligatoire?**
-Pas uniquement pour armer/desarmer. Verrouiller/deverrouiller le verrouillage central exige WiPro III safe.lock et une connexion vehicule adaptee.
+1. Maintenir le doigt maître sur le capteur pendant **dix secondes**. La LED devient jaune après environ cinq secondes, puis rouge cinq secondes plus tard.
+2. Retirer le doigt ; la LED clignote en rouge.
+3. Dans les **dix secondes**, reposer le même doigt maître pour confirmer l’effacement. Sans confirmation, l’opération est annulée.
+4. Après l’effacement, la LED devient jaune. Enregistrer un nouveau doigt maître comme lors de la première mise en service.
 
-## References article
+(Guide rapide, p. 1 du PDF ; notice commune, p. 26–27 du PDF.) Si aucun doigt maître n’est encore disponible, ces notices ne décrivent pas d’autre effacement depuis le capteur ; consulter THITRONIK ou un professionnel qualifié.
 
-| Art.-Nr. | Variant |
-|---------|---------|
-| 106111 | CampLock Fingerprint, silver |
-| 106144 | CampLock Fingerprint, black |
+## Sécurité et caractéristiques techniques
 
-## Note de source
+Le capteur d’empreintes **ne remplace pas un déverrouillage mécanique de secours**. Une autre possibilité d’ouverture doit rester disponible à tout moment ; une batterie de véhicule déchargée peut empêcher l’accès électronique. Débrancher la batterie du véhicule avant toute installation, maintenance ou intervention de service. Pour la porte Hartal décrite dans le guide rapide, maintenir les broches de contact propres et conductrices. Pour le câblage et la fixation, respecter les notices d’installation et les consignes propres au véhicule. (Guide rapide, p. 2 du PDF ; notice commune, p. 21 du PDF.)
 
-Les donnees techniques proviennent de la page produit THITRONIK officielle et de la liste de prix; les poids divergents sont indiques.
+| Caractéristique | Valeur |
+|---|---|
+| Alimentation | 12–24 V CC |
+| Consommation | 1,2 mA sous 12 V. **Divergence non résolue sous 24 V pour 106111/106144 :** guide rapide 1,7 mA, catalogue 0,6 mA. Pour -002, la notice commune indique 1,7 mA. Aucune valeur de 24 V confirmée sans ambiguïté pour la version sans -002. |
+| Radio | 868,35 MHz ; jusqu’à 150 m en champ libre |
+| Boîtier de commande / capteur | 100 × 71 × 22 mm ; capteur CampLock Ø 41 mm, longueur 53 mm |
+| Mémoire / indice de protection | Jusqu’à 16 doigts au total, dont les deux premiers deviennent maîtres ; IP67 |
+| Poids selon l’ancien guide rapide | Environ 156 g **sans le deuxième faisceau de câbles** |
+| Poids selon la notice commune pour CampLock -002 | Environ 213 g |
 
-## Liens associes
+(Guide rapide, p. 1 du PDF ; notice commune, p. 28 du PDF.) Seule l’ancienne valeur précise qu’elle exclut le deuxième faisceau de câbles. Ces deux indications de poids ne doivent pas être fusionnées.
+
+## Divergence : consommation sous 24 V
+
+Pour **CampLock 106111/106144 sans -002**, le guide rapide indique **1,7 mA sous 24 V**, contre **0,6 mA sous 24 V** dans le catalogue allemand. Les deux indications concernent les mêmes références. La notice commune indique également 1,7 mA pour **106111-002/106144-002**. La divergence ne peut donc pas être expliquée simplement par une évolution entre l’ancienne version et la version -002. (Guide rapide, p. 1 physique du PDF ; catalogue, p. 25 physique, p. 49 imprimée ; notice commune, p. 28 du PDF.)
+
+Cette divergence entre les sources reste **non résolue**. Avant de donner une valeur définitive, vérifier la référence et la version de la notice fournie avec l’appareil, puis faire confirmer la consommation par THITRONIK. La date de création d’un PDF ne prouve pas une modification matérielle.
+
+## Étape d’effacement différente dans le guide anglais
+
+Dans la version anglaise de l’ancien guide rapide, le voyant devient jaune après dix secondes lors de l’effacement. Les versions allemande et française indiquent **cinq secondes jusqu’au jaune, puis cinq secondes supplémentaires jusqu’au rouge**. La version anglaise de la notice commune confirme aussi cinq plus cinq secondes. La procédure décrite ici suit les versions DE/FR concordantes ; la ligne anglaise divergente ne justifie pas un délai supplémentaire. (Guide rapide, p. 1 physique du PDF, panneau imprimé 11 ; notice commune, FR p. 26–27, DE p. 8–9, EN p. 17–18.)
+
+## Sources et versions
+
+- `camplock-fingerprint.pdf` : guide rapide CampLock de deux pages, références **106111/106144**, révision 1.0, PDF créé le 18/03/2026. La p. 2 physique contient le début de la notice ; la p. 1 en poursuit les étapes.
+- `camplock-vanlock-fingerprint.pdf` : notice commune multilingue, références CampLock **106111-002/106144-002**, révision 1.0, PDF créé le 02/07/2026. Partie française aux p. 20–28 physiques du PDF ; partie allemande aux p. 2–10.
+- `katalog_thitronik_de.pdf` : CampLock 106111/106144 à la p. 25 physique, p. 49 imprimée ; consommation divergente sous 24 V. Le catalogue ne prouve pas une modification matérielle.
+
+## Voir aussi
 
 - [[Zugangsmedien & Bedienung]]
 - [[WiPro III]]
-- [[NFC Modul]]
 - [[Funk-Handsender]]
-- [[CampLock Fingerprint]]
 - [[VanLock Fingerprint]]

@@ -1,49 +1,53 @@
 ---
 title: 'Numéros de série et versions logicielles — préfixes, seuils et jalons'
 sources:
-  - sources/Seriennummern 0823 Wipro III safe.lock.csv
-  - sources/WiPro III Seriennummer1050.csv
-  - sources/Seriennummer 0699  Pro-finder.csv
-  - sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv
-  - sources/Seriennummer 5458 Wipro III safe.lock Sprinter Set.csv
-  - sources/Seriennummer 5832 Wipro III safe.lock Renault Set .csv
-  - sources/Seriennummer 1290 Bluetooth-Vernetzungsmodul.csv
-  - sources/Seriennummer 6000 BT-connect.csv
-  - sources/Seriennummer 5299 NFC Modul.csv
-  - sources/Seriennummer 1011 C.A.S. III.csv
-  - sources/Seriennummer 0756  Funk-Handsender 868.csv
-  - sources/Seriennummer 0089Backup-Sirene.csv
-  - sources/Seriennummer 5339 Zusatzhupe inkl. Relaissatz.csv
-  - sources/Seriennummer G.A.S.-connect (5750).csv
-  - sources/Seriennummer 1052 Umrüstplatine.csv
-  - sources/Seriennummern WiPro easy (5237).csv
-  - sources/Seriennummer T.S.A. Funk-Rauchmelder weiß (5753).csv
-  - sources/Seriennummer T.S.A. Funk-Rauchmelder grau (5754).csv
-  - sources/Seriennummer G.A.S.-pro III KW (1286).csv
-  - sources/Seriennummer G.A.S.-pro III CO (1287).csv
-  - sources/Seriennummer 0001 G.A.S.-pro.csv
-  - sources/Seriennummer 0061 GBA-I.csv
-  - sources/Seriennummer 0104 GBA-IC (Alarmausgang).csv
-  - sources/Seriennummer 0190 Sirene.csv
-  - sources/Seriennummer 0686 GPS-pro.csv
-  - sources/Seriennummer 0734 24V Sirene.csv
-  - sources/Seriennummer 1012 GSM undGPS-Kombimodul.csv
-  - sources/Seriennummer Funk-Gaswarner 868 (0759).csv
-  - sources/Seriennummer Funk-Kabelschleife 868 (0761).csv
-  - sources/Seriennummer Funk-Kabelschleife 868 XL (0944).csv
-  - sources/Seriennummer Funk-Kabelschleife 868 XL sw (1074).csv
-  - sources/Seriennummer Funk-Kabelschleife 868 sw (1068).csv
-  - sources/Seriennummer Funk-Magnetkontakt 868 - 100791.csv
-  - sources/Seriennummer Sirene 0095 WiPro easy.csv
-  - wiki/wipro-iii.md
-  - wiki/pro-finder.md
-  - wiki/bt-connect.md
-  - wiki/vernetzungsmodul.md
-  - wiki/funk-wassermelder.md
-  - wiki/app-befehle.md
-  - wiki/support-fallaufnahme.md
-updated: '2026-07-15'
-confidence: high
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+  - "content/quellen/fahrzeug-update-service-2024.pdf"
+  - "sources/Seriennummern 0823 Wipro III safe.lock.csv"
+  - "sources/WiPro III Seriennummer1050.csv"
+  - "sources/Seriennummer 0699  Pro-finder.csv"
+  - "sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv"
+  - "sources/Seriennummer 5458 Wipro III safe.lock Sprinter Set.csv"
+  - "sources/Seriennummer 5832 Wipro III safe.lock Renault Set .csv"
+  - "sources/Seriennummer 1290 Bluetooth-Vernetzungsmodul.csv"
+  - "sources/Seriennummer 6000 BT-connect.csv"
+  - "sources/Seriennummer 5299 NFC Modul.csv"
+  - "sources/Seriennummer 1011 C.A.S. III.csv"
+  - "sources/Seriennummer 0756  Funk-Handsender 868.csv"
+  - "sources/Seriennummer 0089Backup-Sirene.csv"
+  - "sources/Seriennummer 5339 Zusatzhupe inkl. Relaissatz.csv"
+  - "sources/Seriennummer G.A.S.-connect (5750).csv"
+  - "sources/Seriennummer 1052 Umrüstplatine.csv"
+  - "sources/Seriennummern WiPro easy (5237).csv"
+  - "sources/Seriennummer T.S.A. Funk-Rauchmelder weiß (5753).csv"
+  - "sources/Seriennummer T.S.A. Funk-Rauchmelder grau (5754).csv"
+  - "sources/Seriennummer G.A.S.-pro III KW (1286).csv"
+  - "sources/Seriennummer G.A.S.-pro III CO (1287).csv"
+  - "sources/Seriennummer 0001 G.A.S.-pro.csv"
+  - "sources/Seriennummer 0061 GBA-I.csv"
+  - "sources/Seriennummer 0104 GBA-IC (Alarmausgang).csv"
+  - "sources/Seriennummer 0190 Sirene.csv"
+  - "sources/Seriennummer 0686 GPS-pro.csv"
+  - "sources/Seriennummer 0734 24V Sirene.csv"
+  - "sources/Seriennummer 1012 GSM undGPS-Kombimodul.csv"
+  - "sources/Seriennummer Funk-Gaswarner 868 (0759).csv"
+  - "sources/Seriennummer Funk-Kabelschleife 868 (0761).csv"
+  - "sources/Seriennummer Funk-Kabelschleife 868 XL (0944).csv"
+  - "sources/Seriennummer Funk-Kabelschleife 868 XL sw (1074).csv"
+  - "sources/Seriennummer Funk-Kabelschleife 868 sw (1068).csv"
+  - "sources/Seriennummer Funk-Magnetkontakt 868 - 100791.csv"
+  - "sources/Seriennummer Sirene 0095 WiPro easy.csv"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/pro-finder.md"
+  - "content/wiki/de/bt-connect.md"
+  - "content/wiki/de/vernetzungsmodul.md"
+  - "content/wiki/de/funk-wassermelder.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/support-fallaufnahme.md"
+updated: '2026-10-01'
+confidence: medium
 lang: fr
 translation_of: sources/seriennummern-softwarestaende.md
 ---
@@ -55,6 +59,12 @@ Cette matrice de travail classe les principaux préfixes de numéros de série, 
 > **Règle de base :** Toujours relever le numéro de série complet et, s’il est lisible, la version logicielle effectivement installée. Une entrée dans une liste de numéros de série décrit l’affectation documentée lors de la production ; une mise à jour ultérieure peut avoir modifié la version du dispositif concerné.
 
 ---
+
+## Limites du véhicule et sources contrôlées
+
+Versions véhicule : T5 et T5 facelift `0823-001 / 2.1`, T6 hors DoKa `0823-012 / 5.1`, T6.1 hors DoKa et Crafter 2017–2024 `0823-019 / 6.8` selon FAQ. 0823-019 ne prouve donc pas à lui seul le logiciel 7.1. Conflits : Vito `0823-014 / 6.2` contre `0823-013 / 5.6` ; nouveau Ford `5298-006 / 1.0.1sf` dans la FAQ contre 5298-005 dans l’ancien registre. Distinguer mise à jour, conversion matérielle safe.lock et compatibilité véhicule. Upgrade rév. 2.0 : broche 20 bleue, 19 bleu/noir, 16 blanc/noir (dérivation parallèle si occupée), puis réappairage des accessoires. Le formulaire 2024 ne cite que deux nouveaux fils : ne pas supprimer un fil arbitrairement. Sa limite 0823-019 marquée d’un astérisque n’exclut pas toute conversion d’une ancienne centrale ; contacter le support.
+
+Sources : [Q, PDF 5](../../quellen/wipro-iii-faq.pdf#page=5), [Q, PDF 6](../../quellen/wipro-iii-faq.pdf#page=6), [Q, PDF 9](../../quellen/wipro-iii-faq.pdf#page=9), [Q, PDF 10](../../quellen/wipro-iii-faq.pdf#page=10), [Q, PDF 13](../../quellen/wipro-iii-faq.pdf#page=13), [S, PDF 4](../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 5](../../quellen/wipro-iii-safelock-faq.pdf#page=5), [safelock-upgrade, PDF 2](../../quellen/fahrzeug-safelock-upgrade.pdf#page=2), [update-service-2024, PDF 1](../../quellen/fahrzeug-update-service-2024.pdf#page=1).
 
 ## Lire correctement les numéros de série
 
@@ -101,6 +111,8 @@ Les préfixes d’accessoires sans seuil fonctionnel documenté figurent à la s
 
 ## WiPro III et safe.lock
 
+**Contradiction de sources, non résolu :** la [FAQ safe.lock](../../quellen/wipro-iii-safelock-faq.pdf) non datée, pages PDF 2–3, indique **1050-042 / Ducato 8–9 avec grand écran : 7.5.1s** et **1050-016 / Ducato 8 : 7.2s**. L'ancien historique du wiki donne **7.5.2s** et **7.1s** respectivement. Les CSV originaux cités n'existent pas dans le dossier local ; la mention « validé » du wiki ne résout pas ce conflit avec la source primaire. Faire confirmer numéro de série, logiciel réel et équipement par **THITRONIK** avant de promettre la compatibilité. Cette comparaison ne valide aucune des versions divergentes comme minimum définitif.
+
 ### 0823-xxx — WiPro III
 
 | À partir du numéro de série | SW | Pertinence documentée |
@@ -108,7 +120,7 @@ Les préfixes d’accessoires sans seuil fonctionnel documenté figurent à la s
 | `0823-012` | — | Version minimale pour certains profils de véhicule, dont [[VW T6 (2015-2019)]] |
 | `0823-014` | `5.8` | Plusieurs nouveaux profils de véhicule ; protection anti-rejeu documentée à partir de cette combinaison |
 | `0823-018` | — | Seuil de référence pour les fonctions de base de l’application |
-| `0823-019` | `7.1` | Profils de véhicule plus récents et certaines mises à niveau safe.lock, dont [[Mercedes Sprinter VS30 (BR907/910, à partir de 2018)]] et [[VW T6.1 (à partir de 2019)]] |
+| `0823-019` | `6.8` (FAQ); `7.1` (ancien contenu, attribution non résolue) | Profils de véhicule plus récents et certaines mises à niveau safe.lock, dont [[Mercedes Sprinter VS30 (BR907/910, à partir de 2018)]] et [[VW T6.1 (à partir de 2019)]] |
 | `0823-021` | `6.8` | Prise en charge du [[Détecteur d'eau sans fil 868 — détecteur d'eau sans fil]] |
 | `0823-034` | — | Sprinter VS30 : prise en compte des quatre clés documentée comme version à code tournant |
 
@@ -118,10 +130,10 @@ Les préfixes d’accessoires sans seuil fonctionnel documenté figurent à la s
 |-----------------------------|----|-----------------------|
 | `1050-004` | `6.7s` | Fonctions de base de l’application, fonctions de verrouillage centralisé, Easy-Add 3.0 et détecteur d’eau sans fil |
 | `1050-006` | `6.7s` | Fonction combinée « verrouiller et armer » ; une anomalie de module récepteur/condensateur est également documentée sur certains dispositifs |
-| `1050-016` | `7.1s` | Prise en charge du Fiat Ducato 8 / année modèle 2022 |
+| `1050-016` | `7.1s` (ancien wiki ; FAQ : 7.2s, non résolu) | Prise en charge du Fiat Ducato 8 / année modèle 2022 |
 | `1050-025` | `7.3.0s` | Compatibilité avec Alphatronics ONE |
 | `1050-038` | `7.5.0s` | Anomalie de portée documentée sur certaines télécommandes radio 868 |
-| `1050-042` | `7.5.2s` | Numéro de série minimal pour Ducato 8 avec grand système d’infodivertissement à écran tactile |
+| `1050-042` | `7.5.2s` (ancien wiki ; FAQ : 7.5.1s, non résolu) | Numéro de série minimal pour Ducato 8 avec grand système d’infodivertissement à écran tactile |
 | `1050-046` | `7.5.3s` | Prise en charge du restylage du Fiat Ducato à partir de 2024 |
 | `1050-051` | `7.5.3s` | Marque d’homologation E1 de nouveau documentée sur le boîtier |
 
@@ -132,8 +144,8 @@ En cas de problème de portée dans les lignes `1050-006` ou `1050-038`, ne pas 
 | À partir du numéro de série | SW | Pertinence documentée |
 |-----------------------------|----|-----------------------|
 | `5298-001` | `7.4.0s` | Première série de kit Ford régulièrement documentée ; seuil pour l’application, le verrouillage centralisé et le détecteur d’eau |
-| `5298-005` | `1.0.1sf` | [[Ford Transit / Tourneo Custom / Transit Custom (2024+)]] ; mode camping et protection contre le verrouillage accidentel |
-| `5298-008` | `1.0.3sf` | Correction de la protection contre le verrouillage accidentel en combinaison avec Pro-Finder sur Ford Transit 2019–2024 |
+| `5298-005` (ancien contenu ; FAQ : 5298-006, non résolu) | `1.0.1sf` | [[Ford Transit / Tourneo Custom / Transit Custom (2024+)]] ; mode camping et protection contre le verrouillage accidentel |
+| `5298-008` (ancien registre, CSV original absent) | `1.0.3sf` | Correction de la protection contre le verrouillage accidentel en combinaison avec Pro-Finder sur Ford Transit 2019–2024 |
 | `5298-009` | `1.0.3sf` | Dernière entrée de la liste de numéros de série Ford disponible |
 
 Pour la combinaison WiPro III safe.lock et Pro-Finder sur Ford Transit 2019–2024, le seuil de correction `5298-008` est important pour la sécurité. Ne pas valider une version de kit plus ancienne sur la seule base d’une compatibilité Ford générale.
@@ -287,8 +299,8 @@ Dans les listes disponibles, les préfixes `0061-` et `0104-` servent principale
 | Détecteur d’eau sans fil | WiPro III safe.lock | `1050-004` / `6.7s` |
 | Détecteur d’eau sans fil | Kit Ford | `5298-001` / `7.4.0s` |
 | Détecteur d’eau sans fil | Kit Sprinter | `5458-001` / `1.0.5sx` |
-| Ford Transit / Custom 2024+ safe.lock | Kit Ford | `5298-005` / `1.0.1sf` |
-| Correction de la protection contre le verrouillage accidentel pour Ford Transit 2019–2024 avec Pro-Finder | Kit Ford | `5298-008` / `1.0.3sf` |
+| Ford Transit / Custom 2024+ safe.lock | Kit Ford | `5298-005` (ancien contenu ; FAQ : 5298-006, non résolu) / `1.0.1sf` |
+| Correction de la protection contre le verrouillage accidentel pour Ford Transit 2019–2024 avec Pro-Finder | Kit Ford | `5298-008` (ancien registre, CSV original absent) / `1.0.3sf` |
 | Mise à niveau safe.lock du Mercedes Sprinter VS30 | WiPro III | `0823-019` |
 | Mercedes Sprinter VS30 avec quatre clés | WiPro III | `0823-034` |
 | VW Crafter / MAN TGE 2025+ avec bouton de démarrage | kit Sprinter `105458` | aucun seuil minimum public actuel ; validation spécifique au véhicule requise |

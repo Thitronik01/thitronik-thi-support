@@ -1,11 +1,11 @@
 ---
 title: Abschalteinrichtung — Fahrzeugstilllegung über Pro-Finder
 sources:
-  - sources/Abschalteinrichtung_einpolig.pdf
-  - sources/Abschalteinrichtung_mehrpolig.pdf
-  - sources/Abschalteinrichtung_einpolig__Overview_DE.md
-  - sources/Abschalteinrichtung_mehrpolig__Overview_DE.md
-  - sources/Abschaltrelais.docx
+  - "sources/Abschalteinrichtung_einpolig.pdf"
+  - "content/quellen/profinder-abschaltung-mehrpolig-rev1.0.pdf"
+  - "sources/Abschalteinrichtung_einpolig__Overview_DE.md"
+  - "sources/Abschalteinrichtung_mehrpolig__Overview_DE.md"
+  - "sources/Abschaltrelais.docx"
 updated: '2026-07-14'
 confidence: high
 lang: de

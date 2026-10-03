@@ -15,6 +15,15 @@
 # ─── Entwicklungswerkzeuge, gehören nicht ins Deployment ────────────────────
 .agents/
 .claude/
+skills-lock.json
+
+# Lokale Prüf-, Cache- und Ergebnisdateien (freigegebene Berichte liegen in docs/)
+.rag-audit/
+app/werkzeuge/laeufe/
+coverage/
+__pycache__/
+*.pyc
+*.log
 
 # ─── Netlify ────────────────────────────────────────────────────────────────
 .netlify/

@@ -1,0 +1,809 @@
+{
+  "checkedAt": "2026-10-01T17:07:17.886Z",
+  "mode": "retrieval-only",
+  "liveModelEvaluated": false,
+  "total": 80,
+  "passed": 80,
+  "cases": [
+    {
+      "lang": "de",
+      "id": "gas-alone",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 2/4; QG 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "gas-output",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 13/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "gas-delay",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "gas-fault",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "connect-siren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QC 1; C 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "connect-current",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 25; WC; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "connect-terminal",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 23; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "connect-learning",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 3/7; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "connect-blinkers",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 3/7; offener WiPro-Konflikt; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "plug-ppm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 13; QP 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "plug-cycle",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "plug-fault",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "plug-volume",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 13; WP; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "old-sensors",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "old-ign",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "old-voltage",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 4/10/23; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "old-siren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "old-height",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 2/8/24; SCO 3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "old-beeps",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QO 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-variants",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1–2; WIII; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-output",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-dip4",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 3/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-dip678",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 3/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-pause",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-under",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-over",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-orientation",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "KCO 2; T 5/17/63; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1; QZ 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "iii-recall",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WRecall; QIII 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "co-software",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SCO 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "co-ferrules",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SCO 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "co-expiry",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6; nicht als Gas-Sensor-Lebensdauer verallgemeinern; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "co-height",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SCO 3; O 24; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "co-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QCO 2; O 4/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "extra-wiring",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SZ 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "extra-length",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 2; QZ 2; WZ; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "extra-height",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SZ 2–3; K 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "extra-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QZ 2; K/KCO 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "extra-capacity",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "de",
+      "id": "diagnostic-under",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gas-alone",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 2/4; QG 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gas-output",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 13/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gas-delay",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gas-fault",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "G 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "connect-siren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QC 1; C 2/6; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "connect-current",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 25; WC; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "connect-terminal",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 23; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "connect-learning",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 3/7; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "connect-blinkers",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 3/7; offener WiPro-Konflikt; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "plug-ppm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 13; QP 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "plug-cycle",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "plug-fault",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 2/4; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "plug-volume",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P 13; WP; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "old-sensors",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "old-ign",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 3/9; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "old-voltage",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 4/10/23; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "old-siren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 2/8; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "old-height",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "O 2/8/24; SCO 3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "old-beeps",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QO 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-variants",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1–2; WIII; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-output",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-dip4",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 3/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-dip678",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 3/15; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-pause",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-under",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-over",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-orientation",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "KCO 2; T 5/17/63; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1; QZ 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "iii-recall",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "WRecall; QIII 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "co-software",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SCO 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "co-ferrules",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SCO 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "co-expiry",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6; nicht als Gas-Sensor-Lebensdauer verallgemeinern; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "co-height",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SCO 3; O 24; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "co-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QCO 2; O 4/10; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "extra-wiring",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SZ 2–3; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "extra-length",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 2; QZ 2; WZ; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "extra-height",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "SZ 2–3; K 2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "extra-test",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "QZ 2; K/KCO 1; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "extra-capacity",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K/KCO 1–2; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    },
+    {
+      "lang": "fr",
+      "id": "diagnostic-under",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "T 6/18; Quellenkennungen: docs/quellenpruefung/2026-10-01-gas.md"
+    }
+  ]
+}

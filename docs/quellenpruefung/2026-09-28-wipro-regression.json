@@ -1,0 +1,1186 @@
+{
+  "checkedAt": "2026-09-28T18:18:46.301Z",
+  "mode": "offline-before-after; literal matches are not semantic answer evaluations",
+  "total": 82,
+  "unchangedOtherRoutes": true,
+  "unchangedArticleMetadata": true,
+  "unchangedCorrections": true,
+  "originalHashesVerified": true,
+  "oldTop8": 78,
+  "newTop8": 78,
+  "oldLiteral": 7,
+  "newLiteral": 12,
+  "regressions": [
+    {
+      "lang": "fr",
+      "id": "wipro-iii-ventcheck-wiederueberwachung-5s-08",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": true
+    }
+  ],
+  "cases": [
+    {
+      "lang": "de",
+      "id": "wipro-iii-keine-bewegungsmelder-01",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "safe-lock-platine-braucht-safelock-02",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "safe-lock-platine-kein-standalone-03",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "wipro-iii-scharf-fahrzeugschluessel-tueren-zu-04",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "wipro-iii-ventcheck-vor-scharf-05",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "wipro-iii-panik-beide-tasten-06",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "wipro-iii-zubehoer-batterie-cr2032-07",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 2,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "wipro-iii-ventcheck-wiederueberwachung-5s-08",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 3,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "gas-connect-voraussetzung-wipro-09",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "gas-connect-negation-co-10",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "gas-plug-standalone-11",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "gas-plug-negation-externer-sensor-12",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "co-sensor-voraussetzung-software-104i-13",
+      "old": {
+        "rank": 3,
+        "literal": false
+      },
+      "now": {
+        "rank": 3,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "co-sensor-kompatibilitaet-aderendhuelsen-14",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "gas-pro-iii-negation-feuerzeugtest-15",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "gas-pro-iii-co-montage-deckennah-16",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "tsa-standalone-17",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "tsa-keine-gaswarnung-18",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "tsa-batterie-nicht-wechselbar-19",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "magnetkontakt-led-ausrichtung-20",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "magnetkontakt-canbus-tueren-21",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "handsender-nur-wipro-22",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "nfc-modul-nicht-erstes-zubehoer-23",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "sirenen-hupe-pin9-24",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 2,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "pro-finder-standalone-25",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 2,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "pro-finder-sim-format-26",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "mobilfunk-5g-only-27",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "bt-connect-leere-batterie-28",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "pro-finder-kill-voraussetzung-29",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "pro-finder-positionen-tracking-30",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "bt-connect-koppelbare-geraete-31",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "abschalteinrichtung-kill-vs-a-an-negation-32",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "abschalteinrichtung-schaltstrom-mehrpolig-33",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "anlernvorgang-werkseitig-kein-zubehoer-34",
+      "old": {
+        "rank": 3,
+        "literal": false
+      },
+      "now": {
+        "rank": 3,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "anlernvorgang-easyadd2-can-kein-loeschen-35",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "anlernvorgang-batterie-cr2032-duracell-36",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "anlernvorgang-batteriewechsel-kein-neuanlernen-37",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "seriennummern-profinder-nano-sim-ab-0699-045-38",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 2,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "seriennummern-wassermelder-mindeststand-0823-021-39",
+      "old": {
+        "rank": null,
+        "literal": false
+      },
+      "now": {
+        "rank": null,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "tech-doku-funkfrequenz-868-vs-nfc-40",
+      "old": {
+        "rank": null,
+        "literal": false
+      },
+      "now": {
+        "rank": null,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "de",
+      "id": "tech-doku-ece-r10-nicht-vermischen-41",
+      "old": {
+        "rank": null,
+        "literal": false
+      },
+      "now": {
+        "rank": null,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "wipro-iii-keine-bewegungsmelder-01",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "safe-lock-platine-braucht-safelock-02",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "safe-lock-platine-kein-standalone-03",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "wipro-iii-scharf-fahrzeugschluessel-tueren-zu-04",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "wipro-iii-ventcheck-vor-scharf-05",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "wipro-iii-panik-beide-tasten-06",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "wipro-iii-zubehoer-batterie-cr2032-07",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "wipro-iii-ventcheck-wiederueberwachung-5s-08",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": true
+    },
+    {
+      "lang": "fr",
+      "id": "gas-connect-voraussetzung-wipro-09",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "gas-connect-negation-co-10",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "gas-plug-standalone-11",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "gas-plug-negation-externer-sensor-12",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "co-sensor-voraussetzung-software-104i-13",
+      "old": {
+        "rank": 3,
+        "literal": true
+      },
+      "now": {
+        "rank": 3,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "co-sensor-kompatibilitaet-aderendhuelsen-14",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "gas-pro-iii-negation-feuerzeugtest-15",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "gas-pro-iii-co-montage-deckennah-16",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-standalone-17",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-keine-gaswarnung-18",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "tsa-batterie-nicht-wechselbar-19",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "magnetkontakt-led-ausrichtung-20",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "magnetkontakt-canbus-tueren-21",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "handsender-nur-wipro-22",
+      "old": {
+        "rank": 3,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-modul-nicht-erstes-zubehoer-23",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "sirenen-hupe-pin9-24",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 2,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "pro-finder-standalone-25",
+      "old": {
+        "rank": 5,
+        "literal": false
+      },
+      "now": {
+        "rank": 5,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "pro-finder-sim-format-26",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "mobilfunk-5g-only-27",
+      "old": {
+        "rank": 1,
+        "literal": true
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "bt-connect-leere-batterie-28",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "pro-finder-kill-voraussetzung-29",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "pro-finder-positionen-tracking-30",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "bt-connect-koppelbare-geraete-31",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "abschalteinrichtung-kill-vs-a-an-negation-32",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "abschalteinrichtung-schaltstrom-mehrpolig-33",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "anlernvorgang-werkseitig-kein-zubehoer-34",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 2,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "anlernvorgang-easyadd2-can-kein-loeschen-35",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "anlernvorgang-batterie-cr2032-duracell-36",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "anlernvorgang-batteriewechsel-kein-neuanlernen-37",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": true
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "seriennummern-profinder-nano-sim-ab-0699-045-38",
+      "old": {
+        "rank": 2,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "seriennummern-wassermelder-mindeststand-0823-021-39",
+      "old": {
+        "rank": 5,
+        "literal": false
+      },
+      "now": {
+        "rank": 5,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "tech-doku-funkfrequenz-868-vs-nfc-40",
+      "old": {
+        "rank": null,
+        "literal": false
+      },
+      "now": {
+        "rank": null,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    },
+    {
+      "lang": "fr",
+      "id": "tech-doku-ece-r10-nicht-vermischen-41",
+      "old": {
+        "rank": 1,
+        "literal": false
+      },
+      "now": {
+        "rank": 1,
+        "literal": false
+      },
+      "routeLost": false,
+      "literalLost": false
+    }
+  ],
+  "reviewedRegressions": [
+    {
+      "lang": "fr",
+      "id": "wipro-iii-ventcheck-wiederueberwachung-5s-08",
+      "assessment": "Wortlaut geändert; Mindestwartezeit 5 Sekunden und erneute Alarmauslösung weiterhin im Kontext. Bestätigt durch neuen Fall fr/vent-check. Kein als behoben gezählter Live-Antwortfehler."
+    }
+  ]
+}

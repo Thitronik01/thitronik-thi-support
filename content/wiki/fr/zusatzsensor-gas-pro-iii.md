@@ -1,18 +1,17 @@
 ---
 title: Capteur additionnel G.A.S.-pro III — capteur de gaz externe
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/zusatzsensor_gas-pro_iii_de_en_fr.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii-kurzanleitung-de_en_fr.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf
-  - 'https://www.thitronik.de/recall/'
-  - sources/zusatzsensor_gas-pro_iii_de_en_fr.pdf
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/Fragen zu Zusatzsensor für G.A.S.-pro III.pdf
-updated: '2026-07-17'
+  - "content/quellen/gas-pro-iii-kurz-rev1.3.pdf"
+  - "content/quellen/gas-pro-iii-co-kurz-rev1.3.pdf"
+  - "content/quellen/gas-zusatzsensor-iii-anleitung.pdf"
+  - "content/quellen/gas-zusatzsensor-iii-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/zusatzsensor_gas-pro_iii_de_en_fr.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii-kurzanleitung-de_en_fr.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf"
+  - "https://www.thitronik.de/recall/"
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/zusatzsensor-gas-pro-iii.md
@@ -93,9 +92,13 @@ L’étendue de livraison documentée comprend :
 - les vis ou le matériel de montage
 - les instructions de montage
 
-Selon la page produit actuelle, la tête de capteur est enfichable et donc remplaçable. Utiliser exclusivement des pièces de rechange homologuées et ne pas assimiler ce remplacement à une réparation de l’élément sensible.
+Les originaux examinés ne justifient pas l’affirmation d’une tête de capteur enfichable. Ne pas présenter un remplacement comme une réparation par simple branchement autorisée ; vérifier la pièce et la procédure avec THITRONIK.
 
 ## Divergences entre les sources
+
+### Capteur supplémentaire 101289 : hauteur de pose au-dessus du sol
+
+**Divergences de hauteur : 10–30 cm** au-dessus du sol dans la notice propre au capteur supplémentaire **101289** ; **10–20 cm** dans le guide de l’unité principale G.A.S.-pro III. La plage 10–20 cm est retenue ici par prudence, sans résoudre la contradiction ni valider chaque installation. Faire confirmer une pose au-delà de 20 cm pour la combinaison précise. Sources : [SZ, PDF 2–3](../../quellen/gas-zusatzsensor-iii-anleitung.pdf#page=2), [K, PDF 2](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=2).
 
 | Sujet | Instructions du capteur additionnel ou page produit | Guide rapide G.A.S.-pro III actuel | Valeur utilisée dans cet article |
 |---|---|---|---|
@@ -104,6 +107,10 @@ Selon la page produit actuelle, la tête de capteur est enfichable et donc rempl
 | Distance par rapport à la batterie et à la cellule humide | renvoie aux documents de l’appareil principal | au moins 1 m | au moins 1 m |
 
 Le guide rapide G.A.S.-pro III actuel est prioritaire pour le montage du système concret. N’utiliser une hauteur supérieure à 20 cm ou une longueur totale de câble supérieure à 7 m que si THITRONIK les confirme pour la combinaison précise d’appareil et de capteur. Une **longueur totale de 7 m** ne signifie pas une rallonge de 7 m ajoutée au câble d’origine de 2 m.
+
+Source : [SZ, PDF 2–3](../../quellen/gas-zusatzsensor-iii-anleitung.pdf#page=2).
+
+Source : [K, PDF 2](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=2).
 
 ## Planification du montage
 
@@ -153,6 +160,8 @@ Les règles suivantes de l’appareil principal s’appliquent aussi aux bornes 
 
 Ne pas transposer les couleurs de fils d’autres générations G.A.S.-pro ou de capteurs différents. Ne déplacer aucun fil sous tension et ne pas court-circuiter `SEN+`, `SEN−` ou `SENSIG` à titre d’essai.
 
+Source : [SZ, PDF 2–3](../../quellen/gas-zusatzsensor-iii-anleitung.pdf#page=2). Affectation propre à ce modèle : vert SENSIG, blanc SEN−, brun SEN+.
+
 ## Rallonge du câble
 
 Le câble de raccordement d’origine mesure 2 m. Pour la documentation et la validation de cet article, une **longueur totale maximale de 7 m** est retenue par prudence, câble d’origine compris.
@@ -167,6 +176,8 @@ Pour une rallonge réalisée dans les règles de l’art :
 - documenter la longueur totale et les points de jonction pour l’assistance
 
 La page produit indique une longueur allant jusqu’à 8 m. Ne pas considérer tacitement cette valeur supérieure comme une autorisation pour toute version d’appareil et toute situation de montage ; en cas de doute, demander confirmation à THITRONIK avant la rallonge.
+
+Source : [QZ, PDF 2](../../quellen/gas-zusatzsensor-iii-faq.pdf#page=2).
 
 ## Interaction avec l’appareil principal et voies d’alarme
 
@@ -195,6 +206,8 @@ La pause et `IGN` peuvent supprimer les messages sonores, radio et de sortie du 
 
 Le guide rapide G.A.S.-pro III ne prévoit aucun test de fonctionnement par l’utilisateur avec du gaz de briquet ou un autre gaz d’essai. Le système possède un autotest automatique du capteur. Ne faire réaliser un contrôle professionnel plus poussé que selon une procédure du fabricant expressément homologuée pour cette combinaison d’appareils.
 
+Divergence sur le test : la FAQ générale du capteur supplémentaire [QZ, PDF 2](../../quellen/gas-zusatzsensor-iii-faq.pdf#page=2) recommande un briquet ; les guides G.A.S.-pro III [K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1) / [KCO, PDF 1](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=1) excluent un test sur place au gaz en raison de l’algorithme. Ne pas recommander de test au briquet pour cette combinaison III. La procédure de l’ancienne G.A.S.-pro n’est pas transférable.
+
 ## Conduite à tenir en cas d’alarme gaz
 
 1. Prendre l’alarme au sérieux et faire immédiatement sortir toutes les personnes et tous les animaux.
@@ -220,6 +233,8 @@ La page de rappel THITRONIK actuelle ne concerne qu’une combinaison clairement
 | mesure | mise à jour logicielle gratuite par THITRONIK |
 
 Pour une combinaison concernée, photographier l’arrière complet de l’appareil principal avec le numéro de série lisible et enregistrer l’appareil sur la page officielle de rappel. Ne pas débrancher soi-même les câbles et attendre la réponse de THITRONIK avant toute dépose supplémentaire. Ne pas classer d’autres variantes d’appareils principaux ou numéros de série comme concernés uniquement en raison de désignations similaires.
+
+[Page officielle du rappel](https://www.thitronik.de/recall/) vérifiée le **01/10/2026**. La vérification du rappel et la mise à jour du fabricant ne valent pas validation complète de cette base de connaissances.
 
 ## Dépannage sûr
 

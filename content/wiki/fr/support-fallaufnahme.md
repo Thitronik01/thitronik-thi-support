@@ -3,13 +3,13 @@ title: >-
   Saisie d’un dossier d’assistance — informations obligatoires et contrôle avant
   escalade
 sources:
-  - sources/Support Fragen.csv
-  - wiki/seriennummern-softwarestaende.md
-  - wiki/stoerungsbeseitigung.md
-  - wiki/fahrzeugkompatibilitaet.md
-  - wiki/zugang-bedienung.md
-  - wiki/app-befehle.md
-  - wiki/abschalteinrichtung.md
+  - "sources/Support Fragen.csv"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/zugang-bedienung.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/abschalteinrichtung.md"
 updated: '2026-07-15'
 confidence: high
 lang: fr

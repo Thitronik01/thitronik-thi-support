@@ -1,13 +1,13 @@
 ---
 title: Boucle de câble radio 868 — sécurité externe pour marchandises mobiles
 sources:
-  - sources/funk-kabelschleife_868_schwarz.pdf
-  - sources/funk-kabelschleife_868_weiss.pdf
-  - sources/funk-kabelschleife_868_xl_schwarz.pdf
-  - sources/funk-kabelschleife_868_xl_weiss.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Fragen zu Funk-Kabelschleife 868.pdf
-updated: '2026-07-18'
+  - "content/quellen/funk-kabelschleife-101068-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-100761-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-xl-101074-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-xl-100944-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/funk-kabelschleife.md
@@ -42,6 +42,8 @@ WiPro III peut mémoriser au maximum **100 émetteurs radio** au total. Les bouc
 ---
 
 ## Variantes
+
+### Boucle de câble radio standard et XL : longueur, couleur et référence
 
 La version standard possède un câble de **2,5 m**, tandis que la version XL possède un câble de **5 m**. Les deux longueurs sont disponibles en noir et en blanc.
 
@@ -115,6 +117,8 @@ Un support supplémentaire est disponible sous la **réf. 100649**. Il permet d�
 
 ## Utilisation
 
+Le retrait de la boucle de câble du support ne provoque une alarme que si le système est armé, l’émetteur mémorisé et la liaison radio établie.
+
 1. Faire passer le câble à travers ou autour de l’objet à protéger.
 2. Faire passer l’unité électronique dans la boucle située à l’extrémité du câble afin de former une boucle de câble fermée.
 3. Insérer complètement l’unité électronique dans le support installé.
@@ -132,6 +136,8 @@ Avant de retirer l’unité électronique, désarmer le système d’alarme. Sin
 L’unité électronique utilise une **pile bouton CR2032 de 3 V**. Sa durée de vie habituelle est d’environ deux ans ; les périodes de froid prolongées peuvent la réduire.
 
 ### Signal de pile faible
+
+**État des sources du signal de pile faible :** la FAQ des accessoires indique 2 secondes, la notice WiPro 5 secondes. L’attribution aux versions matérielles/logicielles reste non résolue. Contrôler le dernier émetteur déclenché, sa LED et sa CR2032 ; la durée seule ne permet pas de conclure à une panne. Voir [[WiPro III — système d'alarme radio pour véhicules de loisirs|WiPro III]].
 
 Lorsque la tension de la pile descend sous environ **2,6 V**, WiPro le signale de la manière suivante après le déclenchement de la boucle de câble radio :
 
@@ -173,25 +179,25 @@ Si un problème de portée ou d’alarme ne peut pas être résolu, documenter p
 
 ## Questions fréquentes (FAQ)
 
-**Quelle est la différence entre les versions standard et XL ?**  
+### Quelle est la différence entre les versions standard et XL ?
 La version standard possède un câble de 2,5 m, tandis que la version XL possède un câble de 5 m. Les deux longueurs sont disponibles en noir et en blanc ; l’unité électronique et les caractéristiques techniques sont identiques.
 
-**Puis-je utiliser plusieurs boucles de câble radio ?**  
+### Puis-je utiliser plusieurs boucles de câble radio ?
 Oui. WiPro III ne peut toutefois mémoriser que 100 émetteurs radio au total. Les autres composants radio mémorisés sont également comptabilisés dans cette limite.
 
-**Puis-je utiliser une même boucle de câble radio à plusieurs emplacements ?**  
+### Puis-je utiliser une même boucle de câble radio à plusieurs emplacements ?
 Oui. Des supports supplémentaires, réf. 100649, permettent d’utiliser la même unité électronique à différents emplacements. La liaison radio doit être testée à chaque emplacement de montage.
 
-**Puis-je utiliser d’autres vis que celles fournies ?**  
+### Puis-je utiliser d’autres vis que celles fournies ?
 Non. Le fabricant prescrit les vis en acier inoxydable fournies, car des vis fabriquées dans d’autres matériaux peuvent nuire au fonctionnement.
 
-**La boucle de câble radio remplace-t-elle un antivol de vélo ou un cadenas ?**  
+### La boucle de câble radio remplace-t-elle un antivol de vélo ou un cadenas ?
 Non. Elle signale les manipulations au système d’alarme, mais n’empêche pas physiquement l’enlèvement d’un objet. Pour les objets de valeur, il est recommandé de l’associer à un antivol adapté.
 
-**La boucle de câble radio 868 est-elle compatible avec les anciens systèmes 433 MHz ?**  
+### La boucle de câble radio 868 est-elle compatible avec les anciens systèmes 433 MHz ?
 Non. Les accessoires radio 868 MHz actuels ne sont pas prévus pour les anciens systèmes WiPro « all in one » fonctionnant à 433 MHz.
 
-**Faut-il mémoriser de nouveau la boucle de câble radio après le remplacement de la pile ?**  
+### Faut-il mémoriser de nouveau la boucle de câble radio après le remplacement de la pile ?
 Non. Après le remplacement, contrôler la polarité, le joint, l’assemblage du boîtier, le fonctionnement et la portée.
 
 ---
@@ -212,3 +218,11 @@ Ne pas jeter l’appareil ni les piles usagées avec les ordures ménagères. D�
 - [[Émetteur radio 868 — télécommande pour WiPro III|Télécommande radio 868]]
 - [[Vue d’ensemble du système — gamme de produits THITRONIK|Vue d’ensemble du système]]
 - [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]]
+
+---
+
+## Vérification des sources et versions documentaires
+
+Comparaison documentaire du 01.10.2026, pages physiques des PDF : [L1, PDF 4](../../quellen/funk-kabelschleife-101068-rev1.1.pdf#page=4), [L2, PDF 4](../../quellen/funk-kabelschleife-100761-rev1.1.pdf#page=4), [L3, PDF 4](../../quellen/funk-kabelschleife-xl-101074-rev1.1.pdf#page=4), [L4, PDF 4](../../quellen/funk-kabelschleife-xl-100944-rev1.1.pdf#page=4), [QL, PDF 2](../../quellen/funk-kabelschleife-faq.pdf#page=2).
+
+Les confirmations et divergences sont consignées dans le [rapport de vérification](../../../docs/quellenpruefung/2026-10-01-funk.md).

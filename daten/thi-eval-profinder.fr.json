@@ -1,0 +1,620 @@
+{
+  "_hinweis": "Dokumentbasierte DE/FR-Fälle. Lokaler Retrieval-/Kontexttest, kein Live-Modelltest. Quellenkennungen und physische PDF-Seiten im Pro-Finder-Prüfbericht.",
+  "cases": [
+    {
+      "id": "sim-lte",
+      "question": "Pro-Finder 0699-045 : la SIM doit-elle permettre les données mobiles et quel réglage PIN utiliser ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "données mobiles",
+        "PIN complètement désactivée"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "données mobiles; PIN complètement désactivée",
+      "source": "P1 13/62; K1 1; Q 1–2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "sim-lte",
+      "kontext_muss": [
+        "données mobiles",
+        "PIN complètement désactivée"
+      ]
+    },
+    {
+      "id": "sim-alt",
+      "question": "Pro-Finder 0699-008 à 0699-044 : quel format SIM et quelle règle PIN ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "Micro-SIM",
+        "0000",
+        "demande activée"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Micro-SIM; 0000; demande activée",
+      "source": "P0 8/43; K0 1; Q 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "sim-alt",
+      "kontext_muss": [
+        "Micro-SIM",
+        "0000",
+        "demande activée"
+      ]
+    },
+    {
+      "id": "multisim",
+      "question": "Pro-Finder : une Multi-SIM avec numéro partagé est-elle prise en charge ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/mobilfunk-sim"
+      ],
+      "antwort_muss": [
+        "Multi-SIM non prise en charge",
+        "numéro propre"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Multi-SIM non prise en charge; numéro propre",
+      "source": "Q 1; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "multisim",
+      "kontext_muss": [
+        "Multi-SIM non prise en charge",
+        "numéro propre"
+      ]
+    },
+    {
+      "id": "guthaben-lte",
+      "question": "Pro-Finder à partir du SN -045 : comment consulter le crédit prépayé ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/mobilfunk-sim",
+        "/fr/app-befehle"
+      ],
+      "antwort_muss": [
+        "jusqu’au SN -044",
+        "pas de consultation du crédit",
+        "portail"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "jusqu’au SN -044; pas de consultation du crédit; portail",
+      "source": "Q 4; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "guthaben-lte",
+      "kontext_muss": [
+        "jusqu’au SN -044",
+        "pas de consultation du crédit",
+        "portail"
+      ]
+    },
+    {
+      "id": "programmierung",
+      "question": "Pro-Finder : que signifient +, - et S dans le SMS de programmation ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "autorisé",
+        "droit de commande",
+        "lien cartographique",
+        "sans espaces"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "autorisé; droit de commande; lien cartographique; sans espaces",
+      "source": "P1 15–16/65–66; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "programmierung",
+      "kontext_muss": [
+        "autorisé",
+        "droit de commande",
+        "lien cartographique",
+        "sans espaces"
+      ],
+      "kontext_exakt": [
+        "+S491511142338-491736660456"
+      ]
+    },
+    {
+      "id": "master-ersetzt",
+      "question": "Pro-Finder : un nouveau SMS du maître ajoute-t-il un destinataire ou remplace-t-il la liste ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "remplace toute la liste",
+        "10 numéros"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "remplace toute la liste; 10 numéros",
+      "source": "P0 9–11/44–46; P1 15–17/65–67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "master-ersetzt",
+      "kontext_muss": [
+        "remplace toute la liste",
+        "10 numéros"
+      ]
+    },
+    {
+      "id": "e-loeschen",
+      "question": "Pro-Finder : que supprime la position E et faut-il laisser la SIM dans l’appareil ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "tous les numéros",
+        "numéro maître",
+        "laisser la SIM",
+        "mode initial"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "tous les numéros; numéro maître; laisser la SIM; mode initial",
+      "source": "P0 11/46; P1 17/67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "e-loeschen",
+      "kontext_muss": [
+        "tous les numéros",
+        "numéro maître",
+        "laisser la SIM",
+        "mode initial"
+      ]
+    },
+    {
+      "id": "geo-modern",
+      "question": "Pro-Finder à partir de 0699-045 : le rayon du geofencing est-il de 500 ou 900 mètres ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "900 mètres",
+        "OCR",
+        "rév. 1.3"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "900 mètres; OCR; rév. 1.3",
+      "source": "P1 19,21/70,72; OCR-Seite 20 liest 500 statt 900 auf Originalseite 19; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-modern",
+      "kontext_muss": [
+        "900 mètres",
+        "OCR",
+        "rév. 1.3"
+      ]
+    },
+    {
+      "id": "geo-alt-konflikt",
+      "question": "Pro-Finder rév. 2.6 : pourquoi le geofencing indique-t-il 1 km et 1,5 km ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "1 km",
+        "1,5 km",
+        "contradiction documentaire",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1 km; 1,5 km; contradiction documentaire; THITRONIK",
+      "source": "P0 12,15/47,50; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-alt-konflikt",
+      "kontext_muss": [
+        "1 km",
+        "1,5 km",
+        "contradiction documentaire",
+        "THITRONIK"
+      ]
+    },
+    {
+      "id": "geo-pin",
+      "question": "Pro-Finder : comment fonctionne le geofencing par broche 3 en modes 8 et B ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "mode 8, plus de 6 V active",
+        "mode B, plus de 6 V désactive"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "mode 8, plus de 6 V active; mode B, plus de 6 V désactive",
+      "source": "P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-pin",
+      "kontext_muss": [
+        "mode 8, plus de 6 V active",
+        "mode B, plus de 6 V désactive"
+      ]
+    },
+    {
+      "id": "geo-reset",
+      "question": "Pro-Finder configuré en français : comment changer le point de référence du geofencing ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "desactiver le gardiennage",
+        "activer le gardiennage"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "desactiver le gardiennage; activer le gardiennage",
+      "source": "P1 21/72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-reset",
+      "kontext_muss": [
+        "desactiver le gardiennage",
+        "activer le gardiennage"
+      ]
+    },
+    {
+      "id": "gps-utc",
+      "question": "Pro-Finder sans réception GPS : combien de temps attend-il et à quelle position correspond UTC ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "10 minutes",
+        "dernière position valide",
+        "UTC correspond à la dernière position reçue"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "10 minutes; dernière position valide; UTC correspond à la dernière position reçue",
+      "source": "P0 17/52; P1 24/75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "gps-utc",
+      "kontext_muss": [
+        "10 minutes",
+        "dernière position valide",
+        "UTC correspond à la dernière position reçue"
+      ]
+    },
+    {
+      "id": "gps-standby",
+      "question": "Pro-Finder GPS Standby : est-ce une panne ou le GPS est-il automatiquement réactivé ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "veille du récepteur",
+        "automatiquement réactivé",
+        "âge"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "veille du récepteur; automatiquement réactivé; âge",
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "gps-standby",
+      "kontext_muss": [
+        "veille du récepteur",
+        "automatiquement réactivé",
+        "âge"
+      ]
+    },
+    {
+      "id": "led-f-rot",
+      "question": "Pro-Finder position F : LED rouge fixe. Est-ce une SIM défectueuse ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "GPS non connecté",
+        "fonctionnement normal",
+        "SIM absente/défectueuse"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "GPS non connecté; fonctionnement normal; SIM absente/défectueuse",
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "led-f-rot",
+      "kontext_muss": [
+        "GPS non connecté",
+        "fonctionnement normal",
+        "SIM absente/défectueuse"
+      ]
+    },
+    {
+      "id": "led-f-gelb",
+      "question": "Pro-Finder diagnostic GPS F : que signifient jaune clignotant et vert fixe ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "données GPS sans position valide",
+        "position GPS correcte",
+        "mode initial"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "données GPS sans position valide; position GPS correcte; mode initial",
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "led-f-gelb",
+      "kontext_muss": [
+        "données GPS sans position valide",
+        "position GPS correcte",
+        "mode initial"
+      ]
+    },
+    {
+      "id": "led-gelb",
+      "question": "Pro-Finder LED jaune clignotante : différence avant et à partir de 0699-045 ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "mémoire des numéros destinataires vide",
+        "dernier SMS n’a pas pu être envoyé"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "mémoire des numéros destinataires vide; dernier SMS n’a pas pu être envoyé",
+      "source": "K0 2; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "led-gelb",
+      "kontext_muss": [
+        "mémoire des numéros destinataires vide",
+        "dernier SMS n’a pas pu être envoyé"
+      ]
+    },
+    {
+      "id": "gps-init",
+      "question": "Pro-Finder antenne GPS externe : les 13,5 V sont-ils requis en permanence ou pour l’initialisation ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "cinq minutes",
+        "au-dessus de 13,5 V",
+        "initialisation",
+        "pas d’une tension minimale universelle"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "cinq minutes; au-dessus de 13,5 V; initialisation; pas d’une tension minimale universelle",
+      "source": "P0 6–7/41–42; P1 11–12/60–61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "gps-init",
+      "kontext_muss": [
+        "cinq minutes",
+        "au-dessus de 13,5 V",
+        "initialisation",
+        "pas d’une tension minimale universelle"
+      ]
+    },
+    {
+      "id": "unterspannung",
+      "question": "Pro-Finder sous-tension : l’avertissement s’applique-t-il en mode B et quand revient-il au fonctionnement normal ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/stromversorgung-standzeiten"
+      ],
+      "antwort_muss": [
+        "mode B de l’avertissement",
+        "durablement inférieure à 11,2 V",
+        "au-dessus de 12,5 V"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "mode B de l’avertissement; durablement inférieure à 11,2 V; au-dessus de 12,5 V",
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "unterspannung",
+      "kontext_muss": [
+        "mode B de l’avertissement",
+        "durablement inférieure à 11,2 V",
+        "au-dessus de 12,5 V"
+      ]
+    },
+    {
+      "id": "u2-u5",
+      "question": "Pro-Finder à partir de 0699-045 : possède-t-il les entrées U2 à U5 et quelle plage de mesure ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "U2–U5 également à partir de -045",
+        "0–30 V"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "U2–U5 également à partir de -045; 0–30 V",
+      "source": "P1 8,11/56,59; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "u2-u5",
+      "kontext_muss": [
+        "U2–U5 également à partir de -045",
+        "0–30 V"
+      ]
+    },
+    {
+      "id": "pin-fehler",
+      "question": "Pro-Finder rév. 1.3 FR : la broche 1 est-elle positive ou à la masse ? La notice se contredit.",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "broche 1 à la masse",
+        "broche 8 au positif",
+        "Erreur de source"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "broche 1 à la masse; broche 8 au positif; Erreur de source",
+      "source": "P1 8,11/56,59; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "pin-fehler",
+      "kontext_muss": [
+        "broche 1 à la masse",
+        "broche 8 au positif",
+        "Erreur de source"
+      ]
+    },
+    {
+      "id": "strom",
+      "question": "Pro-Finder : quelle consommation indique la rév. 1.3 en fonctionnement normal et en recherche réseau ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/stromversorgung-standzeiten"
+      ],
+      "antwort_muss": [
+        "16–21 mA",
+        "37 mA"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "16–21 mA; 37 mA",
+      "source": "P1 25/76; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "strom",
+      "kontext_muss": [
+        "16–21 mA",
+        "37 mA"
+      ]
+    },
+    {
+      "id": "anruf-zwei",
+      "question": "Pro-Finder modes 2 et 3 : peut-on appeler sans changer l’armement de la WiPro ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "armée et désarmée",
+        "pas une simple interrogation"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "armée et désarmée; pas une simple interrogation",
+      "source": "P0 14/49; P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "anruf-zwei",
+      "kontext_muss": [
+        "armée et désarmée",
+        "pas une simple interrogation"
+      ]
+    },
+    {
+      "id": "modus-neun",
+      "question": "Pro-Finder mode 9 : les tensions sont-elles identiques dans les rév. 2.6 et 1.3 ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "mode 9, U1–U5",
+        "rév. 2.6",
+        "aucune tension"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "mode 9, U1–U5; rév. 2.6; aucune tension",
+      "source": "P0 5/40; P1 10/58; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "modus-neun",
+      "kontext_muss": [
+        "mode 9, U1–U5",
+        "rév. 2.6",
+        "aucune tension"
+      ]
+    },
+    {
+      "id": "fr-status",
+      "question": "Pro-Finder français à partir de -045 : statut ou rapport d etat ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/app-befehle"
+      ],
+      "antwort_muss": [
+        "statut",
+        "rapport d etat",
+        "rév. 1.3"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "statut; rapport d etat; rév. 1.3",
+      "source": "C 1; P1 71,73; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "fr-status",
+      "kontext_muss": [
+        "statut",
+        "rapport d etat",
+        "rév. 1.3"
+      ]
+    },
+    {
+      "id": "fr-anlernen",
+      "question": "Pro-Finder français rév. 1.3 : quels SMS activent et désactivent le mode d’appairage ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/app-befehle"
+      ],
+      "antwort_muss": [
+        "activer le mode d appairage",
+        "desactiver le mode d appairage"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "activer le mode d appairage; desactiver le mode d appairage",
+      "source": "P1 75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "fr-anlernen",
+      "kontext_muss": [
+        "activer le mode d appairage",
+        "desactiver le mode d appairage"
+      ]
+    },
+    {
+      "id": "fr-sortie",
+      "question": "Pro-Finder français rév. 1.3 : quelles commandes pour la sortie A active, inactive et impulsion ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/app-befehle"
+      ],
+      "antwort_muss": [
+        "activer la sortie A",
+        "desactiver la sortie A",
+        "sortie A impulsion"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "activer la sortie A; desactiver la sortie A; sortie A impulsion",
+      "source": "P1 74; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "fr-sortie",
+      "kontext_muss": [
+        "activer la sortie A",
+        "desactiver la sortie A",
+        "sortie A impulsion"
+      ]
+    },
+    {
+      "id": "kill",
+      "question": "Pro-Finder immobilisation : peut-on utiliser a an au lieu de kill et quand la sortie A est-elle activée ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/app-befehle",
+        "/fr/abschalteinrichtung"
+      ],
+      "antwort_muss": [
+        "kill",
+        "5 secondes",
+        "0 km/h",
+        "a an"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "kill; 5 secondes; 0 km/h; a an",
+      "source": "S1 2; S2 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "kill",
+      "kontext_muss": [
+        "kill",
+        "5 secondes",
+        "0 km/h",
+        "a an"
+      ]
+    },
+    {
+      "id": "folge-sms",
+      "question": "Pro-Finder : pourquoi seul le premier destinataire reçoit-il le SMS d’alarme ?",
+      "expected": [
+        "/fr/pro-finder",
+        "/fr/app-befehle",
+        "/fr/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "successivement",
+        "immédiatement"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "successivement; immédiatement",
+      "source": "Q 7; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "folge-sms",
+      "kontext_muss": [
+        "successivement",
+        "immédiatement"
+      ]
+    },
+    {
+      "id": "prepaid-code-zeichen",
+      "question": "Pro-Finder rév. 2.6 : quel exemple avec code de crédit pour une carte prépayée et smartphone ?",
+      "expected": [
+        "/fr/pro-finder"
+      ],
+      "antwort_muss": [
+        "jusqu’au SN -044"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "*100#P+S49…",
+      "source": "P0 10/45; Q 4",
+      "kategorie": "sms-literal",
+      "kontext_muss": [
+        "jusqu’au SN -044"
+      ],
+      "kontext_exakt": [
+        "*100#P+S49…"
+      ]
+    }
+  ]
+}

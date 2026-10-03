@@ -1,9 +1,9 @@
 ---
 title: Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (bis 2006)
 sources:
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii_fiat_ducato_244.pdf'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ducato-244.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -14,6 +14,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in Fiat Ducato 244, Peugeot Boxer und Citroën Jumper bis Baujahr 2006. Die fahrzeugspezifische Anleitung Stand `12/20` verwendet direkte Anschlüsse für Blinker, Fahrerhaustüren, Versorgung und Masse; eine CAN-Verbindung der WiPro ist in diesem Einbauschema nicht vorgesehen.
 
 > **Abgrenzung:** Baujahr, Armaturenbrett, Tachoeinheit, Stecker und Leitungsfarben müssen mit der Anleitung übereinstimmen. Für die nachfolgende X250-Generation gilt [[Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006–2011)|Fiat Ducato X250 2006–2011]].
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ducato 244: ausschließlich `SW6 ON`. Seite 7 schließt die Alarmbedienung mit der Fiat-Fernbedienung aus; die allgemeine Vorprüfung auf Seite 2 behauptet das Gegenteil. Originalschlüssel-Bedienung deshalb nicht zusagen; THITRONIK-Handsender verwenden und Widerspruch klären. Die 60 Sekunden sind die Scharfschaltverzögerung der verdrahteten Kabinentüren; Funkkontakte wirken sofort. Es handelt sich nicht um eine Eintrittsverzögerung.
+
+Belege: [ducato-244, PDF 2](../../../quellen/fahrzeug-ducato-244.pdf#page=2), [ducato-244, PDF 6](../../../quellen/fahrzeug-ducato-244.pdf#page=6), [ducato-244, PDF 7](../../../quellen/fahrzeug-ducato-244.pdf#page=7).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -122,6 +132,8 @@ LED einsetzen und das rot/schwarze LED-Kabel mit weißem Steckverbinder wieder m
 
 ## Abschließende Funktionsprüfung
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 1. Alle Türen schließen und die WiPro mit der Verriegeln-Taste des WiPro-Funk-Handsenders scharfschalten.
 2. Einen Piepton, einmaliges Blinken der Fahrtrichtungsanzeiger und blinkende Status-LED als Scharfschaltbestätigung prüfen.
 3. Mindestens `60 Sekunden` warten; dies ist eine Scharfschaltverzögerung für die Fahrerhaustüren, keine Alarmverzögerung.
@@ -157,11 +169,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 ## Quellenentscheidung
 
-- Das elfseitige fahrzeugspezifische Einbauhandbuch *WiPro III – Fiat Ducato 244*, Stand `12/20`, wurde vollständig textlich geprüft; die für Einbau und Funktion relevanten Seiten 1 bis 7 wurden zusätzlich visuell kontrolliert.
-- Das allgemeine Installationshandbuch Version `1.8` wurde für Sicherheitsregeln und DIP-Grundlagen herangezogen. Seine Fahrzeugtabelle ab Baujahr 2006 ersetzt nicht die spezielle `SW6`-Anweisung für den Ducato 244 bis 2006.
-- Die konkrete Funktionsprüfung auf Seite 7, nach der der Fahrzeugfunkschlüssel nicht zum Aktivieren oder Deaktivieren dient, hat Vorrang vor dem widersprüchlichen allgemeinen Vorprüfungssatz auf Seite 2.
-- Die alte pauschale Aussage „CAN-Bus: nein“ wurde präzisiert: Die WiPro erhält in diesem Schema keinen CAN-Anschluss; einzelne Türen oder Klappen können fahrzeugseitig dennoch elektronisch erfasst sein.
-- Die bisherige pauschale Anweisung, blaue Zentralverriegelungsleitungen bei integrierten Fahrzeugen nicht anzuschließen, wurde nicht fortgeführt, weil die Primärquelle sie an Pin 1 und 4 ausdrücklich als Alarmtrigger der Fahrerhaustüren verwendet.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [ducato-244, PDF 2](../../../quellen/fahrzeug-ducato-244.pdf#page=2), [ducato-244, PDF 6](../../../quellen/fahrzeug-ducato-244.pdf#page=6), [ducato-244, PDF 7](../../../quellen/fahrzeug-ducato-244.pdf#page=7).
 
 ## Querverweise
 

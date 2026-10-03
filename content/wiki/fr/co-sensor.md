@@ -1,22 +1,21 @@
 ---
 title: Capteur CO — capteur supplémentaire de monoxyde de carbone
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/CO-Sensor__100433__Overview_DE.md
-  - sources/CO-Sensor__100433__Reference__Software_Seriennummern_DE.md
-  - sources/handbuch_gas-pro_2.5.pdf
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/Seriennummer 0433 CO-Sensor.csv
-  - wiki/gas-pro.md
-  - wiki/gas-pro-iii.md
-  - wiki/stoerungsbeseitigung.md
-updated: '2026-07-16'
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "content/quellen/gas-co-sensor-anleitung.pdf"
+  - "content/quellen/gas-co-sensor-faq.pdf"
+  - "content/quellen/gas-pro-handbuch-rev2.5.pdf"
+  - "https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf"
+  - "sources/CO-Sensor__100433__Overview_DE.md"
+  - "sources/CO-Sensor__100433__Reference__Software_Seriennummern_DE.md"
+  - "sources/Seriennummer 0433 CO-Sensor.csv"
+  - "content/wiki/de/gas-pro.md"
+  - "content/wiki/de/gas-pro-iii.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/co-sensor.md
@@ -61,7 +60,7 @@ Les valeurs techniques du capteur CO externe ne doivent pas être confondues ave
 - Montez le capteur juste en dessous du plafond ; Le dessin d'assemblage indique une distance de **10-30 cm**.
 - Réaliser un trou **Ø 12 mm** et éviter les colles ou mastics inadaptés.
 - Vérifier la date d'expiration **« Exp. Date »** sur le capteur ; Faites remplacer les capteurs périmés.
-- Ne testez jamais le capteur de CO avec du gaz plus léger, du propane ou du butane.
+- Ne testez jamais le capteur de CO avec du gaz de briquet, du propane ou du butane.
 - Effectuer les travaux de raccordement uniquement hors tension.
 
 ---
@@ -83,6 +82,10 @@ Un avertisseur de CO doit être traité comme un danger réel. Les personnes et 
 
 ## Compatibilité des appareils principaux
 
+### Capteur CO : embouts de fil sur G.A.S.-pro et G.A.S.-pro III
+
+Pour raccorder le **capteur CO 100433 à G.A.S.-pro, utiliser des embouts de fil**. Sur **G.A.S.-pro III, ne pas utiliser d’embouts**. Les bornes des deux générations sont différentes ; ne pas généraliser une règle à l’autre. Sources : [SCO, PDF 2–3](../../quellen/gas-co-sensor-anleitung.pdf#page=2).
+
 | Unité principale | Compatibilité | Règle de connexion spéciale |
 |---|---|---|
 | G.A.S.-pro | oui | Utilisez des embouts de fil ; sur `SNO433-003`, vérifier l'état du logiciel |
@@ -94,6 +97,10 @@ Selon le manuel, le G.A.S.-pro peut fonctionner avec jusqu'à trois capteurs. Le
 ---
 
 ## Type de capteur et version du logiciel du G.A.S.-pro
+
+### Capteur CO SNO433-003 : logiciel 1.04i pour ancienne G.A.S.-pro
+
+Le capteur CO SNO433-003 exige au minimum **1.04i** sur l’ancienne G.A.S.-pro. Pour **SN0001-002**, SN0001-001 ou SN40-XXX, envoyer la centrale pour **mise à jour**. À partir de 0001-003, cette version est indiquée comme présente. Ce seuil ne concerne pas les séries de G.A.S.-pro III. Source : [SCO, PDF 2](../../quellen/gas-co-sensor-anleitung.pdf#page=2).
 
 Le type de capteur le plus récent **`SNO433-003`** nécessite au moins le **logiciel 1.04i** sur le G.A.S.-pro :
 
@@ -107,7 +114,7 @@ Le type de capteur le plus récent **`SNO433-003`** nécessite au moins le **log
 
 Les instructions officielles du capteur de CO écrivent **1.04i**. Une notation abrégée `1.4i` ne peut pas être traitée comme une version logicielle distincte ou différente. D'autres limites de produits sont disponibles sous [[Numéros de série et versions logicielles — préfixes, seuils et jalons]].
 
----
+Source : [SCO, PDF 2](../../quellen/gas-co-sensor-anleitung.pdf#page=2). La limite 0001-003 et le logiciel 1.04i concernent l’ancienne G.A.S.-pro, pas la G.A.S.-pro III. SNO433-003 est la désignation du capteur dans cette notice ; vérifier les plaques signalétiques complètes.
 
 ## Contenu de la livraison
 
@@ -134,7 +141,7 @@ Pour une conception conservatrice et spécifique au produit, utilisez **longueur
 
 ## Planifiez l'emplacement d'installation
 
-Le monoxyde de carbone est légèrement plus léger que l'air. Le capteur de CO est donc monté sur une surface verticale **juste en dessous du plafond du véhicule**. Le dessin d'installation du capteur indique une distance de **10-30 cm** par rapport au plafond.
+Selon le dessin de montage propre au produit, le capteur CO se monte sur une surface verticale **juste en dessous du plafond du véhicule**. Le dessin d'installation du capteur indique une distance de **10-30 cm** par rapport au plafond.
 
 - Pensez à surveiller la zone et les lieux de couchage.
 - Tenez compte des séparations spatiales au travers des portes ou des rideaux lors de la planification du système.
@@ -147,7 +154,7 @@ Le monoxyde de carbone est légèrement plus léger que l'air. Le capteur de CO 
 
 La position du capteur de CO proche du plafond ne doit pas être transférée aux capteurs de propane/butane ou de gaz anesthésiques ; ces gaz nécessitent une hauteur de montage différente.
 
----
+Les sources divergent pour le capteur CO externe : [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) demande une pose près du plafond, [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) autorise toute hauteur dans le texte français, et [O, PDF 24](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=24) montre **10–50 cm sous le plafond**. Le dessin propre au capteur CO [SCO, PDF 3](../../quellen/gas-co-sensor-anleitung.pdf#page=3) montre **10–30 cm sous le plafond**. Ne pas autoriser une hauteur arbitraire ; comparer le dessin du capteur et la centrale, puis faire clarifier la divergence par THITRONIK. Les 10–20 cm de l’unité principale G.A.S.-pro III CO ne remplacent pas la consigne de chaque capteur CO externe.
 
 ## Monter le capteur
 
@@ -185,7 +192,7 @@ Les couleurs de câbles historiquement documentées ne servent qu'à titre d'aid
 
 La désignation des bornes et le schéma de raccordement spécifique au produit prévalent sur la couleur du câble. Si les couleurs diffèrent, ne vous connectez pas sur la base de suppositions.
 
----
+Source : [SCO, PDF 2](../../quellen/gas-co-sensor-anleitung.pdf#page=2).
 
 ## Connexion au G.A.S.-pro III
 
@@ -201,7 +208,7 @@ Des règles de terminal différentes s'appliquent au G.A.S.-pro III et à l'anci
 
 La règle de raccordement « pas d'embouts de câble » est expressément spécifique au produit et ne peut pas être transférée au G.A.S.-pro.
 
----
+Source : [SCO, PDF 3](../../quellen/gas-co-sensor-anleitung.pdf#page=3).
 
 ## Mise en service
 
@@ -222,7 +229,7 @@ Un démarrage sans erreur ne remplace pas le contrôle de la date de péremption
 
 | Examen / Événement | Classement sûr |
 |---|---|
-| Test avec du gaz plus léger | inadapté au capteur de CO et ne doit pas être effectué |
+| Test avec du gaz de briquet | inadapté au capteur de CO et ne doit pas être effectué |
 | Test avec du propane ou du butane | inadapté et ne fonctionne pas |
 | Tests avec du monoxyde de carbone | uniquement avec des procédures de test appropriées et contrôlées par du personnel qualifié |
 | Alarme CO sur G.A.S.-pro | Le manuel documente l'activation de la sirène externe pendant 10 secondes |
@@ -230,9 +237,13 @@ Un démarrage sans erreur ne remplace pas le contrôle de la date de péremption
 
 Les instructions de G.A.S.-pro ne nécessitent pas de test séparé du fonctionnement du gaz du briquet pour le capteur de CO, car celui-ci ne réagit qu'au monoxyde de carbone. N'introduisez jamais de gaz d'échappement, de flammes nues ou de combustion incontrôlée dans le véhicule à des fins de test.
 
----
+La réponse générique sur le briquet dans la FAQ CO [QCO, PDF 2](../../quellen/gas-co-sensor-faq.pdf#page=2) ne constitue **pas une procédure de test CO**. Voir la distinction explicite dans [O, PDF 4, 10](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=4).
 
 ## Date d'expiration et remplacement
+
+### Capteur CO : Exp. Date et réinitialisation
+
+Une **réinitialisation ne prolonge pas Exp. Date**. Faire **remplacer** le capteur CO au plus tard à la date mois/année indiquée sur sa plaque ; l’absence de défaut ne prolonge pas sa durée de vie. Source : [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6).
 
 Les capteurs de CO ont une durée de vie limitée. La **« Date d'expiration »** indiquée sur la plaque signalétique est déterminante :
 
@@ -245,7 +256,7 @@ Les capteurs de CO ont une durée de vie limitée. La **« Date d'expiration »*
 
 Une date de péremption dépassée peut affecter la détection fiable du CO. L'absence de message d'erreur ne constitue pas une preuve qu'un capteur périmé fonctionne toujours en toute sécurité.
 
----
+Source : [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6).
 
 ## Sécurité en cas d'alarme
 

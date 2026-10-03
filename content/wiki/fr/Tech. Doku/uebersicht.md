@@ -1,13 +1,13 @@
 ---
 title: Documentation technique — vue d’ensemble et routage rédactionnel
 sources:
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/FAQ_WiPro-III_DE.md
-  - sources/FAQ_WiPro-III-safelock_DE.md
-  - sources/wipro_deutsche_bedienungsanleitung_abschrift.txt
-  - sources/nfc_modul-kurzanleitung.pdf
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-  - sources/Was ist eine Wipro.docx
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "sources/FAQ_WiPro-III_DE.md"
+  - "sources/FAQ_WiPro-III-safelock_DE.md"
+  - "sources/wipro_deutsche_bedienungsanleitung_abschrift.txt"
+  - "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf"
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "sources/Was ist eine Wipro.docx"
 updated: '2026-07-22'
 confidence: high
 lang: fr

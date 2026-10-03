@@ -1,9 +1,10 @@
 ---
 title: 'VW Crafter / MAN TGE (2025+, avec bouton de démarrage)'
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/wipro-iii-safelock/'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_safe.lock.pdf'
-updated: '2026-07-22'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/wipro-iii-safelock/"
+  - "content/quellen/wipro-iii-safelock-kurzanleitung-rev1.3.pdf"
+updated: '2026-10-01'
 confidence: medium
 lang: fr
 translation_of: sources/fahrzeuge/vw-crafter-man-tge-2025.md
@@ -14,6 +15,12 @@ translation_of: sources/fahrzeuge/vw-crafter-man-tge-2025.md
 Cette page concerne le VW Crafter II et le MAN TGE à partir de l'année-modèle 2025 avec bouton de démarrage. La page THITRONIK actuelle confirme le kit WiPro III safe.lock `105458`, mais précise que la WiPro III safe.lock ne peut actuellement pas commander le verrouillage centralisé des véhicules avec bouton de démarrage.
 
 > **Limite de validation :** aucune notice d'installation actuelle propre à cette génération n'est disponible localement. Cette page ne publie donc volontairement ni DIP, ni broche, ni fil véhicule. Obtenir la notice THITRONIK correspondant exactement au véhicule et à l'appareil avant l'installation.
+
+## Limites du véhicule et sources contrôlées
+
+Crafter / MAN TGE avec bouton de démarrage : la FAQ indique l’absence de commande ZV, sans minimum spécifique pour le millésime 2025. La notice datée 07/2025 couvre expressément les véhicules 2017–2024 : date documentaire et millésime sont distincts. Ne pas en déduire `5458-010 / 1.2.1sx` ou `SW3 ON` comme autorisation. La notice originale de la variante à bouton reste manquante.
+
+Sources : [S, PDF 18](../../../quellen/wipro-iii-safelock-faq.pdf#page=18).
 
 ## Vue d'ensemble
 
@@ -68,6 +75,8 @@ Les quatre fichiers DOCX/CSV cités auparavant sont absents du projet et de l'ar
 8. En cas d'absence ou de contradiction, arrêter et contacter THITRONIK ou un revendeur spécialisé.
 
 ## DIP, logiciel et câblage
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 1. Ne pas copier les DIP de la notice 2017–2024.
 2. Ne pas activer `SW3` sur la seule foi de l'ancien wiki.

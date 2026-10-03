@@ -1,13 +1,13 @@
 ---
 title: Funk-Kabelschleife 868 — Außensicherung für mobile Güter
 sources:
-  - sources/funk-kabelschleife_868_schwarz.pdf
-  - sources/funk-kabelschleife_868_weiss.pdf
-  - sources/funk-kabelschleife_868_xl_schwarz.pdf
-  - sources/funk-kabelschleife_868_xl_weiss.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Fragen zu Funk-Kabelschleife 868.pdf
-updated: '2026-07-18'
+  - "content/quellen/funk-kabelschleife-101068-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-100761-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-xl-101074-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-xl-100944-rev1.1.pdf"
+  - "content/quellen/funk-kabelschleife-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -42,6 +42,8 @@ Die WiPro III kann insgesamt höchstens **100 Funksender** speichern. Funk-Kabel
 ---
 
 ## Varianten
+
+### Funk-Kabelschleife Standard und XL: Länge, Farbe und Artikelnummer
 
 Die Standardausführung besitzt ein **2,5 m** langes Kabel, die XL-Ausführung ein **5 m** langes Kabel. Beide Längen sind in Schwarz und Weiß erhältlich.
 
@@ -115,6 +117,8 @@ Ein zusätzlicher Halter ist unter der **Art.-Nr. 100649** erhältlich. Damit l�
 
 ## Verwendung im Betrieb
 
+Das Herausnehmen der Funk-Kabelschleife aus dem Halter führt nur bei scharfgeschalteter Anlage, angelerntem Sender und bestehender Funkverbindung zum Alarm.
+
 1. Kabel durch oder um den zu sichernden Gegenstand führen.
 2. Elektronikeinheit durch die Schlaufe am Kabelende führen, sodass eine geschlossene Kabelschlaufe entsteht.
 3. Elektronikeinheit vollständig in die montierte Halterung einsetzen.
@@ -132,6 +136,8 @@ Zum Entnehmen bei scharfgeschalteter Anlage zuerst die Alarmanlage unscharf scha
 Die Elektronikeinheit verwendet eine **CR2032-Knopfzelle mit 3 V**. Die typische Lebensdauer beträgt etwa zwei Jahre; längere Kälteperioden können sie verkürzen.
 
 ### Niederbatterie-Signal
+
+**Quellenstand zum Batteriewarnton:** Die Zubehör-FAQ nennt 2 Sekunden; die WiPro-Bedienungsanleitung nennt 5 Sekunden. Die Zuordnung zu Geräte-/Softwareständen ist offen. Den zuletzt ausgelösten Sender, seine LED und die CR2032 prüfen; nicht allein aus der Tondauer auf einen Defekt schließen. Siehe [[WiPro III — Funk-Alarmsystem für Freizeitfahrzeuge|WiPro III]].
 
 Bei einer schwachen Batterie von weniger als etwa **2,6 V** zeigt die WiPro nach dem Auslösen der Funk-Kabelschleife folgende Hinweise:
 
@@ -173,25 +179,25 @@ Bei ungeklärten Reichweiten- oder Alarmproblemen vollständige Seriennummern vo
 
 ## Häufige Fragen (FAQ)
 
-**Was ist der Unterschied zwischen Standard und XL?**  
+### Was ist der Unterschied zwischen Standard und XL?
 Die Standardausführung besitzt ein 2,5 m langes Kabel, die XL-Ausführung ein 5 m langes Kabel. Beide Längen gibt es in Schwarz und Weiß; Elektronikeinheit und technische Daten sind identisch.
 
-**Kann ich mehrere Funk-Kabelschleifen verwenden?**  
+### Kann ich mehrere Funk-Kabelschleifen verwenden?
 Ja. Die WiPro III speichert jedoch insgesamt höchstens 100 Funksender. In diese Grenze zählen auch andere angelernte Funk-Komponenten.
 
-**Kann ich eine Funk-Kabelschleife an mehreren Stellen einsetzen?**  
+### Kann ich eine Funk-Kabelschleife an mehreren Stellen einsetzen?
 Ja. Mit zusätzlichen Haltern, Art.-Nr. 100649, kann dieselbe Elektronikeinheit an verschiedenen Stellen verwendet werden. An jedem Montageort muss die Funkverbindung geprüft sein.
 
-**Darf ich andere Schrauben als die beiliegenden verwenden?**  
+### Darf ich andere Schrauben als die beiliegenden verwenden?
 Nein. Laut Hersteller sind die beiliegenden Edelstahlschrauben zu verwenden, weil andere Materialien die Funktion beeinträchtigen können.
 
-**Ersetzt die Funk-Kabelschleife ein Fahrrad- oder Bügelschloss?**  
+### Ersetzt die Funk-Kabelschleife ein Fahrrad- oder Bügelschloss?
 Nein. Sie meldet Manipulationen an die Alarmanlage, verhindert das Wegtragen aber nicht mechanisch. Bei hochwertigen Gegenständen ist die Kombination mit einem geeigneten Schloss sinnvoll.
 
-**Ist die Funk-Kabelschleife 868 mit älteren 433-MHz-Systemen kompatibel?**  
+### Ist die Funk-Kabelschleife 868 mit älteren 433-MHz-Systemen kompatibel?
 Nein. Das aktuelle 868-MHz-Funk-Zubehör ist nicht für ältere WiPro-„all in one“-Systeme mit 433 MHz vorgesehen.
 
-**Muss die Funk-Kabelschleife nach dem Batteriewechsel neu angelernt werden?**  
+### Muss die Funk-Kabelschleife nach dem Batteriewechsel neu angelernt werden?
 Nein. Nach dem Wechsel sind Polung, Dichtung, Gehäusemontage, Funktion und Reichweite zu prüfen.
 
 ---
@@ -212,3 +218,11 @@ Gerät und verbrauchte Batterien nicht über den Hausmüll entsorgen. Knopfzelle
 - [[Funk-Handsender 868 — Fernbedienung für WiPro III|Funk-Handsender 868]]
 - [[Systemüberblick — THITRONIK-Produktwelt|Systemüberblick]]
 - [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbeseitigung]]
+
+---
+
+## Quellenprüfung und Dokumentstand
+
+Dokumentabgleich vom 01.10.2026, physische PDF-Seiten: [L1, PDF 2](../../quellen/funk-kabelschleife-101068-rev1.1.pdf#page=2), [L2, PDF 2](../../quellen/funk-kabelschleife-100761-rev1.1.pdf#page=2), [L3, PDF 2](../../quellen/funk-kabelschleife-xl-101074-rev1.1.pdf#page=2), [L4, PDF 2](../../quellen/funk-kabelschleife-xl-100944-rev1.1.pdf#page=2), [QL, PDF 2](../../quellen/funk-kabelschleife-faq.pdf#page=2).
+
+Bestätigte Angaben und offene Abweichungen sind im [Prüfprotokoll](../../../docs/quellenpruefung/2026-10-01-funk.md).

@@ -1,17 +1,20 @@
 ---
 title: Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System
 sources:
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-  - wiki/wipro-iii.md
-  - wiki/funk-handsender.md
-  - wiki/nfc-modul.md
-  - wiki/bt-connect.md
-  - wiki/vernetzungsmodul.md
-  - wiki/pro-finder.md
-  - wiki/app-befehle.md
-  - wiki/safe-lock-umruestplatine.md
-  - wiki/fahrzeugkompatibilitaet.md
-updated: '2026-07-15'
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/funk-handsender.md"
+  - "content/wiki/de/nfc-modul.md"
+  - "content/wiki/de/bt-connect.md"
+  - "content/wiki/de/vernetzungsmodul.md"
+  - "content/wiki/de/pro-finder.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/safe-lock-umruestplatine.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/quellen/camplock-fingerprint.pdf"
+  - "content/quellen/camplock-vanlock-fingerprint.pdf"
+  - "content/quellen/katalog_thitronik_de.pdf"
+updated: 2026-09-28
 confidence: high
 lang: de
 dealerStatus: approved
@@ -31,7 +34,7 @@ Diese Seite trennt zwischen **Zugangsmedium**, **Lesestelle beziehungsweise Steu
 
 | Ebene | Beispiele | Einordnung |
 |-------|-----------|------------|
-| Fahrzeugseitige Zugangstechnik | CampLock Fingerprint, NFC Modul, BT-connect | Technik oder Lesestelle am Fahrzeug |
+| Fahrzeugseitige Zugangstechnik | CampLock Fingerprint, VanLock Fingerprint, NFC Modul, BT-connect | Technik oder Lesestelle am Fahrzeug |
 | Persönliches Zugangsmedium | Fingerabdruck, Funk-Handsender 868, KeyCard, KeyTag, KeyStrap, Smartphone oder Smartwatch | Medium, mit dem die Person eine Bedienung auslöst |
 | Fernsteuerung | Pro-Finder über Mobilfunk | Fernbedienung, Alarmweiterleitung und Ortung; kein primärer Nahbereichszugang |
 | Fahrzeugseitiger Originalweg | Original-Fahrzeugschlüssel | Bedienung abhängig von Fahrzeugprofil, CAN-Anbindung, WiPro-Variante und Konfiguration |
@@ -43,7 +46,9 @@ Diese Seite trennt zwischen **Zugangsmedium**, **Lesestelle beziehungsweise Steu
 | Element | Typ | Ver-/Entriegeln | Scharf/Unscharf | Reichweite | Voraussetzung | Detailseite |
 |---------|-----|-----------------|-----------------|------------|---------------|-------------|
 | Original-Fahrzeugschlüssel | fahrzeugseitiger Funkweg | fahrzeugseitig | fahrzeugabhängig | Fahrzeug-Funkreichweite | unterstütztes Fahrzeugprofil und korrekte Anbindung; Replay-Schutz nicht aktiv | [[WiPro III]] |
-| CampLock Fingerprint | biometrischer Türzugang | ja | bei Kopplung mit kompatibler WiPro | direkt an der Tür | Hartal-Aufbautür mit Zentralverriegelung | — |
+| CampLock Fingerprint 106111/106144 | biometrischer Türzugang | Hartal-Aufbautür; mit safe.lock auch Gesamtfahrzeug | bei Kopplung | direkt an der Tür | Hartal-Aufbautür mit Zentralverriegelung; WiPro III oder WiPro III safe.lock | [[CampLock Fingerprint]] |
+| CampLock Fingerprint 106111-002/106144-002 | biometrischer Zugang | Gesamtfahrzeug | ja | direkt am Sensor | WiPro III safe.lock laut gemeinsamer Bedienungsanleitung; konkrete Türintegration prüfen | [[CampLock Fingerprint]] |
+| VanLock Fingerprint 106259/106260 | biometrischer Zugang | Gesamtfahrzeug | ja | direkt am Sensor | WiPro III safe.lock laut gemeinsamer Bedienungsanleitung; Katalog nennt zusätzlich WiPro III, daher Geräteunterlagen abgleichen | [[VanLock Fingerprint]] |
 | Funk-Handsender 868 | 868-MHz-Funk | nur mit kompatibler safe.lock-Anbindung | ja | bis 75 m im Freifeld | WiPro III oder WiPro III safe.lock | [[Funk-Handsender]] |
 | NFC Modul | NFC-Lesestelle mit 868-MHz-Verbindung zur WiPro | nur mit kompatibler safe.lock-Anbindung | ja | NFC-Nahbereich am Modul | kompatible Anlage und angelerntes NFC-Medium | [[NFC Modul]] |
 | KeyCard | NFC-Zugangsmedium | über das NFC Modul | über das NFC Modul | ca. 25 mm | NFC Modul erforderlich | — |
@@ -67,20 +72,23 @@ Diese Seite trennt zwischen **Zugangsmedium**, **Lesestelle beziehungsweise Steu
 
 ## 1. CampLock Fingerprint
 
-**Art.-Nr. 106111 (silber) / 106144 (schwarz)**  
-Biometrischer Türzugang für **Hartal-Aufbautüren mit Zentralverriegelung**.
+**Art.-Nr. 106111/106144:** Biometrischer Türzugang für **Hartal-Aufbautüren mit Zentralverriegelung**. Laut eigener Kurzanleitung bedient WiPro III die Aufbautür samt Alarm; WiPro III safe.lock kann zusätzlich das Gesamtfahrzeug bedienen (CampLock-Kurzanleitung, PDF-S. 2).
+
+**Art.-Nr. 106111-002/106144-002:** Die gemeinsame CampLock-/VanLock-Bedienungsanleitung beschreibt die Kopplung ausschließlich mit **WiPro III safe.lock**. Ihre Aussagen dürfen nicht auf die ältere CampLock-Ausführung übertragen werden (gemeinsame Anleitung, PDF-S. 1 und 3).
 
 ### Funktionen und Eigenschaften
 
-- Tür wird per **Fingerabdruck** entriegelt und verriegelt
-- auf Wunsch wird dabei gleichzeitig das THITRONIK-Alarmsystem mitgeführt
-- kompatibel zu **WiPro III** und **WiPro III safe.lock**
-- **2 Master-Finger** und **16 anlernbare Finger**
+- Ver- und Entriegelung sowie Alarmbedienung hängen von der **Artikelnummer und WiPro-Variante** ab.
+- Es sind **bis zu 16 Finger insgesamt** speicherbar; die ersten zwei werden Master-Finger.
 - Schutzklasse **IP67**
 
 ### Einordnung
 
-CampLock Fingerprint sitzt direkt an der Aufbautür. Es ersetzt weder Pro-Finder noch NFC Modul, sondern bildet einen eigenen biometrischen Türzugang.
+Die ältere CampLock-Kurzanleitung beschreibt die Hartal-Aufbautür. Für die -002-Ausführung gilt die gemeinsame Anleitung; Fahrzeug- und Türintegration vor Einbau mit den passenden Unterlagen prüfen. Siehe [[CampLock Fingerprint]].
+
+### VanLock Fingerprint
+
+**Art.-Nr. 106259/106260.** Die gemeinsame Bedienungsanleitung beschreibt VanLock zusammen mit CampLock -002 für WiPro III safe.lock (PDF-S. 1 und 3). Der deutsche Katalog nennt für dieselben Artikelnummern auch WiPro III (PDF-S. 25); bei abweichenden Unterlagen den konkreten Gerätestand prüfen und die Freigabe klären. Bedienung, Fingerverwaltung und Fehlersuche: [[VanLock Fingerprint]].
 
 ---
 

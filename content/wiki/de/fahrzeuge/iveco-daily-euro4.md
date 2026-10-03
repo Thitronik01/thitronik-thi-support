@@ -1,9 +1,9 @@
 ---
 title: Iveco Daily Euro 4 (2006–2011)
 sources:
-  - sources/wipro_iii_iveco_daily_euro_4.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-iveco-euro4.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -14,6 +14,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in den Iveco Daily Euro 4 der Baujahre 2006 bis 2011. Das fahrzeugspezifische Einbauhandbuch Stand `12/20` dokumentiert Fahrzeugprüfung, Demontage, CAN- und Warnblinkeranschluss, Versorgung, Masse, Fahrzeughupe, Status-LED, Montage, Funktionstest und Fehlerdiagnose.
 
 > **Abgrenzung:** Baujahr, Abgasstufe, Bordcomputer, Steckereinsätze, Pins und Leitungskennzeichnung müssen gemeinsam zur Anleitung passen. Für Fahrzeuge ab 2011 gilt [[Iveco Daily Euro 5 und neuer (2011–2024)|Iveco Daily Euro 5 und neuer]].
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Iveco Daily Euro 4, 2006–2011: Die eigene Anleitung 12/20 zeigt `SW4 + SW6 ON`. Nicht durch das Euro-5-Profil `SW2 + SW6` ersetzen. CAN entweder grüner Einsatz Pin 5 Low / Pin 6 High oder schwarzer Einsatz Pin 25 Low / Pin 24 High; violette Leitungen anhand Pin und Signal unterscheiden. Warnblinker am weißen Stecker Pin 29 oder 34, hellblau. Das ebenfalls genannte Zündungssignal an Pin 6 eines anderen grünen Steckers darf nicht mit CAN Pin 6 verwechselt werden.
+
+Belege: [iveco-euro4, PDF 2](../../../quellen/fahrzeug-iveco-euro4.pdf#page=2), [iveco-euro4, PDF 4](../../../quellen/fahrzeug-iveco-euro4.pdf#page=4).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -123,6 +133,8 @@ Die Überschrift „Hupenansteuerung herstellen“ bei Schritt 8 der Primärquel
 
 ## Abschließende Funktionsprüfung
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 1. Fahrzeugtüren schließen und System mit der Verriegeln-Taste der originalen Fahrzeug-Funkfernbedienung scharfschalten.
 2. Falls die WiPro zunächst nicht reagiert, mehrmals ver- und entriegeln, damit sich die CAN-Daten synchronisieren.
 3. Piepton, Blinken der Fahrtrichtungsanzeiger und blinkende Status-LED als Aktivierungsbestätigung prüfen.
@@ -134,7 +146,7 @@ Die Überschrift „Hupenansteuerung herstellen“ bei Schritt 8 der Primärquel
 9. CAN-Erkennung, Warnblinker, Fahrzeughupe, Status-LED und alle Zusatzmelder einzeln prüfen.
 10. Abschließend kontrollieren, dass keine neuen Warnlampen, elektrischen Fehler oder Fehlerspeichereinträge entstanden sind.
 
-Eine Folge kurzer Pieptöne beim Scharfschalten weist auf einen offenen angelernten Magnetkontakt hin; die Anlage schaltet laut Quelle trotzdem scharf. Für Funk-Magnetkontakte gelten insbesondere korrekte Platinenorientierung, `22–30 mm` Magnetbereich, saubere und fettfreie Klebefläche, mindestens `15 °C` Verarbeitungstemperatur und etwa `24 Stunden` bis zur Endfestigkeit. Details enthält [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 
 ## Fehlerdiagnose
 
@@ -151,11 +163,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 ## Quellenentscheidung
 
-- Das zehnseitige fahrzeugspezifische Einbauhandbuch *WiPro III – Iveco Daily Euro 4 (2006–2011)*, Stand `12/20`, wurde vollständig textlich und visuell geprüft.
-- Die Seiten 1 bis 6 dokumentieren Sicherheit, Fahrzeugprüfung, `SW4 + SW6`, Demontage, Anschlüsse, Montage, Funktionstest und Fehlerdiagnose; die Seiten 7 bis 10 enthalten die Montagevorgaben für Funk-Magnetkontakte 868.
-- Das allgemeine Installationshandbuch Version `1.8` ergänzt Sicherheits-, Diagnose- und Anschlussgrundlagen. Seine ältere Iveco-Gruppenangabe `SW2` wird durch die konkrete fahrzeugspezifische Vorgabe `SW4 + SW6` ersetzt.
-- Für die Alarmdauer gilt die konkrete Primärquelle mit etwa `30 Sekunden` akustischem und `180 Sekunden` optischem Alarm; die ältere allgemeine Angabe von `120 Sekunden` für die Warnblinker wird nicht übernommen.
-- Die Kompatibilitätsbasis `0823-001 / 2.1` stammt aus der freigegebenen Fahrzeugübersicht; das fahrzeugspezifische Handbuch nennt keine eigene Mindestseriennummer.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [iveco-euro4, PDF 2](../../../quellen/fahrzeug-iveco-euro4.pdf#page=2), [iveco-euro4, PDF 4](../../../quellen/fahrzeug-iveco-euro4.pdf#page=4).
 
 ## Querverweise
 

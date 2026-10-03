@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-10-02",
+  "entries": [
+    {
+      "file": "content/wiki/fr/anlernvorgang.md",
+      "suppliedOriginal": "Anleitungen/fr/anlernvorgang.md",
+      "suppliedOriginalSha256": "82fa50834fa92fc6dc8fa1993d31cdb92927d9724db1ec5a690a27ce1d4b4249",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/app-befehle.md",
+      "suppliedOriginal": "Anleitungen/fr/app-befehle.md",
+      "suppliedOriginalSha256": "55ab544439f58982f17e2bca53f2da3a6f1c7492be620fcbbf5ad94760abe21f",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/bt-connect.md",
+      "suppliedOriginal": "Anleitungen/fr/bt-connect.md",
+      "suppliedOriginalSha256": "389b0281220320973a882ef9980b09365afd3e79714ea37c07f4fca57b746a59",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/gas-connect.md",
+      "suppliedOriginal": "Anleitungen/fr/gas-connect.md",
+      "suppliedOriginalSha256": "28d254ade23895cde48082ab19ba1fa3a03dcc10e925b820d7e31e66f70f5bc9",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/gas-plug.md",
+      "suppliedOriginal": "Anleitungen/fr/gas-plug.md",
+      "suppliedOriginalSha256": "75c808f1cf33c5a9237899632d54508aaf1f42e3ec007f9f21cf8c32bb4edcf2",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/gas.md",
+      "suppliedOriginal": "Anleitungen/fr/gas.md",
+      "suppliedOriginalSha256": "b0fb1851724e29869983ea560679eaf297389848fd8be5382bd80c3046660812",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/glossar.md",
+      "suppliedOriginal": "Anleitungen/fr/glossar.md",
+      "suppliedOriginalSha256": "69bcd12773b754136d1321d8e9d31bfd0c3f2648e952ccd6948bb9bb21313ca5",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/nfc-modul.md",
+      "suppliedOriginal": "Anleitungen/fr/nfc-modul.md",
+      "suppliedOriginalSha256": "d49f4aae2143f5bbb8bf63b7066f746fc16cad27a21a233bc2ea3c5e265bd2b2",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/pro-finder.md",
+      "suppliedOriginal": "Anleitungen/fr/pro-finder.md",
+      "suppliedOriginalSha256": "ace5042f4d175166b90089175d5abab6e958f8261e23d5d64656a3f9d6346bd4",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/stoerungsbeseitigung.md",
+      "suppliedOriginal": "Anleitungen/fr/stoerungsbeseitigung.md",
+      "suppliedOriginalSha256": "8dbf7deab7081c473faca38be41595a629bdc28722672a216193d2e965a8e760",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    },
+    {
+      "file": "content/wiki/fr/wipro-iii.md",
+      "suppliedOriginal": "Anleitungen/fr/wipro-iii.md",
+      "suppliedOriginalSha256": "b902303abf102242c7752d96161e2de258f85ea6c73d860738f30a4e5f81adba",
+      "suppliedOriginalStatus": "not-specified",
+      "headStatus": "internal_only",
+      "beforeStatus": "internal_only",
+      "currentStatus": "internal_only",
+      "decision": "Kein belegter Freigabeentscheid; bestehenden Status und visibility unverändert bewahrt."
+    }
+  ]
+}

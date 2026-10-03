@@ -1,9 +1,11 @@
 ---
 title: 'VW Crafter / MAN TGE (2017–2024, ohne Startknopf)'
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_crafter___man_tge_2017-2024.pdf'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-crafter-2017.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -14,6 +16,12 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer Standard-WiPro III in VW Crafter der zweiten Generation und MAN TGE der Baujahre 2017 bis 2024. Die aktuelle Fahrzeuganleitung Stand `07/2025` dokumentiert das Profil ab Software `V6.8`, Demontage, Versorgung, Zündung, CAN, Warnblinker, Sirene, Status-LED, Funk-Zubehör und Funktionstest.
 
 > **Abgrenzung:** Die vorhandene Primärquelle beschreibt die Standard-WiPro III, nicht das safe.lock-Set `105458`. Für Fahrzeuge ab 2025 mit Startknopf gilt [[VW Crafter / MAN TGE (2025+, mit Startknopf)|VW Crafter / MAN TGE ab 2025]]. Fahrzeug, Baujahr, Startsystem und tatsächlich gelieferte WiPro-Ausführung müssen vor dem Einbau gemeinsam geprüft werden.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Crafter / MAN TGE 2017–2024 standard: `SW2 + SW3 + SW4 + SW6 ON`, `V6.8`; FAQ ergänzt `0823-019`. PDF 07/2025 nennt Versorgung direkt an der Starterbatterie mit `5 A`, nicht den 10-A-Wert des Sprinter. safe.lock hat den eigenen Zweig `5458-001 / 1.0.0sx`. Sleep-Test laut FAQ: mit Originalschlüssel per Funk verriegeln, acht Minuten warten, am Fahrertürschloss mechanisch öffnen. Öffnet nur die Fahrertür, ist die ZV-Ansteuerung durch safe.lock nicht möglich. Dieser Test unterscheidet sich vom Drei-Minuten-Test des T6.1. Bei Knaus kann die Aufbautür von safe.lock-ZV ausgenommen sein; CAN-Überwachung separat prüfen.
+
+Belege: [crafter-2017, PDF 2](../../../quellen/fahrzeug-crafter-2017.pdf#page=2), [crafter-2017, PDF 4](../../../quellen/fahrzeug-crafter-2017.pdf#page=4), [Q, PDF 9](../../../quellen/wipro-iii-faq.pdf#page=9), [S, PDF 12](../../../quellen/wipro-iii-safelock-faq.pdf#page=12), [S, PDF 18](../../../quellen/wipro-iii-safelock-faq.pdf#page=18), [S, PDF 19](../../../quellen/wipro-iii-safelock-faq.pdf#page=19).
 
 ## Geltungsbereich
 
@@ -38,9 +46,9 @@ Eine Mindestseriennummer nennt die Fahrzeugquelle nicht. Seriennummer, Softwares
 | safe.lock-Set `105458`, Profil `SW3`, Serien `5458-001` bis `5458-013` | in der vorhandenen Fahrzeug-PDF nicht enthalten; nicht als Einbauprofil fortführen |
 | BCM Stecker A Pin 16/17, BCM Stecker C Pin 42 | die aktuelle Anleitung nennt weder BCM-Stecker noch Fahrzeug-Pinnummern; maßgeblich sind Abgriffsort und Farben |
 | ZV-Leitung am Türsteuergerät Pin 1 | in der vorhandenen Anleitung nicht dokumentiert; nicht anschließen |
-| obligatorischer Sleep-Mode-Test mit acht Minuten | stammt aus lokal fehlenden Altquellen und ist in der aktuellen PDF nicht enthalten |
-| Knaus-/Cobra-Sonderlogik und Drei-Schlüssel-Szenarien | lokal nicht durch Primärquellen belegbar; nicht als freigegebene Diagnose fortführen |
-| Zusatzhupe Art. `105339` zwingend | nicht belegt; die aktuelle Anleitung empfiehlt normale oder Back-up Sirene |
+| obligatorischer Sleep-Mode-Test mit acht Minuten | für safe.lock durch FAQ PDF 18 belegt; keine Anschlussanleitung für Standard-WiPro |
+| Knaus-/Cobra-Sonderlogik und Drei-Schlüssel-Szenarien | Knaus-Aufbautür-Ausnahme durch FAQ PDF 19 belegt; zusätzliche Cobra-/Drei-Schlüssel-Abläufe weiterhin nicht belegt |
+| Zusatzhupe Art. `105339` zwingend | Standard-PDF empfiehlt normale oder Back-up-Sirene; safe.lock-FAQ PDF 12/17 verlangt bzw. empfiehlt dringend eine Zusatzhupe, dort ohne Artikelnummer. Gerätevariante und Alarmgeber gesondert zuordnen |
 | `10-A`-Versorgung | für dieses Fahrzeug durch die konkrete neuere `5-A`-Vorgabe ersetzt |
 
 Die beiden lokal vorhandenen Fahrzeug-PDFs mit und ohne Namenszusatz `(1)` sind bytegleich. Fehlende DOCX- und CSV-Dateien werden nicht rekonstruiert. Wird tatsächlich ein safe.lock-Set geliefert, darf dieser Standardartikel nicht als Verdrahtungsanleitung verwendet werden; aktuelle set-spezifische Unterlagen sind beim Hersteller anzufordern.
@@ -215,7 +223,7 @@ Funktionstest:
 | Artikel | `100757` schwarz, `100758` weiß |
 | Platinenrichtung | Sende-LED vom Magneten weg; zeigt sie zum Magneten, ist Anlernen möglich, Alarmierung jedoch nicht |
 | Montagevarianten | liegend links/rechts, stehend oder auf der Scheibe |
-| Magnetposition | im geschlossenen Zustand im dokumentierten Bereich von `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitung | nicht unter `15 °C`; Endfestigkeit nach etwa `24 Stunden` |
 | Adapter | Art. `100428` oder `100729` bei großem Abstand oder ungünstiger Antennenlage |
@@ -244,9 +252,9 @@ Weitere systematische Prüfungen: [[Störungsbeseitigung — Sichere Diagnose h�
 - Seite 2 belegt Standard-WiPro III ab `V6.8` und `SW2 + SW3 + SW4 + SW6`.
 - Seiten 3 bis 5 belegen Demontage, Montageort, Starterbatterie, `5 A`, OBD-Zündung, CAN-Farben/-Ort und Warnblinkeranschluss.
 - Seiten 6 und 7 belegen beide Sirenenvarianten, Pins `11`/`15`/`16`, `8 mm`, Anlernen, Originalschlüssel-/Handsenderbedienung, Panikalarm, Lüftungsfunktion, `4 Sekunden`, `4 Minuten` und Testablauf.
-- Seiten 8 bis 11 belegen Funk-Magnetkontakte `100757`/`100758`, Platinenrichtung, Montagevarianten, Adapter `100428`/`100729`, `15 °C`, `24 Stunden` und `22–30 mm`.
+- Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 - Das allgemeine Installationshandbuch Revision `1.8` ergänzt Sicherheitsregeln, WiPro-Pinnummern sowie 30/120 Sekunden Alarmdauer.
-- Die beiden Fahrzeug-PDFs sind bytegleich. Die im Altbestand genannten DOCX-/CSV-Quellen fehlen lokal; safe.lock-, Sleep-Mode-, BCM-Pin-, Türsteuergerät-, Knaus- und Versionsangaben wurden deshalb nicht als freigegebene Einbaudaten fortgeführt.
+- Die beiden Fahrzeug-PDFs sind bytegleich. Fehlende DOCX-/CSV-Unterlagen bleiben eine Lücke für die safe.lock-Verdrahtung. Sleep-Test, Knaus-Ausnahme und Mindestversion sind inzwischen durch die separat zitierte FAQ belegt; damit sind keine fehlenden BCM- oder ZV-Pins freigegeben.
 - Die konkrete `5-A`-Vorgabe des neueren Fahrzeughandbuchs hat für diesen Anschluss Vorrang vor allgemeinen oder älteren Sicherungswerten.
 
 Verwendete Primärquellen:

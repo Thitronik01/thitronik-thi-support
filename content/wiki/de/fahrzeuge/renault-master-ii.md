@@ -1,9 +1,9 @@
 ---
 title: Renault Master II / Opel Movano A / Nissan Interstar (1998–2010)
 sources:
-  - sources/wipro_iii_renault_master_ii_1998-2010.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-21'
+  - "content/quellen/fahrzeug-master-ii.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -15,7 +15,19 @@ Dieser Artikel beschreibt den belegten Einbau der WiPro III in den Renault Maste
 
 > **Abgleichpflicht:** Die Primärquelle trägt ausschließlich die Bezeichnung Renault Master. Beim Opel Movano A, Nissan Interstar sowie bei abweichendem Baujahr oder Steckerbild müssen P202, Pinlage, Leitung und Signal vor jedem Anschluss am konkreten Fahrzeug geprüft werden. Bei einer Abweichung nicht nach Farbe weiterarbeiten, sondern THITRONIK-Support einbeziehen.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Master II 1998–2010: `SW1 + SW2 + SW3 + SW6 ON`, analoger Anschluss. Im PDF wird auf Seite 4 „P202“ für zwei verschieden dargestellte Stecker benutzt. Für den Warnblinker ist Pin 36 im grünen Einsatz mit grüner Ader belegt; keine eigenmächtige Umbenennung in P201. Steckerbild und Signal bestätigen. Bei automatischer Fahrtverriegelung zeigt die Quelle ein Öffnerrelais: 85 Zündung, 86 Masse, 30 Fahrzeug-Verriegelung, 87a WiPro blau/schwarz; 87 bleibt isoliert. 60 Sekunden betreffen das Schärfen der Kabinentüren, keine Eintrittsverzögerung.
+
+Belege: [master-ii, PDF 2](../../../quellen/fahrzeug-master-ii.pdf#page=2), [master-ii, PDF 4](../../../quellen/fahrzeug-master-ii.pdf#page=4), [master-ii, PDF 7](../../../quellen/fahrzeug-master-ii.pdf#page=7).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
+
 ## Geltungsbereich und freigegebener Stand
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 | Merkmal | Freigegebener Stand |
 |---|---|
@@ -36,7 +48,7 @@ Seriennummer und Softwarestand vor dem Einbau dokumentieren. Die Projektmatrix f
 |---|---|
 | Fahrzeugprofil, Einbauort, Pins, Leitungsfarben und Tests | das fahrzeugspezifische Handbuch Stand `12/20` ist vorrangig |
 | allgemeine Sicherheit, Grundversorgung und Pinrollen | Installationshandbuch Version `1.8` dient ergänzend |
-| Alarmdauer | fahrzeugspezifisch `30 s` akustisch und `180 s` optisch; die ältere allgemeine Angabe `120 s` optisch gilt hier nicht |
+| Alarmdauer / Durée | Quellenkonflikt: Fahrzeuganleitung 180 s optisch gegenüber allgemeiner Bedienungsanleitung 120 s; keine eindeutig belegte Zuordnung nach Gerätestand. Dauer protokollieren und Herstellerklärung einholen. |
 | 60-Sekunden-Verhalten der Kabinentüren | Scharfschaltverzögerung, ausdrücklich **keine Alarmverzögerung** |
 | `FAQ_WiPro-III_DE.md` aus dem Altbestand | lokal nicht vorhanden und nicht als eingesehene Quelle behandelt |
 | Opel-/Nissan-Plattformzuordnung | im Projekt geführt; das Steckerbild muss am konkreten Fahrzeug bestätigt werden |
@@ -143,7 +155,7 @@ Die Fahrzeugquelle dokumentiert die Kontakte Art. `100757` in Schwarz und `10075
 
 1. Sender vorzugsweise am festen Rahmen und Magnet am beweglichen Tür-, Fenster- oder Klappenteil montieren.
 2. Platine so in das Gehäuse einsetzen, dass die Sende-LED **vom Magneten weg** zeigt. Bei falscher Orientierung ist Anlernen möglich, eine Alarmauslösung jedoch nicht.
-3. Magnet im empfohlenen Bereich von `22–30 mm` positionieren und nicht jenseits der roten Grenzlinie montieren.
+3. Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 4. Bei größerem Spalt oder ungünstiger Antennenausrichtung einen geeigneten Montageadapter `100428` oder `100729` verwenden.
 5. Klebeflächen sauber, trocken und fettfrei vorbereiten; Klebepads nicht unter `15 °C` verarbeiten und etwa `24 h` bis zur vollen Festigkeit unbelastet lassen.
 6. Wo Klebemontage nicht zuverlässig möglich ist, die vorgesehenen Markierungen im Sendergehäuse für eine Schraubbefestigung nutzen.
@@ -152,6 +164,8 @@ Die Fahrzeugquelle dokumentiert die Kontakte Art. `100757` in Schwarz und `10075
 Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]] und [[Artikelnummern-Register — Dokumentierte THITRONIK-Produkte und Zubehör|Artikelnummern-Register]].
 
 ## Inbetriebnahme und Funktionstest
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 1. Alle Pins, Leitungsfarben, Verbinder, Sicherungen, Massepunkte, isolierten Adern und das DIP-Profil erneut prüfen.
 2. Batterien nach Herstellervorgabe anschließen und kontrollieren, dass keine Warnlampen oder neuen Fahrzeugfehler auftreten.
@@ -183,6 +197,8 @@ Siehe [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbe
 
 ## Übergabe und Dokumentation
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 In der Arbeitskarte festhalten:
 
 - Fahrzeugmodell, Modelljahr, FIN und relevante Aufbauvariante
@@ -200,12 +216,7 @@ Bei der Übergabe die 60-Sekunden-Scharfschaltverzögerung der Kabinentüren, di
 
 ## Quellenentscheidung
 
-- Das elfseitige THITRONIK-Einbauhandbuch *WiPro III Renault Master 1998–2010*, Stand `12/20`, wurde vollständig textlich und visuell geprüft. Es belegt DIP-Profil, Einbauort, sämtliche Fahrzeuganschlüsse, beide Sirenenvarianten, Versorgung, Relaislösung, Funktionstest und Magnetkontaktmontage.
-- Das allgemeine Installationshandbuch Version `1.8` ergänzt Sicherheits-, Grundanschluss- und Diagnosehinweise. Bei Widersprüchen hat die neuere fahrzeugspezifische Quelle Vorrang.
-- Deshalb gilt für diesen Einbau `180 s` optischer Alarm statt der älteren allgemeinen Angabe `120 s`.
-- Die 60 Sekunden der Kabinentüren sind laut Primärquelle eine Scharfschaltverzögerung und keine Verzögerung eines bereits ausgelösten Alarms.
-- Die Projektmatrix führt `0823-001 / 2.1`; das fahrzeugspezifische Handbuch nennt selbst keinen Mindeststand. Diese Grenze darf daher nicht auf unbekannte Hardwarestände verallgemeinert werden.
-- Die im Altbestand genannte Datei `FAQ_WiPro-III_DE.md` ist lokal nicht auffindbar und wurde nicht als Beleg verwendet.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [master-ii, PDF 2](../../../quellen/fahrzeug-master-ii.pdf#page=2), [master-ii, PDF 4](../../../quellen/fahrzeug-master-ii.pdf#page=4), [master-ii, PDF 7](../../../quellen/fahrzeug-master-ii.pdf#page=7).
 
 ## Querverweise
 

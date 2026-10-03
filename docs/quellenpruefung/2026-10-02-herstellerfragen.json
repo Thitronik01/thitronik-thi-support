@@ -1,0 +1,430 @@
+{
+  "createdAt": "2026-10-02",
+  "status": "prepared-not-sent",
+  "proposedRecipient": "support@thitronik.de",
+  "questions": [
+    {
+      "id": "CAMP-UPDATE",
+      "group": "CampLock / VanLock",
+      "question": "Bitte betroffene Artikel-/Seriennummern und freigegebene Softwareversion zum Hinweis vom 27.07.2026 bestätigen. Wie ist der aktuelle Serviceablauf?",
+      "evidenceUrl": "https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "CAMP-C1-24V",
+      "group": "CampLock / VanLock",
+      "question": "Welcher Stromwert gilt für CampLock 106111/106144 ohne -002: C1 1,7 mA oder K1 0,6 mA bei 24 V? Benötigt: Messbedingungen, Artikel-/Hardwarestand und korrigierter Dokumentbeleg.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "CAMP-V1",
+      "group": "CampLock / VanLock",
+      "question": "Welche Funktionen unterstützt VanLock 106259/106260 mit WiPro III ohne safe.lock, angesichts C2 „ausschließlich safe.lock“ und K1 „beide“? Benötigt: Verbindliche Freigabe je Funktion und Artikel-/Hardwarestand.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "CAMP-V2",
+      "group": "CampLock / VanLock",
+      "question": "Welcher VanLock-Stromwert gilt bei 24 V: 1,7 oder 0,6 mA? Benötigt: Messbedingungen und eindeutig zugeordneter Dokumentstand.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "CAMP-V3",
+      "group": "CampLock / VanLock",
+      "question": "Beziehen sich 219 und 151 g auf unterschiedliche Lieferumfänge/Messbedingungen oder ist eine Angabe falsch? Benötigt: Genaue Gewichtsabgrenzung und freigegebener Wert.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "CAMP-T1",
+      "group": "CampLock / VanLock",
+      "question": "Kann die abweichende englische Löschzeile in C1 korrigiert werden? Benötigt: Korrigierte englische Originalfassung. DE/FR-Ablauf bleibt nach vorhandenen Belegen fünf plus fünf Sekunden.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-camplock-vanlock.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "WIPRO-1",
+      "group": "WiPro / safe.lock",
+      "question": "Welche optische Alarmdauer gilt je Geräte-/Softwarevariante: 120 oder 180 Sekunden?",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-wipro-installation-faq.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "WIPRO-2",
+      "group": "WiPro / safe.lock",
+      "question": "Wie sind 4/5 Sekunden beim Vent check und 2/5 Sekunden beim Batteriewarnton einzuordnen? Gibt es belegte Varianten-/Versionsgrenzen?",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-wipro-installation-faq.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "WIPRO-3",
+      "group": "WiPro / safe.lock",
+      "question": "Welche Kabelfarben gelten an Pin 2/3, und welche Funktion hat Pin 13 in der betreffenden FR-Abbildung? Welcher Buchstabe ist im Diagnoseabschluss korrekt?",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-wipro-installation-faq.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "WIPRO-4",
+      "group": "WiPro / safe.lock",
+      "question": "Welche Softwarezuordnungen gelten verbindlich für 1050-016 und 1050-042? Die lokal fehlenden Original-CSV bzw. eine aktuelle Herstellerbestätigung werden benötigt.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-wipro-installation-faq.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "WIPRO-5",
+      "group": "WiPro / safe.lock",
+      "question": "Welche Fahrzeug-/Schlüsselgrenzen gelten für Vito, Master, Iveco und die Ford-Übergangsmodelle? Wie werden die unterschiedlichen Standzeit-/ZV-Tests den Fahrzeugvarianten zugeordnet?",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-wipro-installation-faq.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "WIPRO-6",
+      "group": "WiPro / safe.lock",
+      "question": "Weiterhin offen aus W0/W1: Sprachabweichungen der Blinksignale und tatsächlicher Zustand nach Abschluss der Teillöschung.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-wipro-installation-faq.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "PRO-1",
+      "group": "Pro-Finder",
+      "question": "Welcher Geofencing-Radius gilt für welche älteren Serien-/Softwarestände? P0 widerspricht sich mit 1 km DE und 1,5 km FR. Für P1 ist 900 m dokumentiert; das klärt den Altgeräte-Konflikt nicht.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-profinder.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "PRO-2",
+      "group": "Pro-Finder",
+      "question": "Welche Programmierpräfixe und französischen Befehls-Aliasse unterstützen die einzelnen Softwarestände tatsächlich? Öffentliche Matrix, Handbücher und interne Matrix sind nicht deckungsgleich. Bitte versionsbezogene Befehlsliste bestätigen.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-profinder.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "PRO-3",
+      "group": "Pro-Finder",
+      "question": "Pin-1-Fehler im französischen Fließtext von P1 bestätigen und korrigierte Quelle bereitstellen. Die Anschlussgrafik und DE-Fassung zeigen Masse an Pin 1, Plus an Pin 8.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-profinder.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "PRO-4",
+      "group": "Pro-Finder",
+      "question": "Ist der Unterschied der Spannungsanzeigen in Modus 9 zwischen P0 und P1 absichtlich generationsbedingt? Welche Serien-/Softwaregrenze gilt?",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-profinder.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "PRO-5",
+      "group": "Pro-Finder",
+      "question": "Welche Unterspannungs-/Rückkehrschwellen gelten verbindlich für 24-V-Anlagen, und welche Schutzfunktionen bleiben in Betriebsart B aktiv? Die geprüften Passagen belegen die beschriebenen Warnschwellen und die Warn-Ausnahme, keine vollständige 24-V-Logik.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-profinder.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "PRO-6",
+      "group": "Pro-Finder",
+      "question": "Bestehende detaillierte Seriennummern-Meilensteine, Sprach-/Softwaregrenzen und gegebenenfalls aktuelle Upgrade-Verfügbarkeit anhand freigegebener Herstellerdaten bestätigen.",
+      "evidenceReport": "docs/quellenpruefung/2026-09-28-profinder.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-1",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**Connect-Stromaufnahme und Gewicht:** Welcher Gerätestand gilt für 15/25 mA und 33 g gegenüber 34 mA und 35 g? Keine Werte vertauschen oder von G.A.S. ableiten.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-2",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**Plug-Schalldruck:** 82 dB in der Anleitung gegenüber 85 dB online; Messbedingungen und Gerätestand bestätigen.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-3",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**III-Dokumentstände und CO-Ausrichtung:** Rev. 1.3 der Kurzfassungen gegenüber 1.2/1.1 in der Zusatzinformation; CO-Schalter oben gegenüber allgemeiner Anweisung unten.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-4",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**III-Unterspannung:** drei oder neun Signale pro Minute? Gibt es gesonderte 24-V-Schwellen? Der manuelle Neustart ist in beiden Sprachen dokumentiert.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-5",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**CO-Vorrang:** Verhalten bei aktivem IGN, externem CO-Sensor sowie Funk/SIR+ ausdrücklich pro Variante klären. Der bekannte Hinweis belegt allein die interne Sirene der III CO.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-6",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**Sensorleitung und Höhe:** 7/8 m Gesamtlänge und 10–20/10–30 cm nach Sensor- und Hauptgerätestand zuordnen. Der strengere Wiki-Wert ist keine aufgelöste Herstellerabweichung.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-7",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**Alte G.A.S.-pro:** 8–30/9–30 V und CO-Montage DE/FR/Zeichnung (deckennah, beliebige Höhe, 10–50 cm) gegenüber CO-Sensorblatt 10–30 cm klären.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-8",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**Alte Zusatzsirene:** DE 100190 gegenüber FR 100191 vor Bestellfreigabe zuordnen.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-9",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**CO-Verbrauch und Generation:** 40 mA im Alt-Handbuch gegenüber 6 mA des heutigen Sensors nicht ohne Serienzuordnung zur Strombilanz verwenden.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-10",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**Prüfverfahren:** generische Feuerzeug-FAQ gegenüber Ausschluss in den III-Kurzfassungen; verbindliches Verfahren je Generation und Sensor angeben. Austausch/Steckbarkeit des Sensorkopfs separat belegen.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "GAS-11",
+      "group": "G.A.S. / CO / Sensorik",
+      "question": "**WiPro-Alarmdauer:** vorhandener Konflikt 120/180 Sekunden bleibt bestehen. Connects 180 Sekunden sind kein neuer Universalbeleg für jede WiPro.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-gas.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-1",
+      "group": "Funk-Zubehör",
+      "question": "Welcher Standard-Magnetkontakt-/Zentralenstand ist mit 22 beziehungsweise 25 mm freigegeben? Die bisherige 22-mm-Zwischenregel ist keine Revisionszuordnung.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-2",
+      "group": "Funk-Zubehör",
+      "question": "Worauf beziehen sich 33/37 g und −40..+125 °C beim wasserdichten Magnetkontakt, insbesondere einschließlich Batterie und Montage?",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-3",
+      "group": "Funk-Zubehör",
+      "question": "Welche Zubehör-/Zentralenstände melden Niederbatterie 2 beziehungsweise 5 Sekunden, und gilt die 30-Sekunden-LED auch für Handsender?",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-4",
+      "group": "Funk-Zubehör",
+      "question": "Ist „<10 W“ in der englischen Magnetkontakt-Tabelle zu „<10 mW“ zu korrigieren? DE/FR nennen mW.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-5",
+      "group": "Funk-Zubehör",
+      "question": "Was bezeichnet 101052 auf der Rückseite der NFC-Kurzanleitung 2.3? Welche Korrektur gilt für die gegensätzlichen Deckel-Drehrichtungen und die pauschale 20-mm-Angabe im Webhandbuch?",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-6",
+      "group": "Funk-Zubehör",
+      "question": "Bitte Normnachweis des T.S.A. (14064/14604) und die französische Adapter-Anweisung berichtigen. Wie ist „mehr als vier“ Batteriewarnungen genau zu zählen?",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-7",
+      "group": "Funk-Zubehör",
+      "question": "Für Wasseralarme im unscharfen Zustand oder zusätzliche Anrufwege wäre ein ausdrücklicher, standbezogener Nachweis nötig; beides wird aus dem geprüften Testablauf nicht zugesichert.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "FUNK-8",
+      "group": "Funk-Zubehör",
+      "question": "Welche Smartwatch- und Softwaregrenzen gelten tatsächlich für BT-connect 6000-? FAQ und Produktseite zeigen stattdessen die ältere 1290-Matrix.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-funk.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-1",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Ford Deadlock:** Die älteren Fahrzeug-PDFs beschreiben alternative THITRONIK-Bedienung. Die FAQ schließt Standard-WiPro ohne Deadlock beim Transit 2006–2013 bzw. mit Deadlock bei 2016/2019 aus. Aus den alten Bedienwegen folgt keine Freigabe für die ausgeschlossene Variante.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-2",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Ford 2019/2024+:** Facelift-PDF `0823-013` gegenüber FAQ `0823-016 / 6.1`. Für 2024+ nennt die FAQ `5298-006 / 1.0.1sf`, der Altbestand `5298-005`. Monatsgrenzen und `5298-008 / 1.0.3sf` sind durch die fehlenden Detailunterlagen nicht neu bestätigt.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-3",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Vito W447:** Innerhalb der FAQ widersprechen sich `0823-014 / 6.2` und `0823-013 / 5.6`. Die vollständige Fahrzeuganleitung fehlt im hier geprüften PDF-Bestand.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-4",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Ducato:** `1050-016` mit `7.1` gegenüber `7.2s`, `1050-042` mit `7.5.2` gegenüber `7.5.1s`. Die neueren Originalanleitungen fehlen. Beim Ducato 244 widerspricht die allgemeine Vorprüfung der ausdrücklich ausgeschlossenen Originalschlüssel-Bedienung im Funktionstest.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-5",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**VS30/ILS:** Die Standard-PDF beschreibt vordere digitale Ansteuerung mit 220 Ohm, die FAQ begrenzt die optische Signalisierung auf hinten. Hardware, Ausstattung und Anschlussvariante müssen zugeordnet werden.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-6",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Master II/III:** Master-II-Blatt benennt zwei unterschiedliche Steckverbinder als P202; Pin 36 am grünen Einsatz nicht durch eine erfundene Umbenennung korrigieren. Master-III-Türüberwachung ab 6.9 gesondert bestätigen.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-7",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Iveco:** Hupenjahresgrenzen überlappen 2017/2019. Die Farbnotiz ab 2025 gibt keine neue gesamte Fahrzeuggeneration frei.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-8",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**safe.lock-Upgrade:** Rev. 2.0 verlangt drei zusätzliche Leitungen: Pin 20 blau, Pin 19 blau/schwarz und Pin 16 weiß/schwarz. Das Serviceformular 2024 nennt zwei Leitungen. Die Servicegrenze `0823-019` nicht als generelles technisches Upgrade-Verbot älterer Geräte auslegen; Umfang und Gerätestand bestätigen lassen.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-9",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Umrüstplatine:** Anleitung 2006–2012 gegenüber FAQ 2006–2018 und Iveco ab 2011. Genaue Schlüsselzuordnung erforderlich; die englische Frequenzangabe „86835MHz“ enthält zudem einen fehlenden Dezimaltrenner.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    },
+    {
+      "id": "AUTO-10",
+      "group": "Fahrzeuge / Versionen",
+      "question": "**Übergreifende Konflikte:** Optische Alarmdauer 120/180 Sekunden, Lüftungswartezeit 4/5 Sekunden und Magnetabstand 22/25 mm bleiben den bereits offenen Herstellerfragen zugeordnet.",
+      "evidenceReport": "docs/quellenpruefung/2026-10-01-fahrzeuge.md",
+      "status": "awaiting-manufacturer",
+      "answer": null,
+      "approvedSource": null
+    }
+  ]
+}

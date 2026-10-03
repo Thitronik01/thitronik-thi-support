@@ -1,0 +1,294 @@
+{
+  "checkedAt": "2026-10-01",
+  "scope": "documentary review; not device testing or manufacturer approval",
+  "claims": [
+    {
+      "id": "GS01",
+      "finding": "G.A.S. 105700 ist eigenständig; G.A.S.-connect benötigt WiPro; beide sind keine CO-Sensoren.",
+      "source": "G 2/4; C 2/6; QG/QC 1–2",
+      "treatment": "Geräterollen getrennt; bestehende Abgrenzung bestätigt."
+    },
+    {
+      "id": "GS02",
+      "finding": "G.A.S.: 12/24 V, 28/15 mA, 5 % UEG Butan, 82 dB bei 1 m.",
+      "source": "G 15",
+      "treatment": "Werte mit dem sichtbaren Datenblock abgeglichen; UEG nicht als CO-ppm interpretieren."
+    },
+    {
+      "id": "GS03",
+      "finding": "G.A.S.: etwa 10 cm über Boden, Heizung 1,5 m, Blei-Säure-Batterie 1 m.",
+      "source": "G 2/4",
+      "treatment": "Nicht die vertauschten Abstände der alten G.A.S.-pro übertragen."
+    },
+    {
+      "id": "GS04",
+      "finding": "G.A.S.: Einschalten mindestens 2 s, drei Töne; Aufwärmen 3 min, erstmalig bis 20 min.",
+      "source": "G 2/4",
+      "treatment": "Grünes Blinken als Betriebsbereitschaft bestätigt; Aufwärmen ist noch keine Freigabe."
+    },
+    {
+      "id": "GS05",
+      "finding": "G.A.S.: Überschreitung länger als 30 s, dann Sirene 30 s und weitere 30 s bis Normalbetrieb.",
+      "source": "G 2/4",
+      "treatment": "Auslöseverzögerung vom Alarmzyklus und vom sofortigen Plug-Alarm getrennt."
+    },
+    {
+      "id": "GS06",
+      "finding": "G.A.S.: gelb blinkend plus Dauerton bedeutet Sensorfehler.",
+      "source": "G 2/4",
+      "treatment": "Gerätebezogene Fehleranzeige in DE/FR abgesichert."
+    },
+    {
+      "id": "GS07",
+      "finding": "Anschlusszeichnungen von G.A.S. und connect nennen GND, nicht AGND.",
+      "source": "G 13; C 23",
+      "treatment": "Falsche Klemmenbezeichnung in Anschluss- und Supporttabellen beider Sprachen korrigiert."
+    },
+    {
+      "id": "GS08",
+      "finding": "Alarm OUT bei G.A.S./connect schaltet gegen Masse, maximal 0,10 A; Backup-Sirene blau an Ausgang.",
+      "source": "G 2/4/13/15; C 3/7/23/25",
+      "treatment": "Eigene Sirenenversorgung erhalten; nicht mit positivem SIR+ gleichsetzen."
+    },
+    {
+      "id": "GS09",
+      "finding": "G.A.S.-connect besitzt keine interne Sirene, aber einen optionalen Alarmausgang.",
+      "source": "QC 1; C 2/6",
+      "treatment": "Hauptalarmweg über WiPro bestätigt; kein Standalone-Versprechen."
+    },
+    {
+      "id": "GS10",
+      "finding": "Connect Rev. 1.0: 15 mA bei 12 V, 25 mA bei 24 V, 33 g; Website 34 mA und 35 g.",
+      "source": "C 25; WC",
+      "treatment": "Veraltete Website-Angabe 28/15 mA entfernt. Echter Datenkonflikt bleibt offen."
+    },
+    {
+      "id": "GS11",
+      "finding": "Connect-Anlernen: WiPro-Anlernmodus, Gaswarner einschalten, Quittung, Anlernmodus beenden.",
+      "source": "C 3/7",
+      "treatment": "Einschalten als Senderereignis bestätigt; keine lokale Drei-Ton-Bestätigung erfinden."
+    },
+    {
+      "id": "GS12",
+      "finding": "Connect: Alarmschwelle länger als 30 s; interne WiPro-Sirene/Hupe je 30 s, Blinker 180 s.",
+      "source": "C 3/7",
+      "treatment": "180 s quellenbezogen; bereits offener WiPro-Konflikt 120/180 s wird nicht scheinbar gelöst."
+    },
+    {
+      "id": "GS13",
+      "finding": "Connect: Sensorfehler durch gelbes Blinken; kein geräteeigener Dauerton dokumentiert.",
+      "source": "C 3/7",
+      "treatment": "Keinen G.A.S.- oder Plug-Fehlercode übernehmen."
+    },
+    {
+      "id": "GS14",
+      "finding": "Plug: Dauerstrom-Steckdose; regulär ca. 4 min Aufwärmen, erstes Mal bis 20 min.",
+      "source": "P 2/4",
+      "treatment": "Versorgung und Betriebsbereitschaft bestätigt; keine Überwachung bei stromloser Steckdose."
+    },
+    {
+      "id": "GS15",
+      "finding": "Plug: sofortiger Alarm, 30 s akustisch plus 30 s Anzeige; gelb dauerhaft plus Dauerton bei Sensorfehler.",
+      "source": "P 2/4",
+      "treatment": "Kein 30-s-Voralarm aus G.A.S. übertragen; LED-Unterschied erhalten."
+    },
+    {
+      "id": "GS16",
+      "finding": "Plug: 70 mA, ab 50 ppm, empfohlene 0–55 °C; kein CO-Nachweis.",
+      "source": "P 13; QP 1",
+      "treatment": "50 ppm ausdrücklich nicht als CO-Alarmschwelle bezeichnet."
+    },
+    {
+      "id": "GS17",
+      "finding": "Plug-Lautstärke: Anleitung 82 dB, Produktseite ca. 85 dB.",
+      "source": "P 13; WP",
+      "treatment": "Bereits bestehende Abweichung am 01.10.2026 erneut bestätigt, nicht gemittelt."
+    },
+    {
+      "id": "GS18",
+      "finding": "Plug-FAQ enthält generische OEM-Ader-/GBA-I-Absätze.",
+      "source": "QP 2",
+      "treatment": "Keine Anschlussfreigabe für den Steckdosen-Plug daraus abgeleitet; keine externen Sensoren."
+    },
+    {
+      "id": "GS19",
+      "finding": "Altes G.A.S.-pro-Handbuch: sichtbare Rückseite Rev. 2.5, extrahierter Deckblatttext 2.2.",
+      "source": "O 1/28",
+      "treatment": "2.2 als sichtbare Dokumentrevision korrigiert. Textlayer ist nicht die sichtbare Seite."
+    },
+    {
+      "id": "GS20",
+      "finding": "Alte G.A.S.-pro: Zentrale ohne Sensor, bis zu drei externe Sensoren.",
+      "source": "O 2/8",
+      "treatment": "Bestätigt; Zentrale darf grundsätzlich im Schrank sitzen, Hörbarkeit/Anzeige beachten."
+    },
+    {
+      "id": "GS21",
+      "finding": "Alte G.A.S.-pro: Kabel maximal 7 m laut Handbuch, FAQ nennt 8 m gesamt.",
+      "source": "O 2/8; QO 2",
+      "treatment": "Bereits bestehender Längenkonflikt bestätigt; keine allgemeine 8-m-Freigabe."
+    },
+    {
+      "id": "GS22",
+      "finding": "Alte G.A.S.-pro: Heizung mindestens 1 m, Blei-Säure-Batterie 1,5 m; Sensor nahe Schlafplatz.",
+      "source": "O 2/8",
+      "treatment": "Abstände nicht von G.A.S./connect übernehmen; Gasbohrung 20 mm, CO 12 mm."
+    },
+    {
+      "id": "GS23",
+      "finding": "CO-Höhe: O DE deckennah, O FR beliebige Höhe, Zeichnung 10–50 cm; Sensorblatt 10–30 cm.",
+      "source": "O 2/8/24; SCO 3",
+      "treatment": "Widerspruch neu explizit im alten Hauptartikel und CO-Artikel DE/FR markiert; keine beliebige Höhe freigeben."
+    },
+    {
+      "id": "GS24",
+      "finding": "Alte G.A.S.-pro: technische Tabelle 9–30 V, Anschlusszeichnung 8–30 V.",
+      "source": "O 4/10/23",
+      "treatment": "Neu als Quellenkonflikt markiert; keine Betriebsfreigabe unter 9 V daraus abgeleitet."
+    },
+    {
+      "id": "GS25",
+      "finding": "Altes Handbuch: Zentrale 10 mA, Gassensor 75 mA, CO-Sensor 40 mA; heutige CO-Seite 6 mA.",
+      "source": "O 4/10; WCO; WO",
+      "treatment": "Sensor-/Versionskontext erhalten; aktuelle 80-mA-Pro-Sensor-Angabe nicht als gemessene universelle Last übernehmen."
+    },
+    {
+      "id": "GS26",
+      "finding": "Zusatzsirene alte G.A.S.-pro: DE 100190, FR 100191.",
+      "source": "O 2/8",
+      "treatment": "Bestellnummernkonflikt bei Zentrale und Zubehör kenntlich gemacht; Herstellerzuordnung offen."
+    },
+    {
+      "id": "GS27",
+      "finding": "Alte G.A.S.-pro: IGN/Zündung ein inaktiv, Zündung aus aktiv; nach Start ca. 4 min vorheizen.",
+      "source": "O 3/9",
+      "treatment": "Nicht mit der bloßen Stummschaltung der III-Serie vermischen."
+    },
+    {
+      "id": "GS28",
+      "finding": "Alte G.A.S.-pro: Gas 30 s Alarm/30 s Pause; externe CO-Sirene 10 s.",
+      "source": "O 3/9",
+      "treatment": "Nicht mit 2 × 10 s SIR+ bei III gleichsetzen."
+    },
+    {
+      "id": "GS29",
+      "finding": "Altes Handbuch beschreibt Feuerzeuggasprüfung für Gas-Sensoren, ausdrücklich nicht für CO.",
+      "source": "O 4/10",
+      "treatment": "Historische Gerätebindung beibehalten; generische CO-FAQ ist keine CO-Prüfanweisung."
+    },
+    {
+      "id": "GS30",
+      "finding": "Alte G.A.S.-pro: unregelmäßige 1/2/3 Töne liefern keinen belegten Sensorplatz-Code.",
+      "source": "QO 2–3; QCO 2–3",
+      "treatment": "Keine freie Zuordnung Sensor 1/2/3; Verdrahtung und Gerätestand prüfen."
+    },
+    {
+      "id": "GS31",
+      "finding": "III 101286: interner Gas-Sensor; III CO 101287: interner CO-Sensor; je ein externer Eingang.",
+      "source": "K/KCO 1–2; WIII",
+      "treatment": "Varianten und Gasabdeckung getrennt bestätigt; keine zwei parallelen Zusatzsensoren."
+    },
+    {
+      "id": "GS32",
+      "finding": "III-Kurzanleitungen: 26/9 mA; Sirene 94 dB bei 30 cm; positiver Ausgang 0,50 A/12 V bzw. 0,25 A/24 V.",
+      "source": "K/KCO 1",
+      "treatment": "Messabstand ergänzt; Ausgang nicht als Massekontakt oder beliebige Lastversorgung darstellen."
+    },
+    {
+      "id": "GS33",
+      "finding": "III-Kurzfassungen Rev. 1.3; T-Cover 1.2 und DE-/FR-Innentitel 1.1.",
+      "source": "K/KCO 1; T 1/2/14",
+      "treatment": "Unbelegte zeitliche Rangfolge „neuere Zusatzinformation“ entfernt; sichtbare Revisionen benannt."
+    },
+    {
+      "id": "GS34",
+      "finding": "III Gas: Schalter unten; III CO: Schalter oben; gemeinsame T-Anweisung sagt allgemein unten.",
+      "source": "K/KCO 2; T 5/17/63",
+      "treatment": "Orientierungskonflikt belegt; Hauptgerät Gas 10–20 cm über Boden, CO 10–20 cm unter Decke."
+    },
+    {
+      "id": "GS35",
+      "finding": "III: Hauptdokumente 7 m Sensorkabel, Zusatzsensorblatt 10–30 cm Montagehöhe, Hauptgerät 10–20 cm.",
+      "source": "K/KCO 2; T 6/18; SZ 2–3; QIII 1; QZ 2",
+      "treatment": "Konservative Wiki-Werte als redaktionelle Wahl erkennbar, keine Lösung des Herstellerkonflikts."
+    },
+    {
+      "id": "GS36",
+      "finding": "DIP 1 Lautstärke, 2 LED, 3 SIR+-Dauer, 4 invertierte Ventillogik, 5 Gasempfindlichkeit; 6–8 unbenutzt.",
+      "source": "T 3/15",
+      "treatment": "Tabelle bestätigt; DIP 4 ON = Ruhespannung, Alarm 0 V; keine Reset-Funktion erfinden."
+    },
+    {
+      "id": "GS37",
+      "finding": "III-Klemmen: 0,2–0,75 mm², 7–9 mm abisolieren, kein Verzinnen/keine Aderendhülsen, max. 1 kg Öffnungsdruck.",
+      "source": "T 4–5/16–17; SCO 3",
+      "treatment": "Generationsbezogen bestätigt; alte G.A.S.-pro verlangt dagegen Aderendhülsen."
+    },
+    {
+      "id": "GS38",
+      "finding": "III-Start: Farbreihenfolge, blaue Vorheizphase ca. 4 min, grüner Normalzustand.",
+      "source": "K/KCO 1; T 7/19",
+      "treatment": "LED-Phase und Sensorzuordnung bestätigen Betriebsstatus, nicht vollständige Gasprüfung."
+    },
+    {
+      "id": "GS39",
+      "finding": "III-Pause 60 min; interne Sirene, Funk und SIR+ unterdrückt; LED bleibt; WiPro separat.",
+      "source": "T 6/18",
+      "treatment": "Relevante Wege gemeinsam im Kontext erhalten; manueller Abbruch möglich."
+    },
+    {
+      "id": "GS40",
+      "finding": "CO-Vorrang ist ausdrücklich für interne Sirene der III CO beschrieben.",
+      "source": "T 6/18",
+      "treatment": "Keinen numerischen ppm-Vorrang, keine wiederhergestellten Funk-/SIR+-Wege behaupten; IGN/externer CO-Sensor offen."
+    },
+    {
+      "id": "GS41",
+      "finding": "Unterspannung unter 11,1 V: DE dreimal drei Töne, FR drei; danach manuell neu einschalten.",
+      "source": "T 6/18",
+      "treatment": "Tonkonflikt neu in Haupt- und Diagnoseartikeln; keine abgeleitete 24-V-Schwelle."
+    },
+    {
+      "id": "GS42",
+      "finding": "III: über 60 °C im Gerät alle Farben, Warnton ohne WiPro-Signal; Sensorfehler gelb/1 Ton pro Sekunde.",
+      "source": "T 6/18",
+      "treatment": "Fehlerarten getrennt belegt; kein Übertemperaturalarm via WiPro zugesagt."
+    },
+    {
+      "id": "GS43",
+      "finding": "III CO und externer CO-Sensor: Exp. Date Monat/Jahr, spätestens dann Herstellerersatz.",
+      "source": "T 6",
+      "treatment": "Nicht als universelle Lebensdauer jedes Gassensors ausgeben; Reset verlängert das Datum nicht."
+    },
+    {
+      "id": "GS44",
+      "finding": "Rückruf: 101286 + 101289, Hauptserie 1286-008 bis -012, Verkaufszeitraum 01.01.2023–14.02.2024.",
+      "source": "WRecall; QIII 1",
+      "treatment": "Bestehende Kombination am 01.10.2026 bestätigt; keine neue Anmeldung oder Kontaktaufnahme ausgeführt."
+    },
+    {
+      "id": "GS45",
+      "finding": "CO SNO433-003 benötigt bei alter G.A.S.-pro mindestens 1.04i; ab 0001-003 vorhanden, frühere genannte Serien einsenden.",
+      "source": "SCO 2",
+      "treatment": "Grenze nicht auf G.A.S.-pro III übertragen; Aderendhülsen pro ja, pro III nein (SCO 2–3)."
+    },
+    {
+      "id": "GS46",
+      "finding": "CO-FAQ mischt Gas-/CO-Themen; Feuerzeuggas ist kein CO-Funktionstest.",
+      "source": "QCO 1–3; O 4/10",
+      "treatment": "FR-Fehlübersetzung „gaz plus léger“ zu „gaz de briquet“ korrigiert; CO- und Gasbegriffe getrennt."
+    },
+    {
+      "id": "GS47",
+      "finding": "Zusatzsensor 101289: grün SENSIG, weiß SEN−, braun SEN+; 12-mm-Bohrung; keine Lösungsmittel/Silikone.",
+      "source": "SZ 2–3",
+      "treatment": "Farben und Polaritätszeichen exakt in DE/FR-Kontexttests abgesichert; kein CO-Sensor."
+    },
+    {
+      "id": "GS48",
+      "finding": "Zusatzsensor-FAQ empfiehlt Feuerzeugtest, III-Kurzfassungen schließen Vor-Ort-Gasprüfung aus; Steckbarkeit nicht belegt.",
+      "source": "QZ 2; K/KCO 1; SZ 1–4; WZ",
+      "treatment": "Konflikt explizit; kein III-Feuerzeugtest. Unbelegten steckbaren Sensorkopf entfernt; Herstellerverfahren offen."
+    }
+  ]
+}

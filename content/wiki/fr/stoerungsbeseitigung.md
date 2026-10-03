@@ -1,23 +1,24 @@
 ---
 title: Dépannage — diagnostic sûr des problèmes fréquents
 sources:
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf
-  - sources/pro_finder-kurzanleitung-international_sn-045.pdf
-  - sources/Stromverbrauch.docx
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/FAQ Allgemeine Fragen.pdf
-  - sources/Fragen zu WiPro III.pdf
-  - sources/Fragen zu Funk-Magnetkontakt 868.pdf
-  - sources/Fragen zu Pro-finder.pdf
-  - sources/Fragen zu BT-connect.pdf
-  - sources/Fragen zu G.A.S.-pro III.pdf
-  - sources/FAQ_Haeufige-Fragen-zur-THITRONIK-App_DE.md
-  - wiki/support-fallaufnahme.md
-  - wiki/anlernvorgang.md
-  - wiki/app-befehle.md
-  - wiki/stromversorgung-standzeiten.md
-updated: '2026-07-15'
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Stromverbrauch.docx"
+  - "sources/FAQ Allgemeine Fragen.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/funk-magnetkontakt-faq.pdf"
+  - "content/quellen/funk-bt-connect-faq.pdf"
+  - "content/quellen/gas-pro-iii-faq.pdf"
+  - "sources/FAQ_Haeufige-Fragen-zur-THITRONIK-App_DE.md"
+  - "content/wiki/de/support-fallaufnahme.md"
+  - "content/wiki/de/anlernvorgang.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/stromversorgung-standzeiten.md"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/stoerungsbeseitigung.md
@@ -87,7 +88,15 @@ En présence de fumée, d’une odeur de brûlé, d’un fort échauffement ou d
 | Le Pro-Finder ne répond pas aux SMS | Contrôler la réception, les destinataires et la syntaxe exacte. Désactiver RCS/messages de chat et utiliser un SMS classique avec alphabet GSM ou ASCII. |
 | Les appels atteignent la messagerie | Désactiver la messagerie et les renvois d’appel de la SIM Pro-Finder ; ne pas utiliser de fonctions de confort qui redirigent les appels. |
 | Le premier destinataire reçoit le SMS d’alarme, pas les suivants | Les SMS sont envoyés successivement. Lors d’un test contrôlé, ne pas arrêter immédiatement l’alarme. |
-| SMS d’avertissement à **11,2 V**, puis aucune réaction | Le Pro-Finder est en veille pour éviter la décharge profonde. Charger la batterie et contrôler l’alimentation ; au-dessus de **12,5 V**, il revient en fonctionnement normal. |
+| Alimentation durablement sous **11,2 V**, puis aucune réaction | Avertissement/veille documentés ; retour au-dessus de **12,5 V**. **Ne pas promettre un avertissement en mode B** (rév. 1.3 p. 70). Contrôler batterie et alimentation. |
+
+---
+
+### Diagnostic GPS en position F
+
+En **position F**, **rouge fixe : GPS non connecté**, **jaune clignotant : données GPS sans position valide**, **vert fixe : position GPS correcte**. Si le jaune clignote encore après cinq minutes, contrôler la réception et l’emplacement. Revenir ensuite au mode initial. En fonctionnement normal, le rouge fixe signifie au contraire SIM absente/défectueuse. Ne pas confondre les codes du diagnostic GPS avec ceux du fonctionnement normal.
+
+Pour le raccordement initial de l’antenne GPS externe optionnelle, les deux notices demandent une connexion hors tension puis au moins cinq minutes **au-dessus de 13,5 V** avec une réception satellite dégagée. Il s’agit de l’initialisation de l’antenne, pas d’une tension minimale universelle de fonctionnement. Sources : rév. 2.6, PDF p. 41–42 ; rév. 1.3, PDF p. 60–61.
 
 ---
 
@@ -141,13 +150,15 @@ En présence de fumée, d’une odeur de brûlé, d’un fort échauffement ou d
 | Alarme pendant la cuisson sans danger présent | Une pression brève coupe le son pendant 60 minutes ; une nouvelle pression y met fin. Les LED restent actives. Une concentration de CO très élevée a priorité sur la sourdine de la version CO. |
 | Alarme en roulant due aux gaz d’échappement | Faire contrôler par un professionnel le raccordement IGN à la borne 15. L’appareil est automatiquement silencieux lorsque la tension d’allumage est présente. |
 | Une LED de capteur clignote jaune avec environ un son par seconde | Erreur de capteur ; contacter le revendeur ou l’assistance. |
-| Les deux LED pulsent jaune ; un triple signal est répété trois fois | Sous-tension sous **11,1 V** ; l’appareil s’éteint. Rétablir l’alimentation, puis rallumer le G.A.S.-pro III. |
+| Les deux LED pulsent jaune ; nombre de tonalités divergent dans les documents DE/FR | Sous-tension sous **11,1 V** ; l’appareil s’éteint. Rétablir l’alimentation, puis rallumer le G.A.S.-pro III. |
 | Test envisagé avec du gaz de briquet | Ne pas effectuer ce test. L’algorithme ne s’y prête pas ; l’appareil possède un autotest automatique des capteurs. |
 | Toutes les couleurs clignotent | Surtempérature au-dessus d’environ **60 °C** ; contrôler la source de chaleur et le montage, laisser refroidir et escalader si cela se reproduit. |
 
 > **Remarque :** la sourdine de 60 minutes supprime aussi le signal radio et la sortie d’alarme. Elle ne remplace pas un contrôle de danger.
 
----
+### Diagnostic G.A.S.-pro III : sous-tension et nombre de bips DE/FR
+
+**Divergence de sous-tension :** [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6) indique sous 11,1 V **trois séries de trois tonalités** en une minute ; [T, PDF 18](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=18) indique **trois tonalités**. Les deux versions exigent un **rallumage manuel** après rétablissement de la tension et mentionnent l’avertissement batterie de la WiPro appairée. Le nombre de tonalités reste à clarifier : ne pas l’utiliser seul comme code de diagnostic. Aucun seuil 24 V distinct n’est indiqué ici ; ne pas doubler 11,1 V par déduction.
 
 ## Alimentation électrique et temps d’immobilisation
 

@@ -1,16 +1,16 @@
 ---
 title: Contact radiomagnétique 868 — montage et fonctionnement
 sources:
-  - sources/funk_magnetkontakt_sw.pdf
-  - sources/funk_magnetkontakt_ws.pdf
-  - sources/funk-magnetkontakte_montieren.pdf
-  - sources/funk-magnetkontakt-wasserdicht-868.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Fragen zu Funk-Magnetkontakt 868.pdf
-  - sources/Fragen zu Funk-Magnetkontakt 868 wasserdicht.pdf
-  - >-
-    https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/
-updated: '2026-07-18'
+  - "content/quellen/funk-magnetkontakt-montage-rev1.2.pdf"
+  - "content/quellen/funk-magnetkontakt-100757-rev1.3.pdf"
+  - "content/quellen/funk-magnetkontakt-100758-rev1.3.pdf"
+  - "content/quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf"
+  - "content/quellen/funk-magnetkontakt-faq.pdf"
+  - "content/quellen/funk-magnetkontakt-wasserdicht-faq.pdf"
+  - "content/quellen/funk-handsender-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/funk-magnetkontakt.md
@@ -37,13 +37,15 @@ La version standard est disponible en noir et en blanc et convient aux emplaceme
 | Puissance d’émission | < 10 mW | < 10 mW |
 | Dimensions de l’unité d’émission (L × H × P) | 44 × 34 × 15 mm | 52 × 35 × 14 mm |
 | Dimensions de l’aimant (L × H × P) | non documentées séparément | 52 × 13 × 11 mm |
-| Poids | env. 33 g | env. 37 g |
+| Poids | env. 33 g | 33 g dans la notice / 37 g sur la page produit ; attribution non résolue |
 | Indice de protection | aucun indice de protection contre l’eau documenté | IP67 |
-| Plage de température | −10 °C à +60 °C | maximum −40 °C à +125 °C selon la page produit actuelle |
+| Plage de température | −10 °C à +60 °C | −40 °C à +125 °C selon le site ; domaine d’application non clarifié, voir note |
 
 La portée radio indiquée est une valeur en champ libre. Les parties métalliques du véhicule, le lieu de montage et d’autres écrans peuvent réduire considérablement la distance réellement atteinte.
 
-La page produit THITRONIK actuelle indique un poids d’environ **37 g** pour la version étanche. La notice imprimée Rev. 1.0 mentionne encore environ **33 g** ; cet article reprend les données produit actuelles.
+**Divergence non résolue pour le contact étanche 106020 :** la notice Rev. 1.0 indique **33 g**, la page produit **37 g**. Aucun document ne relie ces valeurs à des versions précises ; aucune valeur ne fait autorité à ce stade. Sources : [MW, PDF 17](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=17) et [page produit](https://www.thitronik.de/produkte/produkt/funk-magnetkontakt-868-wasserdicht/), vérifiées le 01.10.2026.
+
+La page produit annonce aussi −40 °C à +125 °C comme plage maximale. La notice ne confirme pas cette plage. Son application à l’appareil complet en fonctionnement, pile CR2032 comprise, reste à clarifier. Ne pas en déduire une homologation de la pile, de l’adhésif ou du fonctionnement permanent à ces températures extrêmes.
 
 La WiPro III peut mémoriser au total **100 émetteurs radio** au maximum. Les contacts magnétiques radio partagent cette mémoire avec les télécommandes radio, les boucles de câble radio et les autres accessoires radio.
 
@@ -107,7 +109,7 @@ Si l’alarme ne se déclenche pas, vérifier d’abord la mémorisation et la p
 
 La LED d’émission doit être dirigée **à l’opposé de l’aimant**. Insérer la platine dans le boîtier de l’émetteur dans ce sens, puis encliqueter le couvercle.
 
-La notice de montage spécifique au produit indique un rayon de montage maximal de **25 mm**. Le manuel d’installation de la WiPro III mentionne une valeur plus prudente d’environ **22 mm**. Pour un montage fiable, prévoir par conséquent une distance en position fermée de **22 mm au maximum** et vérifier la marge de fonctionnement par un test de portée et d’ouverture.
+**Divergence non résolue pour les contacts standard :** les notices Rev. 1.2/1.3 indiquent **25 mm**, l’installation WiPro III Rev. 1.8 environ **22 mm**. La limite de 22 mm en position fermée est ici une règle éditoriale provisoire de prudence, pas une attribution prouvée à une version de matériel. Tester la portée et l’alarme à l’ouverture ; faire confirmer tout montage divergent par le fabricant. Sources : [M0, PDF 6](../../quellen/funk-magnetkontakt-montage-rev1.2.pdf#page=6), [M1, PDF 6](../../quellen/funk-magnetkontakt-100757-rev1.3.pdf#page=6), [M2, PDF 6](../../quellen/funk-magnetkontakt-100758-rev1.3.pdf#page=6) ; installation WiPro Rev. 1.8 (voir le rapport de vérification).
 
 ### Fixation par collage ou vissage
 
@@ -174,6 +176,8 @@ Les deux versions utilisent une **pile bouton CR2032 de 3 V**. Sa durée de vie 
 
 ### Signal de pile faible
 
+**État des sources du signal de pile faible :** la FAQ des accessoires indique 2 secondes, la notice WiPro 5 secondes. L’attribution aux versions matérielles/logicielles reste non résolue. Contrôler le dernier émetteur déclenché, sa LED et sa CR2032 ; la durée seule ne permet pas de conclure à une panne. Voir [[WiPro III — système d'alarme radio pour véhicules de loisirs|WiPro III]].
+
 Lorsque la tension de la pile est inférieure à environ **2,6 V**, la WiPro fournit les indications suivantes au déclenchement du contact magnétique radio :
 
 - La centrale émet un signal sonore pendant environ **2 secondes**.
@@ -182,6 +186,8 @@ Lorsque la tension de la pile est inférieure à environ **2,6 V**, la WiPro fou
 Si un accessoire radio alimenté par une CR2032 signale une pile faible, il est recommandé de contrôler rapidement les autres piles bouton d’âge similaire.
 
 ### Version standard
+
+Pour le boîtier standard, soulever délicatement le couvercle à l’encoche du côté long, retirer la platine et remplacer la CR2032 en respectant la polarité. Remettre la platine avec la LED à l’opposé de l’aimant. Cette ouverture ne s’applique pas au boîtier étanche vissé. Sources : [QH, PDF 2](../../quellen/funk-handsender-faq.pdf#page=2) et [M1, PDF 6](../../quellen/funk-magnetkontakt-100757-rev1.3.pdf#page=6).
 
 Pour remplacer la pile de la version standard, utiliser la notice rapide THITRONIK du support correspondant à la version du boîtier. Désarmer auparavant le système d’alarme, utiliser uniquement une CR2032 neuve, respecter la polarité, puis contrôler la fermeture du boîtier, le fonctionnement et la portée.
 
@@ -215,25 +221,25 @@ En cas de problème de réception ou d’alarme non résolu, relever pour le sup
 
 ## Questions fréquentes (FAQ)
 
-**Quelle version me faut-il ?**  
+### Quelle version me faut-il ?
 Les contacts standard noirs et blancs conviennent aux emplacements de montage protégés. La version étanche avec la réf. 106020 et IP67 est prévue pour les ouvrants situés dans des zones exposées à l’humidité ou aux projections d’eau.
 
-**Pourquoi puis-je mémoriser le contact standard alors qu’il ne déclenche ensuite aucune alarme ?**  
+### Pourquoi puis-je mémoriser le contact standard alors qu’il ne déclenche ensuite aucune alarme ?
 Cela se produit souvent lorsque la platine est insérée à l’envers. La LED d’émission doit être dirigée à l’opposé de l’aimant. Toujours effectuer un test d’alarme après avoir corrigé l’orientation.
 
-**Quelle est la distance maximale entre l’émetteur et l’aimant ?**  
-22 mm au maximum pour la version étanche. Pour la version standard, la notice spécifique au produit indique 25 mm, tandis que le manuel d’installation de la WiPro III mentionne environ 22 mm. Une distance en position fermée de 22 mm au maximum est donc recommandée pour un fonctionnement fiable.
+### Quelle est la distance maximale entre l’émetteur et l’aimant ?
+Pour le contact magnétique étanche 106020 : 22 mm au maximum en position fermée, puis plus de 30 mm pour l’apprentissage et le test. Les flèches des boîtiers pointent l’une vers l’autre. Pour la version standard, la notice spécifique au produit indique 25 mm, tandis que le manuel d’installation de la WiPro III mentionne environ 22 mm. La limite de 22 mm est une règle éditoriale provisoire ; la divergence entre les sources reste non résolue.
 
-**Quand ai-je besoin d’un adaptateur de montage ?**  
+### Quand ai-je besoin d’un adaptateur de montage ?
 En présence d’écarts importants ou de soutes arrière métalliques. Pour la version standard, la réf. 100428 est disponible en noir et la réf. 100729 en blanc.
 
-**Puis-je visser la plaque de montage étanche ?**  
+### Puis-je visser la plaque de montage étanche ?
 Oui. Des vis à tête fraisée adaptées en acier inoxydable V4A sont nécessaires et ne sont pas fournies. Le type et la longueur des vis doivent convenir à la structure du véhicule.
 
-**Ai-je besoin de contacts magnétiques radio sur les portes du véhicule déjà signalées comme ouvertes ?**  
-En général non, si la porte est détectée par le CAN-Bus et correctement interprétée par la WiPro III. Cela doit être vérifié sur le véhicule.
+### Ai-je besoin de contacts magnétiques radio sur les portes du véhicule déjà signalées comme ouvertes ?
+Les portes du véhicule dont l’état ouvert apparaît sur le combiné d’instruments ou l’écran multifonction sont généralement déjà surveillées par le CAN-Bus lorsque la WiPro III est correctement raccordée. Un contact magnétique radio supplémentaire n’est normalement pas nécessaire pour ces portes. Vérifier la détection et son interprétation par WiPro sur le véhicule concerné.
 
-**Que signifie le signal sonore de deux secondes après l’ouverture ?**  
+### Que signifie le signal sonore de deux secondes après l’ouverture ?
 La pile du dernier accessoire radio déclenché est faible. Sur le contact magnétique radio concerné, la LED d’émission rouge reste également allumée pendant environ 30 secondes. Remplacer rapidement la CR2032.
 
 ---
@@ -254,3 +260,11 @@ Ne pas jeter les appareils ni les piles usagées avec les ordures ménagères. D
 - [[Boucle de câble radio 868 — sécurité externe pour marchandises mobiles|Boucle de câble radio 868]]
 - [[Vue d’ensemble du système — gamme de produits THITRONIK|Vue d’ensemble du système]]
 - [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]]
+
+---
+
+## Vérification des sources et versions documentaires
+
+Comparaison documentaire du 01.10.2026, pages physiques des PDF : [M0, PDF 6](../../quellen/funk-magnetkontakt-montage-rev1.2.pdf#page=6), [M1, PDF 6](../../quellen/funk-magnetkontakt-100757-rev1.3.pdf#page=6), [M2, PDF 6](../../quellen/funk-magnetkontakt-100758-rev1.3.pdf#page=6), [MW, PDF 14](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=14), [MW, PDF 15](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=15), [MW, PDF 16](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=16), [MW, PDF 17](../../quellen/funk-magnetkontakt-wasserdicht-106020-rev1.0.pdf#page=17), [QM, PDF 1](../../quellen/funk-magnetkontakt-faq.pdf#page=1), [QMW, PDF 1](../../quellen/funk-magnetkontakt-wasserdicht-faq.pdf#page=1).
+
+Les confirmations et divergences sont consignées dans le [rapport de vérification](../../../docs/quellenpruefung/2026-10-01-funk.md).

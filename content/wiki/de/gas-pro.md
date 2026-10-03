@@ -1,16 +1,15 @@
 ---
 title: G.A.S.-pro (ältere Serie) — Gas- und CO-Alarm
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-pro/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf
-  - sources/handbuch_gas-pro_2.5.pdf
-  - sources/Fragen zu CO-Sensor für G.A.S.-pro und G.A.S.-pro III.pdf
-  - sources/Fragen zu G.A.S.-pro.pdf
-  - sources/Gaswarner.docx
-updated: '2026-07-17'
+  - "content/quellen/gas-co-sensor-anleitung.pdf"
+  - "content/quellen/gas-pro-faq.pdf"
+  - "content/quellen/gas-pro-handbuch-rev2.5.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-pro/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/handbuch_gas-pro_2.5.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/sonstiges/co_sensor-de_en_fr.pdf"
+  - "content/quellen/gas-co-sensor-faq.pdf"
+  - "sources/Gaswarner.docx"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -20,7 +19,7 @@ dealerStatus: approved
 
 **Hauptgeräte-Artikelnummer:** aus den ausgewerteten Unterlagen nicht eindeutig ableitbar  
 **Handbuchbezeichnung:** Handbuch 2.5  
-**Dokumentrevision im Handbuch:** 2.2
+**Sichtbare Dokumentrevision auf der Rückseite (PDF S. 28):** 2.5
 
 G.A.S.-pro ist ein modularer, fest eingebauter Gaswarner mit bis zu drei externen Sensoren. In der Grundausstattung erkennt er Propan, Butan und KO-/Narkosegase; mit kompatiblem CO-Sensor kann das System zusätzlich Kohlenmonoxid überwachen. Die Zentrale besitzt einen integrierten Pieper, AutoSense-Eingänge, dynamische Temperaturanpassung und einen permanenten Selbsttest.
 
@@ -52,6 +51,8 @@ Das Handbuch wird bei THITRONIK unter den archivierten Produkten geführt; die P
 | Garantieangabe im Handbuch | 36 Monate ab Kaufdatum |
 
 Die Angaben sind nicht stillschweigend vereinheitlicht: Das Handbuch nennt den elektrischen Eingangsbereich und getrennte Stromwerte für Zentrale und Sensorarten, die aktuelle Produktseite dagegen Nennspannung und einen gerundeten Wert pro Sensor. Für Sicherung, Leitungsdimensionierung oder Ruhestrombilanz die beiliegende Anleitung des konkreten Geräts, die tatsächliche Sensorbestückung und gegebenenfalls THITRONIK-Support heranziehen. Ob im Einzelfall noch ein Garantieanspruch besteht, hängt von Kaufdatum, Nachweis und den geltenden Bedingungen ab.
+
+Weitere Quellenkonflikte: [O, PDF 4, 10](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=4) nennt **9–30 V**, die Anschlusszeichnung [O, PDF 23](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=23) dagegen **8–30 V**. Daraus keine Freigabe für den Betrieb unter 9 V ableiten. Die alten **40 mA für CO** sind keine universelle Angabe für den heutigen Sensor Art. 100433; dessen [Produktseite](https://www.thitronik.de/produkte/produkt/co-sensor-fuer-gas-pro/) nennt **6 mA** (geprüft 01.10.2026). Sensorversion und Hauptgerät gemeinsam prüfen. **300 ppm CO** im alten Handbuch ist keine allgemeine Unbedenklichkeitsgrenze und keine CO-Alarmschwelle der G.A.S.-pro III CO.
 
 ## Schnellcheck
 
@@ -95,6 +96,10 @@ Die Angaben sind nicht stillschweigend vereinheitlicht: Das Handbuch nennt den e
 Deos, Rasierwasser, scharfe Reinigungsmittel, Atemalkohol, Kochdämpfe und andere gasähnliche Stoffe können eine Sensorreaktion auslösen. Einen Alarm dennoch zuerst wie ein reales Gasereignis behandeln und die Ursache erst aus sicherer Umgebung klären.
 
 ## Systemaufbau und Sensorbestückung
+
+### G.A.S.-pro ältere Serie: Zentrale und externe Sensoren
+
+Die Zentrale der älteren G.A.S.-pro enthält **keinen Gassensor**. Sie nimmt **bis zu drei externe Sensoren** auf. Sensorart und Bestückung entscheiden über Gas- beziehungsweise CO-Erkennung. Das ist nicht die Ein-Sensor-Erweiterung der G.A.S.-pro III. Beleg: [O, PDF 2/8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2).
 
 Die Zentrale enthält keinen Gassensor. An ihre AutoSense-Eingänge können laut Handbuch bis zu drei Sensoren angeschlossen werden:
 
@@ -142,6 +147,10 @@ KO-/Flaschengase sind schwerer als Luft. Den zugehörigen Sensor unterhalb der S
 
 Sensoröffnungen nicht abdecken. Lösungsmittel, Silikon, starke Aerosole, direkter Heizluftstrom und dauerhaft feuchte Bereiche können die Messung beeinträchtigen oder den Sensor schädigen.
 
+### G.A.S.-pro ältere Serie: CO-Sensor und Montagehöhe
+
+Die Montagequellen für den externen CO-Sensor widersprechen sich: [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) verlangt deckennahe Montage, [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) erlaubt im französischen Text beliebige Höhe, [O, PDF 24](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=24) zeigt **10–50 cm unter der Decke**. Die eigene CO-Sensor-Zeichnung [SCO, PDF 3](../../quellen/gas-co-sensor-anleitung.pdf#page=3) zeigt **10–30 cm unter der Decke**. Keine beliebige Montagehöhe freigeben; zum Sensor gehörende Zeichnung und Hauptgerät abgleichen und den Konflikt bei THITRONIK klären. Die 10–20 cm des Hauptgeräts G.A.S.-pro III CO sind keine Ersatzvorgabe für jeden externen CO-Sensor.
+
 ## Montage der Sensoren
 
 1. Anlage vollständig spannungsfrei schalten.
@@ -165,6 +174,8 @@ Bei verdecktem Einbau beachten:
 - Gegebenenfalls Zusatzsirene Art. `100190` einsetzen.
 - Die Betriebsanzeige muss kontrollierbar bleiben; gegebenenfalls externe Betriebsanzeige Art. `100034` verwenden.
 - Klemmen, Sicherung und Leitungsführung müssen für fachgerechte Diagnose zugänglich bleiben.
+
+Quellenkonflikt Zusatzsirene: Der deutsche Handbuchtext [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) nennt **100190**, der französische [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) **100191**. Die Liste übernimmt den deutschen Beleg; die Zuordnung vor Ersatzteilbestellung mit THITRONIK bestätigen lassen.
 
 ## Elektrischer Anschluss
 
@@ -200,6 +211,8 @@ Die vom Handbuch empfohlene Anschlussvariante nutzt `IGN` zur automatischen Steu
 
 Alternativ kann `+12 V` über einen Schalter an `IGN` gelegt werden. Eine Deaktivierung während der Fahrt darf nicht mit einer Störung verwechselt werden. Nach jeder erneuten Aktivierung die Vorheizphase und anschließend die periodisch blinkende Betriebsanzeige abwarten.
 
+Beleg: [O, PDF 3, 9](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=3).
+
 ## Inbetriebnahme und Vorheizphase
 
 1. Montage, Sensorbestückung, Klemmenpositionen, Versorgung und Absicherung prüfen.
@@ -220,6 +233,8 @@ Das Handbuch nennt keine belastbare Farbzuordnung für die Betriebsanzeige. Für
 | Sensorfehler oder Kabeldefekt | unterbrochener Piepton bis zur Behebung |
 
 Die 10-Sekunden-Angabe für CO nicht auf G.A.S.-pro III oder andere Alarmgeber übertragen. Ausgangslogik und Signaldauer sind produktspezifisch.
+
+Beleg: [O, PDF 3, 9](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=3).
 
 ## Verhalten bei Gas- oder CO-Alarm
 
@@ -247,7 +262,13 @@ Keine Flamme an den Sensor halten, keine Propangasflasche, keinen Brennspiritus 
 
 Der CO-Sensor reagiert nicht auf Feuerzeuggas. Das Handbuch verlangt dafür keinen separaten Anwender-Test. Eine CO-Prüfung nur mit geeignetem, kontrolliertem Verfahren durch Fachpersonal ausführen; niemals Fahrzeugabgase oder eine offene Verbrennung in den Innenraum leiten.
 
+Beleg: [O, PDF 4, 10](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=4).
+
 ## Sensorfehler und Signaltöne
+
+### G.A.S.-pro ältere Serie: Piepen ist kein Sensorplatz-Code
+
+Für ein-, zwei- oder dreifaches Piepen gibt es **keine gesicherte Zuordnung zu Sensorplatz 1, 2 oder 3**. Die FAQ nennt mögliche Sensorgüte-/Softwareabweichungen, nicht eine durchnummerierte Fehlercode-Tabelle. Verdrahtung und Gerätestand prüfen lassen; bei dauerhaftem Piepen direkt nach Einbau auch eine Verschiebung der Leitungen auf IGN prüfen. Beleg: [QO, PDF 2–3](../../quellen/gas-pro-faq.pdf#page=2).
 
 Der permanente Selbsttest kann Verdrahtungsfehler, Sensordefekte und bestimmte Software-/Sensorabweichungen melden.
 
@@ -260,6 +281,8 @@ Der permanente Selbsttest kann Verdrahtungsfehler, Sensordefekte und bestimmte S
 | Alarm direkt nach erster Vorheizphase | Sensor möglicherweise durch falsche Lagerung oder Kontamination belastet; Herstellerablauf beachten und bei Wiederholung Support kontaktieren |
 
 Die Zahl der Pieptöne ist in den ausgewerteten Herstellerquellen **keine gesicherte Zuordnung zu Sensorplatz 1, 2 oder 3**. Eine solche Platzdiagnose daher nicht ausgeben.
+
+Beleg: [QO, PDF 2–3](../../quellen/gas-pro-faq.pdf#page=2).
 
 ## Sichere Störungsbeseitigung
 
@@ -297,6 +320,8 @@ Vor dem Anklemmen Aderendhülsen verwenden, den freien Sensoreingang und die zul
 | `100089` | Back-up Sirene 12 V | produktspezifische Anschlussfreigabe prüfen |
 
 Nur Originalzubehör beziehungsweise ausdrücklich freigegebene Komponenten verwenden. Die Hauptgeräte-Artikelnummer der vorhandenen G.A.S.-pro nicht aus Zubehörnummern oder Seriennummern ableiten; siehe [[Artikelnummern-Register — Produkte und Zubehör]] und [[Sirenen und Hupen — Akustische Alarmmittel]].
+
+Quellenkonflikt Zusatzsirene: Der deutsche Handbuchtext [O, PDF 2](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=2) nennt **100190**, der französische [O, PDF 8](../../quellen/gas-pro-handbuch-rev2.5.pdf#page=8) **100191**. Die Liste übernimmt den deutschen Beleg; die Zuordnung vor Ersatzteilbestellung mit THITRONIK bestätigen lassen.
 
 ## Unterschiede zur G.A.S.-pro III
 

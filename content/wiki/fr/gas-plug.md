@@ -1,13 +1,13 @@
 ---
 title: G.A.S.-plug « tout en un » — détecteur de gaz mobile
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas-plug-all-in-one/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/g.a.s.-plug_all-in-one.pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS-plug-all-in-one__100042__Overview_DE.md
-  - sources/Fragen zu G.A.S.-plug „all in one“.pdf
-  - sources/Seriennummer 0042 G.A.S.-plug .csv
-updated: '2026-07-17'
+  - "content/quellen/gas-plug-anleitung-rev1.0.pdf"
+  - "content/quellen/gas-plug-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas-plug-all-in-one/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/g.a.s.-plug_all-in-one.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-plug-all-in-one__100042__Overview_DE.md"
+  - "sources/Seriennummer 0042 G.A.S.-plug .csv"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/gas-plug.md
@@ -42,6 +42,8 @@ G.A.S.-plug « tout en un » est un détecteur de gaz mobile et autonome pour le
 
 La page produit officielle actuelle indique toutefois un niveau sonore d’**env. 85 dB**, tandis que la notice propre au produit qui y est liée indique **82 dB**. Le présent article utilise la valeur de la notice et documente l’écart. Si la pression acoustique est déterminante pour une validation concrète, comparer la notice fournie, le marquage du produit et les informations de l’assistance THITRONIK.
 
+Source : [P, PDF 13](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=13). La sensibilité à partir de 50 ppm ne constitue pas un seuil CO : G.A.S.-plug ne détecte pas le CO. Page web revérifiée le 01/10/2026 ; la divergence 82/85 dB reste ouverte.
+
 ## Contrôle rapide
 
 | Question | Réponse |
@@ -71,6 +73,10 @@ La page produit officielle actuelle indique toutefois un niveau sonore d’**env
 Le terme « mobile » signifie qu’aucune installation fixe n’est requise. Il ne signifie pas que l’appareil fonctionne sans alimentation ni qu’il peut être déplacé arbitrairement d’une prise à l’autre pendant le trajet.
 
 ## Gaz détectables et limites du système
+
+### G.A.S.-plug : raccorder un capteur supplémentaire externe ?
+
+**Capteurs externes raccordables ? Non.** Le G.A.S.-plug est un détecteur autonome pour prise ; il ne possède pas d’entrée pour un capteur supplémentaire externe, notamment pas pour le capteur CO 100433 ou le capteur 101289. La détection de CO exige un système compatible distinct. Source de la configuration : [P, PDF 2/4](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=4).
 
 | Substance ou événement | Détection par G.A.S.-plug |
 |---|---|
@@ -145,6 +151,8 @@ La notice décrit une disponibilité normale après environ quatre minutes. L’
 
 Un témoin jaune fixe immédiatement après le branchement correspond d’abord au préchauffage. Si cet état persiste au-delà de la durée admise pour la première utilisation ou s’accompagne d’un signal sonore continu, un défaut du capteur est probable.
 
+Source : [P, PDF 2, 4](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=2).
+
 ## Déroulement de l’alarme
 
 L’alarme démarre immédiatement lorsque le seuil du capteur est dépassé :
@@ -156,6 +164,8 @@ L’alarme démarre immédiatement lorsque le seuil du capteur est dépassé :
 5. La répétition s’arrête lorsque la valeur repasse sous le seuil ou que l’appareil est débranché.
 
 G.A.S.-plug ne commande ni WiPro, ni klaxon, ni clignotants, ni SMS, ni avertisseur externe. L’audibilité locale dépend donc de la position de la prise, de l’agencement du véhicule et du bruit ambiant.
+
+Source : [P, PDF 2, 4](../../quellen/gas-plug-anleitung-rev1.0.pdf#page=2).
 
 ## Arrêt de l’alarme
 
@@ -189,6 +199,8 @@ La FAQ officielle de THITRONIK autorise un contrôle régulier à l’aide d’u
 5. Attendre que l’appareil retrouve entièrement son état opérationnel.
 
 Ne pas utiliser de bouteille de propane, d’alcool à brûler, de gaz d’essai libéré sans contrôle ni de flamme nue. Ces méthodes peuvent endommager la tête du capteur ou créer un risque d’incendie et d’explosion. En cas d’incertitude, confier le contrôle à un atelier spécialisé.
+
+Portée de la source : [QP, PDF 2](../../quellen/gas-plug-faq.pdf#page=2). Cette FAQ générale ne remplace pas une procédure propre au modèle. Ses paragraphes sur le fil OEM vert et la rallonge GBA-I/détecteur radio ne constituent pas une autorisation de câblage du G.A.S.-plug sur prise. Ne jamais transférer le test au briquet aux capteurs CO ou au G.A.S.-pro III.
 
 ## Comportement en cas d’alarme gaz
 

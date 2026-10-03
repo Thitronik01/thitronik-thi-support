@@ -1,0 +1,767 @@
+{
+  "checkedAt": "2026-10-01",
+  "scope": "Priorisierte fahrzeugbezogene Anschluss-, Bedien- und Versionsaussagen; keine Hersteller- oder Hardwarefreigabe",
+  "claims": [
+    {
+      "id": "V01",
+      "route": "/de/fahrzeuge/adria-coral-matrix",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Adria Coral/Matrix ab Modelljahr 2021: Der Hinweis 08/21 gilt für die neue Aufbautür und wiederkehrenden CAN-Alarm etwa alle 15 Minuten. Die Werkstattmaßnahme an der Aufbauherstellerschnittstelle der B-Säule auf der Beifahrerseite betrifft weiß/braun: trennen und beide Enden isolieren, die Aufbautür anschließend mit einem Funk-Magnetkontakt 868 überwachen. Die ZV bleibt laut Quelle erhalten. Keine pauschale Stilllegung der Türüberwachung bei anderen Adria-Türversionen.",
+      "sources": [
+        {
+          "key": "adria-2021",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "V02",
+      "route": "/de/fahrzeuge/fiat-ducato-244",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Ducato 244: ausschließlich `SW6 ON`. Seite 7 schließt die Alarmbedienung mit der Fiat-Fernbedienung aus; die allgemeine Vorprüfung auf Seite 2 behauptet das Gegenteil. Originalschlüssel-Bedienung deshalb nicht zusagen; THITRONIK-Handsender verwenden und Widerspruch klären. Die 60 Sekunden sind die Scharfschaltverzögerung der verdrahteten Kabinentüren; Funkkontakte wirken sofort. Es handelt sich nicht um eine Eintrittsverzögerung.",
+      "sources": [
+        {
+          "key": "ducato-244",
+          "page": 2
+        },
+        {
+          "key": "ducato-244",
+          "page": 6
+        },
+        {
+          "key": "ducato-244",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "V03",
+      "route": "/de/fahrzeuge/fiat-ducato-x250",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Ducato X250 Euro 4, 2006–2011: `SW2 + SW6 ON`. CAN am grünen Einsatz Pin 5 (Low) / Pin 6 (High), alternativ am schwarzen Einsatz Pin 25 (Low) / Pin 24 (High). Beide Adern müssen aus derselben belegten Anschlussvariante stammen. Die Anleitung 12/20 allein belegt keine zusätzliche SW5-Stellung für jede als safe.lock bezeichnete Anlage; Schlüssel, Umrüstplatine und Gerätestand gesondert zuordnen.",
+      "sources": [
+        {
+          "key": "ducato-x250",
+          "page": 2
+        },
+        {
+          "key": "ducato-x250",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "V04",
+      "route": "/de/fahrzeuge/fiat-talento",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Talento / Trafic III / Vivaro B / NV300, 2014–2021: Die Anleitung 05/22 nennt `0823-014` und `SW3 + SW6 ON`; die FAQ ergänzt Software `5.9`. Mit Keyless-Entry kann der Originalschlüssel die WiPro III laut FAQ nicht steuern. CAN an S1: Pin 4 grau → weiß/orange, Pin 3 grün → violett/orange. Besonderheit Hupe: schwarze Fahrzeugader am zweipoligen Stecker unter dem Lenkrad → graue WiPro-Leitung Pin 12. Nicht die rosa Hupenleitung eines anderen Fahrzeugprofils übernehmen.",
+      "sources": [
+        {
+          "key": "talento-trafic-2014",
+          "page": 2
+        },
+        {
+          "key": "talento-trafic-2014",
+          "page": 3
+        },
+        {
+          "key": "talento-trafic-2014",
+          "page": 5
+        },
+        {
+          "key": "Q",
+          "page": 3
+        },
+        {
+          "key": "Q",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "V05",
+      "route": "/de/fahrzeuge/renault-trafic-iii-2014",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Talento / Trafic III / Vivaro B / NV300, 2014–2021: Die Anleitung 05/22 nennt `0823-014` und `SW3 + SW6 ON`; die FAQ ergänzt Software `5.9`. Mit Keyless-Entry kann der Originalschlüssel die WiPro III laut FAQ nicht steuern. CAN an S1: Pin 4 grau → weiß/orange, Pin 3 grün → violett/orange. Besonderheit Hupe: schwarze Fahrzeugader am zweipoligen Stecker unter dem Lenkrad → graue WiPro-Leitung Pin 12. Nicht die rosa Hupenleitung eines anderen Fahrzeugprofils übernehmen.",
+      "sources": [
+        {
+          "key": "talento-trafic-2014",
+          "page": 2
+        },
+        {
+          "key": "talento-trafic-2014",
+          "page": 3
+        },
+        {
+          "key": "talento-trafic-2014",
+          "page": 5
+        },
+        {
+          "key": "Q",
+          "page": 3
+        },
+        {
+          "key": "Q",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "V06",
+      "route": "/de/fahrzeuge/ford-transit-6g",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Ford Transit 2006–2013: `SW1 + SW2 + SW6 ON`. Quellenkonflikt zum Deadlock: Das Handbuch 12/20 erlaubt ohne Deadlock eine getrennte Bedienung mit THITRONIK-Handsender; die FAQ beschränkt dagegen die Verwendung der WiPro III insgesamt auf Fahrzeuge mit Deadlock. Daher ohne Deadlock keine Einbaufreigabe aus der älteren Anleitung ableiten; Herstellerklärung erforderlich. Mit Deadlock zeigt der Funktionstest zweimaliges Verriegeln. C6 Pin 21 grau/orange ist CAN-High, Pin 31 violett/orange CAN-Low.",
+      "sources": [
+        {
+          "key": "ford-2006",
+          "page": 2
+        },
+        {
+          "key": "ford-2006",
+          "page": 4
+        },
+        {
+          "key": "Q",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "V07",
+      "route": "/de/fahrzeuge/ford-transit-7g-2014",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Ford Transit 2014–2015: ab `0823-011`, FAQ-Software `4.7`, `SW1 + SW2 + SW3 + SW4 + SW6 ON`. Originalschlüssel verriegelt das Fahrzeug, steuert aber nicht die WiPro; Alarmbedienung mit THITRONIK-Handsender. Hupenabgriff an Pin 4 blau/weiß des Schleifringsteckers: Den Schleifringstecker laut Anleitung nicht abziehen. Dieses Profil nicht auf Ford 2016 oder Facelift 2019 übertragen.",
+      "sources": [
+        {
+          "key": "ford-2014",
+          "page": 2
+        },
+        {
+          "key": "ford-2014",
+          "page": 4
+        },
+        {
+          "key": "Q",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "V08",
+      "route": "/de/fahrzeuge/ford-transit-7g-2016",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Ford Transit 2016: `0823-013 / 5.6`, `SW2 + SW4 + SW6 ON`. Die FAQ grenzt dieses Profil auf 2016–2018 ein; der PDF-Dateiname nennt 2016–2019. Ein Fahrzeug von 2019 deshalb anhand der Generation identifizieren. Deadlock-Konflikt: PDF nennt THITRONIK-Bedienung bei Deadlock, FAQ erlaubt Verwendung nur ohne Deadlock. Bei Deadlock keine Freigabe aus der PDF ableiten. Zündung hier J1 Pin 2 gelb/braun → WiPro gelb; das ist nicht der Zündungsabgriff des Facelift 2019.",
+      "sources": [
+        {
+          "key": "ford-2016",
+          "page": 2
+        },
+        {
+          "key": "ford-2016",
+          "page": 4
+        },
+        {
+          "key": "Q",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "V09",
+      "route": "/de/fahrzeuge/ford-transit-7g-facelift",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Ford Transit Facelift 2019: Die PDF 12/20 nennt `0823-013`, die FAQ dagegen `0823-016 / 6.1`; die niedrigere Seriengrenze ist damit nicht als Freigabe belegt. Standardprofil `SW2 + SW4 + SW6 ON`. Zündung am Lenksäulenstecker Pin 1 orange/weiß oder braun/gelb → gelb; nicht J1 Pin 2 des Vorgängers. Die FAQ erlaubt Standard-WiPro nur ohne Deadlock und schließt bei Ford-Pass-App die Alarmsteuerung durch den Fahrzeugschlüssel aus. safe.lock `5298-001 / 7.4.0s` setzt eine anwählbare, deaktivierte Schaltersperre voraus. Detaillierte safe.lock-Verkabelung ist durch diese Standard-PDF nicht belegt.",
+      "sources": [
+        {
+          "key": "ford-2019",
+          "page": 2
+        },
+        {
+          "key": "ford-2019",
+          "page": 5
+        },
+        {
+          "key": "Q",
+          "page": 5
+        },
+        {
+          "key": "S",
+          "page": 6
+        },
+        {
+          "key": "S",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "V10",
+      "route": "/de/fahrzeuge/iveco-daily-euro4",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Iveco Daily Euro 4, 2006–2011: Die eigene Anleitung 12/20 zeigt `SW4 + SW6 ON`. Nicht durch das Euro-5-Profil `SW2 + SW6` ersetzen. CAN entweder grüner Einsatz Pin 5 Low / Pin 6 High oder schwarzer Einsatz Pin 25 Low / Pin 24 High; violette Leitungen anhand Pin und Signal unterscheiden. Warnblinker am weißen Stecker Pin 29 oder 34, hellblau. Das ebenfalls genannte Zündungssignal an Pin 6 eines anderen grünen Steckers darf nicht mit CAN Pin 6 verwechselt werden.",
+      "sources": [
+        {
+          "key": "iveco-euro4",
+          "page": 2
+        },
+        {
+          "key": "iveco-euro4",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "V11",
+      "route": "/de/fahrzeuge/iveco-daily-euro5",
+      "status": "korrigiert",
+      "sourceGap": false,
+      "finding": "Iveco Daily 2011–2024, Anleitung 01/2026, Seite 2: normale WiPro `SW2 + SW6 ON`; safe.lock mit Umrüstplatine `SW2 + SW5 + SW6 ON`; die dritte Grafik für teil- und vollintegrierte safe.lock-Fahrzeuge zeigt `SW1 + SW2 + SW5 + SW6 ON` und verlangt, die blaue ZV-Leitung nicht anzuschließen. Der Hinweis „SW5 nur bei Umrüstplatine“ bleibt gültig. SW1 ist somit nicht ausschließlich ein ZV-Testschalter. Die ZV-Zusatzmatrix nennt zwölf Kombinationen, aber keine allgemeine Freigabe unbekannter Fahrzeuge. Kabelfarben ab 2025 erweitern nicht den Titelbereich 2011–2024. Bei der Hupe überschneiden sich die Angaben sowohl 2017 als auch 2019; Anschluss und Schaltart am Fahrzeug klären.",
+      "sources": [
+        {
+          "key": "iveco-euro5",
+          "page": 2
+        },
+        {
+          "key": "iveco-euro5",
+          "page": 4
+        },
+        {
+          "key": "iveco-euro5",
+          "page": 5
+        },
+        {
+          "key": "iveco-zv",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "V12",
+      "route": "/de/fahrzeuge/mercedes-sprinter-ncv3",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Sprinter NCV3 / Crafter I: `SW1 + SW6 ON`. Vier Blinkerleitungen über Diodenverteiler: X3 Pin 15/16 und X9 Pin 13/24. X9 Pin 24 nicht mit Pin 25 verwechseln, ebenfalls schwarz/grün, aber dicker. Die Fahrzeughupe hat ohne Zündung keine Versorgung; Sirene vorsehen. OBD Pin 8 rosa/schwarz darf nur bei tatsächlich vorhandenem Zündungssignal verwendet werden.",
+      "sources": [
+        {
+          "key": "sprinter-ncv3",
+          "page": 2
+        },
+        {
+          "key": "sprinter-ncv3",
+          "page": 4
+        },
+        {
+          "key": "sprinter-ncv3",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "V13",
+      "route": "/de/fahrzeuge/mercedes-sprinter-t1n",
+      "status": "Präzisierung",
+      "sourceGap": false,
+      "finding": "Sprinter T1N 2000–2006: Die fahrzeugspezifische Anweisung lautet „alle Schalter aus“, also `SW1–SW8 OFF`; die Beschränkung auf SW1–SW4 allein wäre unvollständig. Die Anschlusstabelle trägt jedoch die Bezeichnung WiPro „all in one“. Blau Pin 20 / blau-schwarz Pin 19 sind dort Innenlicht-Eingänge, keine aus einer safe.lock-Anleitung übertragbaren ZV-Ausgänge. Diese alte Tabelle erst nach Bestätigung von Geräteversion und Universalanschlussplan anwenden.",
+      "sources": [
+        {
+          "key": "sprinter-t1n",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "V14",
+      "route": "/de/fahrzeuge/mercedes-sprinter-vs30",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Sprinter VS30 standard: `V6.8`, FAQ `0823-019 / 6.8`, `SW4 + SW6 ON`. MR2 Pin 5 ist der vordere rechte Blinker, ausdrücklich nicht Pin 36. Bei ILS keine Leistungsansteuerung vorn: PDF 03/23 beschreibt alternativ rot/rosa über `220 Ohm` an Pin 14 gelb/rot für alle Blinker; FAQ nennt nur hintere Blinker. Ausführung deshalb bestätigen. Klemme `30T` kann abschalten; danach startet WiPro unscharf. PDF empfiehlt direkte Polklemmenversorgung mit `10 A`. Bei safe.lock sind Türanzeige, CAN-Alarmüberwachung und ZV-Steuerung getrennt zu prüfen; Eura, Hymer und fehlendes Türsteuergerät können Einschränkungen haben.",
+      "sources": [
+        {
+          "key": "sprinter-vs30",
+          "page": 2
+        },
+        {
+          "key": "sprinter-vs30",
+          "page": 5
+        },
+        {
+          "key": "sprinter-vs30",
+          "page": 7
+        },
+        {
+          "key": "Q",
+          "page": 6
+        },
+        {
+          "key": "S",
+          "page": 19
+        },
+        {
+          "key": "S",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "V15",
+      "route": "/de/fahrzeuge/renault-master-ii",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Master II 1998–2010: `SW1 + SW2 + SW3 + SW6 ON`, analoger Anschluss. Im PDF wird auf Seite 4 „P202“ für zwei verschieden dargestellte Stecker benutzt. Für den Warnblinker ist Pin 36 im grünen Einsatz mit grüner Ader belegt; keine eigenmächtige Umbenennung in P201. Steckerbild und Signal bestätigen. Bei automatischer Fahrtverriegelung zeigt die Quelle ein Öffnerrelais: 85 Zündung, 86 Masse, 30 Fahrzeug-Verriegelung, 87a WiPro blau/schwarz; 87 bleibt isoliert. 60 Sekunden betreffen das Schärfen der Kabinentüren, keine Eintrittsverzögerung.",
+      "sources": [
+        {
+          "key": "master-ii",
+          "page": 2
+        },
+        {
+          "key": "master-ii",
+          "page": 4
+        },
+        {
+          "key": "master-ii",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "V16",
+      "route": "/de/fahrzeuge/renault-master-iii",
+      "status": "korrigiert",
+      "sourceGap": false,
+      "finding": "Master III: Anleitung 04/25 „ab 2011“, `SW2 + SW3 + SW6 ON`, Set `100754`; sie nennt selbst keine Mindestsoftware. Die FAQ belegt jedoch `0823-001 / 2.1–6.8` mit fehlender Überwachung von Schiebe- und Hecktür, daher zusätzliche Magnetkontakte. Die Zeile ab `6.9` enthält diesen Hinweis nicht mehr; daraus folgt keine garantierte Überwachung jeder Tür. Jede Tür testen. Originalschlüssel steuert WiPro nicht. P201: CAN-Low Pin 19 natur, CAN-High Pin 39 orange. „New Master“ im PDF-Titel ist keine Freigabe für Master IV.",
+      "sources": [
+        {
+          "key": "master-iii",
+          "page": 2
+        },
+        {
+          "key": "master-iii",
+          "page": 4
+        },
+        {
+          "key": "master-iii",
+          "page": 5
+        },
+        {
+          "key": "Q",
+          "page": 7
+        },
+        {
+          "key": "Q",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "V17",
+      "route": "/de/fahrzeuge/renault-trafic-iii-2022",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Trafic III / Primastar ab 2022: mindestens `6.10.0`, `SW1 + SW2 + SW4 + SW5 + SW6 ON`. Am grauen 40-poligen Fahrzeugstecker: CAN-High Pin 26 grün, CAN-Low Pin 27 braun, Warnblinker Pin 13 blau. Hupe: Pin 10 am 16-poligen Fahrzeugstecker unter dem Lenkrad, blaue Fahrzeugader → rosa WiPro-Leitung. „Pin 10“ bezeichnet hier nicht den WiPro-Stecker; dessen Antennenanschluss darf daraus nicht zum Hupenausgang umgedeutet werden.",
+      "sources": [
+        {
+          "key": "trafic-2022",
+          "page": 2
+        },
+        {
+          "key": "trafic-2022",
+          "page": 4
+        },
+        {
+          "key": "trafic-2022",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "V18",
+      "route": "/de/fahrzeuge/vw-crafter-man-tge-2017",
+      "status": "ergänzt",
+      "sourceGap": false,
+      "finding": "Crafter / MAN TGE 2017–2024 standard: `SW2 + SW3 + SW4 + SW6 ON`, `V6.8`; FAQ ergänzt `0823-019`. PDF 07/2025 nennt Versorgung direkt an der Starterbatterie mit `5 A`, nicht den 10-A-Wert des Sprinter. safe.lock hat den eigenen Zweig `5458-001 / 1.0.0sx`. Sleep-Test laut FAQ: mit Originalschlüssel per Funk verriegeln, acht Minuten warten, am Fahrertürschloss mechanisch öffnen. Öffnet nur die Fahrertür, ist die ZV-Ansteuerung durch safe.lock nicht möglich. Dieser Test unterscheidet sich vom Drei-Minuten-Test des T6.1. Bei Knaus kann die Aufbautür von safe.lock-ZV ausgenommen sein; CAN-Überwachung separat prüfen.",
+      "sources": [
+        {
+          "key": "crafter-2017",
+          "page": 2
+        },
+        {
+          "key": "crafter-2017",
+          "page": 4
+        },
+        {
+          "key": "Q",
+          "page": 9
+        },
+        {
+          "key": "S",
+          "page": 12
+        },
+        {
+          "key": "S",
+          "page": 18
+        },
+        {
+          "key": "S",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "V19",
+      "route": "/de/fahrzeuge/vw-t5",
+      "status": "ergänzt",
+      "sourceGap": false,
+      "finding": "VW T5 2006–2009: `SW1 + SW3 + SW6 ON`. Die Fahrzeuganleitung 12/20 nennt keine Seriengrenze; die FAQ belegt ergänzend `0823-001 / 2.1`. Damit ist die frühere Wiki-Aussage „in den Primärquellen nicht genannt“ überholt. Beim Facelift zählt Modelljahr 2010 laut Deckblatt, nicht allein „2009“ im Dateinamen. CAN-Farben orange/braun → violett/orange, orange/grün → weiß/orange. Kein Profilwechsel allein anhand Erstzulassung.",
+      "sources": [
+        {
+          "key": "t5",
+          "page": 2
+        },
+        {
+          "key": "t5",
+          "page": 4
+        },
+        {
+          "key": "Q",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "V20",
+      "route": "/de/fahrzeuge/vw-t5-facelift",
+      "status": "ergänzt",
+      "sourceGap": false,
+      "finding": "VW T5 Modelljahr 2010–2015: `SW1 + SW4 + SW6 ON`. Die Fahrzeuganleitung 12/20 nennt keine Seriengrenze; die FAQ belegt ergänzend `0823-001 / 2.1`. Damit ist die frühere Wiki-Aussage „in den Primärquellen nicht genannt“ überholt. Beim Facelift zählt Modelljahr 2010 laut Deckblatt, nicht allein „2009“ im Dateinamen. CAN-Farben orange/braun → violett/orange, orange/grün → weiß/orange. Kein Profilwechsel allein anhand Erstzulassung.",
+      "sources": [
+        {
+          "key": "t5-facelift",
+          "page": 2
+        },
+        {
+          "key": "t5-facelift",
+          "page": 4
+        },
+        {
+          "key": "Q",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "V21",
+      "route": "/de/fahrzeuge/vw-t6",
+      "status": "ergänzt",
+      "sourceGap": false,
+      "finding": "VW T6 2015–2019, außer DoKa: `0823-012 / 5.1`, `SW3 + SW4 + SW6 ON`. Die Seriennummer steht im PDF, die Software 5.1 und DoKa-Ausnahme in der FAQ. CAN-High orange/grün → weiß/orange, CAN-Low orange/braun → violett/orange. T6.1 hat eine grüne High-Ader und ein anderes DIP-Profil. safe.lock `5458-001 / 1.0.0sx` ist ein eigener Systemzweig und nicht aus diesem Standardanschluss abzuleiten.",
+      "sources": [
+        {
+          "key": "t6-t61",
+          "page": 2
+        },
+        {
+          "key": "t6-t61",
+          "page": 3
+        },
+        {
+          "key": "Q",
+          "page": 9
+        },
+        {
+          "key": "S",
+          "page": 12
+        },
+        {
+          "key": "S",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "V22",
+      "route": "/de/fahrzeuge/vw-t6-1",
+      "status": "ergänzt",
+      "sourceGap": false,
+      "finding": "VW T6.1 ab 2019, außer DoKa: `0823-019 / 6.8`, `SW2 + SW3 + SW4 + SW6 ON`. CAN-High grün → weiß/orange; beim T6 ist es orange/grün. safe.lock-Prüfung für T6.1 ab Modelljahr 2021: mit Originalschlüssel mechanisch am Fahrertürschloss verriegeln, drei Minuten warten, dort mechanisch entriegeln. Bleiben alle Türen außer der Fahrertür zu, kann safe.lock die ZV nach kurzer Zeit nicht mehr ansteuern. Nicht durch den Acht-Minuten-Funktest des Crafter ersetzen.",
+      "sources": [
+        {
+          "key": "t6-t61",
+          "page": 2
+        },
+        {
+          "key": "t6-t61",
+          "page": 3
+        },
+        {
+          "key": "Q",
+          "page": 10
+        },
+        {
+          "key": "S",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "V23",
+      "route": "/de/fahrzeuge/fiat-ducato-2012-2021",
+      "status": "Quellenlücke",
+      "sourceGap": true,
+      "finding": "Ducato 2012–2021: safe.lock-FAQ bestätigt für die Fahrzeugfamilie 2006–2021 `1050-001 / 5.9s`. Das Einbauhandbuch für 2012–2021 liegt im geprüften PDF-Bestand nicht vor; vorhandene Pin- und DIP-Angaben stammen aus älterem Projektbestand und sind hier nicht neu verifiziert. Umrüstplatinen-Anleitung nennt 2006–2012, FAQ die Replay-Betroffenheit 2006–2018 und Rollcode ab 2019: Dokumentgrenzen getrennt halten. Baujahr und Schlüsselgeneration identifizieren, bevor eine Umrüstung zugesagt wird.",
+      "sources": [
+        {
+          "key": "S",
+          "page": 4
+        },
+        {
+          "key": "S",
+          "page": 23
+        },
+        {
+          "key": "safelock-platine",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "V24",
+      "route": "/de/fahrzeuge/fiat-ducato-2022-2024",
+      "status": "Quellenkonflikt",
+      "sourceGap": true,
+      "finding": "Ducato 8/9: Der Konflikt bleibt offen: `1050-016` mit `7.1s` im Altbestand gegenüber `7.2s` in der FAQ; `1050-042` mit `7.5.2s` gegenüber `7.5.1s` bei großem Fiat-Touch-Infotainment. Die FAQ nennt für Ducato 8 2021–2023 und für 8/9 2023–2024; die Artikelspanne 2022–2024 allein identifiziert die Elektronik nicht. „Blinker beim Verriegeln“ und „Türentriegelung beim Aussteigen“ müssen aktiviert sein. Die passende Original-Einbauanleitung mit sechs DIP-Kombinationen fehlt im PDF-Bestand; deren Prüffolge ist nicht neu bestätigt.",
+      "sources": [
+        {
+          "key": "S",
+          "page": 3
+        },
+        {
+          "key": "S",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "V25",
+      "route": "/de/fahrzeuge/fiat-ducato-2024plus",
+      "status": "Quellenlücke",
+      "sourceGap": true,
+      "finding": "Ducato Facelift 2024+: FAQ belegt `1050-046 / 7.5.3s`. „Blinker beim Verriegeln“ und „Türentriegelung beim Aussteigen“ müssen aktiv sein; nach Fahrzeug-Softwareupdate erneut prüfen. Das Original-Einbauhandbuch dieser Variante fehlt im PDF-Bestand. Die bestätigte Kompatibilitätszeile belegt keine Pins oder DIP-Einstellung; hierfür die konkrete Fahrzeugunterlage beschaffen.",
+      "sources": [
+        {
+          "key": "S",
+          "page": 2
+        },
+        {
+          "key": "S",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "V26",
+      "route": "/de/fahrzeuge/ford-transit-2024plus",
+      "status": "Quellenkonflikt",
+      "sourceGap": true,
+      "finding": "Ford Transit 2024+ / Custom 2023+: Serienkonflikt `5298-005` im bisherigen Projektregister gegenüber `5298-006 / 1.0.1sf` in der FAQ. Ohne zugehörige Serienliste und Einbauunterlage ist 5298-005 keine bestätigte Mindestfreigabe. Die genaue Monatsgrenze 07/2024 beziehungsweise 08/2023 ist durch diese FAQ nicht belegt. Campingmodus: mit THITRONIK verriegeln, wenn später damit entriegelt werden soll; Originalschlüssel-Verriegelung lässt sich bei nicht deaktivierbarer Schaltersperre nicht mit THITRONIK-Zubehör öffnen. Originalschlüssel kann eine THITRONIK-Verriegelung öffnen; Auto-Close ist dann nicht aktiv.",
+      "sources": [
+        {
+          "key": "S",
+          "page": 4
+        },
+        {
+          "key": "S",
+          "page": 5
+        },
+        {
+          "key": "S",
+          "page": 16
+        },
+        {
+          "key": "S",
+          "page": 17
+        }
+      ]
+    },
+    {
+      "id": "V27",
+      "route": "/de/fahrzeuge/mercedes-vito-w447",
+      "status": "Quellenkonflikt",
+      "sourceGap": true,
+      "finding": "Vito / V-Klasse W447: Die FAQ widerspricht sich: Kompatibilitätstabelle `0823-014 / 6.2`, DIP-Tabelle `0823-013 / 5.6`. Daraus keine Freigabe für das ältere Gerät ableiten; Herstellerzuordnung erforderlich. Vorhandene IDML-Auswertung und fehlende Bildverknüpfungen wurden in diesem PDF-Block nicht erneut geprüft. Die FAQ bestätigt bei ILS nur hintere Blinker, liefert aber keine sichere Zuordnung der doppelt vorkommenden Kabelfarben zu einzelnen Pins. Ein vollständiges passendes Original-PDF fehlt.",
+      "sources": [
+        {
+          "key": "Q",
+          "page": 6
+        },
+        {
+          "key": "Q",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "V28",
+      "route": "/de/fahrzeuge/renault-master-2019",
+      "status": "Quellenlücke",
+      "sourceGap": true,
+      "finding": "Master 2019–2024 safe.lock: FAQ bestätigt `5832-001 / 1.0.0sr`. Der Originalschlüssel bedient ausschließlich die Fahrzeugschlösser. Für gleichzeitiges Verriegeln/Schärfen und Entriegeln/Entschärfen ist THITRONIK-Zubehör nötig. Das Standardhandbuch „Master ab 2011“ ersetzt keine safe.lock-Set-Anleitung. Diese fehlt im PDF-Bestand; daher keine Übernahme des Standard-DIP oder der ZV-Pins.",
+      "sources": [
+        {
+          "key": "S",
+          "page": 10
+        },
+        {
+          "key": "S",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "V29",
+      "route": "/de/fahrzeuge/vw-crafter-man-tge-2025",
+      "status": "Quellenlücke",
+      "sourceGap": true,
+      "finding": "Crafter / MAN TGE mit Startknopf: Die FAQ nennt fehlende ZV-Ansteuerung, aber keinen gesonderten Mindeststand für Modelljahr 2025. Die Anleitung 07/2025 auf dem Deckblatt behandelt ausdrücklich Fahrzeuge 2017–2024; Dokumentdatum ist kein Modelljahr. Daher weder `5458-010 / 1.2.1sx` noch `SW3 ON` als neue Freigabe ableiten. Originalanleitung für die Startknopf-Variante bleibt offen.",
+      "sources": [
+        {
+          "key": "S",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "V30",
+      "route": "/de/fahrzeuge/universalanschluss",
+      "status": "bestätigt",
+      "sourceGap": false,
+      "finding": "Universalanschluss: Fehlender Fahrzeugeintrag belegt keine CAN-Kompatibilität und keine safe.lock-ZV-Freigabe. Die allgemeine Tabelle zeigt SW1–SW4 OFF für das Universalprofil; Zusatzfunktionen benötigen den passenden Gerätestand. Die besondere T1N-Anweisung lautet dagegen alle acht Schalter OFF und ist nicht auf jedes Fahrzeug zu übertragen. Fahrzeugjahr, Zentrale, Software und analoge Eingangsfunktion zuerst bestimmen; Pinrollen blau/blau-schwarz unterscheiden sich zwischen Altgerät und safe.lock.",
+      "sources": [
+        {
+          "key": "I",
+          "page": 5
+        },
+        {
+          "key": "sprinter-t1n",
+          "page": 2
+        },
+        {
+          "key": "Q",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "V31",
+      "route": "/de/safe-lock-umruestplatine",
+      "status": "Präzisierung",
+      "sourceGap": false,
+      "finding": "Umrüstplatine Art. `101052`, Rev. 1.3: DE und FR bestätigen den vorherigen Transponder-Kopiervorgang sowie das gemeinsame Entriegeln aller Türen mit beiden Öffnungstasten eines Dreitastenschlüssels. Ein getrennter Laderaumzugang entfällt. Die Anleitung nennt 2006–2012, die FAQ 2006–2018 und Iveco-Unterstützung ab 2011. Diese unterschiedlichen Zeiträume sind ohne konkrete Schlüsselzuordnung keine allgemeine Freigabe. 3 V CR2032, etwa zwei Jahre, `868,35 MHz`, `<10 mW`, −20 bis +80 °C sind in DE/FR belegt. Die englische Tabelle druckt „86835MHz“; den fehlenden Dezimaltrenner nicht übernehmen. Die FAQ PDF 24 erlaubt WiPro III safe.lock oder safe.lock Modul 101051 als Gegenstelle; die alte ausschließliche WiPro-Pflicht ist korrigiert. Die Platine ist weiterhin kein eigenständiges Alarmprodukt.",
+      "sources": [
+        {
+          "key": "safelock-platine",
+          "page": 2
+        },
+        {
+          "key": "safelock-platine",
+          "page": 4
+        },
+        {
+          "key": "safelock-platine",
+          "page": 12
+        },
+        {
+          "key": "S",
+          "page": 23
+        },
+        {
+          "key": "S",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "V32",
+      "route": "/de/seriennummern-softwarestaende",
+      "status": "Quellenkonflikt",
+      "sourceGap": false,
+      "finding": "Fahrzeugversionen: T5 und T5 Facelift `0823-001 / 2.1`, T6 außer DoKa `0823-012 / 5.1`, T6.1 außer DoKa und Crafter 2017–2024 `0823-019 / 6.8` laut FAQ. 0823-019 ist damit kein eindeutiger Beleg für Software 7.1. Offen: Vito `0823-014 / 6.2` versus `0823-013 / 5.6`; neuer Ford `5298-006 / 1.0.1sf` in FAQ versus 5298-005 im Altregister. Update, safe.lock-Hardwareupgrade und Fahrzeugfreigabe sind getrennt. Upgrade Rev. 2.0 nennt Pin 20 blau, Pin 19 blau/schwarz und Pin 16 weiß/schwarz (falls belegt parallel abgreifen), anschließend Zubehör neu anlernen. Das Serviceformular 2024 nennt nur zwei neue Leitungen; keine Ader eigenmächtig weglassen. Seine Sternchen-Grenze 0823-019 ist keine Aussage, dass ältere WiPro generell nicht umrüstbar wären: dafür Support kontaktieren.",
+      "sources": [
+        {
+          "key": "Q",
+          "page": 5
+        },
+        {
+          "key": "Q",
+          "page": 6
+        },
+        {
+          "key": "Q",
+          "page": 9
+        },
+        {
+          "key": "Q",
+          "page": 10
+        },
+        {
+          "key": "Q",
+          "page": 13
+        },
+        {
+          "key": "S",
+          "page": 4
+        },
+        {
+          "key": "S",
+          "page": 5
+        },
+        {
+          "key": "safelock-upgrade",
+          "page": 2
+        },
+        {
+          "key": "update-service-2024",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "V33",
+      "route": "/de/fahrzeugkompatibilitaet",
+      "status": "korrigiert",
+      "sourceGap": false,
+      "finding": "Fahrzeugmatrix, Prüfstand 01.10.2026: Modelljahr, Erstzulassung und Datum der Anleitung getrennt erfassen. Iveco Daily teil-/vollintegriert: Grafik `SW1 + SW2 + SW5 + SW6 ON`, SW5 nur mit Umrüstplatine, blaue ZV-Leitung unverbunden. T5/T5 Facelift `0823-001 / 2.1`, T6 `0823-012 / 5.1`, T6.1 und Crafter 2017–2024 `0823-019 / 6.8` durch FAQ ergänzt. Neuer Ford: Konflikt 5298-005/5298-006. Ein erfüllter Serienstand allein garantiert weder CAN-Türüberwachung noch ZV-Funktion: Ausstattung, Sleep Mode und Schlüsselbedienung separat testen. Neue Fahrzeugvarianten benötigen die eigene Einbauunterlage.",
+      "sources": [
+        {
+          "key": "iveco-euro5",
+          "page": 2
+        },
+        {
+          "key": "Q",
+          "page": 9
+        },
+        {
+          "key": "Q",
+          "page": 10
+        },
+        {
+          "key": "S",
+          "page": 4
+        },
+        {
+          "key": "S",
+          "page": 18
+        }
+      ]
+    }
+  ]
+}

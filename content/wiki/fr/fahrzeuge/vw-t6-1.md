@@ -1,9 +1,11 @@
 ---
 title: VW T6.1 (à partir de 2019)
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t6_2015_.pdf'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-t6-t61.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/vw-t6-1.md
@@ -15,7 +17,19 @@ Cette page décrit l'installation d'une WiPro III dans le VW T6.1 à partir de l
 
 > **Périmètre :** Pour le prédécesseur des années-modèles 2015-2019, voir [[VW T6 (2015-2019)]]. Le manuel commun indique des profils DIP, des numéros de série minimaux et des câbles CAN-High différents pour le T6 et le T6.1. Cette page s'applique uniquement au T6.1 à partir de l'année-modèle 2019.
 
+## Limites du véhicule et sources contrôlées
+
+VW T6.1 dès 2019, hors double cabine (DoKa) : `0823-019 / 6.8`, `SW2 + SW3 + SW4 + SW6 ON`. CAN-High vert → blanc/orange ; sur T6 il est orange/vert. Test safe.lock dès le millésime 2021 : verrouiller mécaniquement à la serrure conducteur avec la clé d’origine, attendre trois minutes, déverrouiller mécaniquement au même endroit. Si seule la porte conducteur s’ouvre, safe.lock ne peut plus piloter la ZV après un court délai. Ne pas remplacer par le test radio de huit minutes du Crafter.
+
+Sources : [t6-t61, PDF 2](../../../quellen/fahrzeug-t6-t61.pdf#page=2), [t6-t61, PDF 3](../../../quellen/fahrzeug-t6-t61.pdf#page=3), [Q, PDF 10](../../../quellen/wipro-iii-faq.pdf#page=10), [S, PDF 21](../../../quellen/wipro-iii-safelock-faq.pdf#page=21).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
+
 ## Aperçu
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 | Paramètres | Statut vérifié |
 |---|---|
@@ -23,7 +37,7 @@ Cette page décrit l'installation d'une WiPro III dans le VW T6.1 à partir de l
 | Années-modèles | à partir de 2019 |
 | Système/Ensemble | WiPro III / kit universel `100754` |
 | Numéro de série minimal | `0823-019` |
-| Logiciel minimum | non mentionné dans les sources primaires |
+| Minimum selon FAQ | `0823-019 / 6.8` (en complément du manuel véhicule) |
 | DIP → ON | `SW2 + SW3 + SW4 + SW6` |
 | Connexion CAN | Boîte à fusibles et tunnel de câbles dans le plancher du conducteur |
 | Commande | télécommande d'origine du véhicule ; émetteur radio portatif 868 également possible |
@@ -161,7 +175,7 @@ La source du véhicule décrit les éléments `100757` et `100758`.
 | Fonctionnalité | Par défaut |
 |---|---|
 | Orientation du conseil d'administration | La LED émettrice doit pointer loin de l'aimant |
-| Zone magnétique | lorsqu'il est fermé, dans la zone jaune, typique `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Surface adhésive | propre, sec et sans graisse |
 | Température de traitement | pas sous `15 °C` |
 | Tampon adhésif de résistance finale | après environ `24 h` |
@@ -181,6 +195,8 @@ La source du véhicule décrit les éléments `100757` et `100758`.
 Voir [[Contact radiomagnétique 868 — montage et fonctionnement]] et [[Boucle de câble radio 868 — sécurité externe pour marchandises mobiles]].
 
 ## Mise en service et tests fonctionnels
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Vérifier à nouveau la position DIP `SW2 + SW3 + SW4 + SW6` et un numéro de série à partir de `0823-019`.
 2. Vérifiez toutes les connexions à sertir, les connecteurs en gel, l'isolation, le serre-câble et le fusible `10-A`.
@@ -230,7 +246,7 @@ Pour le mode de diagnostic CAN, appuyez brièvement sur le bouton du circuit imp
 
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t6_2015_.pdf` — manuel d'installation commun spécifique au véhicule pour T6/T6.1, statut `12/20` ; Les dix pages ont été entièrement vérifiées textuellement et visuellement.
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf` — manuel d'installation général, révision `1.8` ; Section allemande complète déjà vérifiée textuellement et visuellement.
-- L'indication logicielle `6.8` de la matrice n'est pas retenue comme minimum propre au véhicule, car la source primaire du T6.1 mentionne uniquement le numéro de série minimal `0823-019`.
+- La FAQ ajoute le minimum `0823-019 / 6.8`; l’ancienne affirmation contraire est dépassée.
 
 ## Références croisées
 

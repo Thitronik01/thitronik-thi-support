@@ -1,0 +1,620 @@
+{
+  "_hinweis": "Dokumentbasierte DE/FR-Fälle. Lokaler Retrieval-/Kontexttest, kein Live-Modelltest. Quellenkennungen und physische PDF-Seiten im Pro-Finder-Prüfbericht.",
+  "cases": [
+    {
+      "id": "sim-lte",
+      "question": "Pro-Finder 0699-045: Braucht die SIM mobile Daten und welchen PIN?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "mobile Daten",
+        "PIN-Abfrage vollständig aus"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "mobile Daten; PIN-Abfrage vollständig aus",
+      "source": "P1 13/62; K1 1; Q 1–2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "sim-lte",
+      "kontext_muss": [
+        "mobile Daten",
+        "PIN-Abfrage vollständig aus"
+      ]
+    },
+    {
+      "id": "sim-alt",
+      "question": "Pro-Finder 0699-008 bis 0699-044: Welches SIM-Format und welche PIN-Regel?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "Micro-SIM",
+        "0000",
+        "Abfrage aktiv"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Micro-SIM; 0000; Abfrage aktiv",
+      "source": "P0 8/43; K0 1; Q 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "sim-alt",
+      "kontext_muss": [
+        "Micro-SIM",
+        "0000",
+        "Abfrage aktiv"
+      ]
+    },
+    {
+      "id": "multisim",
+      "question": "Pro-Finder: Ist eine Multi-SIM mit gemeinsamer Rufnummer unterstützt?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/mobilfunk-sim"
+      ],
+      "antwort_muss": [
+        "Multi-SIM wird nicht unterstützt",
+        "eigene Rufnummer"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Multi-SIM wird nicht unterstützt; eigene Rufnummer",
+      "source": "Q 1; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "multisim",
+      "kontext_muss": [
+        "Multi-SIM wird nicht unterstützt",
+        "eigene Rufnummer"
+      ]
+    },
+    {
+      "id": "guthaben-lte",
+      "question": "Pro-Finder ab SN -045: Kann ich das Prepaid-Restguthaben abfragen?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/mobilfunk-sim",
+        "/de/app-befehle"
+      ],
+      "antwort_muss": [
+        "bis SN -044",
+        "keine Restguthabenabfrage",
+        "Providerportal"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "bis SN -044; keine Restguthabenabfrage; Providerportal",
+      "source": "Q 4; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "guthaben-lte",
+      "kontext_muss": [
+        "bis SN -044",
+        "keine Restguthabenabfrage",
+        "Providerportal"
+      ]
+    },
+    {
+      "id": "programmierung",
+      "question": "Pro-Finder: Was bedeuten Plus, Minus und S in der Programmier-SMS?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "autorisiert",
+        "Steuerungsberechtigung",
+        "Kartenlink",
+        "keine Leerzeichen"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "autorisiert; Steuerungsberechtigung; Kartenlink; keine Leerzeichen",
+      "source": "P1 15–16/65–66; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "programmierung",
+      "kontext_muss": [
+        "autorisiert",
+        "Steuerungsberechtigung",
+        "Kartenlink",
+        "keine Leerzeichen"
+      ],
+      "kontext_exakt": [
+        "+S491511142338-491736660456"
+      ]
+    },
+    {
+      "id": "master-ersetzt",
+      "question": "Pro-Finder: Hängt eine neue Programmier-SMS vom Master einen Teilnehmer an oder ersetzt sie die Liste?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "ersetzt die gesamte Rufnummernliste",
+        "10 Nummern"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ersetzt die gesamte Rufnummernliste; 10 Nummern",
+      "source": "P0 9–11/44–46; P1 15–17/65–67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "master-ersetzt",
+      "kontext_muss": [
+        "ersetzt die gesamte Rufnummernliste",
+        "10 Nummern"
+      ]
+    },
+    {
+      "id": "e-loeschen",
+      "question": "Pro-Finder: Was löscht Stellung E und muss die SIM eingesetzt bleiben?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "gesamten Zielrufnummernspeicher",
+        "Masternummer",
+        "SIM muss im Gerät bleiben",
+        "ursprünglichen Betriebsart"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "gesamten Zielrufnummernspeicher; Masternummer; SIM muss im Gerät bleiben; ursprünglichen Betriebsart",
+      "source": "P0 11/46; P1 17/67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "e-loeschen",
+      "kontext_muss": [
+        "gesamten Zielrufnummernspeicher",
+        "Masternummer",
+        "SIM muss im Gerät bleiben",
+        "ursprünglichen Betriebsart"
+      ]
+    },
+    {
+      "id": "geo-modern",
+      "question": "Pro-Finder ab 0699-045: Sind beim Geofencing 500 oder 900 Meter richtig?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "900 Meter",
+        "OCR",
+        "Rev. 1.3"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "900 Meter; OCR; Rev. 1.3",
+      "source": "P1 19,21/70,72; OCR-Seite 20 liest 500 statt 900 auf Originalseite 19; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-modern",
+      "kontext_muss": [
+        "900 Meter",
+        "OCR",
+        "Rev. 1.3"
+      ]
+    },
+    {
+      "id": "geo-alt-konflikt",
+      "question": "Pro-Finder Rev. 2.6: Warum stehen beim Geofencing 1 km und 1,5 km?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "1 km",
+        "1,5 km",
+        "Quellenwiderspruch",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1 km; 1,5 km; Quellenwiderspruch; THITRONIK",
+      "source": "P0 12,15/47,50; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-alt-konflikt",
+      "kontext_muss": [
+        "1 km",
+        "1,5 km",
+        "Quellenwiderspruch",
+        "THITRONIK"
+      ]
+    },
+    {
+      "id": "geo-pin",
+      "question": "Pro-Finder: Wie funktioniert Geofencing über Pin 3 in Betriebsart 8 und B?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "Stellung 8 über 6 V ein",
+        "Stellung B über 6 V aus"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Stellung 8 über 6 V ein; Stellung B über 6 V aus",
+      "source": "P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-pin",
+      "kontext_muss": [
+        "Stellung 8 über 6 V ein",
+        "Stellung B über 6 V aus"
+      ]
+    },
+    {
+      "id": "geo-reset",
+      "question": "Pro-Finder: Wie setze ich den Bezugspunkt für Geofencing am neuen Standort?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "erst fence aus",
+        "dann fence an"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "erst fence aus; dann fence an",
+      "source": "P1 21/72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "geo-reset",
+      "kontext_muss": [
+        "erst fence aus",
+        "dann fence an"
+      ]
+    },
+    {
+      "id": "gps-utc",
+      "question": "Pro-Finder ohne GPS-Empfang: Wie lange wartet er und zu welcher Position gehört die UTC-Zeit?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "10 Minuten",
+        "letzte gültige Position",
+        "UTC-Zeit gehört zur letzten empfangenen Position"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "10 Minuten; letzte gültige Position; UTC-Zeit gehört zur letzten empfangenen Position",
+      "source": "P0 17/52; P1 24/75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "gps-utc",
+      "kontext_muss": [
+        "10 Minuten",
+        "letzte gültige Position",
+        "UTC-Zeit gehört zur letzten empfangenen Position"
+      ]
+    },
+    {
+      "id": "gps-standby",
+      "question": "Pro-Finder GPS Standby: Ist das ein Defekt oder wird GPS automatisch reaktiviert?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "Ruhemodus",
+        "automatisch reaktiviert",
+        "Alter"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Ruhemodus; automatisch reaktiviert; Alter",
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "gps-standby",
+      "kontext_muss": [
+        "Ruhemodus",
+        "automatisch reaktiviert",
+        "Alter"
+      ]
+    },
+    {
+      "id": "led-f-rot",
+      "question": "Pro-Finder Stellung F: LED leuchtet rot. Ist die SIM defekt?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "GPS nicht angeschlossen",
+        "normalen Betrieb",
+        "SIM fehlt/defekt"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "GPS nicht angeschlossen; normalen Betrieb; SIM fehlt/defekt",
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "led-f-rot",
+      "kontext_muss": [
+        "GPS nicht angeschlossen",
+        "normalen Betrieb",
+        "SIM fehlt/defekt"
+      ]
+    },
+    {
+      "id": "led-f-gelb",
+      "question": "Pro-Finder GPS-Diagnose F: Was bedeuten gelbes Blinken und grünes Dauerlicht?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "GPS-Daten ohne gültige Position",
+        "GPS-Position okay",
+        "ursprüngliche Betriebsart"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "GPS-Daten ohne gültige Position; GPS-Position okay; ursprüngliche Betriebsart",
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "led-f-gelb",
+      "kontext_muss": [
+        "GPS-Daten ohne gültige Position",
+        "GPS-Position okay",
+        "ursprüngliche Betriebsart"
+      ]
+    },
+    {
+      "id": "led-gelb",
+      "question": "Pro-Finder gelb blinkende LED: Unterschied vor und ab 0699-045?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "Zielrufnummernspeicher leer",
+        "letzte SMS konnte nicht gesendet werden"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Zielrufnummernspeicher leer; letzte SMS konnte nicht gesendet werden",
+      "source": "K0 2; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "led-gelb",
+      "kontext_muss": [
+        "Zielrufnummernspeicher leer",
+        "letzte SMS konnte nicht gesendet werden"
+      ]
+    },
+    {
+      "id": "gps-init",
+      "question": "Pro-Finder externe GPS-Antenne: Gelten die 13,5 V immer oder nur zur Initialisierung?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "fünf Minuten",
+        "über 13,5 V",
+        "Antenneninitialisierung",
+        "keine allgemeine"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "fünf Minuten; über 13,5 V; Antenneninitialisierung; keine allgemeine",
+      "source": "P0 6–7/41–42; P1 11–12/60–61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "gps-init",
+      "kontext_muss": [
+        "fünf Minuten",
+        "über 13,5 V",
+        "Antenneninitialisierung",
+        "keine allgemeine"
+      ]
+    },
+    {
+      "id": "unterspannung",
+      "question": "Pro-Finder Unterspannung: Gilt die Warnung auch in Betriebsart B und wann kehrt er zurück?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/stromversorgung-standzeiten"
+      ],
+      "antwort_muss": [
+        "nicht in Betriebsart B",
+        "dauerhaft unter 11,2 V",
+        "über 12,5 V"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "nicht in Betriebsart B; dauerhaft unter 11,2 V; über 12,5 V",
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "unterspannung",
+      "kontext_muss": [
+        "nicht in Betriebsart B",
+        "dauerhaft unter 11,2 V",
+        "über 12,5 V"
+      ]
+    },
+    {
+      "id": "u2-u5",
+      "question": "Pro-Finder ab 0699-045: Hat er U2 bis U5 Messeingänge und welchen Messbereich?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "U2–U5 auch ab -045",
+        "0–30 V"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "U2–U5 auch ab -045; 0–30 V",
+      "source": "P1 8,11/56,59; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "u2-u5",
+      "kontext_muss": [
+        "U2–U5 auch ab -045",
+        "0–30 V"
+      ]
+    },
+    {
+      "id": "pin-fehler",
+      "question": "Pro-Finder FR Rev. 1.3: Ist Pin 1 positiv oder Masse? Die Anleitung widerspricht sich.",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "Pin 1 als Masse",
+        "Pin 8 als Plus",
+        "Quellenfehler"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Pin 1 als Masse; Pin 8 als Plus; Quellenfehler",
+      "source": "P1 8,11/56,59; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "pin-fehler",
+      "kontext_muss": [
+        "Pin 1 als Masse",
+        "Pin 8 als Plus",
+        "Quellenfehler"
+      ]
+    },
+    {
+      "id": "strom",
+      "question": "Pro-Finder: Welche Stromaufnahme hat Rev. 1.3 im Normalbetrieb und bei Netzsuche?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/stromversorgung-standzeiten"
+      ],
+      "antwort_muss": [
+        "16–21 mA",
+        "37 mA"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "16–21 mA; 37 mA",
+      "source": "P1 25/76; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "strom",
+      "kontext_muss": [
+        "16–21 mA",
+        "37 mA"
+      ]
+    },
+    {
+      "id": "anruf-zwei",
+      "question": "Pro-Finder Betriebsart 2 und 3: Kann ich anrufen, ohne die WiPro umzuschalten?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "scharf/unscharf",
+        "keine reine Statusabfrage"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "scharf/unscharf; keine reine Statusabfrage",
+      "source": "P0 14/49; P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "anruf-zwei",
+      "kontext_muss": [
+        "scharf/unscharf",
+        "keine reine Statusabfrage"
+      ]
+    },
+    {
+      "id": "modus-neun",
+      "question": "Pro-Finder Betriebsart 9: Sind die U-Werte in Rev. 2.6 und 1.3 gleich?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "Modus 9 enthält U1–U5",
+        "Rev. 2.6",
+        "keine U-Werte"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Modus 9 enthält U1–U5; Rev. 2.6; keine U-Werte",
+      "source": "P0 5/40; P1 10/58; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "modus-neun",
+      "kontext_muss": [
+        "Modus 9 enthält U1–U5",
+        "Rev. 2.6",
+        "keine U-Werte"
+      ]
+    },
+    {
+      "id": "fr-status",
+      "question": "Pro-Finder französisch ab -045: statut oder rapport d etat?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/app-befehle"
+      ],
+      "antwort_muss": [
+        "statut",
+        "rapport d etat",
+        "Rev. 1.3"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "statut; rapport d etat; Rev. 1.3",
+      "source": "C 1; P1 71,73; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "fr-status",
+      "kontext_muss": [
+        "statut",
+        "rapport d etat",
+        "Rev. 1.3"
+      ]
+    },
+    {
+      "id": "fr-anlernen",
+      "question": "Pro-Finder französisch Rev. 1.3: Welche SMS startet und beendet den Anlernmodus?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/app-befehle"
+      ],
+      "antwort_muss": [
+        "activer le mode d appairage",
+        "desactiver le mode d appairage"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "activer le mode d appairage; desactiver le mode d appairage",
+      "source": "P1 75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "fr-anlernen",
+      "kontext_muss": [
+        "activer le mode d appairage",
+        "desactiver le mode d appairage"
+      ]
+    },
+    {
+      "id": "fr-sortie",
+      "question": "Pro-Finder französisch Rev. 1.3: Wie lauten die Befehle für Ausgang A ein, aus und Impuls?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/app-befehle"
+      ],
+      "antwort_muss": [
+        "activer la sortie A",
+        "desactiver la sortie A",
+        "sortie A impulsion"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "activer la sortie A; desactiver la sortie A; sortie A impulsion",
+      "source": "P1 74; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "fr-sortie",
+      "kontext_muss": [
+        "activer la sortie A",
+        "desactiver la sortie A",
+        "sortie A impulsion"
+      ]
+    },
+    {
+      "id": "kill",
+      "question": "Pro-Finder Fahrzeugstilllegung: Darf a an statt kill verwendet werden und wann wird Ausgang A geschaltet?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/app-befehle",
+        "/de/abschalteinrichtung"
+      ],
+      "antwort_muss": [
+        "kill",
+        "5 Sekunden",
+        "0 km/h",
+        "a an"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "kill; 5 Sekunden; 0 km/h; a an",
+      "source": "S1 2; S2 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "kill",
+      "kontext_muss": [
+        "kill",
+        "5 Sekunden",
+        "0 km/h",
+        "a an"
+      ]
+    },
+    {
+      "id": "folge-sms",
+      "question": "Pro-Finder: Warum bekommt nur die erste Zielrufnummer eine Alarm-SMS?",
+      "expected": [
+        "/de/pro-finder",
+        "/de/app-befehle",
+        "/de/stoerungsbeseitigung"
+      ],
+      "antwort_muss": [
+        "nacheinander",
+        "sofort"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "nacheinander; sofort",
+      "source": "Q 7; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md",
+      "kategorie": "folge-sms",
+      "kontext_muss": [
+        "nacheinander",
+        "sofort"
+      ]
+    },
+    {
+      "id": "prepaid-code-zeichen",
+      "question": "Pro-Finder Rev. 2.6: Wie lautet das Beispiel mit Guthaben-Abfragecode für Prepaid und Smartphone?",
+      "expected": [
+        "/de/pro-finder"
+      ],
+      "antwort_muss": [
+        "bis SN -044"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "*100#P+S49…",
+      "source": "P0 10/45; Q 4",
+      "kategorie": "sms-literal",
+      "kontext_muss": [
+        "bis SN -044"
+      ],
+      "kontext_exakt": [
+        "*100#P+S49…"
+      ]
+    }
+  ]
+}

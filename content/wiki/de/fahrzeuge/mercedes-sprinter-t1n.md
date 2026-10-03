@@ -1,9 +1,9 @@
 ---
 title: Mercedes Sprinter T1N (2000–2006)
 sources:
-  - sources/wipro_iii_mercedes_sprinter_t1n.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-sprinter-t1n.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -15,6 +15,12 @@ Dieser Artikel beschreibt den Universalanschluss einer WiPro III im Mercedes Spr
 
 > **Abgrenzung:** Der T1N wird ohne CAN-Anschluss eingebunden. Für Mercedes Sprinter NCV3/BR906 ab 2006 und VS30/BR907/910 ab 2018 gelten eigene Artikel, andere DIP-Profile und andere Anschlusspunkte. Entscheidend ist die tatsächlich vorhandene Fahrzeugelektronik, nicht allein das Erstzulassungsdatum.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Sprinter T1N 2000–2006: Die fahrzeugspezifische Anweisung lautet „alle Schalter aus“, also `SW1–SW8 OFF`; die Beschränkung auf SW1–SW4 allein wäre unvollständig. Die Anschlusstabelle trägt jedoch die Bezeichnung WiPro „all in one“. Blau Pin 20 / blau-schwarz Pin 19 sind dort Innenlicht-Eingänge, keine aus einer safe.lock-Anleitung übertragbaren ZV-Ausgänge. Diese alte Tabelle erst nach Bestätigung von Geräteversion und Universalanschlussplan anwenden.
+
+Belege: [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2).
+
 ## Geltungsbereich
 
 | Merkmal | Vorgabe |
@@ -22,7 +28,7 @@ Dieser Artikel beschreibt den Universalanschluss einer WiPro III im Mercedes Spr
 | Fahrzeug | Mercedes Sprinter T1N |
 | dokumentierte Modelljahre | 2000–2006 |
 | Anschlussart | Universalanschlussplan, ohne CAN-Bus |
-| Fahrzeugprofil | `SW1–SW4 OFF`; fahrzeugspezifische Quelle: „alle Schalter aus“ |
+| Fahrzeugprofil | `SW1–SW8 OFF`; fahrzeugspezifische Quelle: „alle Schalter aus“ |
 | Türsignal | Innenbeleuchtung an sechspoliger Steckverbindung Richtung A-Säule, Fahrerseite |
 | Blinker | zwei getrennte Fahrzeugleitungen |
 | fahrzeugspezifische Quelle | Stand `12/20` |
@@ -66,7 +72,7 @@ Vor Beginn prüfen und dokumentieren:
 1. WiPro vollständig von der Versorgung trennen.
 2. Sicherstellen, dass weder der 20-polige Anschlussstecker noch ein Pro-finder verbunden ist.
 3. Gehäusedeckel der Zentrale vorsichtig öffnen.
-4. Für den Universalanschluss `SW1`, `SW2`, `SW3` und `SW4` auf `OFF` stellen.
+4. Nach der T1N-Fahrzeuganleitung alle acht Schalter `SW1–SW8 OFF` stellen.
 5. Weitere DIP-Schalter nur für eine ausdrücklich gewünschte und für Seriennummer sowie Softwarestand freigegebene Sonderfunktion verändern.
 6. Tatsächliche Schalterstellung dokumentieren und Gehäuse wieder schließen.
 
@@ -174,7 +180,7 @@ Einzelheiten zum Anlernen: [[Anlernvorgang — Funk-Zubehör an WiPro III anlern
 | Symptom | Prüfung und Maßnahme |
 |---|---|
 | WiPro reagiert nicht | Versorgung an Pin 11, Masse an Pin 1, `10-A`-Sicherung und Steckverbindungen direkt am Gerät prüfen. |
-| Falsches oder instabiles Verhalten | `SW1–SW4` müssen für den T1N auf `OFF` stehen; Anlage vor einer Korrektur spannungsfrei machen. |
+| Falsches oder instabiles Verhalten | `SW1–SW8` müssen für den T1N auf `OFF` stehen; Anlage vor einer Korrektur spannungsfrei machen. |
 | Türöffnung löst keinen Alarm aus | sechspoligen Stecker, Pin 19/20, `rot/gelb`, `braun/weiß` und das geschaltete Massesignal der betroffenen Tür messen. |
 | Nur einige Öffnungen werden erkannt | prüfen, welche Türen tatsächlich die Innenbeleuchtung schalten; übrige Öffnungen separat absichern. |
 | Blinker fehlen auf einer Seite | Pin 12/14 sowie `schwarz/grün` und `schwarz/weiß` einzeln prüfen. |
@@ -187,12 +193,7 @@ Weitere systematische Prüfungen: [[Störungsbeseitigung — Sichere Diagnose h�
 
 ## Quellenentscheidung
 
-- Die zweiseitige fahrzeugspezifische Einbauanleitung *WiPro III – Mercedes Sprinter T1N 2000–2006*, Stand `12/20`, wurde vollständig textlich und visuell geprüft.
-- Sie belegt „alle Schalter aus“, den Innenbeleuchtungsabgriff an der sechspoligen Steckverbindung sowie beide Blinkerleitungen.
-- Das allgemeine WiPro-III-Installationshandbuch `1.8` bestätigt Universalanschluss, Sicherheitsregeln, Pinbelegung, `10-A`-Absicherung, Sirenenempfehlung und Diagnosegrundlagen.
-- Das alte `SW1`-Profil wurde entfernt, weil es laut allgemeiner Tabelle für Sprinter ab 2006 gilt.
-- Die alte Pflichtformulierung zur externen Sirene wurde auf eine quellengetreue Empfehlung korrigiert.
-- Nicht fahrzeugspezifisch belegte Anschlusspunkte für Masse, Zündung, Versorgung und Zentrale werden nicht erfunden; sie müssen am tatsächlichen Fahrzeug bestimmt werden.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2).
 
 ## Querverweise
 

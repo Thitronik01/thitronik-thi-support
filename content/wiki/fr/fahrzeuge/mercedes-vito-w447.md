@@ -1,10 +1,11 @@
 ---
 title: Mercedes Benz Vito W447 (2014-06/2023)
 sources:
-  - sources/WiPro III Mercedes Vito W447 2014+.idml
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "sources/WiPro III Mercedes Vito W447 2014+.idml"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
 translation_of: de/fahrzeuge/mercedes-vito-w447.md
-updated: '2026-07-20'
+updated: '2026-10-01'
 confidence: high
 lang: fr
 ---
@@ -14,6 +15,16 @@ lang: fr
 Cet article décrit l'installation d'une WiPro III dans les Mercedes-Benz Vito et Classe V W447 de 2014 à 06/2023 inclus. Il combine la source véhicule `04/20`, la matrice projet validée et le manuel général version `1.8`, avec une délimitation claire des sources.
 
 > **Limite :** cette validation ne couvre pas automatiquement les véhicules postérieurs à `06/2023`, les calculateurs ou connecteurs différents, ni WiPro III safe.lock. Contrôler équipement, connecteur, couleur, tension et fonction sur le véhicule réel.
+
+## Limites du véhicule et sources contrôlées
+
+Vito / Classe V W447 : contradiction interne à la FAQ, tableau de compatibilité `0823-014 / 6.2`, tableau DIP `0823-013 / 5.6`. Ne pas autoriser l’ancienne centrale à partir de cette divergence ; demander confirmation fabricant. L’ancienne analyse IDML et ses images manquantes n’ont pas été recontrôlées dans ce lot PDF. La FAQ limite ILS aux clignotants arrière, sans identifier sûrement chaque broche parmi des fils de mêmes couleurs. Le PDF original complet manque.
+
+Sources : [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [Q, PDF 13](../../../quellen/wipro-iii-faq.pdf#page=13).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Champ d'application et versions
 
@@ -70,6 +81,8 @@ Avant de commencer, contrôler et consigner :
 
 ## Régler le profil et les DIP
 
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
+
 | Réglage | Position | Signification |
 |---|---|---|
 | Profil Vito actuel | `SW1 + SW3 + SW4 + SW6 ON` | profil de la matrice projet validée |
@@ -101,6 +114,8 @@ Avant de commencer, contrôler et consigner :
 
 ## Raccorder et diagnostiquer le CAN
 
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
+
 | Fil véhicule | Fil WiPro | Broche WiPro | Signal |
 |---|---|---|---|
 | brun/rouge | blanc/orange | 17 | CAN-High |
@@ -115,6 +130,8 @@ Avant de commencer, contrôler et consigner :
 7. Si la LED ne scintille pas avec le trafic CAN, contrôler les raccordements et exclure une inversion High/Low.
 
 ## Raccorder les clignotants analogiques
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 La source utilise un répartiteur à diodes pour quatre fils. Les sorties WiPro sont les broches `12` et `14` ; la réf. `100455` les répartit sur quatre fils du véhicule. Vérifier sa présence dans le kit réel.
 
@@ -139,6 +156,8 @@ La source utilise un répartiteur à diodes pour quatre fils. Les sorties WiPro 
 
 ## Raccorder alimentation, allumage et masse
 
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
+
 | Fonction | Point véhicule | Fil véhicule | Fil / broche WiPro |
 |---|---|---|---|
 | borne 30 | goujon `M6` dans boîte à fusibles | — | rouge, broche `11`, via `10 A` |
@@ -155,6 +174,8 @@ La source utilise un répartiteur à diodes pour quatre fils. Les sorties WiPro 
 8. Remesurer permanent, allumage et chute de tension sous charge avant remontage.
 
 ## Raccorder une sirène supplémentaire ou de secours
+
+> **Source manquante :** section issue de l’ancien projet. La notice originale correspondante manque dans ce lot ; confirmer broches, DIP et câblage avant application.
 
 Le klaxon n'est pas alimenté contact coupé et ne convient pas à la commande directe. La source recommande vivement une sirène dans le moteur ; un passage existe côté conducteur près de la tirette de capot.
 
@@ -221,7 +242,7 @@ Pour les contacts réf. `100757` noir et `100758` blanc :
 1. Aligner le boîtier avec cadre, porte ou trappe.
 2. Insérer la carte avec LED d'émission opposée à l'aimant.
 3. Éviter l'orientation inverse : programmation possible, mais pas d'alarme.
-4. Placer l'aimant dans la plage `22-30 mm`, pas au-delà de la limite rouge.
+4. Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 5. Tester réception et fonction avant collage.
 6. Nettoyer, sécher et dégraisser la surface.
 7. Ne pas coller sous `15 °C` et attendre environ `24 heures`.
@@ -232,6 +253,8 @@ Pour les contacts réf. `100757` noir et `100758` blanc :
 Plus d'informations : [[Contact radiomagnétique 868 — montage et fonctionnement|Contact radiomagnétique 868]].
 
 ## Logique de commande et test final
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 Dans le profil de base, la clé d'origine arme au verrouillage et désarme au déverrouillage. La source Vito ne documente aucun raccordement séparé des fils WiPro bleu ou bleu/noir de verrouillage ; les isoler s'ils sont inutilisés.
 
@@ -274,12 +297,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Décision relative aux sources
 
-- L'IDML *WiPro III Mercedes Vito W447 2014+* a été entièrement contrôlé : textes, tableaux, affectation des pages, métadonnées et graphiques liés.
-- Il documente `04/20`, kit `100754`, SN `0823-014`, `SW1 + SW3 + SW4`, dépose, couleurs CAN, quatre fils de clignotants, alimentation, masse, sirènes, LED, programmation, durées et contacts.
-- La matrice validée complète la période jusqu'à `06/2023`, le logiciel `6.2` et `SW6`, tous signalés comme compléments.
-- Le manuel général `1.8` fournit sécurité, broches 20 pôles, anti-rejeu, diagnostic et logique des sirènes ; ses 15 pages allemandes ont été contrôlées textuellement et visuellement.
-- Les images IDML absentes empêchent de reconstruire les broches de clignotants et l'affectation avant/arrière des couleurs en double ; seuls connecteurs et couleurs textuellement prouvés sont validés.
-- L'inversion CAN et les anciennes données « M violet » et « noir/gris » ont été corrigées.
+La notice complète de montage véhicule manque dans le lot PDF. Ce contrôle porte uniquement sur la compatibilité et les versions sourcées ci-dessus ; les anciennes données IDML/du projet et leurs images ne sont pas nouvellement vérifiées. Sources : [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [Q, PDF 13](../../../quellen/wipro-iii-faq.pdf#page=13).
 
 ## Références croisées
 

@@ -1,0 +1,524 @@
+{
+  "checkedAt": "2026-10-01",
+  "scope": "Ausgewählte Fahrzeugseiten, DE/FR-Upgrade und Umrüstplatine; keine neue Vollprüfung wiederholter Zubehöranhänge oder anderer Sprachen",
+  "visualPageCount": 128,
+  "newOriginalPdfCount": 24,
+  "sources": [
+    {
+      "key": "adria-2021",
+      "id": "88e15f87329e",
+      "path": "content/quellen/fahrzeug-adria-2021.pdf",
+      "sha256": "88e15f87329e4ea72a46cf2da7401fc2665698bb5f4fa060cd24a6a21d6e2e74",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/installationshinweise-wipro-iii-und-wipro-iii-safe.lock-adria-coral-und-matrix-ab-mj-2021.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "08/21",
+      "role": "primary"
+    },
+    {
+      "key": "ducato-244",
+      "id": "eabb7aa5366e",
+      "path": "content/quellen/fahrzeug-ducato-244.pdf",
+      "sha256": "eabb7aa5366e3a649fc97e516efd215d1c7b5ed50b78fbbc2e7e08234d123044",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_fiat_ducato_244.pdf"
+      ],
+      "pages": 11,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "ducato-x250",
+      "id": "aeb5f2d709a7",
+      "path": "content/quellen/fahrzeug-ducato-x250.pdf",
+      "sha256": "aeb5f2d709a782aaef06c840ed121bdd75484372cbd67d7fb002a2f3a2adc80e",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_fiat_ducato_x250_euro_4_safe.lock.pdf"
+      ],
+      "pages": 11,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "talento-trafic-2014",
+      "id": "915fd4a8e5fe",
+      "path": "content/quellen/fahrzeug-talento-trafic-2014.pdf",
+      "sha256": "915fd4a8e5feb6deb16861adf9346aeda2ae3cf4133bf4e5a98d4b425098a138",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_fiat_talento___renault_trafic_iii.pdf"
+      ],
+      "pages": 9,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "revision": "05/22",
+      "role": "primary"
+    },
+    {
+      "key": "ford-2019",
+      "id": "aed4374e7526",
+      "path": "content/quellen/fahrzeug-ford-2019.pdf",
+      "sha256": "aed4374e7526c78524bac89903e49dde1f0a6362c3f38e0887f56ba1ec821217",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_2019.pdf"
+      ],
+      "pages": 11,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "ford-2006",
+      "id": "92889b43e6eb",
+      "path": "content/quellen/fahrzeug-ford-2006.pdf",
+      "sha256": "92889b43e6ebb81b6747842377ce537619c754a884e935820b1a317fbf1371e5",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_6._generation_2006-2013.pdf"
+      ],
+      "pages": 9,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "ford-2014",
+      "id": "0f09f338b7c1",
+      "path": "content/quellen/fahrzeug-ford-2014.pdf",
+      "sha256": "0f09f338b7c1b59f6381a65439ea529512a4929dccdffe30077c7af968cae938",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_7._generation_2014_2015.pdf"
+      ],
+      "pages": 9,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "ford-2016",
+      "id": "68f673c7b898",
+      "path": "content/quellen/fahrzeug-ford-2016.pdf",
+      "sha256": "68f673c7b8982648e22af6a4a3f306858ff81b7e0d077bfd21221c3631a73cc1",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_ford_transit_7._generation_2016-2019.pdf"
+      ],
+      "pages": 9,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "iveco-euro4",
+      "id": "6a6358e0cb25",
+      "path": "content/quellen/fahrzeug-iveco-euro4.pdf",
+      "sha256": "6a6358e0cb25db7ff3a412af0c5de97191929a4a40d01d502a14717aefd8f2f9",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_iveco_daily_euro_4.pdf"
+      ],
+      "pages": 10,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "iveco-euro5",
+      "id": "6d2efad49017",
+      "path": "content/quellen/fahrzeug-iveco-euro5.pdf",
+      "sha256": "6d2efad4901709629782c026e2f2d4456fc718ca51549b84f69c785803ad9fe6",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/WiPro_III_Iveco_Daily_Euro_5_2011-2024_DE.pdf"
+      ],
+      "pages": 10,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "revision": "01/2026",
+      "role": "primary"
+    },
+    {
+      "key": "sprinter-ncv3",
+      "id": "5f290645d516",
+      "path": "content/quellen/fahrzeug-sprinter-ncv3.pdf",
+      "sha256": "5f290645d5169ce721757aa09b1b40c3b91497986d8bf5812c7c3c535f519110",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_mercedes_sprinter_ncv3_vw_crafter_ab_2006.pdf"
+      ],
+      "pages": 13,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "revision": "06/21",
+      "role": "primary"
+    },
+    {
+      "key": "sprinter-t1n",
+      "id": "0d190b0c3f61",
+      "path": "content/quellen/fahrzeug-sprinter-t1n.pdf",
+      "sha256": "0d190b0c3f61894cbe4c5ba4868d0cfb4aab5166a4f9f41d2562d7d046083fb2",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_mercedes_sprinter_t1n.pdf"
+      ],
+      "pages": 2,
+      "visualPages": [
+        1,
+        2
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "sprinter-vs30",
+      "id": "8a734a717da1",
+      "path": "content/quellen/fahrzeug-sprinter-vs30.pdf",
+      "sha256": "8a734a717da1d33798b7c302fc4db262a1c53931d6058048398a3d3947beee49",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_mercedes_sprinter_vs30_01.pdf"
+      ],
+      "pages": 14,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "revision": "03/23",
+      "role": "primary"
+    },
+    {
+      "key": "master-iii",
+      "id": "9fc73228358d",
+      "path": "content/quellen/fahrzeug-master-iii.pdf",
+      "sha256": "9fc73228358d5795e7e26116f0d9032d96c21127e76e0d83ed099002a62b3901",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_renault_master_ab_2011_01.pdf"
+      ],
+      "pages": 10,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "revision": "04/25",
+      "role": "primary"
+    },
+    {
+      "key": "master-ii",
+      "id": "f1a187b62f5c",
+      "path": "content/quellen/fahrzeug-master-ii.pdf",
+      "sha256": "f1a187b62f5c4054f2bfd75fe546c787e1477d57febc56bf4676e95ec684e300",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_renault_master_ii_1998-2010.pdf"
+      ],
+      "pages": 11,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "trafic-2022",
+      "id": "4108275821a4",
+      "path": "content/quellen/fahrzeug-trafic-2022.pdf",
+      "sha256": "4108275821a46270e9996e1109ab1d097870248616bd4112040b68cc92aa015d",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_renault_trafic_iii___nissan_primastar_2022_.pdf"
+      ],
+      "pages": 10,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "revision": "08/22",
+      "role": "primary"
+    },
+    {
+      "key": "crafter-2017",
+      "id": "58c2c10b0fea",
+      "path": "content/quellen/fahrzeug-crafter-2017.pdf",
+      "sha256": "58c2c10b0feab9e65a0e48e2577fd85064515777811a9c320c93d407ff7ef7d5",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_crafter___man_tge_2017-2024 (1).pdf",
+        "Anleitungen/de/wipro_iii_vw_crafter___man_tge_2017-2024.pdf"
+      ],
+      "pages": 11,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "revision": "07/2025",
+      "role": "primary"
+    },
+    {
+      "key": "t5",
+      "id": "9e3c3939b202",
+      "path": "content/quellen/fahrzeug-t5.pdf",
+      "sha256": "9e3c3939b2025cc0f5c479b2684efa8025daa370ee93e11d09ec36c20f4fecb9",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_t5_2006-2009.pdf"
+      ],
+      "pages": 10,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "t5-facelift",
+      "id": "150be1e9a5df",
+      "path": "content/quellen/fahrzeug-t5-facelift.pdf",
+      "sha256": "150be1e9a5dff3746e85461fef85b8ada63b697caaa6f8b23a4c8143787f77db",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_t5_facelift_2009_.pdf"
+      ],
+      "pages": 9,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "t6-t61",
+      "id": "fdc0ab746705",
+      "path": "content/quellen/fahrzeug-t6-t61.pdf",
+      "sha256": "fdc0ab7467056bf3415b631e3a0338576a88351646274913d2a72e06157f0bef",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/wipro_iii_vw_t6_2015_.pdf"
+      ],
+      "pages": 10,
+      "visualPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "revision": "12/20",
+      "role": "primary"
+    },
+    {
+      "key": "safelock-upgrade",
+      "id": "82c5e9cac76b",
+      "path": "content/quellen/fahrzeug-safelock-upgrade.pdf",
+      "sha256": "82c5e9cac76bc05a823ff65bb660c351f150819b44153b98fc1ee11e661adc08",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf"
+      ],
+      "pages": 4,
+      "visualPages": [
+        1,
+        2,
+        4
+      ],
+      "revision": "2.0",
+      "role": "primary"
+    },
+    {
+      "key": "iveco-zv",
+      "id": "a95c4aa4e485",
+      "path": "content/quellen/fahrzeug-iveco-zv.pdf",
+      "sha256": "a95c4aa4e48506d68b886bb042cebf1e36e170d62bb6d7ec80b6d2f548540e8a",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/de/ZV - IVECO Daily.pdf"
+      ],
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "revision": "ohne sichtbare Revision",
+      "role": "primary"
+    },
+    {
+      "key": "safelock-platine",
+      "id": "b6c32564e69a",
+      "path": "content/quellen/fahrzeug-safelock-platine.pdf",
+      "sha256": "b6c32564e69aa86b44708744ac0cb3dcbc8bba6c622568eade75516185969b0e",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/safe.lock Umruestplatine/safe-lock_umruestplatine.pdf",
+        "Anleitungen/de/safe-lock_umruestplatine.pdf"
+      ],
+      "pages": 12,
+      "visualPages": [
+        1,
+        2,
+        4,
+        12
+      ],
+      "revision": "1.3",
+      "role": "primary"
+    },
+    {
+      "key": "update-service-2024",
+      "id": "430e39c0a4b7",
+      "path": "content/quellen/fahrzeug-update-service-2024.pdf",
+      "sha256": "430e39c0a4b72d2b1bfb4a57da04e9f0b5c8b049f2264b1f9e4bb5d671e23b53",
+      "originalPathsRelativeToAnleitungen": [
+        "Anleitungen/01_Quellanleitungen/WiPro III/wipro_iii_upgrade_update_service_2024-de.pdf",
+        "Anleitungen/01_Quellanleitungen/WiPro III safe.lock/wipro_iii_upgrade_update_service_2024-de.pdf"
+      ],
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "revision": "2024",
+      "role": "primary"
+    },
+    {
+      "key": "Q",
+      "id": "0a5013e02c0b",
+      "path": "content/quellen/wipro-iii-faq.pdf",
+      "sha256": "0a5013e02c0b6e8f6097df3bb98969ecd76caf6817b3268e591c59ed43843026",
+      "role": "reused-primary",
+      "previousReview": "2026-09-28-wipro-installation-quellen.json",
+      "newVisualPages": []
+    },
+    {
+      "key": "S",
+      "id": "57dd814b34a9",
+      "path": "content/quellen/wipro-iii-safelock-faq.pdf",
+      "sha256": "57dd814b34a9bfcf08e21cd581dfe08ed5eb1e2fa5f3e8dd3b63299aa192d005",
+      "role": "reused-primary",
+      "previousReview": "2026-09-28-wipro-installation-quellen.json",
+      "newVisualPages": []
+    },
+    {
+      "key": "I",
+      "id": "9393f60f5920",
+      "path": "content/quellen/wipro-iii-installation-rev1.8.pdf",
+      "sha256": "9393f60f59205d73c92a4306b39345772b4cebba27650d45ad00cff394fa7293",
+      "role": "reused-primary",
+      "previousReview": "2026-09-28-wipro-installation-quellen.json",
+      "newVisualPages": []
+    }
+  ],
+  "sourceGaps": [
+    "Ducato 2012–2021: vollständige fahrzeugspezifische Primäranleitung fehlt im geprüften Bestand.",
+    "Ducato 2022–2024: vollständige Primäranleitung fehlt; Serien-/Softwarekonflikt nicht durch Alttexte auflösbar.",
+    "Ducato ab 2024: vollständige Primäranleitung und Zuordnung der widersprüchlichen Softwarestände fehlen.",
+    "Ford Transit 2024+ / Transit-Tourneo Custom 2023+: referenzierte Detail-/CSV-Unterlagen fehlen; Monats- und Firmwaregrenzen nicht neu bestätigt.",
+    "Vito W447: vorhandener Wiki-Alttext beruht unter anderem auf IDML; keine vollständige fahrzeugspezifische Original-PDF in diesem Durchlauf geprüft.",
+    "Master 2019 safe.lock: vollständige fahrzeugspezifische Primäranleitung fehlt; Master-III-Standard-PDF ersetzt sie nicht.",
+    "Crafter / MAN TGE ab 2025 mit Startknopf: fehlende Primäranleitung nicht durch die Standard-PDF 2017–2024 ersetzen.",
+    "Sprinter VS30 und Crafter/MAN TGE 2017–2024: Standard-PDFs geprüft, detaillierte safe.lock-Set-Verkabelung dadurch nicht bestätigt."
+  ],
+  "webComparisons": [
+    {
+      "url": "https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii/",
+      "checkedAt": "2026-10-01",
+      "role": "Ergänzender Abgleich offizieller FAQ; lokale PDF-Fassungen bleiben seitenbezogene Hauptbelege"
+    },
+    {
+      "url": "https://www.thitronik.de/support/faq-produkte/produkt/wipro-iii-safelock/",
+      "checkedAt": "2026-10-01",
+      "role": "Ergänzender Abgleich offizieller FAQ; lokale PDF-Fassungen bleiben seitenbezogene Hauptbelege"
+    }
+  ]
+}

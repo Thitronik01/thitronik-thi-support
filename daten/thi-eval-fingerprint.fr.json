@@ -1,0 +1,323 @@
+{
+  "_hinweis": "Cas de référence CampLock/VanLock fondés sur les PDF du fabricant dans content/quellen/ et les articles du wiki. Exécuter séparément : node werkzeuge/antwort-eval.mjs --sprache fr --gold ../daten/thi-eval-fingerprint.fr.json --judge",
+  "cases": [
+    {
+      "id": "camp-sans-suffixe-wipro-iii",
+      "question": "Mon CampLock porte la référence 106111. Peut-il commander la porte de cellule Hartal avec une WiPro III sans safe.lock ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "106111",
+        "WiPro III",
+        "porte"
+      ],
+      "antwort_darf_nicht": [
+        "106111 exige toujours WiPro III safe.lock",
+        "impossible sans safe.lock"
+      ],
+      "beleg": "Avec WiPro III : verrouillage/déverrouillage de la porte et activation/désactivation de l’alarme. Avec WiPro III safe.lock : verrouillage/déverrouillage de l’ensemble du véhicule et activation/désactivation de l’alarme.",
+      "source": "content/wiki/fr/camplock-fingerprint.md, Quelle version est installée ? ; camplock-fingerprint.pdf, p. 2 du PDF physique",
+      "kategorie": "variante",
+      "kontext_muss": [
+        "106111 / 106144",
+        "Avec WiPro III",
+        "porte"
+      ]
+    },
+    {
+      "id": "camp-002-condition",
+      "question": "La compatibilité de l'ancien CampLock avec la WiPro III standard vaut-elle aussi pour la référence 106111-002 ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "106111-002",
+        "WiPro III safe.lock"
+      ],
+      "antwort_darf_nicht": [
+        "compatible sans safe.lock",
+        "même compatibilité que 106111"
+      ],
+      "beleg": "La notice commune CampLock/VanLock décrit l’utilisation avec WiPro III safe.lock : verrouillage/déverrouillage du véhicule et activation/désactivation de l’alarme. Elle ne confirme ni la compatibilité avec une WiPro III sans safe.lock, ni celle avec un modèle précis de porte Hartal.",
+      "source": "content/wiki/fr/camplock-fingerprint.md, Quelle version est installée ? ; notice commune, p. 20–21 du PDF physique",
+      "kategorie": "voraussetzung",
+      "kontext_muss": [
+        "106111-002",
+        "Elle ne confirme ni la compatibilité"
+      ]
+    },
+    {
+      "id": "van-sources-contradictoires",
+      "question": "Le VanLock 106259 fonctionne-t-il avec une WiPro III standard ? Le catalogue et la notice semblent se contredire.",
+      "expected": [
+        "/fr/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "catalogue",
+        "notice",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [
+        "certainement compatible avec la WiPro III standard",
+        "certainement incompatible avec la WiPro III standard"
+      ],
+      "beleg": "Les documents ne résolvent pas cette contradiction. La notice ne porte aucune date d'édition visible ; la date de création du PDF ne suffit pas à établir une modification matérielle.",
+      "source": "content/wiki/fr/vanlock-fingerprint.md, Divergence entre les sources et vérification de la version ; catalogue p. 25, notice commune p. 21 et 28 du PDF",
+      "kategorie": "quellenkonflikt",
+      "kontext_muss": [
+        "catalogue",
+        "safe.lock",
+        "non résolue"
+      ]
+    },
+    {
+      "id": "capacite-empreintes",
+      "question": "Puis-je enregistrer seize utilisateurs en plus des deux empreintes maîtres sur VanLock ?",
+      "expected": [
+        "/fr/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "16",
+        "total",
+        "maîtres"
+      ],
+      "antwort_darf_nicht": [
+        "18 empreintes",
+        "16 utilisateurs supplémentaires"
+      ],
+      "beleg": "La capacité est de 16 empreintes au total, dont les deux empreintes maîtres.",
+      "source": "content/wiki/fr/vanlock-fingerprint.md, Enregistrer les empreintes et appairer l'alarme ; notice commune, p. 22–23 et 28 du PDF",
+      "kategorie": "kapazitaet",
+      "kontext_muss": [
+        "16 empreintes au total, dont les deux empreintes maîtres"
+      ]
+    },
+    {
+      "id": "effacer-un-seul-doigt",
+      "question": "Comment supprimer seulement l'empreinte d'un utilisateur perdu sur CampLock sans effacer les autres ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "tous",
+        "maître"
+      ],
+      "antwort_darf_nicht": [
+        "effacement individuel possible",
+        "supprimer uniquement cette empreinte"
+      ],
+      "beleg": "Les notices ne décrivent aucun effacement individuel : tous les doigts enregistrés, y compris les doigts maîtres, sont supprimés.",
+      "source": "content/wiki/fr/camplock-fingerprint.md, Effacer tous les doigts ; guide CampLock p. 1, notice commune p. 26–27 du PDF",
+      "kategorie": "loeschen",
+      "kontext_muss": [
+        "tous les doigts enregistrés, y compris les doigts maîtres"
+      ]
+    },
+    {
+      "id": "camp-24v-divergence",
+      "question": "Combien consomme CampLock 106111 sous 24 V : 0,6 ou 1,7 mA ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "0,6",
+        "1,7",
+        "catalogue",
+        "guide"
+      ],
+      "antwort_darf_nicht": [
+        "certainement 1,7 mA",
+        "certainement 0,6 mA"
+      ],
+      "beleg": "Présenter les deux valeurs contradictoires pour les mêmes références, sans expliquer la divergence uniquement par -002.",
+      "source": "C1 p. 1; K1 p. 25 / imprimée 49; C2 FR p. 28",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "0,6 mA",
+        "1,7 mA",
+        "divergence"
+      ]
+    },
+    {
+      "id": "van-poids-divergence",
+      "question": "Le VanLock 106260 pèse-t-il 151 g ou 219 g ? La notice et le catalogue diffèrent.",
+      "expected": [
+        "/fr/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "151",
+        "219",
+        "catalogue",
+        "notice"
+      ],
+      "antwort_darf_nicht": [
+        "151 g est faux",
+        "219 g est faux"
+      ],
+      "beleg": "Le poids reste contradictoire pour les mêmes références ; aucune évolution matérielle démontrée.",
+      "source": "C2 FR p. 28; K1 p. 25 / imprimée 48",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "151 g",
+        "219 g",
+        "divergence"
+      ]
+    },
+    {
+      "id": "camp-autre-doigt-porte",
+      "question": "CampLock 106111 sans -002 : faut-il fermer la porte Hartal avant d’enregistrer un autre doigt ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "fermer",
+        "maître",
+        "15"
+      ],
+      "antwort_darf_nicht": [
+        "la porte doit rester ouverte"
+      ],
+      "beleg": "Fermer la porte, maintenir un doigt maître cinq secondes jusqu’au jaune, poser le nouveau doigt 15 fois.",
+      "source": "C1 p. 2, Appairage d’autres empreintes",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "fermer d’abord la porte de cellule Hartal",
+        "15 fois"
+      ]
+    },
+    {
+      "id": "van-capteur-rouge",
+      "question": "Le capteur VanLock clignote en rouge après avoir posé mon doigt. L’alarme est-elle désarmée ?",
+      "expected": [
+        "/fr/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "non reconnue",
+        "état"
+      ],
+      "antwort_darf_nicht": [
+        "le rouge confirme le désarmement"
+      ],
+      "beleg": "Empreinte non reconnue ; le verrouillage et l’état de l’alarme ne changent pas.",
+      "source": "C2 FR p. 25",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "Empreinte non reconnue",
+        "ne changent pas"
+      ]
+    },
+    {
+      "id": "camp-maitre-perdu",
+      "question": "Je n’ai plus de doigt maître enregistré sur CampLock. Comment réinitialiser le capteur ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "maître",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [
+        "un nouveau doigt suffit",
+        "débrancher la batterie efface toutes les empreintes"
+      ],
+      "beleg": "Aucune autre méthode depuis le capteur n’est documentée sans maître enregistré ; consulter THITRONIK.",
+      "source": "C1 p. 1; C2 FR p. 26–27",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "aucun doigt maître",
+        "ne décrivent pas d’autre effacement"
+      ]
+    },
+    {
+      "id": "van-confirmer-effacement",
+      "question": "VanLock : dois-je confirmer l’effacement après le clignotement rouge ?",
+      "expected": [
+        "/fr/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "dix secondes",
+        "maître",
+        "toutes"
+      ],
+      "antwort_darf_nicht": [
+        "effacement sans confirmation"
+      ],
+      "beleg": "Reposer le même doigt maître dans les dix secondes ; sinon annulation ; toutes les empreintes sont supprimées.",
+      "source": "C2 FR p. 26–27",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "Dans les dix secondes",
+        "Sans cette confirmation, la procédure est annulée"
+      ]
+    },
+    {
+      "id": "camp-erreur-guide-anglais",
+      "question": "Le guide anglais CampLock indique dix secondes jusqu’au jaune puis cinq jusqu’au rouge. Quel délai suivre ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "cinq",
+        "anglaise"
+      ],
+      "antwort_darf_nicht": [
+        "maintenir quinze secondes"
+      ],
+      "beleg": "Signaler la différence du guide anglais ; DE/FR et notice commune concordent sur cinq plus cinq secondes.",
+      "source": "C1 p. 1 panneau 11; C2 FR p. 26, EN p. 17",
+      "kategorie": "fachpruefung-2026-09-28",
+      "kontext_muss": [
+        "cinq secondes jusqu’au jaune, puis cinq secondes supplémentaires jusqu’au rouge",
+        "anglaise"
+      ]
+    },
+    {
+      "id": "camplock-herstellerhinweis-20260727",
+      "question": "Camplock Fingerprint : avis constructeur du 27.07.2026 sur le verrouillage centralisé ?",
+      "expected": [
+        "/fr/camplock-fingerprint"
+      ],
+      "antwort_muss": [
+        "27.07.2026",
+        "clé"
+      ],
+      "antwort_darf_nicht": [
+        "La mise à jour est disponible",
+        "Toutes les séries sont concernées"
+      ],
+      "beleg": "Garder la clé; clarification des versions auprès du fabricant.",
+      "source": "https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/",
+      "kategorie": "herstellerhinweis",
+      "kontext_muss": [
+        "27.07.2026",
+        "clé du véhicule",
+        "version de mise à jour disponible"
+      ]
+    },
+    {
+      "id": "vanlock-herstellerhinweis-20260727",
+      "question": "Vanlock Fingerprint : avis constructeur du 27.07.2026 sur le verrouillage centralisé ?",
+      "expected": [
+        "/fr/vanlock-fingerprint"
+      ],
+      "antwort_muss": [
+        "27.07.2026",
+        "clé"
+      ],
+      "antwort_darf_nicht": [
+        "La mise à jour est disponible",
+        "Toutes les séries sont concernées"
+      ],
+      "beleg": "Garder la clé; clarification des versions auprès du fabricant.",
+      "source": "https://www.thitronik.de/news-und-termine/news/wichtige-information-zu-camplock-und-vanlock-fingerprint/",
+      "kategorie": "herstellerhinweis",
+      "kontext_muss": [
+        "27.07.2026",
+        "clé du véhicule",
+        "version de mise à jour disponible"
+      ]
+    }
+  ],
+  "_pruefstand": "2026-09-28; Quellen-Codes C1/C2/K1: docs/quellenpruefung/2026-09-28-camplock-vanlock.md. kontext_muss prüft Belege, nicht erzeugte Modellantworten."
+}

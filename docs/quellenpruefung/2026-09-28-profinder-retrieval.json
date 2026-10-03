@@ -1,0 +1,589 @@
+{
+  "checkedAt": "2026-09-28T19:34:24.019Z",
+  "mode": "retrieval-only",
+  "liveModelEvaluated": false,
+  "total": 58,
+  "passed": 58,
+  "cases": [
+    {
+      "lang": "de",
+      "id": "sim-lte",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 13/62; K1 1; Q 1–2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "sim-alt",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 8/43; K0 1; Q 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "multisim",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q 1; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "guthaben-lte",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q 4; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "programmierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 15–16/65–66; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "master-ersetzt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 9–11/44–46; P1 15–17/65–67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "e-loeschen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 11/46; P1 17/67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "geo-modern",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 19,21/70,72; OCR-Seite 20 liest 500 statt 900 auf Originalseite 19; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "geo-alt-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 12,15/47,50; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "geo-pin",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "geo-reset",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 21/72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "gps-utc",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 17/52; P1 24/75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "gps-standby",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "led-f-rot",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "led-f-gelb",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "led-gelb",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K0 2; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "gps-init",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 6–7/41–42; P1 11–12/60–61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "unterspannung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "u2-u5",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 8,11/56,59; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "pin-fehler",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 8,11/56,59; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "strom",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 25/76; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "anruf-zwei",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 14/49; P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "modus-neun",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 5/40; P1 10/58; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "fr-status",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 1; P1 71,73; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "fr-anlernen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "fr-sortie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 74; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "kill",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S1 2; S2 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "folge-sms",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q 7; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "de",
+      "id": "prepaid-code-zeichen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 10/45; Q 4"
+    },
+    {
+      "lang": "fr",
+      "id": "sim-lte",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 13/62; K1 1; Q 1–2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "sim-alt",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 8/43; K0 1; Q 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "multisim",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q 1; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "guthaben-lte",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q 4; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "programmierung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 15–16/65–66; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "master-ersetzt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 9–11/44–46; P1 15–17/65–67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "e-loeschen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 11/46; P1 17/67; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "geo-modern",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 19,21/70,72; OCR-Seite 20 liest 500 statt 900 auf Originalseite 19; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "geo-alt-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 12,15/47,50; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "geo-pin",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "geo-reset",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 21/72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gps-utc",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 17/52; P1 24/75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gps-standby",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "led-f-rot",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "led-f-gelb",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 7/42; P1 12/61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "led-gelb",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "K0 2; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gps-init",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 6–7/41–42; P1 11–12/60–61; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "unterspannung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 12/47; P1 19/70; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "u2-u5",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 8,11/56,59; K1 1; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "pin-fehler",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 8,11/56,59; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "strom",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 25/76; K1 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "anruf-zwei",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 14/49; P1 10,21/58,72; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "modus-neun",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 5/40; P1 10/58; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "fr-status",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "C 1; P1 71,73; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "fr-anlernen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 75; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "fr-sortie",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P1 74; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "kill",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "S1 2; S2 2; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "folge-sms",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "Q 7; Quellenkennungen siehe docs/quellenpruefung/2026-09-28-profinder.md"
+    },
+    {
+      "lang": "fr",
+      "id": "prepaid-code-zeichen",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "missingExact": [],
+      "source": "P0 10/45; Q 4"
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 ---
 title: 'VW Crafter / MAN TGE (2025+, mit Startknopf)'
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/wipro-iii-safelock/'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_safe.lock.pdf'
-updated: '2026-07-22'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/wipro-iii-safelock/"
+  - "content/quellen/wipro-iii-safelock-kurzanleitung-rev1.3.pdf"
+updated: '2026-10-01'
 confidence: medium
 lang: de
 dealerStatus: approved
@@ -14,6 +15,12 @@ dealerStatus: approved
 Diese Seite gilt für VW Crafter II und MAN TGE ab Modelljahr 2025 mit Startknopf. Die aktuelle THITRONIK-Produktseite bestätigt das WiPro III safe.lock Set `105458` für VW Crafter II und MAN TGE, nennt für Fahrzeuge mit Startknopf jedoch eine wichtige Einschränkung: Die Zentralverriegelung kann derzeit nicht durch WiPro III safe.lock angesteuert werden.
 
 > **Freigabegrenze:** Für diese Generation liegt lokal keine aktuelle fahrzeugspezifische Einbauanleitung vor. Deshalb enthält diese Seite bewusst keine freigegebenen DIP-, Pin- oder Fahrzeugleitungsangaben. Vor dem Einbau ist die aktuelle, fahrzeug- und gerätespezifische THITRONIK-Anleitung zu beschaffen.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Crafter / MAN TGE mit Startknopf: Die FAQ nennt fehlende ZV-Ansteuerung, aber keinen gesonderten Mindeststand für Modelljahr 2025. Die Anleitung 07/2025 auf dem Deckblatt behandelt ausdrücklich Fahrzeuge 2017–2024; Dokumentdatum ist kein Modelljahr. Daher weder `5458-010 / 1.2.1sx` noch `SW3 ON` als neue Freigabe ableiten. Originalanleitung für die Startknopf-Variante bleibt offen.
+
+Belege: [S, PDF 18](../../../quellen/wipro-iii-safelock-faq.pdf#page=18).
 
 ## Überblick
 
@@ -70,6 +77,8 @@ Bei Fahrzeugen mit Startknopf kann WiPro III safe.lock die Zentralverriegelung d
 8. Bei fehlender oder widersprüchlicher Freigabe den Einbau stoppen und THITRONIK-Support beziehungsweise Fachhändler einbeziehen.
 
 ## DIP, Software und Verdrahtung
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Für die Startknopf-Generation werden auf dieser Seite keine DIP-Stellung und kein Mindeststand freigegeben. Auch die im Altbestand genannten BCM-Anschlüsse sind nicht belastbar.
 

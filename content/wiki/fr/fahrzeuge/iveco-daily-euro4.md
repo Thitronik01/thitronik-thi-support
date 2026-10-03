@@ -1,9 +1,9 @@
 ---
 title: Iveco Daily Euro 4 (2006–2011)
 sources:
-  - sources/wipro_iii_iveco_daily_euro_4.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-iveco-euro4.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/iveco-daily-euro4.md
@@ -14,6 +14,16 @@ translation_of: sources/fahrzeuge/iveco-daily-euro4.md
 Cet article décrit l'installation d'une WiPro III dans un Iveco Daily Euro 4 construit entre 2006 et 2011. Le manuel d'installation spécifique au véhicule, version `12/20`, documente les contrôles du véhicule, le démontage, les raccordements CAN et des feux de détresse, l'alimentation, la masse, le klaxon, la LED d'état, la pose de la centrale, le test fonctionnel et le diagnostic.
 
 > **Délimitation :** l'année, la norme antipollution, l'ordinateur de bord, les inserts de connecteur, les broches et l'identification des câbles doivent tous correspondre au manuel. Pour les véhicules à partir de 2011, voir [[Iveco Daily Euro 5 et plus récent (2011-2024)|Iveco Daily Euro 5 et plus récent]].
+
+## Limites du véhicule et sources contrôlées
+
+Iveco Daily Euro 4, 2006–2011 : la notice 12/20 montre `SW4 + SW6 ON`, pas le profil Euro 5 `SW2 + SW6`. CAN : insert vert broche 5 Low / broche 6 High, ou insert noir broche 25 Low / broche 24 High ; distinguer les fils violets par broche et signal. Feux de détresse au connecteur blanc broche 29 ou 34, bleu clair. Le contact broche 6 d’un autre connecteur vert ne doit pas être confondu avec CAN broche 6.
+
+Sources : [iveco-euro4, PDF 2](../../../quellen/fahrzeug-iveco-euro4.pdf#page=2), [iveco-euro4, PDF 4](../../../quellen/fahrzeug-iveco-euro4.pdf#page=4).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Champ d'application
 
@@ -123,6 +133,8 @@ Le titre « Réaliser la commande du klaxon » de l'étape 8 de la source est ma
 
 ## Test fonctionnel final
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 1. Fermer les portes et armer le système avec le bouton de verrouillage de la télécommande radio d'origine.
 2. Si la WiPro ne réagit pas immédiatement, verrouiller et déverrouiller plusieurs fois pour synchroniser les données CAN.
 3. Vérifier l'armement par un bip, le clignotement des indicateurs de direction et la LED d'état clignotante.
@@ -134,7 +146,7 @@ Le titre « Réaliser la commande du klaxon » de l'étape 8 de la source est ma
 9. Tester séparément la détection CAN, les feux de détresse, le klaxon, la LED d'état et chaque détecteur supplémentaire.
 10. Vérifier enfin qu'aucun nouveau témoin, défaut électrique ou code défaut n'est apparu.
 
-Une série de bips courts à l'armement signale un contact magnétique appris resté ouvert ; selon la source, le système s'arme néanmoins. Les contacts exigent l'orientation correcte du circuit imprimé, une plage magnétique de `22–30 mm`, une surface propre et dégraissée, une température d'application d'au moins `15 °C` et environ `24 heures` jusqu'à l'adhérence finale. Voir [[Contact radiomagnétique 868 — montage et fonctionnement|Contact radiomagnétique 868]].
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 
 ## Diagnostic
 
@@ -151,11 +163,7 @@ Pour les contrôles généraux, voir [[Dépannage — diagnostic sûr des probl�
 
 ## Décision relative aux sources
 
-- Le manuel spécifique de dix pages *WiPro III – Iveco Daily Euro 4 (2006–2011)*, version `12/20`, a été entièrement contrôlé textuellement et visuellement.
-- Les pages 1 à 6 documentent la sécurité, les contrôles, `SW4 + SW6`, le démontage, les raccordements, la pose, le test et le diagnostic ; les pages 7 à 10 contiennent les prescriptions de montage des contacts radiomagnétiques 868.
-- Le manuel général version `1.8` complète les bases de sécurité, de diagnostic et de raccordement. Son ancien réglage de groupe Iveco `SW2` est remplacé par l'exigence spécifique `SW4 + SW6`.
-- Pour la durée d'alarme, la source spécifique s'applique : environ `30 secondes` acoustiques et `180 secondes` optiques. L'ancienne valeur générale de `120 secondes` pour les clignotants n'est pas reprise.
-- La base `0823-001 / 2.1` provient de la matrice homologuée ; le manuel spécifique ne précise aucun numéro de série minimal distinct.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [iveco-euro4, PDF 2](../../../quellen/fahrzeug-iveco-euro4.pdf#page=2), [iveco-euro4, PDF 4](../../../quellen/fahrzeug-iveco-euro4.pdf#page=4).
 
 ## Références croisées
 

@@ -99,6 +99,9 @@ envLaden();
 
 const ENDPUNKT = process.env.THI_EVAL_URL || `http://localhost:${process.env.PORT || 8888}/api/chat`;
 const ZUGANGSWORT = process.env.THI_ZUGANGSWORT || '';
+// Reguläre App-Sitzung für den aktuellen Rollenlogin. Nur im HTTP-Header,
+// niemals im Ergebnisbericht speichern; das frühere Zugangswort bleibt Fallback.
+const EVAL_TOKEN = process.env.THI_EVAL_BEARER_TOKEN || '';
 
 // ─── Gold-Set ───────────────────────────────────────────────────────────────
 const goldDatei = path.resolve(WURZEL, wert('--gold')
@@ -289,14 +292,15 @@ async function frageThi(frage) {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      ...(ZUGANGSWORT ? { 'x-zugangswort': ZUGANGSWORT } : {}),
+      ...(EVAL_TOKEN ? { authorization: `Bearer ${EVAL_TOKEN}` }
+        : ZUGANGSWORT ? { 'x-zugangswort': ZUGANGSWORT } : {}),
     },
     body: JSON.stringify({ frage, sprache: SPRACHE, verlauf: [] }),
   });
 
   if (!res.ok) {
     const detail = await res.json().catch(() => ({}));
-    if (res.status === 401) throw new ZugangFehlt(detail.meldung || 'Zugangswort abgelehnt');
+    if (res.status === 401) throw new ZugangFehlt(detail.meldung || 'Evaluationsanmeldung fehlt oder ist abgelaufen');
     if (res.status === 429) throw new LimitErreicht(detail.meldung || 'Rate-Limit');
     throw new Error(`HTTP ${res.status}: ${(detail.meldung || JSON.stringify(detail)).slice(0, 160)}`);
   }
@@ -506,7 +510,7 @@ for (const [i, c] of faelle.entries()) {
     } catch (e) {
       if (e instanceof ZugangFehlt) {
         console.error(`\nAbbruch: ${e.message}`);
-        console.error('THI_ZUGANGSWORT in .env muss zu dem passen, mit dem der Server läuft.');
+        console.error('Für den Rollenlogin eine gültige App-Sitzung über THI_EVAL_BEARER_TOKEN bereitstellen; beim alten Zugangswort-Modus THI_ZUGANGSWORT prüfen.');
         process.exit(1);
       }
       if (e instanceof LimitErreicht) {

@@ -1,13 +1,9 @@
 ---
 title: Adria Coral / Matrix (ab Modelljahr 2021) — Wohnmobil-Aufbauhinweis
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/installationshinweise-wipro-iii-und-wipro-iii-safe.lock-adria-coral-und-matrix-ab-mj-2021.pdf
-  - >-
-    D:/Anleitungen/Anleitungen/01_Quellanleitungen/WiPro
-    III/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-adria-2021.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -18,6 +14,12 @@ dealerStatus: approved
 Bei Adria Coral und Matrix ab Modelljahr 2021 mit der **neuen Version der Aufbautür** kann die elektrische Ausführung des Aufbautürkontakts nach dem Einbau einer WiPro III oder WiPro III safe.lock regelmäßig einen CAN-Bus-Alarm auslösen. Dieser Artikel beschreibt die dafür vorgesehene Anpassung am Adria-Aufbau.
 
 > **Abgrenzung:** Dies ist keine eigene Basisfahrzeug-Konfiguration. DIP-Stellung, CAN-Anschluss und weitere Leitungsbelegungen richten sich ausschließlich nach der aktuellen Anleitung des tatsächlich verwendeten Basisfahrzeugs und der verbauten WiPro-Ausführung.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Adria Coral/Matrix ab Modelljahr 2021: Der Hinweis 08/21 gilt für die neue Aufbautür und wiederkehrenden CAN-Alarm etwa alle 15 Minuten. Die Werkstattmaßnahme an der Aufbauherstellerschnittstelle der B-Säule auf der Beifahrerseite betrifft weiß/braun: trennen und beide Enden isolieren, die Aufbautür anschließend mit einem Funk-Magnetkontakt 868 überwachen. Die ZV bleibt laut Quelle erhalten. Keine pauschale Stilllegung der Türüberwachung bei anderen Adria-Türversionen.
+
+Belege: [adria-2021, PDF 2](../../../quellen/fahrzeug-adria-2021.pdf#page=2).
 
 ## Geltungsbereich
 

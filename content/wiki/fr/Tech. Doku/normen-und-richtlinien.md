@@ -1,15 +1,14 @@
 ---
 title: 'Normes, directives et approbations'
 sources:
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/FAQ_WiPro-III_DE.md
-  - sources/FAQ_WiPro-III-safelock_DE.md
-  - sources/wipro_deutsche_bedienungsanleitung_abschrift.txt
-  - sources/Funk-Handsender_868__101064__Legal__Konformitaet_2014-53-EU_DE.md
-  - sources/Funk-Kabelschleife_868__100761__Legal__Konformitaet_DE.md
-  - >-
-    sources/safe-lock_Umruestplatine__101052__Legal__Konformitaet_2014-53-EU_DE.md
-  - sources/Was ist eine Wipro.docx
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "sources/FAQ_WiPro-III_DE.md"
+  - "sources/FAQ_WiPro-III-safelock_DE.md"
+  - "sources/wipro_deutsche_bedienungsanleitung_abschrift.txt"
+  - "sources/Funk-Handsender_868__101064__Legal__Konformitaet_2014-53-EU_DE.md"
+  - "sources/Funk-Kabelschleife_868__100761__Legal__Konformitaet_DE.md"
+  - "sources/safe-lock_Umruestplatine__101052__Legal__Konformitaet_2014-53-EU_DE.md"
+  - "sources/Was ist eine Wipro.docx"
 updated: '2026-07-22'
 confidence: high
 lang: fr

@@ -1,13 +1,13 @@
 ---
 title: G.A.S. — Détecteur de gaz autonome avec sirène interne
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/gas/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas.pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS__105700__Overview_DE.md
-  - sources/Fragen zu G.A.S..pdf
-  - sources/Seriennummer 5700 G.A.S..csv
-updated: '2026-07-16'
+  - "content/quellen/gas-anleitung-rev1.1.pdf"
+  - "https://www.thitronik.de/produkte/produkt/gas/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS__105700__Overview_DE.md"
+  - "content/quellen/gas-faq.pdf"
+  - "sources/Seriennummer 5700 G.A.S..csv"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/gas.md
@@ -41,6 +41,8 @@ G.A.S. est un détecteur de gaz autonome à montage fixe destiné aux véhicules
 | Homologation | ECE R10 |
 
 Ne pas dépasser les valeurs limites de la sortie de commande. `Alarm OUT` n’est pas une alimentation destinée à des consommateurs quelconques.
+
+Source : [G, PDF 15](../../quellen/gas-anleitung-rev1.1.pdf#page=15).
 
 ## Contrôle rapide
 
@@ -109,6 +111,8 @@ La notice spécifique au produit fait foi pour cet appareil et prescrit un monta
 
 L’emplacement doit permettre à l’air de circuler librement autour de l’appareil. Ne pas couvrir ni obstruer l’appareil et ne pas l’installer dans un compartiment de rangement fermé.
 
+Source : [G, PDF 2, 4](../../quellen/gas-anleitung-rev1.1.pdf#page=2).
+
 ## Montage mécanique
 
 1. Choisir une zone de montage hors tension respectant les distances prescrites et exclure la présence de câbles ou de composants cachés avant de percer.
@@ -126,12 +130,14 @@ L’emplacement doit permettre à l’air de circuler librement autour de l’ap
 | Raccordement | Fonction | Consigne |
 |---|---|---|
 | `12/24V` | Alimentation positive du réseau de bord | Utiliser une alimentation 12/24 V CC adaptée et protégée par un fusible |
-| `AGND` | Masse | Raccorder à une masse appropriée du véhicule |
+| `GND` | Masse | Raccorder à une masse appropriée du véhicule |
 | `ALARM OUT` | Sortie d’alarme en option | Commutation à la masse, 0,10 A au maximum |
 
 Ouvrir complètement les leviers des bornes, introduire les conducteurs dénudés jusqu’en butée, puis refermer les leviers. Le schéma de raccordement de la notice exige un branchement **sans embouts de câblage**. Contrôler ensuite chaque conducteur en tirant légèrement dessus.
 
 Vérifier la polarité, la protection par fusible et la tension d’alimentation avant la mise en marche. Ne jamais intervenir sur une borne sous tension.
+
+Source : [G, PDF 13](../../quellen/gas-anleitung-rev1.1.pdf#page=13). Le dessin nomme la borne de masse `GND`, et non `AGND`.
 
 ## `Alarm OUT` et sirène de secours
 
@@ -168,7 +174,13 @@ L’état opérationnel n’est pas encore confirmé pendant le préchauffage. N
 
 Un voyant éteint ne signifie pas que l’appareil est opérationnel. Avant le départ et avant de dormir dans le véhicule, vérifier que le voyant clignote en vert.
 
+Source : [G, PDF 2, 4](../../quellen/gas-anleitung-rev1.1.pdf#page=2).
+
 ## Séquence d’alarme et mise en sourdine
+
+### G.A.S. 105700 : seuil et délai de déclenchement de la sirène
+
+Sur G.A.S. 105700, le seuil doit être dépassé pendant **plus de 30 secondes** avant le déclenchement. La sirène sonne ensuite **30 secondes**, puis le retour normal intervient après 30 secondes supplémentaires. Ce délai avant l’alarme ne s’applique pas au G.A.S.-plug. Source : [G, PDF 4](../../quellen/gas-anleitung-rev1.1.pdf#page=4).
 
 Lorsque le seuil d’alarme est dépassé pendant plus de 30 secondes, la séquence documentée commence :
 
@@ -181,6 +193,8 @@ Lorsque le seuil d’alarme est dépassé pendant plus de 30 secondes, la séque
 > [!WARNING]
 > La mise en sourdine ne confirme pas que l’atmosphère est sûre et ne supprime pas la source de gaz. À chaque alarme, mettre les personnes et les animaux en sécurité et rechercher la cause depuis un endroit sûr.
 
+Source : [G, PDF 2, 4](../../quellen/gas-anleitung-rev1.1.pdf#page=2).
+
 ## Arrêt
 
 Maintenir le bouton situé sous l’appareil enfoncé pendant plus de 4 secondes. Un bip confirme l’arrêt ; le voyant s’éteint.
@@ -188,6 +202,10 @@ Maintenir le bouton situé sous l’appareil enfoncé pendant plus de 4 secondes
 Ne pas éteindre l’appareil pour neutraliser durablement une alarme inexpliquée ou un défaut du capteur. Avant de dormir dans le véhicule, rétablir l’état opérationnel et faire déterminer la cause.
 
 ## Autosurveillance et défaut du capteur
+
+### G.A.S. 105700 : voyant jaune clignotant et son continu
+
+**Jaune clignotant avec son continu = défaut du capteur** sur G.A.S. 105700. Éteindre l’appareil et contacter le support. Le jaune fixe sans son au démarrage correspond au préchauffage. Ne pas transposer le voyant jaune fixe avec bip continu du G.A.S.-plug. Source : [G, PDF 4](../../quellen/gas-anleitung-rev1.1.pdf#page=4).
 
 G.A.S. surveille le capteur en permanence. Un voyant jaune clignotant accompagné d’un signal continu indique un défaut du capteur.
 
@@ -246,7 +264,7 @@ Préparer les informations suivantes afin de permettre une évaluation rapide :
 |---|---|
 | Produit et numéro d’article | G.A.S., `105700` |
 | Numéro de série complet | Plaque signalétique ; pas seulement un préfixe supposé |
-| Tension d’alimentation | Valeur mesurée entre `12/24V` et `AGND` |
+| Tension d’alimentation | Valeur mesurée entre `12/24V` et `GND` |
 | État du voyant et du signal | Couleur, fixe/clignotant, signal unique/continu |
 | Moment et durée | Immédiatement après la mise en marche, après le préchauffage ou en fonctionnement |
 | Lieu de montage | Hauteur, distance du chauffage et de la batterie, circulation de l’air |

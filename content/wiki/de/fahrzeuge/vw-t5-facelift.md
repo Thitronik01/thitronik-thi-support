@@ -1,9 +1,10 @@
 ---
 title: VW T5 Facelift (ab MJ 2010)
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t5_facelift_2009_.pdf'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-t5-facelift.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -15,7 +16,19 @@ Diese Seite beschreibt den Einbau einer WiPro III in den VW T5 Facelift ab Model
 
 > **Abgrenzung:** Für den T5 der Baujahre 2006–2009 gilt [[VW T5 (2006–2009)]]. Modelljahr, Einbauort, Leitungsfarben und Signale müssen gemeinsam zur hier beschriebenen Facelift-Ausführung passen.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+VW T5 Modelljahr 2010–2015: `SW1 + SW4 + SW6 ON`. Die Fahrzeuganleitung 12/20 nennt keine Seriengrenze; die FAQ belegt ergänzend `0823-001 / 2.1`. Damit ist die frühere Wiki-Aussage „in den Primärquellen nicht genannt“ überholt. Beim Facelift zählt Modelljahr 2010 laut Deckblatt, nicht allein „2009“ im Dateinamen. CAN-Farben orange/braun → violett/orange, orange/grün → weiß/orange. Kein Profilwechsel allein anhand Erstzulassung.
+
+Belege: [t5-facelift, PDF 2](../../../quellen/fahrzeug-t5-facelift.pdf#page=2), [t5-facelift, PDF 4](../../../quellen/fahrzeug-t5-facelift.pdf#page=4), [Q, PDF 9](../../../quellen/wipro-iii-faq.pdf#page=9).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
+
 ## Überblick
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 | Parameter | Verifizierter Stand |
 |---|---|
@@ -26,7 +39,7 @@ Diese Seite beschreibt den Einbau einer WiPro III in den VW T5 Facelift ab Model
 | CAN-Anschluss | orange/braun und orange/grün im Leitungsbereich hinter dem Handschuhfach |
 | Bedienung | Fahrzeugfunkschlüssel; Funk-Zubehör zusätzlich anlernbar |
 | Akustischer Alarmgeber | normale oder Back-up Sirene dringend empfohlen; Fahrzeughupe ohne Zündung inaktiv |
-| Mindestseriennummer / Software | in den Primärquellen nicht genannt |
+| Mindeststand laut FAQ | `0823-001 / 2.1` (ergänzend zur Fahrzeuganleitung) |
 | Alarmdauer | akustisch ca. `30 Sekunden`, optisch ca. `180 Sekunden` |
 
 ## Quellenumfang und Freigabegrenzen
@@ -37,7 +50,7 @@ Diese Seite beschreibt den Einbau einer WiPro III in den VW T5 Facelift ab Model
 | Leitungsabgriff | Einbauposition, Fahrzeugfarbe und gemessenes Signal gemeinsam identifizieren |
 | Spannungsversorgung | Batterieanschluss nach Fahrzeuganleitung; WiPro-Pins `1`, `7` und `11` nach allgemeinem Handbuch |
 | Sirene | normale Sirene oder Back-up Sirene nach dem fahrzeugspezifischen Schaltbild |
-| Serien-/Softwaregrenze | `0823-001 / 2.1` ist nicht belegt und wird nicht als Mindeststand fortgeführt |
+| Mindeststand laut FAQ | `0823-001 / 2.1` (ergänzend zur Fahrzeuganleitung) |
 | Abweichendes Fahrzeug | Arbeiten stoppen und aktuelle Freigabe bei THITRONIK beziehungsweise Fahrzeughersteller einholen |
 
 1. Modell und Modelljahr anhand der Fahrzeugunterlagen bestätigen.
@@ -140,7 +153,7 @@ Die Fahrzeugquelle beschreibt die Artikel `100757` und `100758`.
 | Merkmal | Vorgabe |
 |---|---|
 | Platinenrichtung | Sende-LED muss vom Magneten wegweisen |
-| Magnetbereich | im geschlossenen Zustand innerhalb des gelben Bereichs, typisch `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitungstemperatur | nicht unter `15 °C` |
 | Endfestigkeit Klebepad | nach etwa `24 Stunden` |
@@ -160,6 +173,8 @@ Die Fahrzeugquelle beschreibt die Artikel `100757` und `100758`.
 Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb]] und [[Funk-Kabelschleife 868 — Außensicherung für mobile Güter]].
 
 ## Inbetriebnahme und vollständiger Funktionstest
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 1. DIP-Stellung `SW1 + SW4 + SW6` nochmals prüfen.
 2. Alle Crimpverbindungen, Isolierungen, Zugentlastungen und die Sicherung kontrollieren.
@@ -210,7 +225,7 @@ Für den CAN-Diagnosemodus den Taster auf der Platine kurz drücken. Bedienung d
 
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t5_facelift_2009_.pdf` — fahrzeugspezifisches Einbauhandbuch, Stand `12/20`; alle neun Seiten vollständig textlich und visuell geprüft.
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf` — allgemeines Installationshandbuch, Revision `1.8`; vollständiger deutscher Abschnitt bereits textlich und visuell geprüft.
-- Die bisherige Matrixangabe `0823-001 / 2.1` wird nicht als Mindeststand fortgeführt, weil sie in diesen Primärquellen nicht genannt wird.
+- Die FAQ ergänzt den Mindeststand `0823-001 / 2.1`; die frühere Negativaussage ist überholt.
 
 ## Querverweise
 

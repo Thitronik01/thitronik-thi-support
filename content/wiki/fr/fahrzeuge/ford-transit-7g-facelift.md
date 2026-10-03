@@ -1,12 +1,14 @@
 ---
 title: Ford Transit 7e génération Facelift (2019-07/2024)
 sources:
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii_ford_transit_2019.pdf'
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-  - sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv
-  - sources/Fahrzeugbesonderheiten.docx
-  - sources/WiPro III 7safe.lock.docx
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-ford-2019.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Seriennummer 5298 Wipro III safe.lock Ford Transit 2019.csv"
+  - "sources/Fahrzeugbesonderheiten.docx"
+  - "sources/WiPro III 7safe.lock.docx"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/ford-transit-7g-facelift.md
@@ -17,6 +19,18 @@ translation_of: sources/fahrzeuge/ford-transit-7g-facelift.md
 Cet article décrit l'installation d'une WiPro III dans les Ford Transit et Transit/Tourneo Custom restylés de septième génération. Dans ce projet, il couvre le Transit de 2019 à 07/2024 inclus et le Transit/Tourneo Custom de 2019 jusqu'au changement de modèle en 2023.
 
 > **Distinction importante :** la télécommande Ford d'origine ne peut commander la WiPro en toute sécurité que sur les véhicules **sans deadlock**. Avec deadlock, armer et désarmer l'alarme avec un émetteur radio THITRONIK® 868.
+
+## Limites du véhicule et sources contrôlées
+
+> **Conflit d’autorisation :** les procédures suivantes décrivent l’ancien PDF véhicule. La FAQ exclut WiPro standard avec Deadlock. Même avec une télécommande THITRONIK, ne pas déduire une autorisation de montage de cette procédure ; confirmation fabricant nécessaire.
+
+Ford Transit facelift 2019 : PDF 12/20 = `0823-013`, FAQ = `0823-016 / 6.1` ; la limite inférieure ne constitue pas une autorisation confirmée. Profil standard `SW2 + SW4 + SW6 ON`. Contact au connecteur de colonne broche 1 orange/blanc ou marron/jaune → jaune, pas J1 broche 2 du prédécesseur. La FAQ autorise WiPro standard seulement sans Deadlock ; avec Ford Pass, la clé véhicule ne commande pas l’alarme. safe.lock `5298-001 / 7.4.0s` exige une Schaltersperre sélectionnable et désactivée. Ce PDF standard ne valide pas le câblage safe.lock.
+
+Sources : [ford-2019, PDF 2](../../../quellen/fahrzeug-ford-2019.pdf#page=2), [ford-2019, PDF 5](../../../quellen/fahrzeug-ford-2019.pdf#page=5), [Q, PDF 5](../../../quellen/wipro-iii-faq.pdf#page=5), [S, PDF 6](../../../quellen/wipro-iii-safelock-faq.pdf#page=6), [S, PDF 20](../../../quellen/wipro-iii-safelock-faq.pdf#page=20).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Domaine d'application
 
@@ -162,7 +176,7 @@ La notice couvre les articles `100757` et `100758` ; voir [[Contact radiomagnét
 |---|---|
 | Orientation de la carte | LED d'émission opposée à l'aimant |
 | Mauvaise orientation | mémorisation possible, mais pas d'alarme |
-| Écart fermé | `22–30 mm`, sans dépasser la limite rouge |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Porte/trappe | émetteur sur le cadre, aimant sur la partie mobile |
 | Surface | propre, sèche et dégraissée |
 | Mise en œuvre | pas sous `15 °C` |
@@ -175,6 +189,8 @@ Mémoriser et tester la portée avant montage. Orienter correctement la carte, p
 
 ### Véhicule avec deadlock
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 1. Fermer les portes, verrouiller avec la télécommande Ford puis armer la WiPro avec l'émetteur 868.
 2. Contrôler un bip, un éclair des clignotants et le clignotement de la LED d'état.
 3. Déverrouiller de l'extérieur avec la clé mécanique et ouvrir la porte conducteur.
@@ -182,6 +198,8 @@ Mémoriser et tester la portée avant montage. Orienter correctement la carte, p
 5. Arrêter avec l'émetteur et analyser le clignotement de la mémoire d'alarme.
 
 ### Véhicule sans deadlock
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Fermer les portes et appuyer sur verrouillage de la télécommande Ford.
 2. Contrôler armement automatique, un bip et LED clignotante.
@@ -219,7 +237,7 @@ Contrôler la mémoire de défauts puis klaxon, feux de détresse, allumage, LED
 | Affectation safe.lock incertaine | obtenir la notice adaptée ; ne pas la déduire d'une autre génération Ford |
 | Protection anti-enfermement défaillante avec safe.lock et Pro-Finder | au moins `5298-008 / 1.0.3sf` pour Transit 2019–2024 |
 | Contact mémorisé sans alarme | retourner la carte ; LED d'émission opposée à l'aimant |
-| Radio peu fiable | contrôler métal, antenne, `22–30 mm` et adaptateurs |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 
 Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
@@ -228,7 +246,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 - Les onze pages de la notice véhicule `12/20` ont été analysées textuellement et visuellement.
 - La page 2 prouve `0823-013`, la distinction deadlock, `SW2 + SW4 + SW6` et les fils bleus inutilisés en standard.
 - Les pages 3–7 prouvent démontage, J1/J2, masse, colonne broche 1, CAN derrière OBD, LED, emplacement possible du Pro-Finder, mémorisation et deux essais.
-- Les pages 8–11 prouvent `100757`/`100758`, orientation de la carte, montage, adaptateurs `100428`/`100729` et `22–30 mm`.
+- Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 - La notice générale `1.8` complète sécurité et diagnostic. La matrice/historique validée fournit `0823-016 / 6.1`, `5298-001 / 7.4.0s`, `5298-008 / 1.0.3sf` et la condition de l'option « Schaltsperre ».
 - Les trois fichiers internes ci-dessous sont absents localement. Leurs références sont conservées ; aucune broche safe.lock ni modification de contact non vérifiée n'a été reconstruite.
 - L'ancienne indication erronée `SW1` est remplacée par `SW2 + SW4 + SW6`, confirmé visuellement.

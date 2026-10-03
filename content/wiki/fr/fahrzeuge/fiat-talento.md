@@ -1,11 +1,10 @@
 ---
 title: Fiat Talento / Renault Trafic III / Opel Vivaro B / Nissan NV300 (2014–2021)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_fiat_talento___renault_trafic_iii.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-talento-trafic-2014.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/fiat-talento.md
@@ -16,6 +15,16 @@ translation_of: sources/fahrzeuge/fiat-talento.md
 Cet article décrit l'installation d'un WiPro III dans Fiat Talento, Renault Trafic III, Opel Vivaro B et Nissan NV300 construits entre 2014 et 2021. La version `05/22` du manuel d'installation spécifique au véhicule documente le profil du véhicule, la connexion CAN, les feux de détresse, l'alimentation, l'allumage, la masse, le klaxon du véhicule, la LED d'état, les accessoires radio et le test fonctionnel final.
 
 > **Délimitation :** Renault Trafic III et Nissan Primastar à partir de 2022 utilisent un profil DIP entièrement différent (`SW1 + SW2 + SW4 + SW5 + SW6`) et un autre point CAN ; voir [[Renault Trafic III / Nissan Primastar (à partir de 2022)|Renault Trafic III à partir de 2022]].
+
+## Limites du véhicule et sources contrôlées
+
+Talento / Trafic III / Vivaro B / NV300, 2014–2021 : notice 05/22, `0823-014` et `SW3 + SW6 ON` ; la FAQ ajoute le logiciel `5.9`. Avec Keyless-Entry, la clé d’origine ne commande pas la WiPro III selon la FAQ. CAN S1 : broche 4 grise → blanc/orange, broche 3 verte → violet/orange. Particularité du klaxon : fil noir véhicule au connecteur deux pôles sous le volant → fil gris WiPro broche 12. Ne pas reprendre le fil rose d’un autre profil.
+
+Sources : [talento-trafic-2014, PDF 2](../../../quellen/fahrzeug-talento-trafic-2014.pdf#page=2), [talento-trafic-2014, PDF 3](../../../quellen/fahrzeug-talento-trafic-2014.pdf#page=3), [talento-trafic-2014, PDF 5](../../../quellen/fahrzeug-talento-trafic-2014.pdf#page=5), [Q, PDF 3](../../../quellen/wipro-iii-faq.pdf#page=3), [Q, PDF 8](../../../quellen/wipro-iii-faq.pdf#page=8).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Portée
 
@@ -135,7 +144,7 @@ Fixez définitivement les contacts radiomagnétiques après un entraînement et 
 |---|---|
 | Emplacement du tableau | Alignez la LED de transmission de l'aimant pour indiquer le chemin |
 | Assemblage incorrect | Si la LED de transmission pointe vers l'aimant, l'apprentissage est possible, mais aucune alarme ne se produit. |
-| Position de l'aimant | une fois fermé, dans la plage documentée d'environ `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | surface adhésive | propre, sec et sans graisse |
 | Température de traitement | pas sous `15 °C` |
 | Résistance finale des pastilles adhésives | après environ `24 heures` |
@@ -157,7 +166,7 @@ La procédure suivante correspond au manuel spécifique au véhicule avec **`SW5
 8. Vérifiez la séquence de clignotement de la mémoire d'alarme via la LED d'état.
 9. Répétez le test d'alarme avec chaque contact radiomagnétique formé, chaque boucle de câble radio et chaque capteur radio supplémentaire.
 
-Le manuel général d'installation mentionne `120 secondes` pour l'alarme visuelle dans son aperçu des fonctions, mais `180 secondes` dans le chapitre de test détaillé. Les informations spécifiques `180 secondes` du manuel spécifique au véhicule le plus récent s'appliquent à ce véhicule.
+Conflit de sources : 180 s visuelles dans la notice véhicule, 120 s dans la notice générale. Attribution par version non résolue ; aucune nouvelle règle de priorité.
 
 ## CAN et diagnostic radio
 
@@ -195,7 +204,7 @@ En mode diagnostic, déclenchez chaque composant radio formé à l'emplacement d
 - Pages 6 à 9, assemblage du couvercle, sens de la carte, espacement des aimants, instructions de collage et adaptateurs pour les contacts radio-magnétiques.
 - La version générale du manuel d'installation `1.8` ajoute des règles de sécurité, une protection contre la relecture, des diagnostics et une vérification des erreurs inter-systèmes.
 - Le manuel du véhicule indique explicitement au moins `0823-014` ; La version du logiciel `5.9` provient également de la matrice de compatibilité du projet publiée.
-- En cas d'informations générales contradictoires sur la durée de l'alarme visuelle, les instructions spécifiques et plus récentes du véhicule avec `180 secondes` prévalent.
+- La durée visuelle reste contradictoire : `180 secondes` dans la notice véhicule et `120 secondes` dans la notice générale. Sans attribution à une version, aucune priorité n’est confirmée.
 
 Sources primaires utilisées :
 

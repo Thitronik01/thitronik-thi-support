@@ -1,15 +1,18 @@
 ---
 title: Systemüberblick — THITRONIK-Produktwelt
 sources:
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/handbuch_gas-pro_2.5.pdf
-  - sources/GAS-pro-III__QuickGuide__Overview_DE.md
-  - sources/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf
-  - sources/pro_finder-kurzanleitung-international_sn-045.pdf
-  - sources/BT-connect__Overview_DE.md
-  - sources/nfc_modul-kurzanleitung.pdf
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-updated: '2026-07-13'
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/gas-pro-handbuch-rev2.5.pdf"
+  - "sources/GAS-pro-III__QuickGuide__Overview_DE.md"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "sources/BT-connect__Overview_DE.md"
+  - "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf"
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "content/quellen/camplock-fingerprint.pdf"
+  - "content/quellen/camplock-vanlock-fingerprint.pdf"
+  - "content/quellen/katalog_thitronik_de.pdf"
+updated: '2026-09-25'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -106,7 +109,9 @@ Der Pro-Finder ist ein Mobilfunk- und Ortungsmodul. Er kann eigenständig einges
 | Zugangsweg | Einordnung | Typischer Einsatz |
 |------------|------------|-------------------|
 | Original-Fahrzeugschlüssel | fahrzeugseitige Bedienung über unterstützte CAN-Bus- oder Zentralverriegelungssignale | Alltagsbedienung bei kompatiblen Fahrzeugen |
-| CampLock Fingerprint | biometrischer Türzugang | Hartal-Aufbautüren mit unterstützter Zentralverriegelung |
+| CampLock Fingerprint 106111/106144 | biometrischer Türzugang | Hartal-Aufbautüren mit unterstützter Zentralverriegelung; WiPro III oder WiPro III safe.lock laut separater Kurzanleitung |
+| CampLock Fingerprint 106111-002/106144-002 | biometrischer Zugang | WiPro III safe.lock laut gemeinsamer Bedienungsanleitung; konkrete Türintegration prüfen |
+| VanLock Fingerprint 106259/106260 | biometrischer Zugang | WiPro III safe.lock laut gemeinsamer Bedienungsanleitung; abweichende Katalogangabe vor Einbau klären |
 | Funk-Handsender 868 | unabhängige 868-MHz-Fernbedienung | Reservebedienung, weitere Nutzer und Panikalarm |
 | NFC Modul mit KeyCard, KeyTag oder KeyStrap | lokaler NFC-Zugang | Bedienung direkt am Fahrzeug |
 | BT-connect | lokaler Bluetooth-Zugang | Smartphone- und Smartwatch-Bedienung im Fahrzeugumfeld |

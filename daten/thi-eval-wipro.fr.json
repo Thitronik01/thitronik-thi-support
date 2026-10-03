@@ -1,0 +1,612 @@
+{
+  "_hinweis": "Quellenbelegte WiPro-Bedienungs- und Installations-/FAQ-Fälle DE/FR. Lokale Kontextprüfung, kein Live-Modelltest. Quellenkonflikte: docs/quellenpruefung/2026-09-28-wipro-safelock.md und 2026-09-28-wipro-installation-faq.md",
+  "cases": [
+    {
+      "id": "originalschluessel",
+      "question": "WiPro III : combien de fois clignotent les feux à l’armement et au désarmement avec la clé d’origine du véhicule ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "1–2× selon le véhicule",
+        "1 signal sonore",
+        "2 signaux sonores"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1–2× selon le véhicule; 1 signal sonore; 2 signaux sonores",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 8–9 / 45–46; content/wiki/fr/wipro-iii.md",
+      "kategorie": "originalschluessel",
+      "kontext_muss": [
+        "1–2× selon le véhicule",
+        "1 signal sonore",
+        "2 signaux sonores"
+      ]
+    },
+    {
+      "id": "vent-check",
+      "question": "WiPro III vent check : que se passe-t-il si je referme la fenêtre laissée ouverte puis la rouvre lorsque l’alarme est armée ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "au moins 5 secondes",
+        "ne déclenche pas d'alarme"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "au moins 5 secondes; ne déclenche pas d'alarme",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 10 / 47; content/wiki/fr/wipro-iii.md",
+      "kategorie": "vent-check",
+      "kontext_muss": [
+        "au moins 5 secondes",
+        "ne déclenche pas d'alarme"
+      ]
+    },
+    {
+      "id": "alarmdauer-konflikt",
+      "question": "WiPro III : l’alarme visuelle dure-t-elle 120 ou 180 secondes ? Les indications sont-elles cohérentes ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "120 secondes",
+        "180 secondes",
+        "Contradiction",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "120 secondes; 180 secondes; Contradiction; THITRONIK",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 7,13–14 / 43,50–51; content/wiki/fr/wipro-iii.md",
+      "kategorie": "alarmdauer-konflikt",
+      "kontext_muss": [
+        "120 secondes",
+        "180 secondes",
+        "Contradiction",
+        "THITRONIK"
+      ]
+    },
+    {
+      "id": "batterie-oder-alarm",
+      "question": "WiPro III : un long bip en actionnant un émetteur radio signifie-t-il la même chose qu’un bip long puis deux bips courts au désarmement ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "long bip continu",
+        "pile faible",
+        "deux bips courts",
+        "alarme mémorisée"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "long bip continu; pile faible; deux bips courts; alarme mémorisée",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 11,17 / 48,55; content/wiki/fr/wipro-iii.md",
+      "kategorie": "batterie-oder-alarm",
+      "kontext_muss": [
+        "long bip continu",
+        "pile faible",
+        "deux bips courts",
+        "alarme mémorisée"
+      ]
+    },
+    {
+      "id": "alarmspeicher-loeschen",
+      "question": "Quand la mémoire d’alarme WiPro III est-elle effacée et quand faut-il lire le code de clignotement ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "avant toute nouvelle commande",
+        "effacée au prochain armement"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "avant toute nouvelle commande; effacée au prochain armement",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 17 / 55; content/wiki/fr/wipro-iii.md",
+      "kategorie": "alarmspeicher-loeschen",
+      "kontext_muss": [
+        "avant toute nouvelle commande",
+        "effacée au prochain armement"
+      ]
+    },
+    {
+      "id": "zehn-blinkimpulse",
+      "question": "Mémoire d’alarme WiPro III : que signifient dix clignotements de la LED d’état avec cinq secondes de pause ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "Pro-Finder",
+        "SMS",
+        "anti-enfermement"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Pro-Finder; SMS; anti-enfermement",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 17 / 55; content/wiki/fr/wipro-iii.md",
+      "kategorie": "zehn-blinkimpulse",
+      "kontext_muss": [
+        "Pro-Finder",
+        "SMS",
+        "anti-enfermement"
+      ]
+    },
+    {
+      "id": "innenlicht-60",
+      "question": "Le délai de 60 secondes de l’entrée de l’éclairage intérieur concerne-t-il aussi WiPro III safe.lock ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "uniquement WiPro III, pas WiPro III safe.lock",
+        "autres ouvertures"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "uniquement WiPro III, pas WiPro III safe.lock; autres ouvertures",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 13 / 50; content/wiki/fr/wipro-iii.md",
+      "kategorie": "innenlicht-60",
+      "kontext_muss": [
+        "uniquement WiPro III, pas WiPro III safe.lock",
+        "autres ouvertures"
+      ]
+    },
+    {
+      "id": "gasalarm-schluessel",
+      "question": "WiPro III : comment interrompre avec la clé d’origine une alarme gaz déclenchée alors que le système était désarmé ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "armer d'abord",
+        "Déverrouiller",
+        "désarmée"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "armer d'abord; Déverrouiller; désarmée",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 14 / 51; content/wiki/fr/wipro-iii.md",
+      "kategorie": "gasalarm-schluessel",
+      "kontext_muss": [
+        "armer d'abord",
+        "Déverrouiller",
+        "désarmée"
+      ]
+    },
+    {
+      "id": "gasalarm-handsender",
+      "question": "WiPro III safe.lock : faut-il armer d’abord pour interrompre une alarme gaz avec la télécommande radio ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "Appuyer sur une touche",
+        "ne prescrit pas d'armement préalable"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "Appuyer sur une touche; ne prescrit pas d'armement préalable",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 15 / 52; content/wiki/fr/wipro-iii.md",
+      "kategorie": "gasalarm-handsender",
+      "kontext_muss": [
+        "Appuyer sur une touche",
+        "ne prescrit pas d'armement préalable"
+      ]
+    },
+    {
+      "id": "nfc-batterie",
+      "question": "Accessoires WiPro III : quelles piles utilise le module NFC et faut-il réappairer les tags après le remplacement ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "trois piles alcalines AAA (LR03)",
+        "tags NFC restent mémorisés"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "trois piles alcalines AAA (LR03); tags NFC restent mémorisés",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 12 / 49; content/wiki/fr/wipro-iii.md",
+      "kategorie": "nfc-batterie",
+      "kontext_muss": [
+        "trois piles alcalines AAA (LR03)",
+        "tags NFC restent mémorisés"
+      ]
+    },
+    {
+      "id": "sprinter-warnung",
+      "question": "Mercedes Sprinter safe.lock 1.2.0sx : que signifient dix bips rapides avec clignotement rapide des feux du véhicule ?",
+      "expected": [
+        "/fr/fahrzeuge/mercedes-sprinter-vs30"
+      ],
+      "antwort_muss": [
+        "1.2.0sx",
+        "dix bips courts",
+        "enfermement",
+        "clé d'origine"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1.2.0sx; dix bips courts; enfermement; clé d'origine",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 5 / 42; content/wiki/fr/fahrzeuge/mercedes-sprinter-vs30.md",
+      "kategorie": "sprinter-warnung",
+      "kontext_muss": [
+        "1.2.0sx",
+        "dix bips courts",
+        "enfermement",
+        "clé d'origine"
+      ]
+    },
+    {
+      "id": "ford-modellgrenze",
+      "question": "Ford Transit 2024+ safe.lock : peut-on désactiver le verrouillage des interrupteurs puis déverrouiller par NFC après verrouillage avec la clé d’origine ?",
+      "expected": [
+        "/fr/fahrzeuge/ford-transit-2024plus"
+      ],
+      "antwort_muss": [
+        "ne peut pas être désactivé",
+        "impossible",
+        "génération"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ne peut pas être désactivé; impossible; génération",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 6 / 43; content/wiki/fr/fahrzeuge/ford-transit-2024plus.md",
+      "kategorie": "ford-modellgrenze",
+      "kontext_muss": [
+        "ne peut pas être désactivé",
+        "impossible",
+        "génération"
+      ]
+    },
+    {
+      "id": "vw-t-tueren",
+      "question": "WiPro III safe.lock sur VW T : l’alarme est-elle déjà armée si seule la porte conducteur est fermée et le verrouillage centralisé fonctionne ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "ne s'arme qu'après fermeture",
+        "toutes les portes"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ne s'arme qu'après fermeture; toutes les portes",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 6 / 43; content/wiki/fr/wipro-iii.md",
+      "kategorie": "vw-t-tueren",
+      "kontext_muss": [
+        "ne s'arme qu'après fermeture",
+        "toutes les portes"
+      ]
+    },
+    {
+      "id": "easy-add-handsender",
+      "question": "WiPro III Easy-Add 1.0 : quelle touche de la télécommande faut-il actionner, combien de fois et dans quel délai ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "30 secondes",
+        "5×",
+        "haut-parleur"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "30 secondes; 5×; haut-parleur",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 18 / 56; content/wiki/fr/anlernvorgang.md",
+      "kategorie": "easy-add-handsender",
+      "kontext_muss": [
+        "30 secondes",
+        "5×",
+        "haut-parleur"
+      ]
+    },
+    {
+      "id": "easy-add-can",
+      "question": "WiPro III Easy-Add 2.0 : comment appairer avec la porte conducteur et peut-on effacer les accessoires ainsi ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "30 secondes",
+        "5×",
+        "ne permet pas de les effacer"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "30 secondes; 5×; ne permet pas de les effacer",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 19 / 57; content/wiki/fr/anlernvorgang.md",
+      "kategorie": "easy-add-can",
+      "kontext_muss": [
+        "30 secondes",
+        "5×",
+        "ne permet pas de les effacer"
+      ]
+    },
+    {
+      "id": "master-erhalten",
+      "question": "WiPro III : quelle touche de la télécommande maître efface les accessoires et la télécommande maître reste-t-elle mémorisée ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "30 secondes",
+        "5×",
+        "haut-parleur barré",
+        "télécommande maître"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "30 secondes; 5×; haut-parleur barré; télécommande maître",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 18 / 56; content/wiki/fr/anlernvorgang.md",
+      "kategorie": "master-erhalten",
+      "kontext_muss": [
+        "30 secondes",
+        "5×",
+        "haut-parleur barré",
+        "télécommande maître"
+      ]
+    },
+    {
+      "id": "easy-add-app",
+      "question": "WiPro III Easy-Add 3.0 : peut-on appairer avec l’application sans couper l’alimentation et quel équipement faut-il ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "sans couper l’alimentation",
+        "Pro-Finder",
+        "Bluetooth"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "sans couper l’alimentation; Pro-Finder; Bluetooth",
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 19 / 57; content/wiki/fr/anlernvorgang.md",
+      "kategorie": "easy-add-app",
+      "kontext_muss": [
+        "sans couper l’alimentation",
+        "Pro-Finder",
+        "Bluetooth"
+      ]
+    },
+    {
+      "id": "vent-4-5",
+      "question": "WiPro III Vent check : la FAQ dit 4 secondes, la notice 5 secondes. Quelle durée est confirmée ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "4 secondes",
+        "au moins 5 secondes",
+        "contradiction"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "4 secondes; au moins 5 secondes; contradiction",
+      "source": "content/quellen/wipro-iii-faq.pdf S. 18; wipro-iii-safelock-faq.pdf S. 27; Bedienung Rev. 1.3 S. 10/47",
+      "kategorie": "vent-4-5",
+      "kontext_muss": [
+        "4 secondes",
+        "au moins 5 secondes",
+        "contradiction"
+      ]
+    },
+    {
+      "id": "batterie-2-5",
+      "question": "WiPro III pile faible : pourquoi la FAQ dit 2 secondes et le guide rapide 5 secondes pour le signal sonore ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "2 secondes",
+        "signal de 5 secondes",
+        "30 secondes",
+        "divergence"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "2 secondes; signal de 5 secondes; 30 secondes; divergence",
+      "source": "content/quellen/wipro-iii-faq.pdf S. 16; beide Kurzanleitungen S. 2",
+      "kategorie": "batterie-2-5",
+      "kontext_muss": [
+        "2 secondes",
+        "signal de 5 secondes",
+        "30 secondes",
+        "divergence"
+      ]
+    },
+    {
+      "id": "neun-toene",
+      "question": "WiPro III : neuf bips courts au verrouillage signalent-ils un brouilleur comme neuf clignotements de la LED ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "9 bips courts",
+        "contact ouvert",
+        "9 clignotements de la LED",
+        "brouilleur"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "9 bips courts; contact ouvert; 9 clignotements de la LED; brouilleur",
+      "source": "content/quellen/wipro-iii-faq.pdf S. 18; wipro-iii-safelock-faq.pdf S. 27; beide Kurzanleitungen S. 1–2",
+      "kategorie": "neun-toene",
+      "kontext_muss": [
+        "9 bips courts",
+        "contact ouvert",
+        "9 clignotements de la LED",
+        "brouilleur"
+      ]
+    },
+    {
+      "id": "pin-farben",
+      "question": "WiPro III connecteur à 20 broches : quelles couleurs pour les broches 2 et 3 ? Le schéma contredit le tableau.",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "broche 2 marron / NO",
+        "broche 3 verte / COM",
+        "inversent les couleurs",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "broche 2 marron / NO; broche 3 verte / COM; inversent les couleurs; THITRONIK",
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 12–15/48–51",
+      "kategorie": "pin-farben",
+      "kontext_muss": [
+        "broche 2 marron / NO",
+        "broche 3 verte / COM",
+        "inversent les couleurs",
+        "THITRONIK"
+      ]
+    },
+    {
+      "id": "sirene-spannung",
+      "question": "WiPro III : toutes les sirènes de secours acceptent-elles 24 V puisque la centrale accepte 9–30 V ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "9–30 V sur la centrale ne prouvent pas",
+        "fil bleu",
+        "isoler"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "9–30 V sur la centrale ne prouvent pas; fil bleu; isoler",
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 10,17/46,53",
+      "kategorie": "sirene-spannung",
+      "kontext_muss": [
+        "9–30 V sur la centrale ne prouvent pas",
+        "fil bleu",
+        "isoler"
+      ]
+    },
+    {
+      "id": "easy-add-strompause",
+      "question": "WiPro III Easy-Add avec télécommande : couper le courant 10 ou 30 secondes, puis appuyer cinq fois quand ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "10 secondes hors tension",
+        "30 secondes",
+        "haut-parleur"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "10 secondes hors tension; 30 secondes; haut-parleur",
+      "source": "content/quellen/wipro-iii-faq.pdf S. 1; wipro-iii-safelock-faq.pdf S. 30; Bedienung Rev. 1.3 S. 18–19/56–57",
+      "kategorie": "easy-add-strompause",
+      "kontext_muss": [
+        "10 secondes hors tension",
+        "30 secondes",
+        "haut-parleur"
+      ]
+    },
+    {
+      "id": "loeschen-quelle",
+      "question": "WiPro III : la notice de montage décrit seulement l’effacement complet. Le maître reste-t-il si je maintiens B pendant le branchement ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "maintenir B lors du branchement efface aussi le maître",
+        "effacement partiel conservant la télécommande maître"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "maintenir B lors du branchement efface aussi le maître; effacement partiel conservant la télécommande maître",
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 6/42; Bedienung Rev. 1.3 S. 18/56",
+      "kategorie": "loeschen-quelle",
+      "kontext_muss": [
+        "maintenir B lors du branchement efface aussi le maître",
+        "effacement partiel conservant la télécommande maître"
+      ]
+    },
+    {
+      "id": "faq-app-grenze",
+      "question": "WiPro III : quel numéro de série saisir dans la THITRONIK App ? Entrer 1050-004 suffit-il pour obtenir Easy-Add 3.0 ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "1050-004 / 5298-001 / 5458-001",
+        "0699-013",
+        "ne met à jour ni le matériel ni le logiciel"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "1050-004 / 5298-001 / 5458-001; 0699-013; ne met à jour ni le matériel ni le logiciel",
+      "source": "content/quellen/wipro-iii-faq.pdf S. 19; wipro-iii-safelock-faq.pdf S. 26–27",
+      "kategorie": "faq-app-grenze",
+      "kontext_muss": [
+        "1050-004 / 5298-001 / 5458-001",
+        "0699-013",
+        "ne met à jour ni le matériel ni le logiciel"
+      ]
+    },
+    {
+      "id": "faq-upgrade",
+      "question": "Puis-je faire évoluer un WiPro III vers safe.lock ? Faut-il envoyer les accessoires et les clés, puis mémoriser à nouveau ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "ne joindre aucun autre accessoire ni aucune clé",
+        "Mémoriser de nouveau"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "ne joindre aucun autre accessoire ni aucune clé; Mémoriser de nouveau",
+      "source": "content/quellen/wipro-iii-faq.pdf S. 16–17; wipro-iii-safelock-faq.pdf S. 25–26",
+      "kategorie": "faq-upgrade",
+      "kontext_muss": [
+        "ne joindre aucun autre accessoire ni aucune clé",
+        "Mémoriser de nouveau"
+      ]
+    },
+    {
+      "id": "version-042",
+      "question": "WiPro III safe.lock 1050-042 : le Ducato 8 avec grand écran exige-t-il 7.5.1s ou 7.5.2s ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "7.5.1s",
+        "7.5.2s",
+        "non résolu",
+        "THITRONIK"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "7.5.1s; 7.5.2s; non résolu; THITRONIK",
+      "source": "content/quellen/wipro-iii-safelock-faq.pdf S. 2; bestehender Wiki-Versionsverlauf, Widerspruch offen",
+      "kategorie": "version-042",
+      "kontext_muss": [
+        "7.5.1s",
+        "7.5.2s",
+        "non résolu",
+        "THITRONIK"
+      ]
+    },
+    {
+      "id": "diagnose-taster",
+      "question": "WiPro III test de portée : la notice dit bouton A pour quitter le diagnostic. A est-il le bouton ou le connecteur ?",
+      "expected": [
+        "/fr/anlernvorgang"
+      ],
+      "antwort_muss": [
+        "B est le bouton et A le connecteur",
+        "Erreur rédactionnelle"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "B est le bouton et A le connecteur; Erreur rédactionnelle",
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 7–8/43–44",
+      "kategorie": "diagnose-taster",
+      "kontext_muss": [
+        "B est le bouton et A le connecteur",
+        "Erreur rédactionnelle"
+      ]
+    },
+    {
+      "id": "original-kurzfassung",
+      "question": "WiPro III clé d’origine : le guide rapide indique 2–3 clignotements au désarmement, la notice 1–2. Est-ce une panne ?",
+      "expected": [
+        "/fr/wipro-iii"
+      ],
+      "antwort_muss": [
+        "2–3",
+        "1–2",
+        "diagnostiquer une panne"
+      ],
+      "antwort_darf_nicht": [],
+      "beleg": "2–3; 1–2; diagnostiquer une panne",
+      "source": "content/quellen/beide Kurzanleitungen S. 1; Bedienung Rev. 1.3 S. 8–9/45–46",
+      "kategorie": "original-kurzfassung",
+      "kontext_muss": [
+        "2–3",
+        "1–2",
+        "diagnostiquer une panne"
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 ---
 title: Renault Master II / Opel Movano A / Nissan Interstar (1998–2010)
 sources:
-  - sources/wipro_iii_renault_master_ii_1998-2010.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-21'
+  - "content/quellen/fahrzeug-master-ii.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/renault-master-ii.md
@@ -15,7 +15,19 @@ Cet article décrit le montage documenté de la WiPro III sur le Renault Master 
 
 > **Comparaison obligatoire :** la source primaire porte uniquement la désignation Renault Master. Sur un Opel Movano A, un Nissan Interstar, une autre année-modèle ou un brochage différent, vérifier P202, la position de la broche, le câble et le signal sur le véhicule concerné avant chaque raccordement. En cas d’écart, ne pas poursuivre en se fiant à la couleur ; contacter l’assistance THITRONIK.
 
+## Limites du véhicule et sources contrôlées
+
+Master II 1998–2010 : `SW1 + SW2 + SW3 + SW6 ON`, raccordement analogique. La page 4 nomme « P202 » deux connecteurs dessinés différemment. Pour les feux de détresse, broche 36 dans l’insert vert, fil vert ; ne pas renommer arbitrairement en P201. Confirmer connecteur et signal. Avec verrouillage automatique en roulant : relais à ouverture, 85 contact, 86 masse, 30 verrouillage véhicule, 87a WiPro bleu/noir ; 87 isolé. Les 60 secondes retardent l’armement des portes cabine, pas une alarme d’entrée.
+
+Sources : [master-ii, PDF 2](../../../quellen/fahrzeug-master-ii.pdf#page=2), [master-ii, PDF 4](../../../quellen/fahrzeug-master-ii.pdf#page=4), [master-ii, PDF 7](../../../quellen/fahrzeug-master-ii.pdf#page=7).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
+
 ## Domaine d’application et configuration validée
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 | Caractéristique | Configuration validée |
 |---|---|
@@ -36,7 +48,7 @@ Documenter le numéro de série et la version logicielle avant le montage. La ma
 |---|---|
 | Profil véhicule, lieu de montage, broches, couleurs et essais | le manuel spécifique état `12/20` prévaut |
 | Sécurité générale, alimentation de base et rôle des broches | le manuel d’installation version `1.8` est complémentaire |
-| Durée de l’alarme | valeurs spécifiques : `30 s` sonore et `180 s` visuelle ; l’ancienne valeur générale de `120 s` visuelle ne s’applique pas ici |
+| Alarmdauer / Durée | Conflit : notice véhicule 180 s visuelles contre notice générale 120 s ; attribution par version non établie. Relever la durée et demander confirmation fabricant. |
 | Comportement des portes cabine pendant 60 secondes | temporisation d’armement, expressément **pas une temporisation d’alarme** |
 | `FAQ_WiPro-III_DE.md` cité dans l’ancien article | fichier absent localement et non considéré comme source consultée |
 | Attribution Opel/Nissan | maintenue par le projet ; le brochage doit être confirmé sur le véhicule concerné |
@@ -143,7 +155,7 @@ La source véhicule documente les contacts Art. `100757` en noir et `100758` en 
 
 1. Monter de préférence l’émetteur sur le cadre fixe et l’aimant sur la porte, la fenêtre ou la trappe mobile.
 2. Placer la carte dans le boîtier avec la LED d’émission orientée **à l’opposé de l’aimant**. Une mauvaise orientation permet la mémorisation, mais pas le déclenchement de l’alarme.
-3. Positionner l’aimant dans la plage recommandée de `22–30 mm` et ne pas le monter au-delà de la ligne rouge.
+3. Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 4. Si l’écart est plus grand ou si l’orientation de l’antenne est défavorable, utiliser un adaptateur approprié `100428` ou `100729`.
 5. Nettoyer, sécher et dégraisser les surfaces ; ne pas poser les adhésifs en dessous de `15 °C` et les laisser sans charge environ `24 h` pour atteindre leur résistance maximale.
 6. Si le collage n’est pas fiable, utiliser les repères prévus dans le boîtier de l’émetteur pour la fixation par vis.
@@ -152,6 +164,8 @@ La source véhicule documente les contacts Art. `100757` en noir et `100758` en 
 Voir [[Contact radiomagnétique 868 — montage et fonctionnement|Contact radiomagnétique 868]] et [[Registre des numéros d’article — produits et accessoires THITRONIK documentés|Registre des numéros d’article]].
 
 ## Mise en service et essai fonctionnel
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Contrôler à nouveau toutes les broches, couleurs, connexions, protections, masses, conducteurs isolés et le profil DIP.
 2. Rebrancher les batteries selon les consignes des constructeurs et vérifier l’absence de nouveaux voyants ou défauts véhicule.
@@ -183,6 +197,8 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]] et 
 
 ## Remise au client et documentation
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 Consigner sur la fiche de travail :
 
 - modèle, année-modèle, VIN et variante de carrosserie pertinente
@@ -200,12 +216,7 @@ Lors de la remise, montrer la temporisation d’armement de 60 secondes des port
 
 ## Décision relative aux sources
 
-- Le manuel THITRONIK de 11 pages *WiPro III Renault Master 1998–2010*, état `12/20`, a été intégralement contrôlé textuellement et visuellement. Il documente le profil DIP, le lieu de montage, tous les raccordements véhicule, les deux variantes de sirène, l’alimentation, le relais, l’essai et le montage des contacts magnétiques.
-- Le manuel d’installation général version `1.8` complète la sécurité, les raccordements de base et le diagnostic. En cas de contradiction, la source spécifique plus récente prévaut.
-- La durée visuelle applicable ici est donc de `180 s`, et non l’ancienne valeur générale de `120 s`.
-- Selon la source primaire, les 60 secondes des portes cabine constituent une temporisation d’armement et non celle d’une alarme déjà déclenchée.
-- La matrice du projet indique `0823-001 / 2.1` ; le manuel spécifique n’indique lui-même aucune version minimale. Cette limite ne doit donc pas être généralisée à des matériels inconnus.
-- Le fichier `FAQ_WiPro-III_DE.md` cité par l’ancien article est introuvable localement et n’a pas servi de preuve.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [master-ii, PDF 2](../../../quellen/fahrzeug-master-ii.pdf#page=2), [master-ii, PDF 4](../../../quellen/fahrzeug-master-ii.pdf#page=4), [master-ii, PDF 7](../../../quellen/fahrzeug-master-ii.pdf#page=7).
 
 ## Renvois
 

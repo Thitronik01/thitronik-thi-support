@@ -1,25 +1,28 @@
 ---
 title: Processus d'apprentissage — apprentissage des accessoires radio sur WiPro III
 sources:
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Funk-Magnetkontakt_868__100757__Overview_DE.md
-  - sources/Funk-Kabelschleife_868__100761__Overview_DE.md
-  - sources/TSA_Funk-Rauchmelder__105753__Overview_DE.md
-  - sources/funk-rauchmelder-t.s.a..pdf
-  - sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Overview_DE.md
-  - sources/g.a.s.-connect.pdf
-  - sources/Thitronik_FAQ_DE_RAG_Pack/FAQ_WiPro-III_DE.md
-  - sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/30_2_2_1_easy_add_1_0.md
-  - >-
-    sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/31_2_2_2_zubehoer_loeschen.md
-  - >-
-    sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/32_2_2_3_easy_add_2_0_can.md
-  - >-
-    sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/33_2_2_4_easy_add_3_0_app.md
-  - sources/NFC-Modul_105299__HowTo__Inbetriebnahme_Anlernen_DE.md
-  - sources/Funk Zubehör.docx
-updated: '2026-07-14'
-confidence: high
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-kurzanleitung-rev1.6.pdf"
+  - "content/quellen/wipro-iii-safelock-kurzanleitung-rev1.3.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.2.pdf"
+  - "sources/Funk-Magnetkontakt_868__100757__Overview_DE.md"
+  - "sources/Funk-Kabelschleife_868__100761__Overview_DE.md"
+  - "sources/TSA_Funk-Rauchmelder__105753__Overview_DE.md"
+  - "content/quellen/funk-tsa-rauchmelder-rev1.1.pdf"
+  - "sources/GAS_Familie_DE_RAG_Pack/GAS-connect__105750__Overview_DE.md"
+  - "content/quellen/gas-connect-anleitung-rev1.0.pdf"
+  - "sources/Thitronik_FAQ_DE_RAG_Pack/FAQ_WiPro-III_DE.md"
+  - "sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/30_2_2_1_easy_add_1_0.md"
+  - "sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/31_2_2_2_zubehoer_loeschen.md"
+  - "sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/32_2_2_3_easy_add_2_0_can.md"
+  - "sources/WiPro_safe-lock_DE_FULL_RAG_from_multilang/33_2_2_4_easy_add_3_0_app.md"
+  - "sources/NFC-Modul_105299__HowTo__Inbetriebnahme_Anlernen_DE.md"
+  - "sources/Funk Zubehör.docx"
+updated: '2026-09-28'
+confidence: medium
 lang: fr
 translation_of: sources/anlernvorgang.md
 dealerStatus: internal_only
@@ -47,10 +50,12 @@ Il s’agit de la méthode standard lorsque la centrale WiPro III est accessible
 
 ### Méthode 2 — Easy-Add 1.0 avec une télécommande radio
 
+FAQ WiPro III, page PDF 1 / safe.lock, page PDF 30 : **environ 10 secondes hors tension** avant cette méthode ; la fenêtre de **30 secondes** commence après rétablissement. Les notices rév. 1.2/1.3 ne fixent pas de durée de coupure.
+
 Cette méthode nécessite une télécommande radio 868 déjà mémorisée et permet d’ajouter des accessoires sans accéder directement à la centrale WiPro III.
 
 1. Fermer toutes les ouvertures surveillées du véhicule.
-2. Couper l’alimentation électrique de la centrale WiPro III pendant environ 10 secondes, par exemple en retirant le fusible ou en débranchant le connecteur.
+2. Couper l’alimentation électrique de la centrale WiPro III par exemple en retirant le fusible ou en débranchant le connecteur.
 3. Rétablir l’alimentation électrique.
 4. Dans un délai de **30 secondes**, appuyer **5×** sur la touche portant le symbole du haut-parleur de la télécommande déjà mémorisée.
 5. WiPro change plusieurs fois d’état ; la LED d’état reste ensuite allumée en rouge. Le mode de mémorisation est actif.
@@ -58,6 +63,8 @@ Cette méthode nécessite une télécommande radio 868 déjà mémorisée et per
 7. Pour terminer, couper puis rétablir de nouveau l’alimentation électrique.
 
 ### Méthode 3 — Easy-Add 2.0 via le CAN-Bus
+
+FAQ WiPro III, page PDF 1 / safe.lock, page PDF 30 : **environ 10 secondes hors tension** avant cette méthode ; la fenêtre de **30 secondes** commence après rétablissement. Les notices rév. 1.2/1.3 ne fixent pas de durée de coupure.
 
 Cette méthode nécessite une connexion CAN-Bus active et compatible.
 
@@ -81,6 +88,8 @@ Avec une version logicielle compatible, le mode de mémorisation peut être lanc
 La disponibilité de la fonction et les étapes affichées dépendent des appareils installés et de leurs versions logicielles.
 
 ---
+
+Sources Easy-Add 1.0/2.0/3.0 : rév. 1.3, pages PDF 56–57 ; rév. 1.2, pages PDF 54–55. Ces notices prescrivent une coupure puis un rétablissement sans durée fixe. **Complément des FAQ :** WiPro III, page PDF 1, et safe.lock, page PDF 30, précisent **environ 10 secondes hors tension** pour l'entrée par télécommande ou CAN. Après rétablissement, effectuer cinq pressions sur la touche haut-parleur ou cinq cycles de porte dans les **30 secondes**. Les dix secondes sont la coupure, les trente secondes la fenêtre de commande. La FAQ regroupe ces deux méthodes sous Easy-Add 2.0, alors que la notice distingue télécommande 1.0 et CAN 2.0.
 
 ## Différences entre les méthodes
 
@@ -133,6 +142,8 @@ Cette procédure efface tous les composants radio mémorisés, à l’exception 
 
 ### Effacement complet — totalité de la mémoire
 
+La notice d'installation rév. 1.8, page PDF 42, décrit uniquement cet effacement total et exclut l'effacement individuel. Cela n'invalide pas l'**effacement partiel conservant la télécommande maître** décrit dans les notices d'utilisation rév. 1.2/1.3. Ne pas mélanger les méthodes : **maintenir B lors du branchement efface aussi le maître**.
+
 Cette procédure efface **tous** les émetteurs mémorisés, y compris la télécommande maître.
 
 1. Débrancher le connecteur blanc à 20 broches de la centrale WiPro III.
@@ -145,6 +156,8 @@ Cette procédure efface **tous** les émetteurs mémorisés, y compris la télé
 ---
 
 ## Mémoriser et contrôler la portée avant le montage
+
+**Erreur rédactionnelle :** la rév. 1.8, page PDF 44, mentionne le « bouton A » pour quitter le diagnostic. Dans la figure page PDF 43, **B est le bouton et A le connecteur**. Même contradiction en DE, pages PDF 7–8. Ne pas déduire de cette lettre erronée une manipulation du connecteur.
 
 Dans la mesure du possible, mémoriser les accessoires radio avant leur montage définitif et les tester à l’emplacement prévu.
 
@@ -169,12 +182,14 @@ La télécommande radio 868, le contact magnétique radio 868 et la boucle de c�
 
 ### Avertissements de pile faible
 
+**Durée non univoque :** la FAQ WiPro III, page PDF 16, et la FAQ safe.lock, page PDF 28, indiquent un son de **2 secondes** et la LED rouge de l'émetteur pendant **30 secondes** lorsque sa pile est sous **2,6 V**. Les guides rapides WiPro III rév. 1.6 et safe.lock rév. 1.3 montrent au contraire un **signal de 5 secondes**, page PDF 2. La notice d'utilisation décrit un son long sans durée fixe. Cette divergence reste ouverte : deux ou cinq secondes ne suffisent pas à identifier une panne. Vérifier le moment du signal, l'émetteur concerné et sa LED rouge ; aucun nouvel apprentissage n'est nécessaire après le remplacement de la pile.
+
 Les niveaux d’avertissement affichés dépendent de la génération de l’émetteur :
 
 | Signalisation | Signification | Mesure à prendre |
 |---------------|---------------|------------------|
 | Voyant jaune pendant environ **5 secondes** | La pile commence à faiblir | La remplacer dans un délai de **2–6 semaines** |
-| Signal sonore de la centrale WiPro III pendant environ **2 secondes** et LED d’émission rouge pendant environ **30 secondes** | Pile critique | Remplacer immédiatement la pile |
+| Son long lors de la commande d’un émetteur et LED rouge pendant environ **30 secondes** ; durée sonore différente selon les sources | Pile critique | Remplacer immédiatement la pile |
 
 Lorsqu’un composant signale une pile faible, les autres piles bouton du même âge sont souvent elles aussi proches de leur fin de vie. Il est donc conseillé de les remplacer ensemble.
 
@@ -195,3 +210,7 @@ Lorsqu’un composant signale une pile faible, les autres piles bouton du même 
 - [[G.A.S.-connect — alarme de gaz sans fil pour WiPro III|G.A.S.-connect]]
 - [[module NFC — Contrôlez le WiPro via NFC|Module NFC]]
 - [[Vue d’ensemble du système — gamme de produits THITRONIK|Vue d’ensemble du système]]
+
+## Ambiguïté à la fin de l'effacement partiel
+
+La rév. 1.3, chapitre 2.2.2, page PDF 56, décrit le mode d'appairage après le bip d'effacement, puis une nouvelle coupure/rétablissement de l'alimentation comme dernière étape. Sa phrase finale indique pourtant que le système est en mode d'appairage. Même contradiction dans la rév. 1.2, page PDF 54, et en allemand (rév. 1.3, page PDF 18). Vérifier la LED d'état à la fin ; si elle reste allumée en continu, faire clarifier l'état par THITRONIK. La télécommande maître reste mémorisée lors de cet effacement partiel, contrairement à l'effacement total par le bouton de la centrale.

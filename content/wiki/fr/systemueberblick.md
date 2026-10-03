@@ -1,15 +1,18 @@
 ---
 title: Vue d’ensemble du système — gamme de produits THITRONIK
 sources:
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/handbuch_gas-pro_2.5.pdf
-  - sources/GAS-pro-III__QuickGuide__Overview_DE.md
-  - sources/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf
-  - sources/pro_finder-kurzanleitung-international_sn-045.pdf
-  - sources/BT-connect__Overview_DE.md
-  - sources/nfc_modul-kurzanleitung.pdf
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-updated: '2026-07-13'
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/gas-pro-handbuch-rev2.5.pdf"
+  - "sources/GAS-pro-III__QuickGuide__Overview_DE.md"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "sources/BT-connect__Overview_DE.md"
+  - "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf"
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "content/quellen/camplock-fingerprint.pdf"
+  - "content/quellen/camplock-vanlock-fingerprint.pdf"
+  - "content/quellen/katalog_thitronik_de.pdf"
+updated: '2026-09-25'
 confidence: high
 lang: fr
 translation_of: sources/systemueberblick.md
@@ -106,7 +109,9 @@ Pro-Finder est un module de communication mobile et de localisation. Il peut fon
 | Mode d’accès | Catégorie | Utilisation habituelle |
 |--------------|-----------|------------------------|
 | Clé d’origine du véhicule | commande côté véhicule par les signaux CAN-Bus ou de verrouillage centralisé pris en charge | utilisation quotidienne sur les véhicules compatibles |
-| CampLock Fingerprint | accès biométrique à la porte | portes de cellule Hartal avec verrouillage centralisé pris en charge |
+| CampLock Fingerprint 106111/106144 | accès biométrique à la porte | portes de cellule Hartal avec verrouillage centralisé pris en charge ; WiPro III ou WiPro III safe.lock selon sa notice distincte |
+| CampLock Fingerprint 106111-002/106144-002 | accès biométrique | WiPro III safe.lock selon la notice commune ; vérifier l’intégration de la porte |
+| VanLock Fingerprint 106259/106260 | accès biométrique | WiPro III safe.lock selon la notice commune ; clarifier la divergence du catalogue avant installation |
 | Télécommande radio 868 | télécommande indépendante à 868 MHz | solution de secours, utilisateurs supplémentaires et alarme panique |
 | Module NFC avec KeyCard, KeyTag ou KeyStrap | accès NFC local | commande directement sur le véhicule |
 | BT-connect | accès Bluetooth local | commande par smartphone ou montre connectée à proximité du véhicule |

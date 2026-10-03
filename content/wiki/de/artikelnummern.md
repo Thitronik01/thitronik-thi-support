@@ -1,32 +1,35 @@
 ---
 title: Artikelnummern-Register — Dokumentierte THITRONIK-Produkte und Zubehör
 sources:
-  - wiki/_index.md
-  - wiki/wipro-iii.md
-  - wiki/pro-finder.md
-  - wiki/bt-connect.md
-  - wiki/vernetzungsmodul.md
-  - wiki/nfc-modul.md
-  - wiki/zugang-bedienung.md
-  - wiki/gas.md
-  - wiki/gas-pro.md
-  - wiki/gas-pro-iii.md
-  - wiki/gas-connect.md
-  - wiki/gas-plug.md
-  - wiki/co-sensor.md
-  - wiki/zusatzsensor-gas-pro-iii.md
-  - wiki/funk-handsender.md
-  - wiki/funk-magnetkontakt.md
-  - wiki/funk-kabelschleife.md
-  - wiki/funk-rauchmelder.md
-  - wiki/funk-wassermelder.md
-  - wiki/sirenen-hupen.md
-  - wiki/abschalteinrichtung.md
-  - wiki/safe-lock-umruestplatine.md
-  - wiki/fahrzeugkompatibilitaet.md
-  - wiki/seriennummern-softwarestaende.md
-  - sources/thitronik_zugang_nur_zugang_v2.pdf
-updated: '2026-07-15'
+  - "content/wiki/de/_index.md"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/pro-finder.md"
+  - "content/wiki/de/bt-connect.md"
+  - "content/wiki/de/vernetzungsmodul.md"
+  - "content/wiki/de/nfc-modul.md"
+  - "content/wiki/de/zugang-bedienung.md"
+  - "content/wiki/de/gas.md"
+  - "content/wiki/de/gas-pro.md"
+  - "content/wiki/de/gas-pro-iii.md"
+  - "content/wiki/de/gas-connect.md"
+  - "content/wiki/de/gas-plug.md"
+  - "content/wiki/de/co-sensor.md"
+  - "content/wiki/de/zusatzsensor-gas-pro-iii.md"
+  - "content/wiki/de/funk-handsender.md"
+  - "content/wiki/de/funk-magnetkontakt.md"
+  - "content/wiki/de/funk-kabelschleife.md"
+  - "content/wiki/de/funk-rauchmelder.md"
+  - "content/wiki/de/funk-wassermelder.md"
+  - "content/wiki/de/sirenen-hupen.md"
+  - "content/wiki/de/abschalteinrichtung.md"
+  - "content/wiki/de/safe-lock-umruestplatine.md"
+  - "content/wiki/de/fahrzeugkompatibilitaet.md"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "sources/thitronik_zugang_nur_zugang_v2.pdf"
+  - "content/quellen/camplock-fingerprint.pdf"
+  - "content/quellen/camplock-vanlock-fingerprint.pdf"
+  - "content/quellen/katalog_thitronik_de.pdf"
+updated: '2026-09-25'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -72,8 +75,12 @@ Seriennummern-Präfixe, Hardwaregenerationen und Funktionsschwellen stehen unter
 | 105468 | KeyStrap | Größe L, weiß | [[Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System]] |
 | 105469 | KeyStrap | Größe L, rot | [[Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System]] |
 | 105470 | KeyStrap | Größe L, blau | [[Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System]] |
-| 106111 | CampLock Fingerprint | silber | [[Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System]] |
-| 106144 | CampLock Fingerprint | schwarz | [[Zugangsmedien & Bedienung — Zutrittswege im THITRONIK-System]] |
+| 106111 | CampLock Fingerprint | Ausführung der separaten Hartal-Kurzanleitung; silber laut Produktunterlagen | [[CampLock Fingerprint]] |
+| 106144 | CampLock Fingerprint | Ausführung der separaten Hartal-Kurzanleitung; schwarz laut Produktunterlagen | [[CampLock Fingerprint]] |
+| 106111-002 | CampLock Fingerprint | Ausführung der gemeinsamen CampLock-/VanLock-Bedienungsanleitung | [[CampLock Fingerprint]] |
+| 106144-002 | CampLock Fingerprint | Ausführung der gemeinsamen CampLock-/VanLock-Bedienungsanleitung | [[CampLock Fingerprint]] |
+| 106259 | VanLock Fingerprint | Ausführung der gemeinsamen Bedienungsanleitung | [[VanLock Fingerprint]] |
+| 106260 | VanLock Fingerprint | Ausführung der gemeinsamen Bedienungsanleitung | [[VanLock Fingerprint]] |
 
 ---
 
@@ -186,7 +193,7 @@ Klärfälle dürfen nicht als bestätigte Bestellnummern ausgegeben werden. Für
 100433 (CO) · 100456 (Zusatzsensor G.A.S.-pro) · 101289 (Zusatzsensor G.A.S.-pro III)
 
 ### Zugang und Zutritt
-101064 (Funk-Handsender) · 105299 (NFC Modul) · 105300 (KeyCard) · 105301 (KeyTag) · 105302/105464–105470 (KeyStrap) · 106111/106144 (CampLock Fingerprint)
+101064 (Funk-Handsender) · 105299 (NFC Modul) · 105300 (KeyCard) · 105301 (KeyTag) · 105302/105464–105470 (KeyStrap) · 106111/106144 und 106111-002/106144-002 (CampLock Fingerprint) · 106259/106260 (VanLock Fingerprint)
 
 ### Funk-Zubehör 868 MHz
 100757/100758 (Magnetkontakt schwarz/weiß) · 100761/101074 (Kabelschleife Standard/XL) · 105753/105754 (Rauchmelder weiß/grau) · Funk-Wassermelder (Artikelnummer offen)

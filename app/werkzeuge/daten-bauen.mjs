@@ -23,7 +23,21 @@ import { fileURLToPath } from 'node:url';
 // und wäre auf einer älteren Laufzeit still `undefined` — der Fehler fiele dann
 // erst im Deployment auf.
 const HIER = path.dirname(fileURLToPath(import.meta.url));
-const DATEN = path.join(HIER, '..', 'data');
+const args = process.argv.slice(2);
+if (args.length && (args.length !== 2 || args[0] !== '--data-dir' || !args[1] || args[1].startsWith('--'))) {
+  throw new Error('Aufruf: daten-bauen.mjs [--data-dir Ordner]');
+}
+const DATEN = args.length ? path.resolve(args[1]) : path.join(HIER, '..', 'data');
+
+// Validate the entire input batch BEFORE writing any generated module. In
+// particular, corrupt correction JSON must never replace existing corrections
+// with an empty array. This also keeps the last good build after input errors.
+for (const name of ['artikel.json', 'sektionen.json', 'korrekturen.json']) {
+  const file = path.join(DATEN, name);
+  if (name === 'korrekturen.json' && !fs.existsSync(file)) continue;
+  const value = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (!Array.isArray(value)) throw new Error(`${name} muss ein Array enthalten; keine Module geschrieben.`);
+}
 
 // JSON ist gültiges JS-Literal — mit EINER Ausnahme: U+2028 (Line Separator)
 // und U+2029 (Paragraph Separator) sind in JSON-Strings erlaubt, im

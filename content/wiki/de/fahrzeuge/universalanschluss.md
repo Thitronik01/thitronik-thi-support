@@ -1,8 +1,10 @@
 ---
 title: Universalanschluss (ältere / nicht gelistete Fahrzeuge)
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/fahrzeug-sprinter-t1n.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -13,6 +15,12 @@ dealerStatus: approved
 Dieser Artikel beschreibt den konventionellen Anschluss einer WiPro III an ein Fahrzeug ohne nutzbare CAN-Bus-Einbindung. Er gilt für ältere oder nicht fahrzeugspezifisch dokumentierte Fahrzeuge nur dann, wenn die benötigten analogen Signale am konkreten Fahrzeug eindeutig gemessen und ihre elektrische Eignung bestätigt wurden.
 
 > **Wichtige Abgrenzung:** „Nicht gelistet“ bedeutet nicht automatisch „universell anschließbar“. Bei modernen, vernetzten Fahrzeugen dürfen keine Leitungen allein nach Farbe oder vermuteter Funktion angeschlossen werden. Gibt es eine fahrzeugspezifische THITRONIK-Anleitung, hat sie Vorrang.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Universalanschluss: Fehlender Fahrzeugeintrag belegt keine CAN-Kompatibilität und keine safe.lock-ZV-Freigabe. Die allgemeine Tabelle zeigt SW1–SW4 OFF für das Universalprofil; Zusatzfunktionen benötigen den passenden Gerätestand. Die besondere T1N-Anweisung lautet dagegen alle acht Schalter OFF und ist nicht auf jedes Fahrzeug zu übertragen. Fahrzeugjahr, Zentrale, Software und analoge Eingangsfunktion zuerst bestimmen; Pinrollen blau/blau-schwarz unterscheiden sich zwischen Altgerät und safe.lock.
+
+Belege: [I, PDF 5](../../../quellen/wipro-iii-installation-rev1.8.pdf#page=5), [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2), [Q, PDF 2](../../../quellen/wipro-iii-faq.pdf#page=2).
 
 ## Geltungsbereich
 
@@ -172,17 +180,7 @@ Weitere Prüfungen beschreibt [[Störungsbeseitigung — Sichere Diagnose häufi
 
 ## Quellenentscheidung
 
-- Das Installationshandbuch *WiPro III*, Revision `1.8`, wurde im vollständigen deutschen Abschnitt mit Titelseite und Seiten 1 bis 18 textlich und visuell geprüft.
-- Seite 4 fordert für ältere oder nicht gelistete Fahrzeuge den konventionellen Anschluss nach Universalplan und ausdrücklich `SW1–SW4 OFF`.
-- Seiten 6 und 11 belegen Steckerlage, Leitungsfarben und die Belegung aller 20 Pins.
-- Seite 12 belegt Versorgung, `10-A`-Sicherung, Innenbeleuchtung/Türkontakt, zwei analoge Blinkerzweige, Sirene, Status-LED und die nicht verwendeten CAN-Leitungen.
-- Seiten 5 bis 10 belegen Anlernen, Montage, Diagnose, Sirenenanschluss und die `60-Sekunden`-Verzögerung des Innenbeleuchtungseingangs.
-- Seite 16 belegt `9–30 V`, `1 A`, `60 W`, etwa `11 mA`, maximal 100 Sender, `868,35 MHz`, `<10 mW`, `75 m`, `CR2032` und die Temperaturbereiche.
-- Die frühere Aussage „alle Schalter OFF“ wurde auf die tatsächlich belegte Aussage `SW1–SW4 OFF` korrigiert. Für `SW6` wird keine unbelegte Universalstellung erfunden.
-
-Primärquelle:
-
-- `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf`
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [I, PDF 5](../../../quellen/wipro-iii-installation-rev1.8.pdf#page=5), [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2), [Q, PDF 2](../../../quellen/wipro-iii-faq.pdf#page=2).
 
 ## Querverweise
 

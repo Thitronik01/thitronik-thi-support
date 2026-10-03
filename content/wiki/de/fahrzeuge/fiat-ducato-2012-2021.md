@@ -1,19 +1,12 @@
 ---
-title: >-
-  Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano
-  (2012–2021)
+title: "Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012–2021)"
 sources:
-  - >-
-    D:/Anleitungen/Anleitungen/06_Max und KI Handover/Wipro III safe.lock/04
-    Einbauanleitungen/Art.Nr.101050/Fiat Ducato und
-    baugleiche/Einbauhandbuch_WiPro III safe.lock_Art.Nr.101050_Rev 1.0_DE.pdf
-  - >-
-    D:/Anleitungen/Anleitungen/01_Quellanleitungen/WiPro
-    III/wipro_iii-installationsanleitung_1.8.pdf
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/Zusatzanleitung_safe.lock-Upgrade-alleFahrzeuge_2024.pdf
-updated: '2026-07-19'
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/fahrzeug-safelock-platine.pdf"
+  - "D:/Anleitungen/Anleitungen/06_Max und KI Handover/Wipro III safe.lock/04 Einbauanleitungen/Art.Nr.101050/Fiat Ducato und baugleiche/Einbauhandbuch_WiPro III safe.lock_Art.Nr.101050_Rev 1.0_DE.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "content/quellen/fahrzeug-safelock-upgrade.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -24,6 +17,12 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III safe.lock, Art.-Nr. `101050`, in die dokumentierte Sevel-Fahrzeugfamilie. Die fahrzeugspezifische Anleitung unterscheidet bei DIP-Konfiguration und Schlüsselsicherheit zwischen den Baujahren **2012–2018** und **2019+**.
 
 > **Abgrenzung:** Stecker, Pinbelegung und Leitungsfarben müssen mit dem tatsächlichen Fahrzeug übereinstimmen. Bei abweichender Ausstattung, einem anderen Bordcomputer oder einer nicht eindeutig identifizierbaren Leitung darf nicht nach Vermutung angeschlossen werden. In diesem Fall sind Fahrzeughersteller oder THITRONIK Support einzubeziehen.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ducato 2012–2021: safe.lock-FAQ bestätigt für die Fahrzeugfamilie 2006–2021 `1050-001 / 5.9s`. Das Einbauhandbuch für 2012–2021 liegt im geprüften PDF-Bestand nicht vor; vorhandene Pin- und DIP-Angaben stammen aus älterem Projektbestand und sind hier nicht neu verifiziert. Umrüstplatinen-Anleitung nennt 2006–2012, FAQ die Replay-Betroffenheit 2006–2018 und Rollcode ab 2019: Dokumentgrenzen getrennt halten. Baujahr und Schlüsselgeneration identifizieren, bevor eine Umrüstung zugesagt wird.
+
+Belege: [S, PDF 4](../../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 23](../../../quellen/wipro-iii-safelock-faq.pdf#page=23), [safelock-platine, PDF 2](../../../quellen/fahrzeug-safelock-platine.pdf#page=2).
 
 ## Geltungsbereich
 
@@ -59,6 +58,8 @@ Vor dem Einbau sind folgende Fahrzeugfunktionen zu prüfen und zu dokumentieren:
 Bei vollintegrierten Wohnmobilen können Originaltüren oder -klappen bereits über den CAN-Bus erfasst sein. Dort ist für die betreffende Öffnung nicht automatisch ein zusätzlicher Funk-Magnetkontakt erforderlich; die tatsächliche Erfassung muss vor der Montage geprüft werden.
 
 ## DIP-Schalter und Schlüsselsicherheit
+
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
 
 Die DIP-Schalter werden bei getrennter Spannungsversorgung eingestellt. Die Position **ON** entspricht der mit dem Pfeil gekennzeichneten Schalterrichtung.
 
@@ -128,6 +129,8 @@ Für die Status-LED wird nach Abstimmung der Position ein Loch mit 8 mm Durchmes
 
 ## Funk-Zubehör anlernen und montieren
 
+> **Quellenlücke:** Dieser Abschnitt enthält älteren Projektbestand. Die passende Original-Fahrzeuganleitung ist in diesem Prüfblock nicht vorhanden; Pins, DIP und Verkabelung vor Anwendung anhand der Originalunterlage bestätigen.
+
 Sämtliches Funk-Zubehör, auch Komponenten aus dem Lieferumfang, muss einmalig angelernt werden und den Zusatz **868** tragen.
 
 1. Taster rechts neben dem Anschlussstecker gedrückt halten, bis die Zentrale piept und die Status-LED dauerhaft leuchtet.
@@ -167,10 +170,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 ## Quellenentscheidung
 
-- Primärquelle ist das zwölfseitige THITRONIK *Einbauhandbuch WiPro III safe.lock — Fiat Ducato 2012–2021, Citroën Jumper / Peugeot Boxer 2012+, Toyota Proace Max / Opel Movano 2021+*, Stand `02/24`, Revision `1.0`.
-- Die allgemeine WiPro-Installationsanleitung bleibt für übergreifende Sicherheits-, Anschluss- und Systemregeln verbindlich.
-- Die Zusatzanleitung *WiPro III safe.lock Upgrade*, Revision `2.0`, gilt nur für entsprechend hardwareseitig auf safe.lock erweiterte WiPro-III-Anlagen und ersetzt nicht die fahrzeugspezifische Pinbelegung.
-- Das ältere Einbauhandbuch `wipro_iii_fiat_ducato_x250_euro_4_safe.lock.pdf` behandelt ausschließlich Euro-4-Fahrzeuge von 2006–2011 und ist **keine Anschlussquelle** für diesen Artikel.
+Die passende vollständige Fahrzeug-Einbauanleitung fehlt im geprüften PDF-Bestand. Dieser Block prüft nur die oben belegten Kompatibilitäts- und Versionsaussagen; ältere IDML-/Projektangaben und deren Bilder sind nicht erneut verifiziert. Belege: [S, PDF 4](../../../quellen/wipro-iii-safelock-faq.pdf#page=4), [S, PDF 23](../../../quellen/wipro-iii-safelock-faq.pdf#page=23), [safelock-platine, PDF 2](../../../quellen/fahrzeug-safelock-platine.pdf#page=2).
 
 ## Querverweise
 

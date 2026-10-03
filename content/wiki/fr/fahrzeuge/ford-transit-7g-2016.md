@@ -1,11 +1,10 @@
 ---
 title: Ford Transit 7e génération (2016-2019)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_ford_transit_7._generation_2016-2019.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ford-2016.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/ford-transit-7g-2016.md
@@ -16,6 +15,16 @@ translation_of: sources/fahrzeuge/ford-transit-7g-2016.md
 Installation d'une WiPro III dans les Ford Transit et Transit Custom 2016–2019. Le manuel `12/20` dit « 2016+ »; ce projet traite le restylage 2019 séparément.
 
 > **Distinction importante :** la télécommande Ford d'origine n'est exploitable que **sans deadlock**. Avec deadlock, l'émetteur radio 868 THITRONIK® est obligatoire.
+
+## Limites du véhicule et sources contrôlées
+
+Ford Transit 2016 : `0823-013 / 5.6`, `SW2 + SW4 + SW6 ON`. La FAQ limite ce profil à 2016–2018, le nom du PDF indique 2016–2019 : identifier la génération d’un véhicule de 2019. Conflit Deadlock : PDF = commande THITRONIK avec Deadlock, FAQ = utilisation seulement sans Deadlock. Avec Deadlock, demander confirmation. Le contact est ici J1 broche 2 jaune/marron → WiPro jaune ; ce n’est pas le raccordement du facelift 2019.
+
+Sources : [ford-2016, PDF 2](../../../quellen/fahrzeug-ford-2016.pdf#page=2), [ford-2016, PDF 4](../../../quellen/fahrzeug-ford-2016.pdf#page=4), [Q, PDF 4](../../../quellen/wipro-iii-faq.pdf#page=4).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Domaine d'application
 
@@ -109,7 +118,7 @@ Art. `100757`/`100758`; voir [[Contact radiomagnétique 868 — montage et fonct
 |---|---|
 | Carte | LED d'émission opposée à l'aimant |
 | Erreur | apprentissage possible, aucune alarme |
-| Distance | `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Surface/température | propre, sèche, ≥`15 °C` |
 | Adhésif | résistance finale après `24 heures` |
 | Adaptateur | `100428` ou `100729` |
@@ -120,9 +129,13 @@ Apprendre et tester la portée; ne pas dépasser la limite rouge. Dégraisser, c
 
 ### Avec deadlock
 
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
+
 Fermer, verrouiller avec Ford, armer avec THITRONIK®, vérifier bip/clignotants/LED. Ouvrir la porte conducteur de l'extérieur avec la clé; vérifier `30 secondes` acoustiques et `180 secondes` optiques. Interrompre avec l'émetteur et lire la mémoire.
 
 ### Sans deadlock
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 Fermer puis appuyer « verrouiller » sur Ford; WiPro doit s'armer automatiquement, biper et clignoter. Ouvrir de l'intérieur ou avec la clé, vérifier `30`/`180` secondes, interrompre avec l'émetteur et tester toutes les portes/capteurs.
 
@@ -149,13 +162,13 @@ Déclencher chaque émetteur sur place; sans confirmation sonore, vérifier appr
 | Klaxon/détresse absents | J2 noir 18 ou 19 et couleurs |
 | Réaction de verrouillage | bleu et bleu/noir doivent être isolés |
 | Contact sans alarme | retourner la carte |
-| Radio instable | métal, antenne, `22–30 mm`, adaptateur |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 
 Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 ## Sources et décision éditoriale
 
-Les neuf pages `12/20` ont été contrôlées textuellement et visuellement: p.2 `0823-013`, deadlock, DIP; p.3–4 masse, J1/J2, fusible `18`, CAN, LED, `10 secondes`; p.5 deux essais et `30`/`180` secondes; p.6–9 contacts, adaptateurs, `22–30 mm`. Le manuel `1.8` complète le diagnostic; `5.6` vient de la matrice. Aucun pin CAN n'a été reconstruit.
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 
 ## Articles connexes
 

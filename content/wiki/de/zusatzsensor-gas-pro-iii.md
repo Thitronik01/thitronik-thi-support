@@ -1,18 +1,17 @@
 ---
 title: Zusatzsensor G.A.S.-pro III — Externer Gassensor
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/'
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/zusatzsensor_gas-pro_iii_de_en_fr.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii-kurzanleitung-de_en_fr.pdf
-  - >-
-    https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf
-  - 'https://www.thitronik.de/recall/'
-  - sources/zusatzsensor_gas-pro_iii_de_en_fr.pdf
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/Fragen zu Zusatzsensor für G.A.S.-pro III.pdf
-updated: '2026-07-17'
+  - "content/quellen/gas-pro-iii-kurz-rev1.3.pdf"
+  - "content/quellen/gas-pro-iii-co-kurz-rev1.3.pdf"
+  - "content/quellen/gas-zusatzsensor-iii-anleitung.pdf"
+  - "content/quellen/gas-zusatzsensor-iii-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/zusatzsensor-fuer-gas-pro-iii/"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/zusatzsensor_gas-pro_iii_de_en_fr.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/downloads/gaswarner/anleitungen/gas_pro_iii-kurzanleitung-de_en_fr.pdf"
+  - "https://www.thitronik.de/fileadmin/user_upload/produkte/gas-pro-iii/technische_zusatzinformationen_gas-pro_iii.pdf"
+  - "https://www.thitronik.de/recall/"
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -93,7 +92,7 @@ Zum dokumentierten Lieferumfang gehören:
 - Schrauben beziehungsweise Montagematerial
 - Montageanleitung
 
-Der Sensorkopf ist laut aktueller Produktseite steckbar und dadurch austauschbar. Nur freigegebene Ersatzteile verwenden und einen Austausch nicht mit einer Reparatur des Sensorelements gleichsetzen.
+Ein steckbarer Sensorkopf ist in den für diese Prüfung herangezogenen Originalen nicht belegt. Einen Austausch nicht als freigegebene Steckreparatur beschreiben; Ersatzteil und Vorgehen mit THITRONIK abgleichen.
 
 ## Quellenabweichungen
 
@@ -104,6 +103,10 @@ Der Sensorkopf ist laut aktueller Produktseite steckbar und dadurch austauschbar
 | Abstand zu Batterie und Nasszelle | verweist auf Hauptgeräteunterlagen | mindestens 1 m | mindestens 1 m |
 
 Die aktuelle G.A.S.-pro-III-Kurzanleitung wird für die konkrete Systemmontage vorrangig verwendet. Eine Montagehöhe über 20 cm oder eine Gesamtkabellänge über 7 m nur nutzen, wenn THITRONIK sie für die konkrete Geräte-/Sensorkombination bestätigt. **7 m Gesamtlänge** bedeutet nicht 7 m Verlängerung zusätzlich zur 2-m-Originalleitung.
+
+Beleg: [SZ, PDF 2–3](../../quellen/gas-zusatzsensor-iii-anleitung.pdf#page=2).
+
+Beleg: [K, PDF 2](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=2).
 
 ## Montageplanung
 
@@ -153,6 +156,8 @@ Für die federnden Klemmen der G.A.S.-pro III gelten zusätzlich die Regeln des 
 
 Kabelfarben nicht aus anderen G.A.S.-pro-Generationen oder fremden Sensoren übernehmen. Keine Ader unter Spannung umklemmen und `SEN+`, `SEN−` oder `SENSIG` nicht probeweise kurzschließen.
 
+Beleg: [SZ, PDF 2–3](../../quellen/gas-zusatzsensor-iii-anleitung.pdf#page=2). Die Farbzuordnung ist gerätespezifisch: Grün SENSIG, Weiß SEN−, Braun SEN+.
+
 ## Kabelverlängerung
 
 Die ab Werk vorhandene Anschlussleitung ist 2 m lang. Für die Dokumentation und Freigabe dieses Artikels gilt konservativ eine **Gesamtlänge von höchstens 7 m** einschließlich Originalleitung.
@@ -167,6 +172,8 @@ Bei einer fachgerecht ausgeführten Verlängerung:
 - Gesamtlänge und Verbindungsstellen für den Support dokumentieren
 
 Die Produktseite nennt bis zu 8 m. Diese größere Länge nicht stillschweigend als Freigabe für jede Geräteversion und Einbausituation behandeln; im Zweifel vor der Verlängerung THITRONIK bestätigen lassen.
+
+Beleg: [QZ, PDF 2](../../quellen/gas-zusatzsensor-iii-faq.pdf#page=2).
 
 ## Zusammenspiel mit Hauptgerät und Alarmwegen
 
@@ -195,6 +202,8 @@ Pause und `IGN` können akustische, Funk- und Ausgangsmeldungen der G.A.S.-pro I
 
 Die G.A.S.-pro-III-Kurzanleitung sieht keinen Anwender-Funktionstest mit Feuerzeuggas oder anderem Prüfgas vor. Das System besitzt einen automatischen Sensorselbsttest. Eine weitergehende fachliche Prüfung nur nach einem ausdrücklich für diese Gerätekombination freigegebenen Herstellerverfahren durchführen lassen.
 
+Quellenkonflikt Funktionstest: Die allgemeine Zusatzsensor-FAQ [QZ, PDF 2](../../quellen/gas-zusatzsensor-iii-faq.pdf#page=2) empfiehlt einen Feuerzeugtest; die G.A.S.-pro-III-Kurzanleitungen [K, PDF 1](../../quellen/gas-pro-iii-kurz-rev1.3.pdf#page=1) / [KCO, PDF 1](../../quellen/gas-pro-iii-co-kurz-rev1.3.pdf#page=1) schließen die Vor-Ort-Prüfung mit Gas wegen des Auswertungsalgorithmus aus. Für diese III-Gerätekombination keinen Feuerzeugtest empfehlen. Die Testanweisung der älteren G.A.S.-pro ist nicht übertragbar.
+
 ## Verhalten bei Gasalarm
 
 1. Alarm ernst nehmen und alle Personen sowie Tiere unverzüglich ins Freie bringen.
@@ -220,6 +229,8 @@ Die aktuelle THITRONIK-Rückrufseite betrifft ausschließlich eine klar abgegren
 | Maßnahme | kostenloses Softwareupdate durch THITRONIK |
 
 Bei betroffener Kombination die vollständige Rückseite des Hauptgeräts mit lesbarer Seriennummer fotografieren und das Gerät über die offizielle Rückrufseite anmelden. Kabel nicht eigenmächtig lösen und vor weiterer Demontage die Rückmeldung von THITRONIK abwarten. Andere Hauptgerätevarianten oder Seriennummern nicht allein aufgrund ähnlicher Bezeichnungen als betroffen einstufen.
+
+[Offizielle Rückrufseite](https://www.thitronik.de/recall/) am **01.10.2026** geprüft. Rückrufprüfung und Herstellerupdate sind kein Nachweis einer vollständigen fachlichen Prüfung dieser Wissensbasis.
 
 ## Sichere Störungsbeseitigung
 

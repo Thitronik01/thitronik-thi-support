@@ -1,9 +1,10 @@
 ---
 title: VW T5 (2006-2009)
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t5_2006-2009.pdf'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-t5.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/vw-t5.md
@@ -15,7 +16,19 @@ Cette page couvre l'installation du WiPro III dans le VW T5 avant restylage de 2
 
 > ** Limite : ** À partir de l'année modèle 2010, utilisez [[VW T5 facelift (à partir de MY 2010)]]. L'année, le connecteur, les couleurs des fils et les signaux doivent correspondre à cette version avant restylage.
 
+## Limites du véhicule et sources contrôlées
+
+VW T5 2006–2009 : `SW1 + SW3 + SW6 ON`. Le manuel véhicule 12/20 ne donne pas de limite de série ; la FAQ fournit `0823-001 / 2.1`. L’ancienne affirmation « non indiqué dans les sources primaires » est donc dépassée. Le facelift commence au millésime 2010 selon la couverture, pas simplement en « 2009 » comme dans le nom du fichier. CAN orange/marron → violet/orange, orange/vert → blanc/orange. Ne pas choisir le profil à partir de la seule première immatriculation.
+
+Sources : [t5, PDF 2](../../../quellen/fahrzeug-t5.pdf#page=2), [t5, PDF 4](../../../quellen/fahrzeug-t5.pdf#page=4), [Q, PDF 9](../../../quellen/wipro-iii-faq.pdf#page=9).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
+
 ## Aperçu
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 | Paramètre | Statut vérifié |
 |---|---|
@@ -26,7 +39,7 @@ Cette page couvre l'installation du WiPro III dans le VW T5 avant restylage de 2
 | Connecteur de véhicule | connecteur G noir à 18 broches, trois rangées de six |
 | Surveillance CAN | toutes les portes et capot d'origine contact |
 | Opération | véhicule à distance ; les accessoires sans fil peuvent également être mémorisés en |
-| Série/logiciel minimum | non indiqué dans les sources primaires |
+| Minimum selon FAQ | `0823-001 / 2.1` (en complément du manuel véhicule) |
 | Durée de l'alarme | audible env. `30 secondes`, visuel env. `180 secondes` |
 
 ## Portée de la source et limites de version
@@ -37,7 +50,7 @@ Cette page couvre l'installation du WiPro III dans le VW T5 avant restylage de 2
 | Point de raccordement | identifier le connecteur G par boîtier, disposition des rangées, couleur et signal |
 | Alimentation | connexion de la batterie selon le guide du véhicule ; Broches WiPro `1`, `7` et `11` selon le guide général |
 | Sirène | sirène normale ou de secours selon schéma véhicule |
-| Seuil série/logiciel | `0823-001 / 2.1` n'est pas pris en charge et n'est pas conservé |
+| Minimum selon FAQ | `0823-001 / 2.1` (en complément du manuel véhicule) |
 | Véhicule différent | arrêter et obtenir l'approbation actuelle |
 
 1. Confirmez le modèle et l'année à partir des documents.
@@ -149,7 +162,7 @@ La source du véhicule couvre les articles `100757` et `100758`.
 | Fonctionnalité | Exigence |
 |---|---|
 | Orientation du conseil d'administration | transmettre les points LED loin de l'aimant |
-| Gamme d'aimants | position fermée dans la zone jaune, généralement `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Surface adhésive | propre, sec et sans graisse |
 | Température d'application | pas en dessous de `15 °C` |
 | Force d'adhérence finale | après env. `24 heures` |
@@ -169,6 +182,8 @@ La source du véhicule couvre les articles `100757` et `100758`.
 Voir [[Contact radiomagnétique 868 — montage et fonctionnement]] et [[Boucle de câble radio 868 — sécurité externe pour marchandises mobiles]].
 
 ## Mise en service et test de fonctionnement complet
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Revérifiez `SW1 + SW3 + SW6`.
 2. Vérifiez les sertissages, l'isolation, le serre-câble et le fusible `10 A`.
@@ -220,7 +235,7 @@ Appuyez brièvement sur le bouton de la carte pour le mode de diagnostic CAN ; 
 
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t5_2006-2009.pdf` — guide du véhicule daté de `12/20` ; les dix pages ont été vérifiées textuellement et visuellement.
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf` — guide d'installation général Rév. `1.8` ; section allemande complète préalablement vérifiée.
-- `0823-001 / 2.1` n'est pas retenu au minimum car aucune source ne le précise.
+- La FAQ ajoute le minimum `0823-001 / 2.1`; l’ancienne affirmation contraire est dépassée.
 
 ## Références croisées
 

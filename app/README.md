@@ -3,8 +3,15 @@
 Technischer Support-Assistent für THITRONIK-Produkte: strukturierte Fallaufnahme,
 belegte Antworten aus der THITRONIK-Dokumentation, **deutsch und französisch**.
 
-**Kein Build-Schritt, kein Framework.** Statisches Frontend + zwei Netlify
-Functions. Ordner hochladen, drei Umgebungsvariablen setzen, fertig.
+**Kein Frontend-Build, kein Framework.** Statisches Frontend und Netlify
+Functions; die geprüfte Wissensbasis liegt in `data/`.
+
+> **Aktueller Prüfstand: 03.10.2026.** 224 Artikel, 2.841 Abschnitte,
+> 408 bestandene Belegfälle, 179 Selbsttests und 45 Modultests. Die fachliche
+> Quellenprüfung steht bei **71 %**. Für diesen Datenstand sind noch keine
+> Live-Modellantworten bewertet; Herstellerklärungen und Live-Abnahme fehlen.
+> Einstieg: [Prüfberichte und offene Schritte](../docs/quellenpruefung/README.md).
+> Ältere Eval-Ergebnisse weiter unten gelten nur für ihre damaligen Datenstände.
 
 > **Weiterarbeiten?** [`NAECHSTE_SCHRITTE.md`](NAECHSTE_SCHRITTE.md) fasst den
 > Stand zusammen und sortiert die offenen Punkte nach Nutzen.
@@ -330,7 +337,7 @@ app/
 │       ├─ js/app.js           Formular, Validierung, Chat, Streaming
 │       ├─ js/i18n.js          alle Texte DE/FR
 │       ├─ js/erkennung.js     Freitext → Strukturfelder (ohne Sprachmodell)
-│       ├─ js/kataloge.js      30 Fahrzeuge, 48 Produkte, 11 SN-Präfixe
+│       ├─ js/kataloge.js      30 Fahrzeuge, 56 Produkte, 11 SN-Präfixe
 │       └─ img/logo.png
 │
 ├─ netlify/functions/
@@ -355,7 +362,7 @@ app/
 │
 └─ data/                     Wissensbasis
     ├─ artikel.mjs             ← wird importiert (224 Artikel, 2,9 MB)
-    ├─ sektionen.mjs           ← wird importiert (2.591 Abschnitte, 2,5 MB)
+    ├─ sektionen.mjs           ← wird importiert (2.587 Abschnitte, 2,5 MB)
     ├─ artikel.json            lesbare Zwischenstufe
     ├─ sektionen.json          lesbare Zwischenstufe
     ├─ korrekturen.mjs         ← wird importiert (Support-Korrekturen)
@@ -374,18 +381,95 @@ app/
 
 ## Wissensbasis aktualisieren
 
-`data/*.json` entsteht aus dem THITRONIK-Wiki (Ablauf:
-`../docs/02_ZIELARCHITEKTUR.md` §5). Danach die Importmodule neu bauen:
+Die App lädt `data/*.mjs`, erzeugt aus den gleichnamigen JSON-Dateien.
+Seit dem 02.10.2026 gleicht `wiki-gesamt-sync.mjs` alle 143 bereits enthaltenen
+öffentlichen Wiki-Routen mit `../content/wiki` ab. 21 interne Seiten und interne
+Abschnitte werden ausgeschlossen; die 81 vorhandenen PDF-/FAQ-Exporte bleiben
+erhalten. Neue Routen und Zugriffsrechte werden nicht automatisch angelegt.
 
 ```bash
-node werkzeuge/daten-bauen.mjs
+npm run wiki:check
+# Zuerst einen separaten Kandidaten erzeugen und gegen den aktuellen Stand prüfen:
+node werkzeuge/wiki-gesamt-sync.mjs --output-dir ../../.rag-audit/kandidat
+node werkzeuge/gesamtvergleich.mjs --data ../../.rag-audit/kandidat --baseline data
+# Nach erfolgreicher Prüfung:
+npm run wiki:sync
+npm run daten
+npm test
 ```
 
-Das Skript meldet Einträge, Sprachverteilung und die **durchschnittliche
+`npm run test:gesamt` prüft alle 404 Belegfälle und berichtet die 82 historischen
+Vergleichsfragen. Der Modulbau validiert alle JSON-Eingaben vor dem Schreiben.
+Vollständige Nachweise, Quellenlücken und Live-Testvorbereitung stehen im
+[Gesamtprüfbericht](../docs/quellenpruefung/2026-10-02-gesamtvergleich.md).
+
+Für einzelne Produktgruppen bleiben die gezielten Sync-Skripte verfügbar,
+zum Beispiel für die Fingerprint-Artikel und zugehörigen Übersichten:
+
+```bash
+node werkzeuge/fingerprint-wiki-sync.mjs --check
+node werkzeuge/fingerprint-wiki-sync.mjs
+node werkzeuge/daten-bauen.mjs
+node werkzeuge/fingerprint-wiki-sync.mjs --check
+node werkzeuge/erkennung-fingerprint-test.mjs
+```
+
+`daten-bauen.mjs` meldet Einträge, Sprachverteilung und die **durchschnittliche
 Textlänge**. Fällt letztere gegenüber dem Vorlauf unerwartet, hat der Ingest
 still Text verloren — der teuerste Fehler des Vorgängersystems
 (`../docs/01_RAG_WISSENSTRANSFER.md` §1.1). Nach dem Deploy bestätigt
 `/api/health` dieselben Zahlen aus der laufenden Function.
+
+Die zwölf quellenbelegten Fingerprint-Fragen je Sprache liegen in
+`../daten/thi-eval-fingerprint.de.json` und `.fr.json`. Ein Antwort-Eval ist
+optional und ruft das konfigurierte Modell auf, zum Beispiel:
+
+```bash
+node werkzeuge/antwort-eval.mjs --sprache de --gold ../daten/thi-eval-fingerprint.de.json --judge
+```
+
+Für den WiPro-Abgleich gibt es zusätzlich `wipro-wiki-sync.mjs`.
+Die im Skript aufgeführten Routen umfassen Bedienung, Installation/FAQ und
+die betroffenen Fahrzeug- und Produktquerverweise jeweils in DE/FR.
+Die gezielten Sync-Befehle verwenden `wiki-sync-basis.mjs`;
+fremde Routen und bestehende Metadaten bleiben erhalten. Gemischte
+Abschnittssichtbarkeiten werden nicht still überschrieben.
+
+```bash
+node werkzeuge/wipro-wiki-sync.mjs --check
+node werkzeuge/wipro-wiki-sync.mjs
+node werkzeuge/daten-bauen.mjs
+node werkzeuge/wipro-belege-pruefen.mjs
+```
+
+Die 58 WiPro-Belegfälle stehen in `../daten/thi-eval-wipro.de.json` und
+`.fr.json`. Sie prüfen lokal Artikelrang, Beleganker und den tatsächlichen
+Kontextauszug. Sie sind kein Ersatz für die noch offene Live-Antwortprüfung.
+Quellen, Seitenmatrix, Grenzen und Fortschritt stehen unter
+[`../docs/10_RAG_PRUEFFORTSCHRITT.md`](../docs/10_RAG_PRUEFFORTSCHRITT.md).
+
+**Pro-Finder-Abgleich vom 28.09.2026:** `profinder-wiki-sync.mjs` aktualisiert
+`pro-finder`, `app-befehle`, `mobilfunk-sim`, `stromversorgung-standzeiten`
+und `stoerungsbeseitigung` jeweils in DE/FR. 107 Originalseiten wurden auf
+DE/FR-Inhalte geprüft; Versionskonflikte bleiben ausdrücklich gekennzeichnet.
+Inline-Code behält beim Import insbesondere SMS-Steuerzeichen wie `*` und `#`.
+
+```bash
+node werkzeuge/profinder-wiki-sync.mjs --check
+node werkzeuge/profinder-wiki-sync.mjs
+node werkzeuge/daten-bauen.mjs
+node werkzeuge/profinder-belege-pruefen.mjs
+node --test werkzeuge/wiki-sync-basis.test.mjs
+```
+
+Die 58 Pro-Finder-Fälle stehen in `../daten/thi-eval-profinder.de.json` und
+`.fr.json`; `npm run test:profinder` führt ihre lokale Belegprüfung aus.
+Sie prüfen zusätzlich ausgewählte SMS-Beispiele mit exakten Steuerzeichen.
+Sie sind Teil von `npm test`. Ein bestandener Test bestätigt Kontext und
+Belegzugriff, keine generierte Antwort. Der Live-Modelltest und verbindliche
+Herstellerklärungen bleiben offen. Quellen, physische Seiten, 40 Prüfpunkte
+und Prüfergebnisse stehen im
+[Pro-Finder-Bericht](../docs/quellenpruefung/2026-09-28-profinder.md).
 
 ---
 
@@ -507,7 +591,7 @@ höchstens 60 %.
 
 ## Antwortqualität messen
 
-Die 115 Selbsttests prüfen die **Bausteine**. Ob am Ende die richtige Auskunft
+Die 179 Selbsttests prüfen die **Bausteine**. Ob am Ende die richtige Auskunft
 herauskommt, sagen sie nicht — und genau dort lag der Auslöserfall des
 Vorgängerprojekts: Quelle gefunden, Antwort trotzdem falsch.
 
@@ -527,7 +611,7 @@ echte Kette: Frage rein, Antwort raus, kein nachgebauter Kontext.
 | `--min 80` | Gate: Exit 1, wenn die Quote darunter liegt |
 | `--limit 10` | nur die ersten n Fälle (zum Ausprobieren) |
 | `--verbose` | alle Fehlschläge im Detail statt der ersten 20 |
-| `--sprache fr` | FR-Lauf — **es gibt noch kein FR-Gold-Set** |
+| `--sprache fr` | FR-Lauf mit `thi-eval-gold.fr.json`; anderes Set optional über `--gold` |
 
 **Warum das erhöhte Rate-Limit?** 41 Anfragen liegen über dem Normalwert (20 je
 5 Minuten). Ohne die Anhebung bricht der Lauf ab — der Eval sagt das dann auch.
@@ -566,7 +650,7 @@ So wurde die Fensterwahl geprüft (siehe „Bekannte Grenzen").
 
 ---
 
-## Was geprüft ist — und was nicht
+## Historische Prüfung vor der PDF-Quellenüberarbeitung
 
 **Geprüft (lokal):**
 - 115 Selbsttests (Sicherheits-Gate, Seriennummern, Widersprüche, Gewichtung,
@@ -586,8 +670,9 @@ So wurde die Fensterwahl geprüft (siehe „Bekannte Grenzen").
 
 **Nicht geprüft — hier braucht es einen echten Deploy:**
 - Der tatsächliche Netlify-Build (kein Netlify-Konto in der Entwicklung verfügbar)
-- **Französisch, in jeder Hinsicht.** Es existiert kein FR-Gold-Set; die
-  FR-Antworten sind nie gegen Belege gemessen worden.
+- Für den damaligen Stand war die französische Antwortprüfung noch offen.
+  Inzwischen liegen DE-/FR-Gold-Sets und Produktprüffälle unter `../daten/` vor.
+  Die Live-Abnahme des aktuell überarbeiteten Datenstands steht weiterhin aus.
 
 > **Deshalb nach dem ersten Deploy zuerst `/api/health?live=1` aufrufen.** Das
 > beantwortet beide offenen Punkte in einem Schritt: Es meldet, ob die
@@ -632,8 +717,8 @@ So wurde die Fensterwahl geprüft (siehe „Bekannte Grenzen").
 - **Anleitungen und FAQ liegen nur auf Deutsch** im Index. Der französische Text
   existiert in den Quell-PDFs, ist aber noch nicht sprachgetrennt indexiert —
   siehe `../docs/04_MEHRSPRACHIGKEIT_DE_FR.md` §1.2.
-- **Kein französisches Gold-Set**: Die französische Antwortqualität ist nicht
-  systematisch gemessen. Vor breitem Einsatz in Frankreich nachholen.
+- **Live-Abnahme des aktuellen DE-/FR-Datenstands offen**: Vorhandene Gold-Sets
+  ersetzen keine erneute Antwortprüfung nach der Quellenüberarbeitung.
 
 Vom Antwort-Eval aufgedeckt (Lauf über 41 Fälle, siehe oben):
 
@@ -663,3 +748,15 @@ Vom Antwort-Eval aufgedeckt (Lauf über 41 Fälle, siehe oben):
   liegt auch der Normalfall bei ~53 %: 6 von 34 korrekten Antworten wurden unter
   50 % ausgewiesen. Wer richtige Auskünfte dauerhaft mit „gering" beschriftet,
   bringt niemandem bei, auf den Wert zu achten.
+
+### Live-Evaluationsanmeldung
+
+Für den aktuellen Rollenlogin verwendet `antwort-eval.mjs` eine gültige App-Sitzung aus der lokalen Umgebungsvariable `THI_EVAL_BEARER_TOKEN`. Der Token wird nur im Authorization-Header an den App-Endpunkt übermittelt, nicht im Bericht gespeichert. Ohne Token bleibt `THI_ZUGANGSWORT` für den früheren Zugangswort-Modus verfügbar. Provider-Zugang (`ANYMIZE_API_URL` / `ANYMIZE_API_KEY`) und App-Anmeldung sind getrennte Voraussetzungen.
+
+### Quellenpflege
+
+`npm run sources:check` prüft das vollständige PDF-Register, Quellenpfade, Dubletten und physische PDF-Seitenanker ohne Zugriff auf den externen Originalordner. `npm run sources:originals` vergleicht zusätzlich alle 114 Original-PDFs unter `../../Anleitungen`. Historische Restlücken werden getrennt von defekten kanonischen Pfaden gemeldet; ein grüner Check ist keine fachliche Freigabe.
+
+`npm run sources:pflege -- --report <Datei>` bereinigt eindeutig zuordenbare Quellenlisten und protokolliert die Änderungen. `npm run sources:matrix` erneuert die internen DE-/FR-Matrizen und das lesbare PDF-Register. Neue PDF-Kopien müssen zuvor mit Herkunft, SHA-256 und physischer Seitenzahl in `docs/quellenpruefung/quellenregister.json` erfasst werden; keine automatische Ersatzzuordnung für fehlende RAG-Auszüge.
+
+Details: [Quellenpflege](../docs/quellenpruefung/2026-10-02-quellenpflege.md), [PDF-Register](../docs/11_QUELLENREGISTER.md).

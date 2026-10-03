@@ -1,224 +1,193 @@
 ---
 title: 'Matrice des sources — inventaire, force des preuves et maintenance'
 sources:
-  - wiki/_index.md
-  - wiki/abschalteinrichtung.md
-  - wiki/anlernvorgang.md
-  - wiki/app-befehle.md
-  - wiki/artikelnummern.md
-  - wiki/bt-connect.md
-  - wiki/co-sensor.md
-  - wiki/fahrzeuge/adria-coral-matrix.md
-  - wiki/fahrzeuge/fiat-ducato-2012-2021.md
-  - wiki/fahrzeuge/fiat-ducato-2022-2024.md
-  - wiki/fahrzeuge/fiat-ducato-2024plus.md
-  - wiki/fahrzeuge/fiat-ducato-244.md
-  - wiki/fahrzeuge/fiat-ducato-x250.md
-  - wiki/fahrzeuge/fiat-talento.md
-  - wiki/fahrzeuge/ford-transit-2024plus.md
-  - wiki/fahrzeuge/ford-transit-6g.md
-  - wiki/fahrzeuge/ford-transit-7g-2014.md
-  - wiki/fahrzeuge/ford-transit-7g-2016.md
-  - wiki/fahrzeuge/ford-transit-7g-facelift.md
-  - wiki/fahrzeuge/iveco-daily-euro4.md
-  - wiki/fahrzeuge/iveco-daily-euro5.md
-  - wiki/fahrzeuge/mercedes-sprinter-ncv3.md
-  - wiki/fahrzeuge/mercedes-sprinter-t1n.md
-  - wiki/fahrzeuge/mercedes-sprinter-vs30.md
-  - wiki/fahrzeuge/mercedes-vito-w447.md
-  - wiki/fahrzeuge/renault-master-2019.md
-  - wiki/fahrzeuge/renault-master-ii.md
-  - wiki/fahrzeuge/renault-master-iii.md
-  - wiki/fahrzeuge/renault-trafic-iii-2014.md
-  - wiki/fahrzeuge/renault-trafic-iii-2022.md
-  - wiki/fahrzeuge/universalanschluss.md
-  - wiki/fahrzeuge/vw-crafter-man-tge-2017.md
-  - wiki/fahrzeuge/vw-crafter-man-tge-2025.md
-  - wiki/fahrzeuge/vw-t5.md
-  - wiki/fahrzeuge/vw-t5-facelift.md
-  - wiki/fahrzeuge/vw-t6.md
-  - wiki/fahrzeuge/vw-t6-1.md
-  - wiki/fahrzeugkompatibilitaet.md
-  - wiki/faq-master.md
-  - wiki/funk-handsender.md
-  - wiki/funk-kabelschleife.md
-  - wiki/funk-magnetkontakt.md
-  - wiki/funk-rauchmelder.md
-  - wiki/funk-wassermelder.md
-  - wiki/gas.md
-  - wiki/gas-connect.md
-  - wiki/gas-plug.md
-  - wiki/gas-pro.md
-  - wiki/gas-pro-iii.md
-  - wiki/glossar.md
-  - wiki/intern/rag-funkzubehoer-sicherheit.md
-  - wiki/intern/rag-gas-und-sensorik.md
-  - wiki/intern/rag-konnektivitaet-und-abschaltung.md
-  - wiki/intern/rag-pro-finder-app.md
-  - wiki/intern/rag-service-faq-und-reisefuehrer.md
-  - wiki/intern/rag-wipro-safe-lock.md
-  - wiki/mobilfunk-sim.md
-  - wiki/nfc-modul.md
-  - wiki/pro-finder.md
-  - wiki/quellen-matrix.md
-  - wiki/safe-lock-umruestplatine.md
-  - wiki/seriennummern-softwarestaende.md
-  - wiki/sirenen-hupen.md
-  - wiki/stoerungsbeseitigung.md
-  - wiki/stromversorgung-standzeiten.md
-  - wiki/support-fallaufnahme.md
-  - wiki/systemueberblick.md
-  - wiki/Tech. Doku/funkstandards-und-schnittstellen.md
-  - wiki/Tech. Doku/normen-und-richtlinien.md
-  - wiki/Tech. Doku/uebersicht.md
-  - wiki/terminologie-und-schreibweisen.md
-  - wiki/uebersetzungs-glossar.md
-  - wiki/vernetzungsmodul.md
-  - wiki/werkseinbau-eckernfoerde.md
-  - wiki/wipro-iii.md
-  - wiki/zugang-bedienung.md
-  - wiki/zusatzsensor-gas-pro-iii.md
-updated: '2026-07-22'
+  - "content/wiki/fr/Tech. Doku/funkstandards-und-schnittstellen.md"
+  - "content/wiki/fr/Tech. Doku/normen-und-richtlinien.md"
+  - "content/wiki/fr/Tech. Doku/uebersicht.md"
+  - "content/wiki/fr/_index.md"
+  - "content/wiki/fr/abschalteinrichtung.md"
+  - "content/wiki/fr/anlernvorgang.md"
+  - "content/wiki/fr/app-befehle.md"
+  - "content/wiki/fr/artikelnummern.md"
+  - "content/wiki/fr/bt-connect.md"
+  - "content/wiki/fr/camplock-fingerprint.md"
+  - "content/wiki/fr/co-sensor.md"
+  - "content/wiki/fr/fahrzeuge/adria-coral-matrix.md"
+  - "content/wiki/fr/fahrzeuge/fiat-ducato-2012-2021.md"
+  - "content/wiki/fr/fahrzeuge/fiat-ducato-2022-2024.md"
+  - "content/wiki/fr/fahrzeuge/fiat-ducato-2024plus.md"
+  - "content/wiki/fr/fahrzeuge/fiat-ducato-244.md"
+  - "content/wiki/fr/fahrzeuge/fiat-ducato-x250.md"
+  - "content/wiki/fr/fahrzeuge/fiat-talento.md"
+  - "content/wiki/fr/fahrzeuge/ford-transit-2024plus.md"
+  - "content/wiki/fr/fahrzeuge/ford-transit-6g.md"
+  - "content/wiki/fr/fahrzeuge/ford-transit-7g-2014.md"
+  - "content/wiki/fr/fahrzeuge/ford-transit-7g-2016.md"
+  - "content/wiki/fr/fahrzeuge/ford-transit-7g-facelift.md"
+  - "content/wiki/fr/fahrzeuge/iveco-daily-euro4.md"
+  - "content/wiki/fr/fahrzeuge/iveco-daily-euro5.md"
+  - "content/wiki/fr/fahrzeuge/mercedes-sprinter-ncv3.md"
+  - "content/wiki/fr/fahrzeuge/mercedes-sprinter-t1n.md"
+  - "content/wiki/fr/fahrzeuge/mercedes-sprinter-vs30.md"
+  - "content/wiki/fr/fahrzeuge/mercedes-vito-w447.md"
+  - "content/wiki/fr/fahrzeuge/renault-master-2019.md"
+  - "content/wiki/fr/fahrzeuge/renault-master-ii.md"
+  - "content/wiki/fr/fahrzeuge/renault-master-iii.md"
+  - "content/wiki/fr/fahrzeuge/renault-trafic-iii-2014.md"
+  - "content/wiki/fr/fahrzeuge/renault-trafic-iii-2022.md"
+  - "content/wiki/fr/fahrzeuge/universalanschluss.md"
+  - "content/wiki/fr/fahrzeuge/vw-crafter-man-tge-2017.md"
+  - "content/wiki/fr/fahrzeuge/vw-crafter-man-tge-2025.md"
+  - "content/wiki/fr/fahrzeuge/vw-t5-facelift.md"
+  - "content/wiki/fr/fahrzeuge/vw-t5.md"
+  - "content/wiki/fr/fahrzeuge/vw-t6-1.md"
+  - "content/wiki/fr/fahrzeuge/vw-t6.md"
+  - "content/wiki/fr/fahrzeugkompatibilitaet.md"
+  - "content/wiki/fr/faq-master.md"
+  - "content/wiki/fr/funk-handsender.md"
+  - "content/wiki/fr/funk-kabelschleife.md"
+  - "content/wiki/fr/funk-magnetkontakt.md"
+  - "content/wiki/fr/funk-rauchmelder.md"
+  - "content/wiki/fr/funk-wassermelder.md"
+  - "content/wiki/fr/gas-connect.md"
+  - "content/wiki/fr/gas-plug.md"
+  - "content/wiki/fr/gas-pro-iii.md"
+  - "content/wiki/fr/gas-pro.md"
+  - "content/wiki/fr/gas.md"
+  - "content/wiki/fr/glossar.md"
+  - "content/wiki/fr/intern/rag-funkzubehoer-sicherheit.md"
+  - "content/wiki/fr/intern/rag-gas-und-sensorik.md"
+  - "content/wiki/fr/intern/rag-konnektivitaet-und-abschaltung.md"
+  - "content/wiki/fr/intern/rag-pro-finder-app.md"
+  - "content/wiki/fr/intern/rag-service-faq-und-reisefuehrer.md"
+  - "content/wiki/fr/intern/rag-wipro-safe-lock.md"
+  - "content/wiki/fr/keycard.md"
+  - "content/wiki/fr/keystrap.md"
+  - "content/wiki/fr/keytag.md"
+  - "content/wiki/fr/mobilfunk-sim.md"
+  - "content/wiki/fr/nfc-modul.md"
+  - "content/wiki/fr/pro-finder.md"
+  - "content/wiki/fr/safe-lock-umruestplatine.md"
+  - "content/wiki/fr/seriennummern-softwarestaende.md"
+  - "content/wiki/fr/sirenen-hupen.md"
+  - "content/wiki/fr/stoerungsbeseitigung.md"
+  - "content/wiki/fr/stromversorgung-standzeiten.md"
+  - "content/wiki/fr/support-fallaufnahme.md"
+  - "content/wiki/fr/systemueberblick.md"
+  - "content/wiki/fr/terminologie-und-schreibweisen.md"
+  - "content/wiki/fr/vanlock-fingerprint.md"
+  - "content/wiki/fr/vernetzungsmodul.md"
+  - "content/wiki/fr/werkseinbau-eckernfoerde.md"
+  - "content/wiki/fr/wipro-iii.md"
+  - "content/wiki/fr/zugang-bedienung.md"
+  - "content/wiki/fr/zusatzsensor-gas-pro-iii.md"
+updated: '2026-10-02'
 confidence: high
 lang: fr
 visibility: internal
 translation_of: sources/quellen-matrix.md
 ---
 
-# Matrice des sources — inventaire, force des preuves et maintenance
+# Matrice des sources — inventaire local et maintenance
 
-Cette matrice interne représente de façon reproductible le fonds rédactionnel actuel. Elle compte les références du frontmatter et documente confiance et statut, sans juger automatiquement la qualité de chaque preuve.
+État : **02.10.2026**. Cette matrice compte les références réellement présentes. La disponibilité d'un fichier ne constitue ni une validation technique ni une autorisation de publication.
 
----
+## Inventaire de cette langue
 
-## Objectif et limite
+81 pages ; 1526 références : **425 résolues localement**, 49 URL externes non vérifiées et 1052 références à clarifier. Une référence historique peut apparaître dans plusieurs pages.
 
-La matrice est l’inventaire canonique de la rédaction ; les affirmations techniques restent dans les articles de base.
+| Page | Références | Locales | URL | À clarifier | dealerStatus existant |
+|---|---:|---:|---:|---:|---|
+| [Tech. Doku/funkstandards-und-schnittstellen.md](Tech.%20Doku/funkstandards-und-schnittstellen.md) | 6 | 2 | 0 | 4 | — |
+| [Tech. Doku/normen-und-richtlinien.md](Tech.%20Doku/normen-und-richtlinien.md) | 8 | 1 | 0 | 7 | — |
+| [Tech. Doku/uebersicht.md](Tech.%20Doku/uebersicht.md) | 7 | 2 | 0 | 5 | — |
+| [_index.md](_index.md) | 1 | 0 | 0 | 1 | — |
+| [abschalteinrichtung.md](abschalteinrichtung.md) | 5 | 1 | 0 | 4 | — |
+| [anlernvorgang.md](anlernvorgang.md) | 20 | 9 | 0 | 11 | internal_only |
+| [app-befehle.md](app-befehle.md) | 16 | 5 | 0 | 11 | internal_only |
+| [artikelnummern.md](artikelnummern.md) | 28 | 27 | 0 | 1 | — |
+| [bt-connect.md](bt-connect.md) | 13 | 7 | 0 | 6 | internal_only |
+| [camplock-fingerprint.md](camplock-fingerprint.md) | 4 | 3 | 1 | 0 | approved |
+| [co-sensor.md](co-sensor.md) | 14 | 7 | 4 | 3 | — |
+| [fahrzeuge/adria-coral-matrix.md](fahrzeuge/adria-coral-matrix.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/fiat-ducato-2012-2021.md](fahrzeuge/fiat-ducato-2012-2021.md) | 5 | 4 | 0 | 1 | — |
+| [fahrzeuge/fiat-ducato-2022-2024.md](fahrzeuge/fiat-ducato-2022-2024.md) | 5 | 5 | 0 | 0 | — |
+| [fahrzeuge/fiat-ducato-2024plus.md](fahrzeuge/fiat-ducato-2024plus.md) | 5 | 5 | 0 | 0 | — |
+| [fahrzeuge/fiat-ducato-244.md](fahrzeuge/fiat-ducato-244.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/fiat-ducato-x250.md](fahrzeuge/fiat-ducato-x250.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/fiat-talento.md](fahrzeuge/fiat-talento.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/ford-transit-2024plus.md](fahrzeuge/ford-transit-2024plus.md) | 8 | 4 | 0 | 4 | — |
+| [fahrzeuge/ford-transit-6g.md](fahrzeuge/ford-transit-6g.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/ford-transit-7g-2014.md](fahrzeuge/ford-transit-7g-2014.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/ford-transit-7g-2016.md](fahrzeuge/ford-transit-7g-2016.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/ford-transit-7g-facelift.md](fahrzeuge/ford-transit-7g-facelift.md) | 7 | 4 | 0 | 3 | — |
+| [fahrzeuge/iveco-daily-euro4.md](fahrzeuge/iveco-daily-euro4.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/iveco-daily-euro5.md](fahrzeuge/iveco-daily-euro5.md) | 5 | 3 | 0 | 2 | approved |
+| [fahrzeuge/mercedes-sprinter-ncv3.md](fahrzeuge/mercedes-sprinter-ncv3.md) | 3 | 2 | 0 | 1 | — |
+| [fahrzeuge/mercedes-sprinter-t1n.md](fahrzeuge/mercedes-sprinter-t1n.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/mercedes-sprinter-vs30.md](fahrzeuge/mercedes-sprinter-vs30.md) | 7 | 6 | 0 | 1 | — |
+| [fahrzeuge/mercedes-vito-w447.md](fahrzeuge/mercedes-vito-w447.md) | 3 | 2 | 0 | 1 | — |
+| [fahrzeuge/renault-master-2019.md](fahrzeuge/renault-master-2019.md) | 7 | 1 | 3 | 3 | — |
+| [fahrzeuge/renault-master-ii.md](fahrzeuge/renault-master-ii.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/renault-master-iii.md](fahrzeuge/renault-master-iii.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/renault-trafic-iii-2014.md](fahrzeuge/renault-trafic-iii-2014.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/renault-trafic-iii-2022.md](fahrzeuge/renault-trafic-iii-2022.md) | 2 | 2 | 0 | 0 | — |
+| [fahrzeuge/universalanschluss.md](fahrzeuge/universalanschluss.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/vw-crafter-man-tge-2017.md](fahrzeuge/vw-crafter-man-tge-2017.md) | 4 | 4 | 0 | 0 | — |
+| [fahrzeuge/vw-crafter-man-tge-2025.md](fahrzeuge/vw-crafter-man-tge-2025.md) | 3 | 2 | 1 | 0 | — |
+| [fahrzeuge/vw-t5-facelift.md](fahrzeuge/vw-t5-facelift.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/vw-t5.md](fahrzeuge/vw-t5.md) | 3 | 3 | 0 | 0 | — |
+| [fahrzeuge/vw-t6-1.md](fahrzeuge/vw-t6-1.md) | 4 | 4 | 0 | 0 | — |
+| [fahrzeuge/vw-t6.md](fahrzeuge/vw-t6.md) | 4 | 4 | 0 | 0 | approved |
+| [fahrzeugkompatibilitaet.md](fahrzeugkompatibilitaet.md) | 8 | 4 | 2 | 2 | approved |
+| [faq-master.md](faq-master.md) | 34 | 32 | 0 | 2 | — |
+| [funk-handsender.md](funk-handsender.md) | 6 | 3 | 0 | 3 | — |
+| [funk-kabelschleife.md](funk-kabelschleife.md) | 6 | 6 | 0 | 0 | — |
+| [funk-magnetkontakt.md](funk-magnetkontakt.md) | 9 | 8 | 1 | 0 | — |
+| [funk-rauchmelder.md](funk-rauchmelder.md) | 6 | 2 | 3 | 1 | — |
+| [funk-wassermelder.md](funk-wassermelder.md) | 4 | 2 | 1 | 1 | — |
+| [gas-connect.md](gas-connect.md) | 7 | 2 | 2 | 3 | internal_only |
+| [gas-plug.md](gas-plug.md) | 6 | 2 | 2 | 2 | internal_only |
+| [gas-pro-iii.md](gas-pro-iii.md) | 15 | 6 | 6 | 3 | — |
+| [gas-pro.md](gas-pro.md) | 8 | 4 | 3 | 1 | — |
+| [gas.md](gas.md) | 6 | 2 | 2 | 2 | internal_only |
+| [glossar.md](glossar.md) | 13 | 9 | 0 | 4 | internal_only |
+| [intern/rag-funkzubehoer-sicherheit.md](intern/rag-funkzubehoer-sicherheit.md) | 239 | 0 | 0 | 239 | — |
+| [intern/rag-gas-und-sensorik.md](intern/rag-gas-und-sensorik.md) | 206 | 0 | 0 | 206 | — |
+| [intern/rag-konnektivitaet-und-abschaltung.md](intern/rag-konnektivitaet-und-abschaltung.md) | 88 | 0 | 0 | 88 | — |
+| [intern/rag-pro-finder-app.md](intern/rag-pro-finder-app.md) | 79 | 0 | 0 | 79 | — |
+| [intern/rag-service-faq-und-reisefuehrer.md](intern/rag-service-faq-und-reisefuehrer.md) | 67 | 0 | 0 | 67 | — |
+| [intern/rag-wipro-safe-lock.md](intern/rag-wipro-safe-lock.md) | 169 | 0 | 0 | 169 | — |
+| [keycard.md](keycard.md) | 5 | 3 | 2 | 0 | approved |
+| [keystrap.md](keystrap.md) | 5 | 3 | 2 | 0 | approved |
+| [keytag.md](keytag.md) | 5 | 3 | 2 | 0 | approved |
+| [mobilfunk-sim.md](mobilfunk-sim.md) | 8 | 4 | 0 | 4 | — |
+| [nfc-modul.md](nfc-modul.md) | 19 | 5 | 1 | 13 | internal_only |
+| [pro-finder.md](pro-finder.md) | 16 | 10 | 0 | 6 | internal_only |
+| [quellen-matrix.md](quellen-matrix.md) | 80 | 80 | 0 | 0 | — |
+| [safe-lock-umruestplatine.md](safe-lock-umruestplatine.md) | 5 | 2 | 0 | 3 | — |
+| [seriennummern-softwarestaende.md](seriennummern-softwarestaende.md) | 45 | 11 | 0 | 34 | — |
+| [sirenen-hupen.md](sirenen-hupen.md) | 6 | 0 | 0 | 6 | — |
+| [stoerungsbeseitigung.md](stoerungsbeseitigung.md) | 17 | 14 | 0 | 3 | internal_only |
+| [stromversorgung-standzeiten.md](stromversorgung-standzeiten.md) | 7 | 6 | 0 | 1 | — |
+| [support-fallaufnahme.md](support-fallaufnahme.md) | 7 | 6 | 0 | 1 | — |
+| [systemueberblick.md](systemueberblick.md) | 11 | 8 | 0 | 3 | — |
+| [terminologie-und-schreibweisen.md](terminologie-und-schreibweisen.md) | 7 | 0 | 0 | 7 | — |
+| [vanlock-fingerprint.md](vanlock-fingerprint.md) | 3 | 2 | 1 | 0 | approved |
+| [vernetzungsmodul.md](vernetzungsmodul.md) | 20 | 5 | 2 | 13 | — |
+| [werkseinbau-eckernfoerde.md](werkseinbau-eckernfoerde.md) | 6 | 0 | 3 | 3 | — |
+| [wipro-iii.md](wipro-iii.md) | 22 | 9 | 0 | 13 | internal_only |
+| [zugang-bedienung.md](zugang-bedienung.md) | 13 | 12 | 0 | 1 | — |
+| [zusatzsensor-gas-pro-iii.md](zusatzsensor-gas-pro-iii.md) | 10 | 5 | 5 | 0 | — |
 
----
+## Lacunes et suivi
 
-## État du fonds
+L'ancien tableau « 77/77 terminé » décrivait un état éditorial historique ; il ne prouvait pas la présence des sources. Voir le [rapport de maintenance](../../../docs/quellenpruefung/2026-10-02-quellenpflege.md) et le [registre des PDF](../../../docs/11_QUELLENREGISTER.md). Les 11 statuts FR <code>internal_only</code> restent à clarifier ; aucune nouvelle approbation n'a été donnée.
 
-| Metric | Value |
-|---|---:|
-| Pages | **77** |
-| Complete | **77** |
-| Open | **0** |
-| Frontmatter source references | **1,419** |
-| Confidence `high` / `medium` | **75 / 2** |
+Les fichiers Markdown dérivés absents ne sont pas remplacés par des PDF de nom similaire. Les références Wiki sans langue ont été rattachées au DE canonique selon l'importeur d'origine. Les renvois explicites FR restent FR.
 
----
+## Règles de maintenance
 
-## Matrice complète des pages
+Les documents primaires sont conservés sans modification. Le produit, la révision, la série, le logiciel et le véhicule doivent être considérés ensemble. Les contradictions restent explicites. Les champs <code>confidence</code> et <code>dealerStatus</code> ne sont pas recalculés à partir du nombre de sources. La profondeur de lecture figure dans les rapports des lots.
 
-| File | Package | Confidence | Sources | Status |
-|---|---|---:|---:|---|
-| `_index.md` | `01_grundsystem` | `high` | 1 | `fertig` |
-| `abschalteinrichtung.md` | `02_wipro_bedienung` | `high` | 5 | `fertig` |
-| `anlernvorgang.md` | `02_wipro_bedienung` | `high` | 14 | `fertig` |
-| `app-befehle.md` | `04_konnektivitaet` | `high` | 12 | `fertig` |
-| `artikelnummern.md` | `03_support_service` | `high` | 25 | `fertig` |
-| `bt-connect.md` | `04_konnektivitaet` | `high` | 12 | `fertig` |
-| `co-sensor.md` | `05_gas_sensorik` | `high` | 12 | `fertig` |
-| `fahrzeuge/adria-coral-matrix.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/fiat-ducato-2012-2021.md` | `07_fahrzeuge` | `high` | 3 | `fertig` |
-| `fahrzeuge/fiat-ducato-2022-2024.md` | `07_fahrzeuge` | `high` | 4 | `fertig` |
-| `fahrzeuge/fiat-ducato-2024plus.md` | `07_fahrzeuge` | `high` | 4 | `fertig` |
-| `fahrzeuge/fiat-ducato-244.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/fiat-ducato-x250.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/fiat-talento.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/ford-transit-2024plus.md` | `07_fahrzeuge` | `medium` | 5 | `fertig` |
-| `fahrzeuge/ford-transit-6g.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/ford-transit-7g-2014.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/ford-transit-7g-2016.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/ford-transit-7g-facelift.md` | `07_fahrzeuge` | `high` | 5 | `fertig` |
-| `fahrzeuge/iveco-daily-euro4.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/iveco-daily-euro5.md` | `07_fahrzeuge` | `high` | 5 | `fertig` |
-| `fahrzeuge/mercedes-sprinter-ncv3.md` | `07_fahrzeuge` | `high` | 3 | `fertig` |
-| `fahrzeuge/mercedes-sprinter-t1n.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/mercedes-sprinter-vs30.md` | `07_fahrzeuge` | `high` | 3 | `fertig` |
-| `fahrzeuge/mercedes-vito-w447.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/renault-master-2019.md` | `07_fahrzeuge` | `high` | 6 | `fertig` |
-| `fahrzeuge/renault-master-ii.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/renault-master-iii.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/renault-trafic-iii-2014.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/renault-trafic-iii-2022.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/universalanschluss.md` | `07_fahrzeuge` | `high` | 1 | `fertig` |
-| `fahrzeuge/vw-crafter-man-tge-2017.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/vw-crafter-man-tge-2025.md` | `07_fahrzeuge` | `medium` | 2 | `fertig` |
-| `fahrzeuge/vw-t5.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/vw-t5-facelift.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/vw-t6.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeuge/vw-t6-1.md` | `07_fahrzeuge` | `high` | 2 | `fertig` |
-| `fahrzeugkompatibilitaet.md` | `07_fahrzeuge` | `high` | 5 | `fertig` |
-| `faq-master.md` | `03_support_service` | `high` | 34 | `fertig` |
-| `funk-handsender.md` | `06_funkzubehoer` | `high` | 6 | `fertig` |
-| `funk-kabelschleife.md` | `06_funkzubehoer` | `high` | 6 | `fertig` |
-| `funk-magnetkontakt.md` | `06_funkzubehoer` | `high` | 8 | `fertig` |
-| `funk-rauchmelder.md` | `06_funkzubehoer` | `high` | 6 | `fertig` |
-| `funk-wassermelder.md` | `06_funkzubehoer` | `high` | 4 | `fertig` |
-| `gas.md` | `05_gas_sensorik` | `high` | 5 | `fertig` |
-| `gas-connect.md` | `05_gas_sensorik` | `high` | 6 | `fertig` |
-| `gas-plug.md` | `05_gas_sensorik` | `high` | 5 | `fertig` |
-| `gas-pro.md` | `05_gas_sensorik` | `high` | 7 | `fertig` |
-| `gas-pro-iii.md` | `05_gas_sensorik` | `high` | 12 | `fertig` |
-| `glossar.md` | `00_terminologie` | `high` | 13 | `fertig` |
-| `intern/rag-funkzubehoer-sicherheit.md` | `08_intern_technik` | `high` | 239 | `fertig` |
-| `intern/rag-gas-und-sensorik.md` | `08_intern_technik` | `high` | 206 | `fertig` |
-| `intern/rag-konnektivitaet-und-abschaltung.md` | `08_intern_technik` | `high` | 88 | `fertig` |
-| `intern/rag-pro-finder-app.md` | `08_intern_technik` | `high` | 79 | `fertig` |
-| `intern/rag-service-faq-und-reisefuehrer.md` | `08_intern_technik` | `high` | 67 | `fertig` |
-| `intern/rag-wipro-safe-lock.md` | `08_intern_technik` | `high` | 169 | `fertig` |
-| `mobilfunk-sim.md` | `04_konnektivitaet` | `high` | 4 | `fertig` |
-| `nfc-modul.md` | `04_konnektivitaet` | `high` | 19 | `fertig` |
-| `pro-finder.md` | `04_konnektivitaet` | `high` | 16 | `fertig` |
-| `quellen-matrix.md` | `08_intern_technik` | `high` | 77 | `fertig` |
-| `safe-lock-umruestplatine.md` | `02_wipro_bedienung` | `high` | 4 | `fertig` |
-| `seriennummern-softwarestaende.md` | `03_support_service` | `high` | 41 | `fertig` |
-| `sirenen-hupen.md` | `02_wipro_bedienung` | `high` | 7 | `fertig` |
-| `stoerungsbeseitigung.md` | `03_support_service` | `high` | 16 | `fertig` |
-| `stromversorgung-standzeiten.md` | `02_wipro_bedienung` | `high` | 3 | `fertig` |
-| `support-fallaufnahme.md` | `03_support_service` | `high` | 7 | `fertig` |
-| `systemueberblick.md` | `01_grundsystem` | `high` | 8 | `fertig` |
-| `Tech. Doku/funkstandards-und-schnittstellen.md` | `08_intern_technik` | `high` | 6 | `fertig` |
-| `Tech. Doku/normen-und-richtlinien.md` | `08_intern_technik` | `high` | 8 | `fertig` |
-| `Tech. Doku/uebersicht.md` | `08_intern_technik` | `high` | 7 | `fertig` |
-| `terminologie-und-schreibweisen.md` | `00_terminologie` | `high` | 7 | `fertig` |
-| `uebersetzungs-glossar.md` | `00_terminologie` | `high` | 2 | `fertig` |
-| `vernetzungsmodul.md` | `04_konnektivitaet` | `high` | 20 | `fertig` |
-| `werkseinbau-eckernfoerde.md` | `03_support_service` | `high` | 6 | `fertig` |
-| `wipro-iii.md` | `02_wipro_bedienung` | `high` | 18 | `fertig` |
-| `zugang-bedienung.md` | `02_wipro_bedienung` | `high` | 10 | `fertig` |
-| `zusatzsensor-gas-pro-iii.md` | `05_gas_sensorik` | `high` | 8 | `fertig` |
-
----
-
-## Rang des sources et confiance
-
-Les sources primaires produit révisées sont prioritaires, puis les articles de base validés. FAQ, RAG, extraits et pages collectives sont complémentaires. `confidence` décrit la preuve rédactionnelle, pas la sécurité ni l’actualité.
-
----
-
-## Processus de maintenance
-
-À chaque modification, mettre à jour frontmatter, statut et matrice ensemble. Ajouter un chemin après contrôle d’existence et d’usage ; propager suppressions et renommages dans toutes les langues.
-
----
-
-## Travaux ouverts
-
-`status.csv` : **77/77** terminées ; aucune ligne ouverte.
-
----
-
-## Règles de sécurité et de conflit
-
-Ne pas moyenner les conflits. Évaluer ensemble série, logiciel, véhicule, révision et date. Pour gaz, CO, fumée, feu, arrêt ou réseau de bord/CAN, suivre les limites des articles de base.
-
----
-
-## Contrôle qualité et validation
-
-Vérifier 77 chemins uniques, 77 lignes, 1 419 références, 75× `high`, 2× `medium`, statut 77/77 et structure identique dans onze langues.
-
-
+Vérification reproductible : <code>npm run sources:check</code>. Après une modification des références : <code>npm run sources:matrix</code>. Les matrices restent internes et sont exclues du RAG standard.

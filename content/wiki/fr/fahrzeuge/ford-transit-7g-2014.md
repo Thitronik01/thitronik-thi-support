@@ -1,11 +1,10 @@
 ---
 title: Ford Transit 7e génération précoce (2014–2015)
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_ford_transit_7._generation_2014_2015.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ford-2014.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/ford-transit-7g-2014.md
@@ -16,6 +15,16 @@ translation_of: sources/fahrzeuge/ford-transit-7g-2014.md
 Cet article décrit l'installation d'une WiPro III dans les Ford Transit et Transit Custom de la première 7e génération, de 2014 à 2015. Le manuel véhicule `12/20` documente commande, profil DIP, démontage, calculateur de bord, masse, connecteur C4, klaxon, LED, accessoires radio et essai.
 
 > **Distinction de sécurité :** la télécommande Ford d'origine n'est **pas évaluée** par la WiPro, car son signal ne peut pas être distingué sûrement de celui des serrures mécaniques. Un émetteur radio 868 THITRONIK® est obligatoire pour armer et désarmer.
+
+## Limites du véhicule et sources contrôlées
+
+Ford Transit 2014–2015 : dès `0823-011`, logiciel FAQ `4.7`, `SW1 + SW2 + SW3 + SW4 + SW6 ON`. La clé d’origine verrouille le véhicule mais ne commande pas WiPro ; utiliser la télécommande THITRONIK. Pour le klaxon, broche 4 bleu/blanc du connecteur de bague collectrice : ne pas débrancher ce connecteur selon la notice. Ne pas appliquer ce profil au Ford 2016 ou au facelift 2019.
+
+Sources : [ford-2014, PDF 2](../../../quellen/fahrzeug-ford-2014.pdf#page=2), [ford-2014, PDF 4](../../../quellen/fahrzeug-ford-2014.pdf#page=4), [Q, PDF 4](../../../quellen/wipro-iii-faq.pdf#page=4).
+
+
+
+> **Durées :** le PDF véhicule indique 180 secondes d’alarme visuelle, la notice générale 120 secondes. L’attribution par version reste ouverte : 180 secondes décrit cette source et ne constitue pas un critère de réception confirmé. Même réserve pour les 4 secondes d’aération face aux 5 secondes de la notice générale.
 
 ## Domaine d'application
 
@@ -147,7 +156,7 @@ Le manuel couvre les contacts 868 `100757` et `100758`. Voir [[Contact radiomagn
 |---|---|
 | Orientation | LED d'émission opposée à l'aimant |
 | Mauvaise orientation | apprentissage possible, mais aucune alarme |
-| Distance fermée | `22–30 mm` |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 | Montage préféré | émetteur sur cadre, aimant sur partie mobile |
 | Surface | propre, sèche et dégraissée |
 | Température | au moins `15 °C` |
@@ -155,13 +164,15 @@ Le manuel couvre les contacts 868 `100757` et `100758`. Voir [[Contact radiomagn
 | Grand écart/antenne | adaptateurs `100428` ou `100729` |
 
 1. Apprendre et tester la portée avant fixation.
-2. Orienter la carte avec la LED loin de l'aimant et placer celui-ci à `22–30 mm`, sans dépasser la limite rouge documentée.
+2. Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 3. Nettoyer et dégraisser; coller au-dessus de `15 °C` et ne pas charger pendant `24 heures`.
 4. Utiliser si nécessaire les points de vis ou adaptateurs; monter gaz et boucles selon leurs notices.
 
 ## Essai fonctionnel et confirmations
 
 ### Armement et déclenchement
+
+> **Durée non résolue :** relever la durée mesurée. Les 180 secondes ci-dessous proviennent de la source véhicule ; la notice générale indique 120 secondes. Sans attribution par version, ce n’est pas un critère de réception confirmé.
 
 1. Fermer portes et contacts, puis verrouiller avec la télécommande Ford.
 2. Armer WiPro avec l'émetteur THITRONIK® appris.
@@ -205,7 +216,7 @@ Déclencher chaque émetteur à son emplacement final. WiPro confirme acoustique
 | LED inactive | trou `8 mm`, câble rouge/noir et fiche blanche |
 | Accessoire non appris | marquage `868`, séquence, mode et confirmation |
 | Appris sans alarme | retourner la carte, LED opposée à l'aimant |
-| Réception instable | lieu, métal, antenne, `22–30 mm`, adaptateur |
+Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 
 Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
@@ -213,7 +224,7 @@ Voir [[Dépannage — diagnostic sûr des problèmes fréquents|Dépannage]].
 
 - Source primaire : manuel véhicule de neuf pages `12/20`, intégralement contrôlé dans le texte et les images.
 - La page 2 établit émetteur obligatoire, `0823-011`, DIP et fils inutilisés; les pages 3–4 démontage, masse, C4, klaxon, LED et apprentissage.
-- La page 5 établit commandes séparées, test mécanique, `30`/`180` secondes et mémoire; les pages 6–9 `100757`/`100758`, orientation, montage, adhésif, adaptateurs et `22–30 mm`.
+- Vérifier la notice du contact : fermé, au plus 22 mm comme règle éditoriale provisoire pour le contact standard (conflit 22/25 mm) ; plus de 30 mm sert au déclenchement d’apprentissage/essai, pas de distance de montage recommandée. Voir [[Contact magnétique radio 868 — Montage et fonctionnement|Contact magnétique radio 868]].
 - Le manuel général `1.8` complète travail hors tension et diagnostics. `4.7` vient de la matrice approuvée.
 - C4 64 reste `+12 V (radio)`; aucune désignation non étayée n'a été ajoutée.
 

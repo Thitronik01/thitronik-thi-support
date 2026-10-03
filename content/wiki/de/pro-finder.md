@@ -1,26 +1,23 @@
 ---
 title: Pro-Finder — GSM/GPS Telemetriemodul
 sources:
-  - sources/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf
-  - sources/pro_finder-kurzanleitung-international.pdf
-  - sources/pro_finder-kurzanleitung-international_sn-045.pdf
-  - >-
-    sources/pro-finder_ab_sn045_bedienungs_und_installationsanleitung_zehn_sprachen.pdf
-  - sources/pro-finder_ocr_abschrift.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/Fragen zu Pro-finder.pdf
-  - sources/Pro Finder.docx
-  - sources/Anbieter.docx
-  - sources/Handy.docx
-  - sources/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf
-  - >-
-    sources/SMS-Konfiguration für Pro-Finder - SMS-Konfiguration für
-    Pro-Finder.csv
-  - wiki/app-befehle.md
-  - wiki/mobilfunk-sim.md
-  - wiki/seriennummern-softwarestaende.md
-  - wiki/stoerungsbeseitigung.md
-updated: '2026-07-15'
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "content/quellen/profinder-kurz-rev1.1.pdf"
+  - "sources/pro-finder_ocr_abschrift.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Pro Finder.docx"
+  - "sources/Anbieter.docx"
+  - "sources/Handy.docx"
+  - "sources/NUR_INTERNER_GEBRAUCH_Pro-finder_Befehle_abV9.1_(V1.1).pdf"
+  - "sources/SMS-Konfiguration für Pro-Finder - SMS-Konfiguration für Pro-Finder.csv"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/mobilfunk-sim.md"
+  - "content/wiki/de/seriennummern-softwarestaende.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+updated: '2026-09-28'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -100,9 +97,9 @@ Der Pro-Finder ist für die Standortbestimmung und Überwachung eines Fahrzeugs 
 |---|---|
 | Spannungsversorgung | 9–30 V DC; 24-V-Fähigkeit ab `0699-003` dokumentiert |
 | Absicherung | 3 A nach produktspezifischer Einbauanleitung |
-| Ruhestrom Pro-Finder | ca. 16–25 mA, abhängig vom Betriebszustand des Mobilfunkmoduls |
+| Ruhestrom Pro-Finder | Rev. 1.3 ab -045: ca. 16–21 mA im Normalbetrieb; ca. 37 mA bei Netzsuche. Rev. 2.6: ca. 21 mA normal |
 | Ausgänge A und B | 12 V, maximal 500 mA je dokumentierter Anleitung |
-| Spannungsmesseingänge | U2–U5 bei älteren Geräteausführungen; konkrete Belegung nach Seriennummer und Anleitung |
+| Spannungsmesseingänge | U2–U5 auch ab -045 dokumentiert; Pins 2–5, 0–30 V; Anzeige nach Betriebsart (Rev. 1.3, PDF S. 8–11) |
 | Satellitennavigation | GPS; ab `0699-045` GPS/QZSS dokumentiert |
 | Zielrufnummern | bis zu 10 |
 | Betriebstemperatur | –10 °C bis +80 °C |
@@ -123,7 +120,7 @@ Die Stromaufnahme des Fahrzeugs setzt sich nicht nur aus dem Pro-Finder zusammen
 
 ### Elektrischer Anschluss
 
-Der Anschluss muss nach der mitgelieferten Anleitung der tatsächlichen Gerätegeneration erfolgen. Der ältere Hauptkabelbaum dokumentiert unter anderem:
+Der Anschluss muss nach der mitgelieferten Anleitung der tatsächlichen Gerätegeneration erfolgen. Sowohl Rev. 2.6 als auch Rev. 1.3 ab -045 dokumentieren diesen achtpoligen Hauptanschluss:
 
 | Anschluss | Funktion |
 |---|---|
@@ -133,7 +130,7 @@ Der Anschluss muss nach der mitgelieferten Anleitung der tatsächlichen Geräteg
 | Pin 7, gelb | Ausgang A |
 | Pin 8, rot | Betriebsspannung |
 
-Bei abweichendem Kabelbaum oder Geräten ab `0699-045` ist ausschließlich die passende Anleitung maßgeblich. WiPro und Pro-Finder müssen an dieselbe Fahrzeugbatterie angeschlossen sein. Die Verbindung zwischen beiden Modulen erfolgt über das dafür vorgesehene Verbindungskabel.
+Bei abweichendem Kabelbaum ausschließlich die passende Geräteanleitung verwenden. **Quellenfehler FR Rev. 1.3, PDF S. 59:** Der Text nennt Pin 1 irrtümlich positiv; die Anschlussgrafik auf S. 56 und der deutsche Text zeigen Pin 1 als Masse und Pin 8 als Plus. Nicht nach der falschen Pluszuordnung anschließen; bei Abweichungen Einbau stoppen und THITRONIK klären lassen. WiPro und Pro-Finder müssen an dieselbe Fahrzeugbatterie angeschlossen sein. Die Verbindung zwischen beiden Modulen erfolgt über das dafür vorgesehene Verbindungskabel.
 
 > **Ausgangslast:** Ausgänge A und B nicht über 500 mA belasten. Für größere oder induktive Lasten ist eine fachgerecht dimensionierte Relaisschaltung mit geeigneter Schutzbeschaltung erforderlich. Unbenutzte Leitungen einzeln isolieren.
 
@@ -143,7 +140,7 @@ SIM-Karte, Stecker und Antenne nur bei spannungsfreiem Pro-Finder einsetzen oder
 
 ## SIM-Karte und Mobilfunk
 
-Der Pro-Finder benötigt eine SIM mit **klassischen SMS, Telefonie und einer eindeutig erreichbaren Rufnummer**. Mobile Daten sind für seine SMS-Steuerung nicht erforderlich. Prepaid und Vertrag sind grundsätzlich möglich, wenn Tarif, Guthaben beziehungsweise Vertragsstatus, Netz und PIN-Regel passen.
+Der Pro-Finder benötigt eine SIM mit **klassischen SMS, Telefonie und einer eindeutig erreichbaren Rufnummer**. **Ab SN -045 muss die SIM zusätzlich mobile Daten (4G/LTE) unterstützen**; das verlangen FAQ S. 1 und Kurzfassung Rev. 1.3.2, S. 1. Nur die ältere Micro-SIM-Kurzfassung Rev. 1.1 nennt Daten als nicht erforderlich. **Multi-SIM wird nicht unterstützt**, eine eigene Rufnummer ist erforderlich (FAQ S. 1). Prepaid und Vertrag sind grundsätzlich möglich, wenn Tarif, Guthaben beziehungsweise Vertragsstatus, Netz und PIN-Regel passen.
 
 | Seriennummer | SIM | PIN |
 |---|---|---|
@@ -159,30 +156,23 @@ Eine permanente Providerfreigabe oder starre Länder-Abschalttabelle ist nicht b
 
 ## Zielrufnummern programmieren
 
-Der Pro-Finder reagiert erst auf Bedienbefehle, nachdem mindestens eine Rufnummer erfolgreich programmiert wurde. Die erste Rufnummer ist die **Masternummer**. Sie kann den gespeicherten Rufnummernblock später mit einer neuen Programmier-SMS ersetzen.
+Pro-Finder muss zuerst mit Zielrufnummern programmiert werden. Bis zu **10 Nummern** sind möglich. Die erste ist die **Masternummer**; eine neue Programmier-SMS von ihr **ersetzt die gesamte Rufnummernliste**, sie hängt nicht nur einen Teilnehmer an.
 
-### Syntaxbeispiele
+### Programmier-SMS nach Anleitung und Gerätegeneration
 
-| SIM-Typ | Smartphone-Kennzeichnung | Programmier-SMS |
-|---|---|---|
-| Prepaid | ja | `*100#PDE+S491701234567` |
-| Prepaid | nein | `*100#PDE+491701234567` |
-| Vertrag | ja | `DE+S491701234567` |
-| Vertrag | nein | `DE+491701234567` |
+Die öffentliche Anleitung ab `0699-045`, Rev. 1.3 (06/2025), zeigt beispielsweise `+S491511142338-491736660456`: erster Teilnehmer autorisiert und als Smartphone gekennzeichnet, zweiter Teilnehmer ohne Steuerungsberechtigung. Die Rufnummern sind Beispiele und müssen ersetzt werden. `+` kennzeichnet autorisierte, `-` nicht autorisierte Empfänger; `S` liefert die Position als Kartenlink. Internationale Landesvorwahl verwenden, nationale führende Null weglassen; **keine Leerzeichen** in die Programmier-SMS.
 
-| Bestandteil | Bedeutung |
-|---|---|
-| `*100#` | anbieterspezifisches Beispiel für eine Guthabenabfrage; nur bei Prepaid und passend zum Provider verwenden |
-| `P` | Prepaid-Kennzeichnung |
-| `DE` | Gerätesprache Deutsch |
-| `+` | autorisierte Rufnummer; die erste Nummer ist die Masternummer |
-| `-` | nicht autorisierte Zielrufnummer ohne Steuerungsberechtigung |
-| `S` | Smartphone-Kennzeichnung für einen anklickbaren Kartenlink |
-| `491701234567` | Beispiel im internationalen Format, mit Ländervorwahl und ohne führende Inlandsnull |
+### Prepaid-Restguthaben abfragen: Grenze SN -044 / -045
 
-Keine Leerzeichen, typografischen Anführungszeichen oder automatische Formatierung in die Programmier-SMS einfügen. Bei einer Vertragskarte darf kein Guthaben-Abfragecode programmiert sein. Ein falscher Code kann Alarmmeldungen verzögern oder blockieren, während das Gerät auf die Providerantwort wartet.
+Die Anleitung Rev. 2.6 zeigt für ältere Geräte ohne Guthabenabfrage ebenfalls `+S49…`; für geeignete Prepaid-Karten zusätzlich einen anbieterspezifischen Code und `P`, etwa `*100#P+S49…`. Bei **Vertragskarten keinen Guthaben-Abfragecode** verwenden. Laut FAQ ist diese Prepaid-Abfrage **nur bis SN -044** vorgesehen. **Ab SN -045 keine Restguthabenabfrage über Pro-Finder**; Guthaben im Providerportal prüfen. Eine falsche Abfrage kann Alarmmeldungen blockieren.
 
-Die dokumentierten Sprachkürzel sind `DE`, `FR`, `DK`, `GB`, `NL`, `IT`, `SE` und `CZ`. Die vollständige Einrichtung ist unter [[THITRONIK® App — Befehle, Einrichtung und Fehlerbehebung]] beschrieben.
+Die vorhandenen sprachbezogenen Konfigurationsbeispiele mit `DE`/`FR` stammen aus einer anderen Dokumentfamilie. Die öffentliche Anleitung Rev. 1.3 zeigt keinen solchen Präfix. Daraus folgt weder, dass der Präfix immer nötig, noch, dass er generell ungültig ist. Die App mit der tatsächlichen Seriennummer und Gerätesprache verwenden; bei abweichender erzeugter Syntax vor einem Überschreiben THITRONIK hinzuziehen. Keine Syntax aus verschiedenen Revisionen zusammensetzen.
+
+Belege: Rev. 2.6, PDF S. 9–11; Rev. 1.3, PDF S. 14–17; FAQ, PDF S. 1, 4, 7.
+
+### Zielrufnummern löschen mit Stellung E
+
+**Stellung E löscht den gesamten Zielrufnummernspeicher einschließlich Masternummer.** Das ist kein allgemeiner Reparaturreset und kein Löschen der WiPro-Funksender oder Bluetooth-Kopplung. Nur für eine beabsichtigte Neueinrichtung anwenden: SIM muss im Gerät bleiben; Hauptkabelbaum abziehen, Stellung E wählen, wieder anschließen und gelb/grünes Blinken abwarten. Anschließend zur ursprünglichen Betriebsart zurückstellen und alle benötigten Rufnummern neu programmieren. Alternative bei bekanntem Master: vollständige Liste per Programmier-SMS ersetzen. Belege: Rev. 2.6, PDF S. 11; Rev. 1.3, PDF S. 17.
 
 ---
 
@@ -206,21 +196,48 @@ Die gültige Befehlsform hängt von der im Pro-Finder programmierten Sprache ab.
 | angelernte Komponenten abfragen | `melder` |
 | GPS ein- oder ausschalten | `gps an` beziehungsweise `gps aus` |
 
-Die App bereitet Befehle passend zur eingestellten Sprache vor. Bedienung per Anruf hängt von der gewählten Betriebsart ab: Ein Anruf kann einen Statusbericht anfordern oder bei entsprechend eingerichteter WiPro-Steuerung den Alarmzustand wechseln. Deshalb die Schalterstellung nicht ohne Abgleich mit Seriennummer, Anschlussart und passender Anleitung ändern.
+### Betriebsarten, Anruf und Spannungen in Modus 9
+
+Die App bereitet Befehle passend zur eingestellten Sprache vor. **In Betriebsart 2 und 3 schaltet ein Anruf die WiPro in den jeweils anderen Zustand (scharf/unscharf)** und sendet danach den Status. Ein solcher Anruf ist keine reine Statusabfrage. Betriebsart 0 ist laut FAQ der Standard ohne periodische Meldungen. Rev. 1.3: Modi 4/5/6/7 senden alle 15 Minuten / 60 Minuten / 6 Stunden / 24 Stunden; Modus 9 enthält U1–U5 ohne automatisches Intervall. Die alte Rev. 2.6 zeigt bei Modus 9 keine U-Werte; nicht auf alle Geräte übertragen (PDF S. 5 gegenüber Rev. 1.3 S. 10). Deshalb die Schalterstellung nicht ohne Abgleich mit Seriennummer, Anschlussart und passender Anleitung ändern.
 
 Alarm-SMS an mehrere Rufnummern werden nacheinander versendet. Wird ein kontrollierter Alarmtest sofort beendet, können später gespeicherte Zielrufnummern unbenachrichtigt bleiben.
 
 ---
 
+### Französische Befehle sind versionsabhängig
+
+Die alte öffentliche Befehlsmatrix 1.1 und die ältere Rev. 2.6 verwenden andere französische Wörter als die Anleitung ab `0699-045`, Rev. 1.3. Die Gerätesprache und der tatsächliche Softwarestand entscheiden, nicht allein die Sprache der Supportfrage. Befehle nicht frei übersetzen oder mit typografischen Apostrophen verändern.
+
+| Funktion | Ältere öffentliche Matrix 1.1 | Anleitung ab -045, Rev. 1.3 |
+|---|---|---|
+| Scharf / unscharf | `arme` / `desarme` | `activer` / `desactiver` |
+| Status | `statut` | `rapport d etat` |
+| Geofencing ein / aus | `gardiennage active` / `gardiennage desactive` | `activer le gardiennage` / `desactiver le gardiennage` |
+| Anlernen ein / aus | `mode d'apprentissage active` / `mode d'apprentissage desactive` | `activer le mode d appairage` / `desactiver le mode d appairage` |
+| Ausgang A ein / aus | `a active` / `a desactivee` | `activer la sortie A` / `desactiver la sortie A` |
+| Ausgang A Impuls | Rev. 2.6: `a impulsion` | `sortie A impulsion` |
+
+Die Rev. 1.3 nennt `position` für den Standort und für die Zeitsteuerung `a %min%` mit 1–120 Minuten; der Platzhalter wird durch eine Zahl ersetzt, zum Beispiel `a 30`. Kein pauschales Alias-Versprechen für ältere Firmware. Belege: öffentliche Befehlsmatrix 1.1, PDF S. 1; Rev. 1.3, FR PDF S. 71–75. Die ältere Matrix gilt nicht als universelle Anleitung für alle Pro-Finder.
+
+---
+
 ## Geofencing und Position
 
-Geofencing überwacht eine Ortsveränderung des abgestellten Fahrzeugs und meldet sie als stillen Diebstahlalarm. Bei einer verbundenen und scharfgeschalteten WiPro ist Geofencing gemäß den Produktunterlagen automatisch aktiv; außerdem kann es per SMS oder, bei entsprechend eingerichteten älteren Betriebsarten, über einen Spannungseingang gesteuert werden.
+Geofencing meldet eine Standortveränderung als **stillen Diebstahlalarm**. Mit angeschlossener WiPro wird es beim Scharfschalten automatisch aktiviert und beim Unscharfschalten deaktiviert. In den Betriebsarten **8 und B** lässt es sich über **Pin 3** steuern: Stellung 8 über 6 V ein / unter 5 V aus; Stellung B über 6 V aus / unter 5 V ein. Für die anderen regulären Betriebsarten beschreibt die Anleitung SMS-Steuerung. Am neuen Standort erst `fence aus`, dann `fence an` senden, damit ein neuer Bezugspunkt gesetzt wird.
 
-Die Unterlagen verschiedener Generationen nennen für die Auslösedistanz Größenordnungen von etwa **500 m bis 1 km**. Diese Werte sind keine präzise geografische Grenze. Satellitenempfang, Gerätestand und Bewegungsverlauf beeinflussen die Auslösung. In Hallen oder bei starken GPS-Reflexionen kann eine unplausible Positionsänderung entstehen; Geofencing dort bei Bedarf bewusst mit `fence aus` deaktivieren und später wieder aktivieren.
+### Geofencing-Radius: Original statt OCR
 
-Wenn keine aktuelle GPS-Position verfügbar ist, wartet der Pro-Finder je nach Gerätestand bis zu etwa **10 Minuten** und kann danach die letzte gültige Position senden. Der Hinweis `GPS: Standby` bedeutet, dass die übertragene Position nicht aktuell ist. Die angezeigte UTC-Zeit gehört dann zur zuletzt gültigen Position und nicht zwingend zum Versandzeitpunkt.
+Die Anleitung ab `0699-045`, **Rev. 1.3, Stand 06/2025**, nennt auf Deutsch und Französisch **900 Meter**. In der OCR-Abschrift steht an einer Stelle fälschlich 500 Meter. Maßgeblich ist das gerenderte Original, nicht diese OCR-Zahl.
 
-Positionsmeldungen dienen der Orientierung und ersetzen weder ein zertifiziertes Ortungsgerät noch polizeiliche Maßnahmen. Bei einem Diebstahl nicht selbst eingreifen.
+Die ältere **Rev. 2.6** nennt auf Deutsch **ca. 1 km**, auf Französisch **ca. 1,5 km**. Das ist ein **Quellenwiderspruch**, keine belegte Einstellspanne. Für Altgeräte keinen einheitlichen Radius garantieren; Seriennummer und Softwarestand durch THITRONIK zuordnen lassen. Auch 900 Meter sind keine zentimetergenaue Grenze. GPS-Abschattung und Reflexionen in Gebäuden können unplausible Standortwechsel verursachen.
+
+Belege: Rev. 1.3, PDF S. 19, 21 / FR 70, 72; Rev. 2.6, PDF S. 12, 15 / FR 47, 50. Die OCR-Fassung ist keine unabhängige Quelle.
+
+### GPS-Standby, letzte Position und UTC
+
+**GPS: Standby** bezeichnet den Ruhemodus des GPS-Empfängers; bei einem Ereignis wird er automatisch reaktiviert. Diese Anzeige allein beweist nicht das genaue Alter einer Position. **GPS kein Empfang** bedeutet dagegen, dass keine aktuelle gültige Position verfügbar ist. Pro-Finder wartet bis zu **10 Minuten** und sendet dann gegebenenfalls die **letzte gültige Position**. Die **UTC-Zeit gehört zur letzten empfangenen Position**, nicht zwingend zum Versandzeitpunkt. Einen alten Fix nicht als aktuellen Fahrzeugstandort ausgeben.
+
+Belege: Rev. 2.6, PDF S. 12, 15, 17; Rev. 1.3, PDF S. 19, 22, 24.
 
 ---
 
@@ -246,9 +263,9 @@ Ein Statusbericht kann je nach Gerätegeneration, Betriebsart und angeschlossene
 - Zustand des Geofencings
 - GPS-Position und Geschwindigkeit
 - Zustand der Ausgänge A und B
-- Versorgung U1 und bei älteren Geräten die verfügbaren Messeingänge U2–U5
-- Gerätetemperatur ab `0699-045`
-- Prepaid-Guthaben, wenn ein passender Abfragecode programmiert ist
+- Versorgung U1 und Messeingänge U2–U5, auch ab -045; angezeigte Werte hängen von der Betriebsart ab
+- Temperatur in unmittelbarer Gerätenähe, bereits in Rev. 2.6 beschrieben; kein garantierter Innenraum-Messwert
+- Prepaid-Guthaben nur bei unterstützten Geräten bis -044 und passendem Abfragecode; nicht ab -045
 
 ---
 
@@ -266,12 +283,9 @@ Die Stilllegung wird mit `a aus` aufgehoben. Sie ist nur für einen Alarmfall un
 
 ## Unterspannung und Standby
 
-- Bei **11,2 V** Versorgungsspannung sendet der Pro-Finder eine Spannungswarnung.
-- Danach wechselt er zum Tiefentladeschutz in einen Standby-Zustand und reagiert vorübergehend nicht auf Befehle.
-- Nach dem Laden und einer Versorgung über **12,5 V** kehrt er in den Normalbetrieb zurück.
-- Nach einer Unterspannungswarnung Batterie, Ladesystem und gesamte Dauerlast prüfen.
+Die Anleitungen Rev. 2.6 und Rev. 1.3 beschreiben die **Spannungswarnung ausdrücklich nicht in Betriebsart B**. Für die dokumentierte Warnfunktion gilt: Sinkt die Versorgung **dauerhaft unter 11,2 V**, sendet Pro-Finder eine Warnung und geht in Standby. Erst **über 12,5 V** kehrt er in den Normalbetrieb zurück. Die Angabe ist keine Warnung exakt beim Erreichen von 11,2 V und kein Nachweis für dieselben Schwellen in jeder 24-V-Installation.
 
-Ein nicht reagierender Pro-Finder ist deshalb nicht automatisch defekt. Zuerst die tatsächliche Versorgungsspannung am Gerät und die Ladefähigkeit der Batterie prüfen. Wiederholte Sicherungsresets beseitigen keine Ursache.
+Bei ausbleibender Reaktion tatsächliche Versorgung am Gerät, Batterie und Ladeanlage prüfen. Keine Unterspannungswarnung in Betriebsart B versprechen. Die Ausnahme nicht als Nachweis dafür interpretieren, dass in B sämtliche Schutzfunktionen fehlen. Wiederholtes Ziehen der Sicherung behebt die Ursache nicht. Belege: Rev. 2.6, PDF S. 12 / FR 47; Rev. 1.3, PDF S. 19 / FR 70.
 
 ---
 
@@ -290,6 +304,14 @@ Ein nicht reagierender Pro-Finder ist deshalb nicht automatisch defekt. Zuerst d
 | blinkt grün | Normalbetrieb | Normalbetrieb | eingebucht und Zielrufnummern vorhanden |
 
 > **Wichtig:** Gelbes Blinken bedeutet vor und ab `0699-045` etwas anderes. Ohne vollständige Seriennummer ist keine eindeutige LED-Diagnose möglich.
+
+---
+
+### GPS-Diagnose in Stellung F
+
+In **Stellung F** bedeutet **rot leuchtend: GPS nicht angeschlossen**, **gelb blinkend: GPS-Daten ohne gültige Position**, **grün leuchtend: GPS-Position okay**. Bei weiter gelb blinkender LED nach fünf Minuten Empfang und Montageort prüfen. Danach den Schalter unbedingt auf die ursprüngliche Betriebsart zurückstellen. Im normalen Betrieb bedeutet rotes Dauerlicht dagegen SIM fehlt/defekt. Diagnosemodus und normalen LED-Code nicht verwechseln.
+
+Für das erstmalige Anschließen der optionalen externen GPS-Antenne nennen beide Anleitungen: spannungsfrei verbinden, anschließend bei freier Satellitensicht mindestens fünf Minuten Versorgung **über 13,5 V**. Das ist die dokumentierte Antenneninitialisierung, keine allgemeine Mindestbetriebsspannung für jeden Pro-Finder. Belege: Rev. 2.6, PDF S. 6–7; Rev. 1.3, PDF S. 11–12.
 
 ---
 

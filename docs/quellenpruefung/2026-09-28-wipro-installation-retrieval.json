@@ -1,0 +1,531 @@
+{
+  "checkedAt": "2026-09-28T18:53:11.237Z",
+  "mode": "retrieval-only",
+  "liveModelEvaluated": false,
+  "total": 58,
+  "passed": 58,
+  "cases": [
+    {
+      "lang": "de",
+      "id": "originalschluessel",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 8–9 / 45–46; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "vent-check",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 10 / 47; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "alarmdauer-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 7,13–14 / 43,50–51; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "batterie-oder-alarm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 11,17 / 48,55; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "alarmspeicher-loeschen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 17 / 55; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "zehn-blinkimpulse",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 17 / 55; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "innenlicht-60",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 13 / 50; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "gasalarm-schluessel",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 14 / 51; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "gasalarm-handsender",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 15 / 52; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "nfc-batterie",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 12 / 49; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "sprinter-warnung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 5 / 42; content/wiki/de/fahrzeuge/mercedes-sprinter-vs30.md"
+    },
+    {
+      "lang": "de",
+      "id": "ford-modellgrenze",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 6 / 43; content/wiki/de/fahrzeuge/ford-transit-2024plus.md"
+    },
+    {
+      "lang": "de",
+      "id": "vw-t-tueren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 6 / 43; content/wiki/de/wipro-iii.md"
+    },
+    {
+      "lang": "de",
+      "id": "easy-add-handsender",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 18 / 56; content/wiki/de/anlernvorgang.md"
+    },
+    {
+      "lang": "de",
+      "id": "easy-add-can",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 19 / 57; content/wiki/de/anlernvorgang.md"
+    },
+    {
+      "lang": "de",
+      "id": "master-erhalten",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 18 / 56; content/wiki/de/anlernvorgang.md"
+    },
+    {
+      "lang": "de",
+      "id": "easy-add-app",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 19 / 57; content/wiki/de/anlernvorgang.md"
+    },
+    {
+      "lang": "de",
+      "id": "vent-4-5",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 18; wipro-iii-safelock-faq.pdf S. 27; Bedienung Rev. 1.3 S. 10/47"
+    },
+    {
+      "lang": "de",
+      "id": "batterie-2-5",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 16; beide Kurzanleitungen S. 2"
+    },
+    {
+      "lang": "de",
+      "id": "neun-toene",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 18; wipro-iii-safelock-faq.pdf S. 27; beide Kurzanleitungen S. 1–2"
+    },
+    {
+      "lang": "de",
+      "id": "pin-farben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 12–15/48–51"
+    },
+    {
+      "lang": "de",
+      "id": "sirene-spannung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 10,17/46,53"
+    },
+    {
+      "lang": "de",
+      "id": "easy-add-strompause",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 1; wipro-iii-safelock-faq.pdf S. 30; Bedienung Rev. 1.3 S. 18–19/56–57"
+    },
+    {
+      "lang": "de",
+      "id": "loeschen-quelle",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 6/42; Bedienung Rev. 1.3 S. 18/56"
+    },
+    {
+      "lang": "de",
+      "id": "faq-app-grenze",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 19; wipro-iii-safelock-faq.pdf S. 26–27"
+    },
+    {
+      "lang": "de",
+      "id": "faq-upgrade",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 16–17; wipro-iii-safelock-faq.pdf S. 25–26"
+    },
+    {
+      "lang": "de",
+      "id": "version-042",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-faq.pdf S. 2; bestehender Wiki-Versionsverlauf, Widerspruch offen"
+    },
+    {
+      "lang": "de",
+      "id": "diagnose-taster",
+      "pass": true,
+      "articleRank": 3,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 7–8/43–44"
+    },
+    {
+      "lang": "de",
+      "id": "original-kurzfassung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/beide Kurzanleitungen S. 1; Bedienung Rev. 1.3 S. 8–9/45–46"
+    },
+    {
+      "lang": "fr",
+      "id": "originalschluessel",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 8–9 / 45–46; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "vent-check",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 10 / 47; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "alarmdauer-konflikt",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 7,13–14 / 43,50–51; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "batterie-oder-alarm",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 11,17 / 48,55; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "alarmspeicher-loeschen",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 17 / 55; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "zehn-blinkimpulse",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 17 / 55; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "innenlicht-60",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 13 / 50; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gasalarm-schluessel",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 14 / 51; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "gasalarm-handsender",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 15 / 52; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "nfc-batterie",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 12 / 49; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "sprinter-warnung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 5 / 42; content/wiki/fr/fahrzeuge/mercedes-sprinter-vs30.md"
+    },
+    {
+      "lang": "fr",
+      "id": "ford-modellgrenze",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 6 / 43; content/wiki/fr/fahrzeuge/ford-transit-2024plus.md"
+    },
+    {
+      "lang": "fr",
+      "id": "vw-t-tueren",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 6 / 43; content/wiki/fr/wipro-iii.md"
+    },
+    {
+      "lang": "fr",
+      "id": "easy-add-handsender",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 18 / 56; content/wiki/fr/anlernvorgang.md"
+    },
+    {
+      "lang": "fr",
+      "id": "easy-add-can",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 19 / 57; content/wiki/fr/anlernvorgang.md"
+    },
+    {
+      "lang": "fr",
+      "id": "master-erhalten",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 18 / 56; content/wiki/fr/anlernvorgang.md"
+    },
+    {
+      "lang": "fr",
+      "id": "easy-add-app",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf, physische PDF-Seiten DE / FR: 19 / 57; content/wiki/fr/anlernvorgang.md"
+    },
+    {
+      "lang": "fr",
+      "id": "vent-4-5",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 18; wipro-iii-safelock-faq.pdf S. 27; Bedienung Rev. 1.3 S. 10/47"
+    },
+    {
+      "lang": "fr",
+      "id": "batterie-2-5",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 16; beide Kurzanleitungen S. 2"
+    },
+    {
+      "lang": "fr",
+      "id": "neun-toene",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 18; wipro-iii-safelock-faq.pdf S. 27; beide Kurzanleitungen S. 1–2"
+    },
+    {
+      "lang": "fr",
+      "id": "pin-farben",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 12–15/48–51"
+    },
+    {
+      "lang": "fr",
+      "id": "sirene-spannung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 10,17/46,53"
+    },
+    {
+      "lang": "fr",
+      "id": "easy-add-strompause",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 1; wipro-iii-safelock-faq.pdf S. 30; Bedienung Rev. 1.3 S. 18–19/56–57"
+    },
+    {
+      "lang": "fr",
+      "id": "loeschen-quelle",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 6/42; Bedienung Rev. 1.3 S. 18/56"
+    },
+    {
+      "lang": "fr",
+      "id": "faq-app-grenze",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 19; wipro-iii-safelock-faq.pdf S. 26–27"
+    },
+    {
+      "lang": "fr",
+      "id": "faq-upgrade",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-faq.pdf S. 16–17; wipro-iii-safelock-faq.pdf S. 25–26"
+    },
+    {
+      "lang": "fr",
+      "id": "version-042",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-safelock-faq.pdf S. 2; bestehender Wiki-Versionsverlauf, Widerspruch offen"
+    },
+    {
+      "lang": "fr",
+      "id": "diagnose-taster",
+      "pass": true,
+      "articleRank": 2,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/wipro-iii-installation-rev1.8.pdf S. 7–8/43–44"
+    },
+    {
+      "lang": "fr",
+      "id": "original-kurzfassung",
+      "pass": true,
+      "articleRank": 1,
+      "linkedSection": true,
+      "missing": [],
+      "source": "content/quellen/beide Kurzanleitungen S. 1; Bedienung Rev. 1.3 S. 8–9/45–46"
+    }
+  ]
+}

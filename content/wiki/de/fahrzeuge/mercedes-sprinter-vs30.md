@@ -1,12 +1,14 @@
 ---
 title: 'Mercedes Sprinter VS30 (BR907/910, ab 2018)'
 sources:
-  - sources/wipro_iii_mercedes_sprinter_vs30_01.pdf
-  - >-
-    sources/Einbauhandbuch_WiPro III safe.lock_Art.Nr.105458(Mercedes Sprinter
-    VS30)_Rev 1.0_DE.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-sprinter-vs30.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.3.pdf"
+  - "content/quellen/wipro-iii-safelock-bedienung-rev1.2.pdf"
+  - "sources/Einbauhandbuch_WiPro III safe.lock_Art.Nr.105458(Mercedes Sprinter VS30)_Rev 1.0_DE.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -17,6 +19,12 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III oder einer WiPro III safe.lock in den Mercedes Sprinter VS30 der Baureihen BR907/BR910 ab Modelljahr 2018. Die Standardanleitung Stand `03/23` und die neuere safe.lock-Anleitung Stand `01/24`, Rev. `1.0`, dokumentieren zwei unterschiedliche DIP-Profile, den Bodycomputer, vier analoge beziehungsweise eine digitale Blinkeransteuerung, CAN, Zündung, Stromversorgung, Sirene, Montageorte, Funk-Zubehör und Funktionstest.
 
 > **Abgrenzung:** Standard-WiPro III und safe.lock-Set `105458` dürfen bei DIP-Profil und Zentralverriegelungsansteuerung nicht vermischt werden. Fahrzeuggeneration, Scheinwerfervariante, Bodycomputer, Steckerbezeichnung, Pin, Leitungsfarbe und Geräteausführung müssen gemeinsam zur gewählten Anleitung passen.
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Sprinter VS30 standard: `V6.8`, FAQ `0823-019 / 6.8`, `SW4 + SW6 ON`. MR2 Pin 5 ist der vordere rechte Blinker, ausdrücklich nicht Pin 36. Bei ILS keine Leistungsansteuerung vorn: PDF 03/23 beschreibt alternativ rot/rosa über `220 Ohm` an Pin 14 gelb/rot für alle Blinker; FAQ nennt nur hintere Blinker. Ausführung deshalb bestätigen. Klemme `30T` kann abschalten; danach startet WiPro unscharf. PDF empfiehlt direkte Polklemmenversorgung mit `10 A`. Bei safe.lock sind Türanzeige, CAN-Alarmüberwachung und ZV-Steuerung getrennt zu prüfen; Eura, Hymer und fehlendes Türsteuergerät können Einschränkungen haben.
+
+Belege: [sprinter-vs30, PDF 2](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=2), [sprinter-vs30, PDF 5](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=5), [sprinter-vs30, PDF 7](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=7), [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [S, PDF 19](../../../quellen/wipro-iii-safelock-faq.pdf#page=19), [S, PDF 20](../../../quellen/wipro-iii-safelock-faq.pdf#page=20).
 
 ## Geltungsbereich
 
@@ -261,7 +269,7 @@ Für die dokumentierten Kontakte Art. `100757` und `100758` gelten:
 1. Sendergehäuse passend zu Rahmen, Rollo und Fenster ausrichten.
 2. Platine so einsetzen, dass die Sende-LED vom Magneten wegweist.
 3. Falsche Orientierung vermeiden: Anlernen ist dann möglich, eine Alarmierung jedoch nicht.
-4. Magnet im dokumentierten Bereich `22–30 mm` und nicht jenseits der roten Grenzlinie positionieren.
+4. Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 5. Vor dem Kleben Empfang und Funktion am geplanten Ort prüfen.
 6. Klebefläche reinigen, trocknen und entfetten.
 7. Nicht unter `15 °C` verkleben und etwa `24 Stunden` Endfestigkeit abwarten.
@@ -272,6 +280,12 @@ Für die dokumentierten Kontakte Art. `100757` und `100758` gelten:
 Weitere Hinweise: [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 
 ## Bedienlogik und abschließender Funktionstest
+
+### safe.lock: Aussperrschutz-Warnton ab Software 1.2.0sx
+
+**Aussperrschutz-Warnton ab 1.2.0sx:** Zehn kurze, schnelle Pieptöne zusammen mit schnellen Fahrzeugblinkern warnen vor dem Aussperren durch Originalschlüssel-Verriegelung. Danach können THITRONIK Handsender, NFC oder App nicht entriegeln. Für Camping mit THITRONIK Zubehör verriegeln; der Originalschlüssel kann anschließend entriegeln, Auto-Close bleibt inaktiv. Für langes Abstellen ohne Nachladen empfiehlt die Anleitung den Originalschlüssel (Sleep Mode). Beleg: Bedienungsanleitung Rev. 1.3, PDF-S. 5. Nicht mit zehn Blinkimpulsen der Status-LED plus fünf Sekunden Pause (Pro-Finder-Alarmspeicher) verwechseln.
+
+### Bedienung und Funktionstest
 
 Bei der Standard-WiPro III schärft der originale Fahrzeugfunkschlüssel beim Verriegeln und entschärft beim Entriegeln. safe.lock kann im Campingmodus zusätzlich mit THITRONIK Funk-Handsender, NFC-Modul, Pro-finder oder Bluetooth-Vernetzungsmodul die Zentralverriegelung steuern.
 
@@ -287,7 +301,7 @@ Bei der Standard-WiPro III schärft der originale Fahrzeugfunkschlüssel beim Ve
 8. Alarm mit einer Handsendertaste oder der Öffnen-Taste des Fahrzeugschlüssels beenden.
 9. Jede Originaltür und jeden Funk-Magnetkontakt einzeln bei geschärfter Anlage öffnen.
 10. Mit geöffnetem Funkkontakt schärfen, Lüftungsfunktion und Ausschluss des offenen Kontakts prüfen.
-11. Kontakt schließen und Reaktivierung nach etwa `4 Sekunden` prüfen.
+11. Kontakt schließen und Reaktivierung nach etwa `4 Sekunden` prüfen. Die allgemeine Bedienungsanleitung Rev. 1.3, PDF-S. 10, nennt dagegen mindestens 5 Sekunden; diese Abweichung der Quellen ist noch nicht versionsbezogen geklärt.
 12. Funk-Gaswarner etwa `4 Minuten` vorheizen und nach dessen Anleitung testen.
 13. Funk-Kabelschleife durch Entnahme aus der Halterung testen.
 14. Analoge Vierfach- oder digitale ILS-Blinkeransteuerung vollständig prüfen.
@@ -316,13 +330,7 @@ Siehe [[Störungsbeseitigung — Sichere Diagnose häufiger Probleme|Störungsbe
 
 ## Quellenentscheidung
 
-- Die 14-seitige Standardanleitung *WiPro III – Mercedes Sprinter VS30*, Stand `03/23`, wurde vollständig textlich und visuell geprüft.
-- Die 14-seitige safe.lock-Anleitung für Set Art. `105458`, Stand `01/24`, Rev. `1.0`, wurde ebenfalls vollständig textlich und visuell geprüft und hat für diese Ausführung Vorrang.
-- Standardprofil `SW4 + SW6` und safe.lock-Profil `SW1–SW8 OFF` sind getrennt dokumentiert.
-- Beide Quellen bestätigen Bodycomputer-Varianten, Blinker, CAN, Zündung, direkte Batterieversorgung, Hibernation-Hinweis, `8-mm`-LED, Sirenenvarianten, Montageort, Funk-Zubehör und Magnetkontaktwerte.
-- Die neuere safe.lock-Quelle ergänzt die ZV-Ansteuerung ausschließlich am Fahrertür-Steuergerät, Stecker 5 blau, Pin 4.
-- `0823-019`, `0823-034` und `5458-006 / 1.2.0sx` werden transparent als freigegebene Projektmatrix beziehungsweise Serienregister geführt, nicht als Inhalt der Fahrzeug-PDF `01/24` ausgegeben.
-- Nicht lokal verfügbare Word-Notizen wurden nicht als Beleg verwendet; daraus stammende Aufbauhersteller-, Komfortsitz-, PSM- und `F61`-Anweisungen wurden entfernt.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [sprinter-vs30, PDF 2](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=2), [sprinter-vs30, PDF 5](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=5), [sprinter-vs30, PDF 7](../../../quellen/fahrzeug-sprinter-vs30.pdf#page=7), [Q, PDF 6](../../../quellen/wipro-iii-faq.pdf#page=6), [S, PDF 19](../../../quellen/wipro-iii-safelock-faq.pdf#page=19), [S, PDF 20](../../../quellen/wipro-iii-safelock-faq.pdf#page=20).
 
 ## Querverweise
 

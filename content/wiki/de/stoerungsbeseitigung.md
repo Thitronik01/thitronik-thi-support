@@ -1,23 +1,24 @@
 ---
 title: Störungsbeseitigung — Sichere Diagnose häufiger Probleme
 sources:
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-  - sources/pro-finder_-_bedienungs-_und_montageanleitung_2.6_01.pdf
-  - sources/pro_finder-kurzanleitung-international_sn-045.pdf
-  - sources/Stromverbrauch.docx
-  - sources/technische_zusatzinformationen_gas-pro_iii.pdf
-  - sources/FAQ Allgemeine Fragen.pdf
-  - sources/Fragen zu WiPro III.pdf
-  - sources/Fragen zu Funk-Magnetkontakt 868.pdf
-  - sources/Fragen zu Pro-finder.pdf
-  - sources/Fragen zu BT-connect.pdf
-  - sources/Fragen zu G.A.S.-pro III.pdf
-  - sources/FAQ_Haeufige-Fragen-zur-THITRONIK-App_DE.md
-  - wiki/support-fallaufnahme.md
-  - wiki/anlernvorgang.md
-  - wiki/app-befehle.md
-  - wiki/stromversorgung-standzeiten.md
-updated: '2026-07-15'
+  - "content/quellen/gas-pro-iii-technische-zusatzinformationen.pdf"
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+  - "sources/Stromverbrauch.docx"
+  - "sources/FAQ Allgemeine Fragen.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/funk-magnetkontakt-faq.pdf"
+  - "content/quellen/funk-bt-connect-faq.pdf"
+  - "content/quellen/gas-pro-iii-faq.pdf"
+  - "sources/FAQ_Haeufige-Fragen-zur-THITRONIK-App_DE.md"
+  - "content/wiki/de/support-fallaufnahme.md"
+  - "content/wiki/de/anlernvorgang.md"
+  - "content/wiki/de/app-befehle.md"
+  - "content/wiki/de/stromversorgung-standzeiten.md"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -86,7 +87,15 @@ Bei Rauch, Brandgeruch, starker Erwärmung oder einem aktiven Gas-, CO- oder Rau
 | Pro-Finder reagiert nicht auf SMS | Mobilfunkempfang, Zielrufnummern und exakte Befehlssyntax prüfen. RCS/Chatnachrichten ausschalten und klassische SMS im GSM-Alphabet bzw. ASCII verwenden. |
 | Anruf erreicht die Mailbox | Mailbox und Rufumleitungen der Pro-Finder-SIM deaktivieren; keine Komfortfunktionen verwenden, die Anrufe umleiten. |
 | Erste Zielrufnummer erhält eine Alarm-SMS, spätere Nummern nicht | Alarm-SMS werden nacheinander versendet. Für einen kontrollierten Test den Alarm nicht sofort beenden. |
-| Warn-SMS bei **11,2 V**, danach keine Reaktion | Pro-Finder ist zum Tiefentladeschutz im Standby. Batterie laden und Versorgung prüfen; über **12,5 V** kehrt das Gerät in den Normalbetrieb zurück. |
+| Versorgung dauerhaft unter **11,2 V**, danach keine Reaktion | Dokumentierte Spannungswarnung/Standby; Rückkehr erst über **12,5 V**. **Keine Spannungswarnung in Betriebsart B versprechen** (Rev. 1.3 S. 19). Batterie und Versorgung prüfen. |
+
+---
+
+### GPS-Diagnose in Stellung F
+
+In **Stellung F** bedeutet **rot leuchtend: GPS nicht angeschlossen**, **gelb blinkend: GPS-Daten ohne gültige Position**, **grün leuchtend: GPS-Position okay**. Bei weiter gelb blinkender LED nach fünf Minuten Empfang und Montageort prüfen. Danach den Schalter unbedingt auf die ursprüngliche Betriebsart zurückstellen. Im normalen Betrieb bedeutet rotes Dauerlicht dagegen SIM fehlt/defekt. Diagnosemodus und normalen LED-Code nicht verwechseln.
+
+Für das erstmalige Anschließen der optionalen externen GPS-Antenne nennen beide Anleitungen: spannungsfrei verbinden, anschließend bei freier Satellitensicht mindestens fünf Minuten Versorgung **über 13,5 V**. Das ist die dokumentierte Antenneninitialisierung, keine allgemeine Mindestbetriebsspannung für jeden Pro-Finder. Belege: Rev. 2.6, PDF S. 6–7; Rev. 1.3, PDF S. 11–12.
 
 ---
 
@@ -140,13 +149,13 @@ Bei Rauch, Brandgeruch, starker Erwärmung oder einem aktiven Gas-, CO- oder Rau
 | Alarm beim Kochen, obwohl keine Gefahr vorliegt | Kurzer Tasterdruck schaltet das Gerät 60 Minuten stumm; erneuter Druck beendet die Stummschaltung. LEDs bleiben aktiv. Bei sehr hoher CO-Konzentration hat der CO-Alarm Vorrang. |
 | Alarm während der Fahrt durch Abgase | IGN-Anschluss an Klemme 15 durch Fachpersonal prüfen lassen. Bei anliegender Zündung ist das Gerät automatisch stummgeschaltet. |
 | Gelbes Blinken einer Sensor-LED mit etwa einem Ton pro Sekunde | Sensorfehler; Händler oder Support kontaktieren. |
-| Beide LEDs pulsieren gelb; dreifacher Signalton wird dreimal wiederholt | Unterspannung unter **11,1 V**; Gerät schaltet sich aus. Versorgung wiederherstellen und G.A.S.-pro III anschließend neu einschalten. |
+| Beide LEDs pulsieren gelb; Tonanzahl laut DE-/FR-Unterlage abweichend | Unterspannung unter **11,1 V**; Gerät schaltet sich aus. Versorgung wiederherstellen und G.A.S.-pro III anschließend neu einschalten. |
 | Funktion soll mit Feuerzeuggas getestet werden | Nicht durchführen. Der Auswertungsalgorithmus eignet sich nicht für diesen Test; das Gerät besitzt einen automatischen Sensorselbsttest. |
 | Alle Farben blinken | Übertemperatur über etwa **60 °C**; Wärmequelle und Montageort prüfen, Gerät abkühlen lassen und bei Wiederholung eskalieren. |
 
 > **Hinweis:** Die 60-minütige Stummschaltung unterdrückt auch Funksignal und Alarmausgang. Sie ersetzt keine Gefahrenprüfung.
 
----
+**Quellenkonflikt Unterspannung:** [T, PDF 6](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=6) nennt unter 11,1 V innerhalb einer Minute **dreimal drei Töne**; [T, PDF 18](../../quellen/gas-pro-iii-technische-zusatzinformationen.pdf#page=18) nennt **drei Töne**. Beide Fassungen verlangen nach Wiederherstellung der Spannung **manuelles Wiedereinschalten** und nennen die Batteriewarnung der gekoppelten WiPro. Die Tonanzahl ist ungeklärt, nicht als alleinigen Diagnosecode verwenden. Eine eigene 24-V-Schwelle ist hier nicht ausgewiesen; 11,1 V nicht eigenständig verdoppeln.
 
 ## Stromversorgung und Standzeit
 

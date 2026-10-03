@@ -1,12 +1,14 @@
 ---
-title: >-
-  Alimentation électrique & temps d'immobilisation — courant de repos,
-  sous-tension et pratique de charge
+title: "Alimentation électrique & temps d'immobilisation — courant de repos, sous-tension et pratique de charge"
 sources:
-  - sources/Stromverbrauch.docx
-  - wiki/wipro-iii.md
-  - wiki/pro-finder.md
-updated: '2026-07-15'
+  - "content/quellen/profinder-ab045-handbuch-rev1.3.pdf"
+  - "content/quellen/profinder-ab045-kurz-rev1.3.2.pdf"
+  - "content/quellen/profinder-handbuch-rev2.6.pdf"
+  - "content/quellen/profinder-faq.pdf"
+  - "sources/Stromverbrauch.docx"
+  - "content/wiki/de/wipro-iii.md"
+  - "content/wiki/de/pro-finder.md"
+updated: '2026-09-28'
 confidence: high
 lang: fr
 translation_of: sources/stromversorgung-standzeiten.md
@@ -23,8 +25,9 @@ Page transversale pour les cas de support concernant les **batteries de démarra
 | Composant | Valeur indicative | Classification |
 |------------|-----------|------------|
 | WiPro III safe.lock | env. **11 mA** | courant de repos de la centrale d'alarme en veille |
-| Pro-Finder | env. **16–25 mA** | selon l'état de fonctionnement du module de téléphonie mobile |
-| Combinaison | env. **27–36 mA** | composants THITRONIK uniquement, **sans** la charge de base du véhicule |
+| Pro-Finder à partir de -045, rév. 1.3 | env. **16–21 mA** normal ; env. **37 mA** en recherche réseau | PDF p. 76 ; ne pas assimiler à une faible consommation GPS en veille |
+| Pro-Finder, ancienne rév. 2.6 | env. **21 mA** normal | PDF p. 53 |
+| Combinaison avec hypothèse WiPro 11 mA | calcul **27–32 mA** en fonctionnement normal du Pro-Finder | 11 + 16–21 mA ; pas une mesure globale, **sans** charge de base du véhicule |
 
 > **Important :** ces valeurs ne décrivent que les composants THITRONIK. L'antidémarrage, les calculateurs, les récepteurs radio, les systèmes de porte ou d'autres courants de fuite du véhicule s'y ajoutent.
 
@@ -61,10 +64,9 @@ Avec une charge permanente de **50 mA**, environ **1,2 Ah** sont consommés par 
 
 ## Sous-tension sur le Pro-Finder
 
-- À une tension d'alimentation de **11,2 V**, le Pro-Finder envoie un SMS d'avertissement.
-- L'appareil passe ensuite dans un **état de pause / de veille** et n'envoie ni ne reçoit plus de commandes.
-- À partir de ce moment, la batterie doit être rechargée rapidement afin d'éviter des dommages aux cellules.
-- Pour les autres seuils de tension et le retour au fonctionnement normal, voir [[Pro-Finder — Module de télémétrie GSM/GPS|Pro-Finder]].
+Les notices rév. 2.6 et rév. 1.3 excluent explicitement le **mode B de l’avertissement de tension**. Pour la fonction décrite, une alimentation **durablement inférieure à 11,2 V** déclenche un avertissement et la mise en veille. Le retour au fonctionnement normal se fait **au-dessus de 12,5 V**. Ce n’est pas un déclenchement exactement à 11,2 V ni une validation des mêmes seuils pour toute installation 24 V.
+
+En cas d’absence de réponse, contrôler l’alimentation à l’appareil, la batterie et la charge. Ne pas promettre un SMS de sous-tension en mode B ; cette exception ne prouve pas non plus l’absence de toutes les protections dans ce mode. Retirer plusieurs fois le fusible ne corrige pas la cause. Sources : rév. 2.6, PDF p. 47 / DE 12 ; rév. 1.3, PDF p. 70 / DE 19.
 
 ---
 

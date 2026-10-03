@@ -1,12 +1,12 @@
 ---
 title: Carte de conversion safe.lock — sécurité de la clé pour Ducato/Boxer/Jumper
 sources:
-  - sources/safe-lock_umruestplatine.pdf
-  - sources/FAQ_safe-lock_Umruestplatine__101052_DE.md
-  - >-
-    sources/safe-lock_Umruestplatine__101052__Legal__Konformitaet_2014-53-EU_DE.md
-  - sources/Fragen zu safe.lock Umrüstplatine.pdf
-updated: '2026-07-15'
+  - "content/quellen/fahrzeug-safelock-platine.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "sources/FAQ_safe-lock_Umruestplatine__101052_DE.md"
+  - "sources/safe-lock_Umruestplatine__101052__Legal__Konformitaet_2014-53-EU_DE.md"
+  - "sources/Fragen zu safe.lock Umrüstplatine.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/safe-lock-umruestplatine.md
@@ -18,9 +18,15 @@ Réf. : 101052 | Révision : 1.3
 
 En combinaison avec la **WiPro III safe.lock**, la carte de conversion safe.lock comble une **faille de sécurité** côté véhicule, causée par des clés de véhicule non codées.
 
-> **Délimitation :** la carte de conversion n'est **pas un produit d'alarme autonome**. Elle complète uniquement une **WiPro III safe.lock** déjà présente ou installée en même temps.
+> **Délimitation :** la carte de conversion n'est **pas un produit d'alarme autonome**. Elle complète un système compatible : **WiPro III safe.lock** ou **module safe.lock 101051**. La carte seule ne détecte pas les alarmes. Source : [FAQ, PDF 24](../../quellen/wipro-iii-safelock-faq.pdf#page=24).
 
 ---
+
+## Limites du véhicule et sources contrôlées
+
+Platine Art. `101052`, rév. 1.3 : DE et FR confirment la copie préalable du transpondeur et le déverrouillage de toutes les portes par les deux boutons d’ouverture d’une clé à trois boutons. L’accès séparé au chargement disparaît. Notice = 2006–2012, FAQ = 2006–2018 et prise en charge Iveco dès 2011 : ces domaines différents ne constituent pas une autorisation générale sans identification de la clé. 3 V CR2032, environ deux ans, `868,35 MHz`, `<10 mW`, −20 à +80 °C confirmés en DE/FR. La table anglaise imprime « 86835MHz » : ne pas reprendre cette virgule manquante.
+
+Sources : [safelock-platine, PDF 2](../../quellen/fahrzeug-safelock-platine.pdf#page=2), [safelock-platine, PDF 4](../../quellen/fahrzeug-safelock-platine.pdf#page=4), [safelock-platine, PDF 12](../../quellen/fahrzeug-safelock-platine.pdf#page=12), [S, PDF 23](../../quellen/wipro-iii-safelock-faq.pdf#page=23), [S, PDF 24](../../quellen/wipro-iii-safelock-faq.pdf#page=24).
 
 ## Caractéristiques techniques
 
@@ -99,8 +105,8 @@ Le véhicule peut être utilisé **comme d'habitude** avec la clé convertie.
 
 ## Délimitation du produit et conformité
 
-- Nécessite toujours une **WiPro III safe.lock** comme centrale
-- Sert à la **sécurité de la clé**, et non à une détection d'alarme autonome
+- Nécessite un **système safe.lock compatible** : WiPro III safe.lock ou module safe.lock `101051`, selon la [FAQ, PDF 24](../../quellen/wipro-iii-safelock-faq.pdf#page=24). La carte seule ne remplace pas une centrale.
+- N'est **pas un produit d'alarme autonome** ; sert à la sécurité de la clé. La détection d'alarme nécessite un système d'alarme prévu à cet effet.
 - Les informations de conformité et de radio sont régies par les documents fournis avec le produit
 - Le montage et la copie du transpondeur reviennent à des partenaires premium safe.lock expérimentés
 

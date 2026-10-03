@@ -1,27 +1,26 @@
 ---
 title: Module NFC — commande de la WiPro via NFC
 sources:
-  - 'https://www.thitronik.de/produkte/produkt/nfc-modul/'
-  - sources/nfc_modul-kurzanleitung.pdf
-  - sources/NFC Modul.docx
-  - sources/Fragen zu NFC Modul.pdf
-  - sources/FAQ_NFC-Modul_105299_DE.md
-  - sources/NFC-Modul_105299__Overview_DE.md
-  - sources/NFC-Modul_105299__Reference__Technische_Daten_DE.md
-  - sources/NFC-Modul_105299__Reference__Lieferumfang_Zubehoer_DE.md
-  - sources/NFC-Modul_105299__Guide__Montage_Position_Reichweite_DE.md
-  - sources/NFC-Modul_105299__HowTo__Inbetriebnahme_Anlernen_DE.md
-  - sources/NFC-Modul_105299__HowTo__Bedienung_DE.md
-  - sources/NFC-Modul_105299__HowTo__Weitere_Tags_anlernen_DE.md
-  - sources/NFC-Modul_105299__HowTo__Tags_loeschen_Reset_DE.md
-  - sources/NFC-Modul_105299__HowTo__Batteriewechsel_DE.md
-  - sources/NFC-Modul_105299__Reference__Kompatible_Tags_Sicherheit_DE.md
-  - >-
-    sources/NFC_Modul_105299_DE_RAG_Pack/NFC-Modul_105299__Reference__LED-Zustaende_DE.md
-  - wiki/anlernvorgang.md
-  - wiki/zugang-bedienung.md
-  - wiki/stoerungsbeseitigung.md
-updated: '2026-07-16'
+  - "content/quellen/funk-nfc-kurzanleitung-rev2.3.pdf"
+  - "content/quellen/funk-nfc-faq.pdf"
+  - "https://www.thitronik.de/produkte/produkt/nfc-modul/"
+  - "sources/NFC Modul.docx"
+  - "sources/FAQ_NFC-Modul_105299_DE.md"
+  - "sources/NFC-Modul_105299__Overview_DE.md"
+  - "sources/NFC-Modul_105299__Reference__Technische_Daten_DE.md"
+  - "sources/NFC-Modul_105299__Reference__Lieferumfang_Zubehoer_DE.md"
+  - "sources/NFC-Modul_105299__Guide__Montage_Position_Reichweite_DE.md"
+  - "sources/NFC-Modul_105299__HowTo__Inbetriebnahme_Anlernen_DE.md"
+  - "sources/NFC-Modul_105299__HowTo__Bedienung_DE.md"
+  - "sources/NFC-Modul_105299__HowTo__Weitere_Tags_anlernen_DE.md"
+  - "sources/NFC-Modul_105299__HowTo__Tags_loeschen_Reset_DE.md"
+  - "sources/NFC-Modul_105299__HowTo__Batteriewechsel_DE.md"
+  - "sources/NFC-Modul_105299__Reference__Kompatible_Tags_Sicherheit_DE.md"
+  - "sources/NFC_Modul_105299_DE_RAG_Pack/NFC-Modul_105299__Reference__LED-Zustaende_DE.md"
+  - "content/wiki/de/anlernvorgang.md"
+  - "content/wiki/de/zugang-bedienung.md"
+  - "content/wiki/de/stoerungsbeseitigung.md"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: de/nfc-modul.md
@@ -39,6 +38,8 @@ Le module NFC est le lecteur alimenté par piles installé sur le véhicule pour
 ---
 
 ## Caractéristiques techniques
+
+**Identifiant documentaire à clarifier :** la couverture du guide Rev. 2.3 indique **105299**, son dos **101052**. La page produit confirme 105299 pour le module NFC. Le numéro au dos n’est pas une référence de commande alternative établie ; faire préciser sa signification. Sources : [N, PDF 1](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=1), [N, PDF 52](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=52).
 
 | Paramètre | Valeur documentée |
 |---|---|
@@ -118,6 +119,8 @@ L’effacement de la mémoire des tags ne doit pas être confondu avec celui de 
 
 ## Supports NFC et accessoires
 
+Le bracelet KeyStrap est prévu pour les fenêtres à simple paroi ou vitres de 15 mm au maximum. Les portées NFC des supports sont distinctes de la liaison radio de 75 m entre le module et la WiPro.
+
 | Support | Réf. | Forme | Portée NFC documentée | Sécurité |
 |---|---:|---|---:|---|
 | KeyCard | `105300` | carte transpondeur | env. 25 mm | tag d’origine THITRONIK® avec protection DESFire® contre la copie |
@@ -155,7 +158,7 @@ Faire d’abord fonctionner provisoirement le module à l’emplacement de monta
 2. Retirer la languette de protection des piles du module NFC.
 3. Démarrer le mode d’apprentissage de la centrale d’alarme compatible. Selon la version du système, cette opération peut être effectuée directement sur la centrale, via Easy-Add ou l’application THITRONIK®.
 4. Déclencher le module NFC avec la KeyCard fournie.
-5. Attendre la confirmation sonore de la centrale d’alarme.
+5. Attendre la confirmation propre à la centrale : signal sonore sur WiPro III, allumage de la LED de la centrale sur WiPro easy.
 6. Quitter correctement le mode d’apprentissage de la centrale d’alarme.
 7. Tester séparément l’armement/le désarmement et, le cas échéant, le verrouillage/déverrouillage.
 8. Ne procéder au montage définitif qu’après un test concluant.
@@ -311,3 +314,13 @@ La saisie structurée est décrite sous [[Saisie d’un dossier d’assistance �
 - [[Saisie d’un dossier d’assistance — informations obligatoires et contrôle avant escalade]]
 - [[Registre des numéros d’article — produits et accessoires]]
 - [[Vue d’ensemble du système — gamme de produits THITRONIK]]
+
+---
+
+## Vérification des sources et versions documentaires
+
+Comparaison documentaire du 01.10.2026, pages physiques des PDF : [N, PDF 12](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=12), [N, PDF 13](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=13), [N, PDF 14](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=14), [N, PDF 15](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=15), [N, PDF 16](../../quellen/funk-nfc-kurzanleitung-rev2.3.pdf#page=16), [QN, PDF 1](../../quellen/funk-nfc-faq.pdf#page=1).
+
+Apprentissage des tags, effacement total, LED et confirmation WiPro easy : [Bedienungsanleitung NFC](https://www.thitronik.de/support/downloads/nfc-modul-bedienungsanleitung/), chapitres 2, 4–8.
+
+Les confirmations et divergences sont consignées dans le [rapport de vérification](../../../docs/quellenpruefung/2026-10-01-funk.md).

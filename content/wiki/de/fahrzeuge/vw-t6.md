@@ -1,9 +1,11 @@
 ---
 title: VW T6 (2015–2019)
 sources:
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t6_2015_.pdf'
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-t6-t61.pdf"
+  - "content/quellen/wipro-iii-faq.pdf"
+  - "content/quellen/wipro-iii-safelock-faq.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -15,7 +17,19 @@ Diese Seite beschreibt den Einbau einer WiPro III in den VW T6 der Modelljahre 2
 
 > **Abgrenzung:** Für den Vorgänger gilt [[VW T5 Facelift (ab MJ 2010)]], für Fahrzeuge ab Modelljahr 2019 [[VW T6.1 (ab 2019)]]. Das gemeinsame Fahrzeughandbuch zeigt für beide Generationen unterschiedliche DIP-Profile, Mindestseriennummern und CAN-High-Leitungen. Diese Seite darf ausschließlich für den T6 2015–2019 verwendet werden.
 
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+VW T6 2015–2019, außer DoKa: `0823-012 / 5.1`, `SW3 + SW4 + SW6 ON`. Die Seriennummer steht im PDF, die Software 5.1 und DoKa-Ausnahme in der FAQ. CAN-High orange/grün → weiß/orange, CAN-Low orange/braun → violett/orange. T6.1 hat eine grüne High-Ader und ein anderes DIP-Profil. safe.lock `5458-001 / 1.0.0sx` ist ein eigener Systemzweig und nicht aus diesem Standardanschluss abzuleiten.
+
+Belege: [t6-t61, PDF 2](../../../quellen/fahrzeug-t6-t61.pdf#page=2), [t6-t61, PDF 3](../../../quellen/fahrzeug-t6-t61.pdf#page=3), [Q, PDF 9](../../../quellen/wipro-iii-faq.pdf#page=9), [S, PDF 12](../../../quellen/wipro-iii-safelock-faq.pdf#page=12), [S, PDF 13](../../../quellen/wipro-iii-safelock-faq.pdf#page=13).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
+
 ## Überblick
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 | Parameter | Verifizierter Stand |
 |---|---|
@@ -23,7 +37,7 @@ Diese Seite beschreibt den Einbau einer WiPro III in den VW T6 der Modelljahre 2
 | Modelljahre | 2015–2019 |
 | System / Set | WiPro III / Universal-Set `100754` |
 | Mindestseriennummer | `0823-012` |
-| Mindestsoftware | in den Primärquellen nicht genannt |
+| Mindeststand laut FAQ | `0823-012 / 5.1` (ergänzend zur Fahrzeuganleitung) |
 | DIP → ON | `SW3 + SW4 + SW6` |
 | CAN-Anschluss | Sicherungskasten und Kabeltunnel im Fahrerfußraum |
 | Bedienung | originale Fahrzeugfernbedienung; Funk-Handsender 868 zusätzlich möglich |
@@ -161,7 +175,7 @@ Die Fahrzeugquelle beschreibt die Artikel `100757` und `100758`.
 | Merkmal | Vorgabe |
 |---|---|
 | Platinenrichtung | Sende-LED muss vom Magneten wegweisen |
-| Magnetbereich | im geschlossenen Zustand innerhalb des gelben Bereichs, typisch `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitungstemperatur | nicht unter `15 °C` |
 | Endfestigkeit Klebepad | nach etwa `24 Stunden` |
@@ -181,6 +195,8 @@ Die Fahrzeugquelle beschreibt die Artikel `100757` und `100758`.
 Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb]] und [[Funk-Kabelschleife 868 — Außensicherung für mobile Güter]].
 
 ## Inbetriebnahme und Funktionstest
+
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
 
 1. DIP-Stellung `SW3 + SW4 + SW6` und Seriennummer ab `0823-012` nochmals prüfen.
 2. Alle Crimpverbindungen, Gelverbinder, Isolierungen, Zugentlastungen und die `10-A`-Sicherung kontrollieren.
@@ -230,7 +246,7 @@ Für den CAN-Diagnosemodus den Taster auf der Platine kurz drücken. Bedienung d
 
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii_vw_t6_2015_.pdf` — gemeinsames fahrzeugspezifisches Einbauhandbuch für T6/T6.1, Stand `12/20`; alle zehn Seiten vollständig textlich und visuell geprüft.
 - `H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf` — allgemeines Installationshandbuch, Revision `1.8`; vollständiger deutscher Abschnitt bereits textlich und visuell geprüft.
-- Die Matrixangabe Software `5.1` wird nicht als Mindeststand fortgeführt, weil die Primärquelle für den T6 ausschließlich die Mindestseriennummer `0823-012` nennt.
+- Die FAQ ergänzt den Mindeststand `0823-012 / 5.1`; die frühere Negativaussage ist überholt.
 
 ## Querverweise
 

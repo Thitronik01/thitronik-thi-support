@@ -1,11 +1,9 @@
 ---
 title: Renault Trafic III / Nissan Primastar (ab 2022)
 sources:
-  - >-
-    H:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_renault_trafic_iii___nissan_primastar_2022_.pdf
-  - 'H:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-22'
+  - "content/quellen/fahrzeug-trafic-2022.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -16,6 +14,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III in Renault Trafic III und Nissan Primastar ab Baujahr 2022. Das fahrzeugspezifische Einbauhandbuch Stand `08/22` dokumentiert Fahrzeugprofil, Demontage, CAN- und Warnblinkeranschluss, Versorgung, Zündung, Masse, Fahrzeughupe, Status-LED, optionalen Pro-Finder, Funk-Zubehör und Funktionstest.
 
 > **Abgrenzung:** Die Fassung ab 2022 besitzt weder dieselbe DIP-Grundstellung noch dieselbe CAN-Anschlussstelle wie die Plattform 2014–2021. Fahrzeug, Modelljahr, grauer 40-poliger Stecker, Pinnummern und Leitungsfarben müssen gemeinsam geprüft werden; siehe [[Renault Trafic III / Opel Vivaro B / Nissan NV300 / Fiat Talento (2014–2021)|Renault Trafic III 2014–2021]].
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Trafic III / Primastar ab 2022: mindestens `6.10.0`, `SW1 + SW2 + SW4 + SW5 + SW6 ON`. Am grauen 40-poligen Fahrzeugstecker: CAN-High Pin 26 grün, CAN-Low Pin 27 braun, Warnblinker Pin 13 blau. Hupe: Pin 10 am 16-poligen Fahrzeugstecker unter dem Lenkrad, blaue Fahrzeugader → rosa WiPro-Leitung. „Pin 10“ bezeichnet hier nicht den WiPro-Stecker; dessen Antennenanschluss darf daraus nicht zum Hupenausgang umgedeutet werden.
+
+Belege: [trafic-2022, PDF 2](../../../quellen/fahrzeug-trafic-2022.pdf#page=2), [trafic-2022, PDF 4](../../../quellen/fahrzeug-trafic-2022.pdf#page=4), [trafic-2022, PDF 5](../../../quellen/fahrzeug-trafic-2022.pdf#page=5).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -142,7 +150,7 @@ Die Funk-Magnetkontakte erst nach dem Anlernen und einem Reichweitentest endgül
 | Varianten | liegend links, liegend rechts, stehend oder bei Bedarf auf der Scheibe |
 | Platinenlage | Sende-LED vom Magneten wegweisend ausrichten |
 | Fehlmontage | zeigt die Sende-LED zum Magneten, ist Anlernen möglich, eine Alarmierung erfolgt jedoch nicht |
-| Magnetposition | im geschlossenen Zustand innerhalb des dokumentierten Bereichs von etwa `22–30 mm` |
+Magnetabstand nach dem passenden Kontakt prüfen: geschlossen höchstens 22 mm als redaktionelle Zwischenregel bei Standardkontakten (Quellenkonflikt 22/25 mm); mehr als 30 mm ist ein Auslöseabstand zum Anlernen/Testen, kein empfohlener Montageabstand. Siehe [[Funk-Magnetkontakt 868 — Montage und Betrieb|Funk-Magnetkontakt 868]].
 | Klebefläche | sauber, trocken und fettfrei |
 | Verarbeitungstemperatur | nicht unter `15 °C` |
 | Endfestigkeit der Klebepads | nach etwa `24 Stunden` |
@@ -165,7 +173,7 @@ Der folgende Ablauf entspricht der fahrzeugspezifischen Anleitung und trennt Ver
 9. Blinkfolge des Alarmspeichers über die Status-LED kontrollieren.
 10. Testalarm mit jedem angelernten Funk-Magnetkontakt, jeder Funk-Kabelschleife und jedem weiteren Funk-Sensor wiederholen.
 
-Das allgemeine Installationshandbuch nennt in seiner Funktionsbeschreibung `120 Sekunden` für die optische Alarmierung. Für dieses Fahrzeug gilt die konkrete Angabe von `180 Sekunden` aus dem neueren fahrzeugspezifischen Handbuch.
+Quellenkonflikt: 180 s optisch in der Fahrzeuganleitung, 120 s in der allgemeinen Bedienungsanleitung. Gerätestand-Zuordnung offen; keine neue Vorrangentscheidung.
 
 ## CAN- und Funkdiagnose
 
@@ -206,7 +214,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 - Das allgemeine Installationshandbuch Version `1.8` ergänzt Sicherheitsregeln, die Wirkung von `SW5`, Kabelsatz-Pins 6/7/9/11/17/18, CAN- und Funkdiagnose sowie systemübergreifende Fehlerprüfung.
 - `Pin 10` in der Hupenanweisung wird als Fahrzeugstecker-Pin geführt; Kabelsatz-Pin `9` folgt der allgemeinen WiPro-Steckerbelegung.
 - Der bisherige Projektstand `SW3 + SW6` und `0823-019 / 7.1` wird durch die konkrete Fahrzeugquelle ersetzt. Eine Mindestseriennummer ist nicht belegt.
-- Beim Widerspruch zur optischen Alarmdauer hat die konkrete neuere Fahrzeuganleitung mit `180 Sekunden` Vorrang vor der allgemeinen `120-Sekunden`-Angabe.
+| Alarmdauer / Durée | Quellenkonflikt: Fahrzeuganleitung 180 s optisch gegenüber allgemeiner Bedienungsanleitung 120 s; keine eindeutig belegte Zuordnung nach Gerätestand. Dauer protokollieren und Herstellerklärung einholen. |
 
 Verwendete Primärquellen:
 

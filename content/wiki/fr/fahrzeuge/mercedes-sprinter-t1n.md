@@ -1,9 +1,9 @@
 ---
 title: Mercedes Sprinter T1N (2000–2006)
 sources:
-  - sources/wipro_iii_mercedes_sprinter_t1n.pdf
-  - sources/wipro_iii-installationsanleitung_1.8.pdf
-updated: '2026-07-20'
+  - "content/quellen/fahrzeug-sprinter-t1n.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: fr
 translation_of: sources/fahrzeuge/mercedes-sprinter-t1n.md
@@ -15,6 +15,12 @@ Cet article décrit le raccordement universel d'une WiPro III dans le Mercedes S
 
 > **Délimitation :** le T1N est raccordé sans CAN. Des articles distincts, d'autres profils DIP et d'autres points de raccordement s'appliquent au Mercedes Sprinter NCV3/BR906 à partir de 2006 et au VS30/BR907/910 à partir de 2018. L'électronique réellement présente est déterminante, et non la seule date de première immatriculation.
 
+## Limites du véhicule et sources contrôlées
+
+Sprinter T1N 2000–2006 : la notice impose tous les interrupteurs désactivés, donc `SW1–SW8 OFF` ; SW1–SW4 seuls ne suffisent pas à décrire ce réglage. Le tableau porte toutefois le nom WiPro « all in one ». Bleu broche 20 / bleu-noir broche 19 y désignent les entrées d’éclairage intérieur, pas des sorties de centralisation safe.lock. Confirmer la centrale et le schéma universel avant d’appliquer ce tableau ancien.
+
+Sources : [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2).
+
 ## Champ d'application
 
 | Caractéristique | Prescription |
@@ -22,7 +28,7 @@ Cet article décrit le raccordement universel d'une WiPro III dans le Mercedes S
 | véhicule | Mercedes Sprinter T1N |
 | années-modèles documentées | 2000–2006 |
 | type de raccordement | schéma de raccordement universel, sans bus CAN |
-| profil véhicule | `SW1–SW4 OFF` ; source spécifique : « tous les commutateurs désactivés » |
+| profil véhicule | `SW1–SW8 OFF` ; source spécifique : « tous les commutateurs désactivés » |
 | signal de porte | éclairage intérieur au connecteur à six broches vers le montant A, côté conducteur |
 | clignotants | deux fils véhicule séparés |
 | source spécifique au véhicule | version `12/20` |
@@ -66,7 +72,7 @@ Avant de commencer, contrôler et documenter :
 1. Déconnecter complètement la WiPro de son alimentation.
 2. Vérifier que ni le connecteur à 20 broches ni un Pro-finder ne sont raccordés.
 3. Ouvrir prudemment le boîtier de la centrale.
-4. Pour le raccordement universel, placer `SW1`, `SW2`, `SW3` et `SW4` sur `OFF`.
+4. Selon la notice T1N, régler les huit interrupteurs `SW1–SW8 OFF`.
 5. Ne modifier les autres commutateurs DIP que pour une fonction spéciale expressément souhaitée et autorisée pour le numéro de série et la version logicielle.
 6. Documenter les positions réelles et refermer le boîtier.
 
@@ -157,7 +163,7 @@ Détails de l'apprentissage : [[Processus d'apprentissage — apprentissage des 
 ## Mise en service et essai fonctionnel
 
 1. Recontrôler tous les raccordements, les isolations et le fusible `10 A`.
-2. Confirmer que `SW1–SW4` sont sur `OFF`.
+2. Confirmer que `SW1–SW8` sont sur `OFF`.
 3. Alimenter la WiPro et observer sa réaction au démarrage.
 4. Armer le système et vérifier la confirmation par la LED d'état et les clignotants.
 5. Ouvrir chaque porte de cabine séparément et vérifier que le signal d'éclairage intérieur déclenche une alarme.
@@ -174,7 +180,7 @@ Détails de l'apprentissage : [[Processus d'apprentissage — apprentissage des 
 | Symptôme | Contrôle et mesure corrective |
 |---|---|
 | La WiPro ne réagit pas | Contrôler l'alimentation à la broche 11, la masse à la broche 1, le fusible `10 A` et les connecteurs directement sur l'appareil. |
-| Comportement incorrect ou instable | `SW1–SW4` doivent être sur `OFF` pour le T1N ; mettre l'installation hors tension avant correction. |
+| Comportement incorrect ou instable | `SW1–SW8` doivent être sur `OFF` pour le T1N ; mettre l'installation hors tension avant correction. |
 | L'ouverture d'une porte ne déclenche pas d'alarme | Mesurer le connecteur à six broches, les broches 19/20, `rouge/jaune`, `marron/blanc` et le signal de masse commutée de la porte concernée. |
 | Seules certaines ouvertures sont détectées | Vérifier quelles portes commandent réellement l'éclairage intérieur ; protéger séparément les autres ouvertures. |
 | Les clignotants manquent d'un côté | Contrôler séparément les broches 12/14 et les fils `noir/vert` et `noir/blanc`. |
@@ -187,12 +193,7 @@ Autres contrôles systématiques : [[Dépannage — diagnostic sûr des problèm
 
 ## Décision relative aux sources
 
-- La notice spécifique de deux pages *WiPro III – Mercedes Sprinter T1N 2000–2006*, version `12/20`, a été contrôlée intégralement, textuellement et visuellement.
-- Elle confirme « tous les commutateurs désactivés », la reprise de l'éclairage intérieur sur le connecteur à six broches et les deux fils de clignotants.
-- Le manuel général WiPro III `1.8` confirme le raccordement universel, les règles de sécurité, l'affectation des broches, le fusible `10 A`, la recommandation de sirène et les principes de diagnostic.
-- L'ancien profil `SW1` a été supprimé parce que le tableau général l'attribue aux Sprinter à partir de 2006.
-- L'ancienne formulation obligatoire concernant la sirène externe a été remplacée par la recommandation fidèle à la source.
-- Aucun point de raccordement spécifique non étayé pour la masse, l'allumage, l'alimentation ou la centrale n'est inventé ; il faut les déterminer sur le véhicule réel.
+Contrôle du 01/10/2026 : les pages véhicule indiquées dans le manifeste ont été comparées au texte PDF et aux illustrations originales. Les annexes répétées d’accessoires ne sont pas intégralement recontrôlées dans ce lot. Les anciennes données du projet hors de ce périmètre ne constituent pas une nouvelle confirmation fabricant. Sources : [sprinter-t1n, PDF 2](../../../quellen/fahrzeug-sprinter-t1n.pdf#page=2).
 
 ## Références croisées
 

@@ -1,11 +1,9 @@
 ---
 title: 'Fiat Ducato X250 / Peugeot Boxer / Citroën Jumper (Euro 4, 2006–2011)'
 sources:
-  - >-
-    D:/Thitronik WIKI
-    (ml)/wiki/de/wipro_iii_fiat_ducato_x250_euro_4_safe.lock.pdf
-  - 'D:/Thitronik WIKI (ml)/wiki/de/wipro_iii-installationsanleitung_1.8.pdf'
-updated: '2026-07-19'
+  - "content/quellen/fahrzeug-ducato-x250.pdf"
+  - "content/quellen/wipro-iii-installation-rev1.8.pdf"
+updated: '2026-10-01'
 confidence: high
 lang: de
 dealerStatus: approved
@@ -16,6 +14,16 @@ dealerStatus: approved
 Dieser Artikel beschreibt den Einbau einer WiPro III safe.lock in Fiat Ducato X250, Peugeot Boxer und Citroën Jumper der Euro-4-Ausführung von 2006 bis 2011. Das fahrzeugspezifische Einbauhandbuch Stand `12/20` dokumentiert CAN-Anschluss, Warnblinker, Zentralverriegelung, Fahrzeughupe, Zündung, Versorgung und den Funktionstest mit dem umgerüsteten Originalschlüssel.
 
 > **Abgrenzung:** Baujahr, Abgasstufe, Bordcomputer, Stecker und Leitungsfarben müssen gemeinsam geprüft werden. Die spätere Fahrzeuggruppe ab 2012 gehört zu [[Fiat Ducato / Citroën Jumper / Peugeot Boxer / Toyota Proace Max / Opel Movano (2012–2021)|Fiat Ducato 2012–2021]]; für den Vorgänger gilt [[Fiat Ducato 244 / Peugeot Boxer / Citroën Jumper (bis 2006)|Fiat Ducato 244]].
+
+## Geprüfte Fahrzeuggrenzen und Quellenstand
+
+Ducato X250 Euro 4, 2006–2011: `SW2 + SW6 ON`. CAN am grünen Einsatz Pin 5 (Low) / Pin 6 (High), alternativ am schwarzen Einsatz Pin 25 (Low) / Pin 24 (High). Beide Adern müssen aus derselben belegten Anschlussvariante stammen. Die Anleitung 12/20 allein belegt keine zusätzliche SW5-Stellung für jede als safe.lock bezeichnete Anlage; Schlüssel, Umrüstplatine und Gerätestand gesondert zuordnen.
+
+Belege: [ducato-x250, PDF 2](../../../quellen/fahrzeug-ducato-x250.pdf#page=2), [ducato-x250, PDF 4](../../../quellen/fahrzeug-ducato-x250.pdf#page=4).
+
+
+
+> **Zeitangaben:** Die Fahrzeug-PDF nennt 180 Sekunden optischen Alarm; die allgemeine Bedienungsanleitung nennt 120 Sekunden. Die Zuordnung nach Gerätestand bleibt offen. 180 Sekunden hier als Quellenangabe, nicht als verbindliches Abnahmekriterium verwenden. Dasselbe gilt für übernommene 4-Sekunden-Lüftungsangaben gegenüber 5 Sekunden im Bedienhandbuch.
 
 ## Geltungsbereich
 
@@ -135,6 +143,8 @@ Im fahrzeugspezifischen Funktionstest wird die **umgerüstete Original-Fahrzeugf
 
 ## Abschließende Funktionsprüfung
 
+> **Zeitkonflikt:** Messwert protokollieren. Die hier genannten 180 Sekunden stammen aus der Fahrzeugquelle; 120 Sekunden stehen in der allgemeinen Anleitung. Ohne Gerätestand-Zuordnung kein verbindliches Abnahmekriterium.
+
 1. Alle Türen schließen und mit der Verriegeln-Taste der umgerüsteten Original-Fahrzeugfernbedienung scharfschalten.
 2. Falls die WiPro zunächst nicht reagiert, mehrmals ver- und entriegeln, damit sich die CAN-Daten synchronisieren.
 3. Einen Piepton, Blinken der Fahrtrichtungsanzeiger und blinkende Status-LED als Aktivierungsbestätigung prüfen.
@@ -165,11 +175,7 @@ Weitere systemübergreifende Prüfungen beschreibt [[Störungsbeseitigung — Si
 
 ## Quellenentscheidung
 
-- Das elfseitige fahrzeugspezifische Einbauhandbuch *WiPro III + safe.lock – Fiat Ducato X250, Euro 4*, Stand `12/20`, wurde vollständig textlich geprüft; die für Einbau und Funktion relevanten Seiten 1 bis 7 wurden zusätzlich visuell kontrolliert.
-- Das allgemeine Installationshandbuch Version `1.8` wurde für Sicherheitsregeln und die eigenständige Funktion `SW5` ab `0823-014 / 5.8` herangezogen.
-- Die Primärquelle belegt ausschließlich `SW2 + SW6`. Die Altbestandsaussage „mit safe.lock zusätzlich SW5“ wurde entfernt, weil die Bezeichnung safe.lock allein keine zusätzliche Schalterstellung rechtfertigt.
-- Die Kompatibilitätsbasis `0823-001 / 2.1` stammt aus der freigegebenen Übersicht; das fahrzeugspezifische Handbuch nennt keine eigene Mindest-Seriennummer.
-- Die im Altbestand referenzierte Datei `Fahrzeugbesonderheiten.docx` ist lokal nicht auffindbar und wurde nicht als Beleg verwendet.
+Prüfung vom 01.10.2026: Die im Quellenmanifest genannten Fahrzeugseiten wurden am PDF-Text und an den Originalabbildungen geprüft. Wiederholte Zubehöranhänge wurden in diesem Block nicht erneut vollständig geprüft. Frühere Projektangaben außerhalb dieses Umfangs gelten nicht als neue Herstellerbestätigung. Belege: [ducato-x250, PDF 2](../../../quellen/fahrzeug-ducato-x250.pdf#page=2), [ducato-x250, PDF 4](../../../quellen/fahrzeug-ducato-x250.pdf#page=4).
 
 ## Querverweise
 
